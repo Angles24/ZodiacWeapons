@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Profile: Amdapor Keep
+  Authors: Zamphire
+  Code Credit: TuckMeIntoBread, Kayla.
+-->
+<Profile>
+  <Name>Amdapor Keep</Name>
+  <BehaviorDirectory></BehaviorDirectory>
+  <Order>
+ 	<If Condition="not IsOnMap(167)">
+		<RunCode Name="QueueAmdapor"/>
+	</If>
+	<If Condition="IsOnMap(167)">
+		<!-- Clear the Gier Hall 0/1 -->
+		<If Condition="not GetInstanceTodo(0) == 1">
+			<Log Message="Clear the Gier Hall 0/1" />
+			<MoveTo XYZ="-196.265, -4.200005, 13.03519"/> <!-- Move to bridge -->
+			<MoveTo XYZ="-193.4538, -3.800007, 63.08482" usemesh="false"/> <!-- Move across bridge -->
+			<MoveTo XYZ="-153.0291, -4, 87.56704" usemesh="false"/>
+			<MoveTo XYZ="-49.44293, 0.1620599, 85.68034" usemesh="false"/>
+			<MoveTo XYZ="-45.23792, 0, 68.82082" usemesh="false"/>
+			<MoveTo XYZ="-70.51669, -2, 49.46097" usemesh="false"/>
+			<MoveTo XYZ="-134.2573, -2.000006, 43.35908" usemesh="false"/>
+			<MoveTo XYZ="-146.8705, -2, 29.05991" usemesh="false"/>
+			<MoveTo XYZ="-134.8821, -2.4, 14.71817" usemesh="false"/>	
+			<MoveTo XYZ="-83.99593, 3.099442E-06, -0.1227691" usemesh="false"/> <!-- Move to sealed gate -->
+			<MoveTo XYZ="-73.51895, 0.1999929, 0.2118544" usemesh="false"/>
+			<Grind GrindRef="LunaticPriest" While="GameObjectManager.GetObjectByNPCId(1690)"/> <!-- Fight first boss -->
+			<RunCode name="OpenChest"/>
+			<MoveTo XYZ="-10.23611,-1.192093E-07,-0.01531982" usemesh="false"/>
+			<RunCode name="AstralFlow1"/>			
+			<LogMessage Message="First boss dead"/>
+		</If>
+		<!-- Clear the Bloody Transept 0/1 -->
+		<If Condition="not GetInstanceTodo(1) == 1">
+			<MoveTo XYZ="115.199, 22.43723, -0.4705639"/> <!-- Move into first room -->		
+			<MoveTo XYZ="199.4624, 22.4248, -70.63486"/> <!-- Move outside bosses room -->	
+			<MoveTo XYZ="200.4684, 22, -112.2056" usemesh="false"/> <!-- Move into boss's room -->
+			<MoveTo XYZ="199.5795, 22, -133.268" usemesh="false"/> <!-- Move into boss's room -->
+			<Grind GrindRef="DemonWall" While="GameObjectManager.GetObjectByNPCId(1694)"/> <!-- Fight second boss -->
+			<LogMessage Message="Second boss dead"/>
+		</If>
+		<!-- Defeat Anantaboga 0/1-->
+		<If Condition="not GetInstanceTodo(2) == 1">
+			<RunCode name="OpenChest"/>
+			<MoveTo XYZ="200.061,22,-165.266" usemesh="false"/> <!-- Move Astral Flow 2 -->
+			<RunCode name="AstralFlow2"/>
+			<MoveTo XYZ="136.8121, 44, -0.5193871"/> <!-- Move to first big door -->
+			<MoveTo XYZ="27.01375, 48, 0.2617161"/> <!-- Move into bosses room -->
+			<Grind GrindRef="Anantaboga" While="GameObjectManager.GetObjectByNPCId(1696)"/> <!-- Fight final boss -->
+		</If>
+		<MoveTo XYZ="-12.46667,48.28507,-0.01531982"/> <!-- Move to chest -->
+		<RunCode name="OpenChest"/>
+		<MoveTo XYZ="-12.46667,48.28507,-0.01531982"/> <!-- Move to Exit -->
+		<RunCode name="ExitDuty"/>
+		<LLoadProfile Path="../Start.xml"/>
+	</If>	
+  </Order>
+  <GrindAreas>
+	<GrindArea name="LunaticPriest">
+        <Hotspots>
+			<Hotspot Radius="200" XYZ="-33.37984,0.0999999,0.07623291" />
+        </Hotspots>
+        <TargetMobs>
+			<TargetMob Name="Lunatic Priest" Id="1690" Weight="1" />
+			<TargetMob Name="Psycheflayer " Id="1689" Weight="2" />			
+        </TargetMobs>
+	</GrindArea>
+	<GrindArea name="DemonWall">
+        <Hotspots>
+			<Hotspot Radius="200" XYZ="200.0683,21.99992,-152" />
+        </Hotspots>
+        <TargetMobs>
+			<TargetMob Name="Demon Wall" Id="1694" Weight="1" />	
+        </TargetMobs>
+	</GrindArea>
+	<GrindArea name="Anantaboga">
+        <Hotspots>
+			<Hotspot Radius="200" XYZ="-0.04577636,48.2028,0" />
+        </Hotspots>
+        <TargetMobs>
+			<TargetMob Name="Demon Wall" Id="1696" Weight="1" />	
+        </TargetMobs>
+	</GrindArea>	
+  </GrindAreas>
+  <CodeChunks>
+  	<CodeChunk Name="AstralFlow1">
+		<![CDATA[
+			ff14bot.Managers.GameObjectManager.GetObjectByNPCId(2000500).Interact();
+			await Coroutine.Sleep(1000);
+			ff14bot.RemoteWindows.SelectYesno.ClickYes();
+			while (!CommonBehaviors.IsLoading) { await Coroutine.Yield(); }
+      ]]>
+	</CodeChunk>  
+  	<CodeChunk Name="AstralFlow2">
+		<![CDATA[
+			ff14bot.Managers.GameObjectManager.GetObjectByNPCId(2000501).Interact();
+			await Coroutine.Sleep(1000);
+			ff14bot.RemoteWindows.SelectYesno.ClickYes();
+			while (!CommonBehaviors.IsLoading) { await Coroutine.Yield(); }
+      ]]>
+	</CodeChunk> 	
+	<CodeChunk Name="ExitDuty">
+		<![CDATA[
+			ff14bot.Managers.GameObjectManager.GetObjectByNPCId(2000493).Interact();
+			await Coroutine.Sleep(1000);
+			ff14bot.RemoteWindows.SelectYesno.ClickYes();
+			await Coroutine.Sleep(3000);
+      ]]>
+	</CodeChunk>	
+	<CodeChunk Name="ChangeZone">
+		<![CDATA[
+			MovementManager.SetFacing(3.190046f);
+			MovementManager.MoveForwardStart();
+			while (!CommonBehaviors.IsLoading) { await Coroutine.Yield(); }
+			MovementManager.MoveStop();
+		]]>
+	</CodeChunk>	
+	<CodeChunk name="OpenChest">
+		<![CDATA[    
+		if (GameObjectManager.GetObjectsOfType<Treasure>().Where(r => r.Distance() < 50 && (r.Name == "Treasure Coffer" || r.Name == "treasure coffer")).Any())
+		{
+			var _chest = GameObjectManager.GetObjectsOfType<Treasure>().Where(r => r.Distance() < 50 && (r.Name == "宝箱" || r.Name == "Treasure Coffer" || r.Name == "treasure coffer")).FirstOrDefault();
+			while (Core.Me.Distance(_chest.Location) > 1)
+			{
+			await CommonTasks.MoveTo(_chest.Location);
+			await Coroutine.Yield();
+			}
+			
+			Navigator.PlayerMover.MoveStop();
+			await Coroutine.Sleep(1000);
+			Poi.Current = new Poi(_chest, PoiType.Kill);
+			Poi.Current.Unit.Interact();                    
+			await Coroutine.Sleep(1000);        
+		}
+		]]>
+	</CodeChunk>
+	  <CodeChunk Name="EnableSideStep">
+      <![CDATA[
+        foreach (var plugin in PluginManager.Plugins.Where(p => p.Plugin.Name == "SideStep"))
+        {
+          try
+          {
+            if (plugin.Enabled)  {  break;  }  else  {  plugin.Enabled = true;  }
+          }
+          catch (Exception ex) {  }
+        }
+      ]]>
+    </CodeChunk>
+	<CodeChunk Name="DisableSideStep">
+		<![CDATA[
+			foreach (var plugin in PluginManager.Plugins.Where(p => p.Plugin.Name == "SideStep"))
+			{
+			try
+			{
+				if (!plugin.Enabled)  {  break;  }  else  {  plugin.Enabled = false;  }
+			}
+			catch (Exception ex) {  }
+			}
+		]]>
+	</CodeChunk> 
+	<CodeChunk Name="QueueAmdapor"> 
+		<![CDATA[ 
+           Logging.WriteDiagnostic("Queuing for Dungeon");
+		GameSettingsManager.JoinWithUndersizedParty = true;
+           DutyManager.Queue(DataManager.InstanceContentResults[14]);
+           await Coroutine.Wait(5000, () => (DutyManager.QueueState == QueueState.InQueue || DutyManager.QueueState == QueueState.JoiningInstance));
+
+           Logging.WriteDiagnostic("Queued for Dungeon");
+
+           await Coroutine.Wait(10000, () => (DutyManager.QueueState == QueueState.JoiningInstance));
+			
+           await Coroutine.Wait(10000, () => (RaptureAtkUnitManager.GetWindowByName("ContentsFinderConfirm") != null));
+
+           Logging.WriteDiagnostic("Commencing");
+           DutyManager.Commence();
+           Logging.WriteDiagnostic("Waiting for Loading");
+           await Coroutine.Wait(10000, () => CommonBehaviors.IsLoading || QuestLogManager.InCutscene);
+			
+           if (CommonBehaviors.IsLoading)
+           {
+               await Coroutine.Wait(-1, () => !CommonBehaviors.IsLoading);
+           }
+
+           if (QuestLogManager.InCutscene)
+           {
+               TreeRoot.StatusText = "InCutscene";
+               if (ff14bot.RemoteAgents.AgentCutScene.Instance != null)
+               {
+                   ff14bot.RemoteAgents.AgentCutScene.Instance.PromptSkip();
+                   await Coroutine.Wait(250, () => SelectString.IsOpen);
+                   if (SelectString.IsOpen)
+                       SelectString.ClickSlot(0);
+               }
+           }
+
+           Logging.WriteDiagnostic("Should be in duty");
+		   
+           var director = ((ff14bot.Directors.InstanceContentDirector) DirectorManager.ActiveDirector);
+           if (director !=null)
+		   {
+               if (director.TimeLeftInDungeon >= new TimeSpan(1,30,0))
+               {
+				   Logging.WriteDiagnostic("Barrier up");
+                   await Coroutine.Wait(30000, () => director.TimeLeftInDungeon < new TimeSpan(1,29,58));
+               }
+		   }
+		   else
+		   {
+			Logging.WriteDiagnostic("Director is null");
+		   }
+			   
+	      Logging.WriteDiagnostic("Should be ready");
+		]]>
+	</CodeChunk>	
+  </CodeChunks>
+</Profile>	

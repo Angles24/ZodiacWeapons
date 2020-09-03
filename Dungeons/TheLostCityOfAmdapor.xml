@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Profile: The Lost City of Amdapor
+  Authors: Zamphire
+  Code Credit: TuckMeIntoBread, Kayla.
+-->
+
+<!DOCTYPE Profile [
+<!-- Profile Settings -->
+<!ENTITY openchest "0">
+]>
+<Profile>
+  <Name>The Lost City of Amdapor</Name>
+  <BehaviorDirectory></BehaviorDirectory>
+  <Order>
+ 	<If Condition="not IsOnMap(363)">
+		<RunCode Name="QueueLostCity"/>
+	</If>
+	<If Condition="IsOnMap(363)">
+		<!-- Clear Halcyon Court 0/1 -->
+		<If Condition="GetInstanceTodo(0) == 0">
+			<Log Message="Clear Halcyon Court 0/1" />
+			<MoveTo XYZ="167.6067, 66.10661, -32.00096"/> <!-- Move to before first gate -->
+			<Grind GrindRef="MoldColony1" While="GameObjectManager.GetObjectByNPCId(2569)"/> <!-- Fight Arioch -->			
+			<MoveTo XYZ="142.8524, 66.18159, -26.45593"/> <!-- Clear first gate room -->			
+			<MoveTo XYZ="142.2002, 58, 1.920883" usemesh="false"/> 
+			<MoveTo XYZ="128.395, 58.25528, 21.71317"/> <!-- Clear second gate room -->
+			<If Condition="&openchest; == 1">
+				<RunCode name="OpenChest" />
+			</If>
+			<MoveTo XYZ="99.19931, 50, 21.79874" usemesh="false"/> 
+			<MoveTo XYZ="98.20937, 42.18911, -2.409956"/> <!-- Move into boss room -->
+			<Grind GrindRef="DecayingGourmand" While="GameObjectManager.GetObjectByNPCId(2556)"/> <!-- Fight DecayingGourmand -->
+			<If Condition="&openchest; == 1">
+				<RunCode name="OpenChest" />
+			</If>
+			<MoveTo XYZ="84.78708, 42.17043, -46.42099"/>
+		</If>
+		<!-- Clear the Tower of White 0/1 -->
+		<If Condition="GetInstanceTodo(1) == 0">
+			<Log Message="Clear the Tower of White 0/1" />
+			<MoveTo XYZ="85.36717, 42.10601, -62.24693"/> 		
+			<MoveTo XYZ="7.97209, 34.0809, -92.1995"/>
+			<Grind GrindRef="MoldColony2" While="GameObjectManager.GetObjectByNPCId(2569)"/> <!-- Fight Arioch -->				
+			<MoveTo XYZ="7.452728, 33.63337, -71.02247" usemesh="false"/>			
+			<MoveTo XYZ="-36.22319, 19.81501, -10.11658"/> <!-- Clear third gate room -->
+			<If Condition="&openchest; == 1">
+				<RunCode name="OpenChest" />
+			</If>
+			<MoveTo XYZ="9.300295, 5.104593, 20.10941"/> <!-- Clear fourth gate room -->
+			<MoveTo XYZ="26.47252, 5.465906, 44.6594"/> <!-- Move to boss room -->
+			<MoveTo XYZ="25.92297, 6.998236, 60.89424" usemesh="false"/>			
+			<MoveTo XYZ="-0.02481006, 12.11669, 70.15894"/> <!-- Move to boss room -->
+			<Grind GrindRef="Arioch" While="GameObjectManager.GetObjectByNPCId(2560)"/> <!-- Fight Arioch -->
+			<If Condition="&openchest; == 1">
+				<RunCode name="OpenChest" />
+			</If>
+			<MoveTo XYZ="-69.36572, 9.891445, 69.84653" usemesh="false"/>	
+			<RunCode name="ChangeZone"/>	
+		</If>
+		<!-- Clear the Defeat Diabolos 0/1 -->
+		<If Condition="GetInstanceTodo(2) == 0">
+			<Log Message="Defeat Diabolos  0/1" />
+			<MoveTo XYZ="16.79603, -252.503, -61.70649"/> 
+			<Grind GrindRef="WhiteMagestone1" while="GameObjectManager.GetObjectByNPCId(2571)"/> <!-- Fight White Magestone -->
+			<MoveTo XYZ="62.08236, -261.003, -16.79322"/>
+			<If Condition="&openchest; == 1">
+				<RunCode name="OpenChest" />
+			</If>
+			<MoveTo XYZ="45.36511,-272.303,44.81567"/>
+			<Grind GrindRef="WhiteMagestone2" while="GameObjectManager.GetObjectByNPCId(2571)"/> <!-- Fight White Magestone -->	
+			<MoveTo XYZ="8.742284, -279.99, 19.11688"/>
+			<Grind GrindRef="Diabolos" while="GameObjectManager.GetObjectByNPCId(2564)"/> <!-- Defeat Diabolos -->
+			<If Condition="&openchest; == 1">
+				<RunCode name="OpenChest" />
+			</If>
+			<MoveTo XYZ="-6.668615,-279.99,-16.12109"/> <!-- Move to exit -->
+			<RunCode name="ExitDuty"/>
+			<LLoadProfile Path="../Start.xml"/>
+		</If>			
+	</If>	
+  </Order>
+  <GrindAreas>
+ 	<GrindArea name="MoldColony1">
+        <Hotspots>
+			<Hotspot Radius="20" XYZ="142.2518,66.27366,-32.9854" />
+        </Hotspots>
+        <TargetMobs>
+			<TargetMob Name="Mold Colony" Id="2569" Weight="1" />	
+        </TargetMobs>
+	</GrindArea> 
+ 	<GrindArea name="MoldColony2">
+        <Hotspots>
+			<Hotspot Radius="20" XYZ="1.26945,33.90414,-95.60902" />
+        </Hotspots>
+        <TargetMobs>
+			<TargetMob Name="Mold Colony" Id="2569" Weight="1" />	
+        </TargetMobs>
+	</GrindArea> 	
+	<GrindArea name="DecayingGourmand">
+        <Hotspots>
+			<Hotspot Radius="200" XYZ="98.01762,42.115,-39.38725" />
+        </Hotspots>
+        <TargetMobs>
+			<TargetMob Name="Decaying Gourmand" Id="2556" Weight="1" />	
+        </TargetMobs>
+	</GrindArea>
+	<GrindArea name="Arioch">
+        <Hotspots>
+			<Hotspot Radius="200" XYZ="-6.252018,12,57.80675" />
+        </Hotspots>
+        <TargetMobs>
+			<TargetMob Name="Ranch Wamoura" Id="2561" Weight="2" />	
+			<TargetMob Name="Arioch" Id="2560" Weight="1" />	
+        </TargetMobs>
+	</GrindArea>
+	<GrindArea name="WhiteMagestone1">
+        <Hotspots>
+			<Hotspot Radius="200" XYZ="16.54658, -252.503, -61.73495" />
+        </Hotspots>
+        <TargetMobs>
+			<TargetMob Name="White Magestone" Id="2571" Weight="2" />	
+			<TargetMob Name="Dastardly Devilet" Id="2582" Weight="1" />
+			<TargetMob Name="Allotaur" Id="2581" Weight="1" />			
+        </TargetMobs>
+	</GrindArea>
+	<GrindArea name="WhiteMagestone2">
+        <Hotspots>
+			<Hotspot Radius="200" XYZ="45.36511,-272.303,44.81567" />
+        </Hotspots>
+        <TargetMobs>
+			<TargetMob Name="White Magestone" Id="2571" Weight="2" />
+			<TargetMob Name="Baalzephon " Id="2573" Weight="1" />					
+			<TargetMob Name="Dirty Eye" Id="2583" Weight="1" />	
+        </TargetMobs>
+	</GrindArea>		
+	<GrindArea name="Diabolos">
+        <Hotspots>
+			<Hotspot Radius="200" XYZ="-3.74008,-279.99,-9.000183" />
+        </Hotspots>
+        <TargetMobs>
+			<TargetMob Name="Diabolos" Id="2564" Weight="1" />	
+        </TargetMobs>
+	</GrindArea>	
+  </GrindAreas>		
+  <CodeChunks>
+  	<CodeChunk Name="StrongroomGate">
+		  <![CDATA[
+			ff14bot.Managers.GameObjectManager.GetObjectByNPCId(2001880).Interact();
+			await Coroutine.Sleep(3000);
+		  ]]>	 	  
+	</CodeChunk>
+	<CodeChunk Name="ExitDuty">
+		<![CDATA[
+			ff14bot.Managers.GameObjectManager.GetObjectByNPCId(2000139).Interact();
+			await Coroutine.Sleep(1000);
+			ff14bot.RemoteWindows.SelectYesno.ClickYes();
+			await Coroutine.Sleep(3000);
+      ]]>
+	</CodeChunk>
+	<CodeChunk name="OpenChest">
+		<![CDATA[    
+		if (GameObjectManager.GetObjectsOfType<Treasure>().Where(r => r.Distance() < 50 && (r.Name == "Treasure Coffer" || r.Name == "treasure coffer")).Any())
+		{
+			var _chest = GameObjectManager.GetObjectsOfType<Treasure>().Where(r => r.Distance() < 50 && (r.Name == "宝箱" || r.Name == "Treasure Coffer" || r.Name == "treasure coffer")).FirstOrDefault();
+			while (Core.Me.Distance(_chest.Location) > 1)
+			{
+			await CommonTasks.MoveTo(_chest.Location);
+			await Coroutine.Yield();
+			}
+			
+			Navigator.PlayerMover.MoveStop();
+			await Coroutine.Sleep(1000);
+			Poi.Current = new Poi(_chest, PoiType.Kill);
+			Poi.Current.Unit.Interact();                    
+			await Coroutine.Sleep(1000);        
+		}
+		]]>
+	</CodeChunk>
+	<CodeChunk Name="ChangeZone">
+		<![CDATA[
+			MovementManager.SetFacing(4.72117f);
+			MovementManager.MoveForwardStart();
+			while (!CommonBehaviors.IsLoading) { await Coroutine.Yield(); }
+			MovementManager.MoveStop();
+		]]>
+	</CodeChunk>	
+	<CodeChunk Name="QueueLostCity">
+		<![CDATA[ 
+           Logging.WriteDiagnostic("Queuing for Dungeon");
+		GameSettingsManager.JoinWithUndersizedParty = true;
+           DutyManager.Queue(DataManager.InstanceContentResults[22]);
+           await Coroutine.Wait(5000, () => (DutyManager.QueueState == QueueState.InQueue || DutyManager.QueueState == QueueState.JoiningInstance));
+
+           Logging.WriteDiagnostic("Queued for Dungeon");
+
+           await Coroutine.Wait(10000, () => (DutyManager.QueueState == QueueState.JoiningInstance));
+			
+           await Coroutine.Wait(10000, () => (RaptureAtkUnitManager.GetWindowByName("ContentsFinderConfirm") != null));
+
+           Logging.WriteDiagnostic("Commencing");
+           DutyManager.Commence();
+           Logging.WriteDiagnostic("Waiting for Loading");
+           await Coroutine.Wait(10000, () => CommonBehaviors.IsLoading || QuestLogManager.InCutscene);
+			
+           if (CommonBehaviors.IsLoading)
+           {
+               await Coroutine.Wait(-1, () => !CommonBehaviors.IsLoading);
+           }
+
+           if (QuestLogManager.InCutscene)
+           {
+               TreeRoot.StatusText = "InCutscene";
+               if (ff14bot.RemoteAgents.AgentCutScene.Instance != null)
+               {
+                   ff14bot.RemoteAgents.AgentCutScene.Instance.PromptSkip();
+                   await Coroutine.Wait(250, () => SelectString.IsOpen);
+                   if (SelectString.IsOpen)
+                       SelectString.ClickSlot(0);
+               }
+           }
+
+           Logging.WriteDiagnostic("Should be in duty");
+		   
+           var director = ((ff14bot.Directors.InstanceContentDirector) DirectorManager.ActiveDirector);
+           if (director !=null)
+		   {
+               if (director.TimeLeftInDungeon >= new TimeSpan(1,30,0))
+               {
+				   Logging.WriteDiagnostic("Barrier up");
+                   await Coroutine.Wait(30000, () => director.TimeLeftInDungeon < new TimeSpan(1,29,58));
+               }
+		   }
+		   else
+		   {
+			Logging.WriteDiagnostic("Director is null");
+		   }
+			   
+	      Logging.WriteDiagnostic("Should be ready");
+		]]>
+	</CodeChunk>
+  </CodeChunks>  
+</Profile>  

@@ -1,0 +1,244 @@
+<!--
+  Profile: Amdapor Keep (Hard)
+  Authors: Zamphire
+  Code Credit: TuckMeIntoBread, Kayla.
+-->
+<Profile>
+  <Name>Amdapor Keep (Hard)</Name>
+  <BehaviorDirectory></BehaviorDirectory>
+  <Order>
+   	<If Condition="not IsOnMap(189)">
+		<RunCode Name="QueueAmdapor"/>
+	</If>
+	<If Condition="IsOnMap(189)">
+		<MoveTo XYZ="-195.715, -4.2, -12.56144"/> 
+		<MoveTo XYZ="-196.2028, -3.893683, -50.53947" usemesh="false"/> 
+		<MoveTo XYZ="-40.83026, -1.192093E-07, -73.19474"/> <!-- Move to second door -->
+		<MoveTo XYZ="-124.4984,-2.800006,6.912292"/> <!-- Move to first boss Anchag  -->
+		<RunCode Name="OpenChest"/>
+		<MoveTo XYZ="-99.75941, 0.7172974, 41.30316"/> <!-- Move to zone line  -->
+		<RunCode Name="ChangeZone"/>
+		<MoveTo XYZ="121.0552, 44.09124, -0.2463364"/> <!-- Move to first door in second zone  -->
+		<MoveTo XYZ="199.6147, 44, -95.99203"/> <!-- Move to second door in second zone  -->
+		<MoveTo XYZ="200.1962,44,-153.6554"/> <!-- Move to second boss Boogyman   -->
+		<If while="not GameObjectManager.GetObjectByNPCId(3274).CurrentHealth == 0">
+			<While Condition="ObjectExistsWithId(3274) or ObjectExistsWithId(3275)">
+				<If Condition="ObjectExistsWithId(3274)">
+					<Grind GrindRef="Boogyman" While="GameObjectManager.GetObjectByNPCId(3274).IsTargetable"/>
+				</If>
+				<If Condition="ObjectExistsWithId(3276)">
+					<Grind GrindRef="Luminescence" While="not GameObjectManager.GetObjectByNPCId(3276).CurrentHealth == 0"/>
+				</If>
+				<RunCode Name="BoogymanFight"/>
+			</While>
+		</If>	
+		<!--
+		Luminescence 0x177877C7870-3276
+			<HotSpot XYZ="186.0837,44.05861,-140.856" Radius="75" />
+			Luminescence 0x177877C7870, IsVisible: True, IsTargetable: True, CanAttack: True, CurrentHealth: 7139	
+			-->
+		<!--
+		Start of fight
+			Boogyman 0x177877AF210-3274
+				<HotSpot XYZ="200.1962,44,-153.6554" Radius="75" />
+				Boogyman 0x177877AF210, IsVisible: True, IsTargetable: True, CanAttack: True, CurrentHealth: 71200
+		Still 3274 during first invisible
+
+			Boogyman 0x177877C7870 3275, IsVisible: True, IsTargetable: True, CanAttack: True, CurrentHealth: 14389	
+			Irradiated 617
+		-->
+		<!--
+		Bloodmoon Sacrifice 0x177877AC6B0-3277
+			<HotSpot XYZ="207.3853,44,-164.0192" Radius="75" />
+		-->
+		<RunCode Name="OpenChest"/>
+		<MoveTo XYZ="199.6828,44.1639,-180.3924"/> <!-- Move to Astral Flow   -->
+		<RunCode Name="AstralFlow1"/>
+		<MoveTo XYZ="200.0941,-7.629395E-06,0.05024901"/> <!-- Move to Fell Orb   -->
+		<RunCode Name="FellOrb"/>
+		<Grind GrindRef="FelOrbTrial" While="not GameObjectManager.GetObjectByNPCId(2004707).IsTargetable" />
+		<!-- Put some kind of Grind here to kill until Astral Flow 2004707 spawns. -->
+		<RunCode Name="AstralFlow2"/>
+		<MoveTo XYZ="200.424, -7.748604E-06, 211.5954"/> <!-- Move to final boss room   -->
+		<Grind GrindRef="Ferdiad" While="GameObjectManager.GetObjectByNPCId(3280)" />
+		<RunCode Name="OpenChest"/>
+		<MoveTo XYZ="200.7986,-7.629395E-06,240.8809"/> <!-- Move to Exit   -->
+		<RunCode Name="ExitDuty"/>
+	</If>
+  </Order>
+  <GrindAreas>
+	<GrindArea name="FelOrbTrial">
+        <Hotspots>
+			<Hotspot Radius="200" XYZ="200.0941,-7.629395E-06,0.05024901" />
+        </Hotspots>
+        <TargetMobs>
+			<TargetMob Name="Void Syrup" Id="3268" Weight="1" />
+			<TargetMob Name="Faultfinder" Id="3269" Weight="1" />	
+			<TargetMob Name="Skainsmate " Id="3270" Weight="1" />	
+			<TargetMob Name="Vodoriga Slicer" Id="3266" Weight="1" />	
+			<TargetMob Name="Gneissic Gargoyle" Id="3267" Weight="1" />	
+			<TargetMob Name="Bloodlapper" Id="1695" Weight="1" />				
+        </TargetMobs>		
+	</GrindArea>
+	<GrindArea name="Boogyman">
+        <Hotspots>
+			<Hotspot Radius="200" XYZ="200.1962,44,-153.6554" />
+        </Hotspots>
+        <TargetMobs>
+			<TargetMob Name="Boogyman" Id="3274" Weight="1" />
+			<TargetMob Name="Bloodmoon Sacrifice" Id="3277" Weight="2" />					
+        </TargetMobs>		
+	</GrindArea>
+	<GrindArea name="Luminescence">
+        <Hotspots>
+			<Hotspot Radius="200" XYZ="200.1962,44,-153.6554" />
+        </Hotspots>
+        <TargetMobs>
+			<TargetMob Name="Luminescence" Id="3276" Weight="1" />
+			<TargetMob Name="Bloodmoon Sacrifice" Id="3277" Weight="2" />	
+        </TargetMobs>		
+	</GrindArea>	
+	<GrindArea name="Ferdiad">
+        <Hotspots>
+			<Hotspot Radius="200" XYZ="200.0017,-4.768372E-06,235.6905" />
+        </Hotspots>
+        <TargetMobs>
+			<TargetMob Name="Ferdiad " Id="3280" Weight="1" />
+			<TargetMob Name="Wicked Jester" Id="3283" Weight="2" />
+			<TargetMob Name="Suppuration " Id="3284" Weight="2" />
+			<TargetMob Name="Troubadour " Id="3286" Weight="3" />	
+        </TargetMobs>		
+	</GrindArea>	
+  </GrindAreas>	
+    <CodeChunks>
+    <CodeChunk Name="BoogymanFight">
+        <![CDATA[
+            var puddle = GameObjectManager.GetObjectByNPCId(2004806);
+            var boss = GameObjectManager.GameObjects.Where(x => x.IsVisible && (x.NpcId == 3274 || x.NpcId == 3275)).FirstOrDefault();
+            while (!Core.Me.HasAura(617))
+            {
+              Navigator.PlayerMover.MoveTowards(puddle.Location);
+              await Coroutine.Yield();
+            }
+            while (Core.Me.HasAura(617))
+            {
+              Navigator.PlayerMover.MoveTowards(boss.Location);
+              await Coroutine.Yield();
+            }
+            Navigator.PlayerMover.MoveStop();
+			await Coroutine.Sleep(1000); 
+        ]]>
+    </CodeChunk>	
+	<CodeChunk Name="ChangeZone">
+		<![CDATA[
+			MovementManager.SetFacing(2.25179f);
+			MovementManager.MoveForwardStart();
+			while (!CommonBehaviors.IsLoading) { await Coroutine.Yield(); }
+			MovementManager.MoveStop();
+		]]>
+	</CodeChunk>	
+	<CodeChunk name="OpenChest">
+		<![CDATA[    
+		if (GameObjectManager.GetObjectsOfType<Treasure>().Where(r => r.Distance() < 50 && (r.Name == "Treasure Coffer" || r.Name == "treasure coffer")).Any())
+		{
+			var _chest = GameObjectManager.GetObjectsOfType<Treasure>().Where(r => r.Distance() < 50 && (r.Name == "宝箱" || r.Name == "Treasure Coffer" || r.Name == "treasure coffer")).FirstOrDefault();
+			while (Core.Me.Distance(_chest.Location) > 1)
+			{
+			await CommonTasks.MoveTo(_chest.Location);
+			await Coroutine.Yield();
+			}
+			
+			Navigator.PlayerMover.MoveStop();
+			await Coroutine.Sleep(1000);
+			Poi.Current = new Poi(_chest, PoiType.Kill);
+			Poi.Current.Unit.Interact();                    
+			await Coroutine.Sleep(1000);        
+		}
+		]]>
+	</CodeChunk>	
+ 	<CodeChunk Name="ExitDuty">
+		<![CDATA[
+			ff14bot.Managers.GameObjectManager.GetObjectByNPCId(2000139).Interact();
+			await Coroutine.Sleep(1000);
+			ff14bot.RemoteWindows.SelectYesno.ClickYes();
+			await Coroutine.Sleep(3000);
+      ]]>
+	</CodeChunk>
+ 	<CodeChunk Name="FellOrb">
+		<![CDATA[
+			ff14bot.Managers.GameObjectManager.GetObjectByNPCId(2004706).Interact();
+			await Coroutine.Sleep(3000);
+      ]]>
+	</CodeChunk>	
+ 	<CodeChunk Name="AstralFlow1">
+		<![CDATA[
+			ff14bot.Managers.GameObjectManager.GetObjectByNPCId(2004705).Interact();
+			await Coroutine.Sleep(1000);
+			ff14bot.RemoteWindows.SelectYesno.ClickYes();
+			while (!CommonBehaviors.IsLoading) { await Coroutine.Yield(); }
+      ]]>
+	</CodeChunk>
+ 	<CodeChunk Name="AstralFlow2">
+		<![CDATA[
+			ff14bot.Managers.GameObjectManager.GetObjectByNPCId(2004707).Interact();
+			await Coroutine.Sleep(1000);
+			ff14bot.RemoteWindows.SelectYesno.ClickYes();
+			while (!CommonBehaviors.IsLoading) { await Coroutine.Yield(); }
+      ]]>
+	</CodeChunk>	
+	<CodeChunk Name="QueueAmdapor">
+		<![CDATA[ 
+           Logging.WriteDiagnostic("Queuing for Dungeon");
+		GameSettingsManager.JoinWithUndersizedParty = true;
+           DutyManager.Queue(DataManager.InstanceContentResults[29]);
+           await Coroutine.Wait(5000, () => (DutyManager.QueueState == QueueState.InQueue || DutyManager.QueueState == QueueState.JoiningInstance));
+
+           Logging.WriteDiagnostic("Queued for Dungeon");
+
+           await Coroutine.Wait(10000, () => (DutyManager.QueueState == QueueState.JoiningInstance));
+			
+           await Coroutine.Wait(10000, () => (RaptureAtkUnitManager.GetWindowByName("ContentsFinderConfirm") != null));
+
+           Logging.WriteDiagnostic("Commencing");
+           DutyManager.Commence();
+           Logging.WriteDiagnostic("Waiting for Loading");
+           await Coroutine.Wait(10000, () => CommonBehaviors.IsLoading || QuestLogManager.InCutscene);
+			
+           if (CommonBehaviors.IsLoading)
+           {
+               await Coroutine.Wait(-1, () => !CommonBehaviors.IsLoading);
+           }
+
+           if (QuestLogManager.InCutscene)
+           {
+               TreeRoot.StatusText = "InCutscene";
+               if (ff14bot.RemoteAgents.AgentCutScene.Instance != null)
+               {
+                   ff14bot.RemoteAgents.AgentCutScene.Instance.PromptSkip();
+                   await Coroutine.Wait(250, () => SelectString.IsOpen);
+                   if (SelectString.IsOpen)
+                       SelectString.ClickSlot(0);
+               }
+           }
+
+           Logging.WriteDiagnostic("Should be in duty");
+		   
+           var director = ((ff14bot.Directors.InstanceContentDirector) DirectorManager.ActiveDirector);
+           if (director !=null)
+		   {
+               if (director.TimeLeftInDungeon >= new TimeSpan(1,30,0))
+               {
+				   Logging.WriteDiagnostic("Barrier up");
+                   await Coroutine.Wait(30000, () => director.TimeLeftInDungeon < new TimeSpan(1,29,58));
+               }
+		   }
+		   else
+		   {
+			Logging.WriteDiagnostic("Director is null");
+		   }
+			   
+	      Logging.WriteDiagnostic("Should be ready");
+		]]>
+	</CodeChunk>	
+  </CodeChunks>
+</Profile>	

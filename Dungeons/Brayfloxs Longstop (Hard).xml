@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Profile: Brayflox's Longstop (Hard)
+  Authors: Zamphire
+-->
+<Profile>
+  <Name>Brayflox's Longstop (Hard)</Name>
+  <BehaviorDirectory></BehaviorDirectory>
+  <Order>
+	<If Condition="not IsOnMap(362)">
+		<RunCode Name="QueueBrayFlox"/>
+	</If>
+	<If Condition="IsOnMap(362)">
+		<MoveTo XYZ="-104.5909, -2.381622, 32.60087"/> <!-- First stop to kill mobs -->
+		<MoveTo XYZ="-81.97599, -2.381622, 8.694331"/> <!-- Second stop to kill mobs -->
+		<MoveTo XYZ="-37.21127, -2.381622, 48.78216"/> <!-- Third stop to kill mobs -->
+		<MoveTo XYZ="-8.701508, -0.8947698, -0.4552669"/> <!-- Below bridge to get key -->
+		<RunCode Name="DisableSideStep"/>
+		<While Condition="not HasItem(2000985)">	
+			<RunCode Name="TinyKey1"/> <!-- Pickup Tiny key -->
+		</While>
+		<RunCode Name="EnableSideStep"/>
+		<MoveTo XYZ="105.253, -0.1222783, 12.77754"/> <!-- Move to Headgate -->
+		<RunCode Name="RunstopHeadgate"/> <!-- Open Runstop Headgate -->
+		<MoveTo XYZ="111.4667,-2.443486,-40.1763"/> <!-- Move to first boss -->
+		<RunCode Name="OpenChest"/>
+		<MoveTo XYZ="91.8576, 4.53233, -104.8914"/> <!-- Move to First cage --> 
+		<MoveTo XYZ="34.06355, 7.038593, -85.85194"/> <!-- Move to Second cage -->
+		<MoveTo XYZ="28.31378, 6.905986, -118.8425"/> <!-- Move to Third cage -->
+		<MoveTo XYZ="44.75682, 7.015042, -128.6179"/> <!-- Move to cave entrance -->
+		<WaitTimer WaitTime="13"/>
+		<RunCode Name="ChangeZone"/> <!-- Subzone ID: 1341 -->
+		<MoveTo XYZ="-22.56818,25.52351,-174.3038"/> <!-- Move to Second boss -->
+		<!--
+		<Grind GrindRef="MagitekVangob" While="GameObjectManager.GetObjectByNPCId(2549)" /> --> <!-- Kill second boss -->
+		
+		<RunCode Name="OpenChest"/>
+		<MoveTo XYZ="-41.02, 18.64238, -119.7007"/> <!-- Move to Treasure Chest -->
+		<RunCode Name="OpenChest"/>
+		<MoveTo XYZ="-82.54991, 14.92233, -129.3664"/> <!-- Move to Tiny Key 2 -->
+		<While Condition="not HasItem(2000985)">
+			<RunCode Name="TinyKey2"/> <!-- Pickup Tiny key2 -->
+		</While>
+		<MoveTo XYZ="-95.26472,12.88843,-122.5933"/> <!-- Move to Swiftmake Checkgate 1 -->
+		<RunCode Name="SwiftmakeCheckgate1"/> <!-- Open First Swiftmake Gate -->
+		<MoveTo XYZ="-106.2929, 13.08915, -127.7986"/> <!-- Move to other side of gate -->
+		<MoveTo XYZ="-111.197, 14.417, -138.6074"/>
+		<MoveTo XYZ="-97.07648, 20.52424, -170.3631"/>
+		<MoveTo XYZ="-101.2143, 20.73654, -179.9232"/> <!-- Move to Tiny Key 3 -->
+		<While Condition="not HasItem(2000985)">
+			<RunCode Name="TinyKey3"/> <!-- Pickup Tiny key 3 -->
+		</While>
+		<MoveTo XYZ="-101.1448, 21.29802, -189.0635"/> <!-- Move to Swiftmake Checkgate 2 -->	
+		<RunCode Name="SwiftmakeCheckgate2"/> <!-- Open second Swiftmake Gate -->
+		<MoveTo XYZ="-26.09322,35.28735,-228.3997"/> <!-- Move to final boss -->
+		<RunCode Name="OpenChest"/>
+		<MoveTo XYZ="-25.89465,35.01941,-222.9496"/> <!-- Move to Exit -->
+		<RunCode Name="ExitDuty"/>
+	</If>	  
+  </Order>
+  <GrindAreas>
+	<GrindArea name="MagitekVangob">
+        <Hotspots>
+			<Hotspot Radius="200" XYZ="-22.56818,25.52351,-174.3038" />
+        </Hotspots>
+        <TargetMobs>
+			<TargetMob Id="2549" Weight="1" />			
+        </TargetMobs>
+	</GrindArea>
+	<GrindArea name="IlluminatiCommander">
+        <Hotspots>
+			<Hotspot Radius="200" XYZ="111.4667,-2.443486,-40.1763" />
+        </Hotspots>
+        <TargetMobs>
+			<TargetMob Name="Illuminati Commander" Id="2548" Weight="1" />			
+        </TargetMobs>
+	</GrindArea>
+	<GrindArea name="Gobmachine">
+        <Hotspots>
+			<Hotspot Radius="200" XYZ="-26.09322,35.28735,-228.3997" />
+        </Hotspots>
+        <TargetMobs>
+			<TargetMob Id="2547" Weight="1" />			
+        </TargetMobs>
+	</GrindArea>	
+  </GrindAreas>
+  <CodeChunks>
+	<CodeChunk Name="TinyKey1">
+      <![CDATA[
+        var x = GameObjectManager.GetObjectByNPCId(2002325);
+        var pos = new Vector3(x.Location.X, x.Location.Y, x.Location.Z);
+        Navigator.PlayerMover.MoveTowards(pos);
+        await Coroutine.Wait(-1, () => Core.Me.Distance(pos) < 3f);
+        Navigator.PlayerMover.MoveStop();
+		await Coroutine.Sleep(1000);
+        ff14bot.Managers.GameObjectManager.GetObjectByNPCId(x.NpcId).Interact();
+      ]]>
+	</CodeChunk>
+	<CodeChunk Name="TinyKey2">
+      <![CDATA[
+        var x = GameObjectManager.GetObjectByNPCId(2002642);
+        var pos = new Vector3(x.Location.X, x.Location.Y, x.Location.Z);
+        Navigator.PlayerMover.MoveTowards(pos);
+        await Coroutine.Wait(-1, () => Core.Me.Distance(pos) < 3f);
+        Navigator.PlayerMover.MoveStop();
+		await Coroutine.Sleep(1000);
+        ff14bot.Managers.GameObjectManager.GetObjectByNPCId(x.NpcId).Interact();
+      ]]>
+	</CodeChunk>
+	<CodeChunk Name="TinyKey3">
+      <![CDATA[
+        var x = GameObjectManager.GetObjectByNPCId(2002644);
+        var pos = new Vector3(x.Location.X, x.Location.Y, x.Location.Z);
+        Navigator.PlayerMover.MoveTowards(pos);
+        await Coroutine.Wait(-1, () => Core.Me.Distance(pos) < 3f);
+        Navigator.PlayerMover.MoveStop();
+		await Coroutine.Sleep(1000);
+        ff14bot.Managers.GameObjectManager.GetObjectByNPCId(x.NpcId).Interact();
+      ]]>
+	</CodeChunk>	
+	<CodeChunk Name="RunstopHeadgate">
+		<![CDATA[
+			ff14bot.Managers.GameObjectManager.GetObjectByNPCId(2002182).Interact();
+			await Coroutine.Sleep(1000);
+			ff14bot.RemoteWindows.SelectYesno.ClickYes();
+			await Coroutine.Sleep(3000);
+      ]]>
+	</CodeChunk>
+	<CodeChunk Name="SwiftmakeCheckgate1">
+		<![CDATA[
+			ff14bot.Managers.GameObjectManager.GetObjectByNPCId(2002184).Interact();
+			await Coroutine.Sleep(1000);
+			ff14bot.RemoteWindows.SelectYesno.ClickYes();
+			await Coroutine.Sleep(3000);
+      ]]>
+	</CodeChunk>
+	<CodeChunk Name="SwiftmakeCheckgate2">
+		<![CDATA[
+			ff14bot.Managers.GameObjectManager.GetObjectByNPCId(2002884).Interact();
+			await Coroutine.Sleep(1000);
+			ff14bot.RemoteWindows.SelectYesno.ClickYes();
+			await Coroutine.Sleep(3000);
+      ]]>
+	</CodeChunk>
+	<CodeChunk Name="ExitDuty">
+		<![CDATA[
+			ff14bot.Managers.GameObjectManager.GetObjectByNPCId(2000139).Interact();
+			await Coroutine.Sleep(1000);
+			ff14bot.RemoteWindows.SelectYesno.ClickYes();
+			await Coroutine.Sleep(3000);
+      ]]>
+	</CodeChunk>	
+	<CodeChunk Name="ChangeZone">
+		<![CDATA[
+			MovementManager.SetFacing(3.190046f);
+			MovementManager.MoveForwardStart();
+			while (!CommonBehaviors.IsLoading) { await Coroutine.Yield(); }
+			MovementManager.MoveStop();
+		]]>
+	</CodeChunk>	
+	<CodeChunk name="OpenChest">
+		<![CDATA[    
+		if (GameObjectManager.GetObjectsOfType<Treasure>().Where(r => r.Distance() < 50 && (r.Name == "Treasure Coffer" || r.Name == "treasure coffer")).Any())
+		{
+			var _chest = GameObjectManager.GetObjectsOfType<Treasure>().Where(r => r.Distance() < 50 && (r.Name == "宝箱" || r.Name == "Treasure Coffer" || r.Name == "treasure coffer")).FirstOrDefault();
+			while (Core.Me.Distance(_chest.Location) > 1)
+			{
+			await CommonTasks.MoveTo(_chest.Location);
+			await Coroutine.Yield();
+			}
+			
+			Navigator.PlayerMover.MoveStop();
+			await Coroutine.Sleep(1000);
+			Poi.Current = new Poi(_chest, PoiType.Kill);
+			Poi.Current.Unit.Interact();                    
+			await Coroutine.Sleep(1000);        
+		}
+		]]>
+	</CodeChunk>
+	  <CodeChunk Name="EnableSideStep">
+      <![CDATA[
+        foreach (var plugin in PluginManager.Plugins.Where(p => p.Plugin.Name == "SideStep"))
+        {
+          try
+          {
+            if (plugin.Enabled)  {  break;  }  else  {  plugin.Enabled = true;  }
+          }
+          catch (Exception ex) {  }
+        }
+      ]]>
+    </CodeChunk>
+	<CodeChunk Name="DisableSideStep">
+		<![CDATA[
+			foreach (var plugin in PluginManager.Plugins.Where(p => p.Plugin.Name == "SideStep"))
+			{
+			try
+			{
+				if (!plugin.Enabled)  {  break;  }  else  {  plugin.Enabled = false;  }
+			}
+			catch (Exception ex) {  }
+			}
+		]]>
+	</CodeChunk> 
+	<CodeChunk Name="QueueBrayFlox">
+		<![CDATA[ 
+           Logging.WriteDiagnostic("Queuing for Dungeon");
+		GameSettingsManager.JoinWithUndersizedParty = true;
+           DutyManager.Queue(DataManager.InstanceContentResults[20]);
+           await Coroutine.Wait(5000, () => (DutyManager.QueueState == QueueState.InQueue || DutyManager.QueueState == QueueState.JoiningInstance));
+
+           Logging.WriteDiagnostic("Queued for Dungeon");
+
+           await Coroutine.Wait(10000, () => (DutyManager.QueueState == QueueState.JoiningInstance));
+			
+           await Coroutine.Wait(10000, () => (RaptureAtkUnitManager.GetWindowByName("ContentsFinderConfirm") != null));
+
+           Logging.WriteDiagnostic("Commencing");
+           DutyManager.Commence();
+           Logging.WriteDiagnostic("Waiting for Loading");
+           await Coroutine.Wait(10000, () => CommonBehaviors.IsLoading || QuestLogManager.InCutscene);
+			
+           if (CommonBehaviors.IsLoading)
+           {
+               await Coroutine.Wait(-1, () => !CommonBehaviors.IsLoading);
+           }
+
+           if (QuestLogManager.InCutscene)
+           {
+               TreeRoot.StatusText = "InCutscene";
+               if (ff14bot.RemoteAgents.AgentCutScene.Instance != null)
+               {
+                   ff14bot.RemoteAgents.AgentCutScene.Instance.PromptSkip();
+                   await Coroutine.Wait(250, () => SelectString.IsOpen);
+                   if (SelectString.IsOpen)
+                       SelectString.ClickSlot(0);
+               }
+           }
+
+           Logging.WriteDiagnostic("Should be in duty");
+		   
+           var director = ((ff14bot.Directors.InstanceContentDirector) DirectorManager.ActiveDirector);
+           if (director !=null)
+		   {
+               if (director.TimeLeftInDungeon >= new TimeSpan(1,30,0))
+               {
+				   Logging.WriteDiagnostic("Barrier up");
+                   await Coroutine.Wait(30000, () => director.TimeLeftInDungeon < new TimeSpan(1,29,58));
+               }
+		   }
+		   else
+		   {
+			Logging.WriteDiagnostic("Director is null");
+		   }
+			   
+	      Logging.WriteDiagnostic("Should be ready");
+		]]>
+	</CodeChunk>	
+  </CodeChunks>
+</Profile>
