@@ -1,0 +1,23 @@
+<Profile>
+  <Name>Book of Skyfall II - U'Ghamaro Bedesman</Name>
+  <KillRadius>500</KillRadius>
+  <GrindAreas>
+    <GrindArea name="U'Ghamaro Bedesman">
+      <Hotspots>
+		<Hotspot Radius="500" XYZ="96.16432, 21.55911, -635.2751" name="U'Ghamaro Bedesman" />
+      </Hotspots>
+      <TargetMobs>
+        <TargetMob id="1834"  />
+      </TargetMobs>
+      <MinLevel>1</MinLevel>
+      <MaxLevel>60</MaxLevel>
+    </GrindArea>
+  </GrindAreas>
+  <Order>
+	<If Condition="not IsOnMap(180)">
+		<TeleportTo Name="Camp Overlook" AetheryteId="16" />
+	</If>
+	<NoCombatMoveTo Name="U'Ghamaro Bedesman" XYZ="96.16432, 21.55911, -635.2751"/>
+    <Grind grindRef="U'Ghamaro Bedesman" while="True" />
+  </Order>
+</Profile>

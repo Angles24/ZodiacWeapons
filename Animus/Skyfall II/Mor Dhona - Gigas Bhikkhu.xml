@@ -1,0 +1,23 @@
+<Profile>
+  <Name>Book of Skyfall II - Gigas Bhikkhu</Name>
+  <KillRadius>500</KillRadius>
+  <GrindAreas>
+    <GrindArea name="Gigas Bhikkhu">
+      <Hotspots>
+        <Hotspot Radius="500" XYZ="595.5713, -3.328342, -284.3858" name="Gigas Bhikkhu" />
+      </Hotspots>
+      <TargetMobs>
+        <TargetMob id="649"  />
+      </TargetMobs>
+      <MinLevel>1</MinLevel>
+      <MaxLevel>60</MaxLevel>
+    </GrindArea>
+  </GrindAreas>
+  <Order>
+	<If Condition="not IsOnMap(154)">
+		<TeleportTo Name="Revenant's Toll" AetheryteId="24" />
+	</If>
+	<NoCombatMoveTo Name="Gigas Bhikkhu" XYZ="595.5713, -3.328342, -284.3858"/>
+    <Grind grindRef="Gigas Bhikkhu" while="True" />
+  </Order>
+</Profile>

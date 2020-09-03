@@ -1,0 +1,23 @@
+<Profile>
+  <Name>Book of Skyfall II - Sapsa Shelfscales</Name>
+  <KillRadius>500</KillRadius>
+  <GrindAreas>
+    <GrindArea name="Sapsa Shelfscales">
+      <Hotspots>
+        <Hotspot Radius="500" XYZ="-357.3316, -39.56125, -358.9421" name="Sapsa Shelfscales" />
+      </Hotspots>
+      <TargetMobs>
+        <TargetMob id="1827"  />
+      </TargetMobs>
+      <MinLevel>1</MinLevel>
+      <MaxLevel>60</MaxLevel>
+    </GrindArea>
+  </GrindAreas>
+  <Order>
+	<If Condition="not IsOnMap(138)">
+		<TeleportTo Name="Aleport" AetheryteId="14" />
+	</If>
+	<NoCombatMoveTo Name="Sapsa Shelfscales" XYZ="-357.3316, -39.56125, -358.9421"/>
+    <Grind grindRef="Sapsa Shelfscales" while="True" />
+  </Order>
+</Profile>

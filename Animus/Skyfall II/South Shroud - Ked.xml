@@ -1,0 +1,23 @@
+<Profile>
+  <Name>Book of Skyfall II - Ked</Name>
+  <KillRadius>500</KillRadius>
+  <GrindAreas>
+    <GrindArea name="Ked">
+      <Hotspots>
+        <Hotspot Radius="500" XYZ="522.0194, 14.01853, 134.4024" name="Ked" />
+      </Hotspots>
+      <TargetMobs>
+        <TargetMob id="8"  />
+      </TargetMobs>
+      <MinLevel>1</MinLevel>
+      <MaxLevel>60</MaxLevel>
+    </GrindArea>
+  </GrindAreas>
+  <Order>
+	<If Condition="not IsOnMap(153)">
+		<TeleportTo Name="Quarrymill" AetheryteId="5" />
+	</If>
+	<NoCombatMoveTo Name="Ked" XYZ="522.0194, 14.01853, 134.4024"/>
+    <Grind grindRef="Ked" while="True" />
+  </Order>
+</Profile>

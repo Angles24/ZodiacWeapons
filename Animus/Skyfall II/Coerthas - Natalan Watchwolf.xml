@@ -1,0 +1,23 @@
+<Profile>
+  <Name>Book of Skyfall II - Natalan Watchwolf</Name>
+  <KillRadius>500</KillRadius>
+  <GrindAreas>
+    <GrindArea name="Natalan Watchwolf">
+      <Hotspots>
+        <Hotspot Radius="500" XYZ="560.7442, 291.2391, 99.89327" name="Natalan Watchwolf" />
+      </Hotspots>
+      <TargetMobs>
+        <TargetMob id="1846"  />
+      </TargetMobs>
+      <MinLevel>1</MinLevel>
+      <MaxLevel>60</MaxLevel>
+    </GrindArea>
+  </GrindAreas>
+  <Order>
+	<If Condition="not IsOnMap(155)">
+		<TeleportTo Name="Camp Dragonhead" AetheryteId="23" />
+	</If>
+	<NoCombatMoveTo Name="Natalan Watchwolf" XYZ="560.7442, 291.2391, 99.89327"/>
+    <Grind grindRef="Natalan Watchwolf" while="True" />
+  </Order>
+</Profile>
