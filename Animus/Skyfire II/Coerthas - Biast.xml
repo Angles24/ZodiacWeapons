@@ -1,0 +1,24 @@
+<Profile>
+   <Name>Book of Skyfire II - Biast</Name>
+   <KillRadius>500</KillRadius>    
+   <GrindAreas>
+   <GrindArea name="biast">
+        <Hotspots>
+			<Hotspot Radius="500" XYZ="-384.1367, 239.2375, 370.6691" name="biast" />
+			<!-- <Hotspot Radius="115" X="-151.2353" Y="218.5926" Z="430.8557" name="biast" />	-->
+		</Hotspots>
+			<TargetMobs>
+				<TargetMob id="788"  /> 
+			</TargetMobs>
+			<MinLevel>1</MinLevel>
+			<MaxLevel>60</MaxLevel>
+		</GrindArea>
+	</GrindAreas>
+	<Order>
+	<If Condition="not IsOnMap(155)">
+		<TeleportTo Name="Camp Dragonhead" AetheryteId="23" />
+	</If>
+	<NoCombatMoveTo Name="biast" XYZ="-384.1367, 239.2375, 370.6691"/>
+      <Grind grindRef="biast" while="True" />
+	</Order>
+	</Profile>

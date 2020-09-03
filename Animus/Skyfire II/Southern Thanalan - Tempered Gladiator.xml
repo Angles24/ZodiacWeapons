@@ -1,0 +1,24 @@
+<Profile>
+   <Name>Book of Skyfire II - Tempered Gladiator</Name>
+   <KillRadius>500</KillRadius>    
+   <GrindAreas>
+   <GrindArea name="tempered_gladiator">
+        <Hotspots>
+			<Hotspot Radius="500" XYZ="-4.847409, 8.448655, -94.75109" name="tempered_gladiator" />
+			<!-- <Hotspot Radius="115" X="41.28931" Y="23.51147" Z="-141.3734" name="tempered_gladiator" /> -->
+		</Hotspots>
+			<TargetMobs>
+				<TargetMob id="337"  /> 
+			</TargetMobs>
+			<MinLevel>1</MinLevel>
+			<MaxLevel>60</MaxLevel>
+		</GrindArea>
+	</GrindAreas>
+	<Order>
+	<If Condition="not IsOnMap(146)">
+		<TeleportTo Name="Little Ala Mhigo" AetheryteId="19" />
+	</If>
+	<NoCombatMoveTo Name="tempered_gladiator" XYZ="-4.847409, 8.448655, -94.75109"/>
+      <Grind grindRef="tempered_gladiator" while="True" />
+	</Order>
+	</Profile>

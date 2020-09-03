@@ -1,0 +1,25 @@
+<Profile>
+   <Name>Book of Skyfire II - Zahar'ak Archer</Name>
+   <KillRadius>500</KillRadius>    
+   <GrindAreas>
+   <GrindArea name="zaharak_archer">
+        <Hotspots>
+			<!-- <Hotspot Radius="115" X="270.5645" Y="8" Z="-24.61582" name="zaharak_archer" />
+			<Hotspot Radius="115" X="437.7634" Y="18.18146" Z="-82.14142" name="zaharak_archer" /> -->
+			<Hotspot Radius="500" XYZ="490.2088, 7.620057, -153.4102" name="zaharak_archer" />
+		</Hotspots>
+			<TargetMobs>
+				<TargetMob id="1838"  /> 
+			</TargetMobs>
+			<MinLevel>1</MinLevel>
+			<MaxLevel>60</MaxLevel>
+		</GrindArea>
+	</GrindAreas>
+	<Order>
+	<If Condition="not IsOnMap(146)">
+		<TeleportTo Name="Little Ala Mhigo" AetheryteId="19" />
+	</If>
+	<NoCombatMoveTo Name="zaharak_archer" XYZ="490.2088, 7.620057, -153.4102"/>
+      <Grind grindRef="zaharak_archer" while="True" />
+	</Order>
+	</Profile>

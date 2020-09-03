@@ -1,0 +1,24 @@
+<Profile>
+   <Name>Book of Skyfire II - Sylpheed Sigh</Name>
+   <KillRadius>500</KillRadius>    
+   <GrindAreas>
+   <GrindArea name="sylpheed_sigh">
+        <Hotspots>
+			<Hotspot Radius="500" XYZ="359.1274, -20.93504, -169.1136" name="sylpheed_sigh" />
+			<!-- <Hotspot Radius="115" X="359.2983" Y="-16.99334" Z="-249.9681" name="sylpheed_sigh" /> -->
+		</Hotspots>
+			<TargetMobs>
+				<TargetMob id="68"  /> 
+			</TargetMobs>
+			<MinLevel>1</MinLevel>
+			<MaxLevel>60</MaxLevel>
+		</GrindArea>
+	</GrindAreas>
+	<Order>
+	<If Condition="not IsOnMap(152)">
+		<TeleportTo Name="Hawthorne Hut" AetheryteId="4" />
+	</If>
+	<NoCombatMoveTo Name="sylpheed_sigh" XYZ="359.1274, -20.93504, -169.1136"/>
+      <Grind grindRef="sylpheed_sigh" while="True" />
+	</Order>
+	</Profile>

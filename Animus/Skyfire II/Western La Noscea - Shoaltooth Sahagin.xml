@@ -1,0 +1,24 @@
+<Profile>
+   <Name>Book of Skyfire II - Shoaltooth Sahagin</Name>
+   <KillRadius>500</KillRadius>    
+   <GrindAreas>
+   <GrindArea name="shoaltooth_sahagin">
+        <Hotspots>
+			<Hotspot Radius="500" XYZ="-144.6619, -41.10277, -241.5883" name="shoaltooth_sahagin" />
+			<!-- <Hotspot Radius="115" X="-156.4114" Y="-41.30107" Z="-288.9504" name="shoaltooth_sahagin" /> -->
+		</Hotspots>
+			<TargetMobs>
+				<TargetMob id="2526"  /> 
+			</TargetMobs>
+			<MinLevel>1</MinLevel>
+			<MaxLevel>60</MaxLevel>
+		</GrindArea>
+	</GrindAreas>
+	<Order>
+	<If Condition="not IsOnMap(138)">
+		<TeleportTo Name="Aleport" AetheryteId="14" />
+	</If>
+	<NoCombatMoveTo Name="shoaltooth_sahagin" XYZ="-144.6619, -41.10277, -241.5883"/>
+      <Grind grindRef="shoaltooth_sahagin" while="True" />
+	</Order>
+	</Profile>

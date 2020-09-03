@@ -1,0 +1,24 @@
+<Profile>
+   <Name>Book of Skyfire II - Raging Harrier</Name>
+   <KillRadius>500</KillRadius>    
+   <GrindAreas>
+   <GrindArea name="raging_harrier">
+        <Hotspots>
+			<Hotspot Radius="500" XYZ="-225.0232, -3.818664, -299.8137" name="raging_harrier" />
+			<!-- <Hotspot Radius="115" X="-227.6002" Y="19.57638" Z="-218.34" name="raging_harrier" /> -->
+		</Hotspots>
+			<TargetMobs>
+				<TargetMob id="651"  /> 
+			</TargetMobs>
+			<MinLevel>1</MinLevel>
+			<MaxLevel>60</MaxLevel>
+		</GrindArea>
+	</GrindAreas>
+	<Order>
+	<If Condition="not IsOnMap(154)">
+		<TeleportTo Name="Revenant's Toll" AetheryteId="24" />
+	</If>
+	<NoCombatMoveTo Name="raging_harrier" XYZ="-225.0232, -3.818664, -299.8137"/>
+      <Grind grindRef="raging_harrier" while="True" />
+	</Order>
+	</Profile>
