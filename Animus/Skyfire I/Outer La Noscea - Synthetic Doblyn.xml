@@ -1,0 +1,25 @@
+<Profile>
+   <Name>Book of Skyfire I - Synthetic Doblyn</Name>
+   <KillRadius>500</KillRadius>    
+   <GrindAreas>
+   <GrindArea name="synthetic_doblyn">
+        <Hotspots>
+			<Hotspot Radius="500" XYZ="168.7409, 21.90005, -696.0637" name="synthetic_doblyn" />
+			<!-- <Hotspot Radius="115" X="81.57018" Y="23.75556" Z="-713.5632" name="synthetic_doblyn" /> -->
+		</Hotspots>
+			<TargetMobs>
+				<TargetMob id="1836"  /> 
+			</TargetMobs>
+			<MinLevel>1</MinLevel>
+			<MaxLevel>60</MaxLevel>
+		</GrindArea>
+	</GrindAreas>
+	<Order>
+	<If Condition="not IsOnMap(180)">
+		<TeleportTo Name="Camp Overlook" AetheryteId="16" />
+	</If>
+	<NoCombatMoveTo Name="synthetic_doblyn" XYZ="168.7409, 21.90005, -696.0637"/>
+      <Grind grindRef="synthetic_doblyn" while="not ZodiacManager.CurrentBook.KillTask5Completed" />
+	  <LLoadProfile Path="../../Start.xml"/>
+	</Order>
+	</Profile>

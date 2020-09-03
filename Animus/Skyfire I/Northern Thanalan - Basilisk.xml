@@ -1,0 +1,26 @@
+<Profile>
+   <Name>Book of Skyfire I - Basilisk</Name>
+   <KillRadius>500</KillRadius>    
+   <GrindAreas>
+   <GrindArea name="basilisk">
+        <Hotspots>
+			<Hotspot Radius="500" XYZ="-25.75546, 12.3262, 252.0661" name="basilisk" />
+			<!-- <Hotspot Radius="115" X="60.3367" Y="17.22527" Z="263.8341" name="basilisk" />
+			<Hotspot Radius="115" X="85.46769" Y="29.14018" Z="61.30939" name="basilisk" /> -->
+		</Hotspots>
+			<TargetMobs>
+				<TargetMob id="304"  /> 
+			</TargetMobs>
+			<MinLevel>1</MinLevel>
+			<MaxLevel>60</MaxLevel>
+		</GrindArea>
+	</GrindAreas>
+	<Order>
+	<If Condition="not IsOnMap(147)">
+		<TeleportTo Name="Ceruleum Processing Plant" AetheryteId="22" />
+	</If>
+	<NoCombatMoveTo Name="basilisk" XYZ="-25.75546, 12.3262, 252.0661"/>
+      <Grind grindRef="basilisk" while="not ZodiacManager.CurrentBook.KillTask9Completed" />
+	  <LLoadProfile Path="../../Start.xml"/>
+	</Order>
+	</Profile>

@@ -1,0 +1,25 @@
+<Profile>
+   <Name>Book of Skyfire I - Shoalspine Sahagin</Name>
+   <KillRadius>500</KillRadius>    
+   <GrindAreas>
+   <GrindArea name="shoalspine_sahagin">
+        <Hotspots>
+			<Hotspot Radius="500" XYZ="-205.0121, -41.99041, -242.3697" name="shoalspine_sahagin" />
+			<!-- <Hotspot Radius="115" X="-234.3652" Y="-42.2166" Z="-306.2056" name="shoalspine_sahagin" /> -->
+		</Hotspots>
+			<TargetMobs>
+				<TargetMob id="2523"  /> 
+			</TargetMobs>
+			<MinLevel>1</MinLevel>
+			<MaxLevel>60</MaxLevel>
+		</GrindArea>
+	</GrindAreas>
+	<Order>
+	<If Condition="not IsOnMap(138)">
+		<TeleportTo Name="Aleport" AetheryteId="14" />
+	</If>
+	<NoCombatMoveTo Name="shoalspine_sahagin" XYZ="-205.0121, -41.99041, -242.3697"/>
+      <Grind grindRef="shoalspine_sahagin" while="not ZodiacManager.CurrentBook.KillTask3Completed" />
+	  <LLoadProfile Path="../../Start.xml"/>
+	</Order>
+	</Profile>

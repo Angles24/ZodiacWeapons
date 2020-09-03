@@ -1,0 +1,24 @@
+<Profile>
+   <Name>Book of Skyfire I - Giant Logger</Name>
+   <KillRadius>500</KillRadius>    
+   <GrindAreas>
+   <GrindArea name="giant_logger">
+        <Hotspots>
+			<Hotspot Radius="500" XYZ="-472.8304,275.3853, 236.0151" name="giant_logger" />
+		</Hotspots>
+			<TargetMobs>
+				<TargetMob id="785"  /> 
+			</TargetMobs>
+			<MinLevel>1</MinLevel>
+			<MaxLevel>60</MaxLevel>
+		</GrindArea>
+	</GrindAreas>
+	<Order>
+	<If Condition="not IsOnMap(155)">
+		<TeleportTo Name="Camp Dragonhead" AetheryteId="23" />
+	</If>
+	<NoCombatMoveTo Name="giant_logger" XYZ="-472.8304,275.3853, 236.0151"/>
+      <Grind grindRef="giant_logger" while="not ZodiacManager.CurrentBook.KillTask2Completed" />
+	  <LLoadProfile Path="../../Start.xml"/>
+	</Order>
+	</Profile>

@@ -1,0 +1,25 @@
+<Profile>
+   <Name>Book of Skyfire I - Milkroot Cluster</Name>
+   <KillRadius>500</KillRadius>    
+   <GrindAreas>
+   <GrindArea name="milkroot_cluster">
+        <Hotspots>
+			<Hotspot Radius="500" XYZ="121.6553, -29.05345, -231.3836" name="milkroot_cluster" />
+		<!--	<Hotspot Radius="115" X="88.84827" Y="-30.01568" Z="-142.0526" name="milkroot_cluster" /> -->
+		</Hotspots>
+			<TargetMobs>
+				<TargetMob id="165"  /> 
+			</TargetMobs>
+			<MinLevel>1</MinLevel>
+			<MaxLevel>60</MaxLevel>
+		</GrindArea>
+	</GrindAreas>
+	<Order>
+	<If Condition="not IsOnMap(152)">
+		<TeleportTo Name="Hawthorne Hut" AetheryteId="4" />
+	</If>
+	<NoCombatMoveTo Name="milkroot_cluster" XYZ="121.6553, -29.05345, -231.3836"/>
+      <Grind grindRef="milkroot_cluster" while="not ZodiacManager.CurrentBook.KillTask8Completed" />
+	  	<LLoadProfile Path="../../Start.xml"/>
+	</Order>
+	</Profile>

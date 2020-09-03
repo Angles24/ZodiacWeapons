@@ -1,0 +1,25 @@
+<Profile>
+   <Name>Book of Skyfire I - Zanr'ak Pugilist</Name>
+   <KillRadius>500</KillRadius>    
+   <GrindAreas>
+   <GrindArea name="zanrak_pugilist">
+        <Hotspots>
+			<Hotspot Radius="500" XYZ="-181.85, 40, 153.8542" name="zanrak_pugilist" />
+			<!-- <Hotspot Radius="115" X="-86.85362" Y="45.77007" Z="217.9079" name="zanrak_pugilist" /> -->
+		</Hotspots>
+			<TargetMobs>
+				<TargetMob id="1880"  /> 
+			</TargetMobs>
+			<MinLevel>1</MinLevel>
+			<MaxLevel>60</MaxLevel>
+		</GrindArea>
+	</GrindAreas>
+	<Order>
+	<If Condition="not IsOnMap(146)">
+		<TeleportTo Name="Little Ala Mhigo" AetheryteId="19" />
+	</If>
+	<NoCombatMoveTo Name="zanrak_pugilist" XYZ="-181.85, 40, 153.8542"/>
+      <Grind grindRef="zanrak_pugilist" while="not ZodiacManager.CurrentBook.KillTask7Completed" />
+	  <LLoadProfile Path="../../Start.xml"/>
+	</Order>
+	</Profile>
