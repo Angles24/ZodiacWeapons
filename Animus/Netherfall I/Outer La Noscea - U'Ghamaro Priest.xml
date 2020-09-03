@@ -1,0 +1,23 @@
+<Profile>
+   <Name>Book of Netherfall I - U'Ghamaro Priest</Name>
+   <KillRadius>500</KillRadius>    
+   <GrindAreas>
+   <GrindArea name="ughamaro_priest">
+        <Hotspots>
+			<Hotspot Radius="500" XYZ="108.2132, 29.0041, -598.1495" name="ughamaro_priest" />
+		</Hotspots>
+			<TargetMobs>
+				<TargetMob id="1835"  /> 
+			</TargetMobs>
+			<MinLevel>1</MinLevel>
+			<MaxLevel>60</MaxLevel>
+		</GrindArea>
+	</GrindAreas>
+	<Order>
+	<If Condition="not IsOnMap(180)">
+		<TeleportTo Name="Camp Overlook" AetheryteId="16" />
+	</If>
+	<NoCombatMoveTo Name="ughamaro_priest" XYZ="108.2132, 29.0041, -598.1495"/>
+      <Grind grindRef="ughamaro_priest" while="True" />
+	</Order>
+	</Profile>

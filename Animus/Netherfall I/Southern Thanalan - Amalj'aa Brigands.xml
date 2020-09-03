@@ -1,0 +1,23 @@
+<Profile>
+  <Name>Book of Netherfall I - Amalj'aa Brigands</Name>
+  <KillRadius>500</KillRadius>
+  <GrindAreas>
+    <GrindArea name="amaljaa_brigands">
+      <Hotspots>
+		<Hotspot Radius="500" XYZ="99.93231, 11.40713, 5.196439" name="amaljaa_brigands" />
+      </Hotspots>
+      <TargetMobs>
+        <TargetMob id="1388"  />
+      </TargetMobs>
+      <MinLevel>1</MinLevel>
+      <MaxLevel>60</MaxLevel>
+    </GrindArea>
+  </GrindAreas>
+  <Order>
+	<If Condition="not IsOnMap(146)">
+		<TeleportTo Name="Little Ala Mhigo" AetheryteId="19" />
+	</If>
+	<NoCombatMoveTo Name="amaljaa_brigands" XYZ="99.93231, 11.40713, 5.196439"/>
+    <Grind grindRef="amaljaa_brigands" while="True"  />
+  </Order>
+</Profile>

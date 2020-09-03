@@ -1,0 +1,23 @@
+<Profile>
+   <Name>Book of Netherfall I - Violet Screech</Name>
+   <KillRadius>500</KillRadius>    
+   <GrindAreas>
+   <GrindArea name="violet_screech">
+        <Hotspots>
+			<Hotspot Radius="500" XYZ="131.0687, -23.35597, -467.1554" name="violet_screech" />
+		</Hotspots>
+			<TargetMobs>
+				<TargetMob id="2319"  /> 
+			</TargetMobs>
+			<MinLevel>1</MinLevel>
+			<MaxLevel>60</MaxLevel>
+		</GrindArea>
+	</GrindAreas>
+	<Order>
+	<If Condition="not IsOnMap(152)">
+		<TeleportTo Name="Hawthorne Hut" AetheryteId="4" />
+	</If>
+	<NoCombatMoveTo Name="violet_screech" XYZ="131.0687, -23.35597, -467.1554"/>
+      <Grind grindRef="violet_screech" while="True" />
+	</Order>
+	</Profile>

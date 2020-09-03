@@ -1,0 +1,23 @@
+<Profile>
+  <Name>Book of Netherfall I - Sapsa Shelfclaws</Name>
+  <KillRadius>500</KillRadius>
+  <GrindAreas>
+    <GrindArea name="sapsa_shelfclaws">
+      <Hotspots>
+		<Hotspot Radius="500" XYZ="-319.884, -39.90997, -308.1144" name="sapsa_shelfclaws" />
+      </Hotspots>
+      <TargetMobs>
+        <TargetMob id="1828"  />
+      </TargetMobs>
+      <MinLevel>1</MinLevel>
+      <MaxLevel>60</MaxLevel>
+    </GrindArea>
+  </GrindAreas>
+  <Order>
+	<If Condition="not IsOnMap(138)">
+		<TeleportTo Name="Aleport" AetheryteId="14" />
+	</If>
+	<NoCombatMoveTo Name="sapsa_shelfclaws" XYZ="-319.884, -39.90997, -308.1144"/>
+    <Grind grindRef="sapsa_shelfclaws" while="True"  />
+  </Order>
+</Profile>
