@@ -1,0 +1,23 @@
+<Profile>
+  <Name>Book of Skyfall I - Mudpuppy</Name>
+  <KillRadius>500</KillRadius>
+  <GrindAreas>
+    <GrindArea name="Mudpuppy">
+      <Hotspots>
+        <Hotspot Radius="500" XYZ="-358.8303, -4.458094, -539.7286" name="Mudpuppy" />
+      </Hotspots>
+      <TargetMobs>
+        <TargetMob id="645"  />
+      </TargetMobs>
+      <MinLevel>1</MinLevel>
+      <MaxLevel>60</MaxLevel>
+    </GrindArea>
+  </GrindAreas>
+  <Order>
+	<If Condition="not IsOnMap(154)">
+		<TeleportTo Name="Revenant's Toll" AetheryteId="24" />
+	</If>
+	<NoCombatMoveTo Name="Mudpuppy" XYZ="-358.8303, -4.458094, -539.7286"/>
+    <Grind grindRef="Mudpuppy" while="True" />
+  </Order>
+</Profile>

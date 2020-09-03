@@ -1,0 +1,23 @@
+<Profile>
+  <Name>Book of Skyfall I - Amalj'aa Lancer</Name>
+  <KillRadius>500</KillRadius>
+  <GrindAreas>
+    <GrindArea name="Amalj'aa Lancer">
+      <Hotspots>
+        <Hotspot Radius="500" XYZ="-113.6381, -2.164978, 15.06436" name="Amalj'aa Lancer" />
+      </Hotspots>
+      <TargetMobs>
+        <TargetMob id="245"  />
+      </TargetMobs>
+      <MinLevel>1</MinLevel>
+      <MaxLevel>60</MaxLevel>
+    </GrindArea>
+  </GrindAreas>
+  <Order>
+	<If Condition="not IsOnMap(146)">
+		<TeleportTo Name="Little Ala Mhigo" AetheryteId="19" />
+	</If>
+	<NoCombatMoveTo Name="Amalj'aa Lancer" XYZ="-113.6381, -2.164978, 15.06436"/>
+    <Grind grindRef="Amalj'aa Lancer" while="True" />
+  </Order>
+</Profile>

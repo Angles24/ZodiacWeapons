@@ -1,0 +1,23 @@
+<Profile>
+  <Name>Book of Skyfall I - Sylphlands Sentinel</Name>
+  <KillRadius>500</KillRadius>
+  <GrindAreas>
+    <GrindArea name="Sylphlands Sentinel">
+      <Hotspots>
+        <Hotspot Radius="500" XYZ="161.6955, -24.71259, -490.9232" name="Sylphlands Sentinel" />
+      </Hotspots>
+      <TargetMobs>
+        <TargetMob id="163"  />
+      </TargetMobs>
+      <MinLevel>1</MinLevel>
+      <MaxLevel>60</MaxLevel>
+    </GrindArea>
+  </GrindAreas>
+  <Order>
+	<If Condition="not IsOnMap(152)">
+		<TeleportTo Name="Hawthorne Hut" AetheryteId="4" />
+	</If>
+	<NoCombatMoveTo Name="Sylphlands Sentinel" XYZ="161.6955, -24.71259, -490.9232"/>
+    <Grind grindRef="Sylphlands Sentinel" while="True" />
+  </Order>
+</Profile>

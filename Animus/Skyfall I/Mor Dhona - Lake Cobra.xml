@@ -1,0 +1,23 @@
+<Profile>
+  <Name>Book of Skyfall I - Lake Cobra</Name>
+  <KillRadius>500</KillRadius>
+  <GrindAreas>
+    <GrindArea name="Lake Cobra">
+      <Hotspots>
+        <Hotspot Radius="500" XYZ="190.7402, -22.32276, -451.2716" name="Lake Cobra" />
+      </Hotspots>
+      <TargetMobs>
+        <TargetMob id="1851"  />
+      </TargetMobs>
+      <MinLevel>1</MinLevel>
+      <MaxLevel>60</MaxLevel>
+    </GrindArea>
+  </GrindAreas>
+  <Order>
+	<If Condition="not IsOnMap(154)">
+		<TeleportTo Name="Revenant's Toll" AetheryteId="24" />
+	</If>
+	<NoCombatMoveTo Name="Lake Cobra" XYZ="190.7402, -22.32276, -451.2716"/>
+    <Grind grindRef="Lake Cobra" while="True" />
+  </Order>
+</Profile>

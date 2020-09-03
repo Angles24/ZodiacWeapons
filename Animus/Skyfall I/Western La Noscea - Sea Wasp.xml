@@ -1,0 +1,23 @@
+<Profile>
+  <Name>Book of Skyfall I - Sea Wasp</Name>
+  <KillRadius>500</KillRadius>
+  <GrindAreas>
+    <GrindArea name="Sea Wasp">
+      <Hotspots>
+        <Hotspot Radius="500" XYZ="-359.0222, -39.91953, -207.6119" name="Sea Wasp" />
+      </Hotspots>
+      <TargetMobs>
+        <TargetMob id="360"  />
+      </TargetMobs>
+      <MinLevel>1</MinLevel>
+      <MaxLevel>60</MaxLevel>
+    </GrindArea>
+  </GrindAreas>
+  <Order>
+	<If Condition="not IsOnMap(138)">
+		<TeleportTo Name="Aleport" AetheryteId="14" />
+	</If>
+	<NoCombatMoveTo Name="Sea Wasp" XYZ="-359.0222, -39.91953, -207.6119"/>
+    <Grind grindRef="Sea Wasp" while="True" />
+  </Order>
+</Profile>
