@@ -1,0 +1,23 @@
+<Profile>
+   <Name>Book of Skyearth I - Natalan Swiftbeak</Name>
+   <KillRadius>500</KillRadius>    
+   <GrindAreas>
+   <GrindArea name="natalan_swiftbeak">
+        <Hotspots>
+			<Hotspot Radius="500" XYZ="495.3212, 303.8207, -207.1652" name="natalan_swiftbeak" />	
+		</Hotspots>
+			<TargetMobs>
+				<TargetMob id="1844"  /> 
+			</TargetMobs>
+			<MinLevel>1</MinLevel>
+			<MaxLevel>60</MaxLevel>
+		</GrindArea>
+	</GrindAreas>
+	<Order>
+	<If Condition="not IsOnMap(155)">
+		<TeleportTo Name="Camp Dragonhead" AetheryteId="23" />
+	</If>
+	<NoCombatMoveTo Name="natalan_swiftbeak" XYZ="495.3212, 303.8207, -207.1652"/>
+      <Grind grindRef="natalan_swiftbeak" while="True" />
+	</Order>
+	</Profile>

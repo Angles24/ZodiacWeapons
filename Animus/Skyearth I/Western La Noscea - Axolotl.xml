@@ -1,0 +1,23 @@
+<Profile>
+   <Name>Book of Skyearth I - Axolotl</Name>
+   <KillRadius>500</KillRadius>    
+   <GrindAreas>
+   <GrindArea name="axolotl">
+        <Hotspots>
+			<Hotspot Radius="500" XYZ="-401.2104, -33.26277, -300.8342" name="axolotl" />
+		</Hotspots>
+			<TargetMobs>
+				<TargetMob id="1831"  /> 
+			</TargetMobs>
+			<MinLevel>1</MinLevel>
+			<MaxLevel>60</MaxLevel>
+		</GrindArea>
+	</GrindAreas>
+	<Order>
+	<If Condition="not IsOnMap(138)">
+		<TeleportTo Name="Aleport" AetheryteId="14" />
+	</If>
+	<NoCombatMoveTo Name="axolotl" XYZ="-401.2104, -33.26277, -300.8342"/>
+      <Grind grindRef="axolotl" while="True" />
+	</Order>
+	</Profile>

@@ -1,0 +1,23 @@
+<Profile>
+   <Name>Book of Skyearth I - Violet Sigh</Name>
+   <KillRadius>500</KillRadius>    
+   <GrindAreas>
+   <GrindArea name="violet_sigh">
+        <Hotspots>
+			<Hotspot Radius="500" XYZ="131.0687, -23.35597, -467.1554" name="violet_sigh" />
+		</Hotspots>
+			<TargetMobs>
+				<TargetMob id="2317"  /> 
+			</TargetMobs>
+			<MinLevel>1</MinLevel>
+			<MaxLevel>60</MaxLevel>
+		</GrindArea>
+	</GrindAreas>
+	<Order>
+	<If Condition="not IsOnMap(152)">
+		<TeleportTo Name="Hawthorne Hut" AetheryteId="4" />
+	</If>
+	<NoCombatMoveTo Name="violet_sigh" XYZ="131.0687, -23.35597, -467.1554"/>
+      <Grind grindRef="violet_sigh" while="True" />
+	</Order>
+	</Profile>

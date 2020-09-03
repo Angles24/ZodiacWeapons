@@ -1,0 +1,23 @@
+<Profile>
+   <Name>Book of Skyearth I - Ixali Boldwing</Name>
+   <KillRadius>500</KillRadius>    
+   <GrindAreas>
+   <GrindArea name="ixali_boldwing">
+        <Hotspots>
+			<Hotspot Radius="500" XYZ="-70.89735, -7.248418, -68.06041" name="ixali_boldwing" />
+		</Hotspots>
+			<TargetMobs>
+				<TargetMob id="103"  /> 
+			</TargetMobs>
+			<MinLevel>1</MinLevel>
+			<MaxLevel>60</MaxLevel>
+		</GrindArea>
+	</GrindAreas>
+	<Order>
+	<If Condition="not IsOnMap(154)">
+		<TeleportTo Name="Fallgourd Float" AetheryteId="7" />
+	</If>
+	<NoCombatMoveTo Name="ixali_boldwing" XYZ="-70.89735, -7.248418, -68.06041"/>
+      <Grind grindRef="ixali_boldwing" while="True" />
+	</Order>
+	</Profile>

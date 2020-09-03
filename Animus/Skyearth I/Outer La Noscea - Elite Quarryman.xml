@@ -1,0 +1,24 @@
+<Profile>
+   <Name>Book of Skyearth I - Elite Quarryman</Name>
+   <KillRadius>500</KillRadius>    
+   <GrindAreas>
+   <GrindArea name="elite_quarryman">
+        <Hotspots>
+			<Hotspot Radius="500" XYZ="176.1813, 23.8851, -661.9181" name="elite_quarryman" />
+		</Hotspots>
+			<TargetMobs>
+				<TargetMob id="2519"  /> 
+			</TargetMobs>
+			<MinLevel>1</MinLevel>
+			<MaxLevel>60</MaxLevel>
+		</GrindArea>
+	</GrindAreas>
+	<Order>
+	<If Condition="not IsOnMap(180)">
+		<TeleportTo Name="Camp Overlook" AetheryteId="16" />
+	</If>
+	<NoCombatMoveTo Name="elite_quarryman" XYZ="176.1813, 23.8851, -661.9181"/>
+      <Grind grindRef="elite_quarryman" while="True" />
+	</Order>
+	</Profile>
+
