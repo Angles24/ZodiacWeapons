@@ -1,0 +1,24 @@
+<Profile>
+   <Name>Book of Skywind II - Natalan Fogcaller</Name>
+   <KillRadius>500</KillRadius>    
+   <GrindAreas>
+   <GrindArea name="natalan_fogcaller">
+        <Hotspots>
+			<Hotspot Radius="500" XYZ="495.3212, 303.8207, -207.1652" name="natalan_fogcaller" />
+				<!-- <Hotspot Radius="115" X="632.0979" Y="302.3161" Z="-82.41225" name="natalan_fogcaller" />	-->
+		</Hotspots>
+			<TargetMobs>
+				<TargetMob id="1845"  /> 
+			</TargetMobs>
+			<MinLevel>1</MinLevel>
+			<MaxLevel>60</MaxLevel>
+		</GrindArea>
+	</GrindAreas>
+	<Order>
+	<If Condition="not IsOnMap(155)">
+		<TeleportTo Name="Camp Dragonhead" AetheryteId="23" />
+	</If>
+	<NoCombatMoveTo Name="natalan_fogcaller" XYZ="495.3212, 303.8207, -207.1652"/>
+      <Grind grindRef="natalan_fogcaller" while="True" />
+	</Order>
+	</Profile>

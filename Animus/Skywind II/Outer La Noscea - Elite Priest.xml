@@ -1,0 +1,24 @@
+<Profile>
+   <Name>Book of Skywind II - Elite Priest</Name>
+   <KillRadius>500</KillRadius>    
+   <GrindAreas>
+   <GrindArea name="elite_priest">
+        <Hotspots>
+			<Hotspot Radius="500" XYZ="168.7409, 21.90005, -696.0637" name="elite_priest" />
+				<!-- <Hotspot Radius="115" X="264.8402" Y="21.5034" Z="-806.0377" name="elite_priest" /> -->
+		</Hotspots>
+			<TargetMobs>
+				<TargetMob id="2520"  /> 
+			</TargetMobs>
+			<MinLevel>1</MinLevel>
+			<MaxLevel>60</MaxLevel>
+		</GrindArea>
+	</GrindAreas>
+	<Order>
+	<If Condition="not IsOnMap(180)">
+		<TeleportTo Name="Camp Overlook" AetheryteId="16" />
+	</If>
+	<NoCombatMoveTo Name="elite_priest" XYZ="168.7409, 21.90005, -696.0637"/>
+      <Grind grindRef="elite_priest" while="True" />
+	</Order>
+	</Profile>

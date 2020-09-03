@@ -1,0 +1,23 @@
+<Profile>
+   <Name>Book of Skywind II - Dreamtoad</Name>
+   <KillRadius>500</KillRadius>    
+   <GrindAreas>
+   <GrindArea name="dreamtoad">
+        <Hotspots>
+			<Hotspot Radius="500" XYZ="290.1808, -13.57023, -162.3801" name="dreamtoad" />
+		</Hotspots>
+			<TargetMobs>
+				<TargetMob id="164"  /> 
+			</TargetMobs>
+			<MinLevel>1</MinLevel>
+			<MaxLevel>60</MaxLevel>
+		</GrindArea>
+	</GrindAreas>
+	<Order>
+	<If Condition="not IsOnMap(152)">
+		<TeleportTo Name="Hawthorne Hut" AetheryteId="4" />
+	</If>
+	<NoCombatMoveTo Name="dreamtoad" XYZ="290.1808, -13.57023, -162.3801"/>
+      <Grind grindRef="dreamtoad" while="True" />
+	</Order>
+	</Profile>
