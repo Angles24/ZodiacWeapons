@@ -1,0 +1,25 @@
+<Profile>
+   <Name>Book of Skywind I - Amalj'aa Thaumaturge</Name>
+   <KillRadius>500</KillRadius>    
+   <GrindAreas>
+   <GrindArea name="amal_thm">
+        <Hotspots>
+				<!-- <Hotspot Radius="115" X="-159.4003" Y="5.807951" Z="-44.76479" name="amal_thm" />
+				<Hotspot Radius="115" X="-60.14468" Y="-1.591216" Z="-62.20316" name="amal_thm" /> -->
+			<Hotspot Radius="500" XYZ="-36.94783, -0.9500495, -153.3837" name="amal_thm" />
+		</Hotspots>
+			<TargetMobs>
+				<TargetMob id="258"  /> 
+			</TargetMobs>
+			<MinLevel>1</MinLevel>
+			<MaxLevel>60</MaxLevel>
+		</GrindArea>
+	</GrindAreas>
+	<Order>
+	<If Condition="not IsOnMap(146)">
+		<TeleportTo Name="Forgotten Springs" AetheryteId="20" />
+	</If>
+	<NoCombatMoveTo Name="amal_thm" XYZ="-36.94783, -0.9500495, -153.3837"/>
+      <Grind grindRef="amal_thm" while="True" />
+	</Order>
+	</Profile>

@@ -1,0 +1,26 @@
+<Profile>
+   <Name>Book of Skywind I - 2nd Cohort Secutors</Name>
+   <KillRadius>500</KillRadius>    
+   <GrindAreas>
+   <GrindArea name="secutor">
+        <Hotspots>
+			<Hotspot Radius="500" Xyz="301.0808, 76.472, -16.33543" name="secutor" />
+				<!-- <Hotspot Radius="115" X="404.1531" Y="76.1041" Z="-5.531689" name="secutor" />
+				<Hotspot Radius="115" X="210.1769" Y="77.73724" Z="-46.26186" name="secutor" /> -->
+		</Hotspots>
+			<TargetMobs>
+				<TargetMob id="1824"  /> 
+			</TargetMobs>
+			<MinLevel>1</MinLevel>
+			<MaxLevel>60</MaxLevel>
+		</GrindArea>
+	</GrindAreas>
+	<Order>
+	<If Condition="not IsOnMap(137)">
+		<TeleportTo Name="Wineport" AetheryteId="12" />
+	</If>
+	<NoCombatMoveTo Name="secutor" XYZ="301.0808, 76.472, -16.33543"/>
+      <Grind grindRef="secutor" while="True" />
+	</Order>
+	</Profile>
+

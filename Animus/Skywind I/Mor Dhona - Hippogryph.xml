@@ -1,0 +1,24 @@
+<Profile>
+   <Name>Book of Skywind I - Hippogryph</Name>
+   <KillRadius>500</KillRadius>    
+   <GrindAreas>
+   <GrindArea name="Hippogryph">
+        <Hotspots>
+			<Hotspot Radius="500" Xyz="295.5058, 21.49305, -704.1329" name="Hippogryph" />
+				<!-- <Hotspot Radius="115" X="574.3297" Y="10.97119" Z="-495.1382" name="Hippogryph" /> -->
+		</Hotspots>
+			<TargetMobs>
+				<TargetMob id="789"  /> 
+			</TargetMobs>
+			<MinLevel>1</MinLevel>
+			<MaxLevel>60</MaxLevel>
+		</GrindArea>
+	</GrindAreas>
+	<Order>
+	<If Condition="not IsOnMap(154)">
+		<TeleportTo Name="Revenant's Toll" AetheryteId="24" />
+	</If>
+	<NoCombatMoveTo Name="Hippogryph" XYZ="295.5058, 21.49305, -704.1329"/>
+      <Grind grindRef="Hippogryph" while="True" />
+	</Order>
+	</Profile>
