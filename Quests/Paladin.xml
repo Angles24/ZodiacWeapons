@@ -1,0 +1,691 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Profile: Paladin Relic Weapon
+  Authors: Zamphire
+  Code Credit: TuckMeIntoBread, Kayla, Sodimm
+-->
+
+<Profile>
+  <Name>Paladin Relic Weapon</Name>
+  <BehaviorDirectory>..\Quest Behaviors</BehaviorDirectory>
+  <CodeChunks>
+  		<CodeChunk Name="UnfinishedCurtana">
+		<![CDATA[ 
+			BagSlot EquipSlot = ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand];
+			
+			foreach(ff14bot.Managers.BagSlot slot in ff14bot.Managers.InventoryManager.FilledInventoryAndArmory)
+			{
+				if(slot.RawItemId == 1665)
+				{
+					slot.Move(EquipSlot);
+				}
+			}
+		]]>
+		</CodeChunk>
+  		<CodeChunk Name="CurtanaZenith">
+		<![CDATA[ 
+			BagSlot EquipSlot = ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand];
+			
+			foreach(ff14bot.Managers.BagSlot slot in ff14bot.Managers.InventoryManager.FilledInventoryAndArmory)
+			{
+				if(slot.RawItemId == 6257)
+				{
+					slot.Move(EquipSlot);
+				}
+			}
+		]]>		
+		</CodeChunk>
+  		<CodeChunk Name="HolyShieldZenith">
+		<![CDATA[ 
+			BagSlot EquipSlot = ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.OffHand];
+			
+			foreach(ff14bot.Managers.BagSlot slot in ff14bot.Managers.InventoryManager.FilledInventoryAndArmory)
+			{
+				if(slot.RawItemId == 6266)
+				{
+					slot.Move(EquipSlot);
+				}
+			}
+		]]>		
+		</CodeChunk>
+  		<CodeChunk Name="CurtanaAtma">
+		<![CDATA[ 
+			BagSlot EquipSlot = ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand];
+			
+			foreach(ff14bot.Managers.BagSlot slot in ff14bot.Managers.InventoryManager.FilledInventoryAndArmory)
+			{
+				if(slot.RawItemId == 7824)
+				{
+					slot.Move(EquipSlot);
+				}
+			}
+		]]>		
+		</CodeChunk>
+  		<CodeChunk Name="HolyShieldAtma">
+		<![CDATA[ 
+			BagSlot EquipSlot = ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.OffHand];
+			
+			foreach(ff14bot.Managers.BagSlot slot in ff14bot.Managers.InventoryManager.FilledInventoryAndArmory)
+			{
+				if(slot.RawItemId == 7833)
+				{
+					slot.Move(EquipSlot);
+				}
+			}
+		]]>		
+		</CodeChunk>		
+		<CodeChunk Name="NoScimitar">
+			  <![CDATA[
+				var _msg = String.Empty;
+				#if RB_CN
+						_msg = "请手动完成下一个任务。";
+				#else
+						_msg = "Please have Aeolian Scimitar melded with Battledance Materia III X2.";
+				#endif
+				Core.OverlayManager.AddToast(() => _msg, TimeSpan.FromMilliseconds(25000), System.Windows.Media.Color.FromRgb(29,213,226), System.Windows.Media.Color.FromRgb(13,106,175), new System.Windows.Media.FontFamily("Gautami"));
+			  ]]>
+		</CodeChunk>
+		<CodeChunk Name="NoCurtanaZenith">
+			  <![CDATA[
+				var _msg = String.Empty;
+				#if RB_CN
+						_msg = "请手动完成下一个任务。";
+				#else
+						_msg = "Please trade Curtana and 3x Thavnairian Mist to the Furnace in North Shrough next to Gerolt for Curtana Zenith.";
+				#endif
+				Core.OverlayManager.AddToast(() => _msg, TimeSpan.FromMilliseconds(25000), System.Windows.Media.Color.FromRgb(29,213,226), System.Windows.Media.Color.FromRgb(13,106,175), new System.Windows.Media.FontFamily("Gautami"));
+			  ]]>
+		</CodeChunk>
+		<CodeChunk Name="NoHolyShieldZenith">
+			  <![CDATA[
+				var _msg = String.Empty;
+				#if RB_CN
+						_msg = "请手动完成下一个任务。";
+				#else
+						_msg = "Please trade Holy Shield and 3x Thavnairian Mist to the Furnace in North Shrough next to Gerolt for Holy Shield Zenith.";
+				#endif
+				Core.OverlayManager.AddToast(() => _msg, TimeSpan.FromMilliseconds(25000), System.Windows.Media.Color.FromRgb(29,213,226), System.Windows.Media.Color.FromRgb(13,106,175), new System.Windows.Media.FontFamily("Gautami"));
+			  ]]>
+		</CodeChunk>
+		<CodeChunk Name="NeedPoetics">
+			  <![CDATA[
+				var _msg = String.Empty;
+				#if RB_CN
+						_msg = "请手动完成下一个任务。";
+				#else
+						_msg = "Please farm 15 poetics to purchase Radz-at-Han Quenching Oil.";
+				#endif
+				Core.OverlayManager.AddToast(() => _msg, TimeSpan.FromMilliseconds(25000), System.Windows.Media.Color.FromRgb(29,213,226), System.Windows.Media.Color.FromRgb(13,106,175), new System.Windows.Media.FontFamily("Gautami"));
+			  ]]>
+		</CodeChunk>
+		<CodeChunk Name="Disable_Flight">
+		<![CDATA[
+			foreach (var plugin in PluginManager.Plugins.Where(p => p.Plugin.Name == "Enable Flight" || p.Plugin.Name == "启用飞行"))
+			{
+			try
+			{
+				if (!plugin.Enabled)  {  break;  }  else  {  plugin.Enabled = false;  }
+			}
+			catch (Exception ex) {  }
+			}
+		]]>
+		</CodeChunk>
+		<CodeChunk Name="ExchangeCurtana">
+            <![CDATA[ 
+				ff14bot.Managers.GameObjectManager.GetObjectByNPCId(2002555).Interact();
+                await Buddy.Coroutines.Coroutine.Sleep(500);
+                RaptureAtkUnitManager.GetWindowByName("ShopExchangeItem").SendAction(2, 0, 0, 1, 0);
+                await Buddy.Coroutines.Coroutine.Sleep(120);
+                RaptureAtkUnitManager.GetWindowByName("ShopExchangeItemDialog").SendAction(1, 0, 0);
+                await Buddy.Coroutines.Coroutine.Sleep(120);
+                foreach(ff14bot.Managers.BagSlot slot in ff14bot.Managers.InventoryManager.FilledSlots)
+                {
+                    if(slot.RawItemId == 1675)
+                    {
+                        slot.Handover();
+                    }
+                    if(slot.RawItemId == 6268)
+                    {
+                        slot.Handover();
+                    }					
+                }
+                await Buddy.Coroutines.Coroutine.Sleep(120);
+                if (ff14bot.RemoteWindows.Request.IsOpen)
+                    ff14bot.RemoteWindows.Request.HandOver();
+            ]]>
+        </CodeChunk>
+		<CodeChunk Name="ExchangeHolyShield">
+            <![CDATA[ 
+				ff14bot.Managers.GameObjectManager.GetObjectByNPCId(2002555).Interact();
+                await Buddy.Coroutines.Coroutine.Sleep(500);
+                RaptureAtkUnitManager.GetWindowByName("ShopExchangeItem").SendAction(2, 0, 0, 1, 1);
+                await Buddy.Coroutines.Coroutine.Sleep(120);
+                RaptureAtkUnitManager.GetWindowByName("ShopExchangeItemDialog").SendAction(1, 0, 0);
+                await Buddy.Coroutines.Coroutine.Sleep(120);
+                foreach(ff14bot.Managers.BagSlot slot in ff14bot.Managers.InventoryManager.FilledSlots)
+                {
+                    if(slot.RawItemId == 2306)
+                    {
+                        slot.Handover();
+                    }
+                    if(slot.RawItemId == 6268)
+                    {
+                        slot.Handover();
+                    }					
+                }
+                await Buddy.Coroutines.Coroutine.Sleep(120);
+                if (ff14bot.RemoteWindows.Request.IsOpen)
+                    ff14bot.RemoteWindows.Request.HandOver();
+            ]]>
+        </CodeChunk>
+        <CodeChunk Name="BuyCurtanaAtma">
+            <![CDATA[ 
+                await Buddy.Coroutines.Coroutine.Sleep(500);
+                ff14bot.Managers.GameObjectManager.GetObjectByNPCId(1008948).Interact();
+                await Buddy.Coroutines.Coroutine.Sleep(1000);
+                if (ff14bot.RemoteWindows.SelectIconString.IsOpen)
+                    ff14bot.RemoteWindows.SelectIconString.ClickSlot(1);
+                if (await Coroutine.Wait(1000, () => Talk.DialogOpen))
+                {
+                    Talk.Next();
+                }
+                await Buddy.Coroutines.Coroutine.Sleep(1000);
+                if (ff14bot.RemoteWindows.SelectString.IsOpen)
+                    ff14bot.RemoteWindows.SelectString.ClickSlot(0);
+                await Buddy.Coroutines.Coroutine.Sleep(1000);
+                 if (ff14bot.RemoteWindows.SelectYesno.IsOpen)
+                    ff14bot.RemoteWindows.SelectYesno.ClickYes();
+                await Buddy.Coroutines.Coroutine.Sleep(1000);
+                if (await Coroutine.Wait(1000, () => Talk.DialogOpen))
+                {
+                    Talk.Next();
+                }
+                if (await Coroutine.Wait(1000, () => Talk.DialogOpen))
+                {
+                    Talk.Next();
+                }
+                if (await Coroutine.Wait(1000, () => Talk.DialogOpen))
+                {
+                    Talk.Next();
+                }
+                if (await Coroutine.Wait(1000, () => Talk.DialogOpen))
+                {
+                    Talk.Next();
+                }
+                if (await Coroutine.Wait(1000, () => Talk.DialogOpen))
+                {
+                    Talk.Next();
+                }				
+            ]]>
+        </CodeChunk>
+        <CodeChunk Name="BuySkyfireI">
+            <![CDATA[ 
+                await Buddy.Coroutines.Coroutine.Sleep(500);
+                ff14bot.Managers.GameObjectManager.GetObjectByNPCId(1006976).Interact();
+                await Buddy.Coroutines.Coroutine.Sleep(1000);
+                if (ff14bot.RemoteWindows.SelectIconString.IsOpen)
+                    ff14bot.RemoteWindows.SelectIconString.ClickSlot(0);
+				await Buddy.Coroutines.Coroutine.Sleep(1000);	
+                if (await Coroutine.Wait(1000, () => Talk.DialogOpen))
+                {
+                    Talk.Next();
+                }
+                await Buddy.Coroutines.Coroutine.Sleep(1000);
+                if (ff14bot.RemoteWindows.SelectString.IsOpen)
+                    ff14bot.RemoteWindows.SelectString.ClickSlot(0);
+				await Buddy.Coroutines.Coroutine.Sleep(1000);
+                if (ff14bot.RemoteWindows.SelectString.IsOpen)
+                    ff14bot.RemoteWindows.SelectString.ClickSlot(0);					
+                await Buddy.Coroutines.Coroutine.Sleep(1000);
+                 if (ff14bot.RemoteWindows.SelectYesno.IsOpen)
+                    ff14bot.RemoteWindows.SelectYesno.ClickYes();
+                await Buddy.Coroutines.Coroutine.Sleep(1000);
+                if (await Coroutine.Wait(1000, () => Talk.DialogOpen))
+                {
+                    Talk.Next();
+                }
+                if (await Coroutine.Wait(1000, () => Talk.DialogOpen))
+                {
+                    Talk.Next();
+                }				
+            ]]>
+        </CodeChunk>		
+  </CodeChunks>
+  <GrindAreas>
+	<GrindArea name="RelicRebornCurtana">
+        <Hotspots>
+			<Hotspot Radius="200" XYZ="86.32533, 10.80192, 7.834653" />
+			<Hotspot Radius="200" XYZ="179.8415, 6.914117, -27.78893" />
+			<Hotspot Radius="200" XYZ="275.8323, 8, -31.03652" />
+			<Hotspot Radius="200" XYZ="406.8845, 12.85353, -100.6003" />
+			<Hotspot Radius="200" XYZ="492.5307, 7.61186, -151.9724" />
+        </Hotspots>
+        <TargetMobs>
+			<TargetMob Name="Zahar'ak Thaumaturge" Id="1840" Weight="1" />
+			<TargetMob Name="Zahar'ak Pugilist" Id="1839" Weight="1" />
+			<TargetMob Name="Zahar'ak Lancer" Id="1837" Weight="1" />			
+        </TargetMobs>
+	</GrindArea>
+  </GrindAreas>
+  <Order>
+    <!-- The Weaponsmith of Legend -->
+    <If Condition="not HasQuest(66241) and not IsQuestCompleted(66241)">
+      <GetTo ZoneId="140" XYZ="-470.4957, 23.03529, -355.3192"/>
+	  <ChangeClass Job="Paladin" />
+      <If Condition="IsQuestAcceptQualified(66241)">
+        <PickupQuest QuestId="66241" NpcId="1005021"/>
+      </If>
+    </If>
+    <If Condition="GetQuestStep(66241) == 1">
+      <GetTo ZoneId="156" XYZ="25.51611, 29, -823.7956"/>
+      <TalkTo NpcId="1001304" XYZ="25.58936, 29, -825.3757" QuestId="66241" StepId="1"/>
+    </If>
+    <If Condition="GetQuestStep(66241) == 255">
+	  <If Condition="not IsOnMap(154)">
+		<TeleportTo Name="Fallgourd Float" AetheryteId="7"/>
+	  </If>
+      <FlyTo XYZ="427.4873, -5.342077, -74.43809" Land="True"/>
+      <TurnIn ItemId="2000987" QuestId="66241" NpcId="1003075" XYZ="440.7262, -0.9374562, -62.21112"/>
+    </If>
+	<If Condition="ClassName == ((ClassJobType.Paladin))">
+		<!-- A Relic Reborn (Curtana) -->
+		<If Condition="not HasQuest(66656) and not IsQuestCompleted(66656)">
+		  <If Condition="not IsOnMap(154)">
+			<TeleportTo Name="Fallgourd Float" AetheryteId="7"/>
+		  </If>
+		  <FlyTo XYZ="427.4873, -5.342077, -74.43809" Land="True"/>
+		  <ChangeClass Job="Paladin" />
+		  <If Condition="IsQuestAcceptQualified(66656)">
+			<PickupQuest QuestId="66656" NpcId="1003075"/>
+		  </If>
+		</If>
+		<If Condition="GetQuestStep(66656) == 1">
+			<If Condition="not IsOnMap(146)">
+				<TeleportTo Name="Forgotten Springs" AetheryteId="20"/>
+			</If>
+		  <FlyTo XYZ="239.0844, 8, -26.92111" Land="True"/>	
+		  <GetTo ZoneId="146" XYZ="484.8254, 7.692947, -149.113"/>
+		  <UseObject NpcIds="2002492" XYZ="483.8483, 9.262146, -162.9817" Radius="25"  QuestId="66656" StepId="1"/>
+		</If>  
+		<If Condition="GetQuestStep(66656) == 2">
+			<If Condition="not IsOnMap(154)">
+				<TeleportTo Name="Fallgourd Float" AetheryteId="7"/>
+			</If>
+			<FlyTo XYZ="427.4873, -5.342077, -74.43809" Land="True"/>
+			<!-- Handove timeworn Curtana -->
+			<HandOver ItemId="2000989" NpcId="1003075" XYZ="440.7262, -0.9374562, -62.21112" QuestId="66656" StepId="2"/>
+		</If>
+		<If Condition="GetQuestStep(66656) == 3 and not HasAtLeast(1670,1)">
+			<RunCode name="NoScimitar"/>	
+		</If>
+		<If Condition="GetQuestStep(66656) == 3 and HasAtLeast(1670,1)">
+		  <If Condition="not IsOnMap(154)">
+			<TeleportTo Name="Fallgourd Float" AetheryteId="7"/>
+		  </If>
+		  <FlyTo XYZ="427.4873, -5.342077, -74.43809" Land="True"/>
+		  <TurnIn QuestId="66656" NpcId="1003075" XYZ="440.7262, -0.9374562, -62.21112"/>	
+		</If>				 
+		<If Condition="GetQuestStep(66656) == 4">
+		<!-- Check if the duty A Relic Reborn: The Chimera is unlocked -->
+			<If condition="not (IsQuestCompleted(66655) or IsQuestCompleted(66656) or IsQuestCompleted(66657) or IsQuestCompleted(66658) or IsQuestCompleted(66659) or IsQuestCompleted(66660) or IsQuestCompleted(66661) or IsQuestCompleted(66662) or IsQuestCompleted(66663))">
+				<GetTo ZoneId="155" XYZ="531.1261, 350.3369, -710.7814"/>
+				<If condition="GameObjectManager.GetObjectByNPCId(2003993).IsTargetable">  
+				  <UseObject NpcIds="2003993" XYZ="532.5856, 350.6066, -710.9941"  Radius="25"  QuestId="66656"/>
+				</If>  
+			</If> 
+		  <LLoadProfile Path="../Dungeons/A Relic Reborn the Chimera.xml"/>
+		</If>
+		<If Condition="GetQuestStep(66656) == 5">
+			<If Condition="not IsOnMap(154)">
+				<TeleportTo Name="Fallgourd Float" AetheryteId="7"/>
+			</If>
+			<FlyTo XYZ="427.4873, -5.342077, -74.43809" Land="True"/>
+			<!-- Handover pinch of alumina salts -->
+			<HandOver ItemId="2000998" NpcId="1003075" XYZ="440.7262, -0.9374562, -62.21112" QuestId="66656" StepId="5"/>
+		</If>
+		<If Condition="GetQuestStep(66656) == 6">
+			<If Condition="not HasAtLeast(6267,1)">
+				<If Condition="HasAtLeast(28,15)">
+					<GetTo ZoneId="156" XYZ="63.40987, 31.12387, -735.2782"/>
+					<!-- Buy Radz-at-Han Quenching Oil -->
+					<BuyShopExchangeCurrency NpcId= "1008119" ItemId="6267" SelectString="2" Count="1"/>
+				</If>	
+				<If Condition="not HasAtLeast(28,15)">
+					<RunCode name="NeedPoetics"/>
+				</If>
+			</If>
+			<If Condition="not HasAtLeast(6268,3)">
+				<If Condition="HasAtLeast(28,60)">
+					<GetTo ZoneId="156" XYZ="63.40987, 31.12387, -735.2782"/>
+					<!-- Buy Thavnairian Mist -->
+					<BuyShopExchangeCurrency NpcId= "1008119" ItemId="6268" SelectString="2" Count="3"/>
+				</If>	
+				<If Condition="not HasAtLeast(28,60)">
+					<RunCode name="NeedPoetics"/>
+				</If>
+			</If>
+			<RunCode name="Disable_Flight"/>	
+		  <GetTo ZoneId="156" XYZ="26.15508, 29, -823.166"/>
+		  <TalkTo NpcId="1001304" XYZ="25.58936, 29, -825.3757" QuestId="66656" StepId="6"/>
+		</If>
+		<If Condition="GetQuestStep(66656) == 7">
+			<If Condition="not ClassName == ClassJobType.Paladin">	
+				<ChangeClass Job="Paladin" />
+			</If>
+			<LLoadProfile Path="../Dungeons/Amdapor Keep.xml"/>
+		</If>
+		<If Condition="GetQuestStep(66656) == 8">
+		  <GetTo ZoneId="156" XYZ="25.67217, 29, -823.6172"/>
+		  <!-- Handover Amdapor glyph -->
+		  <HandOver ItemId="2001007" NpcId="1001304" XYZ="25.58936, 29, -825.3757" QuestId="66656" StepId="8"/>
+		</If>
+		<If Condition="GetQuestStep(66656) == 9">
+			<If Condition="not IsOnMap(154)">
+				<TeleportTo Name="Fallgourd Float" AetheryteId="7"/>
+			</If>	
+			<FlyTo XYZ="427.4873, -5.342077, -74.43809" Land="True"/>
+			<!-- Handover copy of The Song of Tristram -->
+			<HandOver ItemId="2001016" NpcId="1003075" XYZ="440.7262, -0.9374562, -62.21112" QuestId="66656" StepId="9"/>
+		</If>
+		<If Condition="GetQuestStep(66656) == 10">
+			<While Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 1665">
+				<RunCode Name="UnfinishedCurtana" />
+				<WaitTimer WaitTime="3" />
+			</While>
+			<If Condition="not IsOnMap(146)">
+				<TeleportTo Name="Forgotten Springs" AetheryteId="20"/>
+			</If>
+			<FlyTo XYZ="239.0844, 8, -26.92111" Land="True"/>	
+			<Grind grindRef="RelicRebornCurtana" postCombatDelay="1" while="GetQuestStep(66656) == 10"/>
+		</If>
+		<If Condition="GetQuestStep(66656) == 11">
+			<If Condition="not IsOnMap(154)">
+				<TeleportTo Name="Fallgourd Float" AetheryteId="7"/>
+			</If>	
+			<FlyTo XYZ="427.4873, -5.342077, -74.43809" Land="True"/>	
+			<TalkTo NpcId="1003075" XYZ="440.7262, -0.9374562, -62.21112" QuestId="66656" StepId="11"/>	
+		</If>
+		<If Condition="GetQuestStep(66656) == 12">		
+			<!-- If does not have access to A Relic Reborn: the Hydra -->
+			<If condition="not (IsQuestCompleted(66655) or IsQuestCompleted(66656) or IsQuestCompleted(66657) or IsQuestCompleted(66658) or IsQuestCompleted(66659) or IsQuestCompleted(66660) or IsQuestCompleted(66661) or IsQuestCompleted(66662) or IsQuestCompleted(66663))">
+				<If Condition="not IsOnMap(145)">
+					<TeleportTo Name="Camp Drybone" AetheryteId="18"/>
+				</If>
+				<FlyTo XYZ="-334.4535, -22.49262, 429.417" Land="True"/>	
+				<While condition="GameObjectManager.GetObjectByNPCId(2003994).IsTargetable">  
+				  <UseObject NpcIds="2003994" XYZ="-336.8429, -22.38501, 435.5992"  Radius="25"/>
+				</While>  
+			</If> 			
+			<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 1665">
+				<RunCode Name="UnfinishedOmnilex" />
+				<WaitTimer WaitTime="3" />
+			</If>			
+			<LLoadProfile Path="../Dungeons/A Relic Reborn the Hydra.xml"/>
+		</If>
+		<If Condition="GetQuestStep(66656) == 13">
+			<If Condition="not IsOnMap(154)">
+				<TeleportTo Name="Fallgourd Float" AetheryteId="7"/>
+			</If>	
+			<FlyTo XYZ="427.4873, -5.342077, -74.43809" Land="True"/>	
+			<TalkTo NpcId="1003075" XYZ="440.7262, -0.9374562, -62.21112" QuestId="66656" StepId="13"/>
+		</If>
+		<If Condition="GetQuestStep(66656) == 14">
+			<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId == 1665">
+				<ChangeClass Job="Paladin" />
+			</If>
+			<HandOver ItemId="1665" NpcId="1003075" XYZ="440.7262, -0.9374562, -62.21112" QuestId="66656" StepId="14"/>	
+		</If>
+		<If Condition="GetQuestStep(66656) == 15">
+			<If Condition="not ClassName == ClassJobType.Paladin">	
+				<ChangeClass Job="Paladin" />
+			</If>
+			<LLoadProfile Path="../Dungeons/The Bowl of Embers (Hard).xml"/>	
+		</If>
+		<If Condition="GetQuestStep(66656) == 16">
+			<If Condition="not ClassName == ClassJobType.Paladin">	
+				<ChangeClass Job="Paladin" />
+			</If>
+			<LLoadProfile Path="../Dungeons/The Howling Eye (Hard).xml"/>	
+		</If>
+		<If Condition="GetQuestStep(66656) == 17">
+			<If Condition="not ClassName == ClassJobType.Paladin">	
+				<ChangeClass Job="Paladin" />
+			</If>
+			<LLoadProfile Path="../Dungeons/The Navel (Hard).xml"/>
+		</If>
+		<If Condition="GetQuestStep(66656) == 18">
+			<If Condition="not IsOnMap(154)">
+				<TeleportTo Name="Fallgourd Float" AetheryteId="7"/>
+			</If>	
+			<FlyTo XYZ="427.4873, -5.342077, -74.43809" Land="True"/>
+			<!-- Handin white-hot ember, howling gale, and hyperfused ore -->				
+			<HandOver ItemIds="2001025,2001034,2001043" NpcId="1003075" XYZ="440.7262, -0.9374562, -62.21112" QuestId="66656" StepId="18"/>			
+		</If>
+		<If Condition="GetQuestStep(66656) == 255">
+			<If Condition="not HasAtLeast(6267,1)">
+				<If Condition="HasAtLeast(28,15)">
+					<GetTo ZoneId="156" XYZ="63.40987, 31.12387, -735.2782"/>
+					<!-- Buy Radz-at-Han Quenching Oil -->
+					<BuyShopExchangeCurrency NpcId= "1008119" ItemId="6267" SelectString="2" Count="1"/>
+				</If>	
+				<If Condition="not HasAtLeast(28,15)">
+					<RunCode name="NeedPoetics"/>
+				</If>
+			</If>
+			<If Condition="HasAtLeast(6267,1)">
+				<TurnIn ItemId="6267" QuestId="66656" NpcId="1003075" XYZ="440.7262, -0.9374562, -62.21112"/>
+			</If>	
+		</If>
+		
+		<!-- Buy Zenith weapons -->
+		<If Condition="IsQuestCompleted(66656) and not HasAtLeast(6257,1) and HasAtLeast(1675,1) and not HasAtLeast(7824,1)">
+			<If Condition="HasAtLeast(6268,2)">
+				<RunCode name="ExchangeCurtana"/>
+			</If>
+			<If Condition="not HasAtLeast(6268,2)">
+				<If Condition="HasAtLeast(28,60)">
+					<GetTo ZoneId="156" XYZ="63.40987, 31.12387, -735.2782"/>
+					<!-- Buy Thavnairian Mist -->
+					<BuyShopExchangeCurrency NpcId= "1008119" ItemId="6268" SelectString="2" Count="2"/>
+				</If>	
+				<If Condition="not HasAtLeast(28,60)">
+					<RunCode name="NeedPoetics"/>
+				</If>
+			</If>
+		</If>
+		<If Condition="IsQuestCompleted(66656) and not HasAtLeast(6266,1) and not HasAtLeast(7824,1)">
+			<If Condition="HasAtLeast(6268,1)">			
+				<RunCode name="ExchangeHolyShield"/>
+			</If>	
+			<If Condition="not HasAtLeast(6268,1)">
+				<If Condition="HasAtLeast(28,60)">
+					<GetTo ZoneId="156" XYZ="63.40987, 31.12387, -735.2782"/>
+					<!-- Buy Thavnairian Mist -->
+					<BuyShopExchangeCurrency NpcId= "1008119" ItemId="6268" SelectString="2" Count="1"/>
+				</If>	
+				<If Condition="not HasAtLeast(28,60)">
+					<RunCode name="NeedPoetics"/>
+				</If>
+			</If>			
+		</If>		
+		
+		<!-- Up in Arms -->
+		<If Condition="IsQuestCompleted(66656)and not HasQuest(66971) and not IsQuestCompleted(66971)">
+		  <If Condition="not IsOnMap(154)">
+			<TeleportTo Name="Fallgourd Float" AetheryteId="7"/>
+		  </If>
+		  <FlyTo XYZ="427.4873, -5.342077, -74.43809" Land="True"/>
+		  <If Condition="not HasAtLeast(6257,1)">
+			<RunCode name="NoCurtanaZenith"/>
+		  </If>
+		  <If Condition="not HasAtLeast(6266,1)">
+			<RunCode name="NoHolyShieldZenith"/>
+		  </If>		  
+		  <If Condition="HasAtLeast(6257,1)">		  
+			  <If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 6257">
+					<RunCode Name="CurtanaZenith" />
+					<WaitTimer WaitTime="3" />
+			  </If>
+		  </If>
+		  <If Condition="HasAtLeast(6257,1)">		  
+			  <If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.OffHand].RawItemId != 6266">
+					<RunCode Name="HolyShieldZenith" />
+					<WaitTimer WaitTime="3" />
+			  </If>
+		  </If>			  
+		  <If Condition="IsQuestAcceptQualified(66971)">
+			<PickupQuest QuestId="66971" NpcId="1003075"/>
+		  </If>
+		</If>
+		<If Condition="GetQuestStep(66971) == 255">
+		  <GetTo ZoneId="154" XYZ="407.3613, -4.538448, -88.70496"/>
+		  <TurnIn QuestId="66971" NpcId="1008948" XYZ="405.1117, -4.498068, -89.15851"/>
+		</If>
+
+		<!-- Atma farm -->
+		<If Condition="(HasAtLeast(7851,1)) and (HasAtLeast(7852,1)) and (HasAtLeast(7853,1)) and (HasAtLeast(7854,1)) and (HasAtLeast(7855,1)) and (HasAtLeast(7856,1)) and (HasAtLeast(7857,1)) and (HasAtLeast(7858,1)) and (HasAtLeast(7859,1)) and (HasAtLeast(7860,1)) and (HasAtLeast(7861,1)) and (HasAtLeast(7862,1))">
+			<Log Message="We have all the atmas taking us back to Jalzahn!" />
+			<If Condition="not IsOnMap(154)">
+				<TeleportTo Name="Fallgourd Float" AetheryteId="7"/>
+			</If>
+			<FlyTo XYZ="410.7605, -6.053607, -88.41638" Land="True"/>
+			<ChangeClass Job="Paladin" />
+			<GetTo ZoneId="154" XYZ="405.1117,-4.498068,-89.15851"/>
+			<RunCode name="BuyCurtanaAtma"/>
+		</If>		
+		<If Condition="HasAtLeast(6257,1) and not HasAtLeast(7824,1)">		  
+			<LLoadProfile Path="Atma_Farm.xml"/>
+		</If>	
+
+		<!-- Trials of the Braves -->
+		<!-- If has Curtana Atma -->
+		<If Condition="HasAtLeast(7824,1) and not HasQuest(66972) and not IsQuestCompleted(66972)">
+		  <If Condition="not IsOnMap(154)">
+			<TeleportTo Name="Fallgourd Float" AetheryteId="7"/>
+		  </If>
+		  <FlyTo XYZ="410.7605, -6.053607, -88.41638" Land="True"/>		
+		  <GetTo ZoneId="154" XYZ="407.8153, -4.709439, -88.4598"/>
+			<!-- Equip Curtana/Holy Shield Atma so quest is available -->
+			  <If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7824">
+					<RunCode Name="CurtanaAtma" />
+					<WaitTimer WaitTime="3" />
+			  </If>
+			  <If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.OffHand].RawItemId != 7833">
+					<RunCode Name="HolyShieldAtma" />
+					<WaitTimer WaitTime="3" />
+			  </If>			  
+		  <If Condition="IsQuestAcceptQualified(66972)">
+			<PickupQuest QuestId="66972" NpcId="1008948"/>
+		  </If>
+		</If>
+		<If Condition="GetQuestStep(66972) == 1">
+		  <GetTo ZoneId="156" XYZ="25.59451, 29, -822.5854"/>
+		  <TalkTo NpcId="1001304" XYZ="25.58936, 29, -825.3757" QuestId="66972" StepId="1"/>
+		</If>
+		<If Condition="GetQuestStep(66972) == 255">
+		  <GetTo ZoneId="156" XYZ="69.80656, 33.06655, -706.0764"/>
+		  <TurnIn QuestId="66972" NpcId="1006976" XYZ="71.94617, 33.06656, -706.2944"/>
+		</If>	
+
+		<!-- Start Animus Book Farm -->
+		<!-- Skyfire I -->
+			<If Condition="not HasAtLeast(2001298,1) and HasAtLeast(7824,1)">
+				<!-- Purchase Skyfire I -->
+				<If Condition="not IsOnMap(156)">
+					<TeleportTo AetheryteId="24"/> 
+				</If>
+				<GetTo ZoneId="156" XYZ="71.94617,33.06656,-706.2944"/>
+				<RunCode name="BuySkyfireI"/>
+			</If>	
+			<If Condition="HasAtLeast(2001298,1)">
+				<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7824">
+					<RunCode Name="CurtanaAtma" />
+					<WaitTimer WaitTime="3" />
+				</If>
+				<!-- Skyfire I Enemies -->	
+				<If condition="not ZodiacManager.CurrentBook.KillTask1Completed">
+					<Log Message="Moving to Skyfire I - Mor Dhona - Daring Harrier" />
+					<LLoadProfile Path="../Animus/Skyfire I/Mor Dhona - Daring Harrier.xml"/>
+				</If>
+				<If condition="not ZodiacManager.CurrentBook.KillTask4Completed">
+					<Log Message="Moving to Skyfire I - Mor Dhona - 5th Cohort Vanguard" />
+					<LLoadProfile Path="../Animus/Skyfire I/Mor Dhona - 5th Cohort Vanguard.xml"/>
+				</If>			
+				<If condition="not ZodiacManager.CurrentBook.KillTask2Completed">
+					<Log Message="Moving to Skyfire I - Coerthas - Giant Logger" />
+					<LLoadProfile Path="../Animus/Skyfire I/Coerthas - Giant Logger.xml"/>
+				</If>
+				<If condition="not ZodiacManager.CurrentBook.KillTask3Completed">
+					<Log Message="Moving to Skyfire I - Western La Noscea - Shoalspine Sahagin" />
+					<LLoadProfile Path="../Animus/Skyfire I/Western La Noscea - Shoalspine Sahagin.xml"/>
+				</If>
+				<If condition="not ZodiacManager.CurrentBook.KillTask5Completed">
+					<Log Message="Moving to Skyfire I - Outer La Noscea - Synthetic Doblyn" />
+					<LLoadProfile Path="../Animus/Skyfire I/Outer La Noscea - Synthetic Doblyn.xml"/>
+				</If>
+				<If condition="not ZodiacManager.CurrentBook.KillTask6Completed">
+					<Log Message="Moving to Skyfire I - Western Thanlan - 4th Cohort Hoplomachi" />
+					<LLoadProfile Path="../Animus/Skyfire I/Western Thanlan - 4th Cohort Hoplomachi.xml"/>
+				</If>
+				<If condition="not ZodiacManager.CurrentBook.KillTask7Completed">
+					<Log Message="Moving to Skyfire I - Southern Thanalan - Zanr'ak Pugilist" />
+					<LLoadProfile Path="../Animus/Skyfire I/Southern Thanalan - Zanr'ak Pugilist.xml"/>
+				</If>
+				<If condition="not ZodiacManager.CurrentBook.KillTask8Completed">
+					<Log Message="Moving to Skyfire I - East Shroud - Milkroot Cluster" />
+					<LLoadProfile Path="../Animus/Skyfire I/East Shroud - Milkroot Cluster.xml"/>
+				</If>
+				<If condition="not ZodiacManager.CurrentBook.KillTask9Completed">
+					<Log Message="Moving to Skyfire I - Northern Thanalan - Basilisk" />
+					<LLoadProfile Path="../Animus/Skyfire I/Northern Thanalan - Basilisk.xml"/>
+				</If>			
+				<If condition="not ZodiacManager.CurrentBook.KillTask10Completed">
+					<Log Message="Moving to Skyfire I - Eastern La Noscea - 2nd Cohort Hoplomachi" />
+					<LLoadProfile Path="../Animus/Skyfire I/Eastern La Noscea - 2nd Cohort Hoplomachi.xml"/>
+				</If>
+				<!-- Skyfire I Dungeons -->
+				<If condition="not ZodiacManager.CurrentBook.DungeonTask1Completed">
+					<Log Message="Moving to Skyfire I - Tam Tara Deepcroft" />
+					<LLoadProfile Path="../Dungeons/TamTaraDeepcroft.xml"/>
+				</If>
+				<If condition="not ZodiacManager.CurrentBook.DungeonTask2Completed">
+					<Log Message="Moving to Skyfire I - The Stone Vigil" />
+					<LLoadProfile Path="../Dungeons/TheStoneVigil.xml"/>
+				</If>
+				<If condition="not ZodiacManager.CurrentBook.DungeonTask3Completed">
+					<Log Message="Moving to Skyfire I - The Lost City of Amdapor" />
+					<LLoadProfile Path="../Dungeons/TheLostCityOfAmdapor.xml"/>
+				</If>
+				<!-- Skyfire I Fates -->
+				<If condition="not ZodiacManager.CurrentBook.FateTask1Completed">
+					<Log Message="Moving to Skyfire I - Coerthas Central Highlands Giant Seps FATE" />
+					<While Condition="not ZodiacManager.CurrentBook.FateTask1Completed">
+						<If Condition="not IsOnMap(155)">				
+							<GetTo ZoneId="155" XYZ="227.6718, 312, -229.5252" /> <!-- Coerthas Central Highlands -->
+						</If>				
+							<Fate MinLevel="1" FateId="480" MaxLevel="50" Timeout="15"/>
+					</While>					
+				</If>
+				<If condition="not ZodiacManager.CurrentBook.FateTask2Completed">
+					<Log Message="Moving to Skyfire I - Outer La Noscea Make It Rain FATE" />
+				</If>
+				<If condition="not ZodiacManager.CurrentBook.FateTask3Completed">
+					<Log Message="Moving to Skyfire I - East Shroud  The Enmity of my Enemy" />
+				</If>
+				<!-- Skyfire I Guildleves -->
+				<If condition="not ZodiacManager.CurrentBook.GuildleveTask1Completed">
+					<Log Message="Moving to Skyfire I - Nothern Thanalan Camp Bluefrog 'Necrologos: Pale Oblation'" />
+				</If>
+				<If condition="not ZodiacManager.CurrentBook.GuildleveTask2Completed">
+					<Log Message="Moving to Skyfire I - Coerthas Central Whitebrim Front 'An Imp Mobile'" />
+				</If>
+				<If condition="not ZodiacManager.CurrentBook.GuildleveTask2Completed">
+					<Log Message="Moving to Skyfire I - Mor Dhona Saint Coinarch's Find 'The Awry Savages'" />
+				</If>			
+			</If>		
+	
+	
+	
+	</If>
+  </Order>
+</Profile>

@@ -1,0 +1,322 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Profile: Monk Relic Weapon
+  Authors: Zamphire
+  Code Credit: TuckMeIntoBread, Kayla, Sodimm
+-->
+
+<Profile>
+  <Name>Monk Relic Weapon</Name>
+  <BehaviorDirectory>..\Quest Behaviors</BehaviorDirectory>
+  <CodeChunks>
+  		<CodeChunk Name="UnfinishedSphairai">
+		<![CDATA[ 
+			BagSlot EquipSlot = ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand];
+			
+			foreach(ff14bot.Managers.BagSlot slot in ff14bot.Managers.InventoryManager.FilledInventoryAndArmory)
+			{
+				if(slot.RawItemId == 1735)
+				{
+					slot.Move(EquipSlot);
+				}
+			}
+		]]>
+		</CodeChunk>
+  		<CodeChunk Name="SphairaiZenith">
+		<![CDATA[ 
+			BagSlot EquipSlot = ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand];
+			
+			foreach(ff14bot.Managers.BagSlot slot in ff14bot.Managers.InventoryManager.FilledInventoryAndArmory)
+			{
+				if(slot.RawItemId == 6258)
+				{
+					slot.Move(EquipSlot);
+				}
+			}
+		]]>
+		</CodeChunk>		
+		<CodeChunk Name="NoCesti">
+			  <![CDATA[
+				var _msg = String.Empty;
+				#if RB_CN
+						_msg = "请手动完成下一个任务。";
+				#else
+						_msg = "Please have Wildling's Cesti melded with Savage Aim Materia III X2.";
+				#endif
+				Core.OverlayManager.AddToast(() => _msg, TimeSpan.FromMilliseconds(25000), System.Windows.Media.Color.FromRgb(29,213,226), System.Windows.Media.Color.FromRgb(13,106,175), new System.Windows.Media.FontFamily("Gautami"));
+			  ]]>
+		</CodeChunk>
+		<CodeChunk Name="NoSphairaiZenith">
+			  <![CDATA[
+				var _msg = String.Empty;
+				#if RB_CN
+						_msg = "请手动完成下一个任务。";
+				#else
+						_msg = "Please trade Sphairai and 3x Thavnairian Mist to the Furnace in North Shrough next to Gerolt for Sphairai Zenith.";
+				#endif
+				Core.OverlayManager.AddToast(() => _msg, TimeSpan.FromMilliseconds(25000), System.Windows.Media.Color.FromRgb(29,213,226), System.Windows.Media.Color.FromRgb(13,106,175), new System.Windows.Media.FontFamily("Gautami"));
+			  ]]>
+		</CodeChunk>
+		<CodeChunk Name="NeedPoetics">
+			  <![CDATA[
+				var _msg = String.Empty;
+				#if RB_CN
+						_msg = "请手动完成下一个任务。";
+				#else
+						_msg = "Please farm 15 poetics to purchase Radz-at-Han Quenching Oil.";
+				#endif
+				Core.OverlayManager.AddToast(() => _msg, TimeSpan.FromMilliseconds(25000), System.Windows.Media.Color.FromRgb(29,213,226), System.Windows.Media.Color.FromRgb(13,106,175), new System.Windows.Media.FontFamily("Gautami"));
+			  ]]>
+		</CodeChunk>
+		<CodeChunk Name="Disable_Flight">
+		<![CDATA[
+			foreach (var plugin in PluginManager.Plugins.Where(p => p.Plugin.Name == "Enable Flight" || p.Plugin.Name == "启用飞行"))
+			{
+			try
+			{
+				if (!plugin.Enabled)  {  break;  }  else  {  plugin.Enabled = false;  }
+			}
+			catch (Exception ex) {  }
+			}
+		]]>
+		</CodeChunk>		
+  </CodeChunks>
+  <GrindAreas>
+	<GrindArea name="RelicRebornSphairai">
+        <Hotspots>
+			<Hotspot Radius="200" XYZ="21.97161, 2.423156, 6.95867" />
+			<Hotspot Radius="200" XYZ="86.32533, 10.80192, 7.834653" />
+			<Hotspot Radius="200" XYZ="179.8415, 6.914117, -27.78893" />
+			<Hotspot Radius="200" XYZ="275.8323, 8, -31.03652" />
+			<Hotspot Radius="200" XYZ="406.8845, 12.85353, -100.6003" />
+			<Hotspot Radius="200" XYZ="492.5307, 7.61186, -151.9724" />
+        </Hotspots>
+        <TargetMobs>
+			<TargetMob Name="Zahar'ak Archer" Id="1838" Weight="1" />
+			<TargetMob Name="Zahar'ak Pugilist" Id="1839" Weight="1" />
+			<TargetMob Name="Zahar'ak Lancer" Id="1837" Weight="1" />			
+        </TargetMobs>
+	</GrindArea>
+  </GrindAreas>
+  <Order>
+    <!-- The Weaponsmith of Legend -->
+    <If Condition="not HasQuest(66241) and not IsQuestCompleted(66241)">
+      <GetTo ZoneId="140" XYZ="-470.4957, 23.03529, -355.3192"/>
+	  <ChangeClass Job="Monk" />
+      <If Condition="IsQuestAcceptQualified(66241)">
+        <PickupQuest QuestId="66241" NpcId="1005021"/>
+      </If>
+    </If>
+    <If Condition="GetQuestStep(66241) == 1">
+      <GetTo ZoneId="156" XYZ="25.51611, 29, -823.7956"/>
+      <TalkTo NpcId="1001304" XYZ="25.58936, 29, -825.3757" QuestId="66241" StepId="1"/>
+    </If>
+    <If Condition="GetQuestStep(66241) == 255">
+	  <If Condition="not IsOnMap(154)">
+		<TeleportTo Name="Fallgourd Float" AetheryteId="7"/>
+	  </If>
+      <FlyTo XYZ="427.4873, -5.342077, -74.43809" Land="True"/>
+      <TurnIn ItemId="2000987" QuestId="66241" NpcId="1003075" XYZ="440.7262, -0.9374562, -62.21112"/>
+    </If>
+	<If Condition="ClassName == ((ClassJobType.Monk))">
+		<!-- A Relic Reborn (Sphairai) -->
+		<If Condition="not HasQuest(66657) and not IsQuestCompleted(66657)">
+		  <If Condition="not IsOnMap(154)">
+			<TeleportTo Name="Fallgourd Float" AetheryteId="7"/>
+		  </If>
+		  <FlyTo XYZ="427.4873, -5.342077, -74.43809" Land="True"/>
+		  <ChangeClass Job="Monk" />
+		  <If Condition="IsQuestAcceptQualified(66657)">
+			<PickupQuest QuestId="66657" NpcId="1003075"/>
+		  </If>
+		</If>
+		<If Condition="GetQuestStep(66657) == 1">
+			<If Condition="not IsOnMap(146)">
+				<TeleportTo Name="Forgotten Springs" AetheryteId="20"/>
+			</If>
+		  <FlyTo XYZ="545.9636, 7.599625, -162.1209" Land="True"/>
+		  <UseObject NpcIds="2002493" XYZ="553.6736, 7.583679, -172.1676" Radius="25"  QuestId="66657" StepId="1"/>
+		</If>  
+		<If Condition="GetQuestStep(66657) == 2">
+			<If Condition="not IsOnMap(154)">
+				<TeleportTo Name="Fallgourd Float" AetheryteId="7"/>
+			</If>
+			<FlyTo XYZ="427.4873, -5.342077, -74.43809" Land="True"/>
+			<!-- Handover pair of timeworn Sphairai --> 
+			<HandOver ItemId="2000990" NpcId="1003075" XYZ="440.7262, -0.9374562, -62.21112" QuestId="66657" StepId="2"/>
+		</If>
+		<If Condition="GetQuestStep(66657) == 3 and not HasAtLeast(1740,1)">
+			<RunCode name="NoCesti"/>	
+		</If>
+		<If Condition="GetQuestStep(66657) == 3 and HasAtLeast(1740,1)">
+		  <If Condition="not IsOnMap(154)">
+			<TeleportTo Name="Fallgourd Float" AetheryteId="7"/>
+		  </If>
+		  <FlyTo XYZ="427.4873, -5.342077, -74.43809" Land="True"/>
+		  <SoTurnIn ItemId="1740" QuestId="66657" NpcId="1003075" XYZ="440.7262, -0.9374562, -62.21112"/>	
+		</If>				 
+		<If Condition="GetQuestStep(66657) == 4">
+		<!-- Check if the duty A Relic Reborn: The Chimera is unlocked -->
+			<If condition="not (IsQuestCompleted(66655) or IsQuestCompleted(66657) or IsQuestCompleted(66657) or IsQuestCompleted(66658) or IsQuestCompleted(66659) or IsQuestCompleted(66660) or IsQuestCompleted(66661) or IsQuestCompleted(66662) or IsQuestCompleted(66663))">
+				<GetTo ZoneId="155" XYZ="531.1261, 350.3369, -710.7814"/>
+				<If condition="GameObjectManager.GetObjectByNPCId(2003993).IsTargetable">  
+				  <UseObject NpcIds="2003993" XYZ="532.5856, 350.6066, -710.9941"  Radius="25"  QuestId="66657"/>
+				</If>  
+			</If> 
+		  <LLoadProfile Path="../Dungeons/A Relic Reborn the Chimera.xml"/>
+		</If>
+		<If Condition="GetQuestStep(66657) == 5">
+			<If Condition="not IsOnMap(154)">
+				<TeleportTo Name="Fallgourd Float" AetheryteId="7"/>
+			</If>
+			<FlyTo XYZ="427.4873, -5.342077, -74.43809" Land="True"/>
+			<!-- Handover pinch of alumina salts -->
+			<HandOver ItemId="2000999" NpcId="1003075" XYZ="440.7262, -0.9374562, -62.21112" QuestId="66657" StepId="5"/>
+		</If>
+		<If Condition="GetQuestStep(66657) == 6">
+			<If Condition="not HasAtLeast(6267,1)">
+				<If Condition="HasAtLeast(28,15)">
+					<GetTo ZoneId="156" XYZ="63.40987, 31.12387, -735.2782"/>
+					<BuyShopExchangeCurrency NpcId= "1008119" ItemId="6267" SelectString="2" Count="1"/>
+				</If>	
+				<If Condition="not HasAtLeast(28,15)">
+					<RunCode name="NeedPoetics"/>
+				</If>
+			</If>
+			<If Condition="not HasAtLeast(6268,3)">
+				<If Condition="HasAtLeast(28,60)">
+					<GetTo ZoneId="156" XYZ="63.40987, 31.12387, -735.2782"/>
+					<BuyShopExchangeCurrency NpcId= "1008119" ItemId="6268" SelectString="2" Count="3"/>
+				</If>	
+				<If Condition="not HasAtLeast(28,60)">
+					<RunCode name="NeedPoetics"/>
+				</If>
+			</If>
+				<RunCode name="Disable_Flight"/>
+		  <GetTo ZoneId="156" XYZ="26.15508, 29, -823.166"/>
+		  <TalkTo NpcId="1001304" XYZ="25.58936, 29, -825.3757" QuestId="66657" StepId="6"/>
+		</If>
+		<If Condition="GetQuestStep(66657) == 7">
+			<If Condition="not ClassName == ClassJobType.Monk">	
+				<ChangeClass Job="Monk" />
+			</If>
+			<LLoadProfile Path="../Dungeons/Amdapor Keep.xml"/>
+		</If>
+		<If Condition="GetQuestStep(66657) == 8">
+		  <GetTo ZoneId="156" XYZ="25.67217, 29, -823.6172"/>
+		  <!-- Handover Amdapor glyph -->
+		  <HandOver ItemId="2001008" NpcId="1001304" XYZ="25.58936, 29, -825.3757" QuestId="66657" StepId="8"/>
+		</If>
+		<If Condition="GetQuestStep(66657) == 9">
+			<If Condition="not IsOnMap(154)">
+				<TeleportTo Name="Fallgourd Float" AetheryteId="7"/>
+			</If>	
+			<FlyTo XYZ="427.4873, -5.342077, -74.43809" Land="True"/>
+			<!-- Handover copy of Enter the Coeurl -->
+			<HandOver ItemId="2001017" NpcId="1003075" XYZ="440.7262, -0.9374562, -62.21112" QuestId="66657" StepId="9"/>
+		</If>
+		<If Condition="GetQuestStep(66657) == 10">
+			<While Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 1735">
+				<RunCode Name="UnfinishedSphairai" />
+				<WaitTimer WaitTime="3" />
+			</While>
+			<If Condition="not IsOnMap(146)">
+				<TeleportTo Name="Forgotten Springs" AetheryteId="20"/>
+			</If>
+			<FlyTo XYZ="236.5246, 8, -18.19426" Land="True"/>
+			<Grind grindRef="RelicRebornSphairai" postCombatDelay="1" while="GetQuestStep(66657) == 10"/>
+		</If>
+		<If Condition="GetQuestStep(66657) == 11">
+			<If Condition="not IsOnMap(154)">
+				<TeleportTo Name="Fallgourd Float" AetheryteId="7"/>
+			</If>	
+			<FlyTo XYZ="427.4873, -5.342077, -74.43809" Land="True"/>	
+			<TalkTo NpcId="1003075" XYZ="440.7262, -0.9374562, -62.21112" QuestId="66657" StepId="11"/>	
+		</If>
+		<If Condition="GetQuestStep(66657) == 12">		
+			<!-- If does not have access to A Relic Reborn: the Hydra -->
+			<If condition="not (IsQuestCompleted(66655) or IsQuestCompleted(66657) or IsQuestCompleted(66657) or IsQuestCompleted(66658) or IsQuestCompleted(66659) or IsQuestCompleted(66660) or IsQuestCompleted(66661) or IsQuestCompleted(66662) or IsQuestCompleted(66663))">
+				<If Condition="not IsOnMap(145)">
+					<TeleportTo Name="Camp Drybone" AetheryteId="18"/>
+				</If>
+				<FlyTo XYZ="-334.4535, -22.49262, 429.417" Land="True"/>	
+				<While condition="GameObjectManager.GetObjectByNPCId(2003994).IsTargetable">  
+				  <UseObject NpcIds="2003994" XYZ="-336.8429, -22.38501, 435.5992"  Radius="25"/>
+				</While>  
+			</If> 			
+			<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 1735">
+				<RunCode Name="UnfinishedOmnilex" />
+				<WaitTimer WaitTime="3" />
+			</If>			
+			<LLoadProfile Path="../Dungeons/A Relic Reborn the Hydra.xml"/>
+		</If>
+		<If Condition="GetQuestStep(66657) == 13">
+			<If Condition="not IsOnMap(154)">
+				<TeleportTo Name="Fallgourd Float" AetheryteId="7"/>
+			</If>	
+			<FlyTo XYZ="427.4873, -5.342077, -74.43809" Land="True"/>	
+			<TalkTo NpcId="1003075" XYZ="440.7262, -0.9374562, -62.21112" QuestId="66657" StepId="13"/>
+		</If>
+		<If Condition="GetQuestStep(66657) == 14">
+			<ChangeClass Job="Monk" />
+			<HandOver ItemId="1735" NpcId="1003075" XYZ="440.7262, -0.9374562, -62.21112" QuestId="66657" StepId="14"/>	
+		</If>
+		<If Condition="GetQuestStep(66657) == 15">
+			<ChangeClass Job="Monk" />
+			<LLoadProfile Path="../Dungeons/The Bowl of Embers (Hard).xml"/>	
+		</If>
+		<If Condition="GetQuestStep(66657) == 16">
+			<ChangeClass Job="Monk" />
+			<LLoadProfile Path="../Dungeons/The Howling Eye (Hard).xml"/>	
+		</If>
+		<If Condition="GetQuestStep(66657) == 17">
+			<ChangeClass Job="Monk" />
+			<LLoadProfile Path="../Dungeons/The Navel (Hard).xml"/>
+		</If>
+		<If Condition="GetQuestStep(66657) == 18">
+			<If Condition="not IsOnMap(154)">
+				<TeleportTo Name="Fallgourd Float" AetheryteId="7"/>
+			</If>	
+			<FlyTo XYZ="427.4873, -5.342077, -74.43809" Land="True"/>	
+			<HandOver ItemIds="2001025,2001034,2001043" NpcId="1003075" XYZ="440.7262, -0.9374562, -62.21112" QuestId="66657" StepId="18"/>			
+		</If>
+		<If Condition="GetQuestStep(66657) == 255">
+			<If Condition="not HasAtLeast(6267,1)">
+				<If Condition="HasAtLeast(28,15)">
+					<GetTo ZoneId="156" XYZ="63.40987, 31.12387, -735.2782"/>
+					<BuyShopExchangeCurrency NpcId= "1008119" ItemId="6267" SelectString="2" Count="1"/>
+				</If>	
+				<If Condition="not HasAtLeast(28,15)">
+					<RunCode name="NeedPoetics"/>
+				</If>
+			</If>
+			<If Condition="HasAtLeast(6267,1)">
+				<TurnIn ItemId="6267" QuestId="66657" NpcId="1003075" XYZ="440.7262, -0.9374562, -62.21112"/>
+			</If>	
+		</If>
+		<!-- Up in Arms -->
+		<If Condition="IsQuestCompleted(66657)and not HasQuest(66971) and not IsQuestCompleted(66971)">
+		  <If Condition="not IsOnMap(154)">
+			<TeleportTo Name="Fallgourd Float" AetheryteId="7"/>
+		  </If>
+		  <FlyTo XYZ="427.4873, -5.342077, -74.43809" Land="True"/>
+		  <If Condition="not HasAtLeast(6258,1)">
+			<RunCode name="NoSphairaiZenith"/>
+		  </If>
+		  <If Condition="HasAtLeast(6258,1)">		  
+			  <If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 6258">
+					<RunCode Name="SphairaiZenith" />
+					<WaitTimer WaitTime="3" />
+			  </If>
+		  </If>				  
+		  <If Condition="IsQuestAcceptQualified(66971)">
+			<PickupQuest QuestId="66971" NpcId="1003075"/>
+		  </If>
+		</If>
+		<If Condition="GetQuestStep(66971) == 255">
+		  <GetTo ZoneId="154" XYZ="407.3613, -4.538448, -88.70496"/>
+		  <TurnIn QuestId="66971" NpcId="1008948" XYZ="405.1117, -4.498068, -89.15851"/>
+		</If>		
+	</If>
+  </Order>
+</Profile>
