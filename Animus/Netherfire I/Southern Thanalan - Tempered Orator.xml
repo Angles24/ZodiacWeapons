@@ -1,0 +1,23 @@
+<Profile>
+   <Name>Book of Netherfire I - Tempered Orator</Name>
+   <KillRadius>500</KillRadius>    
+   <GrindAreas>
+   <GrindArea name="tempered_orator">
+        <Hotspots>
+			<Hotspot Radius="500" XYZ="41.28931, 23.51147, -141.3734" name="tempered_orator" />
+		</Hotspots>
+			<TargetMobs>
+				<TargetMob id="339"  /> 
+			</TargetMobs>
+			<MinLevel>1</MinLevel>
+			<MaxLevel>60</MaxLevel>
+		</GrindArea>
+	</GrindAreas>
+	<Order>
+	<If Condition="not IsOnMap(146)">
+		<TeleportTo Name="Little Ala Mhigo" AetheryteId="19" />
+	</If>
+	<NoCombatMoveTo Name="tempered_orator" XYZ="41.28931, 23.51147, -141.3734"/>
+      <Grind grindRef="tempered_orator" while="True" />
+	</Order>
+	</Profile>

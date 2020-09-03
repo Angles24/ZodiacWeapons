@@ -1,0 +1,23 @@
+<Profile>
+   <Name>Book of Netherfire I - Shelfclaw Reaver</Name>
+   <KillRadius>500</KillRadius>    
+   <GrindAreas>
+   <GrindArea name="shelfclaw_reaver">
+        <Hotspots>
+			<Hotspot Radius="500" XYZ="-432.4341, -40.78683, -215.5654" name="shelfclaw_reaver" />
+		</Hotspots>
+			<TargetMobs>
+				<TargetMob id="345"  /> 
+			</TargetMobs>
+			<MinLevel>1</MinLevel>
+			<MaxLevel>60</MaxLevel>
+		</GrindArea>
+	</GrindAreas>
+	<Order>
+	<If Condition="not IsOnMap(138)">
+		<TeleportTo Name="Aleport" AetheryteId="14" />
+	</If>
+	<NoCombatMoveTo Name="shelfclaw_reaver" XYZ="-432.4341, -40.78683, -215.5654"/>
+      <Grind grindRef="shelfclaw_reaver" while="True" />
+	</Order>
+	</Profile>

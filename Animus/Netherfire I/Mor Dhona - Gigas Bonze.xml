@@ -1,0 +1,23 @@
+<Profile>
+   <Name>Book of Netherfire I - Gigas Bonze</Name>
+   <KillRadius>500</KillRadius>    
+   <GrindAreas>
+   <GrindArea name="gigas_bonze">
+        <Hotspots>
+			<Hotspot Radius="500" XYZ="395.9183, -17.14769, -350.0159" name="gigas_bonze" />
+		</Hotspots>
+			<TargetMobs>
+				<TargetMob id="646"  /> 
+			</TargetMobs>
+			<MinLevel>1</MinLevel>
+			<MaxLevel>60</MaxLevel>
+		</GrindArea>
+	</GrindAreas>
+	<Order>
+	<If Condition="not IsOnMap(154)">
+		<TeleportTo Name="Revenant's Toll" AetheryteId="24" />
+	</If>
+	<NoCombatMoveTo Name="gigas_bonze" XYZ="395.9183, -17.14769, -350.0159"/>
+      <Grind grindRef="gigas_bonze" while="True" />
+	</Order>
+	</Profile>

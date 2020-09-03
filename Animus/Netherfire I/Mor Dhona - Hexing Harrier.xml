@@ -1,0 +1,23 @@
+<Profile>
+   <Name>Book of Netherfire I - Hexing Harrier</Name>
+   <KillRadius>500</KillRadius>    
+   <GrindAreas>
+   <GrindArea name="hexing_harrier">
+        <Hotspots>
+			<Hotspot Radius="500" XYZ="-227.6002, 19.57638, -218.34" name="hexing_harrier" />
+		</Hotspots>
+			<TargetMobs>
+				<TargetMob id="652"  /> 
+			</TargetMobs>
+			<MinLevel>1</MinLevel>
+			<MaxLevel>60</MaxLevel>
+		</GrindArea>
+	</GrindAreas>
+	<Order>
+	<If Condition="not IsOnMap(154)">
+		<TeleportTo Name="Revenant's Toll" AetheryteId="24" />
+	</If>
+	<NoCombatMoveTo Name="hexing_harrier" XYZ="-227.6002, 19.57638, -218.34"/>
+      <Grind grindRef="hexing_harrier" while="True" />
+	</Order>
+	</Profile>
