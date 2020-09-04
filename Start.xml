@@ -9,13 +9,13 @@
 -->
 <!DOCTYPE Profile [
 <!-- Profile Settings -->
-<!ENTITY pld "0"> 		
+<!ENTITY pld "1"> 		
 <!ENTITY mnk "0"> 		
 <!ENTITY war "0"> 
 <!ENTITY drg "0"> 
 <!ENTITY brd "0"> 		
 <!ENTITY blm "0"> 		
-<!ENTITY smn "1"> 
+<!ENTITY smn "0"> 
 <!ENTITY sch "0"> 
 <!ENTITY whm "0"> 
 <!ENTITY nin "0"> 
