@@ -35,6 +35,19 @@
 			}
 		]]>		
 		</CodeChunk>
+  		<CodeChunk Name="BravuraAtma">
+		<![CDATA[ 
+			BagSlot EquipSlot = ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand];
+			
+			foreach(ff14bot.Managers.BagSlot slot in ff14bot.Managers.InventoryManager.FilledInventoryAndArmory)
+			{
+				if(slot.RawItemId == 7826)
+				{
+					slot.Move(EquipSlot);
+				}
+			}
+		]]>
+		</CodeChunk>		
 		<CodeChunk Name="ExchangeBravura">
             <![CDATA[ 
 				ff14bot.Managers.GameObjectManager.GetObjectByNPCId(2002555).Interact();
@@ -216,7 +229,7 @@
       <TurnIn ItemId="2000987" QuestId="66241" NpcId="1003075" XYZ="440.7262, -0.9374562, -62.21112"/>
     </If>
 	<If Condition="ClassName == ((ClassJobType.Warrior))">
-		<!-- A Relic Reborn (Curtana) -->
+		<!-- A Relic Reborn (Bravura) -->
 		<If Condition="not HasQuest(66655) and not IsQuestCompleted(66655)">
 		  <If Condition="not IsOnMap(154)">
 			<TeleportTo Name="Fallgourd Float" AetheryteId="7"/>
@@ -398,7 +411,7 @@
 			<If Condition="HasAtLeast(6268,3)"> <!-- HasAtLeast 3 Thavnairian Mist -->
 				<RunCode name="ExchangeBravura"/>
 			</If>
-			<If Condition="not HasAtLeast(6268,2)">
+			<If Condition="not HasAtLeast(6268,3)">
 				<If Condition="HasAtLeast(28,60)"> <!-- HasAtLeast 2 Poetics -->
 					<GetTo ZoneId="156" XYZ="63.40987, 31.12387, -735.2782"/>
 					<!-- Buy Thavnairian Mist -->
@@ -437,20 +450,149 @@
 
 
 		<!-- Atma farm -->
-		<If Condition="(HasAtLeast(7851,1)) and (HasAtLeast(7852,1)) and (HasAtLeast(7853,1)) and (HasAtLeast(7854,1)) and (HasAtLeast(7855,1)) and (HasAtLeast(7856,1)) and (HasAtLeast(7857,1)) and (HasAtLeast(7858,1)) and (HasAtLeast(7859,1)) and (HasAtLeast(7860,1)) and (HasAtLeast(7861,1)) and (HasAtLeast(7862,1))">
+		<If Condition="(HasAtLeast(7851,1)) and (HasAtLeast(7852,1)) and (HasAtLeast(7862,1) and (HasAtLeast(6259,1))">
 			<Log Message="We have all the atmas taking us back to Gerolt!" />
 			<If Condition="not IsOnMap(154)">
 				<TeleportTo Name="Fallgourd Float" AetheryteId="7"/>
 			</If>
-			<FlyTo XYZ="427.4873, -5.342077, -74.43809" Land="True"/>
+			<FlyTo XYZ="410.7605, -6.053607, -88.41638" Land="True"/>
+			<ChangeClass Job="Warrior" />
+			<GetTo ZoneId="154" XYZ="405.1117,-4.498068,-89.15851"/>
+			<RunCode name="BuyBravuraAtma"/>
 		</If>		
-		<If Condition="HasAtLeast(6259,1">
+		<If Condition="HasAtLeast(6259,1) and not (HasAtLeast(7826,1)">
 			  <If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 6259">
 					<RunCode Name="BravuraZenith" />
 					<WaitTimer WaitTime="3" />
      		  </If>		
 			<LLoadProfile Path="Atma_Farm.xml"/>
-		</If>			
+		</If>
+
+		<!-- Trials of the Braves -->
+		<!-- If has Bravura Atma -->					  
+		<If Condition="HasAtLeast(7826,1) and not HasQuest(66972) and not IsQuestCompleted(66972)">
+		  <If Condition="not IsOnMap(154)">
+			<TeleportTo Name="Fallgourd Float" AetheryteId="7"/>
+		  </If>
+		  <FlyTo XYZ="410.7605, -6.053607, -88.41638" Land="True"/>		
+		  <GetTo ZoneId="154" XYZ="407.8153, -4.709439, -88.4598"/>
+			<!-- Equip Bravura Atma so quest is available -->
+			  <If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7826">
+					<RunCode Name="BravuraAtma" />
+					<WaitTimer WaitTime="3" />
+			  </If>		  
+		  <If Condition="IsQuestAcceptQualified(66972)">
+			<PickupQuest QuestId="66972" NpcId="1008948"/>
+		  </If>
+		</If>
+		<If Condition="GetQuestStep(66972) == 1">
+		  <GetTo ZoneId="156" XYZ="25.59451, 29, -822.5854"/>
+		  <TalkTo NpcId="1001304" XYZ="25.58936, 29, -825.3757" QuestId="66972" StepId="1"/>
+		</If>
+		<If Condition="GetQuestStep(66972) == 255">
+		  <GetTo ZoneId="156" XYZ="69.80656, 33.06655, -706.0764"/>
+		  <TurnIn QuestId="66972" NpcId="1006976" XYZ="71.94617, 33.06656, -706.2944"/>
+		</If>	
+
+		<!-- Start Animus Book Farm -->
+		<!-- Skyfire I -->
+			<If Condition="not HasAtLeast(2001298,1) and HasAtLeast(7826,1)">
+				<!-- Purchase Skyfire I -->
+				<If Condition="not IsOnMap(156)">
+					<TeleportTo AetheryteId="24"/> 
+				</If>
+				<GetTo ZoneId="156" XYZ="71.94617,33.06656,-706.2944"/>
+				<RunCode name="BuySkyfireI"/>
+			</If>	
+			<If Condition="HasAtLeast(2001298,1)">
+				<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7824">
+					<RunCode Name="CurtanaAtma" />
+					<WaitTimer WaitTime="3" />
+				</If>
+				<!-- Skyfire I Enemies -->	
+				<If condition="not ZodiacManager.CurrentBook.KillTask1Completed">
+					<Log Message="Moving to Skyfire I - Mor Dhona - Daring Harrier" />
+					<LLoadProfile Path="../Animus/Skyfire I/Mor Dhona - Daring Harrier.xml"/>
+				</If>
+				<If condition="not ZodiacManager.CurrentBook.KillTask4Completed">
+					<Log Message="Moving to Skyfire I - Mor Dhona - 5th Cohort Vanguard" />
+					<LLoadProfile Path="../Animus/Skyfire I/Mor Dhona - 5th Cohort Vanguard.xml"/>
+				</If>			
+				<If condition="not ZodiacManager.CurrentBook.KillTask2Completed">
+					<Log Message="Moving to Skyfire I - Coerthas - Giant Logger" />
+					<LLoadProfile Path="../Animus/Skyfire I/Coerthas - Giant Logger.xml"/>
+				</If>
+				<If condition="not ZodiacManager.CurrentBook.KillTask3Completed">
+					<Log Message="Moving to Skyfire I - Western La Noscea - Shoalspine Sahagin" />
+					<LLoadProfile Path="../Animus/Skyfire I/Western La Noscea - Shoalspine Sahagin.xml"/>
+				</If>
+				<If condition="not ZodiacManager.CurrentBook.KillTask5Completed">
+					<Log Message="Moving to Skyfire I - Outer La Noscea - Synthetic Doblyn" />
+					<LLoadProfile Path="../Animus/Skyfire I/Outer La Noscea - Synthetic Doblyn.xml"/>
+				</If>
+				<If condition="not ZodiacManager.CurrentBook.KillTask6Completed">
+					<Log Message="Moving to Skyfire I - Western Thanlan - 4th Cohort Hoplomachi" />
+					<LLoadProfile Path="../Animus/Skyfire I/Western Thanlan - 4th Cohort Hoplomachi.xml"/>
+				</If>
+				<If condition="not ZodiacManager.CurrentBook.KillTask7Completed">
+					<Log Message="Moving to Skyfire I - Southern Thanalan - Zanr'ak Pugilist" />
+					<LLoadProfile Path="../Animus/Skyfire I/Southern Thanalan - Zanr'ak Pugilist.xml"/>
+				</If>
+				<If condition="not ZodiacManager.CurrentBook.KillTask8Completed">
+					<Log Message="Moving to Skyfire I - East Shroud - Milkroot Cluster" />
+					<LLoadProfile Path="../Animus/Skyfire I/East Shroud - Milkroot Cluster.xml"/>
+				</If>
+				<If condition="not ZodiacManager.CurrentBook.KillTask9Completed">
+					<Log Message="Moving to Skyfire I - Northern Thanalan - Basilisk" />
+					<LLoadProfile Path="../Animus/Skyfire I/Northern Thanalan - Basilisk.xml"/>
+				</If>			
+				<If condition="not ZodiacManager.CurrentBook.KillTask10Completed">
+					<Log Message="Moving to Skyfire I - Eastern La Noscea - 2nd Cohort Hoplomachi" />
+					<LLoadProfile Path="../Animus/Skyfire I/Eastern La Noscea - 2nd Cohort Hoplomachi.xml"/>
+				</If>
+				<!-- Skyfire I Dungeons -->
+				<If condition="not ZodiacManager.CurrentBook.DungeonTask1Completed">
+					<Log Message="Moving to Skyfire I - Tam Tara Deepcroft" />
+					<LLoadProfile Path="../Dungeons/TamTaraDeepcroft.xml"/>
+				</If>
+				<If condition="not ZodiacManager.CurrentBook.DungeonTask2Completed">
+					<Log Message="Moving to Skyfire I - The Stone Vigil" />
+					<LLoadProfile Path="../Dungeons/TheStoneVigil.xml"/>
+				</If>
+				<If condition="not ZodiacManager.CurrentBook.DungeonTask3Completed">
+					<Log Message="Moving to Skyfire I - The Lost City of Amdapor" />
+					<LLoadProfile Path="../Dungeons/TheLostCityOfAmdapor.xml"/>
+				</If>
+				<!-- Skyfire I Fates -->
+				<If condition="not ZodiacManager.CurrentBook.FateTask1Completed">
+					<Log Message="Moving to Skyfire I - Coerthas Central Highlands Giant Seps FATE" />
+					<While Condition="not ZodiacManager.CurrentBook.FateTask1Completed">
+						<If Condition="not IsOnMap(155)">				
+							<GetTo ZoneId="155" XYZ="227.6718, 312, -229.5252" /> <!-- Coerthas Central Highlands -->
+						</If>				
+							<Fate MinLevel="1" FateId="480" MaxLevel="50" Timeout="15"/>
+					</While>					
+				</If>
+				<If condition="not ZodiacManager.CurrentBook.FateTask2Completed">
+					<Log Message="Moving to Skyfire I - Outer La Noscea Make It Rain FATE" />
+				</If>
+				<If condition="not ZodiacManager.CurrentBook.FateTask3Completed">
+					<Log Message="Moving to Skyfire I - East Shroud  The Enmity of my Enemy" />
+				</If>
+				<!-- Skyfire I Guildleves -->
+				<If condition="not ZodiacManager.CurrentBook.GuildleveTask1Completed">
+					<Log Message="Moving to Skyfire I - Nothern Thanalan Camp Bluefrog 'Necrologos: Pale Oblation'" />
+				</If>
+				<If condition="not ZodiacManager.CurrentBook.GuildleveTask2Completed">
+					<Log Message="Moving to Skyfire I - Coerthas Central Whitebrim Front 'An Imp Mobile'" />
+				</If>
+				<If condition="not ZodiacManager.CurrentBook.GuildleveTask2Completed">
+					<Log Message="Moving to Skyfire I - Mor Dhona Saint Coinarch's Find 'The Awry Savages'" />
+				</If>			
+			</If>		
+	
+	
+			
 		
 	</If>
   </Order>

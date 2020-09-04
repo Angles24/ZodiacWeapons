@@ -478,6 +478,7 @@
 		</If>
 		
 		<!-- Buy Zenith weapons -->
+		<!-- If Has Completed A Relic Reborn (Curtana) and not has Curtana Zenith and not has Curtana Atma -->																										
 		<If Condition="IsQuestCompleted(66656) and not HasAtLeast(6257,1) and HasAtLeast(1675,1) and not HasAtLeast(7824,1)">
 			<If Condition="HasAtLeast(6268,2)">
 				<RunCode name="ExchangeCurtana"/>
@@ -543,7 +544,7 @@
 		</If>
 
 		<!-- Atma farm -->
-		<If Condition="(HasAtLeast(7851,1)) and (HasAtLeast(7852,1)) and (HasAtLeast(7853,1)) and (HasAtLeast(7854,1)) and (HasAtLeast(7855,1)) and (HasAtLeast(7856,1)) and (HasAtLeast(7857,1)) and (HasAtLeast(7858,1)) and (HasAtLeast(7859,1)) and (HasAtLeast(7860,1)) and (HasAtLeast(7861,1)) and (HasAtLeast(7862,1))">
+		<If Condition="(HasAtLeast(7851,1)) and (HasAtLeast(7852,1)) and (HasAtLeast(7853,1)) and (HasAtLeast(7854,1)) and (HasAtLeast(7855,1)) and (HasAtLeast(7856,1)) and (HasAtLeast(7857,1)) and (HasAtLeast(7858,1)) and (HasAtLeast(7859,1)) and (HasAtLeast(7860,1)) and (HasAtLeast(7861,1)) and (HasAtLeast(6257,1))">
 			<Log Message="We have all the atmas taking us back to Jalzahn!" />
 			<If Condition="not IsOnMap(154)">
 				<TeleportTo Name="Fallgourd Float" AetheryteId="7"/>
@@ -554,6 +555,10 @@
 			<RunCode name="BuyCurtanaAtma"/>
 		</If>		
 		<If Condition="HasAtLeast(6257,1) and not HasAtLeast(7824,1)">		  
+			  <If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 6257">
+					<RunCode Name="CurtanaZenith" />
+					<WaitTimer WaitTime="3" />
+     		  </If>																																														  		
 			<LLoadProfile Path="Atma_Farm.xml"/>
 		</If>	
 
