@@ -34,7 +34,31 @@
 				}
 			}
 		]]>		
-		</CodeChunk>		
+		</CodeChunk>
+		<CodeChunk Name="ExchangeBravura">
+            <![CDATA[ 
+				ff14bot.Managers.GameObjectManager.GetObjectByNPCId(2002555).Interact();
+                await Buddy.Coroutines.Coroutine.Sleep(500);
+                RaptureAtkUnitManager.GetWindowByName("ShopExchangeItem").SendAction(2, 0, 0, 1, 0);
+                await Buddy.Coroutines.Coroutine.Sleep(120);
+                RaptureAtkUnitManager.GetWindowByName("ShopExchangeItemDialog").SendAction(1, 0, 2);
+                await Buddy.Coroutines.Coroutine.Sleep(120);
+                foreach(ff14bot.Managers.BagSlot slot in ff14bot.Managers.InventoryManager.FilledSlots)
+                {
+                    if(slot.RawItemId == 1675)
+                    {
+                        slot.Handover();
+                    }
+                    if(slot.RawItemId == 6268)
+                    {
+                        slot.Handover();
+                    }					
+                }
+                await Buddy.Coroutines.Coroutine.Sleep(120);
+                if (ff14bot.RemoteWindows.Request.IsOpen)
+                    ff14bot.RemoteWindows.Request.HandOver();
+            ]]>
+        </CodeChunk>		
 		<CodeChunk Name="NoBardiche">
 			  <![CDATA[
 				var _msg = String.Empty;
@@ -295,6 +319,26 @@
 				<TurnIn ItemId="6267" QuestId="66655" NpcId="1003075" XYZ="440.7262, -0.9374562, -62.21112"/>
 			</If>		
 		</If>
+		
+		<!-- Buy Zenith weapons -->
+		<!-- If Has Completed A Relic Reborn (Bravura) and not has Bravura Zenith and not has Bravura Atma -->
+		<If Condition="IsQuestCompleted(66655) and not HasAtLeast(6259,1) and HasAtLeast(1816,1) and not HasAtLeast(7826,1)">
+			<If Condition="HasAtLeast(6268,3)"> <!-- HasAtLeast 3 Thavnairian Mist -->
+				<RunCode name="ExchangeBravura"/>
+			</If>
+			<If Condition="not HasAtLeast(6268,2)">
+				<If Condition="HasAtLeast(28,60)"> <!-- HasAtLeast 2 Poetics -->
+					<GetTo ZoneId="156" XYZ="63.40987, 31.12387, -735.2782"/>
+					<!-- Buy Thavnairian Mist -->
+					<BuyShopExchangeCurrency NpcId= "1008119" ItemId="6268" SelectString="2" Count="3"/>
+				</If>	
+				<If Condition="not HasAtLeast(28,60)">
+					<RunCode name="NeedPoetics"/>
+				</If>
+			</If>
+		</If>
+	
+		
 		<!-- Up in Arms -->
 		<If Condition="IsQuestCompleted(66655)and not HasQuest(66971) and not IsQuestCompleted(66971)">
 		  <If Condition="not IsOnMap(154)">
@@ -319,6 +363,7 @@
 		  <TurnIn QuestId="66971" NpcId="1008948" XYZ="405.1117, -4.498068, -89.15851"/>
 		</If>
 
+
 		<!-- Atma farm -->
 		<If Condition="(HasAtLeast(7851,1)) and (HasAtLeast(7852,1)) and (HasAtLeast(7853,1)) and (HasAtLeast(7854,1)) and (HasAtLeast(7855,1)) and (HasAtLeast(7856,1)) and (HasAtLeast(7857,1)) and (HasAtLeast(7858,1)) and (HasAtLeast(7859,1)) and (HasAtLeast(7860,1)) and (HasAtLeast(7861,1)) and (HasAtLeast(7862,1))">
 			<Log Message="We have all the atmas taking us back to Gerolt!" />
@@ -327,7 +372,7 @@
 			</If>
 			<FlyTo XYZ="427.4873, -5.342077, -74.43809" Land="True"/>
 		</If>		
-		<If Condition="(ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId == 6259) and (ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7826)">
+		<If Condition="HasAtLeast(6259,1) and not HasAtLeast(7826,1)">
 			  <If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 6259">
 					<RunCode Name="BravuraZenith" />
 					<WaitTimer WaitTime="3" />
