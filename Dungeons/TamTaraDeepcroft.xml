@@ -68,7 +68,7 @@
 		<If Condition="GetInstanceTodo(3) == 0">
 			<Log Message="Defeat Galvanth the Dominator" />
 			<MoveTo XYZ="-65.55235, 14.04922, -5.441873"/> <!-- Move into bosses room -->
-			<Grind GrindRef="Galvanth" While="GameObjectManager.GetObjectByNPCId(73)"/> <!-- Fight Galvanth the Dominator -->
+			<Grind grindRef="Galvanth" While="GameObjectManager.GetObjectByNPCId(73)"/> <!-- Fight Galvanth the Dominator -->
 			<MoveTo XYZ="-42.77108,14.06775,-17.28852"/> <!-- Move to exit -->
 			<If Condition="&openchest; == 1">
 				<RunCode name="OpenChest" />

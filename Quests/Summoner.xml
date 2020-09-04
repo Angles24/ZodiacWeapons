@@ -92,7 +92,31 @@
 			catch (Exception ex) {  }
 			}
 		]]>
-		</CodeChunk>		
+		</CodeChunk>
+	  <CodeChunk Name="EnableAnimus">
+      <![CDATA[
+        foreach (var plugin in PluginManager.Plugins.Where(p => p.Plugin.Name == "Animus Book HS"))
+        {
+          try
+          {
+            if (plugin.Enabled)  {  break;  }  else  {  plugin.Enabled = true;  }
+          }
+          catch (Exception ex) {  }
+        }
+      ]]>
+    </CodeChunk>
+	<CodeChunk Name="DisableAnimus">
+		<![CDATA[
+			foreach (var plugin in PluginManager.Plugins.Where(p => p.Plugin.Name == "Animus Book HS"))
+			{
+			try
+			{
+				if (!plugin.Enabled)  {  break;  }  else  {  plugin.Enabled = false;  }
+			}
+			catch (Exception ex) {  }
+			}
+		]]>
+	</CodeChunk> 		
   </CodeChunks>
   <GrindAreas>
 	<GrindArea name="RelicRebornVeil">
@@ -444,8 +468,10 @@
 					<While Condition="not ZodiacManager.CurrentBook.FateTask1Completed">
 						<If Condition="not IsOnMap(155)">				
 							<GetTo ZoneId="155" XYZ="227.6718, 312, -229.5252" /> <!-- Coerthas Central Highlands -->
-						</If>				
-							<Fate MinLevel="1" FateId="480" MaxLevel="50" Timeout="15"/>
+						</If>
+						<RunCode Name="EnableAnimus"/>	
+						<LLoadProfile Path="../Animus/Blank.xml"/>
+						<RunCode Name="DisableAnimus"/>	
 					</While>					
 				</If>
 				<If condition="not ZodiacManager.CurrentBook.FateTask2Completed">
