@@ -15,8 +15,8 @@
 <!ENTITY drg "0"> 
 <!ENTITY brd "0"> 		
 <!ENTITY blm "0"> 		
-<!ENTITY smn "1"> 
-<!ENTITY sch "0"> 
+<!ENTITY smn "0"> 
+<!ENTITY sch "1"> 
 <!ENTITY whm "0"> 
 <!ENTITY nin "0"> 
 <!-- 		Items required for quest. Have these in your inventory before starting profile.

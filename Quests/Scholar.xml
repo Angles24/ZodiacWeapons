@@ -35,13 +35,26 @@
 			}
 		]]>
 		</CodeChunk>	
+ 		<CodeChunk Name="OmnilexAtma">
+		<![CDATA[ 
+			BagSlot EquipSlot = ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand];
+			
+			foreach(ff14bot.Managers.BagSlot slot in ff14bot.Managers.InventoryManager.FilledInventoryAndArmory)
+			{
+				if(slot.RawItemId == 7832)
+				{
+					slot.Move(EquipSlot);
+				}
+			}
+		]]>
+		</CodeChunk>									   
 		<CodeChunk Name="NoEurdite">
 			  <![CDATA[
 				var _msg = String.Empty;
 				#if RB_CN
 						_msg = "请手动完成下一个任务。";
 				#else
-						_msg = "Please have Aeolian Scimitar melded with Battledance Materia III X2.";
+						_msg = "Please have Erudite's Picatrix Of Healing melded with Quicktongue Materia III X2.";
 				#endif
 				Core.OverlayManager.AddToast(() => _msg, TimeSpan.FromMilliseconds(25000), System.Windows.Media.Color.FromRgb(29,213,226), System.Windows.Media.Color.FromRgb(13,106,175), new System.Windows.Media.FontFamily("Gautami"));
 			  ]]>
@@ -80,7 +93,31 @@
 			}
 		]]>
 		</CodeChunk>
-    <CodeChunk Name="BuyAtma">
+		<CodeChunk Name="ExchangeOmnilex"> <!-- Last digit in first ShopExchangeItem control slot -->
+            <![CDATA[ 
+				ff14bot.Managers.GameObjectManager.GetObjectByNPCId(2002555).Interact();
+                await Buddy.Coroutines.Coroutine.Sleep(500);
+                RaptureAtkUnitManager.GetWindowByName("ShopExchangeItem").SendAction(2, 0, 0, 1, 0);
+                await Buddy.Coroutines.Coroutine.Sleep(120);
+                RaptureAtkUnitManager.GetWindowByName("ShopExchangeItemDialog").SendAction(1, 0, 0);
+                await Buddy.Coroutines.Coroutine.Sleep(120);
+                foreach(ff14bot.Managers.BagSlot slot in ff14bot.Managers.InventoryManager.FilledSlots)
+                {
+                    if(slot.RawItemId == 2214)
+                    {
+                        slot.Handover();
+                    }
+                    if(slot.RawItemId == 6268)
+                    {
+                        slot.Handover();
+                    }					
+                }
+                await Buddy.Coroutines.Coroutine.Sleep(120);
+                if (ff14bot.RemoteWindows.Request.IsOpen)
+                    ff14bot.RemoteWindows.Request.HandOver();
+            ]]>
+        </CodeChunk>		
+    <CodeChunk Name="BuyOmnilexAtma"> <!-- Need to be changed to Omnilex -->
       <![CDATA[
         foreach (var x in GameObjectManager.GetObjectsOfType<Character>(true))
         {
@@ -128,7 +165,7 @@
     <!-- The Weaponsmith of Legend -->
     <If Condition="not HasQuest(66241) and not IsQuestCompleted(66241)">
 	  <ChangeClass Job="Scholar" />	
-      <GetTo ZoneId="140" XYZ="-470.4957, 23.03529, -355.3192"/>
+      <GetTo ZoneId="140" XYZ="-470.4957, 23.03529, -355.3192"/>								 
       <If Condition="IsQuestAcceptQualified(66241)">
         <PickupQuest QuestId="66241" NpcId="1005021"/>
       </If>
@@ -165,6 +202,7 @@
 				<TeleportTo Name="Fallgourd Float" AetheryteId="7"/>
 			</If>
 			<FlyTo XYZ="427.4873, -5.342077, -74.43809" Land="True"/>
+			<!-- Handove timeworn Omnilex -->										 
 			<HandOver ItemId="2000996" NpcId="1003075" XYZ="440.7262, -0.9374562, -62.21112" QuestId="66663" StepId="2"/>
 		</If>
 		<If Condition="GetQuestStep(66663) == 3 and not HasAtLeast(2201,1)">
@@ -192,13 +230,14 @@
 				<TeleportTo Name="Fallgourd Float" AetheryteId="7"/>
 			</If>
 			<FlyTo XYZ="427.4873, -5.342077, -74.43809" Land="True"/>
-			<!-- Handover pinch of alumina salts -->
+			<!-- Handover pinch of alumina salts SMN -->
 			<HandOver ItemId="2001005" NpcId="1003075" XYZ="440.7262, -0.9374562, -62.21112" QuestId="66663" StepId="5"/>
 		</If>
 		<If Condition="GetQuestStep(66663) == 6">
 			<If Condition="not HasAtLeast(6267,1)">
 				<If Condition="HasAtLeast(28,15)">
 					<GetTo ZoneId="156" XYZ="63.40987, 31.12387, -735.2782"/>
+					<!-- Buy Radz-at-Han Quenching Oil -->										   
 					<BuyShopExchangeCurrency NpcId= "1008119" ItemId="6267" SelectString="2" Count="1"/>
 				</If>	
 				<If Condition="not HasAtLeast(28,15)">
@@ -208,6 +247,7 @@
 			<If Condition="not HasAtLeast(6268,3)">
 				<If Condition="HasAtLeast(28,60)">
 					<GetTo ZoneId="156" XYZ="63.40987, 31.12387, -735.2782"/>
+					<!-- Buy Thavnairian Mist -->
 					<BuyShopExchangeCurrency NpcId= "1008119" ItemId="6268" SelectString="2" Count="3"/>
 				</If>	
 				<If Condition="not HasAtLeast(28,60)">
@@ -226,7 +266,7 @@
 		</If>
 		<If Condition="GetQuestStep(66663) == 8">
 		  <GetTo ZoneId="156" XYZ="25.67217, 29, -823.6172"/>
-		   <!-- Handover Amdapor glyph -->
+		   <!-- Handover Amdapor glyph SMN -->
 		  <HandOver ItemId="2001014" NpcId="1001304" XYZ="25.58936, 29, -825.3757" QuestId="66663" StepId="8"/>
 		</If>
 		<If Condition="GetQuestStep(66663) == 9">
@@ -277,19 +317,27 @@
 			<TalkTo NpcId="1003075" XYZ="440.7262, -0.9374562, -62.21112" QuestId="66663" StepId="13"/>
 		</If>
 		<If Condition="GetQuestStep(66663) == 14">
+			<If Condition="not ClassName == ClassJobType.Scholar">	
 			<ChangeClass Job="Scholar" />
+			</If>
 			<HandOver ItemId="2192" NpcId="1003075" XYZ="440.7262, -0.9374562, -62.21112" QuestId="66663" StepId="14"/>	
 		</If>
 		<If Condition="GetQuestStep(66663) == 15">
-			<ChangeClass Job="Scholar" />
+			<If Condition="not ClassName == ClassJobType.Scholar">	
+				<ChangeClass Job="Scholar" />
+			</If>
 			<LLoadProfile Path="..Dungeons/The Bowl of Embers (Hard).xml"/>	
 		</If>
 		<If Condition="GetQuestStep(66663) == 16">
-			<ChangeClass Job="Scholar" />
-			<LLoadProfile Path="..Dungeons/The Howling Eye (Hard).xml"/>	
-		</If>
+			<If Condition="not ClassName == ClassJobType.Scholar">	
+				<ChangeClass Job="Scholar" />
+			</If>	
+			<LLoadProfile Path="..Dungeons/The Howling Eye (Hard).xml"/>
+		</If>		
 		<If Condition="GetQuestStep(66663) == 17">
-			<ChangeClass Job="Scholar" />
+			<If Condition="not ClassName == ClassJobType.Scholar">	
+				<ChangeClass Job="Scholar" />
+			</If>
 			<LLoadProfile Path="..Dungeons/The Navel (Hard).xml"/>
 		</If>
 		<If Condition="GetQuestStep(66663) == 18">
@@ -297,13 +345,14 @@
 				<TeleportTo Name="Fallgourd Float" AetheryteId="7"/>
 			</If>	
 			<FlyTo XYZ="427.4873, -5.342077, -74.43809" Land="True"/>
-			<!-- Handin white-hot ember, howling gale, and hyperfused ore -->		
+			<!-- Handin white-hot ember, howling gale, and hyperfused ore SCH -->		
 			<HandOver ItemIds="2001032,2001041,2001050" NpcId="1003075" XYZ="440.7262, -0.9374562, -62.21112" QuestId="66663" StepId="18"/>			
 		</If>
 		<If Condition="GetQuestStep(66663) == 255">
 			<If Condition="not HasAtLeast(6267,1)">
 				<If Condition="HasAtLeast(28,15)">
 					<GetTo ZoneId="156" XYZ="63.40987, 31.12387, -735.2782"/>
+					<!-- Buy Radz-at-Han Quenching Oil -->										   
 					<BuyShopExchangeCurrency NpcId= "1008119" ItemId="6267" SelectString="2" Count="1"/>
 				</If>	
 				<If Condition="not HasAtLeast(28,15)">
@@ -315,12 +364,30 @@
 			</If>	
 		</If>
 		
+		<!-- Buy Zenith weapons -->
+		<!-- If Has Completed A Relic Reborn (The Veil of Wiyu) and has Veil of Wiyu -->																										
+		<If Condition="IsQuestCompleted(66662) and HasAtLeast(2213,1)">
+			<If Condition="HasAtLeast(6268,2)"> <!-- Thavnairian Mist -->
+				<RunCode name="ExchangeOmnilex"/>
+			</If>
+			<If Condition="not HasAtLeast(6268,2)">
+				<If Condition="HasAtLeast(28,60)">
+					<GetTo ZoneId="156" XYZ="63.40987, 31.12387, -735.2782"/>
+					<!-- Buy Thavnairian Mist -->
+					<BuyShopExchangeCurrency NpcId= "1008119" ItemId="6268" SelectString="2" Count="2"/>
+				</If>	
+				<If Condition="not HasAtLeast(28,60)">
+					<RunCode name="NeedPoetics"/>
+				</If>
+			</If>
+		</If>			 	
 		
 		<!-- Up in Arms -->
 		<If Condition="IsQuestCompleted(66663)and not HasQuest(66971) and not IsQuestCompleted(66971)">
 		  <If Condition="not IsOnMap(154)">
 			<TeleportTo Name="Fallgourd Float" AetheryteId="7"/>
 		  </If>
+		  <FlyTo XYZ="427.4873, -5.342077, -74.43809" Land="True"/>																																														  
 		  <If Condition="not HasAtLeast(6265,1)">
 			<RunCode name="NoOmnilexZenith"/>
 		  </If>
@@ -330,7 +397,6 @@
 					<WaitTimer WaitTime="3" />
 			  </If>
 		  </If>				  
-		  <FlyTo XYZ="427.4873, -5.342077, -74.43809" Land="True"/>		
 		  <If Condition="IsQuestAcceptQualified(66971)">
 			<PickupQuest QuestId="66971" NpcId="1003075"/>
 		  </If>
@@ -341,15 +407,21 @@
 		</If>
 		
 		<!-- Atma farm -->
-		<If Condition="(HasAtLeast(7851,1)) and (HasAtLeast(7852,1)) and (HasAtLeast(7853,1)) and (HasAtLeast(7854,1)) and (HasAtLeast(7855,1)) and (HasAtLeast(7856,1)) and (HasAtLeast(7857,1)) and (HasAtLeast(7858,1)) and (HasAtLeast(7859,1)) and (HasAtLeast(7860,1)) and (HasAtLeast(7861,1)) and (HasAtLeast(7862,1)) and not HasAtLeast(7832,1)">
+		<If Condition="(HasAtLeast(7851,1)) and (HasAtLeast(7852,1)) and (HasAtLeast(7853,1)) and (HasAtLeast(7854,1)) and (HasAtLeast(7855,1)) and (HasAtLeast(7856,1)) and (HasAtLeast(7857,1)) and (HasAtLeast(7858,1)) and (HasAtLeast(7859,1)) and (HasAtLeast(7860,1)) and (HasAtLeast(7861,1)) and (HasAtLeast(7862,1)) and HasAtLeast(6265,1)">
 			<Log Message="We have all the atmas taking us back to Jalzahn!" />
 			<If Condition="not IsOnMap(154)">
 				<TeleportTo Name="Fallgourd Float" AetheryteId="7"/>
 			</If>
 			<FlyTo XYZ="410.7605, -6.053607, -88.41638" Land="True"/>
-			<ChangeClass Job="Warrior" />
+			<ChangeClass Job="Scholar" />
+			<GetTo ZoneId="154" XYZ="405.1117,-4.498068,-89.15851"/>
+			<RunCode name="BuyOmnilexAtma"/>															   															
 		</If>		
 		<If Condition="HasAtLeast(6265,1) and not HasAtLeast(7832,1)">
+			  <If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 6265">
+					<RunCode Name="OmnilexZenith" />
+					<WaitTimer WaitTime="3" /> 
+			  </If>			
 			<LLoadProfile Path="Atma_Farm.xml"/>
 		</If>		
 

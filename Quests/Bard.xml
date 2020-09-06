@@ -117,7 +117,7 @@
       <TurnIn ItemId="2000987" QuestId="66241" NpcId="1003075" XYZ="440.7262, -0.9374562, -62.21112"/>
     </If>
 	<If Condition="ClassName == ((ClassJobType.Bard))">
-		<!-- A Relic Reborn (Omnilex) -->
+		<!-- A Relic Reborn (Artimus Bow) -->
 		<If Condition="not HasQuest(66661) and not IsQuestCompleted(66661)">
 		  <If Condition="not IsOnMap(154)">
 			<TeleportTo Name="Fallgourd Float" AetheryteId="7"/>

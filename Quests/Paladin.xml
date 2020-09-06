@@ -270,8 +270,8 @@
   <Order>
     <!-- The Weaponsmith of Legend -->
     <If Condition="not HasQuest(66241) and not IsQuestCompleted(66241)">
-      <GetTo ZoneId="140" XYZ="-470.4957, 23.03529, -355.3192"/>
-	  <ChangeClass Job="Paladin" />
+	   <ChangeClass Job="Paladin" />								 
+      <GetTo ZoneId="140" XYZ="-470.4957, 23.03529, -355.3192"/>	  
       <If Condition="IsQuestAcceptQualified(66241)">
         <PickupQuest QuestId="66241" NpcId="1005021"/>
       </If>
@@ -340,7 +340,7 @@
 				<TeleportTo Name="Fallgourd Float" AetheryteId="7"/>
 			</If>
 			<FlyTo XYZ="427.4873, -5.342077, -74.43809" Land="True"/>
-			<!-- Handover pinch of alumina salts -->
+			<!-- Handover pinch of alumina salts PLD -->
 			<HandOver ItemId="2000998" NpcId="1003075" XYZ="440.7262, -0.9374562, -62.21112" QuestId="66656" StepId="5"/>
 		</If>
 		<If Condition="GetQuestStep(66656) == 6">
@@ -376,7 +376,7 @@
 		</If>
 		<If Condition="GetQuestStep(66656) == 8">
 		  <GetTo ZoneId="156" XYZ="25.67217, 29, -823.6172"/>
-		  <!-- Handover Amdapor glyph -->
+		  <!-- Handover Amdapor glyph PLD -->
 		  <HandOver ItemId="2001007" NpcId="1001304" XYZ="25.58936, 29, -825.3757" QuestId="66656" StepId="8"/>
 		</If>
 		<If Condition="GetQuestStep(66656) == 9">
@@ -458,7 +458,7 @@
 				<TeleportTo Name="Fallgourd Float" AetheryteId="7"/>
 			</If>	
 			<FlyTo XYZ="427.4873, -5.342077, -74.43809" Land="True"/>
-			<!-- Handin white-hot ember, howling gale, and hyperfused ore -->				
+			<!-- Handin white-hot ember, howling gale, and hyperfused ore PLD -->				
 			<HandOver ItemIds="2001025,2001034,2001043" NpcId="1003075" XYZ="440.7262, -0.9374562, -62.21112" QuestId="66656" StepId="18"/>			
 		</If>
 		<If Condition="GetQuestStep(66656) == 255">
@@ -478,8 +478,8 @@
 		</If>
 		
 		<!-- Buy Zenith weapons -->
-		<!-- If Has Completed A Relic Reborn (Curtana) and not has Curtana Zenith and not has Curtana Atma -->																										
-		<If Condition="IsQuestCompleted(66656) and not HasAtLeast(6257,1) and HasAtLeast(1675,1) and not HasAtLeast(7824,1)">
+		<!-- If Has Completed A Relic Reborn (Curtana) and has Curtana -->																										
+		<If Condition="IsQuestCompleted(66656) and HasAtLeast(1675,1)">
 			<If Condition="HasAtLeast(6268,2)">
 				<RunCode name="ExchangeCurtana"/>
 			</If>
@@ -494,7 +494,7 @@
 				</If>
 			</If>
 		</If>
-		<If Condition="IsQuestCompleted(66656) and not HasAtLeast(6266,1) and not HasAtLeast(7824,1)">
+		<If Condition="IsQuestCompleted(66656) and HasAtLeast(2306,1)">
 			<If Condition="HasAtLeast(6268,1)">			
 				<RunCode name="ExchangeHolyShield"/>
 			</If>	

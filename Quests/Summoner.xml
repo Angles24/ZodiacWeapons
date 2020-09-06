@@ -47,7 +47,7 @@
 				}
 			}
 		]]>
-		</CodeChunk>			
+		</CodeChunk>		
 		<CodeChunk Name="NoEurdite">
 			  <![CDATA[
 				var _msg = String.Empty;
@@ -93,30 +93,102 @@
 			}
 		]]>
 		</CodeChunk>
-	  <CodeChunk Name="EnableAnimus">
-      <![CDATA[
-        foreach (var plugin in PluginManager.Plugins.Where(p => p.Plugin.Name == "Animus Book HS"))
-        {
-          try
-          {
-            if (plugin.Enabled)  {  break;  }  else  {  plugin.Enabled = true;  }
-          }
-          catch (Exception ex) {  }
-        }
-      ]]>
-    </CodeChunk>
-	<CodeChunk Name="DisableAnimus">
-		<![CDATA[
-			foreach (var plugin in PluginManager.Plugins.Where(p => p.Plugin.Name == "Animus Book HS"))
-			{
-			try
-			{
-				if (!plugin.Enabled)  {  break;  }  else  {  plugin.Enabled = false;  }
-			}
-			catch (Exception ex) {  }
-			}
-		]]>
-	</CodeChunk> 		
+		<CodeChunk Name="ExchangeVeil">
+            <![CDATA[ 
+				ff14bot.Managers.GameObjectManager.GetObjectByNPCId(2002555).Interact();
+                await Buddy.Coroutines.Coroutine.Sleep(500);
+                RaptureAtkUnitManager.GetWindowByName("ShopExchangeItem").SendAction(2, 0, 0, 1, 0);
+                await Buddy.Coroutines.Coroutine.Sleep(120);
+                RaptureAtkUnitManager.GetWindowByName("ShopExchangeItemDialog").SendAction(1, 0, 0);
+                await Buddy.Coroutines.Coroutine.Sleep(120);
+                foreach(ff14bot.Managers.BagSlot slot in ff14bot.Managers.InventoryManager.FilledSlots)
+                {
+                    if(slot.RawItemId == 2213)
+                    {
+                        slot.Handover();
+                    }
+                    if(slot.RawItemId == 6268)
+                    {
+                        slot.Handover();
+                    }					
+                }
+                await Buddy.Coroutines.Coroutine.Sleep(120);
+                if (ff14bot.RemoteWindows.Request.IsOpen)
+                    ff14bot.RemoteWindows.Request.HandOver();
+            ]]>
+        </CodeChunk>		
+        <CodeChunk Name="BuyVeilAtma"> <!-- Needs to be changed to Veil slot -->
+            <![CDATA[ 
+                await Buddy.Coroutines.Coroutine.Sleep(500);
+                ff14bot.Managers.GameObjectManager.GetObjectByNPCId(1008948).Interact();
+                await Buddy.Coroutines.Coroutine.Sleep(1000);
+                if (ff14bot.RemoteWindows.SelectIconString.IsOpen)
+                    ff14bot.RemoteWindows.SelectIconString.ClickSlot(1);
+                if (await Coroutine.Wait(1000, () => Talk.DialogOpen))
+                {
+                    Talk.Next();
+                }
+                await Buddy.Coroutines.Coroutine.Sleep(1000);
+                if (ff14bot.RemoteWindows.SelectString.IsOpen)
+                    ff14bot.RemoteWindows.SelectString.ClickSlot(0);
+                await Buddy.Coroutines.Coroutine.Sleep(1000);
+                 if (ff14bot.RemoteWindows.SelectYesno.IsOpen)
+                    ff14bot.RemoteWindows.SelectYesno.ClickYes();
+                await Buddy.Coroutines.Coroutine.Sleep(1000);
+                if (await Coroutine.Wait(1000, () => Talk.DialogOpen))
+                {
+                    Talk.Next();
+                }
+                if (await Coroutine.Wait(1000, () => Talk.DialogOpen))
+                {
+                    Talk.Next();
+                }
+                if (await Coroutine.Wait(1000, () => Talk.DialogOpen))
+                {
+                    Talk.Next();
+                }
+                if (await Coroutine.Wait(1000, () => Talk.DialogOpen))
+                {
+                    Talk.Next();
+                }
+                if (await Coroutine.Wait(1000, () => Talk.DialogOpen))
+                {
+                    Talk.Next();
+                }				
+            ]]>
+        </CodeChunk>
+        <CodeChunk Name="BuySkyfireI">
+            <![CDATA[ 
+                await Buddy.Coroutines.Coroutine.Sleep(500);
+                ff14bot.Managers.GameObjectManager.GetObjectByNPCId(1006976).Interact();
+                await Buddy.Coroutines.Coroutine.Sleep(1000);
+                if (ff14bot.RemoteWindows.SelectIconString.IsOpen)
+                    ff14bot.RemoteWindows.SelectIconString.ClickSlot(0);
+				await Buddy.Coroutines.Coroutine.Sleep(1000);	
+                if (await Coroutine.Wait(1000, () => Talk.DialogOpen))
+                {
+                    Talk.Next();
+                }
+                await Buddy.Coroutines.Coroutine.Sleep(1000);
+                if (ff14bot.RemoteWindows.SelectString.IsOpen)
+                    ff14bot.RemoteWindows.SelectString.ClickSlot(0);
+				await Buddy.Coroutines.Coroutine.Sleep(1000);
+                if (ff14bot.RemoteWindows.SelectString.IsOpen)
+                    ff14bot.RemoteWindows.SelectString.ClickSlot(0);					
+                await Buddy.Coroutines.Coroutine.Sleep(1000);
+                 if (ff14bot.RemoteWindows.SelectYesno.IsOpen)
+                    ff14bot.RemoteWindows.SelectYesno.ClickYes();
+                await Buddy.Coroutines.Coroutine.Sleep(1000);
+                if (await Coroutine.Wait(1000, () => Talk.DialogOpen))
+                {
+                    Talk.Next();
+                }
+                if (await Coroutine.Wait(1000, () => Talk.DialogOpen))
+                {
+                    Talk.Next();
+                }				
+            ]]>
+        </CodeChunk>											
   </CodeChunks>
   <GrindAreas>
 	<GrindArea name="RelicRebornVeil">
@@ -136,8 +208,8 @@
   <Order>
     <!-- The Weaponsmith of Legend -->
     <If Condition="not HasQuest(66241) and not IsQuestCompleted(66241)">
+	  <ChangeClass Job="Summoner" />							 
       <GetTo ZoneId="140" XYZ="-470.4957, 23.03529, -355.3192"/>
-	  <ChangeClass Job="Summoner" />
       <If Condition="IsQuestAcceptQualified(66241)">
         <PickupQuest QuestId="66241" NpcId="1005021"/>
       </If>
@@ -206,13 +278,14 @@
 				<TeleportTo Name="Fallgourd Float" AetheryteId="7"/>
 			</If>
 			<FlyTo XYZ="427.4873, -5.342077, -74.43809" Land="True"/>
-			<!-- Handover pinch of alumina salts -->
+			<!-- Handover pinch of alumina salts SCH -->
 			<HandOver ItemId="2001004" NpcId="1003075" XYZ="440.7262, -0.9374562, -62.21112" QuestId="66662" StepId="5"/>
 		</If>
 		<If Condition="GetQuestStep(66662) == 6">
 			<If Condition="not HasAtLeast(6267,1)">
 				<If Condition="HasAtLeast(28,15)">
 					<GetTo ZoneId="156" XYZ="63.40987, 31.12387, -735.2782"/>
+					<!-- Buy Radz-at-Han Quenching Oil -->										   
 					<BuyShopExchangeCurrency NpcId= "1008119" ItemId="6267" SelectString="2" Count="1"/>
 				</If>	
 				<If Condition="not HasAtLeast(28,15)">
@@ -222,6 +295,7 @@
 			<If Condition="not HasAtLeast(6268,3)">
 				<If Condition="HasAtLeast(28,60)">
 					<GetTo ZoneId="156" XYZ="63.40987, 31.12387, -735.2782"/>
+					<!-- Buy Thavnairian Mist -->
 					<BuyShopExchangeCurrency NpcId= "1008119" ItemId="6268" SelectString="2" Count="3"/>
 				</If>	
 				<If Condition="not HasAtLeast(28,60)">
@@ -240,7 +314,7 @@
 		</If>
 		<If Condition="GetQuestStep(66662) == 8">
 		  <GetTo ZoneId="156" XYZ="25.67217, 29, -823.6172"/>
-		  <!-- Handover Amdapor glyph -->
+		  <!-- Handover Amdapor glyph SCH -->
 		  <HandOver ItemId="2001013" NpcId="1001304" XYZ="25.58936, 29, -825.3757" QuestId="66662" StepId="8"/>
 		</If>
 		<If Condition="GetQuestStep(66662) == 9">
@@ -297,7 +371,7 @@
 			<If Condition="not ClassName == ClassJobType.Summoner">	
 				<ChangeClass Job="Summoner" />
 			</If>
-			<HandOver ItemId="2191" NpcId="1003075" XYZ="440.7262, -0.9374562, -62.21112" QuestId="66662" StepId="14"/>	
+			<HandOver ItemId="2191" NpcId="1003075" XYZ="440.7262, -0.9374562, -62.21112" QuestId="66662" StepId="14"/>						
 		</If>
 		<If Condition="GetQuestStep(66662) == 15">
 			<If Condition="not ClassName == ClassJobType.Summoner">	
@@ -322,13 +396,14 @@
 				<TeleportTo Name="Fallgourd Float" AetheryteId="7"/>
 			</If>	
 			<FlyTo XYZ="427.4873, -5.342077, -74.43809" Land="True"/>
-			<!-- Handin white-hot ember, howling gale, and hyperfused ore -->			
+			<!-- Handin white-hot ember, howling gale, and hyperfused ore SCH -->			
 			<HandOver ItemIds="2001031,2001040,2001049" NpcId="1003075" XYZ="440.7262, -0.9374562, -62.21112" QuestId="66662" StepId="18"/>			
 		</If>
 		<If Condition="GetQuestStep(66662) == 255">
 			<If Condition="not HasAtLeast(6267,1)">
 				<If Condition="HasAtLeast(28,15)">
 					<GetTo ZoneId="156" XYZ="63.40987, 31.12387, -735.2782"/>
+					<!-- Buy Radz-at-Han Quenching Oil -->										   
 					<BuyShopExchangeCurrency NpcId= "1008119" ItemId="6267" SelectString="2" Count="1"/>
 				</If>	
 				<If Condition="not HasAtLeast(28,15)">
@@ -339,6 +414,25 @@
 				<TurnIn ItemId="6267" QuestId="66662" NpcId="1003075" XYZ="440.7262, -0.9374562, -62.21112"/>
 			</If>	
 		</If>
+		
+		<!-- Buy Zenith weapons -->
+		<!-- If Has Completed A Relic Reborn (The Veil of Wiyu) and has Veil of Wiyu -->																										
+		<If Condition="IsQuestCompleted(66662) and HasAtLeast(2213,1)">
+			<If Condition="HasAtLeast(6268,2)"> <!-- Thavnairian Mist -->
+				<RunCode name="ExchangeVeil"/>
+			</If>
+			<If Condition="not HasAtLeast(6268,2)">
+				<If Condition="HasAtLeast(28,60)">
+					<GetTo ZoneId="156" XYZ="63.40987, 31.12387, -735.2782"/>
+					<!-- Buy Thavnairian Mist -->
+					<BuyShopExchangeCurrency NpcId= "1008119" ItemId="6268" SelectString="2" Count="2"/>
+				</If>	
+				<If Condition="not HasAtLeast(28,60)">
+					<RunCode name="NeedPoetics"/>
+				</If>
+			</If>
+		</If>	
+		
 		<!-- Up in Arms -->
 		<If Condition="IsQuestCompleted(66662)and not HasQuest(66971) and not IsQuestCompleted(66971)">
 		  <If Condition="not IsOnMap(154)">
@@ -353,7 +447,7 @@
 					<RunCode Name="VeilZenith" />
 					<WaitTimer WaitTime="3" />
 			  </If>
-		  </If>				  
+		  </If>				  															   
 		  <If Condition="IsQuestAcceptQualified(66971)">
 			<PickupQuest QuestId="66971" NpcId="1003075"/>
 		  </If>
@@ -364,15 +458,21 @@
 		</If>
 
 		<!-- Atma farm -->
-		<If Condition="(HasAtLeast(7851,1)) and (HasAtLeast(7852,1)) and (HasAtLeast(7853,1)) and (HasAtLeast(7854,1)) and (HasAtLeast(7855,1)) and (HasAtLeast(7856,1)) and (HasAtLeast(7857,1)) and (HasAtLeast(7858,1)) and (HasAtLeast(7859,1)) and (HasAtLeast(7860,1)) and (HasAtLeast(7861,1)) and (HasAtLeast(7862,1)) and not HasAtLeast(7831,1)">
+		<If Condition="(HasAtLeast(7851,1)) and (HasAtLeast(7852,1)) and (HasAtLeast(7853,1)) and (HasAtLeast(7854,1)) and (HasAtLeast(7855,1)) and (HasAtLeast(7856,1)) and (HasAtLeast(7857,1)) and (HasAtLeast(7858,1)) and (HasAtLeast(7859,1)) and (HasAtLeast(7860,1)) and (HasAtLeast(7861,1)) and (HasAtLeast(7862,1)) and HasAtLeast(6264,1)">
 			<Log Message="We have all the atmas taking us back to Jalzahn!" />
 			<If Condition="not IsOnMap(154)">
 				<TeleportTo Name="Fallgourd Float" AetheryteId="7"/>
 			</If>
 			<FlyTo XYZ="410.7605, -6.053607, -88.41638" Land="True"/>
 			<ChangeClass Job="Summoner" />
+			<GetTo ZoneId="154" XYZ="405.1117,-4.498068,-89.15851"/>
+			<RunCode name="BuyVeilAtma"/>														   								   
 		</If>		
 		<If Condition="HasAtLeast(6264,1) and not HasAtLeast(7831,1)">
+			  <If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 6264">
+					<RunCode Name="VeilZenith" />
+					<WaitTimer WaitTime="3" />
+     		  </If>																																														  																						
 			<LLoadProfile Path="Atma_Farm.xml"/>
 		</If>	
 
@@ -403,6 +503,14 @@
 
 		<!-- Start Animus Book Farm -->
 		<!-- Skyfire I -->
+			<If Condition="not HasAtLeast(2001298,1) and HasAtLeast(7824,1)">
+				<!-- Purchase Skyfire I -->
+				<If Condition="not IsOnMap(156)">
+					<TeleportTo AetheryteId="24"/> 
+				</If>
+				<GetTo ZoneId="156" XYZ="71.94617,33.06656,-706.2944"/>
+				<RunCode name="BuySkyfireI"/>
+			</If>																			 
 			<If Condition="HasAtLeast(2001298,1)">
 				<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7831">
 					<RunCode Name="VeilAtma" />
