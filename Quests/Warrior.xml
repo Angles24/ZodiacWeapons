@@ -47,31 +47,7 @@
 				}
 			}
 		]]>
-		</CodeChunk>		
-		<CodeChunk Name="ExchangeBravura">
-            <![CDATA[ 
-				ff14bot.Managers.GameObjectManager.GetObjectByNPCId(2002555).Interact();
-                await Buddy.Coroutines.Coroutine.Sleep(500);
-                RaptureAtkUnitManager.GetWindowByName("ShopExchangeItem").SendAction(2, 0, 0, 1, 0);
-                await Buddy.Coroutines.Coroutine.Sleep(120);
-                RaptureAtkUnitManager.GetWindowByName("ShopExchangeItemDialog").SendAction(1, 0, 2);
-                await Buddy.Coroutines.Coroutine.Sleep(120);
-                foreach(ff14bot.Managers.BagSlot slot in ff14bot.Managers.InventoryManager.FilledSlots)
-                {
-                    if(slot.RawItemId == 1675)
-                    {
-                        slot.Handover();
-                    }
-                    if(slot.RawItemId == 6268)
-                    {
-                        slot.Handover();
-                    }					
-                }
-                await Buddy.Coroutines.Coroutine.Sleep(120);
-                if (ff14bot.RemoteWindows.Request.IsOpen)
-                    ff14bot.RemoteWindows.Request.HandOver();
-            ]]>
-        </CodeChunk>		
+		</CodeChunk>				
 		<CodeChunk Name="NoBardiche">
 			  <![CDATA[
 				var _msg = String.Empty;
@@ -117,6 +93,30 @@
 			}
 		]]>
 		</CodeChunk>
+		<CodeChunk Name="ExchangeBravura">
+            <![CDATA[ 
+				ff14bot.Managers.GameObjectManager.GetObjectByNPCId(2002555).Interact();
+                await Buddy.Coroutines.Coroutine.Sleep(500);
+                RaptureAtkUnitManager.GetWindowByName("ShopExchangeItem").SendAction(2, 0, 0, 1, 0);
+                await Buddy.Coroutines.Coroutine.Sleep(120);
+                RaptureAtkUnitManager.GetWindowByName("ShopExchangeItemDialog").SendAction(1, 0, 2);
+                await Buddy.Coroutines.Coroutine.Sleep(120);
+                foreach(ff14bot.Managers.BagSlot slot in ff14bot.Managers.InventoryManager.FilledSlots)
+                {
+                    if(slot.RawItemId == 1675)
+                    {
+                        slot.Handover();
+                    }
+                    if(slot.RawItemId == 6268)
+                    {
+                        slot.Handover();
+                    }					
+                }
+                await Buddy.Coroutines.Coroutine.Sleep(120);
+                if (ff14bot.RemoteWindows.Request.IsOpen)
+                    ff14bot.RemoteWindows.Request.HandOver();
+            ]]>
+        </CodeChunk>		
         <CodeChunk Name="BuyBravuraAtma"> <!-- This needs to change to Bravura slot -->
             <![CDATA[ 
                 await Buddy.Coroutines.Coroutine.Sleep(500);
@@ -211,8 +211,8 @@
   <Order>
     <!-- The Weaponsmith of Legend -->
     <If Condition="not HasQuest(66241) and not IsQuestCompleted(66241)">
-      <GetTo ZoneId="140" XYZ="-470.4957, 23.03529, -355.3192"/>
 	  <ChangeClass Job="Warrior" />
+      <GetTo ZoneId="140" XYZ="-470.4957, 23.03529, -355.3192"/>
       <If Condition="IsQuestAcceptQualified(66241)">
         <PickupQuest QuestId="66241" NpcId="1005021"/>
       </If>
@@ -284,6 +284,7 @@
 			<If Condition="not HasAtLeast(6267,1)">
 				<If Condition="HasAtLeast(28,15)">
 					<GetTo ZoneId="156" XYZ="63.40987, 31.12387, -735.2782"/>
+					<!-- Buy Radz-at-Han Quenching Oil -->										   
 					<BuyShopExchangeCurrency NpcId= "1008119" ItemId="6267" SelectString="2" Count="1"/>
 				</If>	
 				<If Condition="not HasAtLeast(28,15)">
@@ -293,6 +294,7 @@
 			<If Condition="not HasAtLeast(6268,3)">
 				<If Condition="HasAtLeast(28,60)">
 					<GetTo ZoneId="156" XYZ="63.40987, 31.12387, -735.2782"/>
+					<!-- Buy Thavnairian Mist -->
 					<BuyShopExchangeCurrency NpcId= "1008119" ItemId="6268" SelectString="2" Count="3"/>
 				</If>	
 				<If Condition="not HasAtLeast(28,60)">
@@ -365,21 +367,27 @@
 			<TalkTo NpcId="1003075" XYZ="440.7262, -0.9374562, -62.21112" QuestId="66655" StepId="13"/>
 		</If>
 		<If Condition="GetQuestStep(66655) == 14">
-			<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId == 1805">
+			<If Condition="not ClassName == ClassJobType.Warrior">	
 				<ChangeClass Job="Warrior" />
 			</If>
 			<HandOver ItemId="1805" NpcId="1003075" XYZ="440.7262, -0.9374562, -62.21112" QuestId="66655" StepId="14"/>	
 		</If>
 		<If Condition="GetQuestStep(66655) == 15">
-			<ChangeClass Job="Warrior" />
+			<If Condition="not ClassName == ClassJobType.Summoner">	
+				<ChangeClass Job="Warrior" />
+			</If>
 			<LLoadProfile Path="../Dungeons/The Bowl of Embers (Hard).xml"/>	
 		</If>
 		<If Condition="GetQuestStep(66655) == 16">
-			<ChangeClass Job="Warrior" />
+			<If Condition="not ClassName == ClassJobType.Summoner">	
+				<ChangeClass Job="Warrior" />
+			</If>
 			<LLoadProfile Path="../Dungeons/The Howling Eye (Hard).xml"/>	
 		</If>
 		<If Condition="GetQuestStep(66655) == 17">
-			<ChangeClass Job="Warrior" />
+			<If Condition="not ClassName == ClassJobType.Summoner">	
+				<ChangeClass Job="Warrior" />
+			</If>
 			<LLoadProfile Path="../Dungeons/The Navel (Hard).xml"/>
 		</If>
 		<If Condition="GetQuestStep(66655) == 18">
@@ -406,8 +414,8 @@
 		</If>
 		
 		<!-- Buy Zenith weapons -->
-		<!-- If Has Completed A Relic Reborn (Bravura) and not has Bravura Zenith and not has Bravura Atma -->
-		<If Condition="IsQuestCompleted(66655) and not HasAtLeast(6259,1) and HasAtLeast(1816,1) and not HasAtLeast(7826,1)">
+		<!-- If Has Completed A Relic Reborn (Bravura) and Bravura -->
+		<If Condition="IsQuestCompleted(66655) and HasAtLeast(1816,1)">
 			<If Condition="HasAtLeast(6268,3)"> <!-- HasAtLeast 3 Thavnairian Mist -->
 				<RunCode name="ExchangeBravura"/>
 			</If>
@@ -504,89 +512,180 @@
 				<GetTo ZoneId="156" XYZ="71.94617,33.06656,-706.2944"/>
 				<RunCode name="BuySkyfireI"/>
 			</If>	
-			<If Condition="HasAtLeast(2001298,1)">
-				<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7824">
-					<RunCode Name="CurtanaAtma" />
+			<If Condition="HasAtLeast(2001298,1)  and HasAtLeast(7826,1)">
+				<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7826">
+					<RunCode Name="BravuraAtma" />
 					<WaitTimer WaitTime="3" />
 				</If>
 				<!-- Skyfire I Enemies -->	
 				<If condition="not ZodiacManager.CurrentBook.KillTask1Completed">
+					<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7826">
+						<RunCode Name="BravuraAtma" />
+						<WaitTimer WaitTime="3" />
+					</If>				
 					<Log Message="Moving to Skyfire I - Mor Dhona - Daring Harrier" />
 					<LLoadProfile Path="../Animus/Skyfire I/Mor Dhona - Daring Harrier.xml"/>
 				</If>
 				<If condition="not ZodiacManager.CurrentBook.KillTask4Completed">
+					<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7826">
+						<RunCode Name="BravuraAtma" />
+						<WaitTimer WaitTime="3" />
+					</If>					
 					<Log Message="Moving to Skyfire I - Mor Dhona - 5th Cohort Vanguard" />
 					<LLoadProfile Path="../Animus/Skyfire I/Mor Dhona - 5th Cohort Vanguard.xml"/>
 				</If>			
 				<If condition="not ZodiacManager.CurrentBook.KillTask2Completed">
+					<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7826">
+						<RunCode Name="BravuraAtma" />
+						<WaitTimer WaitTime="3" />
+					</If>					
 					<Log Message="Moving to Skyfire I - Coerthas - Giant Logger" />
 					<LLoadProfile Path="../Animus/Skyfire I/Coerthas - Giant Logger.xml"/>
 				</If>
 				<If condition="not ZodiacManager.CurrentBook.KillTask3Completed">
+					<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7826">
+						<RunCode Name="BravuraAtma" />
+						<WaitTimer WaitTime="3" />
+					</If>					
 					<Log Message="Moving to Skyfire I - Western La Noscea - Shoalspine Sahagin" />
 					<LLoadProfile Path="../Animus/Skyfire I/Western La Noscea - Shoalspine Sahagin.xml"/>
 				</If>
 				<If condition="not ZodiacManager.CurrentBook.KillTask5Completed">
+					<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7826">
+						<RunCode Name="BravuraAtma" />
+						<WaitTimer WaitTime="3" />
+					</If>					
 					<Log Message="Moving to Skyfire I - Outer La Noscea - Synthetic Doblyn" />
 					<LLoadProfile Path="../Animus/Skyfire I/Outer La Noscea - Synthetic Doblyn.xml"/>
 				</If>
 				<If condition="not ZodiacManager.CurrentBook.KillTask6Completed">
+					<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7826">
+						<RunCode Name="BravuraAtma" />
+						<WaitTimer WaitTime="3" />
+					</If>					
 					<Log Message="Moving to Skyfire I - Western Thanlan - 4th Cohort Hoplomachi" />
 					<LLoadProfile Path="../Animus/Skyfire I/Western Thanlan - 4th Cohort Hoplomachi.xml"/>
 				</If>
 				<If condition="not ZodiacManager.CurrentBook.KillTask7Completed">
+					<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7826">
+						<RunCode Name="BravuraAtma" />
+						<WaitTimer WaitTime="3" />
+					</If>																																												  								 											   
 					<Log Message="Moving to Skyfire I - Southern Thanalan - Zanr'ak Pugilist" />
 					<LLoadProfile Path="../Animus/Skyfire I/Southern Thanalan - Zanr'ak Pugilist.xml"/>
 				</If>
 				<If condition="not ZodiacManager.CurrentBook.KillTask8Completed">
+					<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7826">
+						<RunCode Name="BravuraAtma" />
+						<WaitTimer WaitTime="3" />
+					</If>					
 					<Log Message="Moving to Skyfire I - East Shroud - Milkroot Cluster" />
 					<LLoadProfile Path="../Animus/Skyfire I/East Shroud - Milkroot Cluster.xml"/>
 				</If>
 				<If condition="not ZodiacManager.CurrentBook.KillTask9Completed">
+					<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7826">
+						<RunCode Name="BravuraAtma" />
+						<WaitTimer WaitTime="3" />
+					</If>					
 					<Log Message="Moving to Skyfire I - Northern Thanalan - Basilisk" />
 					<LLoadProfile Path="../Animus/Skyfire I/Northern Thanalan - Basilisk.xml"/>
 				</If>			
 				<If condition="not ZodiacManager.CurrentBook.KillTask10Completed">
+					<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7826">
+						<RunCode Name="BravuraAtma" />
+						<WaitTimer WaitTime="3" />
+					</If>					
 					<Log Message="Moving to Skyfire I - Eastern La Noscea - 2nd Cohort Hoplomachi" />
 					<LLoadProfile Path="../Animus/Skyfire I/Eastern La Noscea - 2nd Cohort Hoplomachi.xml"/>
 				</If>
 				<!-- Skyfire I Dungeons -->
 				<If condition="not ZodiacManager.CurrentBook.DungeonTask1Completed">
+					<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7826">
+						<RunCode Name="BravuraAtma" />
+						<WaitTimer WaitTime="3" />
+					</If>					
 					<Log Message="Moving to Skyfire I - Tam Tara Deepcroft" />
 					<LLoadProfile Path="../Dungeons/TamTaraDeepcroft.xml"/>
 				</If>
 				<If condition="not ZodiacManager.CurrentBook.DungeonTask2Completed">
+					<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7826">
+						<RunCode Name="BravuraAtma" />
+						<WaitTimer WaitTime="3" />
+					</If>					
 					<Log Message="Moving to Skyfire I - The Stone Vigil" />
 					<LLoadProfile Path="../Dungeons/TheStoneVigil.xml"/>
 				</If>
 				<If condition="not ZodiacManager.CurrentBook.DungeonTask3Completed">
+					<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7826">
+						<RunCode Name="BravuraAtma" />
+						<WaitTimer WaitTime="3" />
+					</If>					
 					<Log Message="Moving to Skyfire I - The Lost City of Amdapor" />
 					<LLoadProfile Path="../Dungeons/TheLostCityOfAmdapor.xml"/>
 				</If>
 				<!-- Skyfire I Fates -->
 				<If condition="not ZodiacManager.CurrentBook.FateTask1Completed">
+					<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7826">
+						<RunCode Name="BravuraAtma" />
+						<WaitTimer WaitTime="3" />
+					</If>					
 					<Log Message="Moving to Skyfire I - Coerthas Central Highlands Giant Seps FATE" />
 					<While Condition="not ZodiacManager.CurrentBook.FateTask1Completed">
-						<If Condition="not IsOnMap(155)">				
-							<GetTo ZoneId="155" XYZ="227.6718, 312, -229.5252" /> <!-- Coerthas Central Highlands -->
-						</If>				
-							<Fate MinLevel="1" FateId="480" MaxLevel="50" Timeout="15"/>
+						<If Condition="not IsOnMap(155)">
+							<TeleportTo Name="Camp Dragonhead" AetheryteId="23"/>
+						</If>
+						<FlyTo XYZ="-625.8011, 205.0826, -445.6776" />
+						<LLFate FateId="480" MinLevel="1"MaxLevel="50"/> <!-- Giant Seps -->								  				  
 					</While>					
 				</If>
 				<If condition="not ZodiacManager.CurrentBook.FateTask2Completed">
+					<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7826">
+						<RunCode Name="BravuraAtma" />
+						<WaitTimer WaitTime="3" />
+					</If>					
 					<Log Message="Moving to Skyfire I - Outer La Noscea Make It Rain FATE" />
+					<While Condition="not ZodiacManager.CurrentBook.FateTask2Completed">
+						<If Condition="not IsOnMap(155)">
+							<TeleportTo Name="Camp Overlook" AetheryteId="16"/>
+						</If>
+						<FlyTo XYZ="184.3023, 60.99683, -163.5332" />
+						<LLFate FateId="589" MinLevel="1"MaxLevel="50"/> <!-- Make It Rain -->							  				  
+					</While>						
 				</If>
 				<If condition="not ZodiacManager.CurrentBook.FateTask3Completed">
+					<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7826">
+						<RunCode Name="BravuraAtma" />
+						<WaitTimer WaitTime="3" />
+					</If>					
 					<Log Message="Moving to Skyfire I - East Shroud  The Enmity of my Enemy" />
+					<While Condition="not ZodiacManager.CurrentBook.FateTask3Completed">
+						<If Condition="not IsOnMap(152)">
+							<TeleportTo Name="The Hawthorne Hut" AetheryteId="4"/>
+						</If>
+						<FlyTo XYZ="276.8837, -6.474012, 21.03842" />
+						<LLFate FateId="611" MinLevel="1"MaxLevel="50"/> <!-- The Enmity of my Enemy -->							  				  
+					</While>				
 				</If>
 				<!-- Skyfire I Guildleves -->
 				<If condition="not ZodiacManager.CurrentBook.GuildleveTask1Completed">
+					<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7826">
+						<RunCode Name="BravuraAtma" />
+						<WaitTimer WaitTime="3" />
+					</If>					
 					<Log Message="Moving to Skyfire I - Nothern Thanalan Camp Bluefrog 'Necrologos: Pale Oblation'" />
-				</If>
+				</If>			
 				<If condition="not ZodiacManager.CurrentBook.GuildleveTask2Completed">
+					<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7826">
+						<RunCode Name="BravuraAtma" />
+						<WaitTimer WaitTime="3" />
+					</If>					
 					<Log Message="Moving to Skyfire I - Coerthas Central Whitebrim Front 'An Imp Mobile'" />
 				</If>
 				<If condition="not ZodiacManager.CurrentBook.GuildleveTask2Completed">
+					<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7826">
+						<RunCode Name="BravuraAtma" />
+						<WaitTimer WaitTime="3" />
+					</If>					
 					<Log Message="Moving to Skyfire I - Mor Dhona Saint Coinarch's Find 'The Awry Savages'" />
 				</If>			
 			</If>		
