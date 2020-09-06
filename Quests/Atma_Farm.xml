@@ -42,31 +42,19 @@
 					<RunCode Name="HolyShieldZenith" />
 					<WaitTimer WaitTime="3" />
 				</If>
+			</If>
+			<If Condition="ClassName == ((ClassJobType.Scholar))"> 
+				<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 6265">
+					<RunCode Name="OmnilexZenith" />
+					<WaitTimer WaitTime="3" />
+				</If>
 			</If>				
 		  <If Condition="not IsOnMap(180)">
 			<TeleportTo Name="Camp Overlook" AetheryteId="16"/>
 		  </If>
                 <Log Message="Farming Atma of the Lion in Outer La Noscea..." />
                 <While Condition="not HasAtLeast(7858,1)">
-                    <Fate MinLevel="1" MaxLevel="50" Timeout="15">
-                        <FateIds>
-                            <FateId>700</FateId> <!--  -->
-                            <FateId>599</FateId> <!--  -->
-                            <FateId>598</FateId> <!--  -->
-                            <FateId>597</FateId> <!--  -->
-                            <FateId>595</FateId> <!--  -->
-                            <FateId>594</FateId> <!--  -->
-                            <FateId>593</FateId> <!--  -->
-                            <FateId>591</FateId> <!--  -->
-                            <FateId>589</FateId> <!--  -->
-                            <FateId>588</FateId> <!--  -->
-                            <FateId>587</FateId> <!--  -->
-                            <FateId>586</FateId> <!--  -->
-                            <FateId>583</FateId> <!--  -->
-                            <FateId>581</FateId> <!--  -->
-                            <FateId>580</FateId> <!--  -->
-                        </FateIds>
-                    </Fate>
+                    <LLFate MinLevel="1" MaxLevel="50" while="HasAtLeast(7858,1)"/>
                 </While>		  
 		 </If>
 
@@ -102,33 +90,19 @@
 					<RunCode Name="HolyShieldZenith" />
 					<WaitTimer WaitTime="3" />
 				</If>
-			</If>			
+			</If>
+			<If Condition="ClassName == ((ClassJobType.Scholar))"> 
+				<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 6265">
+					<RunCode Name="OmnilexZenith" />
+					<WaitTimer WaitTime="3" />
+				</If>
+			</If>				
 		  <If Condition="not IsOnMap(139)">
 			<TeleportTo Name="Camp Bronze Lake" AetheryteId="15"/>
 		  </If>			
             <Log Message="Atma of the Water-bearer in Upper La Noscea..." />
             <While Condition="not HasAtLeast(7853,1)">
-                    <Fate MinLevel="1" MaxLevel="50" Timeout="15">
-                        <FateIds>
-                            <FateId>935</FateId> <!--  -->
-                            <FateId>671</FateId> <!--  -->
-                            <!-- <FateId>670</FateId> --> <!-- Requires Transport -->
-                            <!-- <FateId>669</FateId> --> <!-- Requires Transport -->
-                        <!-- <FateId>668</FateId> --> <!-- Requires Transport -->
-                        <!-- <FateId>453</FateId> --> <!-- Requires Transport -->
-                        <!-- <FateId>452</FateId> --> <!-- Requires Transport -->
-                        <!-- <FateId>451</FateId> --> <!-- Requires Transport -->
-                        <FateId>332</FateId> <!--  -->
-                        <FateId>331</FateId> <!--  -->
-                        <FateId>329</FateId> <!--  -->
-                        <!-- <FateId>323</FateId> --> <!-- Requires Transport -->
-                        <FateId>322</FateId> <!--  -->
-                        <FateId>321</FateId> <!--  -->
-                        <FateId>320</FateId> <!--  -->
-                        <FateId>317</FateId> <!--  -->
-                        <!-- <FateId>314</FateId> --> <!-- Requires Transport -->
-                    </FateIds>
-                </Fate>
+                <LLFate MinLevel="1" MaxLevel="50" while="HasAtLeast(7853,1)"/>
             </While>
         </While>
 
@@ -165,33 +139,18 @@
 						<RunCode Name="HolyShieldZenith" />
 						<WaitTimer WaitTime="3" />
 					</If>
-				</If>			
+				</If>
+			<If Condition="ClassName == ((ClassJobType.Scholar))"> 
+				<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 6265">
+					<RunCode Name="OmnilexZenith" />
+					<WaitTimer WaitTime="3" />
+				</If>
+			</If>					
 			  <If Condition="not IsOnMap(134)">
 				<GetTo ZoneId="134" XYZ="222.3688, 113.1, -256.9429" /> <!-- Summerford Farms -->
 			  </If>				             
                 <While Condition="not HasAtLeast(7856,1)">
-                    <Fate MinLevel="1" MaxLevel="50" Timeout="15">
-                        <FateIds>
-                            <!-- <FateId>938</FateId> --> <!-- Gathering -->
-                            <FateId>688</FateId> <!--  -->
-                            <FateId>649</FateId> <!--  -->
-                            <FateId>240</FateId> <!--  -->
-                            <FateId>239</FateId> <!--  -->
-                            <FateId>238</FateId> <!--  -->
-                            <FateId>237</FateId> <!--  -->
-                            <FateId>235</FateId> <!--  -->
-                            <FateId>233</FateId> <!--  -->
-                            <FateId>231</FateId> <!--  -->
-                            <FateId>229</FateId> <!--  -->
-                            <FateId>227</FateId> <!--  -->
-                            <FateId>226</FateId> <!--  -->
-                            <FateId>225</FateId> <!--  -->
-                            <FateId>223</FateId> <!--  -->
-                            <FateId>222</FateId> <!--  -->
-                            <FateId>221</FateId> <!--  -->
-                            <FateId>220</FateId> <!--  -->
-                        </FateIds>
-                    </Fate>
+                    <LLFate MinLevel="1" MaxLevel="50" while="HasAtLeast(7856,1)"/>
                 </While>
             </While>
 			
@@ -228,40 +187,18 @@
 					<RunCode Name="HolyShieldZenith" />
 					<WaitTimer WaitTime="3" />
 				</If>
-			</If>			
+			</If>
+			<If Condition="ClassName == ((ClassJobType.Scholar))"> 
+				<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 6265">
+					<RunCode Name="OmnilexZenith" />
+					<WaitTimer WaitTime="3" />
+				</If>
+			</If>				
 			  <If Condition="not IsOnMap(138)">
                 <GetTo ZoneId="138" XYZ="261.1299, -22.75, 224.9563" /> <!-- Aleport -->
 			  </If>					
                 <While Condition="not HasAtLeast(7862,1)">
-                    <Fate MinLevel="1" MaxLevel="50" Timeout="15">
-                        <FateIds>
-                            <FateId>650</FateId> <!--  -->
-                            <FateId>578</FateId> <!--  -->
-                            <!-- <FateId>577</FateId> --> <!-- Requires Transport -->
-                            <!-- <FateId>576</FateId> --> <!-- Requires Transport -->
-                            <FateId>575</FateId> <!--  -->
-                            <FateId>574</FateId> <!--  -->
-                            <FateId>572</FateId> <!--  -->
-                            <FateId>571</FateId> <!--  -->
-                            <FateId>570</FateId> <!--  -->
-                            <FateId>569</FateId> <!--  -->
-                            <FateId>568</FateId> <!--  -->
-                            <!-- <FateId>336</FateId> --> <!-- Requires Transport -->
-                            <FateId>312</FateId> <!--  -->
-                            <FateId>310</FateId> <!--  -->
-                            <FateId>309</FateId> <!--  -->
-                            <FateId>308</FateId> <!--  -->
-                            <FateId>306</FateId> <!--  -->
-                            <FateId>304</FateId> <!--  -->
-                            <FateId>303</FateId> <!--  -->
-                            <FateId>298</FateId> <!--  -->
-                            <!-- <FateId>297</FateId> --> <!-- Gathering -->
-                            <FateId>295</FateId> <!--  -->
-                            <FateId>291</FateId> <!--  -->
-                            <FateId>290</FateId> <!--  -->
-                            <FateId>289</FateId> <!--  -->
-                        </FateIds>
-                    </Fate>
+                    <LLFate MinLevel="1" MaxLevel="50" while="HasAtLeast(7862,1)"/>
                 </While>
             </While>
 
@@ -298,29 +235,18 @@
 					<RunCode Name="HolyShieldZenith" />
 					<WaitTimer WaitTime="3" />
 				</If>
-			</If>			
+			</If>
+			<If Condition="ClassName == ((ClassJobType.Scholar))"> 
+				<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 6265">
+					<RunCode Name="OmnilexZenith" />
+					<WaitTimer WaitTime="3" />
+				</If>
+			</If>				
 			  <If Condition="not IsOnMap(135)">
                 <GetTo ZoneId="135" XYZ="163.1953, 14.09587, 673.3568" /> <!-- Moraby Drydocks -->
 			  </If>							
                 <While Condition="not HasAtLeast(7859,1)">
-                    <Fate MinLevel="1" MaxLevel="50" Timeout="15">
-                        <FateIds>
-                            <FateId>667</FateId> <!--  -->
-                            <FateId>666</FateId> <!--  -->
-                            <FateId>333</FateId> <!--  -->
-                            <FateId>265</FateId> <!--  -->
-                            <FateId>264</FateId> <!--  -->
-                            <!-- <FateId>262</FateId> --> <!--  -->
-                            <FateId>261</FateId> <!--  -->
-                            <FateId>260</FateId> <!--  -->
-                            <FateId>257</FateId> <!--  -->
-                            <FateId>251</FateId> <!--  -->
-                            <FateId>250</FateId> <!--  -->
-                            <FateId>249</FateId> <!--  -->
-                            <FateId>246</FateId> <!--  -->
-                            <FateId>245</FateId> <!--  -->
-                        </FateIds>
-                    </Fate>
+                    <LLFate MinLevel="1" MaxLevel="50" while="HasAtLeast(7859,1)"/>
                 </While>
             </While>
 
@@ -357,37 +283,18 @@
 					<RunCode Name="HolyShieldZenith" />
 					<WaitTimer WaitTime="3" />
 				</If>
-			</If>			
+			</If>
+			<If Condition="ClassName == ((ClassJobType.Scholar))"> 
+				<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 6265">
+					<RunCode Name="OmnilexZenith" />
+					<WaitTimer WaitTime="3" />
+				</If>
+			</If>				
 			  <If Condition="not IsOnMap(145)">
                 <GetTo ZoneId="145" XYZ="-386.3481, -59, 134.0927" /> <!-- Camp Drybone -->
 			  </If>						                
                 <While Condition="not HasAtLeast(7855,1)">
-                    <Fate MinLevel="1" MaxLevel="50" Timeout="15">
-                        <FateIds>
-                            <FateId>652</FateId> <!--  -->
-                            <FateId>543</FateId> <!--  -->
-                            <FateId>542</FateId> <!--  -->
-                            <FateId>541</FateId> <!--  -->
-                            <FateId>540</FateId> <!--  -->
-                            <FateId>413</FateId> <!--  -->
-                            <FateId>412</FateId> <!--  -->
-                            <FateId>409</FateId> <!--  -->
-                            <FateId>407</FateId> <!--  -->
-                            <FateId>406</FateId> <!--  -->
-                            <FateId>402</FateId> <!--  -->
-                            <FateId>401</FateId> <!--  -->
-                            <FateId>400</FateId> <!--  -->
-                            <FateId>398</FateId> <!--  -->
-                            <FateId>397</FateId> <!--  -->
-                            <FateId>395</FateId> <!--  -->
-                            <FateId>394</FateId> <!--  -->
-                            <FateId>195</FateId> <!--  -->
-                            <FateId>194</FateId> <!--  -->
-                            <FateId>193</FateId> <!--  -->
-                            <FateId>192</FateId> <!--  -->
-                            <FateId>191</FateId> <!--  -->
-                        </FateIds>
-                    </Fate>
+                    <LLFate MinLevel="1" MaxLevel="50" while="HasAtLeast(7855,1)"/>
                 </While>
             </While>			
 
@@ -424,30 +331,18 @@
 					<RunCode Name="HolyShieldZenith" />
 					<WaitTimer WaitTime="3" />
 				</If>
-			</If>			
+			</If>
+			<If Condition="ClassName == ((ClassJobType.Scholar))"> 
+				<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 6265">
+					<RunCode Name="OmnilexZenith" />
+					<WaitTimer WaitTime="3" />
+				</If>
+			</If>				
 			  <If Condition="not IsOnMap(141)">
                 <GetTo ZoneId="141" XYZ="-13.56739, -1.877733, -163.8" /> <!-- Black Brush Station -->
 			  </If>						                				
                 <While Condition="not HasAtLeast(7861,1)">
-                    <Fate MinLevel="1" MaxLevel="50" Timeout="15">
-                        <FateIds>
-                            <FateId>661</FateId> <!--  -->
-                            <FateId>660</FateId> <!--  -->
-                            <FateId>393</FateId> <!--  -->
-                            <FateId>389</FateId> <!--  -->
-                            <FateId>385</FateId> <!--  -->
-                            <FateId>383</FateId> <!--  -->
-                            <!-- <FateId>381</FateId> --> <!-- Gathering -->
-                            <FateId>379</FateId> <!--  -->
-                            <!-- <FateId>378</FateId> --> <!-- Gathering -->
-                            <FateId>377</FateId> <!--  -->
-                            <FateId>376</FateId> <!--  -->
-                            <FateId>375</FateId> <!--  -->
-                            <FateId>374</FateId> <!--  -->
-                            <FateId>373</FateId> <!--  -->
-                            <FateId>370</FateId> <!--  -->
-                        </FateIds>
-                    </Fate>
+                    <LLFate MinLevel="1" MaxLevel="50" while="HasAtLeast(7861,1)"/>
                 </While>
             </If>
 
@@ -484,34 +379,18 @@
 					<RunCode Name="HolyShieldZenith" />
 					<WaitTimer WaitTime="3" />
 				</If>
-			</If>			
+			</If>
+			<If Condition="ClassName == ((ClassJobType.Scholar))"> 
+				<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 6265">
+					<RunCode Name="OmnilexZenith" />
+					<WaitTimer WaitTime="3" />
+				</If>
+			</If>				
 				<If Condition="not IsOnMap(140)">				
 					<GetTo ZoneId="140" XYZ="61.26291, 45, -227.1376" /> <!-- Horizon -->
 				</If>	
                 <While Condition="not HasAtLeast(7857,1)">
-                    <Fate MinLevel="1" MaxLevel="50" Timeout="15">
-                        <FateIds>
-                            <FateId>684</FateId> <!--  -->
-                            <FateId>367</FateId> <!--  -->
-                            <FateId>366</FateId> <!--  -->
-                            <FateId>361</FateId> <!--  -->
-                            <FateId>357</FateId> <!--  -->
-                            <FateId>356</FateId> <!--  -->
-                            <FateId>355</FateId> <!--  -->
-                            <FateId>354</FateId> <!--  -->
-                            <FateId>353</FateId> <!--  -->
-                            <FateId>352</FateId> <!--  -->
-                            <FateId>350</FateId> <!--  -->
-                            <FateId>349</FateId> <!--  -->
-                            <FateId>348</FateId> <!--  -->
-                            <FateId>347</FateId> <!--  -->
-                            <!-- <FateId>346</FateId> --> <!-- Gathering -->
-                            <FateId>345</FateId> <!--  -->
-                            <FateId>344</FateId> <!--  -->
-                            <FateId>343</FateId> <!--  -->
-                            <FateId>342</FateId> <!--  -->
-                        </FateIds>
-                    </Fate>
+                    <LLFate MinLevel="1" MaxLevel="50" while="HasAtLeast(7857,1)"/>
                 </While>
             </While>
 		
@@ -548,47 +427,18 @@
 					<RunCode Name="HolyShieldZenith" />
 					<WaitTimer WaitTime="3" />
 				</If>
-			</If>			
+			</If>
+			<If Condition="ClassName == ((ClassJobType.Scholar))"> 
+				<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 6265">
+					<RunCode Name="OmnilexZenith" />
+					<WaitTimer WaitTime="3" />
+				</If>
+			</If>				
 				<If Condition="not IsOnMap(146)">				
 					 <GetTo ZoneId="146" XYZ="-158.9477, 26.13835, -407.9711" /> <!-- Little Ala Mhigo -->
 				</If>				              
                 <While Condition="not HasAtLeast(7852,1)">
-                    <Fate MinLevel="1" MaxLevel="50" Timeout="15">
-                        <FateIds>
-                            <FateId>934</FateId> <!--  -->
-                            <FateId>686</FateId> <!--  -->
-                            <FateId>651</FateId> <!--  -->
-                            <FateId>558</FateId> <!--  -->
-                            <FateId>557</FateId> <!--  -->
-                            <FateId>555</FateId> <!--  -->
-                            <FateId>554</FateId> <!--  -->
-                            <FateId>553</FateId> <!--  -->
-                            <FateId>552</FateId> <!--  -->
-                            <FateId>551</FateId> <!--  -->
-                            <FateId>550</FateId> <!--  -->
-                            <FateId>549</FateId> <!--  -->
-                            <FateId>548</FateId> <!--  -->
-                            <FateId>546</FateId> <!--  -->
-                            <FateId>545</FateId> <!--  -->
-                            <FateId>456</FateId> <!--  -->
-                            <FateId>455</FateId> <!--  -->
-                            <FateId>441</FateId> <!--  -->
-                            <FateId>437</FateId> <!--  -->
-                            <FateId>436</FateId> <!--  -->
-                            <FateId>434</FateId> <!--  -->
-                            <FateId>432</FateId> <!--  -->
-                            <FateId>431</FateId> <!--  -->
-                            <FateId>430</FateId> <!--  -->
-                            <FateId>429</FateId> <!--  -->
-                            <FateId>427</FateId> <!--  -->
-                            <FateId>424</FateId> <!--  -->
-                            <FateId>423</FateId> <!--  -->
-                            <!-- <FateId>422</FateId> --> <!-- Gathering -->
-                            <FateId>421</FateId> <!--  -->
-                            <FateId>420</FateId> <!--  -->
-                            <FateId>419</FateId> <!--  -->
-                        </FateIds>
-                    </Fate>
+                    <LLFate MinLevel="1" MaxLevel="50" while="HasAtLeast(7852,1)"/>
                 </While>
             </While>
 
@@ -625,33 +475,18 @@
 					<RunCode Name="HolyShieldZenith" />
 					<WaitTimer WaitTime="3" />
 				</If>
-			</If>			
+			</If>
+			<If Condition="ClassName == ((ClassJobType.Scholar))"> 
+				<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 6265">
+					<RunCode Name="OmnilexZenith" />
+					<WaitTimer WaitTime="3" />
+				</If>
+			</If>				
 				<If Condition="not IsOnMap(154)">				
 					<GetTo ZoneId="154" XYZ="-43.92079, -40.88041, 241.8634" /> <!-- Fallgourd Float -->
 				</If>				
                 <While Condition="not HasAtLeast(7860,1)">
-                    <Fate MinLevel="1" MaxLevel="50" Timeout="15">
-                        <FateIds>
-                            <FateId>677</FateId> <!--  -->
-                            <FateId>676</FateId> <!--  -->
-                            <FateId>675</FateId> <!--  -->
-                            <FateId>674</FateId> <!--  -->
-                            <FateId>634</FateId> <!--  -->
-                            <FateId>633</FateId> <!--  -->
-                            <FateId>632</FateId> <!--  -->
-                            <FateId>631</FateId> <!--  -->
-                            <FateId>216</FateId> <!--  -->
-                            <FateId>189</FateId> <!--  -->
-                            <FateId>188</FateId> <!--  -->
-                            <FateId>187</FateId> <!--  -->
-                            <FateId>185</FateId> <!--  -->
-                            <FateId>184</FateId> <!--  -->
-                            <FateId>183</FateId> <!--  -->
-                            <!-- <FateId>180</FateId> --> <!-- Gathering -->
-                            <FateId>178</FateId> <!--  -->
-                            <FateId>174</FateId> <!--  -->
-                        </FateIds>
-                    </Fate>
+                    <LLFate MinLevel="1" MaxLevel="50" while="HasAtLeast(7860,1)"/>
                 </While>
             </While>
 
@@ -688,40 +523,18 @@
 					<RunCode Name="HolyShieldZenith" />
 					<WaitTimer WaitTime="3" />
 				</If>
-			</If>			
+			</If>
+			<If Condition="ClassName == ((ClassJobType.Scholar))"> 
+				<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 6265">
+					<RunCode Name="OmnilexZenith" />
+					<WaitTimer WaitTime="3" />
+				</If>
+			</If>				
 				<If Condition="not IsOnMap(152)">				
 					<GetTo ZoneId="152" XYZ="-192.3292, 3.769932, 291.1943" /> <!-- The Hawthorne Hut -->
 				</If>					
                 <While Condition="not HasAtLeast(7854,1)">
-                    <Fate MinLevel="1" MaxLevel="50" Timeout="15">
-                        <FateIds>
-                            <FateId>692</FateId> <!--  -->
-                            <FateId>691</FateId> <!--  -->
-                            <FateId>680</FateId> <!--  -->
-                            <FateId>622</FateId> <!--  -->
-                            <FateId>620</FateId> <!--  -->
-                            <FateId>619</FateId> <!--  -->
-                            <FateId>618</FateId> <!--  -->
-                            <FateId>616</FateId> <!--  -->
-                            <FateId>615</FateId> <!--  -->
-                            <FateId>612</FateId> <!--  -->
-                            <FateId>611</FateId> <!--  -->
-                            <FateId>610</FateId> <!--  -->
-                            <FateId>609</FateId> <!--  -->
-                            <FateId>608</FateId> <!--  -->
-                            <!-- <FateId>607</FateId> --> <!-- Gathering -->
-                            <!-- <FateId>218</FateId> --> <!-- Boss that's too hard to kill solo -->
-                            <FateId>217</FateId> <!--  -->
-                            <FateId>214</FateId> <!--  -->
-                            <FateId>213</FateId> <!--  -->
-                            <FateId>212</FateId> <!--  -->
-                            <FateId>152</FateId> <!--  -->
-                            <FateId>150</FateId> <!--  -->
-                            <FateId>149</FateId> <!--  -->
-                            <FateId>144</FateId> <!--  -->
-                            <FateId>143</FateId> <!--  -->
-                        </FateIds>
-                    </Fate>
+                    <LLFate MinLevel="1" MaxLevel="50" while="HasAtLeast(7854,1)"/>
                 </While>
             </While>
 
@@ -758,41 +571,18 @@
 					<RunCode Name="HolyShieldZenith" />
 					<WaitTimer WaitTime="3" />
 				</If>
-			</If>			
+			</If>
+			<If Condition="ClassName == ((ClassJobType.Scholar))"> 
+				<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 6265">
+					<RunCode Name="OmnilexZenith" />
+					<WaitTimer WaitTime="3" />
+				</If>
+			</If>	
 				<If Condition="not IsOnMap(148)">				
 					<GetTo ZoneId="148" XYZ="5.736485, -1.221331, 36.01854" /> <!-- Bentbranch Meadows -->
 				</If>									
                 <While Condition="not HasAtLeast(7851,1)">
-                    <Fate MinLevel="1" MaxLevel="50" Timeout="15">
-                        <FateIds>
-                            <FateId>933</FateId> <!--  -->
-                            <FateId>673</FateId> <!--  -->
-                            <FateId>672</FateId> <!--  -->
-                            <!-- <FateId>604</FateId> --> <!-- No viable path?! -->
-                            <FateId>603</FateId> <!--  -->
-                            <FateId>602</FateId> <!--  -->
-                            <!-- <FateId>601</FateId> --> <!-- Gathering -->
-                            <FateId>600</FateId> <!--  -->
-                            <!-- <FateId>209</FateId> --> <!-- No viable path?! -->
-                            <FateId>208</FateId> <!--  -->
-                            <FateId>142</FateId> <!--  -->
-                            <FateId>141</FateId> <!--  -->
-                            <FateId>140</FateId> <!--  -->
-                            <FateId>139</FateId> <!--  -->
-                            <FateId>137</FateId> <!--  -->
-                            <FateId>136</FateId> <!--  -->
-                            <FateId>131</FateId> <!--  -->
-                            <FateId>128</FateId> <!--  -->
-                            <FateId>127</FateId> <!--  -->
-                            <FateId>126</FateId> <!--  -->
-                            <!-- <FateId>125</FateId> --> <!-- No viable path?! -->
-                            <!-- <FateId>124</FateId> --> <!-- No viable path?! -->
-                            <FateId>123</FateId> <!--  -->
-                            <FateId>122</FateId> <!--  -->
-                            <FateId>121</FateId> <!--  -->
-                            <!-- <FateId>120</FateId> --> <!-- No viable path?! -->
-                        </FateIds>
-                    </Fate>
+                    <LLFate MinLevel="1" MaxLevel="50" while="HasAtLeast(7851,1)"/>
                 </While>
             </While>
 			
@@ -802,6 +592,19 @@
 
   </Order>
 	<CodeChunks>
+  		<CodeChunk Name="OmnilexZenith">
+		<![CDATA[ 
+			BagSlot EquipSlot = ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand];
+			
+			foreach(ff14bot.Managers.BagSlot slot in ff14bot.Managers.InventoryManager.FilledInventoryAndArmory)
+			{
+				if(slot.RawItemId == 6265)
+				{
+					slot.Move(EquipSlot);
+				}
+			}
+		]]>
+		</CodeChunk>	
 		<CodeChunk Name="OmnilexZenith">
 		<![CDATA[ 
 			BagSlot EquipSlot = ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand];
