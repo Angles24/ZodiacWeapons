@@ -22,3 +22,4 @@ In the Start.xml you will find a list of items, one for each job. You must buy t
 You will need ExBuddy installed in your plugins folder which can be found here https://github.com/Entrax643/ExBuddy
 
 You will also need the latest version of LlamaLibrary installed in your botbases folder which can be found here https://github.com/nt153133/LlamaLibrary
+(Make sure you update before running the profiles, Kayla is constantly making new tags for this set and you'll need the absolute latest.)
