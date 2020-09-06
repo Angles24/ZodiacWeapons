@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+  Profile: Atma Farm
+  Authors: Zamphire
+  Code Credit: TuckMeIntoBread, Kayla, Sodimm, y2krazy, Ken_512
+-->
+
+<Profile>
+	<Name>Leves of Bluefrog</Name>
+	<KillRadius>50</KillRadius>
+	<BehaviorDirectory>..\Quest Behaviors</BehaviorDirectory>
+	<Order>
+    <!-- Leves of Bluefrog -->
+    <If Condition="not HasQuest(65551) and not IsQuestCompleted(65551)">
+      <GetTo ZoneId="147" XYZ="33.91326, 4.68145, 399.2563"/>
+      <If Condition="IsQuestAcceptQualified(65551)">
+		<PickupQuest QuestId="65551" NpcId="1002398"/>
+	  	<ExPickupGuildLeve leveIds="648" leveType="Battlecraft" npcId="1002398" npcLocation="33.91326, 4.68145, 399.2563" Timeout="5" />
+      </If>
+    </If>
+	<If Condition="GetQuestStep(65551) == 1">
+      <GetTo ZoneId="147" XYZ="3.746492, 5.019816, 287.6221"/>     
+	  <!-- <InitiateLeve LeveId="648"/> --> <!-- Blow-up Incubator -->
+	  <Grind grindRef="BlowupIncubator" While="GetQuestStep(65551) == 1"/>	
+    </If>
+	<If Condition="GetQuestStep(65551) == 255">
+		<GetTo ZoneId="147" XYZ="33.91326, 4.68145, 399.2563"/>
+		<ExTurnInGuildLeve NpcId="1002398" NpcLocation="33.91326, 4.68145, 399.2563"/>			
+	</If>	
+	  </Order>
+  <GrindAreas>
+	<GrindArea name="BlowupIncubator">
+        <Hotspots>
+			<Hotspot Radius="200" XYZ="3.746492, 5.019816, 287.6221"/>
+        </Hotspots>
+        <TargetMobs>
+			<TargetMob Name="Fire Sprite" Id="116" Weight="1" />	
+			<TargetMob Name="Ceruleum Bomb" Id="1742" Weight="1" />	
+			<TargetMob Name="Flamedrake" Id="1744" Weight="1" />			
+        </TargetMobs>
+	</GrindArea>  
+  </GrindAreas>
+  <CodeChunks/>
+</Profile>

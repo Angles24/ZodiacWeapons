@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+  Profile: Atma Farm
+  Authors: Zamphire
+  Code Credit: TuckMeIntoBread, Kayla, Sodimm, y2krazy, Ken_512
+-->
+
+<Profile>
+	<Name>Bluefrog Leves</Name>
+	<KillRadius>50</KillRadius>
+	<BehaviorDirectory>..\Quest Behaviors</BehaviorDirectory>
+	<Order>
+			<If Condition="not ExBuddy.Windows.GuildLeve.HasLeve(646)">
+				<GetTo ZoneId="147" XYZ="33.91326, 4.68145, 399.2563"/>
+				<ExPickupGuildLeve leveIds="646" leveType="Battlecraft" npcId="1002398" npcLocation="33.91326, 4.68145, 399.2563" Timeout="5" /> --><!-- Circling the Ceruleum -->
+			</If>
+			<If Condition="ExBuddy.Windows.GuildLeve.HasLeve(646)">
+				<GetTo ZoneId="147" XYZ="45.68184, 7.582094, 344.8144"/>
+				<While condition="!DirectorManager.Directors.length &gt; 0 &amp;&amp; DirectorManager.Directors.Where(s =&gt; (s is ff14bot.Directors.LeveDirector) &amp;&amp; ((LeveDirector)s).LeveId == 646" >
+					<InitiateLeve LeveId="646"/> <!-- Circling the Ceruleum -->
+				</While>
+				<While condition="DirectorManager.Directors.length &gt; 0 &amp;&amp; DirectorManager.Directors.Where(s =&gt; (s is ff14bot.Directors.LeveDirector) &amp;&amp; ((LeveDirector)s).LeveId == 646" >								
+					<UseObject InCombat="True" NpcIds="2001104"  Radius="25"  QuestId="69308">	
+						<HotSpots>
+							<HotSpot XYZ="62.33762,11.31645,336.056" Radius="20"/>
+							<HotSpot XYZ="37.95295,6.131095,354.4171" Radius="20"/>
+							<HotSpot XYZ="9.952703,2.664754,315.1511" Radius="20"/>
+							<HotSpot XYZ="-25.08674,3.473066,372.2181" Radius="20"/>
+						</HotSpots>
+					</UseObject>		
+				</While>
+			</If>
+<!--			
+		<GetTo ZoneId="147" XYZ="33.91326, 4.68145, 399.2563"/>
+		<ExPickupGuildLeve leveIds="644" leveType="Battlecraft" npcId="1002398" npcLocation="33.91326, 4.68145, 399.2563" Timeout="5" />
+		<ExPickupGuildLeve leveIds="646" leveType="Battlecraft" npcId="1002398" npcLocation="33.91326, 4.68145, 399.2563" Timeout="5" /> --><!-- Circling the Ceruleum -->
+			<If Condition="not ExBuddy.Windows.GuildLeve.HasLeve(644)">
+				<GetTo ZoneId="147" XYZ="33.91326, 4.68145, 399.2563"/>
+				<ExPickupGuildLeve leveIds="644" leveType="Battlecraft" npcId="1002398" npcLocation="33.91326, 4.68145, 399.2563" Timeout="5" />
+				<ExPickupGuildLeve leveIds="646" leveType="Battlecraft" npcId="1002398" npcLocation="33.91326, 4.68145, 399.2563" Timeout="5" /> <!-- Circling the Ceruleum -->
+			</If>
+
+	</Order>
+  <GrindAreas>
+	<GrindArea name="BlowupIncubator">
+        <Hotspots>
+			<Hotspot Radius="200" XYZ="3.746492, 5.019816, 287.6221"/>
+        </Hotspots>
+        <TargetMobs>
+			<TargetMob Name="Fire Sprite" Id="116" Weight="1" />	
+			<TargetMob Name="Ceruleum Bomb" Id="1742" Weight="1" />	
+			<TargetMob Name="Flamedrake" Id="1744" Weight="1" />			
+        </TargetMobs>
+	</GrindArea>  
+  </GrindAreas>
+  <CodeChunks/>
+</Profile>
