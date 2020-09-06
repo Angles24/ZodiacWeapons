@@ -468,7 +468,7 @@
 			<GetTo ZoneId="154" XYZ="405.1117,-4.498068,-89.15851"/>
 			<RunCode name="BuyBravuraAtma"/>
 		</If>		
-		<If Condition="HasAtLeast(6259,1) and not (HasAtLeast(7826,1)">
+		<If Condition="HasAtLeast(6259,1) and not HasAtLeast(7826,1)">
 			  <If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 6259">
 					<RunCode Name="BravuraZenith" />
 					<WaitTimer WaitTime="3" />

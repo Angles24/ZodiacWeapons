@@ -637,7 +637,7 @@
 							<TeleportTo Name="Camp Dragonhead" AetheryteId="23"/>
 						</If>
 						<FlyTo XYZ="-625.8011, 205.0826, -445.6776" />
-						<LLFate FateId="480" MinLevel="1"MaxLevel="50"/> <!-- Giant Seps -->								  				  
+						<LLFate FateId="480" MinLevel="1" MaxLevel="50"/> <!-- Giant Seps -->								  				  
 					</While>						
 				</If>
 				<If condition="not ZodiacManager.CurrentBook.FateTask2Completed">
@@ -651,7 +651,7 @@
 							<TeleportTo Name="Camp Overlook" AetheryteId="16"/>
 						</If>
 						<FlyTo XYZ="184.3023, 60.99683, -163.5332" />
-						<LLFate FateId="589" MinLevel="1"MaxLevel="50"/> <!-- Make It Rain -->							  				  
+						<LLFate FateId="589" MinLevel="1" MaxLevel="50"/> <!-- Make It Rain -->							  				  
 					</While>					
 				</If>
 				<If condition="not ZodiacManager.CurrentBook.FateTask3Completed">
@@ -665,7 +665,7 @@
 							<TeleportTo Name="The Hawthorne Hut" AetheryteId="4"/>
 						</If>
 						<FlyTo XYZ="276.8837, -6.474012, 21.03842" />
-						<LLFate FateId="611" MinLevel="1"MaxLevel="50"/> <!-- The Enmity of my Enemy -->							  				  
+						<LLFate FateId="611" MinLevel="1" MaxLevel="50"/> <!-- The Enmity of my Enemy -->							  				  
 					</While>				
 				</If>
 				<!-- Skyfire I Guildleves -->
