@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <!--
-  Profile: Atma Farm
+  Profile: Bluefrog Leves
   Authors: Zamphire
   Code Credit: TuckMeIntoBread, Kayla, Sodimm, y2krazy, Ken_512
 -->
@@ -10,49 +10,67 @@
 	<Name>Bluefrog Leves</Name>
 	<KillRadius>50</KillRadius>
 	<BehaviorDirectory>..\Quest Behaviors</BehaviorDirectory>
-	<Order>
-			<If Condition="not ExBuddy.Windows.GuildLeve.HasLeve(646)">
-				<GetTo ZoneId="147" XYZ="33.91326, 4.68145, 399.2563"/>
-				<ExPickupGuildLeve leveIds="646" leveType="Battlecraft" npcId="1002398" npcLocation="33.91326, 4.68145, 399.2563" Timeout="5" /> --><!-- Circling the Ceruleum -->
-			</If>
+	<Order>	
+		<While Condition="not ZodiacManager.CurrentBook.KillTask2Completed">
+			<GetTo ZoneId="147" XYZ="33.91326, 4.68145, 399.2563"/>
+			<ExTurnInGuildLeve NpcId="1002398" NpcLocation="33.91326, 4.68145, 399.2563" MultipleQuests="true"/>
+			<WaitTimer WaitTime="2"/>
+			<ExPickupGuildLeve leveIds="644" leveType="Battlecraft" npcId="1002398" npcLocation="33.91326, 4.68145, 399.2563" Timeout="5" /> <!-- Necrologos: Pale Oblation -->
+			<ExPickupGuildLeve leveIds="646" leveType="Battlecraft" npcId="1002398" npcLocation="33.91326, 4.68145, 399.2563" Timeout="5" /> <!-- Circling the Ceruleum -->
+
+	
+			<!-- Circling the Ceruleum -->
 			<If Condition="ExBuddy.Windows.GuildLeve.HasLeve(646)">
 				<GetTo ZoneId="147" XYZ="45.68184, 7.582094, 344.8144"/>
-				<While condition="!DirectorManager.Directors.length &gt; 0 &amp;&amp; DirectorManager.Directors.Where(s =&gt; (s is ff14bot.Directors.LeveDirector) &amp;&amp; ((LeveDirector)s).LeveId == 646" >
-					<InitiateLeve LeveId="646"/> <!-- Circling the Ceruleum -->
-				</While>
-				<While condition="DirectorManager.Directors.length &gt; 0 &amp;&amp; DirectorManager.Directors.Where(s =&gt; (s is ff14bot.Directors.LeveDirector) &amp;&amp; ((LeveDirector)s).LeveId == 646" >								
-					<UseObject InCombat="True" NpcIds="2001104"  Radius="25"  QuestId="69308">	
+				<InitiateLeve LeveId="646"/> <!-- Circling the Ceruleum -->
+				<While condition="not ff14bot.RemoteWindows.SelectYesno.IsOpen" >								
+					<UseObject InCombat="True" NpcIds="2001104"  Radius="25"  while="not ff14bot.RemoteWindows.SelectYesno.IsOpen">	
 						<HotSpots>
 							<HotSpot XYZ="62.33762,11.31645,336.056" Radius="20"/>
 							<HotSpot XYZ="37.95295,6.131095,354.4171" Radius="20"/>
 							<HotSpot XYZ="9.952703,2.664754,315.1511" Radius="20"/>
 							<HotSpot XYZ="-25.08674,3.473066,372.2181" Radius="20"/>
 						</HotSpots>
-					</UseObject>		
+					</UseObject>															
 				</While>
-			</If>
-<!--			
-		<GetTo ZoneId="147" XYZ="33.91326, 4.68145, 399.2563"/>
-		<ExPickupGuildLeve leveIds="644" leveType="Battlecraft" npcId="1002398" npcLocation="33.91326, 4.68145, 399.2563" Timeout="5" />
-		<ExPickupGuildLeve leveIds="646" leveType="Battlecraft" npcId="1002398" npcLocation="33.91326, 4.68145, 399.2563" Timeout="5" /> --><!-- Circling the Ceruleum -->
-			<If Condition="not ExBuddy.Windows.GuildLeve.HasLeve(644)">
-				<GetTo ZoneId="147" XYZ="33.91326, 4.68145, 399.2563"/>
-				<ExPickupGuildLeve leveIds="644" leveType="Battlecraft" npcId="1002398" npcLocation="33.91326, 4.68145, 399.2563" Timeout="5" />
-				<ExPickupGuildLeve leveIds="646" leveType="Battlecraft" npcId="1002398" npcLocation="33.91326, 4.68145, 399.2563" Timeout="5" /> <!-- Circling the Ceruleum -->
+				<RunCode Name="CloseTimer"/> 
 			</If>
 
+
+			<!-- Necrologos: Pale Oblation -->
+			<If Condition="ExBuddy.Windows.GuildLeve.HasLeve(644)">
+				<GetTo ZoneId="147" XYZ="45.68184, 7.582094, 344.8144"/>
+				<InitiateLeve LeveId="644"/> <!-- Necrologos: Pale Oblation -->
+				<While condition="not ff14bot.RemoteWindows.SelectYesno.IsOpen" >								
+					<UseObject InCombat="True" NpcIds="2001098"  Radius="25"  while="not ff14bot.RemoteWindows.SelectYesno.IsOpen">	
+						<HotSpots>
+							<HotSpot XYZ="59.68162,9.973045,351.4754" Radius="20"/>
+							<HotSpot XYZ="59.66662,9.892045,355.1934" Radius="20"/>
+							<HotSpot XYZ="28.13002,5.091211,334.3859" Radius="20"/>
+							<HotSpot XYZ="35.90902,7.335211,330.4319" Radius="20"/>
+							<HotSpot XYZ="-16.33614,7.17051,290.1503" Radius="20"/>
+							<HotSpot XYZ="-17.66314,6.52751,283.7273" Radius="20"/>	
+							<HotSpot XYZ="34.19517,11.4331,261.2747" Radius="20"/>
+							<HotSpot XYZ="26.79917,11.4591,250.1417" Radius="20"/>									
+						</HotSpots>
+					</UseObject>					
+				</While>
+				<RunCode Name="CloseTimer"/> 
+			</If>
+
+		</While>
 	</Order>
-  <GrindAreas>
-	<GrindArea name="BlowupIncubator">
-        <Hotspots>
-			<Hotspot Radius="200" XYZ="3.746492, 5.019816, 287.6221"/>
-        </Hotspots>
-        <TargetMobs>
-			<TargetMob Name="Fire Sprite" Id="116" Weight="1" />	
-			<TargetMob Name="Ceruleum Bomb" Id="1742" Weight="1" />	
-			<TargetMob Name="Flamedrake" Id="1744" Weight="1" />			
-        </TargetMobs>
-	</GrindArea>  
+  <GrindAreas> 
   </GrindAreas>
-  <CodeChunks/>
+  <CodeChunks>
+  		<CodeChunk Name="CloseTimer">
+			<![CDATA[ 
+			await Buddy.Coroutines.Coroutine.Sleep(2000);
+			if (SelectYesno.IsOpen)
+            {
+                SelectYesno.ClickNo();
+            }
+			]]>
+		</CodeChunk>
+  </CodeChunks>
 </Profile>

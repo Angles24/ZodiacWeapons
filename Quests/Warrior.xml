@@ -188,7 +188,19 @@
                     Talk.Next();
                 }				
             ]]>
-        </CodeChunk>				
+        </CodeChunk>
+		<CodeChunk Name="Disable_Flight">
+		<![CDATA[
+			foreach (var plugin in PluginManager.Plugins.Where(p => p.Plugin.Name == "Enable Flight" || p.Plugin.Name == "启用飞行"))
+			{
+			try
+			{
+				if (!plugin.Enabled)  {  break;  }  else  {  plugin.Enabled = false;  }
+			}
+			catch (Exception ex) {  }
+			}
+		]]>
+		</CodeChunk>		
   </CodeChunks>
   <GrindAreas>
 	<GrindArea name="RelicRebornBravura">
@@ -367,25 +379,24 @@
 			<TalkTo NpcId="1003075" XYZ="440.7262, -0.9374562, -62.21112" QuestId="66655" StepId="13"/>
 		</If>
 		<If Condition="GetQuestStep(66655) == 14">
-			<If Condition="not ClassName == ClassJobType.Warrior">	
-				<ChangeClass Job="Warrior" />
-			</If>
+			<ChangeClass Job="Warrior" />
+			<!-- Turn in Unfinished Bravura -->			
 			<HandOver ItemId="1805" NpcId="1003075" XYZ="440.7262, -0.9374562, -62.21112" QuestId="66655" StepId="14"/>	
 		</If>
 		<If Condition="GetQuestStep(66655) == 15">
-			<If Condition="not ClassName == ClassJobType.Summoner">	
+			<If Condition="not ClassName == ClassJobType.Warrior">	
 				<ChangeClass Job="Warrior" />
 			</If>
 			<LLoadProfile Path="../Dungeons/The Bowl of Embers (Hard).xml"/>	
 		</If>
 		<If Condition="GetQuestStep(66655) == 16">
-			<If Condition="not ClassName == ClassJobType.Summoner">	
+			<If Condition="not ClassName == ClassJobType.Warrior">	
 				<ChangeClass Job="Warrior" />
 			</If>
 			<LLoadProfile Path="../Dungeons/The Howling Eye (Hard).xml"/>	
 		</If>
 		<If Condition="GetQuestStep(66655) == 17">
-			<If Condition="not ClassName == ClassJobType.Summoner">	
+			<If Condition="not ClassName == ClassJobType.Warrior">	
 				<ChangeClass Job="Warrior" />
 			</If>
 			<LLoadProfile Path="../Dungeons/The Navel (Hard).xml"/>
