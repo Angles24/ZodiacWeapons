@@ -14,6 +14,36 @@
 	<If Condition="IsOnMap(167)">
 		<!-- Clear the Gier Hall 0/1 -->
 		<If Condition="not GetInstanceTodo(0) == 1">
+			<If Condition="ClassName == ((ClassJobType.Bard))"> 
+				<ChangeClass Job="Bard" />
+			</If>
+			<If Condition="ClassName == ((ClassJobType.BlackMage))"> 
+				<ChangeClass Job="Black Mage" />
+			</If>
+			<If Condition="ClassName == ((ClassJobType.Dragoon))"> 
+					<ChangeClass Job="Dragoon" />
+			</If>	
+			<If Condition="ClassName == ((ClassJobType.Monk))"> 
+					<ChangeClass Job="Monk" />
+			</If>
+			<If Condition="ClassName == ((ClassJobType.Ninja))"> 
+					<ChangeClass Job="Ninja" />
+			</If>
+			<If Condition="ClassName == ((ClassJobType.Paladin))"> 
+				<ChangeClass Job="Paladin" />
+			</If>		
+			<If Condition="ClassName == ((ClassJobType.Scholar))"> 
+					<ChangeClass Job="Scholar" />
+			</If>
+			<If Condition="ClassName == ((ClassJobType.Summoner))"> 
+					<ChangeClass Job="Summoner" />
+			</If>	
+			<If Condition="ClassName == ((ClassJobType.Warrior))"> 
+					<ChangeClass Job="Warrior" />
+			</If>
+			<If Condition="ClassName == ((ClassJobType.WhiteMage))"> 
+					<ChangeClass Job="White Mage" />
+			</If>			
 			<Log Message="Clear the Gier Hall 0/1" />
 			<MoveTo XYZ="-196.265, -4.200005, 13.03519"/> <!-- Move to bridge -->
 			<MoveTo XYZ="-193.4538, -3.800007, 63.08482" usemesh="false"/> <!-- Move across bridge -->
@@ -26,7 +56,7 @@
 			<MoveTo XYZ="-134.8821, -2.4, 14.71817" usemesh="false"/>	
 			<MoveTo XYZ="-83.99593, 3.099442E-06, -0.1227691" usemesh="false"/> <!-- Move to sealed gate -->
 			<MoveTo XYZ="-73.51895, 0.1999929, 0.2118544" usemesh="false"/>
-			<Grind GrindRef="LunaticPriest" While="GameObjectManager.GetObjectByNPCId(1690)"/> <!-- Fight first boss -->
+			<Grind GrindRef="LunaticPriest" While="not GameObjectManager.GetObjectByNPCId(1690).CurrentHealth == 0"/> <!-- Fight first boss -->
 			<RunCode name="OpenChest"/>
 			<MoveTo XYZ="-10.23611,-1.192093E-07,-0.01531982" usemesh="false"/>
 			<RunCode name="AstralFlow1"/>			
@@ -38,7 +68,7 @@
 			<MoveTo XYZ="199.4624, 22.4248, -70.63486"/> <!-- Move outside bosses room -->	
 			<MoveTo XYZ="200.4684, 22, -112.2056" usemesh="false"/> <!-- Move into boss's room -->
 			<MoveTo XYZ="199.5795, 22, -133.268" usemesh="false"/> <!-- Move into boss's room -->
-			<Grind GrindRef="DemonWall" While="GameObjectManager.GetObjectByNPCId(1694)"/> <!-- Fight second boss -->
+			<Grind GrindRef="DemonWall" While="not GameObjectManager.GetObjectByNPCId(1694).CurrentHealth == 0"/> <!-- Fight second boss -->
 			<LogMessage Message="Second boss dead"/>
 		</If>
 		<!-- Defeat Anantaboga 0/1-->
@@ -48,7 +78,7 @@
 			<RunCode name="AstralFlow2"/>
 			<MoveTo XYZ="136.8121, 44, -0.5193871"/> <!-- Move to first big door -->
 			<MoveTo XYZ="27.01375, 48, 0.2617161"/> <!-- Move into bosses room -->
-			<Grind GrindRef="Anantaboga" While="GameObjectManager.GetObjectByNPCId(1696)"/> <!-- Fight final boss -->
+			<Grind GrindRef="Anantaboga" While="not GameObjectManager.GetObjectByNPCId(1696).CurrentHealth == 0"/> <!-- Fight final boss -->
 		</If>
 		<MoveTo XYZ="-12.46667,48.28507,-0.01531982"/> <!-- Move to chest -->
 		<RunCode name="OpenChest"/>

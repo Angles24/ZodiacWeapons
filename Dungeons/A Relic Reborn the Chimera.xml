@@ -8,12 +8,21 @@
   <BehaviorDirectory></BehaviorDirectory>
   <Order>
 		<RunCode Name="QueueTheChimera"/>
-		<MoveTo XYZ="547.4122,348.3846,-748.106"/> <!-- Engage Boss -->
+		<Grind GrindRef="Chimera" while="not GameObjectManager.GetObjectByNPCId(2162).CurrentHealth == 0"/> <!-- Defeat Dhorme Chimera -->
 		<MoveTo XYZ="556.0494,348.1025,-752.4357"/> <!-- Move to Exit -->
 		<RunCode Name="ExitDuty"/>
 		<LLoadProfile Path="../Start.xml"/>
   </Order>
-  <GrindAreas/>
+  <GrindAreas>
+    <GrindArea name="Chimera">
+      <Hotspots>
+        <Hotspot Radius="90" XYZ="530.1001, 348.5776, -734.2508" name="Name"/>
+      </Hotspots>
+      <TargetMobs>
+        <TargetMob Id="2162" Weight="1000"/> <!-- Dhorme Chimera -->
+      </TargetMobs>
+    </GrindArea>  
+  </GrindAreas>
   <CodeChunks>
  	<CodeChunk Name="ExitDuty">
 		<![CDATA[
