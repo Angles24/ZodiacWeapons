@@ -34,7 +34,20 @@
 				}
 			}
 		]]>
-		</CodeChunk>		
+		</CodeChunk>	
+  		<CodeChunk Name="StardustAtma">
+		<![CDATA[ 
+			BagSlot EquipSlot = ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand];
+			
+			foreach(ff14bot.Managers.BagSlot slot in ff14bot.Managers.InventoryManager.FilledInventoryAndArmory)
+			{
+				if(slot.RawItemId == 7830)
+				{
+					slot.Move(EquipSlot);
+				}
+			}
+		]]>
+		</CodeChunk>				
 		<CodeChunk Name="NoSanguine">
 			  <![CDATA[
 				var _msg = String.Empty;
@@ -67,7 +80,79 @@
 				#endif
 				Core.OverlayManager.AddToast(() => _msg, TimeSpan.FromMilliseconds(25000), System.Windows.Media.Color.FromRgb(29,213,226), System.Windows.Media.Color.FromRgb(13,106,175), new System.Windows.Media.FontFamily("Gautami"));
 			  ]]>
-		</CodeChunk>	
+		</CodeChunk>	 
+        <CodeChunk Name="BuyBravuraAtma"> <!-- This needs to change to Stardust Rod slot -->
+            <![CDATA[ 
+                await Buddy.Coroutines.Coroutine.Sleep(500);
+                ff14bot.Managers.GameObjectManager.GetObjectByNPCId(1008948).Interact();
+                await Buddy.Coroutines.Coroutine.Sleep(1000);
+                if (ff14bot.RemoteWindows.SelectIconString.IsOpen)
+                    ff14bot.RemoteWindows.SelectIconString.ClickSlot(1);
+                if (await Coroutine.Wait(1000, () => Talk.DialogOpen))
+                {
+                    Talk.Next();
+                }
+                await Buddy.Coroutines.Coroutine.Sleep(1000);
+                if (ff14bot.RemoteWindows.SelectString.IsOpen)
+                    ff14bot.RemoteWindows.SelectString.ClickSlot(0);
+                await Buddy.Coroutines.Coroutine.Sleep(1000);
+                 if (ff14bot.RemoteWindows.SelectYesno.IsOpen)
+                    ff14bot.RemoteWindows.SelectYesno.ClickYes();
+                await Buddy.Coroutines.Coroutine.Sleep(1000);
+                if (await Coroutine.Wait(1000, () => Talk.DialogOpen))
+                {
+                    Talk.Next();
+                }
+                if (await Coroutine.Wait(1000, () => Talk.DialogOpen))
+                {
+                    Talk.Next();
+                }
+                if (await Coroutine.Wait(1000, () => Talk.DialogOpen))
+                {
+                    Talk.Next();
+                }
+                if (await Coroutine.Wait(1000, () => Talk.DialogOpen))
+                {
+                    Talk.Next();
+                }
+                if (await Coroutine.Wait(1000, () => Talk.DialogOpen))
+                {
+                    Talk.Next();
+                }				
+            ]]>
+        </CodeChunk>
+        <CodeChunk Name="BuySkyfireI">
+            <![CDATA[ 
+                await Buddy.Coroutines.Coroutine.Sleep(500);
+                ff14bot.Managers.GameObjectManager.GetObjectByNPCId(1006976).Interact();
+                await Buddy.Coroutines.Coroutine.Sleep(1000);
+                if (ff14bot.RemoteWindows.SelectIconString.IsOpen)
+                    ff14bot.RemoteWindows.SelectIconString.ClickSlot(0);
+				await Buddy.Coroutines.Coroutine.Sleep(1000);	
+                if (await Coroutine.Wait(1000, () => Talk.DialogOpen))
+                {
+                    Talk.Next();
+                }
+                await Buddy.Coroutines.Coroutine.Sleep(1000);
+                if (ff14bot.RemoteWindows.SelectString.IsOpen)
+                    ff14bot.RemoteWindows.SelectString.ClickSlot(0);
+				await Buddy.Coroutines.Coroutine.Sleep(1000);
+                if (ff14bot.RemoteWindows.SelectString.IsOpen)
+                    ff14bot.RemoteWindows.SelectString.ClickSlot(0);					
+                await Buddy.Coroutines.Coroutine.Sleep(1000);
+                 if (ff14bot.RemoteWindows.SelectYesno.IsOpen)
+                    ff14bot.RemoteWindows.SelectYesno.ClickYes();
+                await Buddy.Coroutines.Coroutine.Sleep(1000);
+                if (await Coroutine.Wait(1000, () => Talk.DialogOpen))
+                {
+                    Talk.Next();
+                }
+                if (await Coroutine.Wait(1000, () => Talk.DialogOpen))
+                {
+                    Talk.Next();
+                }				
+            ]]>
+        </CodeChunk>
 		<CodeChunk Name="Disable_Flight">
 		<![CDATA[
 			foreach (var plugin in PluginManager.Plugins.Where(p => p.Plugin.Name == "Enable Flight" || p.Plugin.Name == "启用飞行"))
@@ -102,8 +187,8 @@
   <Order>
     <!-- The Weaponsmith of Legend -->
     <If Condition="not HasQuest(66241) and not IsQuestCompleted(66241)">
+	  <ChangeClass Job="Black Mage" />								
       <GetTo ZoneId="140" XYZ="-470.4957, 23.03529, -355.3192"/>
-	  <ChangeClass Job="Black Mage" />
       <If Condition="IsQuestAcceptQualified(66241)">
         <PickupQuest QuestId="66241" NpcId="1005021"/>
       </If>
@@ -152,7 +237,7 @@
 		  </If>
 		  <FlyTo XYZ="427.4873, -5.342077, -74.43809" Land="True"/>
 		  <!-- Turn in Sanguine Scepter -->
-		  <SoTurnIn ItemId="2102" QuestId="66659" NpcId="1003075" XYZ="440.7262, -0.9374562, -62.21112"/>	
+		  <TurnIn QuestId="66659" NpcId="1003075" XYZ="440.7262, -0.9374562, -62.21112"/>	
 		</If>				 
 		<If Condition="GetQuestStep(66659) == 4">
 		<!-- Check if the duty A Relic Reborn: The Chimera is unlocked -->
@@ -176,6 +261,7 @@
 			<If Condition="not HasAtLeast(6267,1)">
 				<If Condition="HasAtLeast(28,15)">
 					<GetTo ZoneId="156" XYZ="63.40987, 31.12387, -735.2782"/>
+					<!-- Buy Radz-at-Han Quenching Oil -->										   
 					<BuyShopExchangeCurrency NpcId= "1008119" ItemId="6267" SelectString="2" Count="1"/>
 				</If>	
 				<If Condition="not HasAtLeast(28,15)">
@@ -185,6 +271,7 @@
 			<If Condition="not HasAtLeast(6268,3)">
 				<If Condition="HasAtLeast(28,60)">
 					<GetTo ZoneId="156" XYZ="63.40987, 31.12387, -735.2782"/>
+					<!-- Buy Thavnairian Mist -->
 					<BuyShopExchangeCurrency NpcId= "1008119" ItemId="6268" SelectString="2" Count="3"/>
 				</If>	
 				<If Condition="not HasAtLeast(28,60)">
@@ -219,7 +306,7 @@
 				<RunCode Name="UnfinishedStardust" />
 				<WaitTimer WaitTime="3" />
 			</While>
-			<GetTo ZoneId="180" XYZ="74.54537, 54.23363, -535.9759" />
+			<GetTo ZoneId="180" XYZ="74.54537, 54.23363, -535.9759" />													
 			<Grind grindRef="RelicRebornStardust" postCombatDelay="1" while="GetQuestStep(66659) == 10"/>			
 		</If>
 		<If Condition="GetQuestStep(66659) == 11">
@@ -259,15 +346,21 @@
 			<HandOver ItemId="2135" NpcId="1003075" XYZ="440.7262, -0.9374562, -62.21112" QuestId="66659" StepId="14"/>	
 		</If>
 		<If Condition="GetQuestStep(66659) == 15">
-			<ChangeClass Job="Black Mage" />
+			<If Condition="not ClassName == ClassJobType.BlackMage">	
+				<ChangeClass Job="Black Mage" />
+			</If>
 			<LLoadProfile Path="../Dungeons/The Bowl of Embers (Hard).xml"/>	
 		</If>
 		<If Condition="GetQuestStep(66659) == 16">
-			<ChangeClass Job="Black Mage" />
+			<If Condition="not ClassName == ClassJobType.BlackMage">	
+				<ChangeClass Job="Black Mage" />
+			</If>
 			<LLoadProfile Path="../Dungeons/The Howling Eye (Hard).xml"/>	
 		</If>
 		<If Condition="GetQuestStep(66659) == 17">
-			<ChangeClass Job="Black Mage" />
+			<If Condition="not ClassName == ClassJobType.BlackMage">	
+				<ChangeClass Job="Black Mage" />
+			</If>
 			<LLoadProfile Path="../Dungeons/The Navel (Hard).xml"/>
 		</If>
 		<If Condition="GetQuestStep(66659) == 18">
@@ -275,7 +368,7 @@
 				<TeleportTo Name="Fallgourd Float" AetheryteId="7"/>
 			</If>	
 			<FlyTo XYZ="427.4873, -5.342077, -74.43809" Land="True"/>
-			<!-- Handin white-hot ember, howling gale, and hyperfused ore -->				
+			<!-- Handin white-hot ember, howling gale, and hyperfused ore BLM -->				
 			<HandOver ItemIds="2001028,2001037,2001046" NpcId="1003075" XYZ="440.7262, -0.9374562, -62.21112" QuestId="66659" StepId="18"/>			
 		</If>
 		<If Condition="GetQuestStep(66659) == 255">
@@ -292,6 +385,27 @@
 				<TurnIn ItemId="6267" QuestId="66659" NpcId="1003075" XYZ="440.7262, -0.9374562, -62.21112"/>
 			</If>	
 		</If>
+ 
+ 
+		<!-- Buy Zenith weapons -->
+		<!-- If Has Completed A Relic Reborn (Stardust Rod) and Stardust Rod -->
+		<If Condition="IsQuestCompleted(66659) and HasAtLeast(2140,1)">
+			<GetTo ZoneId="154" XYZ="447.7078, -0.730916, -67.97275"/>
+			<If Condition="HasAtLeast(6268,3)"> <!-- HasAtLeast 3 Thavnairian Mist -->
+				<ZodiacExchange DialogOption="7" /> <!-- Stardust Rod Zenith -->
+			</If>
+			<If Condition="not HasAtLeast(6268,3)">
+				<If Condition="HasAtLeast(28,60)"> <!-- HasAtLeast 2 Poetics -->
+					<GetTo ZoneId="156" XYZ="63.40987, 31.12387, -735.2782"/>
+					<!-- Buy Thavnairian Mist -->
+					<BuyShopExchangeCurrency NpcId= "1008119" ItemId="6268" SelectString="2" Count="3"/>
+				</If>	
+				<If Condition="not HasAtLeast(28,60)">
+					<RunCode name="NeedPoetics"/>
+				</If>
+			</If>
+		</If> 
+	   
 		<!-- Up in Arms -->
 		<If Condition="IsQuestCompleted(66659)and not HasQuest(66971) and not IsQuestCompleted(66971)">
 		  <If Condition="not IsOnMap(154)">
@@ -313,8 +427,8 @@
 		</If>
 		<If Condition="GetQuestStep(66971) == 255">
 		  <GetTo ZoneId="154" XYZ="407.3613, -4.538448, -88.70496"/>
-		  <TurnIn QuestId="66971" NpcId="1008948" XYZ="405.1117, -4.498068, -89.15851"/>
-		</If>		
+		  <TurnIn QuestId="66971" NpcId="1008948" XYZ="405.1117, -4.498068, -89.15851"/>																																										  
+		</If>																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																								 																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																										 
 	</If>
   </Order>
 </Profile>
