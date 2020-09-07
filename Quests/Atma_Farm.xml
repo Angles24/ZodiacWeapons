@@ -411,7 +411,6 @@
 
             <While Condition="not HasAtLeast(7855,1)">
                 <Log Message="Farming Atma of the Bull in Eastern Thanalan..." />
-			<If Condition="ClassName == ((ClassJobType.Scholar))"> 
 			<If Condition="ClassName == ((ClassJobType.Bard))"> 
 				<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 6261">
 					<RunCode Name="ArtemisZenith" />
@@ -488,82 +487,82 @@
 
             <!-- Farm Atma of the Scales Central Thanalan. -->
 
-            <If Condition="not HasAtLeast(7861,1)">
-                <Log Message="Farming Atma of the Scales in Central Thanalan..." />
-			<If Condition="ClassName == ((ClassJobType.Scholar))"> 
-			<If Condition="ClassName == ((ClassJobType.Bard))"> 
-				<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 6261">
-					<RunCode Name="ArtemisZenith" />
-					<WaitTimer WaitTime="3" />
+            <While Condition="not HasAtLeast(7861,1)">
+                <Log Message="Farming Atma of the Scales in Central Thanalan..." /> 
+				<If Condition="ClassName == ((ClassJobType.Bard))"> 
+					<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 6261">
+						<RunCode Name="ArtemisZenith" />
+						<WaitTimer WaitTime="3" />
+					</If>
 				</If>
-			</If>
-			<If Condition="ClassName == ((ClassJobType.BlackMage))"> 
-				<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 6263">
-					<RunCode Name="StardustZenith" />
-					<WaitTimer WaitTime="3" />
+				<If Condition="ClassName == ((ClassJobType.BlackMage))"> 
+					<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 6263">
+						<RunCode Name="StardustZenith" />
+						<WaitTimer WaitTime="3" />
+					</If>
 				</If>
-			</If>
-			<If Condition="ClassName == ((ClassJobType.Dragoon))"> 
-				<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 6260">
-					<RunCode Name="GaeBolgZenith" />
-					<WaitTimer WaitTime="3" />
+				<If Condition="ClassName == ((ClassJobType.Dragoon))"> 
+					<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 6260">
+						<RunCode Name="GaeBolgZenith" />
+						<WaitTimer WaitTime="3" />
+					</If>
+				</If>	
+				<If Condition="ClassName == ((ClassJobType.Monk))"> 
+					<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 6258">
+						<RunCode Name="SphairaiZenith" />
+						<WaitTimer WaitTime="3" />
+					</If>
 				</If>
-			</If>	
-			<If Condition="ClassName == ((ClassJobType.Monk))"> 
-				<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 6258">
-					<RunCode Name="SphairaiZenith" />
-					<WaitTimer WaitTime="3" />
+				<If Condition="ClassName == ((ClassJobType.Ninja))"> 
+					<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 9250">
+						<RunCode Name="YoshimitsuZenith" />
+						<WaitTimer WaitTime="3" />
+					</If>
 				</If>
-			</If>
-			<If Condition="ClassName == ((ClassJobType.Ninja))"> 
-				<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 9250">
-					<RunCode Name="YoshimitsuZenith" />
-					<WaitTimer WaitTime="3" />
+				<If Condition="ClassName == ((ClassJobType.Paladin))"> 
+					<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 6257">
+						<RunCode Name="CurtanaZenith" />
+						<WaitTimer WaitTime="3" />
+					</If>
 				</If>
-			</If>
-			<If Condition="ClassName == ((ClassJobType.Paladin))"> 
-				<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 6257">
-					<RunCode Name="CurtanaZenith" />
-					<WaitTimer WaitTime="3" />
+				<If Condition="ClassName == ((ClassJobType.Paladin))"> 
+					<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.OffHand].RawItemId != 6266">
+						<RunCode Name="HolyShieldZenith" />
+						<WaitTimer WaitTime="3" />
+					</If>
+				</If>			
+				<If Condition="ClassName == ((ClassJobType.Scholar))"> 
+					<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 6265">
+						<RunCode Name="OmnilexZenith" />
+						<WaitTimer WaitTime="3" />
+					</If>
 				</If>
-			</If>
-			<If Condition="ClassName == ((ClassJobType.Paladin))"> 
-				<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.OffHand].RawItemId != 6266">
-					<RunCode Name="HolyShieldZenith" />
-					<WaitTimer WaitTime="3" />
+				<If Condition="ClassName == ((ClassJobType.Summoner))"> 
+					<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 6264">
+						<RunCode Name="VeilZenith" />
+						<WaitTimer WaitTime="3" />
+					</If>
+				</If>	
+				<If Condition="ClassName == ((ClassJobType.Warrior))"> 
+					<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 6259">
+						<RunCode Name="BravuraZenith" />
+						<WaitTimer WaitTime="3" />
+					</If>
 				</If>
-			</If>			
-			<If Condition="ClassName == ((ClassJobType.Scholar))"> 
-				<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 6265">
-					<RunCode Name="OmnilexZenith" />
-					<WaitTimer WaitTime="3" />
+				<If Condition="ClassName == ((ClassJobType.WhiteMage))"> 
+					<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 6262">
+						<RunCode Name="ThyrusZenith" />
+						<WaitTimer WaitTime="3" />
+					</If>
 				</If>
-			</If>
-			<If Condition="ClassName == ((ClassJobType.Summoner))"> 
-				<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 6264">
-					<RunCode Name="VeilZenith" />
-					<WaitTimer WaitTime="3" />
-				</If>
-			</If>	
-			<If Condition="ClassName == ((ClassJobType.Warrior))"> 
-				<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 6259">
-					<RunCode Name="BravuraZenith" />
-					<WaitTimer WaitTime="3" />
-				</If>
-			</If>
-			<If Condition="ClassName == ((ClassJobType.WhiteMage))"> 
-				<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 6262">
-					<RunCode Name="ThyrusZenith" />
-					<WaitTimer WaitTime="3" />
-				</If>
-			</If>
-			  <If Condition="not IsOnMap(141)">
-                <GetTo ZoneId="141" XYZ="-13.56739, -1.877733, -163.8" /> <!-- Black Brush Station -->
-			  </If>						                				
-                <While Condition="not HasAtLeast(7861,1)">
-                    <LLFate MinLevel="1" MaxLevel="50" while="HasAtLeast(7861,1)"/>
-                </While>
-            </If>
+				  <If Condition="not IsOnMap(141)">
+					<GetTo ZoneId="141" XYZ="-13.56739, -1.877733, -163.8" /> <!-- Black Brush Station -->
+				  </If>						                				
+					<While Condition="not HasAtLeast(7861,1)">
+						<LLFate MinLevel="1" MaxLevel="50" while="HasAtLeast(7861,1)"/>
+					</While>
+			</While>
+
 
 			<!-- Farm Atma of the Twins in Western Thanalan. -->
 
@@ -725,72 +724,72 @@
 
             <While Condition="not HasAtLeast(7860,1)">
                 <Log Message="Farming Atma of the Archer in North Shroud..." />
-			<If Condition="ClassName == ((ClassJobType.Bard))"> 
-				<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 6261">
-					<RunCode Name="ArtemisZenith" />
-					<WaitTimer WaitTime="3" />
+				<If Condition="ClassName == ((ClassJobType.Bard))"> 
+					<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 6261">
+						<RunCode Name="ArtemisZenith" />
+						<WaitTimer WaitTime="3" />
+					</If>
 				</If>
-			</If>
-			<If Condition="ClassName == ((ClassJobType.BlackMage))"> 
-				<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 6263">
-					<RunCode Name="StardustZenith" />
-					<WaitTimer WaitTime="3" />
+				<If Condition="ClassName == ((ClassJobType.BlackMage))"> 
+					<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 6263">
+						<RunCode Name="StardustZenith" />
+						<WaitTimer WaitTime="3" />
+					</If>
 				</If>
-			</If>
-			<If Condition="ClassName == ((ClassJobType.Dragoon))"> 
-				<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 6260">
-					<RunCode Name="GaeBolgZenith" />
-					<WaitTimer WaitTime="3" />
+				<If Condition="ClassName == ((ClassJobType.Dragoon))"> 
+					<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 6260">
+						<RunCode Name="GaeBolgZenith" />
+						<WaitTimer WaitTime="3" />
+					</If>
+				</If>	
+				<If Condition="ClassName == ((ClassJobType.Monk))"> 
+					<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 6258">
+						<RunCode Name="SphairaiZenith" />
+						<WaitTimer WaitTime="3" />
+					</If>
 				</If>
-			</If>	
-			<If Condition="ClassName == ((ClassJobType.Monk))"> 
-				<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 6258">
-					<RunCode Name="SphairaiZenith" />
-					<WaitTimer WaitTime="3" />
+				<If Condition="ClassName == ((ClassJobType.Ninja))"> 
+					<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 9250">
+						<RunCode Name="YoshimitsuZenith" />
+						<WaitTimer WaitTime="3" />
+					</If>
 				</If>
-			</If>
-			<If Condition="ClassName == ((ClassJobType.Ninja))"> 
-				<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 9250">
-					<RunCode Name="YoshimitsuZenith" />
-					<WaitTimer WaitTime="3" />
+				<If Condition="ClassName == ((ClassJobType.Paladin))"> 
+					<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 6257">
+						<RunCode Name="CurtanaZenith" />
+						<WaitTimer WaitTime="3" />
+					</If>
 				</If>
-			</If>
-			<If Condition="ClassName == ((ClassJobType.Paladin))"> 
-				<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 6257">
-					<RunCode Name="CurtanaZenith" />
-					<WaitTimer WaitTime="3" />
+				<If Condition="ClassName == ((ClassJobType.Paladin))"> 
+					<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.OffHand].RawItemId != 6266">
+						<RunCode Name="HolyShieldZenith" />
+						<WaitTimer WaitTime="3" />
+					</If>
+				</If>			
+				<If Condition="ClassName == ((ClassJobType.Scholar))"> 
+					<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 6265">
+						<RunCode Name="OmnilexZenith" />
+						<WaitTimer WaitTime="3" />
+					</If>
 				</If>
-			</If>
-			<If Condition="ClassName == ((ClassJobType.Paladin))"> 
-				<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.OffHand].RawItemId != 6266">
-					<RunCode Name="HolyShieldZenith" />
-					<WaitTimer WaitTime="3" />
+				<If Condition="ClassName == ((ClassJobType.Summoner))"> 
+					<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 6264">
+						<RunCode Name="VeilZenith" />
+						<WaitTimer WaitTime="3" />
+					</If>
+				</If>	
+				<If Condition="ClassName == ((ClassJobType.Warrior))"> 
+					<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 6259">
+						<RunCode Name="BravuraZenith" />
+						<WaitTimer WaitTime="3" />
+					</If>
 				</If>
-			</If>			
-			<If Condition="ClassName == ((ClassJobType.Scholar))"> 
-				<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 6265">
-					<RunCode Name="OmnilexZenith" />
-					<WaitTimer WaitTime="3" />
-				</If>
-			</If>
-			<If Condition="ClassName == ((ClassJobType.Summoner))"> 
-				<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 6264">
-					<RunCode Name="VeilZenith" />
-					<WaitTimer WaitTime="3" />
-				</If>
-			</If>	
-			<If Condition="ClassName == ((ClassJobType.Warrior))"> 
-				<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 6259">
-					<RunCode Name="BravuraZenith" />
-					<WaitTimer WaitTime="3" />
-				</If>
-			</If>
-			<If Condition="ClassName == ((ClassJobType.WhiteMage))"> 
-				<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 6262">
-					<RunCode Name="ThyrusZenith" />
-					<WaitTimer WaitTime="3" />
-				</If>
-			</If>			
+				<If Condition="ClassName == ((ClassJobType.WhiteMage))"> 
+					<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 6262">
+						<RunCode Name="ThyrusZenith" />
+						<WaitTimer WaitTime="3" />
+					</If>
+				</If>			
 				<If Condition="not IsOnMap(154)">				
 					<GetTo ZoneId="154" XYZ="-43.92079, -40.88041, 241.8634" /> <!-- Fallgourd Float -->
 				</If>				
