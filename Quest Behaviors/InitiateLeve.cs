@@ -56,23 +56,12 @@ namespace ff14bot.NeoProfiles
 
 		protected async Task<bool> InitiateLeve()
 		{
-			// if (Core.Player.IsMounted)
-			// {
-				// ActionManager.Dismount();
-				// await Coroutine.Wait(20000, () => !Core.Player.IsMounted);
-				// await Coroutine.Sleep(500);
-			// }
 			var patternFinder = new GreyMagic.PatternFinder(Core.Memory);
 			IntPtr SearchResult = patternFinder.Find("48 8D 05 ? ? ? ? 48 89 54 24 ? 48 89 03 Add 3 TraceRelative");
 			int agent = AgentModule.FindAgentIdByVtable(SearchResult);
 			AgentModule.ToggleAgentInterfaceById(agent); 
-			await Coroutine.Sleep(500);
+			await Coroutine.Sleep(2000);
 			AtkAddonControl windowByName = RaptureAtkUnitManager.GetWindowByName("JournalDetail");
-			while (windowByName == null)
-			{
-				await Coroutine.Sleep(500);
-				windowByName = RaptureAtkUnitManager.GetWindowByName("JournalDetail");
-			}
 			if (windowByName != null)
 			{
 				var leves = LeveManager.Leves;
@@ -80,17 +69,23 @@ namespace ff14bot.NeoProfiles
 				{
 					foreach(ff14bot.Managers.LeveWork leve in leves)	
 					{
+						
 						if(leve.GlobalId == LeveId && leve.Step == 1)
 						{
+							if (Core.Player.IsMounted)
+							{
+								ActionManager.Dismount();
+								await Coroutine.Sleep(2000);
+							}
 							ulong globalId = (ulong) leve.GlobalId;
 							windowByName.SendAction(3,3,0xC,3,globalId,3,2); //Set Quest
-							await Coroutine.Sleep(200);
 							windowByName.SendAction(2,3,4,4,globalId); //Initiate
-							if (await Coroutine.Wait(10000, () => SelectYesno.IsOpen))
+							await Coroutine.Sleep(1000);
+							if (SelectYesno.IsOpen)
 							{
 								SelectYesno.ClickYes();
 							}
-							await Coroutine.Sleep(2000);
+							await Coroutine.Sleep(1000);
 							RaptureAtkUnitManager.GetWindowByName("GuildLeveDifficulty").SendAction(1, 3, 0);
 							await Coroutine.Sleep(3000);
 							break;

@@ -10,7 +10,7 @@
 <!DOCTYPE Profile [
 <!-- Profile Settings -->
 <!ENTITY brd "0"> 		
-<!ENTITY blm "0"> 		
+<!ENTITY blm "1"> 		
 <!ENTITY drg "0"> 
 <!ENTITY mnk "0"> 
 <!ENTITY nin "0"> 		
@@ -80,7 +80,7 @@
 	<!-- Load Black Mage -->
 	<If Condition="&blm; == 1">
 		<If Condition="not ClassName == ClassJobType.BlackMage">	
-			<ChangeClass Job="Black Mage" />
+			<ChangeClass Job="BlackMage" />
 		</If>	
 		<LLoadProfile Path="Quests/Black_Mage.xml"/>
 	</If>
@@ -101,7 +101,7 @@
 	<!-- Load White Mage -->
 	<If Condition="&whm; == 1">
 		<If Condition="not ClassName == ClassJobType.WhiteMage">	
-			<ChangeClass Job="White Mage" />
+			<ChangeClass Job="WhiteMage" />
 		</If>	
 		<LLoadProfile Path="Quests/White_Mage.xml"/>
 	</If>

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
   Profile: Summoner Relic Weapon
+  Version: 0.41
   Authors: Zamphire
   Code Credit: TuckMeIntoBread, Kayla, Sodimm
 -->
@@ -504,7 +505,7 @@
 
 		<!-- Start Animus Book Farm -->
 		<!-- Skyfire I -->
-			<If Condition="not HasAtLeast(2001298,1) and HasAtLeast(7824,1)">
+			<If Condition="not HasAtLeast(2001298,1) and HasAtLeast(7831,1)">
 				<!-- Purchase Skyfire I -->
 				<If Condition="not IsOnMap(156)">
 					<TeleportTo AetheryteId="24"/> 
@@ -512,14 +513,14 @@
 				<GetTo ZoneId="156" XYZ="71.94617,33.06656,-706.2944"/>
 				<RunCode name="BuySkyfireI"/>
 			</If>																			 
-			<If Condition="HasAtLeast(2001298,1)  and HasAtLeast(7824,1)">
-				<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7824">
+			<If Condition="HasAtLeast(2001298,1)  and HasAtLeast(7831,1)">
+				<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7831">
 					<RunCode Name="VeilAtma" />
 					<WaitTimer WaitTime="3" />
 				</If>
 				<!-- Skyfire I Enemies -->	
 				<If condition="not ZodiacManager.CurrentBook.KillTask1Completed">
-					<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7824">
+					<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7831">
 						<RunCode Name="VeilAtma" />
 						<WaitTimer WaitTime="3" />
 					</If>				
@@ -527,7 +528,7 @@
 					<LLoadProfile Path="../Animus/Skyfire I/Mor Dhona - Daring Harrier.xml"/>
 				</If>
 				<If condition="not ZodiacManager.CurrentBook.KillTask4Completed">
-					<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7824">
+					<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7831">
 						<RunCode Name="VeilAtma" />
 						<WaitTimer WaitTime="3" />
 					</If>					
@@ -535,7 +536,7 @@
 					<LLoadProfile Path="../Animus/Skyfire I/Mor Dhona - 5th Cohort Vanguard.xml"/>
 				</If>			
 				<If condition="not ZodiacManager.CurrentBook.KillTask2Completed">
-					<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7824">
+					<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7831">
 						<RunCode Name="VeilAtma" />
 						<WaitTimer WaitTime="3" />
 					</If>					
@@ -543,7 +544,7 @@
 					<LLoadProfile Path="../Animus/Skyfire I/Coerthas - Giant Logger.xml"/>
 				</If>
 				<If condition="not ZodiacManager.CurrentBook.KillTask3Completed">
-					<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7824">
+					<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7831">
 						<RunCode Name="VeilAtma" />
 						<WaitTimer WaitTime="3" />
 					</If>					
@@ -551,7 +552,7 @@
 					<LLoadProfile Path="../Animus/Skyfire I/Western La Noscea - Shoalspine Sahagin.xml"/>
 				</If>
 				<If condition="not ZodiacManager.CurrentBook.KillTask5Completed">
-					<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7824">
+					<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7831">
 						<RunCode Name="VeilAtma" />
 						<WaitTimer WaitTime="3" />
 					</If>					
@@ -559,7 +560,7 @@
 					<LLoadProfile Path="../Animus/Skyfire I/Outer La Noscea - Synthetic Doblyn.xml"/>
 				</If>
 				<If condition="not ZodiacManager.CurrentBook.KillTask6Completed">
-					<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7824">
+					<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7831">
 						<RunCode Name="VeilAtma" />
 						<WaitTimer WaitTime="3" />
 					</If>					
@@ -567,7 +568,7 @@
 					<LLoadProfile Path="../Animus/Skyfire I/Western Thanlan - 4th Cohort Hoplomachi.xml"/>
 				</If>
 				<If condition="not ZodiacManager.CurrentBook.KillTask7Completed">
-					<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7824">
+					<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7831">
 						<RunCode Name="VeilAtma" />
 						<WaitTimer WaitTime="3" />
 					</If>					
@@ -575,7 +576,7 @@
 					<LLoadProfile Path="../Animus/Skyfire I/Southern Thanalan - Zanr'ak Pugilist.xml"/>
 				</If>
 				<If condition="not ZodiacManager.CurrentBook.KillTask8Completed">
-					<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7824">
+					<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7831">
 						<RunCode Name="VeilAtma" />
 						<WaitTimer WaitTime="3" />
 					</If>					
@@ -583,7 +584,7 @@
 					<LLoadProfile Path="../Animus/Skyfire I/East Shroud - Milkroot Cluster.xml"/>
 				</If>
 				<If condition="not ZodiacManager.CurrentBook.KillTask9Completed">
-					<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7824">
+					<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7831">
 						<RunCode Name="VeilAtma" />
 						<WaitTimer WaitTime="3" />
 					</If>					
@@ -591,7 +592,7 @@
 					<LLoadProfile Path="../Animus/Skyfire I/Northern Thanalan - Basilisk.xml"/>
 				</If>			
 				<If condition="not ZodiacManager.CurrentBook.KillTask10Completed">
-					<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7824">
+					<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7831">
 						<RunCode Name="VeilAtma" />
 						<WaitTimer WaitTime="3" />
 					</If>					
@@ -600,7 +601,7 @@
 				</If>
 				<!-- Skyfire I Dungeons -->
 				<If condition="not ZodiacManager.CurrentBook.DungeonTask1Completed">
-					<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7824">
+					<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7831">
 						<RunCode Name="VeilAtma" />
 						<WaitTimer WaitTime="3" />
 					</If>					
@@ -608,7 +609,7 @@
 					<LLoadProfile Path="../Dungeons/TamTaraDeepcroft.xml"/>
 				</If>
 				<If condition="not ZodiacManager.CurrentBook.DungeonTask2Completed">
-					<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7824">
+					<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7831">
 						<RunCode Name="VeilAtma" />
 						<WaitTimer WaitTime="3" />
 					</If>					
@@ -616,7 +617,7 @@
 					<LLoadProfile Path="../Dungeons/TheStoneVigil.xml"/>
 				</If>
 				<If condition="not ZodiacManager.CurrentBook.DungeonTask3Completed">
-					<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7824">
+					<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7831">
 						<RunCode Name="VeilAtma" />
 						<WaitTimer WaitTime="3" />
 					</If>					
@@ -625,7 +626,7 @@
 				</If>
 				<!-- Skyfire I Fates -->
 				<If condition="not ZodiacManager.CurrentBook.FateTask1Completed">
-					<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7824">
+					<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7831">
 						<RunCode Name="VeilAtma" />
 						<WaitTimer WaitTime="3" />
 					</If>					
@@ -639,7 +640,7 @@
 					</While>						
 				</If>
 				<If condition="not ZodiacManager.CurrentBook.FateTask2Completed">
-					<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7824">
+					<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7831">
 						<RunCode Name="VeilAtma" />
 						<WaitTimer WaitTime="3" />
 					</If>					
@@ -653,7 +654,7 @@
 					</While>					
 				</If>
 				<If condition="not ZodiacManager.CurrentBook.FateTask3Completed">
-					<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7824">
+					<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7831">
 						<RunCode Name="VeilAtma" />
 						<WaitTimer WaitTime="3" />
 					</If>					
@@ -668,21 +669,21 @@
 				</If>
 				<!-- Skyfire I Guildleves -->
 				<If condition="not ZodiacManager.CurrentBook.GuildleveTask1Completed">
-					<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7824">
+					<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7831">
 						<RunCode Name="VeilAtma" />
 						<WaitTimer WaitTime="3" />
 					</If>					
 					<Log Message="Moving to Skyfire I - Nothern Thanalan Camp Bluefrog 'Necrologos: Pale Oblation'" />
 				</If>
 				<If condition="not ZodiacManager.CurrentBook.GuildleveTask2Completed">
-					<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7824">
+					<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7831">
 						<RunCode Name="VeilAtma" />
 						<WaitTimer WaitTime="3" />
 					</If>					
 					<Log Message="Moving to Skyfire I - Coerthas Central Whitebrim Front 'An Imp Mobile'" />
 				</If>
 				<If condition="not ZodiacManager.CurrentBook.GuildleveTask2Completed">
-					<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7824">
+					<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7831">
 						<RunCode Name="VeilAtma" />
 						<WaitTimer WaitTime="3" />
 					</If>					
