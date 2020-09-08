@@ -23,3 +23,8 @@ You will need ExBuddy installed in your plugins folder which can be found here h
 
 You will also need the latest version of LlamaLibrary installed in your botbases folder which can be found here https://github.com/nt153133/LlamaLibrary
 (Make sure you update before running the profiles, Kayla is constantly making new tags for this set and you'll need the absolute latest.)
+
+
+## Current Progress
+
+All classes should be coded up to and acquiring the Atma weapon. The first Skyfire book is done. Working on the rest.  
