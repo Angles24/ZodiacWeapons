@@ -31,4 +31,6 @@ All classes should be coded up to and acquiring the Atma weapon. The first Skyfi
 
 ## Known Issues
 
+Fates are wonky. Mostly due to Navigation with RB, so don't completely AFK during this part.
+
 Leve turn ins get hung on accepting the final reward.
