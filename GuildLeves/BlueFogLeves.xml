@@ -42,7 +42,9 @@
 							<HotSpot XYZ="8.064703,3.199111,308.1511" Radius="20"/>
 							<HotSpot XYZ="8.904703,2.668111,314.9471" Radius="20"/>
 							<HotSpot XYZ="8.064703,3.199111,308.1511" Radius="20"/>
-							<HotSpot XYZ="-20.07574,5.811675,383.5121" Radius="20"/>								
+							<HotSpot XYZ="-20.07574,5.811675,383.5121" Radius="20"/>
+							<HotSpot XYZ="13.69474,2.891759,357.3057" Radius="20"/>
+							<HotSpot XYZ="6.77874,2.844759,359.3647" Radius="20"/>								
 						</HotSpots>
 					</UseObject>					
 				</While>
@@ -69,6 +71,9 @@
 							<HotSpot XYZ="-36.85737,5.199014,323.359" Radius="20"/>
 							<HotSpot XYZ="7.238823,5.883775,273.2464" Radius="20"/>
 							<HotSpot XYZ="10.74874,2.818372,357.6857" Radius="20"/>
+							<HotSpot XYZ="-17.93814,6.879775,285.8753" Radius="20"/>
+							<HotSpot XYZ="-16.59953,9.517757,260.1543" Radius="20"/>
+							<HotSpot XYZ="-18.39849,2.187486,344.2445" Radius="20"/>
 						</HotSpots>
 					</UseObject>															
 				</While>
