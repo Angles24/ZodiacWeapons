@@ -13,8 +13,6 @@
 	<Order>	
 			<If Condition="not ExBuddy.Windows.GuildLeve.HasLeve(644)">
 				<GetTo ZoneId="147" XYZ="33.91326, 4.68145, 399.2563"/>
-				<ExTurnInGuildLeve NpcId="1002398" NpcLocation="33.91326, 4.68145, 399.2563" MultipleQuests="true"/>
-				<WaitTimer WaitTime="2"/>
 				<ExPickupGuildLeve leveIds="644" leveType="Battlecraft" npcId="1002398" npcLocation="33.91326, 4.68145, 399.2563" Timeout="5" /> <!-- Necrologos: Pale Oblation -->
 				<If Condition="not ExBuddy.Windows.GuildLeve.HasLeve(644)">
 					<ExPickupGuildLeve leveIds="646" leveType="Battlecraft" npcId="1002398" npcLocation="33.91326, 4.68145, 399.2563" Timeout="5" /> <!-- Circling the Ceruleum -->
@@ -70,6 +68,7 @@
 							<HotSpot XYZ="-25.08674,3.473066,372.2181" Radius="20"/>
 							<HotSpot XYZ="-36.85737,5.199014,323.359" Radius="20"/>
 							<HotSpot XYZ="7.238823,5.883775,273.2464" Radius="20"/>
+							<HotSpot XYZ="10.74874,2.818372,357.6857" Radius="20"/>
 						</HotSpots>
 					</UseObject>															
 				</While>
