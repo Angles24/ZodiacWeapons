@@ -28,3 +28,7 @@ You will also need the latest version of LlamaLibrary installed in your botbases
 ## Current Progress
 
 All classes should be coded up to and acquiring the Atma weapon. The first Skyfire book is done. Working on the rest.  
+
+## Known Issues
+
+Leve turn ins get hung on accepting the final reward.
