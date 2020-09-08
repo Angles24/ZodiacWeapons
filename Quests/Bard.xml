@@ -118,7 +118,7 @@
                     ff14bot.RemoteWindows.Request.HandOver();
             ]]>
         </CodeChunk>		
-        <CodeChunk Name="BuyArtemisAtma"> <!-- This needs to change to Artemis slot -->
+        <CodeChunk Name="BuyArtemisAtma"> <!-- Purchase Artemis Bow Atma -->
             <![CDATA[ 
                 await Buddy.Coroutines.Coroutine.Sleep(500);
                 ff14bot.Managers.GameObjectManager.GetObjectByNPCId(1008948).Interact();
@@ -131,7 +131,7 @@
                 }
                 await Buddy.Coroutines.Coroutine.Sleep(1000);
                 if (ff14bot.RemoteWindows.SelectString.IsOpen)
-                    ff14bot.RemoteWindows.SelectString.ClickSlot(0);
+                    ff14bot.RemoteWindows.SelectString.ClickSlot(4);
                 await Buddy.Coroutines.Coroutine.Sleep(1000);
                  if (ff14bot.RemoteWindows.SelectYesno.IsOpen)
                     ff14bot.RemoteWindows.SelectYesno.ClickYes();

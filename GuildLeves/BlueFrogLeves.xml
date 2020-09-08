@@ -11,56 +11,84 @@
 	<KillRadius>50</KillRadius>
 	<BehaviorDirectory>..\Quest Behaviors</BehaviorDirectory>
 	<Order>	
-		<While Condition="not ZodiacManager.CurrentBook.KillTask2Completed">
-			<GetTo ZoneId="147" XYZ="33.91326, 4.68145, 399.2563"/>
-			<ExTurnInGuildLeve NpcId="1002398" NpcLocation="33.91326, 4.68145, 399.2563" MultipleQuests="true"/>
-			<WaitTimer WaitTime="2"/>
-			<ExPickupGuildLeve leveIds="644" leveType="Battlecraft" npcId="1002398" npcLocation="33.91326, 4.68145, 399.2563" Timeout="5" /> <!-- Necrologos: Pale Oblation -->
-			<ExPickupGuildLeve leveIds="646" leveType="Battlecraft" npcId="1002398" npcLocation="33.91326, 4.68145, 399.2563" Timeout="5" /> <!-- Circling the Ceruleum -->
-
-	
-			<!-- Circling the Ceruleum -->
-			<If Condition="ExBuddy.Windows.GuildLeve.HasLeve(646)">
-				<GetTo ZoneId="147" XYZ="45.68184, 7.582094, 344.8144"/>
-				<InitiateLeve LeveId="646"/> <!-- Circling the Ceruleum -->
-				<While condition="not ff14bot.RemoteWindows.SelectYesno.IsOpen" >								
-					<UseObject InCombat="True" NpcIds="2001104"  Radius="25"  while="not ff14bot.RemoteWindows.SelectYesno.IsOpen">	
-						<HotSpots>
-							<HotSpot XYZ="62.33762,11.31645,336.056" Radius="20"/>
-							<HotSpot XYZ="37.95295,6.131095,354.4171" Radius="20"/>
-							<HotSpot XYZ="9.952703,2.664754,315.1511" Radius="20"/>
-							<HotSpot XYZ="-25.08674,3.473066,372.2181" Radius="20"/>
-						</HotSpots>
-					</UseObject>															
-				</While>
-				<RunCode Name="CloseTimer"/> 
-			</If>
-
+			<If Condition="not ExBuddy.Windows.GuildLeve.HasLeve(644)">
+				<GetTo ZoneId="147" XYZ="33.91326, 4.68145, 399.2563"/>
+				<ExTurnInGuildLeve NpcId="1002398" NpcLocation="33.91326, 4.68145, 399.2563" MultipleQuests="true"/>
+				<WaitTimer WaitTime="2"/>
+				<ExPickupGuildLeve leveIds="644" leveType="Battlecraft" npcId="1002398" npcLocation="33.91326, 4.68145, 399.2563" Timeout="5" /> <!-- Necrologos: Pale Oblation -->
+				<If Condition="not ExBuddy.Windows.GuildLeve.HasLeve(644)">
+					<ExPickupGuildLeve leveIds="646" leveType="Battlecraft" npcId="1002398" npcLocation="33.91326, 4.68145, 399.2563" Timeout="5" /> <!-- Circling the Ceruleum -->
+				</If>	
+			</If>	
 
 			<!-- Necrologos: Pale Oblation -->
 			<If Condition="ExBuddy.Windows.GuildLeve.HasLeve(644)">
 				<GetTo ZoneId="147" XYZ="45.68184, 7.582094, 344.8144"/>
 				<InitiateLeve LeveId="644"/> <!-- Necrologos: Pale Oblation -->
-				<While condition="not ff14bot.RemoteWindows.SelectYesno.IsOpen" >								
-					<UseObject InCombat="True" NpcIds="2001098"  Radius="25"  while="not ff14bot.RemoteWindows.SelectYesno.IsOpen">	
+				<WaitTimer WaitTime="2" />
+				<While condition="DirectorManager.ActiveDirector.GetTodoArgs(1).Item1 &lt; DirectorManager.ActiveDirector.GetTodoArgs(1).Item2" > 
+					<UseObject InCombat="True" NpcIds="2001098"  Radius="25"  condition="DirectorManager.ActiveDirector.GetTodoArgs(1).Item1 &lt; DirectorManager.ActiveDirector.GetTodoArgs(1).Item2">	
 						<HotSpots>
 							<HotSpot XYZ="59.68162,9.973045,351.4754" Radius="20"/>
 							<HotSpot XYZ="59.66662,9.892045,355.1934" Radius="20"/>
 							<HotSpot XYZ="28.13002,5.091211,334.3859" Radius="20"/>
 							<HotSpot XYZ="35.90902,7.335211,330.4319" Radius="20"/>
+							<HotSpot XYZ="-16.09949,2.102989,342.8605" Radius="20"/>
+							<HotSpot XYZ="-12.84253,8.456742,263.1973" Radius="20"/>
+							<HotSpot XYZ="-12.84253,8.456742,263.1973" Radius="20"/>
+							<HotSpot XYZ="-30.59949,4.783989,327.7035" Radius="20"/>
 							<HotSpot XYZ="-16.33614,7.17051,290.1503" Radius="20"/>
 							<HotSpot XYZ="-17.66314,6.52751,283.7273" Radius="20"/>	
 							<HotSpot XYZ="34.19517,11.4331,261.2747" Radius="20"/>
-							<HotSpot XYZ="26.79917,11.4591,250.1417" Radius="20"/>									
+							<HotSpot XYZ="26.79917,11.4591,250.1417" Radius="20"/>
+							<HotSpot XYZ="8.064703,3.199111,308.1511" Radius="20"/>
+							<HotSpot XYZ="8.904703,2.668111,314.9471" Radius="20"/>
+							<HotSpot XYZ="8.064703,3.199111,308.1511" Radius="20"/>
+							<HotSpot XYZ="-20.07574,5.811675,383.5121" Radius="20"/>								
 						</HotSpots>
 					</UseObject>					
 				</While>
+				<While condition="DirectorManager.ActiveDirector.GetTodoArgs(4).Item1 &lt; DirectorManager.ActiveDirector.GetTodoArgs(4).Item2">
+					<Grind GrindRef="VoidSlave" While="DirectorManager.ActiveDirector.GetTodoArgs(4).Item1 &lt; DirectorManager.ActiveDirector.GetTodoArgs(4).Item2"/>
+				</While>					
 				<RunCode Name="CloseTimer"/> 
+				<GetTo ZoneId="147" XYZ="33.91326, 4.68145, 399.2563"/>
+				<ExTurnInGuildLeve NpcId="1002398" NpcLocation="33.91326, 4.68145, 399.2563" MultipleQuests="true"/>					
+			</If>
+	
+			<!-- Circling the Ceruleum -->
+			<If Condition="ExBuddy.Windows.GuildLeve.HasLeve(646)">
+				<GetTo ZoneId="147" XYZ="45.68184, 7.582094, 344.8144"/>
+				<InitiateLeve LeveId="646"/> <!-- Circling the Ceruleum -->
+				<WaitTimer WaitTime="2" />
+				<While condition="DirectorManager.ActiveDirector.GetTodoArgs(0).Item1 &lt; DirectorManager.ActiveDirector.GetTodoArgs(0).Item2" > 
+					<UseObject InCombat="True" NpcIds="2001104"  Radius="25"  condition="DirectorManager.ActiveDirector.GetTodoArgs(0).Item1 &lt; DirectorManager.ActiveDirector.GetTodoArgs(0).Item2">	
+						<HotSpots>
+							<HotSpot XYZ="62.33762,11.31645,336.056" Radius="20"/>
+							<HotSpot XYZ="37.95295,6.131095,354.4171" Radius="20"/>
+							<HotSpot XYZ="9.952703,2.664754,315.1511" Radius="20"/>
+							<HotSpot XYZ="-25.08674,3.473066,372.2181" Radius="20"/>
+							<HotSpot XYZ="-36.85737,5.199014,323.359" Radius="20"/>
+							<HotSpot XYZ="7.238823,5.883775,273.2464" Radius="20"/>
+						</HotSpots>
+					</UseObject>															
+				</While>
+				<RunCode Name="CloseTimer"/>
+				<GetTo ZoneId="147" XYZ="33.91326, 4.68145, 399.2563"/>
+				<ExTurnInGuildLeve NpcId="1002398" NpcLocation="33.91326, 4.68145, 399.2563" MultipleQuests="true"/>				
 			</If>
 
-		</While>
+
 	</Order>
   <GrindAreas> 
+ 	<GrindArea name="VoidSlave">
+        <Hotspots>
+			<Hotspot Radius="200" XYZ="5.474173, 1.793206, 338.0313" />
+        </Hotspots>
+        <TargetMobs>
+			<TargetMob Name="Void Slave" Id="1737" Weight="1" />					
+        </TargetMobs>		
+	</GrindArea> 
   </GrindAreas>
   <CodeChunks>
   		<CodeChunk Name="CloseTimer">
