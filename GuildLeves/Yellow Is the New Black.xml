@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+  Profile: Yellow Is the New Black Leve
+  Authors: Zamphire
+  Code Credit: TuckMeIntoBread, Kayla, Sodimm, y2krazy, Ken_512
+-->
+
+<Profile>
+	<Name>Yellow Is the New Black Leve</Name>
+	<KillRadius>50</KillRadius>
+	<BehaviorDirectory>..\Quest Behaviors</BehaviorDirectory>
+	<Order>	
+			<If Condition="not ExBuddy.Windows.GuildLeve.HasLeve(853)">
+				<If Condition="not IsOnMap(155)">
+					<TeleportTo Name="155 " AetheryteId="23"/>
+				</If>			
+				<FlyTo XYZ="-471.4019, 211, -233.8166" land="true"/>
+				<ExPickupGuildLeve leveIds="853" leveType="Order" npcId="1007069" npcLocation="-476.2188,211,-233.4173" Timeout="5" /> <!-- Yellow Is the New Black -->
+				<If Condition="not ExBuddy.Windows.GuildLeve.HasLeve(853)">
+					<ExPickupGuildLeve leveIds="854" leveType="Order" npcId="1007069" npcLocation="-476.2188,211,-233.4173" Timeout="5" /> <!-- Talk to My Voidsent -->				
+				</If>
+			</If>	
+
+			<!-- Yellow Is the New Black -->
+			<If Condition="ExBuddy.Windows.GuildLeve.HasLeve(853)">
+				<FlyTo ZoneId="155" XYZ="-600.8062, 210.4736, -340.5136" land="true"/>
+				<InitiateLeve LeveId="853"/> <!-- Yellow Is the New Black -->
+				<WaitTimer WaitTime="2" />
+				<Grind GrindRef="YellowIstheNewBlack" While="not ff14bot.RemoteWindows.SelectYesno.IsOpen"/> 						
+				<WaitTimer WaitTime="1" />					
+				<RunCode Name="CloseTimer"/> 
+				<FlyTo ZoneId="155" XYZ="-472.4178, 211, -233.0762" land="true"/>
+				<ExTurnInGuildLeve NpcId="1007069" NpcLocation="-476.2188,211,-233.4173"/>
+				<LLoadProfile Path="../Start.xml"/>		
+			</If>
+			
+			<!-- Talk to My Voidsent -->
+			<If Condition="ExBuddy.Windows.GuildLeve.HasLeve(850)">
+				<GetTo ZoneId="155" XYZ="-501.2252, 208.2493, -167.8926"/>
+				<InitiateLeve LeveId="854"/> <!-- Talk to My Voidsent -->
+				<WaitTimer WaitTime="2" />
+				<Grind GrindRef="TalktoMyVoidsent" While="not ff14bot.RemoteWindows.SelectYesno.IsOpen"/> 						
+				<WaitTimer WaitTime="1" />
+				<RunCode Name="CloseTimer"/>
+				<GetTo ZoneId="155" XYZ="-472.4178, 211, -233.0762"/>
+				<ExTurnInGuildLeve NpcId="1007069" NpcLocation="-476.2188,211,-233.4173"/>
+				<LLoadProfile Path="../Start.xml"/>		
+			</If>			
+
+	</Order>
+  <GrindAreas> 
+ 	<GrindArea name="YellowIstheNewBlack">
+        <Hotspots>
+			<Hotspot Radius="200" XYZ="-600.8062, 210.4736, -340.5136" />
+        </Hotspots>
+        <TargetMobs>
+			<TargetMob Name="Blizzard Biast" Id="1761" Weight="1" />
+			<TargetMob Name="Winter Nix" Id="1757" Weight="1" />
+			<TargetMob Name="Frostbitten Goobbue" Id="1747" Weight="1" />
+			<TargetMob Name="Snowpuppy" Id="1758" Weight="1" />	
+        </TargetMobs>		
+	</GrindArea>	
+  </GrindAreas>
+   	<GrindArea name="TalktoMyVoidsent">
+        <Hotspots>
+			<Hotspot Radius="200" XYZ="-501.2252, 208.2493, -167.8926" />
+        </Hotspots>
+        <TargetMobs>
+			<TargetMob Name="Bezul Huizan the Screamer" Id="2231" Weight="1" />			
+        </TargetMobs>		
+	</GrindArea>
+  <CodeChunks>
+  		<CodeChunk Name="CloseTimer">
+			<![CDATA[ 
+			await Buddy.Coroutines.Coroutine.Sleep(2000);
+			if (SelectYesno.IsOpen)
+            {
+                SelectYesno.ClickNo();
+            }
+			]]>
+		</CodeChunk>
+  </CodeChunks>
+</Profile>
