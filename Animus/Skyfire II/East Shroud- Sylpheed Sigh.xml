@@ -19,6 +19,7 @@
 		<TeleportTo Name="Hawthorne Hut" AetheryteId="4" />
 	</If>
 	<NoCombatMoveTo Name="sylpheed_sigh" XYZ="359.1274, -20.93504, -169.1136"/>
-      <Grind grindRef="sylpheed_sigh" while="True" />
+      <Grind grindRef="sylpheed_sigh" while="True" while="not ZodiacManager.CurrentBook.KillTask2Completed"/>
+	  <LLoadProfile Path="../../Start.xml"/>
 	</Order>
 	</Profile>

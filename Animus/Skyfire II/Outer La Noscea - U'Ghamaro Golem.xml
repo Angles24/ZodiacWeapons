@@ -19,6 +19,7 @@
 		<TeleportTo Name="Camp Overlook" AetheryteId="16" />
 	</If>
 	<NoCombatMoveTo Name="ughamaro_priest" XYZ="236.7139, 26.83154, -839.4948"/>
-      <Grind grindRef="ughamaro_priest" while="True" />
+      <Grind grindRef="ughamaro_priest" while="True" while="not ZodiacManager.CurrentBook.KillTask9Completed"/>
+	  <LLoadProfile Path="../../Start.xml"/>
 	</Order>
 	</Profile>

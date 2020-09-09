@@ -20,6 +20,7 @@
 		<TeleportTo Name="Little Ala Mhigo" AetheryteId="19" />
 	</If>
 	<NoCombatMoveTo Name="zaharak_archer" XYZ="490.2088, 7.620057, -153.4102"/>
-      <Grind grindRef="zaharak_archer" while="True" />
+      <Grind grindRef="zaharak_archer" while="not ZodiacManager.CurrentBook.KillTask8Completed"/>
+	  <LLoadProfile Path="../../Start.xml"/>
 	</Order>
 	</Profile>
