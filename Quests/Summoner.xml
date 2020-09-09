@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
   Profile: Summoner Relic Weapon
-  Version: 0.41
+  Version: 0.42
   Authors: Zamphire
   Code Credit: TuckMeIntoBread, Kayla, Sodimm
 -->
@@ -187,9 +187,18 @@
                 if (await Coroutine.Wait(1000, () => Talk.DialogOpen))
                 {
                     Talk.Next();
+                }
+                if (await Coroutine.Wait(1000, () => Talk.DialogOpen))
+                {
+                    Talk.Next();
                 }				
             ]]>
-        </CodeChunk>											
+        </CodeChunk>
+		<CodeChunk Name="Announce_Manual_Whitebrim"><![CDATA[ 
+			Core.OverlayManager.AddToast(() => "Please complete An Imp Mobile from Lodille manually.", TimeSpan.FromMilliseconds(25000), System.Windows.Media.Color.FromRgb(29,213,226), System.Windows.Media.Color.FromRgb(13,106,175), new System.Windows.Media.FontFamily("Gautami"));
+			await Coroutine.Sleep(26000);
+			]]>
+		</CodeChunk>		
   </CodeChunks>
   <GrindAreas>
 	<GrindArea name="RelicRebornVeil">
@@ -207,6 +216,7 @@
 	</GrindArea>
   </GrindAreas>
   <Order>
+	<Log Message="Starting Summoner Zodiac Questing Version 0.42" />
     <!-- The Weaponsmith of Legend -->
     <If Condition="not HasQuest(66241) and not IsQuestCompleted(66241)">
 	  <ChangeClass Job="Summoner" />							 
@@ -674,6 +684,7 @@
 						<WaitTimer WaitTime="3" />
 					</If>					
 					<Log Message="Moving to Skyfire I - Nothern Thanalan Camp Bluefrog 'Necrologos: Pale Oblation'" />
+					<LLoadProfile Path="../GuildLeves/Necrologos Pale Oblation.xml"/>
 				</If>
 				<If condition="not ZodiacManager.CurrentBook.GuildleveTask2Completed">
 					<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7831">
@@ -681,15 +692,230 @@
 						<WaitTimer WaitTime="3" />
 					</If>					
 					<Log Message="Moving to Skyfire I - Coerthas Central Whitebrim Front 'An Imp Mobile'" />
+						<If Condition="not IsOnMap(155)">
+							<TeleportTo Name="155 " AetheryteId="23"/>
+						</If>			
+						<FlyTo XYZ="-474.1803, 211, -232.8224" land="true"/>
+						<LLoadProfile Path="../GuildLeves/An Imp Mobile.xml"/>
+				</If>
+				<If condition="not ZodiacManager.CurrentBook.GuildleveTask3Completed">
+					<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7831">
+						<RunCode Name="VeilAtma" />
+						<WaitTimer WaitTime="3" />
+					</If>					
+					<Log Message="Moving to Skyfire I - Mor Dhona Saint Coinarch's Find 'The Awry Savages'" />
+					<If Condition="not IsOnMap(156)">
+						<TeleportTo Name="Revenant's Toll " AetheryteId="24"/>
+					</If>			
+					<FlyTo XYZ="462.438, -4.445982, -469.9096" land="true"/>
+					<LLoadProfile Path="../GuildLeves/The Awry Salvages.xml"/>	
+				</If>
+				<!-- Book completed -->
+				<If condition="HasAtLeast(2001298,1) and ZodiacManager.CurrentBook.KillTask1Completed and ZodiacManager.CurrentBook.KillTask2Completed and ZodiacManager.CurrentBook.KillTask3Completed and ZodiacManager.CurrentBook.KillTask4Completed and ZodiacManager.CurrentBook.KillTask5Completed and ZodiacManager.CurrentBook.KillTask6Completed and ZodiacManager.CurrentBook.KillTask7Completed and ZodiacManager.CurrentBook.KillTask8Completed and ZodiacManager.CurrentBook.KillTask9Completed and ZodiacManager.CurrentBook.KillTask10Completed and ZodiacManager.CurrentBook.DungeonTask1Completed and ZodiacManager.CurrentBook.DungeonTask2Completed and ZodiacManager.CurrentBook.DungeonTask3Completed and ZodiacManager.CurrentBook.FateTask1Completed and ZodiacManager.CurrentBook.FateTask2Completed and ZodiacManager.CurrentBook.FateTask3Completed and ZodiacManager.CurrentBook.GuildleveTask1Completed and ZodiacManager.CurrentBook.GuildleveTask2Completed and ZodiacManager.CurrentBook.GuildleveTask3Completed">				
+					<If Condition="not IsOnMap(156)">
+						<TeleportTo AetheryteId="24"/> 
+					</If>
+					<GetTo ZoneId="156" XYZ="71.94617,33.06656,-706.2944"/>
+					<RunCode name="BuySkyfireI"/>				
+				</If>
+			</If>
+			<!-- Skyfire II -->
+			<If Condition="HasAtLeast(2001299,1)  and HasAtLeast(7831,1)">
+				<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7831">
+					<RunCode Name="VeilAtma" />
+					<WaitTimer WaitTime="3" />
+				</If>
+				<!-- Skyfire II Enemies -->	
+				<If condition="not ZodiacManager.CurrentBook.KillTask1Completed">
+					<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7831">
+						<RunCode Name="VeilAtma" />
+						<WaitTimer WaitTime="3" />
+					</If>				
+					<Log Message="Moving to Skyfire II - Mor Dhona - Raging Harrier" />
+					<LLoadProfile Path="../Animus/Skyfire II/Mor Dhona - Raging Harrier.xml"/>
+				</If>
+				<If condition="not ZodiacManager.CurrentBook.KillTask2Completed">
+					<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7831">
+						<RunCode Name="VeilAtma" />
+						<WaitTimer WaitTime="3" />
+					</If>					
+					<Log Message="Moving to Skyfire II - East Shroud- Sylpheed Sigh" />
+					<LLoadProfile Path="../Animus/Skyfire II/East Shroud- Sylpheed Sigh.xml"/>
+				</If>				
+				<If condition="not ZodiacManager.CurrentBook.KillTask3Completed">
+					<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7831">
+						<RunCode Name="VeilAtma" />
+						<WaitTimer WaitTime="3" />
+					</If>					
+					<Log Message="Moving to Skyfire II - Coerthas - Giant Logger" />
+					<LLoadProfile Path="../Animus/Skyfire II/Coerthas - Giant Logger.xml"/>
+				</If>				
+				<If condition="not ZodiacManager.CurrentBook.KillTask4Completed">
+					<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7831">
+						<RunCode Name="VeilAtma" />
+						<WaitTimer WaitTime="3" />
+					</If>					
+					<Log Message="Moving to Skyfire II - Western La Noscea - Shoaltooth Sahagin" />
+					<LLoadProfile Path="../Animus/Skyfire II/Western La Noscea - Shoaltooth Sahagin.xml"/>
+				</If>			
+				<If condition="not ZodiacManager.CurrentBook.KillTask5Completed">
+					<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7831">
+						<RunCode Name="VeilAtma" />
+						<WaitTimer WaitTime="3" />
+					</If>					
+					<Log Message="Moving to Skyfire II - Southern Thanalan - Tempered Gladiator" />
+					<LLoadProfile Path="../Animus/Skyfire II/Southern Thanalan - Tempered Gladiator.xml"/>
+				</If>
+				<If condition="not ZodiacManager.CurrentBook.KillTask6Completed">
+					<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7831">
+						<RunCode Name="VeilAtma" />
+						<WaitTimer WaitTime="3" />
+					</If>					
+					<Log Message="Moving to Skyfire II - North Shroud - Dullahan" />
+					<LLoadProfile Path="../Animus/Skyfire II/North Shroud - Dullahan.xml"/>
+				</If>
+				<If condition="not ZodiacManager.CurrentBook.KillTask7Completed">
+					<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7831">
+						<RunCode Name="VeilAtma" />
+						<WaitTimer WaitTime="3" />
+					</If>					
+					<Log Message="Moving to Skyfire II - Western La Noscea - Shelfscale Reaver" />
+					<LLoadProfile Path="../Animus/Skyfire II/Western La Noscea - Shelfscale Reaver.xml"/>
+				</If>
+				<If condition="not ZodiacManager.CurrentBook.KillTask8Completed">
+					<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7831">
+						<RunCode Name="VeilAtma" />
+						<WaitTimer WaitTime="3" />
+					</If>					
+					<Log Message="Moving to Skyfire II - Southern Thanalan - Zahar'ak Archer" />
+					<LLoadProfile Path="../Animus/Skyfire II/Southern Thanalan - Zahar'ak Archer.xml"/>
+				</If>
+				<If condition="not ZodiacManager.CurrentBook.KillTask9Completed">
+					<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7831">
+						<RunCode Name="VeilAtma" />
+						<WaitTimer WaitTime="3" />
+					</If>					
+					<Log Message="Moving to Skyfire II - Outer La Noscea - U'Ghamaro Golem" />
+					<LLoadProfile Path="../Animus/Skyfire II/Outer La Noscea - U'Ghamaro Golem.xml"/>
+				</If>			
+				<If condition="not ZodiacManager.CurrentBook.KillTask10Completed">
+					<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7831">
+						<RunCode Name="VeilAtma" />
+						<WaitTimer WaitTime="3" />
+					</If>					
+					<Log Message="Moving to Skyfire II - Coerthas - Natalan Boldwing" />
+					<LLoadProfile Path="../Animus/Skyfire II/Coerthas - Natalan Boldwing.xml"/>
+				</If>
+				<!-- Skyfire II Dungeons -->
+				<If condition="not ZodiacManager.CurrentBook.DungeonTask1Completed">
+					<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7831">
+						<RunCode Name="VeilAtma" />
+						<WaitTimer WaitTime="3" />
+					</If>					
+					<Log Message="Clearing to Skyfire II - Brayfloxs Longstop" />
+					<LLoadProfile Path="../Dungeons/Brayfloxs Longstop.xml"/>
+				</If>
+				<If condition="not ZodiacManager.CurrentBook.DungeonTask2Completed">
+					<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7831">
+						<RunCode Name="VeilAtma" />
+						<WaitTimer WaitTime="3" />
+					</If>					
+					<Log Message="Moving to Skyfire II - The Wanderers Palace" />
+					<LLoadProfile Path="../Dungeons/The Wanderers Palace.xml"/>
+				</If>
+				<If condition="not ZodiacManager.CurrentBook.DungeonTask3Completed">
+					<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7831">
+						<RunCode Name="VeilAtma" />
+						<WaitTimer WaitTime="3" />
+					</If>					
+					<Log Message="Moving to Skyfire II - Copperbell Mines (Hard)" />
+					<LLoadProfile Path="../Dungeons/The Copperbell Mines (Hard).xml"/>
+				</If>
+				<!-- Skyfire II Fates -->
+				<If condition="not ZodiacManager.CurrentBook.FateTask1Completed">
+					<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7831">
+						<RunCode Name="VeilAtma" />
+						<WaitTimer WaitTime="3" />
+					</If>					
+					<Log Message="Moving to Skyfire II - Western La Noscea Breaching South Tidegate FATE" />
+					<While Condition="not ZodiacManager.CurrentBook.FateTask1Completed">
+						<If Condition="not IsOnMap(155)">
+							<TeleportTo AetheryteId="13"/>
+						</If>
+						<FlyTo XYZ="-139.2711, -25.04512, 41.7734" />
+						<LLFate FateId="571" MinLevel="1" MaxLevel="50"/> <!-- Breaching South Tidegate -->								  				  
+					</While>						
+				</If>
+				<If condition="not ZodiacManager.CurrentBook.FateTask2Completed">
+					<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7831">
+						<RunCode Name="VeilAtma" />
+						<WaitTimer WaitTime="3" />
+					</If>					
+					<Log Message="Moving to Skyfire II - Heroes of the 2nd FATE" />
+					<While Condition="not ZodiacManager.CurrentBook.FateTask2Completed">
+						<If Condition="not IsOnMap(146)">
+							<TeleportTo AetheryteId="19"/>
+						</If>
+						<FlyTo XYZ="8.539169, 0.5683023, -250.2028" />
+						<LLFate FateId="424" MinLevel="1" MaxLevel="50"/> <!-- Heroes of the 2nd -->							  				  
+					</While>					
+				</If>
+				<If condition="not ZodiacManager.CurrentBook.FateTask3Completed">
+					<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7831">
+						<RunCode Name="VeilAtma" />
+						<WaitTimer WaitTime="3" />
+					</If>					
+					<Log Message="Moving to Skyfire I - East Shroud  The Enmity of my Enemy" />
+					<While Condition="not ZodiacManager.CurrentBook.FateTask3Completed">
+						<If Condition="not IsOnMap(154)">
+							<TeleportTo AetheryteId="7"/>
+						</If>
+						<FlyTo XYZ="-114.2224, -8.765539, -49.89951" />
+						<LLFate FateId="613" MinLevel="1" MaxLevel="50"/> <!-- Air Supply -->							  				  
+					</While>				
+				</If>
+				<!-- Skyfire I Guildleves -->
+				<If condition="not ZodiacManager.CurrentBook.GuildleveTask1Completed">
+					<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7831">
+						<RunCode Name="VeilAtma" />
+						<WaitTimer WaitTime="3" />
+					</If>					
+					<Log Message="Moving to Skyfire II - Nothern Thanalan Camp Bluefrog 'Don't Forget to Cry'" />
+					<LLoadProfile Path="../GuildLeves/Don't Forgot to Cry.xml"/>
 				</If>
 				<If condition="not ZodiacManager.CurrentBook.GuildleveTask2Completed">
 					<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7831">
 						<RunCode Name="VeilAtma" />
 						<WaitTimer WaitTime="3" />
 					</If>					
-					<Log Message="Moving to Skyfire I - Mor Dhona Saint Coinarch's Find 'The Awry Savages'" />
-				</If>			
-			</If>		
+					<Log Message="Moving to Skyfire II - Coerthas Central Whitebrim Front 'Yellow Is the New Black'" />
+						<If Condition="not IsOnMap(155)">
+							<TeleportTo Name="155 " AetheryteId="23"/>
+						</If>			
+						<FlyTo XYZ="-474.1803, 211, -232.8224" land="true"/>
+						<LLoadProfile Path="../GuildLeves/Yellow Is the New Black.xml"/>
+				</If>
+				<If condition="not ZodiacManager.CurrentBook.GuildleveTask3Completed">
+					<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7831">
+						<RunCode Name="VeilAtma" />
+						<WaitTimer WaitTime="3" />
+					</If>					
+					<Log Message="Moving to Skyfire II - Mor Dhona Saint Coinarch's Find 'The Museum Is Closed'" />
+					<If Condition="not IsOnMap(156)">
+						<TeleportTo Name="Revenant's Toll " AetheryteId="24"/>
+					</If>			
+					<FlyTo XYZ="462.438, -4.445982, -469.9096" land="true"/>
+					<LLoadProfile Path="../GuildLeves/The Museum Is Closeds.xml"/>	
+				</If>
+				<!-- Book completed -->
+				<If condition="HasAtLeast(2001299,1) and ZodiacManager.CurrentBook.KillTask1Completed and ZodiacManager.CurrentBook.KillTask2Completed and ZodiacManager.CurrentBook.KillTask3Completed and ZodiacManager.CurrentBook.KillTask4Completed and ZodiacManager.CurrentBook.KillTask5Completed and ZodiacManager.CurrentBook.KillTask6Completed and ZodiacManager.CurrentBook.KillTask7Completed and ZodiacManager.CurrentBook.KillTask8Completed and ZodiacManager.CurrentBook.KillTask9Completed and ZodiacManager.CurrentBook.KillTask10Completed and ZodiacManager.CurrentBook.DungeonTask1Completed and ZodiacManager.CurrentBook.DungeonTask2Completed and ZodiacManager.CurrentBook.DungeonTask3Completed and ZodiacManager.CurrentBook.FateTask1Completed and ZodiacManager.CurrentBook.FateTask2Completed and ZodiacManager.CurrentBook.FateTask3Completed and ZodiacManager.CurrentBook.GuildleveTask1Completed and ZodiacManager.CurrentBook.GuildleveTask2Completed and ZodiacManager.CurrentBook.GuildleveTask3Completed">				
+					<If Condition="not IsOnMap(156)">
+						<TeleportTo AetheryteId="24"/> 
+					</If>
+					<GetTo ZoneId="156" XYZ="71.94617,33.06656,-706.2944"/>
+					<RunCode name="BuySkyfireI"/>				
+				</If>
+			</If>					
 
 		
 		
