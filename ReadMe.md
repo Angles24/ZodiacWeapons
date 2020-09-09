@@ -33,4 +33,6 @@ All classes should be coded up to and acquiring the Atma weapon. The first Skyfi
 
 Fates are wonky. Mostly due to Navigation with RB, so don't completely AFK during this part.
 
+Copperbell Mines (Hard): One of the Collapsed Rocks has a smaller hitbox then RB thinks it does. Sometimes melee classes don't get close enough. Watch this.
+
 Leve turn ins get hung on accepting the final reward.
