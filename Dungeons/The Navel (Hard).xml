@@ -4,6 +4,12 @@
   Authors: Zamphire
   Code Credit: TuckMeIntoBread, Kayla.
 -->
+
+<!DOCTYPE Profile [
+<!-- Profile Settings -->
+<!ENTITY openchest "0">
+]>
+
 <Profile>
   <Name>The Navel (Hard)</Name>
   <BehaviorDirectory></BehaviorDirectory>
@@ -14,7 +20,9 @@
 	<If Condition="IsOnMap(293)">
 		<MoveTo XYZ="-0.1087532, 2.384186E-07, 1.400909" usemesh="false"/> <!-- Move to center -->
 			<Grind GrindRef="Titan" While="not GameObjectManager.GetObjectByNPCId(1801).CurrentHealth == 0"/> <!-- Kill Titan -->
-		<RunCode name="OpenChest"/>
+		<If Condition="&openchest; == 1">
+			<RunCode name="OpenChest" />
+		</If>
 		<MoveTo XYZ="0,1.192093E-07,-10"/> <!-- Move to Exit -->
 		<RunCode name="ExitDuty"/>
 		<LLoadProfile Path="../Start.xml"/>

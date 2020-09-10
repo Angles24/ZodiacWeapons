@@ -243,17 +243,19 @@
   <GrindAreas>
 	<GrindArea name="RelicRebornThyrus">
         <Hotspots>
-			<Hotspot Radius="200" XYZ="21.97161, 2.423156, 6.95867" />
-			<Hotspot Radius="200" XYZ="86.32533, 10.80192, 7.834653" />
-			<Hotspot Radius="200" XYZ="179.8415, 6.914117, -27.78893" />
-			<Hotspot Radius="200" XYZ="275.8323, 8, -31.03652" />
-			<Hotspot Radius="200" XYZ="406.8845, 12.85353, -100.6003" />
-			<Hotspot Radius="200" XYZ="492.5307, 7.61186, -151.9724" />
+			<Hotspot Radius="200" XYZ="83.35999,41.08832,-571.6793" />
+			<Hotspot Radius="200" XYZ="19.97242, 24.5698, -616.7052" />
+			<Hotspot Radius="200" XYZ="14.42631, 22.65992, -656.0297" />
+			<Hotspot Radius="200" XYZ="79.60114, 23.52864, -710.6172" />
+			<Hotspot Radius="200" XYZ="25.91615, 21.49989, -774.8596" />
+			<Hotspot Radius="200" XYZ="65.52055, 23.82773, -715.8804" />
+			<Hotspot Radius="200" XYZ="116.4779, 22.83719, -779.9639" />
+			<Hotspot Radius="200" XYZ="116.4779, 22.83719, -779.9639" />
         </Hotspots>
         <TargetMobs>
-			<TargetMob Name="Zahar'ak Archer" Id="1838" Weight="1" />
-			<TargetMob Name="Zahar'ak Pugilist" Id="1839" Weight="1" />
-			<TargetMob Name="Zahar'ak Lancer" Id="1837" Weight="1" />			
+			<TargetMob Name="U'Ghamaro Bedesman" Id="1834" Weight="1" />
+			<TargetMob Name="U'Ghamaro Quarryman" Id="1833" Weight="1" />
+			<TargetMob Name="U'Ghamaro Priest" Id="1835" Weight="1" />			
         </TargetMobs>
 	</GrindArea>
   </GrindAreas>
@@ -280,61 +282,61 @@
     </If>
 	<If Condition="ClassName == ((ClassJobType.WhiteMage))">
 		<!-- A Relic Reborn (Thyrus) -->
-		<If Condition="not HasQuest(66657) and not IsQuestCompleted(66657)">
+		<If Condition="not HasQuest(66660) and not IsQuestCompleted(66660)">
 		  <If Condition="not IsOnMap(154)">
 			<TeleportTo Name="Fallgourd Float" AetheryteId="7"/>
 		  </If>
 		  <FlyTo XYZ="427.4873, -5.342077, -74.43809" Land="True"/>
 		  <ChangeClass Job="WhiteMage" />
-		  <If Condition="IsQuestAcceptQualified(66657)">
-			<PickupQuest QuestId="66657" NpcId="1003075"/>
+		  <If Condition="IsQuestAcceptQualified(66660)">
+			<PickupQuest QuestId="66660" NpcId="1003075"/>
 		  </If>
 		</If>
-		<If Condition="GetQuestStep(66657) == 1">
+		<If Condition="GetQuestStep(66660) == 1">
 			<If Condition="not IsOnMap(180)">
 				<TeleportTo Name="Camp Overlook" AetheryteId="16"/>
 			</If>
-		  <FlyTo XYZ="149.9808, 25.3147, -755.6115" Land="True"/>
-		  <UseObject NpcIds="2002496" XYZ="149.9808, 25.3147, -755.6115" Radius="25"  QuestId="66657" StepId="1"/>
+		  <GetTo ZoneId="180" XYZ="149.9808, 25.3147, -755.6115" Land="True"/>
+		  <UseObject NpcIds="2002496" XYZ="149.9808, 25.3147, -755.6115" Radius="25"  QuestId="66660" StepId="1"/>
 		</If>  
-		<If Condition="GetQuestStep(66657) == 2">
+		<If Condition="GetQuestStep(66660) == 2">
 			<If Condition="not IsOnMap(154)">
 				<TeleportTo Name="Fallgourd Float" AetheryteId="7"/>
 			</If>
 			<FlyTo XYZ="427.4873, -5.342077, -74.43809" Land="True"/>
 			<!-- Handover timeworn Thyrus --> 
-			<HandOver ItemId="2000993" NpcId="1003075" XYZ="440.7262, -0.9374562, -62.21112" QuestId="66657" StepId="2"/>
+			<HandOver ItemId="2000993" NpcId="1003075" XYZ="440.7262, -0.9374562, -62.21112" QuestId="66660" StepId="2"/>
 		</If>
-		<If Condition="GetQuestStep(66657) == 3 and not HasAtLeast(2049,1)">
+		<If Condition="GetQuestStep(66660) == 3 and not HasAtLeast(2049,1)">
 			<RunCode name="NoWhisperingRod"/>	
 		</If>
-		<If Condition="GetQuestStep(66657) == 3 and HasAtLeast(2049,1)">
+		<If Condition="GetQuestStep(66660) == 3 and HasAtLeast(2049,1)">
 		  <If Condition="not IsOnMap(154)">
 			<TeleportTo Name="Fallgourd Float" AetheryteId="7"/>
 		  </If>
 		  <FlyTo XYZ="427.4873, -5.342077, -74.43809" Land="True"/>
 		  <!-- Turn in Madman's Whispering Rod -->
-		  <TurnIn ItemId="2049" QuestId="66657" NpcId="1003075" XYZ="440.7262, -0.9374562, -62.21112"/>	
+		  <TurnIn ItemId="2049" QuestId="66660" NpcId="1003075" XYZ="440.7262, -0.9374562, -62.21112"/>	
 		</If>				 
-		<If Condition="GetQuestStep(66657) == 4">
+		<If Condition="GetQuestStep(66660) == 4">
 		<!-- Check if the duty A Relic Reborn: The Chimera is unlocked -->
-			<If condition="not (IsQuestCompleted(66655) or IsQuestCompleted(66657) or IsQuestCompleted(66657) or IsQuestCompleted(66658) or IsQuestCompleted(66659) or IsQuestCompleted(66660) or IsQuestCompleted(66661) or IsQuestCompleted(66662) or IsQuestCompleted(66663))">
+			<If condition="not (IsQuestCompleted(66655) or IsQuestCompleted(66660) or IsQuestCompleted(66660) or IsQuestCompleted(66658) or IsQuestCompleted(66659) or IsQuestCompleted(66660) or IsQuestCompleted(66661) or IsQuestCompleted(66662) or IsQuestCompleted(66663))">
 				<GetTo ZoneId="155" XYZ="531.1261, 350.3369, -710.7814"/>
 				<If condition="GameObjectManager.GetObjectByNPCId(2003993).IsTargetable">  
-				  <UseObject NpcIds="2003993" XYZ="532.5856, 350.6066, -710.9941"  Radius="25"  QuestId="66657"/>
+				  <UseObject NpcIds="2003993" XYZ="532.5856, 350.6066, -710.9941"  Radius="25"  QuestId="66660"/>
 				</If>  
 			</If> 
 		  <LLoadProfile Path="../Dungeons/A Relic Reborn the Chimera.xml"/>
 		</If>
-		<If Condition="GetQuestStep(66657) == 5">
+		<If Condition="GetQuestStep(66660) == 5">
 			<If Condition="not IsOnMap(154)">
 				<TeleportTo Name="Fallgourd Float" AetheryteId="7"/>
 			</If>
 			<FlyTo XYZ="427.4873, -5.342077, -74.43809" Land="True"/>
 			<!-- Handover pinch of alumina salts WHM -->
-			<HandOver ItemId="2001002" NpcId="1003075" XYZ="440.7262, -0.9374562, -62.21112" QuestId="66657" StepId="5"/>
+			<HandOver ItemId="2001002" NpcId="1003075" XYZ="440.7262, -0.9374562, -62.21112" QuestId="66660" StepId="5"/>
 		</If>
-		<If Condition="GetQuestStep(66657) == 6">
+		<If Condition="GetQuestStep(66660) == 6">
 			<If Condition="not HasAtLeast(6267,1)">
 				<If Condition="HasAtLeast(28,15)">
 					<GetTo ZoneId="156" XYZ="63.40987, 31.12387, -735.2782"/>
@@ -357,48 +359,45 @@
 			</If>
 			<RunCode name="Disable_Flight"/>			
 		  <GetTo ZoneId="156" XYZ="26.15508, 29, -823.166"/>
-		  <TalkTo NpcId="1001304" XYZ="25.58936, 29, -825.3757" QuestId="66657" StepId="6"/>
+		  <TalkTo NpcId="1001304" XYZ="25.58936, 29, -825.3757" QuestId="66660" StepId="6"/>
 		</If>
-		<If Condition="GetQuestStep(66657) == 7">
+		<If Condition="GetQuestStep(66660) == 7">
 			<If Condition="not ClassName == ClassJobType.WhiteMage">	
 				<ChangeClass Job="WhiteMage" />
 			</If>
 			<LLoadProfile Path="../Dungeons/Amdapor Keep.xml"/>
 		</If>
-		<If Condition="GetQuestStep(66657) == 8">
+		<If Condition="GetQuestStep(66660) == 8">
 		  <GetTo ZoneId="156" XYZ="25.67217, 29, -823.6172"/>
 		  <!-- Handover Amdapor glyph WHM -->
-		  <HandOver ItemId="2001011" NpcId="1001304" XYZ="25.58936, 29, -825.3757" QuestId="66657" StepId="8"/>
+		  <HandOver ItemId="2001011" NpcId="1001304" XYZ="25.58936, 29, -825.3757" QuestId="66660" StepId="8"/>
 		</If>
-		<If Condition="GetQuestStep(66657) == 9">
+		<If Condition="GetQuestStep(66660) == 9">
 			<If Condition="not IsOnMap(154)">
 				<TeleportTo Name="Fallgourd Float" AetheryteId="7"/>
 			</If>	
 			<FlyTo XYZ="427.4873, -5.342077, -74.43809" Land="True"/>
 			<!-- Handover copy of Interview with the Padjal -->
-			<HandOver ItemId="2001020" NpcId="1003075" XYZ="440.7262, -0.9374562, -62.21112" QuestId="66657" StepId="9"/>
+			<HandOver ItemId="2001020" NpcId="1003075" XYZ="440.7262, -0.9374562, -62.21112" QuestId="66660" StepId="9"/>
 		</If>
-		<If Condition="GetQuestStep(66657) == 10">
+		<If Condition="GetQuestStep(66660) == 10">
 			<While Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 2046">
 				<RunCode Name="UnfinishedThyrus" />
 				<WaitTimer WaitTime="3" />
 			</While>
-			<If Condition="not IsOnMap(146)">
-				<TeleportTo Name="Forgotten Springs" AetheryteId="20"/>
-			</If>
-			<FlyTo XYZ="236.5246, 8, -18.19426" Land="True"/>
-			<Grind grindRef="RelicRebornSphairai" postCombatDelay="1" while="GetQuestStep(66657) == 10"/>
+			<GetTo ZoneId="180" XYZ="74.54537, 54.23363, -535.9759" />	
+			<Grind grindRef="RelicRebornThyrus" postCombatDelay="1" while="GetQuestStep(66660) == 10"/>
 		</If>
-		<If Condition="GetQuestStep(66657) == 11">
+		<If Condition="GetQuestStep(66660) == 11">
 			<If Condition="not IsOnMap(154)">
 				<TeleportTo Name="Fallgourd Float" AetheryteId="7"/>
 			</If>	
 			<FlyTo XYZ="427.4873, -5.342077, -74.43809" Land="True"/>	
-			<TalkTo NpcId="1003075" XYZ="440.7262, -0.9374562, -62.21112" QuestId="66657" StepId="11"/>	
+			<TalkTo NpcId="1003075" XYZ="440.7262, -0.9374562, -62.21112" QuestId="66660" StepId="11"/>	
 		</If>
-		<If Condition="GetQuestStep(66657) == 12">		
+		<If Condition="GetQuestStep(66660) == 12">		
 			<!-- If does not have access to A Relic Reborn: the Hydra -->
-			<If condition="not (IsQuestCompleted(66655) or IsQuestCompleted(66657) or IsQuestCompleted(66657) or IsQuestCompleted(66658) or IsQuestCompleted(66659) or IsQuestCompleted(66660) or IsQuestCompleted(66661) or IsQuestCompleted(66662) or IsQuestCompleted(66663))">
+			<If condition="not (IsQuestCompleted(66655) or IsQuestCompleted(66660) or IsQuestCompleted(66660) or IsQuestCompleted(66658) or IsQuestCompleted(66659) or IsQuestCompleted(66660) or IsQuestCompleted(66661) or IsQuestCompleted(66662) or IsQuestCompleted(66663))">
 				<If Condition="not IsOnMap(145)">
 					<TeleportTo Name="Camp Drybone" AetheryteId="18"/>
 				</If>
@@ -413,45 +412,45 @@
 			</If>			
 			<LLoadProfile Path="../Dungeons/A Relic Reborn the Hydra.xml"/>
 		</If>
-		<If Condition="GetQuestStep(66657) == 13">
+		<If Condition="GetQuestStep(66660) == 13">
 			<If Condition="not IsOnMap(154)">
 				<TeleportTo Name="Fallgourd Float" AetheryteId="7"/>
 			</If>	
 			<FlyTo XYZ="427.4873, -5.342077, -74.43809" Land="True"/>	
-			<TalkTo NpcId="1003075" XYZ="440.7262, -0.9374562, -62.21112" QuestId="66657" StepId="13"/>
+			<TalkTo NpcId="1003075" XYZ="440.7262, -0.9374562, -62.21112" QuestId="66660" StepId="13"/>
 		</If>
-		<If Condition="GetQuestStep(66657) == 14">
+		<If Condition="GetQuestStep(66660) == 14">
 			<ChangeClass Job="WhiteMage" />
 			<!-- Turn in Unfinished Thyrus -->
-			<HandOver ItemId="2046" NpcId="1003075" XYZ="440.7262, -0.9374562, -62.21112" QuestId="66657" StepId="14"/>	
+			<HandOver ItemId="2046" NpcId="1003075" XYZ="440.7262, -0.9374562, -62.21112" QuestId="66660" StepId="14"/>	
 		</If>
-		<If Condition="GetQuestStep(66657) == 15">
+		<If Condition="GetQuestStep(66660) == 15">
 			<If Condition="not ClassName == ClassJobType.Summoner">	
 				<ChangeClass Job="WhiteMage" />
 			</If>
 			<LLoadProfile Path="../Dungeons/The Bowl of Embers (Hard).xml"/>	
 		</If>
-		<If Condition="GetQuestStep(66657) == 16">
+		<If Condition="GetQuestStep(66660) == 16">
 			<If Condition="not ClassName == ClassJobType.Summoner">	
 				<ChangeClass Job="WhiteMage" />
 			</If>
 			<LLoadProfile Path="../Dungeons/The Howling Eye (Hard).xml"/>	
 		</If>
-		<If Condition="GetQuestStep(66657) == 17">
+		<If Condition="GetQuestStep(66660) == 17">
 			<If Condition="not ClassName == ClassJobType.Summoner">	
 				<ChangeClass Job="WhiteMage" />
 			</If>
 			<LLoadProfile Path="../Dungeons/The Navel (Hard).xml"/>
 		</If>
-		<If Condition="GetQuestStep(66657) == 18">
+		<If Condition="GetQuestStep(66660) == 18">
 			<If Condition="not IsOnMap(154)">
 				<TeleportTo Name="Fallgourd Float" AetheryteId="7"/>
 			</If>	
 			<FlyTo XYZ="427.4873, -5.342077, -74.43809" Land="True"/>	
 			<!-- Handin white-hot ember, howling gale, and hyperfused ore SCH -->			
-			<HandOver ItemIds="2001025,2001034,2001043" NpcId="1003075" XYZ="440.7262, -0.9374562, -62.21112" QuestId="66657" StepId="18"/>			
+			<HandOver ItemIds="2001025,2001034,2001043" NpcId="1003075" XYZ="440.7262, -0.9374562, -62.21112" QuestId="66660" StepId="18"/>			
 		</If>
-		<If Condition="GetQuestStep(66657) == 255">
+		<If Condition="GetQuestStep(66660) == 255">
 			<If Condition="not HasAtLeast(6267,1)">
 				<If Condition="HasAtLeast(28,15)">
 					<GetTo ZoneId="156" XYZ="63.40987, 31.12387, -735.2782"/>
@@ -463,13 +462,15 @@
 				</If>
 			</If>
 			<If Condition="HasAtLeast(6267,1)">
-				<TurnIn ItemId="6267" QuestId="66657" NpcId="1003075" XYZ="440.7262, -0.9374562, -62.21112"/>
+				<TurnIn ItemId="6267" QuestId="66660" NpcId="1003075" XYZ="440.7262, -0.9374562, -62.21112"/>
 			</If>	
 		</If>
+		
 		<!-- Buy Zenith weapons -->
 		<!-- If Has Completed A Relic Reborn (Thyrus) and has Thyrus -->																										
 		<If Condition="IsQuestCompleted(66662) and HasAtLeast(2052,1)">
 			<If Condition="HasAtLeast(6268,2)"> <!-- Thavnairian Mist -->
+				<GetTo ZoneId="154" XYZ="450.1296, -0.3836476, -69.53964"/>
 				<RunCode name="ExchangeThyrus"/>
 			</If>
 			<If Condition="not HasAtLeast(6268,3)">
@@ -482,9 +483,10 @@
 					<RunCode name="NeedPoetics"/>
 				</If>
 			</If>
-		</If>							 
+		</If>
+		
 		<!-- Up in Arms -->
-		<If Condition="IsQuestCompleted(66657)and not HasQuest(66971) and not IsQuestCompleted(66971)">
+		<If Condition="IsQuestCompleted(66660)and not HasQuest(66971) and not IsQuestCompleted(66971)">
 		  <If Condition="not IsOnMap(154)">
 			<TeleportTo Name="Fallgourd Float" AetheryteId="7"/>
 		  </If>

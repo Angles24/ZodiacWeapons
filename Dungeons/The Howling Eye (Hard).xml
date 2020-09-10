@@ -4,6 +4,12 @@
   Authors: Zamphire
   Code Credit: TuckMeIntoBread, Kayla.
 -->
+
+<!DOCTYPE Profile [
+<!-- Profile Settings -->
+<!ENTITY openchest "0">
+]>
+
 <Profile>
   <Name>The Howling Eye (Hard)</Name>
   <BehaviorDirectory></BehaviorDirectory>
@@ -12,8 +18,10 @@
 		<RunCode Name="QueueGarudaHard"/>
 	</If>
 	<If Condition="IsOnMap(294)">
-		<Grind GrindRef="Garuda" While="GameObjectManager.GetObjectByNPCId(1644)"/> <!-- Kill Hydra -->
-		<RunCode name="OpenChest"/>
+		<Grind GrindRef="Garuda" While="GameObjectManager.GetObjectByNPCId(1644).CurrentHealth == 0"/> <!-- Kill Garuda -->
+		<If Condition="&openchest; == 1">
+			<RunCode name="OpenChest" />
+		</If>
 		<MoveTo XYZ="1.078937,-2.041544,-18.36319"/> <!-- Move to Exit -->
 		<RunCode name="ExitDuty"/>
 		<LLoadProfile Path="../Start.xml"/>

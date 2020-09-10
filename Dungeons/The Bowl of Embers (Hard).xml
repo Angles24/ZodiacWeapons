@@ -4,6 +4,12 @@
   Authors: Zamphire
   Code Credit: TuckMeIntoBread, Kayla.
 -->
+
+<!DOCTYPE Profile [
+<!-- Profile Settings -->
+<!ENTITY openchest "0">
+]>
+
 <Profile>
   <Name>The Bowl of Embers (Hard)</Name>
   <BehaviorDirectory></BehaviorDirectory>
@@ -13,8 +19,10 @@
 	</If>
 	<If Condition="IsOnMap(292)">
 		<MoveTo XYZ="15,0,0"/> <!-- Move to Ifrit -->
-		<Grind GrindRef="Ifrit" While="GameObjectManager.GetObjectByNPCId(1185)"/> <!-- Kill Hydra -->
-		<RunCode name="OpenChest"/>
+		<Grind GrindRef="Ifrit" While="GameObjectManager.GetObjectByNPCId(1185).CurrentHealth == 0"/> <!-- Kill Ifrit -->
+		<If Condition="&openchest; == 1">
+			<RunCode name="OpenChest" />
+		</If>
 		<MoveTo XYZ="16,0,0"/> <!-- Move to Exit -->
 		<RunCode name="ExitDuty"/>
 		<LLoadProfile Path="../Start.xml"/>
@@ -26,8 +34,7 @@
 			<Hotspot Radius="200" XYZ="15,0,0" />
         </Hotspots>
         <TargetMobs>
-			<TargetMob Name="Ifrit" Id="1185" Weight="1" />
-			<TargetMob Name="Wyvern" Id="656" Weight="2" />			
+			<TargetMob Name="Ifrit" Id="1185" Weight="1" />		
         </TargetMobs>
 	</GrindArea>
   </GrindAreas>		
