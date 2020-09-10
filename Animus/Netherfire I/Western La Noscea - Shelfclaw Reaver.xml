@@ -18,6 +18,7 @@
 		<TeleportTo Name="Aleport" AetheryteId="14" />
 	</If>
 	<NoCombatMoveTo Name="shelfclaw_reaver" XYZ="-432.4341, -40.78683, -215.5654"/>
-      <Grind grindRef="shelfclaw_reaver" while="True" />
+      <Grind grindRef="shelfclaw_reaver" while="not ZodiacManager.CurrentBook.KillTask8Completed" />
+	  <LLoadProfile Path="../../Start.xml"/>
 	</Order>
 	</Profile>

@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <!--
-  Profile: Bluefog Leves
+  Profile: Circling the Ceruleum Leve
   Authors: Zamphire
   Code Credit: TuckMeIntoBread, Kayla, Sodimm, y2krazy, Ken_512
 -->
 
 <Profile>
-	<Name>Bluefog Leves</Name>
+	<Name>Circling the Ceruleum Leve</Name>
 	<KillRadius>50</KillRadius>
-	<BehaviorDirectory>..\Quest Behaviors</BehaviorDirectory>
+	<BehaviorDirectory>..\..\Quest Behaviors</BehaviorDirectory>
 	<Order>	
-			<If Condition="not ExBuddy.Windows.GuildLeve.HasLeve(644)">
+			<If Condition="not ExBuddy.Windows.GuildLeve.HasLeve(646)">
 				<GetTo ZoneId="147" XYZ="33.91326, 4.68145, 399.2563"/>
-				<ExPickupGuildLeve leveIds="644" leveType="Battlecraft" npcId="1002398" npcLocation="33.91326, 4.68145, 399.2563" Timeout="5" /> <!-- Necrologos: Pale Oblation -->
-				<If Condition="not ExBuddy.Windows.GuildLeve.HasLeve(644)">
-					<ExPickupGuildLeve leveIds="646" leveType="Battlecraft" npcId="1002398" npcLocation="33.91326, 4.68145, 399.2563" Timeout="5" /> <!-- Circling the Ceruleum -->
+				<ExPickupGuildLeve leveIds="646" leveType="Battlecraft" npcId="1002398" npcLocation="33.91326, 4.68145, 399.2563" Timeout="5" /> <!-- Necrologos: Pale Oblation -->
+				<If Condition="not ExBuddy.Windows.GuildLeve.HasLeve(646)">
+					<ExPickupGuildLeve leveIds="644" leveType="Battlecraft" npcId="1002398" npcLocation="33.91326, 4.68145, 399.2563" Timeout="5" /> <!-- Circling the Ceruleum -->
 				</If>	
 			</If>	
 
@@ -54,7 +54,7 @@
 				<RunCode Name="CloseTimer"/> 
 				<GetTo ZoneId="147" XYZ="33.91326, 4.68145, 399.2563"/>
 				<ExTurnInGuildLeve NpcId="1002398" NpcLocation="33.91326, 4.68145, 399.2563"/>
-				<LLoadProfile Path="../Start.xml"/>		
+				<LLoadProfile Path="../../Start.xml"/>		
 			</If>
 	
 			<!-- Circling the Ceruleum -->
@@ -81,7 +81,7 @@
 				<RunCode Name="CloseTimer"/>
 				<GetTo ZoneId="147" XYZ="33.91326, 4.68145, 399.2563"/>
 				<ExTurnInGuildLeve NpcId="1002398" NpcLocation="33.91326, 4.68145, 399.2563"/>
-				<LLoadProfile Path="../Start.xml"/>		
+				<LLoadProfile Path="../../Start.xml"/>		
 			</If>
 
 

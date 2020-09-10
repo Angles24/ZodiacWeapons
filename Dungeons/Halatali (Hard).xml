@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-  Profile: Brayflox's Longstop
+  Profile: Halatali (Hard)
   Authors: Zamphire
 -->
 
@@ -10,15 +10,16 @@
 ]>
 
 <Profile>
-  <Name>Brayflox's Longstop</Name>
+  <Name>Halatali (Hard)</Name>
   <BehaviorDirectory></BehaviorDirectory>
   <Order>
-	<If Condition="not IsOnMap(158)">
-		<RunCode Name="QueueBrayFlox"/>
+	<If Condition="not IsOnMap(360)">
+		<RunCode Name="QueueHalataliHard"/>
 	</If>
-	<If Condition="IsOnMap(158)">
-		<!-- Meet a Longstop ally 0/1 -->
+	<If Condition="IsOnMap(360)">
+		<!-- Defeat the mammets 0/4 -->
 		<If Condition="GetInstanceTodo(0) == 0">
+			<Log Message="Defeat the mammets 0/4" />
 			<If Condition="ClassName == ((ClassJobType.Bard))"> 
 				<ChangeClass Job="Bard" />
 			</If>
@@ -49,40 +50,86 @@
 			<If Condition="ClassName == ((ClassJobType.WhiteMage))"> 
 					<ChangeClass Job="White Mage" />
 			</If>
-			<MoveTo XYZ="21.54947, 7.105875, 27.33947"/>
-			<TalkTo NpcId="1004346" XYZ="20.64305,7.105875,27.7913"/>
+			<MoveTo XYZ="-10.83339, -1.784434, -115.225"/>
 		</If>
-		<!-- Access Brayflox's Runstop 0/1 -->
+		
+		<!-- Defeat the mammets 1/4 -->
+		<If Condition="GetInstanceTodo(0) == 1">
+			<Log Message="Defeat the mammets 1/4" />
+			<MoveTo XYZ="15.90901, -11.02947, -185.2272"/>
+		</If>	
+			
+		<!-- Defeat the mammets 2/4 -->
+		<If Condition="GetInstanceTodo(0) == 2">
+			<Log Message="Defeat the mammets 2/4" />
+			<MoveTo XYZ="-39.28564, -10.98006, -125.0123"/>
+			<TalkTo NpcId="1008027" XYZ="-37.61353,-10.93285,-119.1272" condition="GameObjectManager.GetObjectByNPCId(426).IsVisible"/>
+		</If>				
+			
+		<!-- Defeat Pyracmon 0/1 -->
 		<If Condition="GetInstanceTodo(1) == 0">
-			<MoveTo XYZ="105.282, -0.1312774, 12.01039"/>
-			<RunCode name="RunstopHeadgate"/> 
-			<MoveTo XYZ="109.2574, -1.952292, -0.2141497"/>
-			<Grind GrindRef="FirstBoss" While="not GameObjectManager.GetObjectByNPCId(1280).CurrentHealth == 0"/> <!-- Fight First Boss -->
+			<Log Message="Defeat Pyracmon 0/1" />
+			<MoveTo XYZ="-54.20773, -10.178, -112.3206" />
+			<Grind GrindRef="FirstBoss" While="not GameObjectManager.GetObjectByNPCId(2597).CurrentHealth == 0"/> <!-- Fight First Boss -->
 			<If Condition="&openchest; == 1">
 				<RunCode name="OpenChest" />
 			</If>
+			<MoveTo XYZ="-83.43464, -2.530931, -75.7256" />
+			<RunCode name="EliteGladiatorTrainer1"/>
 		</If>
-		<!-- Access Mudstop Watergush 0/1 -->
+		
+		<!-- Defeat the caged beasts 0/7 -->
 		<If Condition="GetInstanceTodo(2) == 0">
-			<MoveTo XYZ="3.697756, 5.745567, -68.86022"/>
-			<Grind GrindRef="SecondBoss" While="not GameObjectManager.GetObjectByNPCId(1284).CurrentHealth == 0"/> <!-- Fight Second Boss -->			
-			<If Condition="&openchest; == 1">
-				<RunCode name="OpenChest" />
-			</If>
+			<Log Message="Defeat the caged beasts 0/7" />
+			<MoveTo XYZ="107.0181, -3.353478, 56.46606" />
+			<Grind GrindRef="CagedBeasts1" While="GetInstanceTodo(2) &lt; 4"/> <!-- Fight first 5 caged beasts -->
+		</If>		
+
+		<!-- Defeat the caged beasts 4/7 -->
+		<If Condition="GetInstanceTodo(2) == 0">
+			<Log Message="Defeat the caged beasts 4/7" />
+			<MoveTo XYZ="34.81186, 0.9276657, 133.8816" />
+			<Grind GrindRef="CagedBeasts2" While="GetInstanceTodo(2) &lt; 7"/> <!-- Fight last 3 caged beasts -->
 		</If>
-		<!-- Arrive in the heart of the Longstop 0/1 -->
+
+		<!-- Defeat the catoblepas 0/1 -->
 		<If Condition="GetInstanceTodo(3) == 0">
-			<MoveTo XYZ="-105.4545, -2.381622, -13.3266"/>
-			<Grind GrindRef="Hellbender" While="GameObjectManager.GetObjectByNPCId(1286)"/> <!-- Fight Hellbender -->
-			<Grind GrindRef="Aiatar" While="GameObjectManager.GetObjectByNPCId(1279)"/> <!-- Fight Aiatar Boss -->	
+			<Log Message="Defeat the catoblepas 0/1" />
+			<MoveTo XYZ="102.5888, 0.2727767, 197.6385" />
+			<TalkTo NpcId="1008028" XYZ="101.8539,0.05910794,196.6429" condition="GameObjectManager.GetObjectByNPCId(2003513).IsVisible"/>
+			<MoveTo XYZ="132.3476, 4.50954, 217.3444" />
+			<Grind GrindRef="SecondBoss" While="not GameObjectManager.GetObjectByNPCId(2598).CurrentHealth == 0"/> <!-- Fight second Boss -->
 			<If Condition="&openchest; == 1">
 				<RunCode name="OpenChest" />
 			</If>
-			<MoveTo XYZ="-90.13525, 10.94317, -95.86838"/>
-			<UseObject NpcId="2001466" XYZ="-89.83136,14.04251,-96.67622" condition="GameObjectManager.GetObjectByNPCId(2001466).IsTargetable"/>
+			<MoveTo XYZ="181.035, 8.432343, 241.9594" />
+			<RunCode name="EliteGladiatorTrainer2"/>
 		</If>
-		<!-- Defeat Aiatar 0/1 -->
+
+		<!-- Defeat the gladiators 0/3 -->
 		<If Condition="GetInstanceTodo(4) == 0">
+			<Log Message="Defeat the gladiators 0/3" />
+			<MoveTo XYZ="-159.1974,10.75528,102.739" />
+			<Grind GrindRef="Gladiators1" While="GetInstanceTodo(4) == 0"/> <!-- Fight the gladiators -->
+		</If>
+		
+		<!-- Defeat the gladiators 1/3 -->
+		<If Condition="GetInstanceTodo(4) == 1">
+			<Log Message="Defeat the gladiators 1/3" />
+			<MoveTo XYZ="-65.65234, 14.43416, 64.12395" />
+			<Grind GrindRef="Gladiators2" While="GetInstanceTodo(4) == 1"/> <!-- Fight the gladiators -->
+		</If>
+		
+		<!-- Defeat the gladiators 2/3 -->
+		<If Condition="GetInstanceTodo(4) == 2">
+			<Log Message="Defeat the gladiators 2/3" />
+			<MoveTo XYZ="-132.6467,10.18715,1.388489" />
+			<Grind GrindRef="Gladiators3" While="GetInstanceTodo(4) == 2"/> <!-- Fight the gladiators -->			
+		</If>
+		
+		<!-- Complete the final test 0/1 -->
+		<If Condition="GetInstanceTodo(5) == 0">	
+			<MoveTo XYZ="-200.3147, 11.4412, 20.07209" usemesh="false"/>
 			<If Condition="ClassName == ((ClassJobType.Bard))"> 
 				<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 6261">
 					<Log Message="Equipping Artemis Bow Atma" />
@@ -159,75 +206,135 @@
 					<RunCode Name="ThyrusAtma" />
 					<WaitTimer WaitTime="3" />
 				</If>
-			</If>		
-			<MoveTo XYZ="-51.49282, 34.69901, -235.3141"/>
-			<WaitTimer WaitTime="2" />
-			<Grind GrindRef="FinalBoss" While="GameObjectManager.GetObjectByNPCId(1279)"/> <!-- Fight Final Boss -->			
+			</If>				
+			<TalkTo NpcId="1008029" XYZ="-197.7418,11.2229,20.03503" condition="GameObjectManager.GetObjectByNPCId(2003519).IsVisible"/>
+			<MoveTo XYZ="-239.8287, 17.62304, 17.03342" usemesh="false"/>
+			<MoveTo XYZ="-264.8509,17.6227,18.99738" usemesh="false"/>
+			<Grind GrindRef="FinalBoss" While="GetInstanceTodo(5) == 0"/> <!-- Fight the final boss -->	
 			<If Condition="&openchest; == 1">
 				<RunCode name="OpenChest" />
 			</If>
-			<MoveTo XYZ="-8.639429,35.64169,-234.8138"/>
+			<MoveTo XYZ="-278.0287, 17.62265, 19.22942" usemesh="false"/>
 			<RunCode name="ExitDuty"/>
-			<LLoadProfile Path="../Start.xml"/>
-		</If>				
+			<LLoadProfile Path="../Start.xml"/>	
+		</If>		
+				
 	</If>
   </Order>
   <GrindAreas>
 	<GrindArea name="FirstBoss">
         <Hotspots>
-			<Hotspot Radius="200" XYZ="113.5518,-2.835007,-17.77038" />
+			<Hotspot Radius="200" XYZ="-73.62476,-10.178,-100.8774" />
         </Hotspots>
         <TargetMobs>
-			<TargetMob Id="1280" Weight="1" />
-			<TargetMob Id="1282" Weight="1" />			
+			<TargetMob Id="2597" Weight="1" /> <!-- Pyracmon -->
         </TargetMobs>
 	</GrindArea>
+    <GrindArea name="CagedBeasts1">
+      <Hotspots>
+        <Hotspot Radius="90" XYZ="107.0181, -3.353478, 56.46606"/>
+      </Hotspots>
+      <TargetMobs>
+        <TargetMob Id="2750" Weight="1"/> <!-- Pit Coeurl Pup -->
+        <TargetMob Id="2751" Weight="1"/> <!-- Pit Torama -->
+        <TargetMob Id="2592" Weight="1"/> <!-- Pit Coeurl -->
+      </TargetMobs>
+    </GrindArea>
+    <GrindArea name="CagedBeasts2">
+      <Hotspots>
+        <Hotspot Radius="90" XYZ="34.81186, 0.9276657, 133.8816"/>
+      </Hotspots>
+      <TargetMobs>
+        <TargetMob Id="2593" Weight="1"/> <!-- Gold Bear -->
+      </TargetMobs>
+    </GrindArea>
+    <GrindArea name="Gladiators1">
+      <Hotspots>
+        <Hotspot Radius="90" XYZ="-159.1974,10.75528,102.739"/>
+      </Hotspots>
+      <TargetMobs>
+        <TargetMob Id="2595" Weight="1"/> <!-- Champion Lancer -->
+      </TargetMobs>
+    </GrindArea>
+    <GrindArea name="Gladiators2">
+      <Hotspots>
+        <Hotspot Radius="90" XYZ="-65.65234, 14.43416, 64.1239"/>
+      </Hotspots>
+      <TargetMobs>
+        <TargetMob Id="2594" Weight="1"/> <!-- Champion Gladiator -->
+        <TargetMob Id="2753" Weight="1"/> <!-- Champion Conjurer -->
+      </TargetMobs>
+    </GrindArea>
+    <GrindArea name="Gladiators3">
+      <Hotspots>
+        <Hotspot Radius="90" XYZ="-132.6467,10.18715,1.388489"/>
+      </Hotspots>
+      <TargetMobs>
+        <TargetMob Id="2596" Weight="1"/> <!-- Champion Marauder -->
+        <TargetMob Id="2754" Weight="1"/> <!-- Champion Archer -->
+        <TargetMob Id="2754" Weight="1"/> <!-- Champion Archer -->
+      </TargetMobs>
+    </GrindArea>	
 	<GrindArea name="SecondBoss">
         <Hotspots>
-			<Hotspot Radius="200" XYZ="-9.10187,5.742157,-91.09246" />
+			<Hotspot Radius="200" XYZ="155.4131,4.509544,227.985" />
         </Hotspots>
         <TargetMobs>
-			<TargetMob Id="1284" Weight="1" />
-			<TargetMob Id="1300" Weight="1" />				
-        </TargetMobs>
-	</GrindArea>
-	<GrindArea name="Hellbender">
-        <Hotspots>
-			<Hotspot Radius="200" XYZ="-110.2216,-2.381622,-33.57573" />
-        </Hotspots>
-        <TargetMobs>
-			<TargetMob Id="1286" Weight="1" />		
-        </TargetMobs>
-	</GrindArea>
-	<GrindArea name="Aiatar">
-        <Hotspots>
-			<Hotspot Radius="50" XYZ="-110.2216,-2.381622,-33.57573" />
-        </Hotspots>
-        <TargetMobs>
-			<TargetMob Id="1279" Weight="1" />		
+			<TargetMob Id="2598" Weight="2" /> <!-- Catoblepas  -->				
         </TargetMobs>
 	</GrindArea>
 	<GrindArea name="FinalBoss">
         <Hotspots>
-			<Hotspot Radius="50" XYZ="-27.26876,35.27822,-235.2705" />
+			<Hotspot Radius="200" XYZ="-264.8509,17.6227,18.99738" />
         </Hotspots>
         <TargetMobs>
-			<TargetMob Id="1279" Weight="1" />		
+        <TargetMob Id="2605" Weight="1"/> <!-- Langloisiert the Lionheart -->
+        <TargetMob Id="2604" Weight="1"/> <!-- Franz the Fair -->
+        <TargetMob Id="2606" Weight="1"/> <!-- U'linbho the Sand Devil -->
+        <TargetMob Id="2607" Weight="1"/> <!-- Silent Moss the Solemn -->
+		<TargetMob Id="2603" Weight="1"/> <!-- Narasimha  -->
+		<TargetMob Id="2602" Weight="1"/> <!-- Mumuepo the Beholden  -->		
         </TargetMobs>
 	</GrindArea>	
   </GrindAreas>
-  <CodeChunks>
- 	<CodeChunk Name="RunstopHeadgate">
+  <CodeChunks>	
+	<CodeChunk Name="EliteGladiatorTrainer1">
 		<![CDATA[
-			ff14bot.Managers.GameObjectManager.GetObjectByNPCId(2001462).Interact();
+			ff14bot.Managers.GameObjectManager.GetObjectByNPCId(1008025).Interact();
+            await Buddy.Coroutines.Coroutine.Sleep(1000);			
+            if (await Coroutine.Wait(1000, () => Talk.DialogOpen))
+            {
+                Talk.Next();
+            }			
 			await Coroutine.Sleep(1000);
 			ff14bot.RemoteWindows.SelectYesno.ClickYes();
-			await Coroutine.Sleep(3000);
+			while (!CommonBehaviors.IsLoading) { await Coroutine.Yield(); }
       ]]>
 	</CodeChunk>
+	<CodeChunk Name="EliteGladiatorTrainer2">
+		<![CDATA[
+			ff14bot.Managers.GameObjectManager.GetObjectByNPCId(1008026).Interact();
+            await Buddy.Coroutines.Coroutine.Sleep(1000);			
+            if (await Coroutine.Wait(1000, () => Talk.DialogOpen))
+            {
+                Talk.Next();
+            }			
+			await Coroutine.Sleep(1000);
+			ff14bot.RemoteWindows.SelectYesno.ClickYes();
+			while (!CommonBehaviors.IsLoading) { await Coroutine.Yield(); }
+      ]]>
+	</CodeChunk>	
+	<CodeChunk Name="CrystalBall2">
+		<![CDATA[
+			ff14bot.Managers.GameObjectManager.GetObjectByNPCId(2002941).Interact();
+			await Coroutine.Sleep(1000);
+			ff14bot.RemoteWindows.SelectYesno.ClickYes();
+			while (!CommonBehaviors.IsLoading) { await Coroutine.Yield(); }
+      ]]>
+	</CodeChunk>	
 	<CodeChunk Name="ExitDuty">
 		<![CDATA[
-			ff14bot.Managers.GameObjectManager.GetObjectByNPCId(2000139).Interact();
+			ff14bot.Managers.GameObjectManager.GetObjectByNPCId(2001610).Interact();
 			await Coroutine.Sleep(1000);
 			ff14bot.RemoteWindows.SelectYesno.ClickYes();
 			await Coroutine.Sleep(3000);
@@ -284,11 +391,11 @@
 			}
 		]]>
 	</CodeChunk> 
-	<CodeChunk Name="QueueBrayFlox">
+	<CodeChunk Name="QueueHalataliHard">
 		<![CDATA[ 
            Logging.WriteDiagnostic("Queuing for Dungeon");
 		GameSettingsManager.JoinWithUndersizedParty = true;
-           DutyManager.Queue(DataManager.InstanceContentResults[8]);
+           DutyManager.Queue(DataManager.InstanceContentResults[21]);
            await Coroutine.Wait(5000, () => (DutyManager.QueueState == QueueState.InQueue || DutyManager.QueueState == QueueState.JoiningInstance));
 
            Logging.WriteDiagnostic("Queued for Dungeon");

@@ -9,7 +9,7 @@
 <Profile>
 	<Name>Yellow Is the New Black Leve</Name>
 	<KillRadius>50</KillRadius>
-	<BehaviorDirectory>..\Quest Behaviors</BehaviorDirectory>
+	<BehaviorDirectory>..\..\Quest Behaviors</BehaviorDirectory>
 	<Order>	
 			<If Condition="not ExBuddy.Windows.GuildLeve.HasLeve(853)">
 				<If Condition="not IsOnMap(155)">
@@ -32,7 +32,7 @@
 				<RunCode Name="CloseTimer"/> 
 				<FlyTo ZoneId="155" XYZ="-472.4178, 211, -233.0762" land="true"/>
 				<ExTurnInGuildLeve NpcId="1007069" NpcLocation="-476.2188,211,-233.4173"/>
-				<LLoadProfile Path="../Start.xml"/>		
+				<LLoadProfile Path="../../Start.xml"/>		
 			</If>
 			
 			<!-- Talk to My Voidsent -->
@@ -45,7 +45,7 @@
 				<RunCode Name="CloseTimer"/>
 				<GetTo ZoneId="155" XYZ="-472.4178, 211, -233.0762"/>
 				<ExTurnInGuildLeve NpcId="1007069" NpcLocation="-476.2188,211,-233.4173"/>
-				<LLoadProfile Path="../Start.xml"/>		
+				<LLoadProfile Path="../../Start.xml"/>		
 			</If>			
 
 	</Order>

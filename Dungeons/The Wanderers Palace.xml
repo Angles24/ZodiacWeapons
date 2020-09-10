@@ -6,7 +6,7 @@
 
 <!DOCTYPE Profile [
 <!-- Profile Settings -->
-<!ENTITY openchest "1">
+<!ENTITY openchest "0">
 ]>
 
 <Profile>
@@ -68,14 +68,17 @@
 		<!-- Climb the Endless Rise 0/4 -->
 		<If Condition="GetInstanceTodo(3) == 0">
 			<Log Message="Climb the Endless Rise 0/4" />
-			<MoveTo XYZ="125.4607, -10.05, 27.13442"/>
-			<UseObject NpcId="2002789" XYZ="125.4607, -10.05, 27.13442" Radius="500" condition="GameObjectManager.GetObjectByNPCId(2002789).IsTargetable"/>		
-			<MoveTo XYZ="78.59229, -10.16426, 27.85033"/>
-			<UseObject NpcId="2002789" XYZ="78.59229, -10.16426, 27.85033" Radius="500" condition="GameObjectManager.GetObjectByNPCId(2002789).IsTargetable"/>
-			<MoveTo XYZ="78.89979, -5.050002, -16.79714"/>
-			<UseObject NpcId="2002789" XYZ="78.89979, -5.050002, -16.79714" Radius="500" condition="GameObjectManager.GetObjectByNPCId(2002789).IsTargetable"/>
 			<MoveTo XYZ="35.81345, -0.16426, -16.8532"/>
-			<UseObject NpcId="2002789" XYZ="78.89979, -5.050002, -16.79714" Radius="500" condition="GetInstanceTodo(2) == 2"/>		
+			<If condition="GetInstanceTodo(2) &lt; 3">
+				<UseObject NpcIds="2002789" Radius="200" Condition="GetInstanceTodo(2) &lt; 3">
+					<HotSpots>
+						<HotSpot XYZ="43.52446, -0.16426, -17.34544" Radius="200"/>
+						<HotSpot XYZ="79.18799, -5.050018, -16.37779" Radius="200"/>
+						<HotSpot XYZ="78.55174, -10.16426, 26.99038" Radius="200"/>
+						<HotSpot XYZ="124.8495, -10.05, 27.00736" Radius="200"/>
+					</HotSpots>
+				</UseObject>					
+			</If>
 			<MoveTo XYZ="33.58755, 0, -5.501933"/>
 			<RunCode name="RustedNymianDevice2001124"/>	
 			<MoveTo XYZ="33.52447, -1.192093E-07, -28.49777"/>
@@ -90,9 +93,14 @@
 		</If>
 		<While Condition="GetInstanceTodo(3) == 2">
 			<Log Message="Climb the Endless Rise 2/4" />
-			<MoveTo XYZ="42.70602, 0, -146.6996"/>	
-			<UseObject NpcId="2002789" XYZ="35.78941, -1.192093E-07, -146.3148" Radius="100" condition="GameObjectManager.GetObjectByNPCId(2002789).IsTargetable"/>
-			<UseObject NpcId="2002789" XYZ="35.78941, -1.192093E-07, -146.3148" Radius="100" condition="GetInstanceTodo(2) == 1"/>
+			<MoveTo XYZ="42.70602, 0, -146.6996"/>
+			<If condition="GetInstanceTodo(2) &lt; 2">
+				<UseObject NpcIds="2002789" Radius="200" Condition="GetInstanceTodo(2) &lt; 2">
+					<HotSpots>
+						<HotSpot XYZ="35.78941, -1.192093E-07, -146.3148" Radius="200"/>
+					</HotSpots>
+				</UseObject>					
+			</If>			
 			<MoveTo XYZ="33.70079, 0.2081963, -152.8321"/>
 			<RunCode name="RustedNymianDevice2001129"/>
 		</While>
@@ -115,77 +123,77 @@
 			<Log Message="Defeat the tonberry king 0/1" />
 			<If Condition="ClassName == ((ClassJobType.Bard))"> 
 				<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 6261">
-					<Log Message="Equipping Artemis Bow Zenith" />
+					<Log Message="Equipping Artemis Bow Atma" />
 					<RunCode Name="ArtemisAtma" />
 					<WaitTimer WaitTime="3" />
 				</If>
 			</If>
 			<If Condition="ClassName == ((ClassJobType.BlackMage))"> 
 				<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 6263">
-					<Log Message="Equipping Stardust Rod Zenith" />
+					<Log Message="Equipping Stardust Rod Atma" />
 					<RunCode Name="StardustAtma" />
 					<WaitTimer WaitTime="3" />
 				</If>
 			</If>
 			<If Condition="ClassName == ((ClassJobType.Dragoon))"> 
 				<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 6260">
-					<Log Message="Equipping Gae Bolg Zenith" />
+					<Log Message="Equipping Gae Bolg Atma" />
 					<RunCode Name="GaeBolgAtma" />
 					<WaitTimer WaitTime="3" />
 				</If>
 			</If>	
 			<If Condition="ClassName == ((ClassJobType.Monk))"> 
 				<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 6258">
-					<Log Message="Equipping Sphairai Zenith" />
+					<Log Message="Equipping Sphairai Atma" />
 					<RunCode Name="SphairaiAtma" />
 					<WaitTimer WaitTime="3" />
 				</If>
 			</If>
 			<If Condition="ClassName == ((ClassJobType.Ninja))"> 
 				<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 9250">
-					<Log Message="Equipping Yoshimitsu Zenith" />
+					<Log Message="Equipping Yoshimitsu Atma" />
 					<RunCode Name="YoshimitsuAtma" />
 					<WaitTimer WaitTime="3" />
 				</If>
 			</If>
 			<If Condition="ClassName == ((ClassJobType.Paladin))"> 
 				<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 6257">
-					<Log Message="Equipping Curtana Zenith" />
+					<Log Message="Equipping Curtana Atma" />
 					<RunCode Name="CurtanaAtma" />
 					<WaitTimer WaitTime="3" />
 				</If>
 			</If>
 			<If Condition="ClassName == ((ClassJobType.Paladin))"> 
-				<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.OffHand].RawItemId != 6266">
-					<Log Message="Equipping Holy Shield Zenith" />
+				<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.OffHand].RawItemId != 7833">
+					<Log Message="Equipping Holy Shield Atma" />
 					<RunCode Name="HolyShieldAtma" />
 					<WaitTimer WaitTime="3" />
 				</If>
 			</If>			
 			<If Condition="ClassName == ((ClassJobType.Scholar))"> 
 				<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 6265">
-					<Log Message="Equipping Omnilex Zenith" />
+					<Log Message="Equipping Omnilex Atma" />
 					<RunCode Name="OmnilexAtma" />
 					<WaitTimer WaitTime="3" />
 				</If>
 			</If>
 			<If Condition="ClassName == ((ClassJobType.Summoner))"> 
 				<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 6264">
-					<Log Message="Equipping Viel of Wiyu Zenith" />
+					<Log Message="Equipping Viel of Wiyu Atma" />
 					<RunCode Name="VeilAtma" />
 					<WaitTimer WaitTime="3" />
 				</If>
 			</If>	
 			<If Condition="ClassName == ((ClassJobType.Warrior))"> 
 				<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 6259">
-					<Log Message="Equipping Bravura Zenith" />
+					<Log Message="Equipping Bravura Atma" />
 					<RunCode Name="BravuraAtma" />
 					<WaitTimer WaitTime="3" />
 				</If>
 			</If>
 			<If Condition="ClassName == ((ClassJobType.WhiteMage))"> 
 				<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 6262">
-					<Log Message="Equipping Thyrus Zenith" />
+					<Log Message="Equipping Thyrus Atma" />
 					<RunCode Name="ThyrusAtma" />
 					<WaitTimer WaitTime="3" />
 				</If>

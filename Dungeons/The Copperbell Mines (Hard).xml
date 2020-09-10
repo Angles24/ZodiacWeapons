@@ -6,7 +6,7 @@
 
 <!DOCTYPE Profile [
 <!-- Profile Settings -->
-<!ENTITY openchest "1">
+<!ENTITY openchest "0">
 ]>
 
 <Profile>
@@ -55,7 +55,15 @@
 			<WaitTimer WaitTime="11" />
 			<MoveTo XYZ="-171.2285, -7.608466, -208.3708" usemesh="false"/>
 			<MoveTo XYZ="-57.40696, -3.161125, -196.2173"/>
-			<Grind GrindRef="CollapsedRock" While="not GameObjectManager.GetObjectByNPCId(2293).CurrentHealth == 0"/> <!-- Clear Collapsed Rock -->	
+			<Grind GrindRef="CollapsedRock" While="not GameObjectManager.GetObjectByNPCId(2293).CurrentHealth == 0"/> <!-- Clear Collapsed Rock -->
+			<MoveTo XYZ="18.05962, -6.95816, -210.4992"/>
+			<If condition="not GameObjectManager.GetObjectByNPCId(2293).CurrentHealth == 0">
+				<Grind GrindRef="CollapsedRock" While="not GameObjectManager.GetObjectByNPCId(2293).CurrentHealth == 0"/> <!-- Clear Collapsed Rock -->
+			</If>
+			<MoveTo XYZ="17.48054, -7.000057, -185.4735"/>
+			<If condition="not GameObjectManager.GetObjectByNPCId(2293).CurrentHealth == 0">
+				<Grind GrindRef="CollapsedRock" While="not GameObjectManager.GetObjectByNPCId(2293).CurrentHealth == 0"/> <!-- Clear Collapsed Rock -->
+			</If>			
 			<MoveTo XYZ="58.02053, -9.245893, -91.8128"/>
 			<MoveTo XYZ="77.15265, -12, -91.16539" usemesh="false"/>			
 			<Grind GrindRef="FirstBoss" While="not GameObjectManager.GetObjectByNPCId(2282).CurrentHealth == 0"/> <!-- Fight First Boss -->			
@@ -89,34 +97,81 @@
 			<MoveTo XYZ="-81.23553, -38.51034, 106.9896"/>
 			<MoveTo XYZ="-94.35246, -59.32168, 38.16587"/>
 			<If Condition="ClassName == ((ClassJobType.Bard))"> 
-				<ChangeClass Job="Bard" />
+				<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 6261">
+					<Log Message="Equipping Artemis Bow Zenith" />
+					<RunCode Name="ArtemisAtma" />
+					<WaitTimer WaitTime="3" />
+				</If>
 			</If>
 			<If Condition="ClassName == ((ClassJobType.BlackMage))"> 
-				<ChangeClass Job="Black Mage" />
+				<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 6263">
+					<Log Message="Equipping Stardust Rod Zenith" />
+					<RunCode Name="StardustAtma" />
+					<WaitTimer WaitTime="3" />
+				</If>
 			</If>
 			<If Condition="ClassName == ((ClassJobType.Dragoon))"> 
-					<ChangeClass Job="Dragoon" />
+				<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 6260">
+					<Log Message="Equipping Gae Bolg Zenith" />
+					<RunCode Name="GaeBolgAtma" />
+					<WaitTimer WaitTime="3" />
+				</If>
 			</If>	
 			<If Condition="ClassName == ((ClassJobType.Monk))"> 
-					<ChangeClass Job="Monk" />
+				<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 6258">
+					<Log Message="Equipping Sphairai Zenith" />
+					<RunCode Name="SphairaiAtma" />
+					<WaitTimer WaitTime="3" />
+				</If>
 			</If>
 			<If Condition="ClassName == ((ClassJobType.Ninja))"> 
-					<ChangeClass Job="Ninja" />
+				<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 9250">
+					<Log Message="Equipping Yoshimitsu Zenith" />
+					<RunCode Name="YoshimitsuAtma" />
+					<WaitTimer WaitTime="3" />
+				</If>
 			</If>
 			<If Condition="ClassName == ((ClassJobType.Paladin))"> 
-				<ChangeClass Job="Paladin" />
-			</If>		
+				<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 6257">
+					<Log Message="Equipping Curtana Zenith" />
+					<RunCode Name="CurtanaAtma" />
+					<WaitTimer WaitTime="3" />
+				</If>
+			</If>
+			<If Condition="ClassName == ((ClassJobType.Paladin))"> 
+				<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.OffHand].RawItemId != 6266">
+					<Log Message="Equipping Holy Shield Zenith" />
+					<RunCode Name="HolyShieldAtma" />
+					<WaitTimer WaitTime="3" />
+				</If>
+			</If>			
 			<If Condition="ClassName == ((ClassJobType.Scholar))"> 
-					<ChangeClass Job="Scholar" />
+				<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 6265">
+					<Log Message="Equipping Omnilex Zenith" />
+					<RunCode Name="OmnilexAtma" />
+					<WaitTimer WaitTime="3" />
+				</If>
 			</If>
 			<If Condition="ClassName == ((ClassJobType.Summoner))"> 
-					<ChangeClass Job="Summoner" />
+				<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 6264">
+					<Log Message="Equipping Viel of Wiyu Zenith" />
+					<RunCode Name="VeilAtma" />
+					<WaitTimer WaitTime="3" />
+				</If>
 			</If>	
 			<If Condition="ClassName == ((ClassJobType.Warrior))"> 
-					<ChangeClass Job="Warrior" />
+				<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 6259">
+					<Log Message="Equipping Bravura Zenith" />
+					<RunCode Name="BravuraAtma" />
+					<WaitTimer WaitTime="3" />
+				</If>
 			</If>
 			<If Condition="ClassName == ((ClassJobType.WhiteMage))"> 
-					<ChangeClass Job="White Mage" />
+				<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 6262">
+					<Log Message="Equipping Thyrus Zenith" />
+					<RunCode Name="ThyrusAtma" />
+					<WaitTimer WaitTime="3" />
+				</If>
 			</If>			
 			<Grind GrindRef="FinalBoss" While="not GameObjectManager.GetObjectByNPCId(2289).CurrentHealth == 0"/> <!-- Fight Final Boss -->
 			<If Condition="&openchest; == 1">

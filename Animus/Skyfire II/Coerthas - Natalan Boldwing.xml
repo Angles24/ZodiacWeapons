@@ -19,7 +19,7 @@
 		<TeleportTo Name="Camp Dragonhead" AetheryteId="23" />
 	</If>
 	<NoCombatMoveTo Name="natalan_boldwing" XYZ="495.3212, 303.8207, -207.1652"/>
-      <Grind grindRef="natalan_boldwing" while="True" while="not ZodiacManager.CurrentBook.KillTask10Completed"/>
+      <Grind grindRef="natalan_boldwing" while="not ZodiacManager.CurrentBook.KillTask10Completed"/>
 	  <LLoadProfile Path="../../Start.xml"/>
 	</Order>
 	</Profile>

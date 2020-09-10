@@ -9,74 +9,72 @@
 <Profile>
 	<Name>Whitebrim Leves</Name>
 	<KillRadius>50</KillRadius>
-	<BehaviorDirectory>..\Quest Behaviors</BehaviorDirectory>
+	<BehaviorDirectory>..\..\Quest Behaviors</BehaviorDirectory>
 	<Order>	
-			<If Condition="not ExBuddy.Windows.GuildLeve.HasLeve(868)">
+			<If Condition="not ExBuddy.Windows.GuildLeve.HasLeve(875)">
 				<If Condition="not IsOnMap(156)">
 					<TeleportTo Name="Revenant's Toll " AetheryteId="24"/>
 				</If>			
 				<FlyTo XYZ="462.438, -4.445982, -469.9096" land="true"/>
-				<ExPickupGuildLeve leveIds="868" leveType="Order" npcId="1007070" npcLocation="464.5914,-4.057395,-467.4297" Timeout="5" /> <!-- The Awry Salvages -->
+				<ExPickupGuildLeve leveIds="875" leveType="Immortal" npcId="1007070" npcLocation="464.5914,-4.057395,-467.4297" Timeout="5" /> <!-- The Museum Is Closed -->
 				<If Condition="not ExBuddy.Windows.GuildLeve.HasLeve(868)">
-					<ExPickupGuildLeve leveIds="869" leveType="Order" npcId="1007070" npcLocation="464.5914,-4.057395,-467.4297" Timeout="5" /> <!-- Amateur Hour -->				
+					<ExPickupGuildLeve leveIds="873" leveType="Immortal" npcId="1007070" npcLocation="464.5914,-4.057395,-467.4297" Timeout="5" /> <!-- Who Writes History -->				
 				</If>
 			</If>	
 
-			<!-- Amateur Hour -->	
-			<If Condition="ExBuddy.Windows.GuildLeve.HasLeve(869)">
+			<!-- The Museum Is Closed -->	
+			<If Condition="ExBuddy.Windows.GuildLeve.HasLeve(875)">
 				<If Condition="not IsOnMap(156)">
 					<TeleportTo Name="Revenant's Toll " AetheryteId="24"/>
 				</If>			
-				<FlyTo ZoneId="155" XYZ="121.6689, -10.02974, -475.5452" land="true"/>
-				<InitiateLeve LeveId="869"/> <!-- Amateur Hour -->
+				<FlyTo ZoneId="155" XYZ="112.4894, -6.997831, -479.8065" land="true"/>
+				<InitiateLeve LeveId="875"/> <!-- The Museum Is Closed -->
 				<WaitTimer WaitTime="2" />
-				<Grind GrindRef="AmateurHour" While="not ff14bot.RemoteWindows.SelectYesno.IsOpen"/> 						
+				<Grind GrindRef="TheMuseumIsClosed" While="not ff14bot.RemoteWindows.SelectYesno.IsOpen"/> 						
 				<WaitTimer WaitTime="1" />					
 				<RunCode Name="CloseTimer"/> 
 				<FlyTo XYZ="462.438, -4.445982, -469.9096" land="true"/>
 				<ExTurnInGuildLeve NpcId="1007070" NpcLocation="464.5914,-4.057395,-467.42973"/>
-				<LLoadProfile Path="../Start.xml"/>		
+				<LLoadProfile Path="../../Start.xml"/>		
 			</If>
 
-			<!-- The Awry Salvages -->	
-			<If Condition="ExBuddy.Windows.GuildLeve.HasLeve(868)">
+			<!-- Who Writes History -->	
+			<If Condition="ExBuddy.Windows.GuildLeve.HasLeve(873)">
 				<If Condition="not IsOnMap(156)">
 					<TeleportTo Name="Revenant's Toll " AetheryteId="24"/>
 				</If>			
-				<FlyTo ZoneId="155" XYZ="141.1448, -14.39411, -475.5962" land="true"/>
-				<InitiateLeve LeveId="868"/> <!-- The Awry Salvages -->	
+				<FlyTo ZoneId="155" XYZ="128.8596, -12.77839, -470.5652" land="true"/>
+				<InitiateLeve LeveId="873"/> <!-- Who Writes History -->	
 				<WaitTimer WaitTime="2" />
-				<Grind GrindRef="TheAwrySalvages" While="not ff14bot.RemoteWindows.SelectYesno.IsOpen"/> 						
+				<Grind GrindRef="WhoWritesHistory" While="not ff14bot.RemoteWindows.SelectYesno.IsOpen"/> 						
 				<WaitTimer WaitTime="1" />					
 				<RunCode Name="CloseTimer"/> 
 				<FlyTo XYZ="462.438, -4.445982, -469.9096" land="true"/>
 				<ExTurnInGuildLeve NpcId="1007070" NpcLocation="464.5914,-4.057395,-467.42973"/>
-				<LLoadProfile Path="../Start.xml"/>					
+				<LLoadProfile Path="../../Start.xml"/>					
 			</If>			
 		
 
 
 	</Order>
   <GrindAreas> 
- 	<GrindArea name="AmateurHour">
+ 	<GrindArea name="WhoWritesHistory">
         <Hotspots>
-			<Hotspot Radius="200" XYZ="121.6689, -10.02974, -475.5452" />
+			<Hotspot Radius="200" XYZ="128.8596, -12.77839, -470.5652" />
         </Hotspots>
         <TargetMobs>
-			<TargetMob Name="Downcast Hippocerf" Id="1762" Weight="1" />
-			<TargetMob Name="Dusty Devilet" Id="1788" Weight="2" />
-			<TargetMob Name="Lightning Sprite" Id="117" Weight="1" />
-			<TargetMob Name="Foul River Hapalit" Id="1770" Weight="1" />			
+			<TargetMob Name="Okeanos the Red" Id="1792" Weight="1" />			
         </TargetMobs>		
 	</GrindArea>
- 	<GrindArea name="TheAwrySalvages">
+ 	<GrindArea name="TheMuseumIsClosed">
         <Hotspots>
 			<Hotspot Radius="200" XYZ="141.1448, -14.39411, -475.5962" />
         </Hotspots>
         <TargetMobs>
-			<TargetMob Name="Beggar Bhikkhu" Id="1772" Weight="1" />
+			<TargetMob Name="Foul River Hapalit" Id="1770" Weight="1" />
 			<TargetMob Name="Hippogryph Pup" Id="1775" Weight="1" />
-			<TargetMob Name="Beggar Bonze" Id="1766" Weight="1" />			
+			<TargetMob Name="Lightning Sprite" Id="117" Weight="1" />
+			<TargetMob Name="Lake Nix" Id="2240" Weight="1" />			
         </TargetMobs>		
 	</GrindArea>
   </GrindAreas>	

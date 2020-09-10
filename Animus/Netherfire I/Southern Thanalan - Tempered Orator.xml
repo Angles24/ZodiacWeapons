@@ -18,6 +18,7 @@
 		<TeleportTo Name="Little Ala Mhigo" AetheryteId="19" />
 	</If>
 	<NoCombatMoveTo Name="tempered_orator" XYZ="41.28931, 23.51147, -141.3734"/>
-      <Grind grindRef="tempered_orator" while="True" />
+      <Grind grindRef="tempered_orator" while="not ZodiacManager.CurrentBook.KillTask5Completed" />
+	  <LLoadProfile Path="../../Start.xml"/>
 	</Order>
 	</Profile>

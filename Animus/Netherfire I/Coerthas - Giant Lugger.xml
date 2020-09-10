@@ -5,6 +5,7 @@
    <GrindArea name="giant_lugger">
         <Hotspots>
 			<Hotspot Radius="500" XYZ="-472.8304, 275.3853, 236.0151" name="giant_lugger" />
+			<Hotspot Radius="500" XYZ="-353.811,248.176,293.0189" />
 		</Hotspots>
 			<TargetMobs>
 				<TargetMob id="786"  /> 
@@ -18,6 +19,7 @@
 		<TeleportTo Name="Camp Dragonhead" AetheryteId="23" />
 	</If>
 	<NoCombatMoveTo Name="giant_lugger" XYZ="-472.8304, 275.3853, 236.0151"/>
-      <Grind grindRef="giant_lugger" while="True" />
+      <Grind grindRef="giant_lugger" while="not ZodiacManager.CurrentBook.KillTask4Completed" />
+	  <LLoadProfile Path="../../Start.xml"/>
 	</Order>
 	</Profile>
