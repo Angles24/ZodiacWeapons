@@ -27,7 +27,9 @@ You will also need the latest version of LlamaLibrary installed in your botbases
 
 ## Current Progress
 
-All classes should be coded up to and acquiring the Atma weapon. The first Skyfire book is done. Working on the rest.  
+All classes should be coded up to and acquiring the Atma weapon. 
+The first three Fire books are done on Warrior, White Mage, and Summoner. 
+Working on the rest.  
 
 ## Known Issues
 
