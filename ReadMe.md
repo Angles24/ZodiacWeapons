@@ -6,6 +6,8 @@ This rofile set is designed to obtain your level 50 Zodiac weapon with as little
 
 Before you start, open the Start.xml and set your desired job to 1, all other jobs to 0. Only set one job to 1 or it will confuse the profiles. You really need to be level 80 to successfully bot these duties. You can do it at lower levels but you will need help on the duties.
 
+Make sure you have completed your class quests up through level 50 to begin the relic quest.
+
 In the Start.xml you will find a list of items, one for each job. You must buy this item and meld it with the required materia (also listed) and have it in your inventory before starting the profile. You can also find this list below.
 
 			Bard		Longarm's Composite Bow				Heavens Eye Materia III X2
