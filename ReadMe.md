@@ -47,7 +47,7 @@ You will also need the latest version of LlamaLibrary installed in your botbases
 - [x] Book of Skyfire I
 - [x] Book of Skyfire II
 - [x] Book of Netherfire I
-- [ ] Book of Skyfall I
+- [X] Book of Skyfall I
 - [ ] Book of Skyfall II
 - [ ] Book of Netherfall I
 - [ ] Book of Skywind I
