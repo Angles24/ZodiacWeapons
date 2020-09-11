@@ -2948,7 +2948,7 @@
 							<TeleportTo AetheryteId="19"/>
 						</If>
 						<GetTo ZoneId="146" XYZ="8.539169, 0.5683023, -250.2028" />
-						<Log Message="Waiting on FATE 'Breaching South Tidegate'" />
+						<Log Message="Waiting on FATE 'Heroes of the 2nd'" />
 						<LLFate FateId="424" MinLevel="1" MaxLevel="50" while="ZodiacManager.CurrentBook.FateTask2Completed"/> <!-- Heroes of the 2nd -->							  				  
 					</While>					
 				</If>
