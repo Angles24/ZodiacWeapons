@@ -6631,7 +6631,7 @@
                 ff14bot.Managers.GameObjectManager.GetObjectByNPCId(1006976).Interact();
                 await Buddy.Coroutines.Coroutine.Sleep(1000);
                 if (ff14bot.RemoteWindows.SelectIconString.IsOpen)
-                    ff14bot.RemoteWindows.SelectIconString.ClickSlot(1);
+                    ff14bot.RemoteWindows.SelectIconString.ClickSlot(0);
 				await Buddy.Coroutines.Coroutine.Sleep(1000);	
                 if (await Coroutine.Wait(1000, () => Talk.DialogOpen))
                 {
@@ -6639,7 +6639,7 @@
                 }
                 await Buddy.Coroutines.Coroutine.Sleep(1000);
                 if (ff14bot.RemoteWindows.SelectString.IsOpen)
-                    ff14bot.RemoteWindows.SelectString.ClickSlot(0);
+                    ff14bot.RemoteWindows.SelectString.ClickSlot(1);
 				await Buddy.Coroutines.Coroutine.Sleep(1000);
                 if (ff14bot.RemoteWindows.SelectString.IsOpen)
                     ff14bot.RemoteWindows.SelectString.ClickSlot(0);					
