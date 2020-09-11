@@ -22,6 +22,7 @@ In the Start.xml you will find a list of items, one for each job. You must buy t
 			White Mage	Madman's Whispering Rod				Quicktongue Materia III X2
 
 You will need ExBuddy installed in your plugins folder which can be found here https://github.com/Entrax643/ExBuddy
+You will need to take the ExTurnInGuildLeveTag.cs file from my Plugins folder and place it in RebornBuddy\Plugins\ExBuddy\OrderBotTags\Behaviors folder, overwriting the current one. This files makes some changes to fix the GuildLeve turn ins.
 
 You will also need the latest version of LlamaLibrary installed in your botbases folder which can be found here https://github.com/nt153133/LlamaLibrary
 (Make sure you update before running the profiles, Kayla is constantly making new tags for this set and you'll need the absolute latest.)
@@ -38,5 +39,3 @@ Working on the rest.
 Fates are wonky. Mostly due to Navigation with RB, so don't completely AFK during this part.
 
 Copperbell Mines (Hard): One of the Collapsed Rocks has a smaller hitbox then RB thinks it does. Sometimes melee classes don't get close enough. Watch this.
-
-Leve turn ins get hung on accepting the final reward.
