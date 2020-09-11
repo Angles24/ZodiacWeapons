@@ -30,9 +30,56 @@ You will also need the latest version of LlamaLibrary installed in your botbases
 
 ## Current Progress
 
-All classes should be coded up to and acquiring the Atma weapon. 
-The first three Fire books are done on Warrior, White Mage, and Summoner. 
-Working on the rest.  
+### A Relic Reborn
+- [x] A Relic Reborn Quest
+- [x] A Relic Reborn the Chimera, A Relic Reborn the Hydra, The Howling Eye (Hard), The Bowl of Embers (Hard), The Naval (Hard)
+
+### Zenith Zodiac Weapons
+- [x] Purchase Zenith relic from Furnace. Requires 3 Thavnairian Mists.
+
+### Atma Zodiac Weapons
+- [x] Up in Arms
+- [x] Atma Fate Farm
+- [x] Purchase Atma from Jalzahn
+
+### Animus Zodia Weapons
+- [x] Trials of the Braves
+- [x] Book of Skyfire I
+- [x] Book of Skyfire II
+- [x] Book of Netherfire I
+- [ ] Book of Skyfall I
+- [ ] Book of Skyfall II
+- [ ] Book of Netherfall I
+- [ ] Book of Skywind I
+- [ ] Book of Skywind II
+- [ ] Book of Skyearth I
+- [ ] Purchase Animus from Jalzahn
+
+### Novus Zodiac Weapons
+- [ ] Celestial Radiance
+- [ ] Star Light, Star Bright
+- [ ] Farming 75 Alexandrite
+- [ ] Melding Materia
+- [ ] Purchase Novus Zodiac
+
+### Nexus Zodiac Weapons
+- [ ] Mmmmmm, Soulglazed Relics
+- [ ] Light Farming
+- [ ] Purchase Nexus Zodiac
+
+### Zodiac Braves Weapons
+- [ ] Wherefore Art Thou, Zodiac
+- [ ] One Man's Trash
+- [ ] A Ponze of Flesh
+- [ ] Labor of Love
+- [ ] Mtheod in His Malice
+- [ ] A Treasured Mother
+- [ ] His Dark Materia
+
+### Zodiac Zeta Weapons
+- [ ] Rise and Shine
+- [ ] The Vital Title
+- [ ] Mahatma Light Farming
 
 ## Known Issues
 
