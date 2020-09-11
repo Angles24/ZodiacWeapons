@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
   Profile: Paladin Relic Weapon
+  Version: 0.4  
   Authors: Zamphire
   Code Credit: TuckMeIntoBread, Kayla, Sodimm
 -->
@@ -268,6 +269,7 @@
 	</GrindArea>
   </GrindAreas>
   <Order>
+    <Log Message="Starting Paladin Zodiac Questing Version 0.4" />
     <!-- The Weaponsmith of Legend -->
     <If Condition="not HasQuest(66241) and not IsQuestCompleted(66241)">
 	   <ChangeClass Job="Paladin" />								 
@@ -594,7 +596,7 @@
 
 	<!-- Start Animus Book Farm -->
 		<!-- Purchase first book if has none -->
-			<If Condition="not HasAtLeast(2001298,1) and HasAtLeast(7831,1) and not HasAtLeast(2001299,1) and not HasAtLeast(2001300,1) and not HasAtLeast(2001301,1) and not HasAtLeast(2001301,1)">
+			<If Condition="not HasAtLeast(2001298,1) and HasAtLeast(7824,1) and not HasAtLeast(2001299,1) and not HasAtLeast(2001300,1) and not HasAtLeast(2001301,1) and not HasAtLeast(2001301,1)">
 				<!-- Purchase Skyfire I -->
 				<Log Message="Moving to purchase Skyfire I" />
 				<If Condition="not IsOnMap(156)">
@@ -605,75 +607,107 @@
 			</If>
 			
 		<!-- Skyfire I -->	
-			<If Condition="HasAtLeast(2001298,1)  and HasAtLeast(7831,1)">
-				<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7831">
-					<RunCode Name="VeilAtma" />
+			<If Condition="HasAtLeast(2001298,1)  and HasAtLeast(7824,1)">
+				<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7824">
+					<RunCode Name="CurtanaAtma" />
 					<WaitTimer WaitTime="3" />
 				</If>
+			  <If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.OffHand].RawItemId != 7833">
+					<RunCode Name="HolyShieldAtma" />
+					<WaitTimer WaitTime="3" />
+			  </If>					
 				<LLoadProfile Path="../Animus/Animus Book Farm.xml"/>
 			</If>
 			
 		<!-- Skyfire II -->
-			<If Condition="HasAtLeast(2001299,1)  and HasAtLeast(7831,1)">
-				<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7831">
-					<RunCode Name="VeilAtma" />
+			<If Condition="HasAtLeast(2001299,1)  and HasAtLeast(7824,1)">
+				<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7824">
+					<RunCode Name="CurtanaAtma" />
 					<WaitTimer WaitTime="3" />
 				</If>
+			  <If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.OffHand].RawItemId != 7833">
+					<RunCode Name="HolyShieldAtma" />
+					<WaitTimer WaitTime="3" />
+			  </If>					
 				<LLoadProfile Path="../Animus/Animus Book Farm.xml"/>
 			</If>
 			
 			
 		<!-- Skyfall I -->	
-			<If Condition="HasAtLeast(2001301,1)  and HasAtLeast(7831,1)">
-				<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7831">
-					<RunCode Name="VeilAtma" />
+			<If Condition="HasAtLeast(2001301,1)  and HasAtLeast(7824,1)">
+				<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7824">
+					<RunCode Name="CurtanaAtma" />
 					<WaitTimer WaitTime="3" />
 				</If>
+			  <If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.OffHand].RawItemId != 7833">
+					<RunCode Name="HolyShieldAtma" />
+					<WaitTimer WaitTime="3" />
+			  </If>					
 				<LLoadProfile Path="../Animus/Animus Book Farm.xml"/>
 			</If>
 			
 		<!-- Skyfall II -->	
-			<If Condition="HasAtLeast(2001302,1)  and HasAtLeast(7831,1)">
-				<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7831">
-					<RunCode Name="VeilAtma" />
+			<If Condition="HasAtLeast(2001302,1)  and HasAtLeast(7824,1)">
+				<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7824">
+					<RunCode Name="CurtanaAtma" />
 					<WaitTimer WaitTime="3" />
 				</If>
+			  <If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.OffHand].RawItemId != 7833">
+					<RunCode Name="HolyShieldAtma" />
+					<WaitTimer WaitTime="3" />
+			  </If>					
 				<LLoadProfile Path="../Animus/Animus Book Farm.xml"/>
 			</If>
 
 		<!-- Netherfall I -->	
-			<If Condition="HasAtLeast(2001303,1)  and HasAtLeast(7831,1)">
-				<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7831">
-					<RunCode Name="VeilAtma" />
+			<If Condition="HasAtLeast(2001303,1)  and HasAtLeast(7824,1)">
+				<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7824">
+					<RunCode Name="CurtanaAtma" />
 					<WaitTimer WaitTime="3" />
 				</If>
+			  <If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.OffHand].RawItemId != 7833">
+					<RunCode Name="HolyShieldAtma" />
+					<WaitTimer WaitTime="3" />
+			  </If>					
 				<LLoadProfile Path="../Animus/Animus Book Farm.xml"/>
 			</If>
 
 		<!-- Skywind I -->	
-			<If Condition="HasAtLeast(2001304,1)  and HasAtLeast(7831,1)">
-				<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7831">
-					<RunCode Name="VeilAtma" />
+			<If Condition="HasAtLeast(2001304,1)  and HasAtLeast(7824,1)">
+				<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7824">
+					<RunCode Name="CurtanaAtma" />
 					<WaitTimer WaitTime="3" />
 				</If>
+			  <If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.OffHand].RawItemId != 7833">
+					<RunCode Name="HolyShieldAtma" />
+					<WaitTimer WaitTime="3" />
+			  </If>					
 				<LLoadProfile Path="../Animus/Animus Book Farm.xml"/>
 			</If>
 
 		<!-- Skywind II -->	
-			<If Condition="HasAtLeast(2001305,1)  and HasAtLeast(7831,1)">
-				<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7831">
-					<RunCode Name="VeilAtma" />
+			<If Condition="HasAtLeast(2001305,1)  and HasAtLeast(7824,1)">
+				<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7824">
+					<RunCode Name="CurtanaAtma" />
 					<WaitTimer WaitTime="3" />
 				</If>
+			  <If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.OffHand].RawItemId != 7833">
+					<RunCode Name="HolyShieldAtma" />
+					<WaitTimer WaitTime="3" />
+			  </If>					
 				<LLoadProfile Path="../Animus/Animus Book Farm.xml"/>
 			</If>
 
 		<!-- Skyearth I -->	
-			<If Condition="HasAtLeast(2001306,1)  and HasAtLeast(7831,1)">
-				<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7831">
-					<RunCode Name="VeilAtma" />
+			<If Condition="HasAtLeast(2001306,1)  and HasAtLeast(7824,1)">
+				<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7824">
+					<RunCode Name="CurtanaAtma" />
 					<WaitTimer WaitTime="3" />
 				</If>
+			  <If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.OffHand].RawItemId != 7833">
+					<RunCode Name="HolyShieldAtma" />
+					<WaitTimer WaitTime="3" />
+			  </If>					
 				<LLoadProfile Path="../Animus/Animus Book Farm.xml"/>
 			</If>	
 	

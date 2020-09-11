@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
   Profile: White Mage Relic Weapon
-  Version: 0.43  
+  Version: 0.4  
   Authors: Zamphire
   Code Credit: TuckMeIntoBread, Kayla, Sodimm
 -->
@@ -260,7 +260,7 @@
 	</GrindArea>
   </GrindAreas>
   <Order>
-	<Log Message="Starting White Mage Zodiac Questing Version 0.43" />
+	<Log Message="Starting White Mage Zodiac Questing Version 0.4" />
     <!-- The Weaponsmith of Legend -->
     <If Condition="not HasQuest(66241) and not IsQuestCompleted(66241)">
 	  <ChangeClass Job="WhiteMage" />
