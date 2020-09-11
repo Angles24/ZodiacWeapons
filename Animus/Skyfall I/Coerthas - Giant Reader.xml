@@ -18,6 +18,7 @@
 		<TeleportTo Name="Camp Dragonhead" AetheryteId="23" />
 	</If>
 	<NoCombatMoveTo Name="Giant Reader" XYZ="-447.4441, 250.7562, 306.9407"/>
-    <Grind grindRef="Giant Reader" while="True" />
+    <Grind grindRef="Giant Reader" while="not ZodiacManager.CurrentBook.KillTask5Completed" />
+	<LLoadProfile Path="../../Start.xml"/>
   </Order>
 </Profile>

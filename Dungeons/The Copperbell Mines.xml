@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-  Profile: Brayflox's Longstop (Hard)
+  Profile: Copperbell Mines
   Authors: Zamphire
 -->
 
@@ -10,81 +10,121 @@
 ]>
 
 <Profile>
-  <Name>Brayflox's Longstop (Hard)</Name>
+  <Name>Copperbell Mines</Name>
   <BehaviorDirectory></BehaviorDirectory>
   <Order>
-	<If Condition="not IsOnMap(362)">
-		<RunCode Name="QueueBrayFlox"/>
+	<If Condition="not IsOnMap(161)">
+		<RunCode Name="QueueCopperbell"/>
 	</If>
-	<If Condition="IsOnMap(362)">
-
-		<!-- Farm first Tiny Key -->
-		<If Condition="GetInstanceTodo(0) == 0 and GetInstanceTodo(1) == 0">
-			<Log Message="Farming first Tiny Key" />
-			<Grind GrindRef="FarmTinyKey" While="not GameObjectManager.GetObjectByNPCId(2660).CurrentHealth == 0"/>
-			<RunCode Name="DisableSideStep"/>
-			<UseObject NpcIds="2002325" radius="200" XYZ="-7.703425,-1.383872,-2.724141" condition="GetInstanceTodo(0) == 0"/>
-		</If>	
-
-		<!-- Clear Runstop Frontblock 0/1 -->
+	<If Condition="IsOnMap(161)">
+		<!-- Clear shaft B4 of rubble 0/1 -->
 		<If Condition="GetInstanceTodo(1) == 0">
-			<Log Message="Clear Runstop Frontblock 0/1" />
-			<RunCode Name="EnableSideStep"/>
-			<MoveTo XYZ="105.253, -0.1222783, 12.77754"/> <!-- Move to Headgate -->
-			<RunCode Name="RunstopHeadgate"/> <!-- Open Runstop Headgate -->
-			<MoveTo XYZ="113.9325, -2.48531, -17.92782"/> <!-- Move to first boss -->
-			<Grind GrindRef="FirstBoss" While="not GameObjectManager.GetObjectByNPCId(2548).CurrentHealth == 0"/> <!-- Fight First Boss -->	
+			<Log Message="Clear shaft B4 of rubble 0/1" />
+			<If Condition="ClassName == ((ClassJobType.Bard))"> 
+				<ChangeClass Job="Bard" />
+			</If>
+			<If Condition="ClassName == ((ClassJobType.BlackMage))"> 
+				<ChangeClass Job="Black Mage" />
+			</If>
+			<If Condition="ClassName == ((ClassJobType.Dragoon))"> 
+					<ChangeClass Job="Dragoon" />
+			</If>	
+			<If Condition="ClassName == ((ClassJobType.Monk))"> 
+					<ChangeClass Job="Monk" />
+			</If>
+			<If Condition="ClassName == ((ClassJobType.Ninja))"> 
+					<ChangeClass Job="Ninja" />
+			</If>
+			<If Condition="ClassName == ((ClassJobType.Paladin))"> 
+				<ChangeClass Job="Paladin" />
+			</If>		
+			<If Condition="ClassName == ((ClassJobType.Scholar))"> 
+					<ChangeClass Job="Scholar" />
+			</If>
+			<If Condition="ClassName == ((ClassJobType.Summoner))"> 
+					<ChangeClass Job="Summoner" />
+			</If>	
+			<If Condition="ClassName == ((ClassJobType.Warrior))"> 
+					<ChangeClass Job="Warrior" />
+			</If>
+			<If Condition="ClassName == ((ClassJobType.WhiteMage))"> 
+					<ChangeClass Job="White Mage" />
+			</If>
+			<MoveTo XYZ="-205.4989,23.81927,-208.5367"/>		
+			<UseObject InCombat="True" NpcIds="2000159" XYZ="-220.1309, 23.80412, -208.2452" Radius="50" condition="not HasAtLeast(2000441,1)"/>
+			<MoveTo XYZ="-205.4989,23.81927,-208.5367"/>
+			<RunCode name="SealedBlastingDoor1"/>
+			<MoveTo XYZ="-181.9118, 23.99999, -208.0539"/>
+			<RunCode name="LifeLever1"/>
+			<WaitTimer WaitTime="13" />
+			<MoveTo XYZ="-145.0382, -9.442417, -208.1714" usemesh="false"/>
+			<MoveTo XYZ="-20.34212, -8.936714, -158.5612"/>
+			<UseObject NpcIds="2000169" XYZ="-20.82861,-8.071711,-161.6389" Radius="50" condition="GetInstanceTodo(0) == 0"/>
+			<MoveTo XYZ="53.10145,-3.845266,-153.8264"/>
+			<UseObject NpcIds="2000172" XYZ="53.10145,-3.845266,-153.8264" Radius="50" condition="GetInstanceTodo(0) == 1"/>
+			<MoveTo XYZ="43.8211,-8.8478,-128.3291"/>
+			<While condition="GetInstanceTodo(0) == 2">
+				<RunCode name="PowderChamber1"/>
+			</While>
+			<MoveTo XYZ="41.37429,-9.249741,-135.2388"/>
+			<While condition="GetInstanceTodo(1) == 0">
+				<RunCode name="BlastingDevice1"/>
+			</While>			
+		</If>
+		
+		<!-- Clear shaft E1 of rubble 0/1 -->
+		<If Condition="GetInstanceTodo(2) == 0">
+			<Log Message="Clear shaft E1 of rubble 0/1" />
+			<MoveTo XYZ="43.65644, -9.942099, -107.0623" usemesh="false"/>
+			<MoveTo XYZ="51.90644, -9.245893, -87.23203"/>
+			<Grind GrindRef="FirstBoss" While="not GameObjectManager.GetObjectByNPCId(2000178).IsVisible"/> <!-- Fight First Boss -->
 			<If Condition="&openchest; == 1">
 				<RunCode name="OpenChest" />
 			</If>
-		</If>		
-			
-		<!-- Liberate captured goblins 0/3 -->
-		<If Condition="GetInstanceTodo(2) == 0">			
-			<Log Message="Liberate captured goblins 0/3" />
-			<MoveTo XYZ="91.8576, 4.53233, -104.8914"/> <!-- Move to First cage --> 			
-			<Log Message="Liberate captured goblins 1/3" />
-			<MoveTo XYZ="34.06355, 7.038593, -85.85194"/> <!-- Move to Second cage -->			
-			<Log Message="Liberate captured goblins 2/3" />
-			<MoveTo XYZ="28.31378, 6.905986, -118.8425"/> <!-- Move to Third cage -->
+			<UseObject NpcIds="2000178" XYZ="42.90398,-9.979086,-69.08659" Radius="50" condition="not HasAtLeast(2000441,1)"/>
+			<MoveTo XYZ="43.37675,-9.10968,-58.13428"/>	
+			<RunCode name="SealedBlastingDoor2"/>
+			<MoveTo XYZ="58.22326, -8.250008, 8.088243"/>
+			<RunCode name="LifeLever2"/>
+			<WaitTimer WaitTime="13" />
+			<MoveTo XYZ="59.8905, -38.59576, 40.56261" usemesh="false"/>
+			<Grind GrindRef="Firesand1" While="not GameObjectManager.GetObjectByNPCId(1303).CurrentHealth == 0"/> <!-- Get firesand to drop -->
+			<UseObject NpcIds="2001531" XYZ="59.8905, -38.59576, 40.56261" Radius="100" condition="GetInstanceTodo(0) == 0"/>
+			<UseObject NpcIds="2000179" XYZ="59.8905, -38.59576, 40.56261" Radius="100" condition="GetInstanceTodo(0) == 1"/>
+			<MoveTo XYZ="58.85282,-37.77425,55.07696" />
+			<While condition="GetInstanceTodo(0) == 2">
+				<RunCode name="PowderChamber2"/>
+			</While>
+			<MoveTo XYZ="56.72637,-37.99974,47.99045" />
+			<While condition="GetInstanceTodo(2) == 0">
+				<RunCode name="BlastingDevice2"/>
+			</While>
 		</If>
-		
-		<!-- Clear Brayflox's Drossdump 0/1 -->
-		<If Condition="GetInstanceTodo(3) == 0">			
-			<Log Message="Clear Brayflox's Drossdump 0/1" />
-			<MoveTo XYZ="44.75682, 7.015042, -128.6179"/> <!-- Move to cave entrance -->
-			<WaitTimer WaitTime="13"/>
-			<RunCode Name="ChangeZone"/> <!-- Subzone ID: 1341 -->
-			<Grind GrindRef="SecondBoss" While="GetInstanceTodo(3) == 0" /> --> <!-- Kill second boss -->
+
+		<!-- Arrive in shaft E2 0/1 -->
+		<If Condition="GetInstanceTodo(3) == 0">
+			<MoveTo XYZ="57.51021, -38.87397, 66.95765" usemesh="false" />		
+			<MoveTo XYZ="38.06453,-38.71266,60.51177" />
+			<UseObject NpcIds="2001532" XYZ="38.06453,-38.71266,60.51177" Radius="20" condition="GetInstanceTodo(0) == 0"/>
+			<MoveTo XYZ="35.85096, -37.8271, 90.57168"/>
+			<Grind GrindRef="SecondBoss" While="not GameObjectManager.GetObjectByNPCId(2001533).IsVisible"/> <!-- Fight Second Boss -->
+			<UseObject NpcIds="2001533" XYZ="31.75593,-37.93879,114.6466" Radius="100" condition="GetInstanceTodo(0) == 1"/>
 			<If Condition="&openchest; == 1">
 				<RunCode name="OpenChest" />
 			</If>			
+			<MoveTo XYZ="6.485046,-37.17156,113.6339" />
+			<While condition="GetInstanceTodo(0) == 2">
+				<RunCode name="PowderChamber3"/>
+			</While>
+			<MoveTo XYZ="10.16271,-36.84641,106.697" />	
+			<While condition="GameObjectManager.GetObjectByNPCId(2001534).IsVisible">
+				<RunCode name="BlastingDevice3"/>
+			</While>			
 		</If>
-		
-		<!-- Open Swiftmake Checkgates 0/2 -->
-		<If Condition="GetInstanceTodo(4) == 0">			
-			<Log Message="Open Swiftmake Checkgates 0/2" />
-			<MoveTo XYZ="-82.54991, 14.92233, -129.3664"/> <!-- Move to Tiny Key 2 -->
-			<UseObject NpcIds="2002642" radius="200" XYZ="-88.23793,13.14307,-122.5465" condition="GetInstanceTodo(0) == 0"/>
-			<MoveTo XYZ="-95.26472,12.88843,-122.5933"/> <!-- Move to Swiftmake Checkgate 1 -->
-			<RunCode Name="SwiftmakeCheckgate1"/> <!-- Open First Swiftmake Gate -->
-		</If>	
-			
-		<!-- Open Swiftmake Checkgates 1/2 -->
-		<If Condition="GetInstanceTodo(4) == 1">			
-			<Log Message="Open Swiftmake Checkgates 1/2" />
-			<MoveTo XYZ="-106.2929, 13.08915, -127.7986" offmesh="false"/> <!-- Move to other side of gate -->
-			<MoveTo XYZ="-111.197, 14.417, -138.6074"/>
-			<MoveTo XYZ="-97.07648, 20.52424, -170.3631"/>
-			<MoveTo XYZ="-101.2143, 20.73654, -179.9232"/> <!-- Move to Tiny Key 3 -->
-			<UseObject InCombat="true" NpcIds="2002644" radius="200" XYZ="-93.87576,20.48067,-173.7249" condition="GetInstanceTodo(0) == 0"/>
-			<MoveTo XYZ="-101.1448, 21.29802, -189.0635" /> <!-- Move to Swiftmake Checkgate 2 -->	
-			<RunCode Name="SwiftmakeCheckgate2"/> <!-- Open second Swiftmake Gate -->			
-		</If>			
 
-		<!-- Defeat the gobmachine G-VI 0/1 -->
-		<If Condition="GetInstanceTodo(5) == 0">			
-			<Log Message="Defeat the gobmachine G-VI 0/1" />
+		<!-- Defeat Gyges the Great 0/1 -->
+		<If Condition="GetInstanceTodo(4) == 0">
+			<MoveTo XYZ="-92.62537, -59.29224, 41.44617"/>
 			<If Condition="ClassName == ((ClassJobType.Bard))"> 
 				<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 6261">
 					<Log Message="Equipping Artemis Bow Atma" />
@@ -161,112 +201,147 @@
 					<RunCode Name="ThyrusAtma" />
 					<WaitTimer WaitTime="3" />
 				</If>
-			</If>				
-			<MoveTo XYZ="-44.58178, 34.72327, -235.4707"/> <!-- Move to final boss -->
-			<Grind GrindRef="FinalBoss" While="GetInstanceTodo(5) == 0" /> --> <!-- Kill second boss -->			
+			</If>							
+			<Grind GrindRef="FinalBoss" While="not GameObjectManager.GetObjectByNPCId(101).CurrentHealth == 0"/> <!-- Fight final Boss -->
 			<If Condition="&openchest; == 1">
 				<RunCode name="OpenChest" />
-			</If>	
-			<MoveTo XYZ="-25.89465,35.01941,-222.9496"/> <!-- Move to Exit -->
-			<RunCode Name="ExitDuty"/>
-			<LLoadProfile Path="../Start.xml"/>
+			</If>
+			<MoveTo XYZ="-100.8774,-56.04282,-15.20613" />
+			<RunCode name="ExitDuty"/>	
 		</If>	
-	</If>	  
+			
+
+				
+	</If>
   </Order>
   <GrindAreas>
-	<GrindArea name="FarmTinyKey">
-        <Hotspots>
-			<Hotspot Radius="20" XYZ="-37.52596, -2.381622, 49.44011" />
-			<Hotspot Radius="20" XYZ="-83.06089, -2.381622, 9.298882" />			
-			<Hotspot Radius="20" XYZ="-2.059998,-1.160427,-0.4730835" />
-        </Hotspots>
-        <TargetMobs>
-			<TargetMob Id="2660" Weight="1" /> <!-- Illuminati Soldier -->			
-        </TargetMobs>
-	</GrindArea>  
-	<GrindArea name="SecondBoss">
-        <Hotspots>
-			<Hotspot Radius="200" XYZ="-22.56818,25.52351,-174.3038" />
-        </Hotspots>
-        <TargetMobs>
-			<TargetMob Id="2549" Weight="1" />			
-        </TargetMobs>
-	</GrindArea>
+     <GrindArea name="FirstKey">
+      <Hotspots>
+        <Hotspot Radius="20" XYZ="-222.6816, 23.82822, -206.699" name="Name"/>
+      </Hotspots>
+      <TargetMobs>
+        <TargetMob Id="631" Weight="1"/> <!-- Spriggan Copper Copper -->
+        <TargetMob Id="629" Weight="1"/> <!-- Copperbell Coblyn -->
+      </TargetMobs>
+    </GrindArea> 
 	<GrindArea name="FirstBoss">
         <Hotspots>
-			<Hotspot Radius="200" XYZ="111.4667,-2.443486,-40.1763" />
+			<Hotspot Radius="200" XYZ="51.90644, -9.245893, -87.23203" />
         </Hotspots>
         <TargetMobs>
-			<TargetMob Name="Illuminati Commander" Id="2548" Weight="1" />			
+			<TargetMob Id="716" Weight="1"/> <!-- Spriggan Sifter -->
+			<TargetMob Id="983" Weight="1"/> <!-- Flambeau  -->
+			<TargetMob Id="548" Weight="2"/> <!-- Kottos -->
+        </TargetMobs>
+	</GrindArea>
+    <GrindArea name="Firesand1">
+      <Hotspots>
+        <Hotspot Radius="100" XYZ="59.8905, -38.59576, 40.56261"/>
+      </Hotspots>
+      <TargetMobs>
+        <TargetMob Id="984" Weight="1"/> <!-- Errant Soul -->
+        <TargetMob Id="1303" Weight="1"/> <!-- Blasting Cap -->
+        <TargetMob Id="631" Weight="1"/> <!-- Spriggan Copper Copper -->
+      </TargetMobs>
+    </GrindArea>	
+	<GrindArea name="SecondBoss">
+        <Hotspots>
+			<Hotspot Radius="200" XYZ="25.22314,-37.92662,112.1691" />
+        </Hotspots>
+        <TargetMobs>
+			<TargetMob Id="554" Weight="1" /> <!-- Ichorous Ire   -->				
         </TargetMobs>
 	</GrindArea>
 	<GrindArea name="FinalBoss">
         <Hotspots>
-			<Hotspot Radius="200" XYZ="-26.09322,35.28735,-228.3997" />
+			<Hotspot Radius="200" XYZ="-102.4949,-58.50376,15.31488" />
         </Hotspots>
         <TargetMobs>
-			<TargetMob Id="2547" Weight="1" />			
+        <TargetMob Id="101" Weight="1"/> <!-- Gyges the Great -->		
         </TargetMobs>
 	</GrindArea>	
   </GrindAreas>
-  <CodeChunks>
-	<CodeChunk Name="TinyKey1">
-      <![CDATA[
-        var x = GameObjectManager.GetObjectByNPCId(2002325);
-        var pos = new Vector3(x.Location.X, x.Location.Y, x.Location.Z);
-        Navigator.PlayerMover.MoveTowards(pos);
-        await Coroutine.Wait(-1, () => Core.Me.Distance(pos) < 3f);
-        Navigator.PlayerMover.MoveStop();
-		await Coroutine.Sleep(1000);
-        ff14bot.Managers.GameObjectManager.GetObjectByNPCId(x.NpcId).Interact();
+  <CodeChunks>		
+	<CodeChunk Name="SealedBlastingDoor1">
+		<![CDATA[
+			ff14bot.Managers.GameObjectManager.GetObjectByNPCId(2000160).Interact();
+			await Coroutine.Sleep(1000);
+			ff14bot.RemoteWindows.SelectYesno.ClickYes();
+			await Coroutine.Sleep(5000);
       ]]>
 	</CodeChunk>
-	<CodeChunk Name="TinyKey2">
-      <![CDATA[
-        var x = GameObjectManager.GetObjectByNPCId(2002642);
-        var pos = new Vector3(x.Location.X, x.Location.Y, x.Location.Z);
-        Navigator.PlayerMover.MoveTowards(pos);
-        await Coroutine.Wait(-1, () => Core.Me.Distance(pos) < 3f);
-        Navigator.PlayerMover.MoveStop();
-		await Coroutine.Sleep(1000);
-        ff14bot.Managers.GameObjectManager.GetObjectByNPCId(x.NpcId).Interact();
-      ]]>
-	</CodeChunk>
-	<CodeChunk Name="TinyKey3">
-      <![CDATA[
-        var x = GameObjectManager.GetObjectByNPCId(2002644);
-        var pos = new Vector3(x.Location.X, x.Location.Y, x.Location.Z);
-        Navigator.PlayerMover.MoveTowards(pos);
-        await Coroutine.Wait(-1, () => Core.Me.Distance(pos) < 3f);
-        Navigator.PlayerMover.MoveStop();
-		await Coroutine.Sleep(1000);
-        ff14bot.Managers.GameObjectManager.GetObjectByNPCId(x.NpcId).Interact();
+	<CodeChunk Name="SealedBlastingDoor2">
+		<![CDATA[
+			ff14bot.Managers.GameObjectManager.GetObjectByNPCId(2000173).Interact();
+			await Coroutine.Sleep(1000);
+			ff14bot.RemoteWindows.SelectYesno.ClickYes();
+			await Coroutine.Sleep(5000);
       ]]>
 	</CodeChunk>	
-	<CodeChunk Name="RunstopHeadgate">
+	<CodeChunk Name="LifeLever1">
 		<![CDATA[
-			ff14bot.Managers.GameObjectManager.GetObjectByNPCId(2002182).Interact();
+			ff14bot.Managers.GameObjectManager.GetObjectByNPCId(2000163).Interact();
 			await Coroutine.Sleep(1000);
 			ff14bot.RemoteWindows.SelectYesno.ClickYes();
-			await Coroutine.Sleep(3000);
+			await Coroutine.Sleep(5000);
       ]]>
 	</CodeChunk>
-	<CodeChunk Name="SwiftmakeCheckgate1">
+	<CodeChunk Name="LifeLever2">
 		<![CDATA[
-			ff14bot.Managers.GameObjectManager.GetObjectByNPCId(2002184).Interact();
+			ff14bot.Managers.GameObjectManager.GetObjectByNPCId(2000175).Interact();
 			await Coroutine.Sleep(1000);
 			ff14bot.RemoteWindows.SelectYesno.ClickYes();
-			await Coroutine.Sleep(3000);
+			await Coroutine.Sleep(5000);
       ]]>
-	</CodeChunk>
-	<CodeChunk Name="SwiftmakeCheckgate2">
+	</CodeChunk>	
+	<CodeChunk Name="PowderChamber1">
 		<![CDATA[
-			ff14bot.Managers.GameObjectManager.GetObjectByNPCId(2002884).Interact();
+			ff14bot.Managers.GameObjectManager.GetObjectByNPCId(2001536).Interact();
 			await Coroutine.Sleep(1000);
 			ff14bot.RemoteWindows.SelectYesno.ClickYes();
-			await Coroutine.Sleep(3000);
+			await Coroutine.Sleep(5000);
       ]]>
 	</CodeChunk>
+	<CodeChunk Name="PowderChamber2">
+		<![CDATA[
+			ff14bot.Managers.GameObjectManager.GetObjectByNPCId(2001537).Interact();
+			await Coroutine.Sleep(1000);
+			ff14bot.RemoteWindows.SelectYesno.ClickYes();
+			await Coroutine.Sleep(5000);
+      ]]>
+	</CodeChunk>
+		<CodeChunk Name="PowderChamber3">
+		<![CDATA[
+			ff14bot.Managers.GameObjectManager.GetObjectByNPCId(2001538).Interact();
+			await Coroutine.Sleep(1000);
+			ff14bot.RemoteWindows.SelectYesno.ClickYes();
+			await Coroutine.Sleep(5000);
+      ]]>
+	</CodeChunk>	
+	<CodeChunk Name="BlastingDevice1">
+		<![CDATA[
+			ff14bot.Managers.GameObjectManager.GetObjectByNPCId(2000170).Interact();
+			await Coroutine.Sleep(1000);
+			ff14bot.RemoteWindows.SelectYesno.ClickYes();
+			await Coroutine.Sleep(5000);
+      ]]>
+	</CodeChunk>
+	<CodeChunk Name="BlastingDevice2">
+		<![CDATA[
+			ff14bot.Managers.GameObjectManager.GetObjectByNPCId(2000180).Interact();
+			await Coroutine.Sleep(1000);
+			ff14bot.RemoteWindows.SelectYesno.ClickYes();
+			await Coroutine.Sleep(5000);
+      ]]>
+	</CodeChunk>
+	<CodeChunk Name="BlastingDevice3">
+		<![CDATA[
+			ff14bot.Managers.GameObjectManager.GetObjectByNPCId(2001534).Interact();
+			await Coroutine.Sleep(1000);
+			ff14bot.RemoteWindows.SelectYesno.ClickYes();
+			await Coroutine.Sleep(5000);
+      ]]>
+	</CodeChunk>	
 	<CodeChunk Name="ExitDuty">
 		<![CDATA[
 			ff14bot.Managers.GameObjectManager.GetObjectByNPCId(2000139).Interact();
@@ -326,11 +401,11 @@
 			}
 		]]>
 	</CodeChunk> 
-	<CodeChunk Name="QueueBrayFlox">
+	<CodeChunk Name="QueueCopperbell">
 		<![CDATA[ 
            Logging.WriteDiagnostic("Queuing for Dungeon");
 		GameSettingsManager.JoinWithUndersizedParty = true;
-           DutyManager.Queue(DataManager.InstanceContentResults[20]);
+           DutyManager.Queue(DataManager.InstanceContentResults[3]);
            await Coroutine.Wait(5000, () => (DutyManager.QueueState == QueueState.InQueue || DutyManager.QueueState == QueueState.JoiningInstance));
 
            Logging.WriteDiagnostic("Queued for Dungeon");

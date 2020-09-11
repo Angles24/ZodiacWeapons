@@ -18,6 +18,7 @@
 		<TeleportTo Name="Hawthorne Hut" AetheryteId="4" />
 	</If>
 	<NoCombatMoveTo Name="Sylphlands Sentinel" XYZ="161.6955, -24.71259, -490.9232"/>
-    <Grind grindRef="Sylphlands Sentinel" while="True" />
+    <Grind grindRef="Sylphlands Sentinel" while="not ZodiacManager.CurrentBook.KillTask7Completed" />
+	<LLoadProfile Path="../../Start.xml"/>
   </Order>
 </Profile>

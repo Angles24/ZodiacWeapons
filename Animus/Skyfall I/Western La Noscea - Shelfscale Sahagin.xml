@@ -18,6 +18,7 @@
 		<TeleportTo Name="Aleport" AetheryteId="14" />
 	</If>
 	<NoCombatMoveTo Name="Shelfscale Sahagin" XYZ="-132.4927, -26.66071, 31.39063"/>
-    <Grind grindRef="Shelfscale Sahagin" while="True" />
+    <Grind grindRef="Shelfscale Sahagin" while="not ZodiacManager.CurrentBook.KillTask1Completed" />
+	<LLoadProfile Path="../../Start.xml"/>
   </Order>
 </Profile>

@@ -18,7 +18,7 @@
 <!ENTITY sch "0"> 
 <!ENTITY smn "0"> 
 <!ENTITY war "0"> 
-<!ENTITY whm "0"> 
+<!ENTITY whm "1"> 
 <!-- 		Items required for quest. Have these in your inventory before starting profile.
 
 			Bard		Longarm's Composite Bow	Heavens Eye Materia III X2

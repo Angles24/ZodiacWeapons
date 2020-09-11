@@ -18,6 +18,7 @@
 		<TeleportTo Name="Aleport" AetheryteId="14" />
 	</If>
 	<NoCombatMoveTo Name="Sea Wasp" XYZ="-359.0222, -39.91953, -207.6119"/>
-    <Grind grindRef="Sea Wasp" while="True" />
+    <Grind grindRef="Sea Wasp" while="not ZodiacManager.CurrentBook.KillTask8Completed" />
+	<LLoadProfile Path="../../Start.xml"/>
   </Order>
 </Profile>

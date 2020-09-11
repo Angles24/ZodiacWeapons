@@ -18,6 +18,7 @@
 		<TeleportTo Name="Ceruleum Processing Plant" AetheryteId="22" />
 	</If>
 	<NoCombatMoveTo Name="Magitek Vanguard" XYZ="-208.8018, 77.15637, -203.853"/>
-    <Grind grindRef="Magitek Vanguard" while="True" />
+    <Grind grindRef="Magitek Vanguard" while="not ZodiacManager.CurrentBook.KillTask9Completed" />
+	<LLoadProfile Path="../../Start.xml"/>
   </Order>
 </Profile>

@@ -18,6 +18,7 @@
 		<TeleportTo Name="Revenant's Toll" AetheryteId="24" />
 	</If>
 	<NoCombatMoveTo Name="Mudpuppy" XYZ="-358.8303, -4.458094, -539.7286"/>
-    <Grind grindRef="Mudpuppy" while="True" />
+    <Grind grindRef="Mudpuppy" while="not ZodiacManager.CurrentBook.KillTask2Completed" />
+	<LLoadProfile Path="../../Start.xml"/>
   </Order>
 </Profile>

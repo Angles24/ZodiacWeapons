@@ -18,6 +18,7 @@
 		<TeleportTo Name="Little Ala Mhigo" AetheryteId="19" />
 	</If>
 	<NoCombatMoveTo Name="Amalj'aa Lancer" XYZ="-113.6381, -2.164978, 15.06436"/>
-    <Grind grindRef="Amalj'aa Lancer" while="True" />
+    <Grind grindRef="Amalj'aa Lancer" while="not ZodiacManager.CurrentBook.KillTask3Completed" />
+	<LLoadProfile Path="../../Start.xml"/>
   </Order>
 </Profile>
