@@ -24,9 +24,11 @@
 				<GetTo ZoneId="147" XYZ="45.68184, 7.582094, 344.8144"/>
 				<InitiateLeve LeveId="644"/> <!-- Necrologos: Pale Oblation -->
 				<WaitTimer WaitTime="2" /> 
-				<UseObject InCombat="True" NpcIds="2001098" condition="GameObjectManager.GetObjectByNPCId(2001098).IsTargetable">	
+				<UseObject InCombat="True" NpcIds="2001098" condition="not HasAtLeast(2000981,1)">	
 					<HotSpots>
-						<HotSpot XYZ="45.68184, 7.582094, 344.8144" Radius="200"/>							
+						<HotSpot Radius="200" XYZ="-7.641754, 3.0246, 359.4961" />
+						<HotSpot Radius="200" XYZ="30.55565, 6.980818, 324.5174" />
+						<HotSpot Radius="200" XYZ="14.06814, 6.060303, 273.8956" />						
 					</HotSpots>
 				</UseObject>					
 				<Grind GrindRef="VoidSlave" While="not ff14bot.RemoteWindows.SelectYesno.IsOpen"/>
@@ -42,7 +44,13 @@
 				<GetTo ZoneId="147" XYZ="45.68184, 7.582094, 344.8144"/>
 				<InitiateLeve LeveId="646"/> <!-- Circling the Ceruleum -->
 				<WaitTimer WaitTime="2" />
-				<UseObject InCombat="True" XYZ="62.33762,11.31645,336.056" Radius="200" NpcIds="2001104" condition="not ff14bot.RemoteWindows.SelectYesno.IsOpen"/>																
+				<UseObject InCombat="True" NpcIds="2001104" condition="not ff14bot.RemoteWindows.SelectYesno.IsOpen">	
+					<HotSpots>
+						<HotSpot Radius="200" XYZ="-7.641754, 3.0246, 359.4961" />
+						<HotSpot Radius="200" XYZ="30.55565, 6.980818, 324.5174" />
+						<HotSpot Radius="200" XYZ="14.06814, 6.060303, 273.8956" />						
+					</HotSpots>
+				</UseObject>
 				<RunCode Name="CloseTimer"/>
 				<GetTo ZoneId="147" XYZ="33.91326, 4.68145, 399.2563"/>
 				<ExTurnInGuildLeve NpcId="1002398" NpcLocation="33.91326, 4.68145, 399.2563"/>
@@ -54,10 +62,13 @@
   <GrindAreas> 
  	<GrindArea name="VoidSlave">
         <Hotspots>
-			<Hotspot Radius="200" XYZ="5.474173, 1.793206, 338.0313" />
+			<Hotspot Radius="200" XYZ="-7.641754, 3.0246, 359.4961" />
+			<Hotspot Radius="200" XYZ="30.55565, 6.980818, 324.5174" />
+			<Hotspot Radius="200" XYZ="14.06814, 6.060303, 273.8956" />
         </Hotspots>
         <TargetMobs>
-			<TargetMob Name="Void Slave" Id="1737" Weight="1" />					
+			<TargetMob Name="Void Slave" Id="1737" Weight="1" />
+			<TargetMob Name="Fernehalwes" Id="1008" Weight="2" />		
         </TargetMobs>		
 	</GrindArea> 
   </GrindAreas>

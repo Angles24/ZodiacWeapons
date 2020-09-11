@@ -38,7 +38,7 @@
 				<GetTo ZoneId="147" XYZ="45.68184, 7.582094, 344.8144"/>
 				<InitiateLeve LeveId="644"/> <!-- Necrologos: Pale Oblation -->
 				<WaitTimer WaitTime="2" /> 
-				<UseObject InCombat="True" NpcIds="2001098"  Radius="25"  condition="GameObjectManager.GetObjectByNPCId(2001098).IsTargetable">	
+				<UseObject InCombat="True" NpcIds="2001098" condition="GameObjectManager.GetObjectByNPCId(2001098).IsTargetable">	
 					<HotSpots>
 						<HotSpot XYZ="45.68184, 7.582094, 344.8144" Radius="200"/>							
 					</HotSpots>
