@@ -23,34 +23,14 @@
 			<If Condition="ExBuddy.Windows.GuildLeve.HasLeve(644)">
 				<GetTo ZoneId="147" XYZ="45.68184, 7.582094, 344.8144"/>
 				<InitiateLeve LeveId="644"/> <!-- Necrologos: Pale Oblation -->
-				<WaitTimer WaitTime="2" />
-				<While condition="DirectorManager.ActiveDirector.GetTodoArgs(1).Item1 &lt; DirectorManager.ActiveDirector.GetTodoArgs(1).Item2" > 
-					<UseObject InCombat="True" NpcIds="2001098"  Radius="25"  condition="DirectorManager.ActiveDirector.GetTodoArgs(1).Item1 &lt; DirectorManager.ActiveDirector.GetTodoArgs(1).Item2">	
-						<HotSpots>
-							<HotSpot XYZ="59.68162,9.973045,351.4754" Radius="200"/>
-							<HotSpot XYZ="59.66662,9.892045,355.1934" Radius="200"/>
-							<HotSpot XYZ="28.13002,5.091211,334.3859" Radius="200"/>
-							<HotSpot XYZ="35.90902,7.335211,330.4319" Radius="200"/>
-							<HotSpot XYZ="-16.09949,2.102989,342.8605" Radius="200"/>
-							<HotSpot XYZ="-12.84253,8.456742,263.1973" Radius="200"/>
-							<HotSpot XYZ="-12.84253,8.456742,263.1973" Radius="200"/>
-							<HotSpot XYZ="-30.59949,4.783989,327.7035" Radius="200"/>
-							<HotSpot XYZ="-16.33614,7.17051,290.1503" Radius="200"/>
-							<HotSpot XYZ="-17.66314,6.52751,283.7273" Radius="200"/>	
-							<HotSpot XYZ="34.19517,11.4331,261.2747" Radius="200"/>
-							<HotSpot XYZ="26.79917,11.4591,250.1417" Radius="200"/>
-							<HotSpot XYZ="8.064703,3.199111,308.1511" Radius="200"/>
-							<HotSpot XYZ="8.904703,2.668111,314.9471" Radius="200"/>
-							<HotSpot XYZ="8.064703,3.199111,308.1511" Radius="200"/>
-							<HotSpot XYZ="-20.07574,5.811675,383.5121" Radius="200"/>
-							<HotSpot XYZ="13.69474,2.891759,357.3057" Radius="200"/>
-							<HotSpot XYZ="6.77874,2.844759,359.3647" Radius="200"/>								
-						</HotSpots>
-					</UseObject>					
-				</While>
-				<While condition="DirectorManager.ActiveDirector.GetTodoArgs(4).Item1 &lt; DirectorManager.ActiveDirector.GetTodoArgs(4).Item2">
-					<Grind GrindRef="VoidSlave" While="DirectorManager.ActiveDirector.GetTodoArgs(4).Item1 &lt; DirectorManager.ActiveDirector.GetTodoArgs(4).Item2"/>
-				</While>					
+				<WaitTimer WaitTime="2" /> 
+				<UseObject InCombat="True" NpcIds="2001098"  Radius="25"  condition="GameObjectManager.GetObjectByNPCId(2001098).IsTargetable">	
+					<HotSpots>
+						<HotSpot XYZ="45.68184, 7.582094, 344.8144" Radius="200"/>							
+					</HotSpots>
+				</UseObject>					
+				<Grind GrindRef="VoidSlave" While="not ff14bot.RemoteWindows.SelectYesno.IsOpen"/>
+				<WaitTimer WaitTime="3" />	
 				<RunCode Name="CloseTimer"/> 
 				<GetTo ZoneId="147" XYZ="33.91326, 4.68145, 399.2563"/>
 				<ExTurnInGuildLeve NpcId="1002398" NpcLocation="33.91326, 4.68145, 399.2563"/>
@@ -62,22 +42,7 @@
 				<GetTo ZoneId="147" XYZ="45.68184, 7.582094, 344.8144"/>
 				<InitiateLeve LeveId="646"/> <!-- Circling the Ceruleum -->
 				<WaitTimer WaitTime="2" />
-				<While condition="DirectorManager.ActiveDirector.GetTodoArgs(0).Item1 &lt; DirectorManager.ActiveDirector.GetTodoArgs(0).Item2" > 
-					<UseObject InCombat="True" NpcIds="2001104"  Radius="25"  condition="DirectorManager.ActiveDirector.GetTodoArgs(0).Item1 &lt; DirectorManager.ActiveDirector.GetTodoArgs(0).Item2">	
-						<HotSpots>
-							<HotSpot XYZ="62.33762,11.31645,336.056" Radius="200"/>
-							<HotSpot XYZ="37.95295,6.131095,354.4171" Radius="200"/>
-							<HotSpot XYZ="9.952703,2.664754,315.1511" Radius="200"/>
-							<HotSpot XYZ="-25.08674,3.473066,372.2181" Radius="200"/>
-							<HotSpot XYZ="-36.85737,5.199014,323.359" Radius="200"/>
-							<HotSpot XYZ="7.238823,5.883775,273.2464" Radius="200"/>
-							<HotSpot XYZ="10.74874,2.818372,357.6857" Radius="200"/>
-							<HotSpot XYZ="-17.93814,6.879775,285.8753" Radius="200"/>
-							<HotSpot XYZ="-16.59953,9.517757,260.1543" Radius="200"/>
-							<HotSpot XYZ="-18.39849,2.187486,344.2445" Radius="200"/>
-						</HotSpots>
-					</UseObject>															
-				</While>
+				<UseObject InCombat="True" XYZ="62.33762,11.31645,336.056" Radius="200" NpcIds="2001104"  Radius="25"  condition="not ff14bot.RemoteWindows.SelectYesno.IsOpen"/>																
 				<RunCode Name="CloseTimer"/>
 				<GetTo ZoneId="147" XYZ="33.91326, 4.68145, 399.2563"/>
 				<ExTurnInGuildLeve NpcId="1002398" NpcLocation="33.91326, 4.68145, 399.2563"/>

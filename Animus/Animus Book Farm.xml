@@ -6384,10 +6384,10 @@
 							<WaitTimer WaitTime="3" />
 						</If>
 					</If>				
-					<Log Message="Moving to Skyfall I - Nothern Thanalan Camp Bluefrog 'Necrologos: Pale Oblation'" />
-					<LLoadProfile Path="../GuildLeves/Camp Bluefog/Necrologos Pale Oblation.xml"/>
+					<Log Message="Moving to Skyfall I - Nothern Thanalan Camp Bluefrog 'Circling the Ceruleum'" />
+					<LLoadProfile Path="../GuildLeves/Camp Bluefog/Circling the Ceruleum.xml"/>
 				</If>
-				<!-- Skyfall I Guildleves Task 1 -->
+				<!-- Skyfall I Guildleves Task 2 -->
 				<If condition="not ZodiacManager.CurrentBook.GuildleveTask2Completed">
 					<If Condition="ClassName == ((ClassJobType.Bard))"> 
 						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 6261">
@@ -6466,14 +6466,14 @@
 							<WaitTimer WaitTime="3" />
 						</If>
 					</If>				
-					<Log Message="Moving to Skyfall I - Coerthas Central Whitebrim Front 'An Imp Mobile'" />
+					<Log Message="Moving to Skyfall I - Coerthas Central Whitebrim Front 'Necrologos Whispers of the Gem'" />
 						<If Condition="not IsOnMap(155)">
 							<TeleportTo Name="155 " AetheryteId="23"/>
 						</If>			
 						<FlyTo XYZ="-474.1803, 211, -232.8224" land="true"/>
-						<LLoadProfile Path="../GuildLeves/Whitebrim/An Imp Mobile.xml"/>
+						<LLoadProfile Path="../GuildLeves/Necrologos Whispers of the Gem.xml"/>
 				</If>
-				<!-- Skyfall I Guildleves Task 1 -->
+				<!-- Skyfall I Guildleves Task 3 -->
 				<If condition="not ZodiacManager.CurrentBook.GuildleveTask3Completed">
 					<If Condition="ClassName == ((ClassJobType.Bard))"> 
 						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 6261">
@@ -6552,12 +6552,12 @@
 							<WaitTimer WaitTime="3" />
 						</If>
 					</If>					
-					<Log Message="Moving to Skyfall I - Mor Dhona Saint Coinarch's Find 'The Awry Savages'" />
+					<Log Message="Moving to Skyfall I - Mor Dhona Saint Coinarch's Find 'Go Home to Mama'" />
 					<If Condition="not IsOnMap(156)">
 						<TeleportTo Name="Revenant's Toll " AetheryteId="24"/>
 					</If>			
 					<FlyTo XYZ="462.438, -4.445982, -469.9096" land="true"/>
-					<LLoadProfile Path="../GuildLeves/Sain Coinach's Find/The Awry Salvages.xml"/>	
+					<LLoadProfile Path="../GuildLeves/Sain Coinach's Find/Go Home to Mama.xml"/>	
 				</If>
 				<!-- Book completed -->
 				<If condition="HasAtLeast(2001298,1) and ZodiacManager.CurrentBook.KillTask1Completed and ZodiacManager.CurrentBook.KillTask2Completed and ZodiacManager.CurrentBook.KillTask3Completed and ZodiacManager.CurrentBook.KillTask4Completed and ZodiacManager.CurrentBook.KillTask5Completed and ZodiacManager.CurrentBook.KillTask6Completed and ZodiacManager.CurrentBook.KillTask7Completed and ZodiacManager.CurrentBook.KillTask8Completed and ZodiacManager.CurrentBook.KillTask9Completed and ZodiacManager.CurrentBook.KillTask10Completed and ZodiacManager.CurrentBook.DungeonTask1Completed and ZodiacManager.CurrentBook.DungeonTask2Completed and ZodiacManager.CurrentBook.DungeonTask3Completed and ZodiacManager.CurrentBook.FateTask1Completed and ZodiacManager.CurrentBook.FateTask2Completed and ZodiacManager.CurrentBook.FateTask3Completed and ZodiacManager.CurrentBook.GuildleveTask1Completed and ZodiacManager.CurrentBook.GuildleveTask2Completed and ZodiacManager.CurrentBook.GuildleveTask3Completed">				

@@ -199,7 +199,8 @@
 				<RunCode name="OpenChest" />
 			</If>
 			<MoveTo XYZ="79.24333,-38.93077,-182.4802" />
-			<RunCode name="ExitDuty"/>	
+			<RunCode name="ExitDuty"/>
+			<LLoadProfile Path="../Start.xml"/>				
 		</If>		
 				
 	</If>

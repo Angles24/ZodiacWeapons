@@ -60,8 +60,7 @@
 			<TargetMob Name="Frostbitten Goobbue" Id="1747" Weight="1" />
 			<TargetMob Name="Snowpuppy" Id="1758" Weight="1" />	
         </TargetMobs>		
-	</GrindArea>	
-  </GrindAreas>
+	</GrindArea>
    	<GrindArea name="TalktoMyVoidsent">
         <Hotspots>
 			<Hotspot Radius="200" XYZ="-501.2252, 208.2493, -167.8926" />
@@ -70,7 +69,8 @@
 			<TargetMob Name="Bezul Huizan the Screamer" Id="2231" Weight="1" />			
         </TargetMobs>		
 	</GrindArea>
-  <CodeChunks>
+  <CodeChunks>	
+  </GrindAreas>
   		<CodeChunk Name="CloseTimer">
 			<![CDATA[ 
 			await Buddy.Coroutines.Coroutine.Sleep(2000);
