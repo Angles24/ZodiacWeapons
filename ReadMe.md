@@ -83,6 +83,8 @@ You will also need the latest version of LlamaLibrary installed in your botbases
 
 ## Known Issues
 
+If you die at any time, you'll need to restart the bot.
+
 Fates are wonky. Mostly due to Navigation with RB, so don't completely AFK during this part.
 
 You must already have levequests unlocked for the Whitebrim, Saint Coinarch's Find and Camp Bluefog. I can't automate those quests yet as they combine a quest and a levequest in one.
