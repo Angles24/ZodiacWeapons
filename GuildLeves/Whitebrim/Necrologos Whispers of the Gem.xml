@@ -41,7 +41,13 @@
 				<InitiateLeve LeveId="651"/> <!-- Papal Dispensation -->
 				<WaitTimer WaitTime="2" />
 				<Grind GrindRef="651" While="not HasAtLeast(2000881,6)"/>
-				<UseItem ItemId="2000881" InCombat="True" NpcIds="2000610" XYZ="-600.0139, 209.8965, -352.694" radius="200" condition="not ff14bot.RemoteWindows.SelectYesno.IsOpen"/>	
+				<UseItem ItemId="2000881" InCombat="True" NpcIds="2000610" condition="not ff14bot.RemoteWindows.SelectYesno.IsOpen">	
+					<HotSpots>
+						<HotSpot XYZ="-541.7665, 205.3763, -319.8226" radius="500"/>
+						<HotSpot XYZ="-600.0139, 209.8965, -352.694" radius="500"/>
+						<HotSpot XYZ="-631.4801, 205.703, -442.2903" radius="500"/>
+					</HotSpots>	
+				</UseItem>
 				<WaitTimer WaitTime="2" />
 				<RunCode Name="CloseTimer"/>
 				<FlyTo XYZ="-443.8516, 211, -233.8817" land="true"/>
@@ -54,6 +60,7 @@
  	<GrindArea name="Necrologos">
         <Hotspots>
 			<Hotspot Radius="200" XYZ="-522.1238, 206.3355, -331.3058" />
+			<Hotspot Radius="200" XYZ="-607.6644, 204.2211, -412.5702" />
         </Hotspots>
         <TargetMobs>
 			<TargetMob Name="Snowpuppy" Id="1758" Weight="1" />

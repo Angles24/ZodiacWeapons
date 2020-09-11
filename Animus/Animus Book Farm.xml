@@ -15,7 +15,7 @@
 		
 		
 			<!-- Purchase first book -->
-			<If Condition="not HasAtLeast(2001298,1) and not HasAtLeast(2001299,1) and not HasAtLeast(2001300,1) and not HasAtLeast(2001301,1) and not HasAtLeast(2001301,1)">
+			<If Condition="not HasAtLeast(2001298,1) and not HasAtLeast(2001299,1) and not HasAtLeast(2001300,1) and not HasAtLeast(2001301,1) and not HasAtLeast(2001301,1) and not HasAtLeast(2001302,1) and not HasAtLeast(2001303,1) and not HasAtLeast(2001304,1) and not HasAtLeast(2001305,1) and not HasAtLeast(2001306,1)">
 				<!-- Purchase Skyfire I -->
 				<Log Message="Moving to purchase Skyfire I" />
 				<If Condition="not IsOnMap(156)">
@@ -1181,6 +1181,7 @@
 							<TeleportTo Name="Camp Dragonhead" AetheryteId="23"/>
 						</If>
 						<FlyTo XYZ="-625.8011, 205.0826, -445.6776" land="true"/>
+						<Log Message="Waiting on FATE 'Giant Seps'" />
 						<LLFate FateId="480" MinLevel="1" MaxLevel="50" while="ZodiacManager.CurrentBook.FateTask1Completed"/> <!-- Giant Seps -->								  				  
 					</While>						
 				</If>
@@ -1269,6 +1270,7 @@
 							<TeleportTo Name="Camp Overlook" AetheryteId="16"/>
 						</If>
 						<FlyTo XYZ="184.3023, 60.99683, -163.5332" land="true"/>
+						<Log Message="Waiting on FATE 'Make It Rain'" />
 						<LLFate FateId="589" MinLevel="1" MaxLevel="50" while="ZodiacManager.CurrentBook.FateTask2Completed"/> <!-- Make It Rain -->							  				  
 					</While>					
 				</If>
@@ -1357,6 +1359,7 @@
 							<TeleportTo Name="The Hawthorne Hut" AetheryteId="4"/>
 						</If>
 						<FlyTo XYZ="276.8837, -6.474012, 21.03842" land="true"/>
+						<Log Message="Waiting on FATE 'The Enmity of my Enemy'" />
 						<LLFate FateId="611" MinLevel="1" MaxLevel="50" while="ZodiacManager.CurrentBook.FateTask3Completed"/> <!-- The Enmity of my Enemy -->							  				  
 					</While>				
 				</If>
@@ -2856,6 +2859,7 @@
 							<TeleportTo AetheryteId="13"/>
 						</If>
 						<FlyTo XYZ="-139.2711, -25.04512, 41.7734" land="true"/>
+						<Log Message="Waiting on FATE 'Breaching South Tidegate'" />
 						<LLFate FateId="571" MinLevel="1" MaxLevel="50" while="ZodiacManager.CurrentBook.FateTask1Completed"/> <!-- Breaching South Tidegate -->								  				  
 					</While>						
 				</If>
@@ -2944,6 +2948,7 @@
 							<TeleportTo AetheryteId="19"/>
 						</If>
 						<GetTo ZoneId="146" XYZ="8.539169, 0.5683023, -250.2028" />
+						<Log Message="Waiting on FATE 'Breaching South Tidegate'" />
 						<LLFate FateId="424" MinLevel="1" MaxLevel="50" while="ZodiacManager.CurrentBook.FateTask2Completed"/> <!-- Heroes of the 2nd -->							  				  
 					</While>					
 				</If>
@@ -3032,6 +3037,7 @@
 							<TeleportTo AetheryteId="7"/>
 						</If>
 						<FlyTo XYZ="-114.2224, -8.765539, -49.89951" land="true"/>
+						<Log Message="Waiting on FATE 'Air Supply'" />
 						<LLFate FateId="633" MinLevel="1" MaxLevel="50" while="ZodiacManager.CurrentBook.FateTask3Completed"/> <!-- Air Supply -->							  				  
 					</While>				
 				</If>
@@ -4529,6 +4535,7 @@
 					<Log Message="Moving to Netherfire I - Mor Dhona Another Notch on the Torch FATE" />
 					<While Condition="not ZodiacManager.CurrentBook.FateTask1Completed">
 						<GetTo ZoneId="156" XYZ="489.9941, -1.039923, -792.5084" land="true"/>
+						<Log Message="Waiting on FATE 'Another Notch on the Torch'" />
 						<LLFate FateId="521" MinLevel="1" MaxLevel="50" while="ZodiacManager.CurrentBook.FateTask1Completed"/> <!-- Another Notch on the Torch -->								  				  
 					</While>						
 				</If>
@@ -4614,6 +4621,7 @@
 					<Log Message="Moving to Netherfire I - Everthing's Better" />
 					<While Condition="not ZodiacManager.CurrentBook.FateTask2Completed">
 						<GetTo ZoneId="152" XYZ="105.1845, -27.43056, -347.2553" />
+						<Log Message="Waiting on FATE 'Everything's Better'" />
 						<LLFate FateId="620" MinLevel="1" MaxLevel="50" while="ZodiacManager.CurrentBook.FateTask2Completed"/> <!-- Everthing's Better -->							  				  
 					</While>					
 				</If>
@@ -4702,6 +4710,7 @@
 							<TeleportTo AetheryteId="20"/>
 						</If>
 						<FlyTo XYZ="163.9537, 14.11736, 253.3373" land="true"/>
+						<Log Message="Waiting on FATE 'Return to Cinder'" />
 						<LLFate FateId="430" MinLevel="1" MaxLevel="50" while="ZodiacManager.CurrentBook.FateTask3Completed"/> <!-- Return to Cinder -->							  				  
 					</While>				
 				</If>
@@ -6125,6 +6134,7 @@
 					<Log Message="Moving to Skyfall I - Coerthas Central Bellyful FATE" />
 					<While Condition="not ZodiacManager.CurrentBook.FateTask1Completed">
 						<GetTo ZoneId="155" XYZ="646.0345, 321.969, -392.6378"/>
+						<Log Message="Waiting on FATE 'Bellyful'" />
 						<LLFate FateId="475" MinLevel="1" MaxLevel="50" while="ZodiacManager.CurrentBook.FateTask1Completed"/> <!-- Bellyful -->								  				  
 					</While>						
 				</If>
@@ -6213,6 +6223,7 @@
 							<TeleportTo AetheryteId="13"/>
 						</If>
 						<FlyTo XYZ="-336.2559, -39.93802, 654.0422" land="true"/>
+						<Log Message="Waiting on FATE 'The King's Justice'" />
 						<LLFate FateId="577" MinLevel="1" MaxLevel="50" while="ZodiacManager.CurrentBook.FateTask2Completed"/> <!-- The King's Justice -->							  				  
 					</While>					
 				</If>
@@ -6301,6 +6312,7 @@
 							<TeleportTo AetheryteId="18"/>
 						</If>
 						<FlyTo XYZ="278.7669, -10.51159, 156.8069" land="true"/>
+						<Log Message="Waiting on FATE 'The Quartz Coupling'" />
 						<LLFate FateId="540" MinLevel="1" MaxLevel="50" while="ZodiacManager.CurrentBook.FateTask3Completed"/> <!-- The Quartz Coupling -->							  				  
 					</While>				
 				</If>				
@@ -6471,7 +6483,7 @@
 							<TeleportTo Name="155 " AetheryteId="23"/>
 						</If>			
 						<FlyTo XYZ="-474.1803, 211, -232.8224" land="true"/>
-						<LLoadProfile Path="../GuildLeves/Necrologos Whispers of the Gem.xml"/>
+						<LLoadProfile Path="../GuildLeves/Whitebrim/Necrologos Whispers of the Gem.xml"/>
 				</If>
 				<!-- Skyfall I Guildleves Task 3 -->
 				<If condition="not ZodiacManager.CurrentBook.GuildleveTask3Completed">
@@ -6560,7 +6572,7 @@
 					<LLoadProfile Path="../GuildLeves/Sain Coinach's Find/Go Home to Mama.xml"/>	
 				</If>
 				<!-- Book completed -->
-				<If condition="HasAtLeast(2001298,1) and ZodiacManager.CurrentBook.KillTask1Completed and ZodiacManager.CurrentBook.KillTask2Completed and ZodiacManager.CurrentBook.KillTask3Completed and ZodiacManager.CurrentBook.KillTask4Completed and ZodiacManager.CurrentBook.KillTask5Completed and ZodiacManager.CurrentBook.KillTask6Completed and ZodiacManager.CurrentBook.KillTask7Completed and ZodiacManager.CurrentBook.KillTask8Completed and ZodiacManager.CurrentBook.KillTask9Completed and ZodiacManager.CurrentBook.KillTask10Completed and ZodiacManager.CurrentBook.DungeonTask1Completed and ZodiacManager.CurrentBook.DungeonTask2Completed and ZodiacManager.CurrentBook.DungeonTask3Completed and ZodiacManager.CurrentBook.FateTask1Completed and ZodiacManager.CurrentBook.FateTask2Completed and ZodiacManager.CurrentBook.FateTask3Completed and ZodiacManager.CurrentBook.GuildleveTask1Completed and ZodiacManager.CurrentBook.GuildleveTask2Completed and ZodiacManager.CurrentBook.GuildleveTask3Completed">				
+				<If condition="HasAtLeast(2001301,1) and ZodiacManager.CurrentBook.KillTask1Completed and ZodiacManager.CurrentBook.KillTask2Completed and ZodiacManager.CurrentBook.KillTask3Completed and ZodiacManager.CurrentBook.KillTask4Completed and ZodiacManager.CurrentBook.KillTask5Completed and ZodiacManager.CurrentBook.KillTask6Completed and ZodiacManager.CurrentBook.KillTask7Completed and ZodiacManager.CurrentBook.KillTask8Completed and ZodiacManager.CurrentBook.KillTask9Completed and ZodiacManager.CurrentBook.KillTask10Completed and ZodiacManager.CurrentBook.DungeonTask1Completed and ZodiacManager.CurrentBook.DungeonTask2Completed and ZodiacManager.CurrentBook.DungeonTask3Completed and ZodiacManager.CurrentBook.FateTask1Completed and ZodiacManager.CurrentBook.FateTask2Completed and ZodiacManager.CurrentBook.FateTask3Completed and ZodiacManager.CurrentBook.GuildleveTask1Completed and ZodiacManager.CurrentBook.GuildleveTask2Completed and ZodiacManager.CurrentBook.GuildleveTask3Completed">				
 					<Log Message="Skyfall I completed. Buying Skyfall II" />
 					<If Condition="not IsOnMap(156)">
 						<TeleportTo AetheryteId="24"/> 
@@ -6572,6 +6584,78 @@
 			
   </Order>
  	<CodeChunks>
+        <CodeChunk Name="BuyFireBooks">
+            <![CDATA[ 
+                await Buddy.Coroutines.Coroutine.Sleep(500);
+                ff14bot.Managers.GameObjectManager.GetObjectByNPCId(1006976).Interact();
+                await Buddy.Coroutines.Coroutine.Sleep(1000);
+                if (ff14bot.RemoteWindows.SelectIconString.IsOpen)
+                    ff14bot.RemoteWindows.SelectIconString.ClickSlot(0);
+				await Buddy.Coroutines.Coroutine.Sleep(1000);	
+                if (await Coroutine.Wait(1000, () => Talk.DialogOpen))
+                {
+                    Talk.Next();
+                }
+                await Buddy.Coroutines.Coroutine.Sleep(1000);
+                if (ff14bot.RemoteWindows.SelectString.IsOpen)
+                    ff14bot.RemoteWindows.SelectString.ClickSlot(0);
+				await Buddy.Coroutines.Coroutine.Sleep(1000);
+                if (ff14bot.RemoteWindows.SelectString.IsOpen)
+                    ff14bot.RemoteWindows.SelectString.ClickSlot(0);					
+                await Buddy.Coroutines.Coroutine.Sleep(1000);
+                 if (ff14bot.RemoteWindows.SelectYesno.IsOpen)
+                    ff14bot.RemoteWindows.SelectYesno.ClickYes();
+                await Buddy.Coroutines.Coroutine.Sleep(1000);
+                if (await Coroutine.Wait(1000, () => Talk.DialogOpen))
+                {
+                    Talk.Next();
+                }
+                if (await Coroutine.Wait(1000, () => Talk.DialogOpen))
+                {
+                    Talk.Next();
+                }
+                if (await Coroutine.Wait(1000, () => Talk.DialogOpen))
+                {
+                    Talk.Next();				 			
+                }				
+            ]]>
+        </CodeChunk>
+        <CodeChunk Name="BuyFallBooks">
+            <![CDATA[ 
+                await Buddy.Coroutines.Coroutine.Sleep(500);
+                ff14bot.Managers.GameObjectManager.GetObjectByNPCId(1006976).Interact();
+                await Buddy.Coroutines.Coroutine.Sleep(1000);
+                if (ff14bot.RemoteWindows.SelectIconString.IsOpen)
+                    ff14bot.RemoteWindows.SelectIconString.ClickSlot(0);
+				await Buddy.Coroutines.Coroutine.Sleep(1000);	
+                if (await Coroutine.Wait(1000, () => Talk.DialogOpen))
+                {
+                    Talk.Next();
+                }
+                await Buddy.Coroutines.Coroutine.Sleep(1000);
+                if (ff14bot.RemoteWindows.SelectString.IsOpen)
+                    ff14bot.RemoteWindows.SelectString.ClickSlot(1);
+				await Buddy.Coroutines.Coroutine.Sleep(1000);
+                if (ff14bot.RemoteWindows.SelectString.IsOpen)
+                    ff14bot.RemoteWindows.SelectString.ClickSlot(0);					
+                await Buddy.Coroutines.Coroutine.Sleep(1000);
+                 if (ff14bot.RemoteWindows.SelectYesno.IsOpen)
+                    ff14bot.RemoteWindows.SelectYesno.ClickYes();
+                await Buddy.Coroutines.Coroutine.Sleep(1000);
+                if (await Coroutine.Wait(1000, () => Talk.DialogOpen))
+                {
+                    Talk.Next();
+                }
+                if (await Coroutine.Wait(1000, () => Talk.DialogOpen))
+                {
+                    Talk.Next();
+                }
+                if (await Coroutine.Wait(1000, () => Talk.DialogOpen))
+                {
+                    Talk.Next();				 			
+                }				
+            ]]>
+        </CodeChunk>		
  		<CodeChunk Name="OmnilexAtma">
 		<![CDATA[ 
 			BagSlot EquipSlot = ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand];
