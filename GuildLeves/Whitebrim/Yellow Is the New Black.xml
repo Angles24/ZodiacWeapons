@@ -70,7 +70,6 @@
         </TargetMobs>		
 	</GrindArea>
   <CodeChunks>	
-  </GrindAreas>
   		<CodeChunk Name="CloseTimer">
 			<![CDATA[ 
 			await Buddy.Coroutines.Coroutine.Sleep(2000);

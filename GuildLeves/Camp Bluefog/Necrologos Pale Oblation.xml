@@ -65,6 +65,7 @@
 			<Hotspot Radius="200" XYZ="-7.641754, 3.0246, 359.4961" />
 			<Hotspot Radius="200" XYZ="30.55565, 6.980818, 324.5174" />
 			<Hotspot Radius="200" XYZ="14.06814, 6.060303, 273.8956" />
+			<TargetMob Name="Fernehalwes" Id="1008" Weight="2" />
         </Hotspots>
         <TargetMobs>
 			<TargetMob Name="Void Slave" Id="1737" Weight="1" />
