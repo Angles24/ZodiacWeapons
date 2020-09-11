@@ -69,6 +69,7 @@
 			<TargetMob Name="Bezul Huizan the Screamer" Id="2231" Weight="1" />			
         </TargetMobs>		
 	</GrindArea>
+  </GrindAreas>		
   <CodeChunks>	
   		<CodeChunk Name="CloseTimer">
 			<![CDATA[ 
