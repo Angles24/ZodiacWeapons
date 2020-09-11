@@ -42,7 +42,7 @@
 				<GetTo ZoneId="147" XYZ="45.68184, 7.582094, 344.8144"/>
 				<InitiateLeve LeveId="646"/> <!-- Circling the Ceruleum -->
 				<WaitTimer WaitTime="2" />
-				<UseObject InCombat="True" XYZ="62.33762,11.31645,336.056" Radius="200" NpcIds="2001104"  Radius="25"  condition="not ff14bot.RemoteWindows.SelectYesno.IsOpen"/>																
+				<UseObject InCombat="True" XYZ="62.33762,11.31645,336.056" Radius="200" NpcIds="2001104" condition="not ff14bot.RemoteWindows.SelectYesno.IsOpen"/>																
 				<RunCode Name="CloseTimer"/>
 				<GetTo ZoneId="147" XYZ="33.91326, 4.68145, 399.2563"/>
 				<ExTurnInGuildLeve NpcId="1002398" NpcLocation="33.91326, 4.68145, 399.2563"/>

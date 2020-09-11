@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+  Profile: Go Home to Mama Leve
+  Authors: Zamphire
+  Code Credit: TuckMeIntoBread, Kayla, Sodimm, y2krazy, Ken_512
+-->
+
+<Profile>
+	<Name>Go Home to Mama Leve</Name>
+	<KillRadius>50</KillRadius>
+	<BehaviorDirectory>..\..\Quest Behaviors</BehaviorDirectory>
+	<Order>	
+			<If Condition="not ExBuddy.Windows.GuildLeve.HasLeve(865)">
+				<If Condition="not IsOnMap(156)">
+					<TeleportTo Name="Revenant's Toll " AetheryteId="24"/>
+				</If>			
+				<FlyTo XYZ="462.438, -4.445982, -469.9096" land="true"/>
+				<ExPickupGuildLeve leveIds="865" leveType="Maelstrom" npcId="1007070" npcLocation="464.5914,-4.057395,-467.4297" Timeout="5" /> <!-- Go Home to Mama -->
+				<If Condition="not ExBuddy.Windows.GuildLeve.HasLeve(865)">
+					<ExPickupGuildLeve leveIds="863" leveType="Maelstrom" npcId="1007070" npcLocation="464.5914,-4.057395,-467.4297" Timeout="5" /> <!-- One Big Problem Solved -->	 				
+				</If>
+			</If>	
+
+			<!-- Go Home to Mama -->	
+			<If Condition="ExBuddy.Windows.GuildLeve.HasLeve(865)">
+				<If Condition="not IsOnMap(156)">
+					<TeleportTo Name="Revenant's Toll " AetheryteId="24"/>
+				</If>			
+				<FlyTo ZoneId="155" XYZ="100.3533, -3.846652, -545.5336" land="true"/>
+				<InitiateLeve LeveId="865"/> <!-- Go Home to Mama -->
+				<WaitTimer WaitTime="2" />
+				<Grind GrindRef="GoHometoMama" While="not ff14bot.RemoteWindows.SelectYesno.IsOpen"/> 						
+				<WaitTimer WaitTime="1" />					
+				<RunCode Name="CloseTimer"/> 
+				<FlyTo XYZ="462.438, -4.445982, -469.9096" land="true"/>
+				<ExTurnInGuildLeve NpcId="1007070" NpcLocation="464.5914,-4.057395,-467.42973"/>
+				<LLoadProfile Path="../../Start.xml"/>					
+			</If>
+
+
+			<!-- One Big Problem Solved -->	
+			<If Condition="ExBuddy.Windows.GuildLeve.HasLeve(863)">
+				<If Condition="not IsOnMap(156)">
+					<TeleportTo Name="Revenant's Toll " AetheryteId="24"/>
+				</If>			
+				<FlyTo ZoneId="155" XYZ="104.0646, -5.058966, -492.6745" land="true"/>
+				<InitiateLeve LeveId="863"/> <!-- One Big Problem Solved -->
+				<WaitTimer WaitTime="2" />
+				<Grind GrindRef="OneBigPorblemSolved" While="not ff14bot.RemoteWindows.SelectYesno.IsOpen"/> 						
+				<WaitTimer WaitTime="1" />					
+				<RunCode Name="CloseTimer"/> 
+				<FlyTo XYZ="462.438, -4.445982, -469.9096" land="true"/>
+				<ExTurnInGuildLeve NpcId="1007070" NpcLocation="464.5914,-4.057395,-467.42973"/>
+				<LLoadProfile Path="../../Start.xml"/>		
+			</If>
+			
+
+	</Order>
+  <GrindAreas> 
+    <GrindArea name="OneBigPorblemSolved">
+      <Hotspots>
+        <Hotspot Radius="90" XYZ="104.0646, -5.058966, -492.6745" name="Name"/>
+      </Hotspots>
+      <TargetMobs>
+        <TargetMob Id="1772" Weight="1"/> <!-- Beggar Bhikkhu -->
+        <TargetMob Id="1767" Weight="1"/> <!-- Beggar Shramana -->
+        <TargetMob Id="1766" Weight="1"/> <!-- Beggar Bonze -->
+        <TargetMob Id="1771" Weight="1"/> <!-- Beggar Sozu -->		
+      </TargetMobs>
+    </GrindArea>
+ 	<GrindArea name="GoHometoMama">
+        <Hotspots>
+			<Hotspot Radius="200" XYZ="100.3533, -3.846652, -545.5336" />
+        </Hotspots>
+        <TargetMobs>
+			<TargetMob Name="Magitek Packer" Id="2237" Weight="1" />
+			<TargetMob Name="Imperial Secutor" Id="2235" Weight="1" />
+			<TargetMob Name="Imperial Hoplomachus" Id="2234" Weight="1" />
+			<TargetMob Name="Imperial Signifer" Id="2236" Weight="1" />	
+        </TargetMobs>		
+	</GrindArea>
+  </GrindAreas>	
+  <CodeChunks>
+  		<CodeChunk Name="CloseTimer">
+			<![CDATA[ 
+			await Buddy.Coroutines.Coroutine.Sleep(2000);
+			if (SelectYesno.IsOpen)
+            {
+                SelectYesno.ClickNo();
+            }
+			]]>
+		</CodeChunk>
+  </CodeChunks>
+</Profile>
