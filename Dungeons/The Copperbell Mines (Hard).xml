@@ -185,7 +185,7 @@
 			<Hotspot Radius="20" XYZ="25.55969,-9.524173,-140.6966" />
         </Hotspots>
         <TargetMobs>
-			<TargetMob Id="2293" Weight="10" />	<!-- Collapsed Rock -->
+			<TargetMob Id="2293" Weight="1000" />	<!-- Collapsed Rock -->
 			<TargetMob Id="2270" Weight="1" />	<!-- Hecatoncheir Stonehoarder -->
 			<TargetMob Id="2268" Weight="1" />	<!-- Hecatoncheir Quakequeller -->
 			<TargetMob Id="2274" Weight="1" />	<!-- Errant Revenant -->				
