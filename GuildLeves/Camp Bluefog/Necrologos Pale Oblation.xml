@@ -11,6 +11,7 @@
 	<KillRadius>50</KillRadius>
 	<BehaviorDirectory>..\..\Quest Behaviors</BehaviorDirectory>
 	<Order>	
+			<Log Message="Loaded Necrologos: Pale Oblation Leve Version 1.0" />
 			<If Condition="not ExBuddy.Windows.GuildLeve.HasLeve(644)">
 				<GetTo ZoneId="147" XYZ="33.91326, 4.68145, 399.2563"/>
 				<ExPickupGuildLeve leveIds="644" leveType="Battlecraft" npcId="1002398" npcLocation="33.91326, 4.68145, 399.2563" Timeout="5" /> <!-- Necrologos: Pale Oblation -->
