@@ -54,13 +54,9 @@
 			<RunCode name="LiftLever"/>
 			<WaitTimer WaitTime="11" />
 			<MoveTo XYZ="-171.2285, -7.608466, -208.3708" usemesh="false"/>
-			<MoveTo XYZ="-57.40696, -3.161125, -196.2173"/>
-			<Grind GrindRef="CollapsedRock" While="GameObjectManager.GetObjectByNPCId(2293).IsVisible"/> <!-- Clear Collapsed Rock -->
-			<MoveTo XYZ="18.05962, -6.95816, -210.4992"/>
-			<Grind GrindRef="CollapsedRock" While="GameObjectManager.GetObjectByNPCId(2293).IsVisible"/> <!-- Clear Collapsed Rock -->
-			<MoveTo XYZ="17.48054, -7.000057, -185.4735"/>
-			<Grind GrindRef="CollapsedRock" While="GameObjectManager.GetObjectByNPCId(2293).IsVisible"/> <!-- Clear Collapsed Rock -->		
-			<MoveTo XYZ="58.02053, -9.245893, -91.8128"/>
+			<MoveTo XYZ="-48.88982,-2.795422,-203.9574" distance="3"/> <!-- Collapsed Rock 1 -->
+			<Grind GrindRef="CollapsedRock" While="not GameObjectManager.GetObjectByNPCId(2268).CurrentHealth == 0"/> <!-- Clear Collapsed Rock -->			
+			<MoveTo XYZ="60.513, -9.245893, -91.37416"/>			
 			<MoveTo XYZ="77.15265, -12, -91.16539" usemesh="false"/>			
 			<Grind GrindRef="FirstBoss" While="GameObjectManager.GetObjectByNPCId(2282).IsVisible"/> <!-- Fight First Boss -->			
 		</If>
@@ -183,13 +179,16 @@
  	<GrindArea name="CollapsedRock">
         <Hotspots>
 			<Hotspot Radius="20" XYZ="-48.88982,-2.795422,-203.9574" />
-			<Hotspot Radius="20" XYZ="-18.98013, -6.95816, -218.71" />
-			<Hotspot Radius="20" XYZ="17.35695, -6.95816, -209.4891" />
+			<Hotspot Radius="20" XYZ="-11.59982,-6.595779,-219.0302" />
+			<Hotspot Radius="20" XYZ="17.4218,-6.633428,-207.7603" />
+			<Hotspot Radius="20" XYZ="17.29538,-6.631176,-184.2548" />
 			<Hotspot Radius="20" XYZ="25.55969,-9.524173,-140.6966" />
-			<Hotspot Radius="20" XYZ="59.31177,-38.58973,55.77173" />
         </Hotspots>
         <TargetMobs>
-			<TargetMob Id="2293" Weight="1" />		
+			<TargetMob Id="2293" Weight="10" />	<!-- Collapsed Rock -->
+			<TargetMob Id="2270" Weight="1" />	<!-- Hecatoncheir Stonehoarder -->
+			<TargetMob Id="2268" Weight="1" />	<!-- Hecatoncheir Quakequeller -->
+			<TargetMob Id="2274" Weight="1" />	<!-- Errant Revenant -->				
         </TargetMobs>
 	</GrindArea>
 	<GrindArea name="FirstBoss">
@@ -218,6 +217,12 @@
 	</GrindArea>	
   </GrindAreas>
   <CodeChunks>
+	<CodeChunk name="CollapsedRock">
+		<![CDATA[	
+			ff14bot.Managers.GameObjectManager.GetObjectByNPCId(2293).Interact();
+			ActionManager.DoAction(ActionType.General, 1, GameObjectManager.Target);
+      ]]>
+	</CodeChunk>
  	<CodeChunk Name="LiftLever">
 		<![CDATA[
 			ff14bot.Managers.GameObjectManager.GetObjectByNPCId(2002902).Interact();
