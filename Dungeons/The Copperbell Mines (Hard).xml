@@ -55,18 +55,14 @@
 			<WaitTimer WaitTime="11" />
 			<MoveTo XYZ="-171.2285, -7.608466, -208.3708" usemesh="false"/>
 			<MoveTo XYZ="-57.40696, -3.161125, -196.2173"/>
-			<Grind GrindRef="CollapsedRock" While="not GameObjectManager.GetObjectByNPCId(2293).CurrentHealth == 0"/> <!-- Clear Collapsed Rock -->
+			<Grind GrindRef="CollapsedRock" While="GameObjectManager.GetObjectByNPCId(2293).IsVisible"/> <!-- Clear Collapsed Rock -->
 			<MoveTo XYZ="18.05962, -6.95816, -210.4992"/>
-			<If condition="not GameObjectManager.GetObjectByNPCId(2293).CurrentHealth == 0">
-				<Grind GrindRef="CollapsedRock" While="not GameObjectManager.GetObjectByNPCId(2293).CurrentHealth == 0"/> <!-- Clear Collapsed Rock -->
-			</If>
+			<Grind GrindRef="CollapsedRock" While="GameObjectManager.GetObjectByNPCId(2293).IsVisible"/> <!-- Clear Collapsed Rock -->
 			<MoveTo XYZ="17.48054, -7.000057, -185.4735"/>
-			<If condition="not GameObjectManager.GetObjectByNPCId(2293).CurrentHealth == 0">
-				<Grind GrindRef="CollapsedRock" While="not GameObjectManager.GetObjectByNPCId(2293).CurrentHealth == 0"/> <!-- Clear Collapsed Rock -->
-			</If>			
+			<Grind GrindRef="CollapsedRock" While="GameObjectManager.GetObjectByNPCId(2293).IsVisible"/> <!-- Clear Collapsed Rock -->		
 			<MoveTo XYZ="58.02053, -9.245893, -91.8128"/>
 			<MoveTo XYZ="77.15265, -12, -91.16539" usemesh="false"/>			
-			<Grind GrindRef="FirstBoss" While="not GameObjectManager.GetObjectByNPCId(2282).CurrentHealth == 0"/> <!-- Fight First Boss -->			
+			<Grind GrindRef="FirstBoss" While="GameObjectManager.GetObjectByNPCId(2282).IsVisible"/> <!-- Fight First Boss -->			
 		</If>
 		<!-- Clear the Crying Dark 0/1 -->
 		<If Condition="GetInstanceTodo(1) == 0">
@@ -186,11 +182,11 @@
   <GrindAreas>
  	<GrindArea name="CollapsedRock">
         <Hotspots>
-			<Hotspot Radius="200" XYZ="-48.88982,-2.795422,-203.9574" />
-			<Hotspot Radius="200" XYZ="-18.98013, -6.95816, -218.71" />
-			<Hotspot Radius="200" XYZ="17.35695, -6.95816, -209.4891" />
-			<Hotspot Radius="200" XYZ="25.55969,-9.524173,-140.6966" />
-			<Hotspot Radius="200" XYZ="59.31177,-38.58973,55.77173" />
+			<Hotspot Radius="20" XYZ="-48.88982,-2.795422,-203.9574" />
+			<Hotspot Radius="20" XYZ="-18.98013, -6.95816, -218.71" />
+			<Hotspot Radius="20" XYZ="17.35695, -6.95816, -209.4891" />
+			<Hotspot Radius="20" XYZ="25.55969,-9.524173,-140.6966" />
+			<Hotspot Radius="20" XYZ="59.31177,-38.58973,55.77173" />
         </Hotspots>
         <TargetMobs>
 			<TargetMob Id="2293" Weight="1" />		

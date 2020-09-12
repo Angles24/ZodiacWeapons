@@ -4714,7 +4714,7 @@
 						<If Condition="not IsOnMap(146)">
 							<TeleportTo AetheryteId="20"/>
 						</If>
-						<FlyTo XYZ="163.9537, 14.11736, 253.3373" land="true"/>
+						<GetTo ZoneId="146" XYZ="163.9537, 14.11736, 253.3373" land="true"/>
 						<Log Message="Waiting on FATE 'Return to Cinder'" />
 						<LLFate FateId="430" MinLevel="1" MaxLevel="50" while="ZodiacManager.CurrentBook.FateTask3Completed"/> <!-- Return to Cinder -->							  				  
 					</While>				
