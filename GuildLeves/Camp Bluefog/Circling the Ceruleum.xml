@@ -24,15 +24,15 @@
 				<GetTo ZoneId="147" XYZ="45.68184, 7.582094, 344.8144"/>
 				<InitiateLeve LeveId="644"/> <!-- Necrologos: Pale Oblation -->
 				<WaitTimer WaitTime="2" /> 
-				<UseObject Radius="500" XYZ="5.107096, 2.950484, 312.0914" NpcIds="2001098" condition="not ObjectExistsWithId(1737)"/>
+				<UseObject Radius="500" XYZ="5.107096, 2.950484, 312.0914" NpcIds="2001098" condition="DirectorManager.ActiveDirector.GetTodoArgs(1).Item1 &lt; DirectorManager.ActiveDirector.GetTodoArgs(1).Item2"/>
 				<If condition="ObjectExistsWithId(1737)">
 					<Grind GrindRef="VoidSlave" While="not ff14bot.RemoteWindows.SelectYesno.IsOpen"/>
 				</If>	
-				<WaitTimer WaitTime="3" />	
+				<WaitTimer WaitTime="5" />	
 				<RunCode Name="CloseTimer"/> 
 				<GetTo ZoneId="147" XYZ="33.91326, 4.68145, 399.2563"/>
 				<ExTurnInGuildLeve NpcId="1002398" NpcLocation="33.91326, 4.68145, 399.2563"/>
-				<LLoadProfile Path="../../Start.xml"/>		
+				<LLoadProfile Path="../../Start.xml"/>	
 			</If>
 	
 			<!-- Circling the Ceruleum -->
