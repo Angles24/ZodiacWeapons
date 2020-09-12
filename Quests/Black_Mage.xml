@@ -534,6 +534,15 @@
 				<LLoadProfile Path="../Animus/Animus Book Farm.xml"/>
 			</If>
 			
+		<!-- Netherfire I -->
+			<If Condition="HasAtLeast(2001300,1)  and HasAtLeast(7830,1)">
+				<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7830">
+					<RunCode Name="StardustAtma" />
+					<WaitTimer WaitTime="3" />
+				</If>
+				<LLoadProfile Path="../Animus/Animus Book Farm.xml"/>
+			</If>			
+			
 			
 		<!-- Skyfall I -->	
 			<If Condition="HasAtLeast(2001301,1)  and HasAtLeast(7830,1)">

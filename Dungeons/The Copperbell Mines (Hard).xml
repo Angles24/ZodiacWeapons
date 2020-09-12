@@ -58,7 +58,7 @@
 			<Grind GrindRef="CollapsedRock" While="not GameObjectManager.GetObjectByNPCId(2268).CurrentHealth == 0"/> <!-- Clear Collapsed Rock -->			
 			<MoveTo XYZ="60.513, -9.245893, -91.37416"/>			
 			<MoveTo XYZ="77.15265, -12, -91.16539" usemesh="false"/>			
-			<Grind GrindRef="FirstBoss" While="GameObjectManager.GetObjectByNPCId(2282).CurrentHealth == 0"/> <!-- Fight First Boss -->			
+			<Grind GrindRef="FirstBoss" While="not GameObjectManager.GetObjectByNPCId(2282).CurrentHealth == 0"/> <!-- Fight First Boss -->			
 		</If>
 		<!-- Clear the Crying Dark 0/1 -->
 		<If Condition="GetInstanceTodo(1) == 0">
@@ -76,7 +76,7 @@
 			<MoveTo XYZ="58.37302, -9.425433, -1.363082"/>
 			<MoveTo XYZ="58.93507, -38.71896, 23.52768" usemesh="false"/>					
 			<MoveTo XYZ="60.42382, -38.56236, 49.22792"/>
-			<Grind GrindRef="CollapsedRock" While="not GameObjectManager.GetObjectByNPCId(2293).CurrentHealth == 0"/> <!-- Clear Collapsed Rock -->
+			<Grind GrindRef="CollapsedRock2" While="not GameObjectManager.GetObjectByNPCId(2293).CurrentHealth == 0"/> <!-- Clear Collapsed Rock -->
 			<MoveTo XYZ="34.97526, -37.87014, 90.38844"/>
 			<Grind GrindRef="SecondBoss" While="GetInstanceTodo(1) == 0"/> <!-- Fight Second Boss -->
 			<If Condition="&openchest; == 1">
@@ -191,6 +191,14 @@
 			<TargetMob Id="2274" Weight="1" />	<!-- Errant Revenant -->				
         </TargetMobs>
 	</GrindArea>
+ 	<GrindArea name="CollapsedRock2">
+        <Hotspots>
+			<Hotspot Radius="20" XYZ="59.31177,-38.58973,55.77173" />
+        </Hotspots>
+        <TargetMobs>
+			<TargetMob Id="2293" Weight="1000" />	<!-- Collapsed Rock -->				
+        </TargetMobs>
+	</GrindArea>	
 	<GrindArea name="FirstBoss">
         <Hotspots>
 			<Hotspot Radius="200" XYZ="75.45625,-12,-90.97627" />

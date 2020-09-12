@@ -558,7 +558,7 @@
 
 	<!-- Start Animus Book Farm -->
 		<!-- Purchase first book if has none -->
-			<If Condition="not HasAtLeast(2001298,1) and HasAtLeast(7831,1) and not HasAtLeast(2001299,1) and not HasAtLeast(2001300,1) and not HasAtLeast(2001301,1) and not HasAtLeast(2001301,1)">
+			<If Condition="not HasAtLeast(2001298,1) and HasAtLeast(7826,1) and not HasAtLeast(2001299,1) and not HasAtLeast(2001300,1) and not HasAtLeast(2001301,1) and not HasAtLeast(2001301,1)">
 				<!-- Purchase Skyfire I -->
 				<Log Message="Moving to purchase Skyfire I" />
 				<If Condition="not IsOnMap(156)">
@@ -569,73 +569,82 @@
 			</If>
 			
 		<!-- Skyfire I -->	
-			<If Condition="HasAtLeast(2001298,1)  and HasAtLeast(7831,1)">
-				<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7831">
-					<RunCode Name="VeilAtma" />
+			<If Condition="HasAtLeast(2001298,1)  and HasAtLeast(7826,1)">
+				<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7826">
+					<RunCode Name="BravuraAtma" />
 					<WaitTimer WaitTime="3" />
 				</If>
 				<LLoadProfile Path="../Animus/Animus Book Farm.xml"/>
 			</If>
 			
 		<!-- Skyfire II -->
-			<If Condition="HasAtLeast(2001299,1)  and HasAtLeast(7831,1)">
-				<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7831">
-					<RunCode Name="VeilAtma" />
+			<If Condition="HasAtLeast(2001299,1)  and HasAtLeast(7826,1)">
+				<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7826">
+					<RunCode Name="BravuraAtma" />
 					<WaitTimer WaitTime="3" />
 				</If>
 				<LLoadProfile Path="../Animus/Animus Book Farm.xml"/>
 			</If>
 			
+		<!-- Netherfire I -->
+			<If Condition="HasAtLeast(2001300,1)  and HasAtLeast(7826,1)">
+				<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7826">
+					<RunCode Name="BravuraAtma" />
+					<WaitTimer WaitTime="3" />
+				</If>
+				<LLoadProfile Path="../Animus/Animus Book Farm.xml"/>
+			</If>			
+			
 			
 		<!-- Skyfall I -->	
-			<If Condition="HasAtLeast(2001301,1)  and HasAtLeast(7831,1)">
-				<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7831">
-					<RunCode Name="VeilAtma" />
+			<If Condition="HasAtLeast(2001301,1)  and HasAtLeast(7826,1)">
+				<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7826">
+					<RunCode Name="BravuraAtma" />
 					<WaitTimer WaitTime="3" />
 				</If>
 				<LLoadProfile Path="../Animus/Animus Book Farm.xml"/>
 			</If>
 			
 		<!-- Skyfall II -->	
-			<If Condition="HasAtLeast(2001302,1)  and HasAtLeast(7831,1)">
-				<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7831">
-					<RunCode Name="VeilAtma" />
+			<If Condition="HasAtLeast(2001302,1)  and HasAtLeast(7826,1)">
+				<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7826">
+					<RunCode Name="BravuraAtma" />
 					<WaitTimer WaitTime="3" />
 				</If>
 				<LLoadProfile Path="../Animus/Animus Book Farm.xml"/>
 			</If>
 
 		<!-- Netherfall I -->	
-			<If Condition="HasAtLeast(2001303,1)  and HasAtLeast(7831,1)">
-				<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7831">
-					<RunCode Name="VeilAtma" />
+			<If Condition="HasAtLeast(2001303,1)  and HasAtLeast(7826,1)">
+				<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7826">
+					<RunCode Name="BravuraAtma" />
 					<WaitTimer WaitTime="3" />
 				</If>
 				<LLoadProfile Path="../Animus/Animus Book Farm.xml"/>
 			</If>
 
 		<!-- Skywind I -->	
-			<If Condition="HasAtLeast(2001304,1)  and HasAtLeast(7831,1)">
-				<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7831">
-					<RunCode Name="VeilAtma" />
+			<If Condition="HasAtLeast(2001304,1)  and HasAtLeast(7826,1)">
+				<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7826">
+					<RunCode Name="BravuraAtma" />
 					<WaitTimer WaitTime="3" />
 				</If>
 				<LLoadProfile Path="../Animus/Animus Book Farm.xml"/>
 			</If>
 
 		<!-- Skywind II -->	
-			<If Condition="HasAtLeast(2001305,1)  and HasAtLeast(7831,1)">
-				<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7831">
-					<RunCode Name="VeilAtma" />
+			<If Condition="HasAtLeast(2001305,1)  and HasAtLeast(7826,1)">
+				<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7826">
+					<RunCode Name="BravuraAtma" />
 					<WaitTimer WaitTime="3" />
 				</If>
 				<LLoadProfile Path="../Animus/Animus Book Farm.xml"/>
 			</If>
 
 		<!-- Skyearth I -->	
-			<If Condition="HasAtLeast(2001306,1)  and HasAtLeast(7831,1)">
-				<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7831">
-					<RunCode Name="VeilAtma" />
+			<If Condition="HasAtLeast(2001306,1)  and HasAtLeast(7826,1)">
+				<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7826">
+					<RunCode Name="BravuraAtma" />
 					<WaitTimer WaitTime="3" />
 				</If>
 				<LLoadProfile Path="../Animus/Animus Book Farm.xml"/>
