@@ -58,7 +58,7 @@
 			<Grind GrindRef="CollapsedRock" While="not GameObjectManager.GetObjectByNPCId(2268).CurrentHealth == 0"/> <!-- Clear Collapsed Rock -->			
 			<MoveTo XYZ="60.513, -9.245893, -91.37416"/>			
 			<MoveTo XYZ="77.15265, -12, -91.16539" usemesh="false"/>			
-			<Grind GrindRef="FirstBoss" While="GameObjectManager.GetObjectByNPCId(2282).IsVisible"/> <!-- Fight First Boss -->			
+			<Grind GrindRef="FirstBoss" While="GameObjectManager.GetObjectByNPCId(2282).CurrentHealth == 0"/> <!-- Fight First Boss -->			
 		</If>
 		<!-- Clear the Crying Dark 0/1 -->
 		<If Condition="GetInstanceTodo(1) == 0">
