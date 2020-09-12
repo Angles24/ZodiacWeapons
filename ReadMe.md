@@ -89,4 +89,6 @@ Fates are wonky. Mostly due to Navigation with RB, so don't completely AFK durin
 
 You must already have levequests unlocked for the Whitebrim, Saint Coinarch's Find and Camp Bluefog. I can't automate those quests yet as they combine a quest and a levequest in one.
 
+Levequests sometimes don't turn in all the way. May have to turn them in manually.
+
 Copperbell Mines (Hard): One of the Collapsed Rocks has a smaller hitbox then RB thinks it does. Sometimes melee classes don't get close enough. Watch this.
