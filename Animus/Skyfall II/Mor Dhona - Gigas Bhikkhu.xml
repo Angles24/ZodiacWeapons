@@ -18,6 +18,7 @@
 		<TeleportTo Name="Revenant's Toll" AetheryteId="24" />
 	</If>
 	<NoCombatMoveTo Name="Gigas Bhikkhu" XYZ="595.5713, -3.328342, -284.3858"/>
-    <Grind grindRef="Gigas Bhikkhu" while="True" />
+    <Grind grindRef="Gigas Bhikkhu" while="not ZodiacManager.CurrentBook.KillTask9Completed" />
+	<LLoadProfile Path="../../Start.xml"/>
   </Order>
 </Profile>

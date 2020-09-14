@@ -18,6 +18,7 @@
 		<TeleportTo Name="Camp Dragonhead" AetheryteId="23" />
 	</If>
 	<NoCombatMoveTo Name="Natalan Watchwolf" XYZ="560.7442, 291.2391, 99.89327"/>
-    <Grind grindRef="Natalan Watchwolf" while="True" />
+    <Grind grindRef="Natalan Watchwolf" while="not ZodiacManager.CurrentBook.KillTask8Completed" />
+	<LLoadProfile Path="../../Start.xml"/>
   </Order>
 </Profile>

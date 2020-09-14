@@ -18,6 +18,7 @@
 		<TeleportTo Name="Horizon" AetheryteId="17" />
 	</If>
 	<NoCombatMoveTo Name="4th_cohort_secutor" XYZ="-565.5568, 53.31147, -743.2831"/>
-    <Grind grindRef="4th_cohort_secutor" while="True"  />
+    <Grind grindRef="4th_cohort_secutor" while="not ZodiacManager.CurrentBook.KillTask8Completed"  />
+	<LLoadProfile Path="../../Start.xml"/>
   </Order>
 </Profile>

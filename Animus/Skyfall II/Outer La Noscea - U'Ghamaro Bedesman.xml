@@ -18,6 +18,7 @@
 		<TeleportTo Name="Camp Overlook" AetheryteId="16" />
 	</If>
 	<NoCombatMoveTo Name="U'Ghamaro Bedesman" XYZ="96.16432, 21.55911, -635.2751"/>
-    <Grind grindRef="U'Ghamaro Bedesman" while="True" />
+    <Grind grindRef="U'Ghamaro Bedesman" while="not ZodiacManager.CurrentBook.KillTask4Completed" />
+	<LLoadProfile Path="../../Start.xml"/>
   </Order>
 </Profile>

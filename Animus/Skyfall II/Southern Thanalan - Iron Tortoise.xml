@@ -18,6 +18,7 @@
 		<TeleportTo Name="Forgotten Springs" AetheryteId="20" />
 	</If>
 	<NoCombatMoveTo Name="Iron Tortoise" XYZ="-50.45758, 8.876855, 112.3925"/>
-    <Grind grindRef="Iron Tortoise" while="True" />
+    <Grind grindRef="Iron Tortoise" while="not ZodiacManager.CurrentBook.KillTask1Completed" />
+	<LLoadProfile Path="../../Start.xml"/>
   </Order>
 </Profile>

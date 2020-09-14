@@ -18,6 +18,7 @@
 		<TeleportTo Name="Quarrymill" AetheryteId="5" />
 	</If>
 	<NoCombatMoveTo Name="Ked" XYZ="522.0194, 14.01853, 134.4024"/>
-    <Grind grindRef="Ked" while="True" />
+    <Grind grindRef="Ked" while="not ZodiacManager.CurrentBook.KillTask3Completed" />
+	<LLoadProfile Path="../../Start.xml"/>
   </Order>
 </Profile>

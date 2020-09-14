@@ -1093,7 +1093,7 @@
 						</If>
 					</If>					
 					<Log Message="Moving to Skyfire I - The Lost City of Amdapor" />
-					<LLoadProfile Path="../Dungeons/TheLostCityOfAmdapor.xml"/>
+					<LLoadProfile Path="../Dungeons/The Lost City of Amdapor.xml"/>
 				</If>
 			<!-- Skyfire I Fates -->
 				<!-- Skyfire I Fate Task 1 -->
@@ -6586,6 +6586,3212 @@
 					<RunCode name="BuyFallBooks"/>				
 				</If>
 			</If>
+
+		<!-- Skyfall II -->	
+			<If Condition="HasAtLeast(2001302,1)">
+			<!-- Skyfall II Enemies -->
+				<!-- Skyfall II Kill Task 1 -->	
+				<If condition="not ZodiacManager.CurrentBook.KillTask1Completed">
+					<If Condition="ClassName == ((ClassJobType.Bard))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7828">
+							<Log Message="Equipping Artemis Bow Atma" />
+							<RunCode Name="ArtemisAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>
+					<If Condition="ClassName == ((ClassJobType.BlackMage))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7830">
+							<Log Message="Equipping Stardust Rod Atma" />
+							<RunCode Name="StardustAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>
+					<If Condition="ClassName == ((ClassJobType.Dragoon))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7827">
+							<Log Message="Equipping Gae Bolg Atma" />
+							<RunCode Name="GaeBolgAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>	
+					<If Condition="ClassName == ((ClassJobType.Monk))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7825">
+							<Log Message="Equipping Sphairai Atma" />
+							<RunCode Name="SphairaiAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>
+					<If Condition="ClassName == ((ClassJobType.Ninja))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 9251">
+							<Log Message="Equipping Yoshimitsu Atma" />
+							<RunCode Name="YoshimitsuAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>
+					<If Condition="ClassName == ((ClassJobType.Paladin))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7824">
+							<Log Message="Equipping Curtana Atma" />
+							<RunCode Name="CurtanaAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>
+					<If Condition="ClassName == ((ClassJobType.Paladin))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.OffHand].RawItemId != 7833">
+							<Log Message="Equipping Holy Shield Atma" />
+							<RunCode Name="HolyShieldAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>			
+					<If Condition="ClassName == ((ClassJobType.Scholar))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7832">
+							<Log Message="Equipping Omnilex Atma" />
+							<RunCode Name="OmnilexAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>
+					<If Condition="ClassName == ((ClassJobType.Summoner))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7831">
+							<Log Message="Equipping Viel of Wiyu Atma" />
+							<RunCode Name="VeilAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>	
+					<If Condition="ClassName == ((ClassJobType.Warrior))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7826">
+							<Log Message="Equipping Bravura Atma" />
+							<RunCode Name="BravuraAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>
+					<If Condition="ClassName == ((ClassJobType.WhiteMage))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7829">
+							<Log Message="Equipping Thyrus Atma" />
+							<RunCode Name="ThyrusAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>			
+					<Log Message="Moving to Skyfall II - Southern Thanalan - Iron Tortoise" />
+					<LLoadProfile Path="../Animus/Skyfall II/Southern Thanalan - Iron Tortoise.xml"/>
+				</If>
+				<!-- Skyfall II Kill Task 2 -->		
+				<If condition="not ZodiacManager.CurrentBook.KillTask2Completed">
+					<If Condition="ClassName == ((ClassJobType.Bard))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7828">
+							<Log Message="Equipping Artemis Bow Atma" />
+							<RunCode Name="ArtemisAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>
+					<If Condition="ClassName == ((ClassJobType.BlackMage))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7830">
+							<Log Message="Equipping Stardust Rod Atma" />
+							<RunCode Name="StardustAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>
+					<If Condition="ClassName == ((ClassJobType.Dragoon))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7827">
+							<Log Message="Equipping Gae Bolg Atma" />
+							<RunCode Name="GaeBolgAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>	
+					<If Condition="ClassName == ((ClassJobType.Monk))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7825">
+							<Log Message="Equipping Sphairai Atma" />
+							<RunCode Name="SphairaiAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>
+					<If Condition="ClassName == ((ClassJobType.Ninja))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 9251">
+							<Log Message="Equipping Yoshimitsu Atma" />
+							<RunCode Name="YoshimitsuAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>
+					<If Condition="ClassName == ((ClassJobType.Paladin))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7824">
+							<Log Message="Equipping Curtana Atma" />
+							<RunCode Name="CurtanaAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>
+					<If Condition="ClassName == ((ClassJobType.Paladin))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.OffHand].RawItemId != 7833">
+							<Log Message="Equipping Holy Shield Atma" />
+							<RunCode Name="HolyShieldAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>			
+					<If Condition="ClassName == ((ClassJobType.Scholar))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7832">
+							<Log Message="Equipping Omnilex Atma" />
+							<RunCode Name="OmnilexAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>
+					<If Condition="ClassName == ((ClassJobType.Summoner))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7831">
+							<Log Message="Equipping Viel of Wiyu Atma" />
+							<RunCode Name="VeilAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>	
+					<If Condition="ClassName == ((ClassJobType.Warrior))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7826">
+							<Log Message="Equipping Bravura Atma" />
+							<RunCode Name="BravuraAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>
+					<If Condition="ClassName == ((ClassJobType.WhiteMage))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7829">
+							<Log Message="Equipping Thyrus Atma" />
+							<RunCode Name="ThyrusAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>				
+					<Log Message="Moving to Skyfall II - Mor Dhona - 5th Cohort Hoplomachus" />
+					<LLoadProfile Path="../Animus/Skyfall II/Mor Dhona - 5th Cohort Hoplomachus.xml"/>
+				</If>
+				<!-- Skyfall II Kill Task 3 -->	
+				<If condition="not ZodiacManager.CurrentBook.KillTask3Completed">
+					<If Condition="ClassName == ((ClassJobType.Bard))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7828">
+							<Log Message="Equipping Artemis Bow Atma" />
+							<RunCode Name="ArtemisAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>
+					<If Condition="ClassName == ((ClassJobType.BlackMage))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7830">
+							<Log Message="Equipping Stardust Rod Atma" />
+							<RunCode Name="StardustAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>
+					<If Condition="ClassName == ((ClassJobType.Dragoon))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7827">
+							<Log Message="Equipping Gae Bolg Atma" />
+							<RunCode Name="GaeBolgAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>	
+					<If Condition="ClassName == ((ClassJobType.Monk))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7825">
+							<Log Message="Equipping Sphairai Atma" />
+							<RunCode Name="SphairaiAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>
+					<If Condition="ClassName == ((ClassJobType.Ninja))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 9251">
+							<Log Message="Equipping Yoshimitsu Atma" />
+							<RunCode Name="YoshimitsuAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>
+					<If Condition="ClassName == ((ClassJobType.Paladin))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7824">
+							<Log Message="Equipping Curtana Atma" />
+							<RunCode Name="CurtanaAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>
+					<If Condition="ClassName == ((ClassJobType.Paladin))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.OffHand].RawItemId != 7833">
+							<Log Message="Equipping Holy Shield Atma" />
+							<RunCode Name="HolyShieldAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>			
+					<If Condition="ClassName == ((ClassJobType.Scholar))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7832">
+							<Log Message="Equipping Omnilex Atma" />
+							<RunCode Name="OmnilexAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>
+					<If Condition="ClassName == ((ClassJobType.Summoner))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7831">
+							<Log Message="Equipping Viel of Wiyu Atma" />
+							<RunCode Name="VeilAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>	
+					<If Condition="ClassName == ((ClassJobType.Warrior))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7826">
+							<Log Message="Equipping Bravura Atma" />
+							<RunCode Name="BravuraAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>
+					<If Condition="ClassName == ((ClassJobType.WhiteMage))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7829">
+							<Log Message="Equipping Thyrus Atma" />
+							<RunCode Name="ThyrusAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>					
+					<Log Message="Moving to Skyfall II - South Shroud - Ked" />
+					<LLoadProfile Path="../Animus/Skyfall II/South Shroud - Ked.xml"/>
+				</If>
+				<!-- Skyfall II Kill Task 4 -->	
+				<If condition="not ZodiacManager.CurrentBook.KillTask4Completed">
+					<If Condition="ClassName == ((ClassJobType.Bard))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7828">
+							<Log Message="Equipping Artemis Bow Atma" />
+							<RunCode Name="ArtemisAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>
+					<If Condition="ClassName == ((ClassJobType.BlackMage))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7830">
+							<Log Message="Equipping Stardust Rod Atma" />
+							<RunCode Name="StardustAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>
+					<If Condition="ClassName == ((ClassJobType.Dragoon))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7827">
+							<Log Message="Equipping Gae Bolg Atma" />
+							<RunCode Name="GaeBolgAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>	
+					<If Condition="ClassName == ((ClassJobType.Monk))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7825">
+							<Log Message="Equipping Sphairai Atma" />
+							<RunCode Name="SphairaiAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>
+					<If Condition="ClassName == ((ClassJobType.Ninja))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 9251">
+							<Log Message="Equipping Yoshimitsu Atma" />
+							<RunCode Name="YoshimitsuAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>
+					<If Condition="ClassName == ((ClassJobType.Paladin))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7824">
+							<Log Message="Equipping Curtana Atma" />
+							<RunCode Name="CurtanaAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>
+					<If Condition="ClassName == ((ClassJobType.Paladin))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.OffHand].RawItemId != 7833">
+							<Log Message="Equipping Holy Shield Atma" />
+							<RunCode Name="HolyShieldAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>			
+					<If Condition="ClassName == ((ClassJobType.Scholar))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7832">
+							<Log Message="Equipping Omnilex Atma" />
+							<RunCode Name="OmnilexAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>
+					<If Condition="ClassName == ((ClassJobType.Summoner))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7831">
+							<Log Message="Equipping Viel of Wiyu Atma" />
+							<RunCode Name="VeilAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>	
+					<If Condition="ClassName == ((ClassJobType.Warrior))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7826">
+							<Log Message="Equipping Bravura Atma" />
+							<RunCode Name="BravuraAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>
+					<If Condition="ClassName == ((ClassJobType.WhiteMage))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7829">
+							<Log Message="Equipping Thyrus Atma" />
+							<RunCode Name="ThyrusAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>					
+					<Log Message="Moving to Skyfall II - Outer La Noscea - U'Ghamaro Bedesman" />
+					<LLoadProfile Path="../Animus/Skyfall II/Outer La Noscea - U'Ghamaro Bedesman.xml"/>
+				</If>
+				<!-- Skyfall II Kill Task 5 -->	
+				<If condition="not ZodiacManager.CurrentBook.KillTask5Completed">
+					<If Condition="ClassName == ((ClassJobType.Bard))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7828">
+							<Log Message="Equipping Artemis Bow Atma" />
+							<RunCode Name="ArtemisAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>
+					<If Condition="ClassName == ((ClassJobType.BlackMage))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7830">
+							<Log Message="Equipping Stardust Rod Atma" />
+							<RunCode Name="StardustAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>
+					<If Condition="ClassName == ((ClassJobType.Dragoon))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7827">
+							<Log Message="Equipping Gae Bolg Atma" />
+							<RunCode Name="GaeBolgAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>	
+					<If Condition="ClassName == ((ClassJobType.Monk))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7825">
+							<Log Message="Equipping Sphairai Atma" />
+							<RunCode Name="SphairaiAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>
+					<If Condition="ClassName == ((ClassJobType.Ninja))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 9251">
+							<Log Message="Equipping Yoshimitsu Atma" />
+							<RunCode Name="YoshimitsuAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>
+					<If Condition="ClassName == ((ClassJobType.Paladin))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7824">
+							<Log Message="Equipping Curtana Atma" />
+							<RunCode Name="CurtanaAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>
+					<If Condition="ClassName == ((ClassJobType.Paladin))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.OffHand].RawItemId != 7833">
+							<Log Message="Equipping Holy Shield Atma" />
+							<RunCode Name="HolyShieldAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>			
+					<If Condition="ClassName == ((ClassJobType.Scholar))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7832">
+							<Log Message="Equipping Omnilex Atma" />
+							<RunCode Name="OmnilexAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>
+					<If Condition="ClassName == ((ClassJobType.Summoner))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7831">
+							<Log Message="Equipping Viel of Wiyu Atma" />
+							<RunCode Name="VeilAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>	
+					<If Condition="ClassName == ((ClassJobType.Warrior))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7826">
+							<Log Message="Equipping Bravura Atma" />
+							<RunCode Name="BravuraAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>
+					<If Condition="ClassName == ((ClassJobType.WhiteMage))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7829">
+							<Log Message="Equipping Thyrus Atma" />
+							<RunCode Name="ThyrusAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>					
+					<Log Message="Moving to Skyfall II - Western La Noscea - Shelfeye Reaver" />
+					<LLoadProfile Path="../Animus/Skyfall II/Western La Noscea - Shelfeye Reaver.xml"/>
+				</If>
+				<!-- Skyfall II Kill Task 6 -->	
+				<If condition="not ZodiacManager.CurrentBook.KillTask6Completed">
+					<If Condition="ClassName == ((ClassJobType.Bard))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7828">
+							<Log Message="Equipping Artemis Bow Atma" />
+							<RunCode Name="ArtemisAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>
+					<If Condition="ClassName == ((ClassJobType.BlackMage))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7830">
+							<Log Message="Equipping Stardust Rod Atma" />
+							<RunCode Name="StardustAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>
+					<If Condition="ClassName == ((ClassJobType.Dragoon))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7827">
+							<Log Message="Equipping Gae Bolg Atma" />
+							<RunCode Name="GaeBolgAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>	
+					<If Condition="ClassName == ((ClassJobType.Monk))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7825">
+							<Log Message="Equipping Sphairai Atma" />
+							<RunCode Name="SphairaiAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>
+					<If Condition="ClassName == ((ClassJobType.Ninja))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 9251">
+							<Log Message="Equipping Yoshimitsu Atma" />
+							<RunCode Name="YoshimitsuAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>
+					<If Condition="ClassName == ((ClassJobType.Paladin))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7824">
+							<Log Message="Equipping Curtana Atma" />
+							<RunCode Name="CurtanaAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>
+					<If Condition="ClassName == ((ClassJobType.Paladin))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.OffHand].RawItemId != 7833">
+							<Log Message="Equipping Holy Shield Atma" />
+							<RunCode Name="HolyShieldAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>			
+					<If Condition="ClassName == ((ClassJobType.Scholar))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7832">
+							<Log Message="Equipping Omnilex Atma" />
+							<RunCode Name="OmnilexAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>
+					<If Condition="ClassName == ((ClassJobType.Summoner))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7831">
+							<Log Message="Equipping Viel of Wiyu Atma" />
+							<RunCode Name="VeilAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>	
+					<If Condition="ClassName == ((ClassJobType.Warrior))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7826">
+							<Log Message="Equipping Bravura Atma" />
+							<RunCode Name="BravuraAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>
+					<If Condition="ClassName == ((ClassJobType.WhiteMage))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7829">
+							<Log Message="Equipping Thyrus Atma" />
+							<RunCode Name="ThyrusAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>					
+					<Log Message="Moving to Skyfall II - Western Thanlan - 4th Cohort Laquearus" />
+					<LLoadProfile Path="../Animus/Skyfall II/Western Thanlan - 4th Cohort Laquearus.xml"/>
+				</If>
+				<!-- Skyfall II Kill Task 7 -->	
+				<If condition="not ZodiacManager.CurrentBook.KillTask7Completed">
+					<If Condition="ClassName == ((ClassJobType.Bard))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7828">
+							<Log Message="Equipping Artemis Bow Atma" />
+							<RunCode Name="ArtemisAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>
+					<If Condition="ClassName == ((ClassJobType.BlackMage))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7830">
+							<Log Message="Equipping Stardust Rod Atma" />
+							<RunCode Name="StardustAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>
+					<If Condition="ClassName == ((ClassJobType.Dragoon))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7827">
+							<Log Message="Equipping Gae Bolg Atma" />
+							<RunCode Name="GaeBolgAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>	
+					<If Condition="ClassName == ((ClassJobType.Monk))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7825">
+							<Log Message="Equipping Sphairai Atma" />
+							<RunCode Name="SphairaiAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>
+					<If Condition="ClassName == ((ClassJobType.Ninja))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 9251">
+							<Log Message="Equipping Yoshimitsu Atma" />
+							<RunCode Name="YoshimitsuAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>
+					<If Condition="ClassName == ((ClassJobType.Paladin))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7824">
+							<Log Message="Equipping Curtana Atma" />
+							<RunCode Name="CurtanaAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>
+					<If Condition="ClassName == ((ClassJobType.Paladin))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.OffHand].RawItemId != 7833">
+							<Log Message="Equipping Holy Shield Atma" />
+							<RunCode Name="HolyShieldAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>			
+					<If Condition="ClassName == ((ClassJobType.Scholar))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7832">
+							<Log Message="Equipping Omnilex Atma" />
+							<RunCode Name="OmnilexAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>
+					<If Condition="ClassName == ((ClassJobType.Summoner))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7831">
+							<Log Message="Equipping Viel of Wiyu Atma" />
+							<RunCode Name="VeilAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>	
+					<If Condition="ClassName == ((ClassJobType.Warrior))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7826">
+							<Log Message="Equipping Bravura Atma" />
+							<RunCode Name="BravuraAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>
+					<If Condition="ClassName == ((ClassJobType.WhiteMage))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7829">
+							<Log Message="Equipping Thyrus Atma" />
+							<RunCode Name="ThyrusAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>				
+					<Log Message="Moving to Skyfall II - East Shroud - Sylph Bonnet" />
+					<LLoadProfile Path="../Animus/Skyfall II/East Shroud - Sylph Bonnet.xml"/>
+				</If>
+				<!-- Skyfall II Kill Task 8 -->	
+				<If condition="not ZodiacManager.CurrentBook.KillTask8Completed">
+					<If Condition="ClassName == ((ClassJobType.Bard))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7828">
+							<Log Message="Equipping Artemis Bow Atma" />
+							<RunCode Name="ArtemisAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>
+					<If Condition="ClassName == ((ClassJobType.BlackMage))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7830">
+							<Log Message="Equipping Stardust Rod Atma" />
+							<RunCode Name="StardustAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>
+					<If Condition="ClassName == ((ClassJobType.Dragoon))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7827">
+							<Log Message="Equipping Gae Bolg Atma" />
+							<RunCode Name="GaeBolgAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>	
+					<If Condition="ClassName == ((ClassJobType.Monk))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7825">
+							<Log Message="Equipping Sphairai Atma" />
+							<RunCode Name="SphairaiAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>
+					<If Condition="ClassName == ((ClassJobType.Ninja))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 9251">
+							<Log Message="Equipping Yoshimitsu Atma" />
+							<RunCode Name="YoshimitsuAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>
+					<If Condition="ClassName == ((ClassJobType.Paladin))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7824">
+							<Log Message="Equipping Curtana Atma" />
+							<RunCode Name="CurtanaAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>
+					<If Condition="ClassName == ((ClassJobType.Paladin))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.OffHand].RawItemId != 7833">
+							<Log Message="Equipping Holy Shield Atma" />
+							<RunCode Name="HolyShieldAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>			
+					<If Condition="ClassName == ((ClassJobType.Scholar))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7832">
+							<Log Message="Equipping Omnilex Atma" />
+							<RunCode Name="OmnilexAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>
+					<If Condition="ClassName == ((ClassJobType.Summoner))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7831">
+							<Log Message="Equipping Viel of Wiyu Atma" />
+							<RunCode Name="VeilAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>	
+					<If Condition="ClassName == ((ClassJobType.Warrior))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7826">
+							<Log Message="Equipping Bravura Atma" />
+							<RunCode Name="BravuraAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>
+					<If Condition="ClassName == ((ClassJobType.WhiteMage))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7829">
+							<Log Message="Equipping Thyrus Atma" />
+							<RunCode Name="ThyrusAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>					
+					<Log Message="Moving to Skyfall II - Coerthas - Natalan Watchwolf" />
+					<LLoadProfile Path="../Animus/Skyfall II/Coerthas - Natalan Watchwolf.xml"/>
+				</If>
+				<!-- Skyfall II Kill Task 9 -->	
+				<If condition="not ZodiacManager.CurrentBook.KillTask9Completed">
+					<If Condition="ClassName == ((ClassJobType.Bard))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7828">
+							<Log Message="Equipping Artemis Bow Atma" />
+							<RunCode Name="ArtemisAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>
+					<If Condition="ClassName == ((ClassJobType.BlackMage))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7830">
+							<Log Message="Equipping Stardust Rod Atma" />
+							<RunCode Name="StardustAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>
+					<If Condition="ClassName == ((ClassJobType.Dragoon))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7827">
+							<Log Message="Equipping Gae Bolg Atma" />
+							<RunCode Name="GaeBolgAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>	
+					<If Condition="ClassName == ((ClassJobType.Monk))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7825">
+							<Log Message="Equipping Sphairai Atma" />
+							<RunCode Name="SphairaiAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>
+					<If Condition="ClassName == ((ClassJobType.Ninja))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 9251">
+							<Log Message="Equipping Yoshimitsu Atma" />
+							<RunCode Name="YoshimitsuAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>
+					<If Condition="ClassName == ((ClassJobType.Paladin))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7824">
+							<Log Message="Equipping Curtana Atma" />
+							<RunCode Name="CurtanaAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>
+					<If Condition="ClassName == ((ClassJobType.Paladin))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.OffHand].RawItemId != 7833">
+							<Log Message="Equipping Holy Shield Atma" />
+							<RunCode Name="HolyShieldAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>			
+					<If Condition="ClassName == ((ClassJobType.Scholar))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7832">
+							<Log Message="Equipping Omnilex Atma" />
+							<RunCode Name="OmnilexAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>
+					<If Condition="ClassName == ((ClassJobType.Summoner))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7831">
+							<Log Message="Equipping Viel of Wiyu Atma" />
+							<RunCode Name="VeilAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>	
+					<If Condition="ClassName == ((ClassJobType.Warrior))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7826">
+							<Log Message="Equipping Bravura Atma" />
+							<RunCode Name="BravuraAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>
+					<If Condition="ClassName == ((ClassJobType.WhiteMage))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7829">
+							<Log Message="Equipping Thyrus Atma" />
+							<RunCode Name="ThyrusAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>					
+					<Log Message="Moving to Skyfall II - Mor Dhona - Gigas Bhikkhu" />
+					<LLoadProfile Path="../Animus/Skyfall II/Mor Dhona - Gigas Bhikkhu.xml"/>
+				</If>
+				<!-- Skyfall II Kill Task 10 -->	
+				<If condition="not ZodiacManager.CurrentBook.KillTask10Completed">
+					<If Condition="ClassName == ((ClassJobType.Bard))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7828">
+							<Log Message="Equipping Artemis Bow Atma" />
+							<RunCode Name="ArtemisAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>
+					<If Condition="ClassName == ((ClassJobType.BlackMage))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7830">
+							<Log Message="Equipping Stardust Rod Atma" />
+							<RunCode Name="StardustAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>
+					<If Condition="ClassName == ((ClassJobType.Dragoon))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7827">
+							<Log Message="Equipping Gae Bolg Atma" />
+							<RunCode Name="GaeBolgAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>	
+					<If Condition="ClassName == ((ClassJobType.Monk))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7825">
+							<Log Message="Equipping Sphairai Atma" />
+							<RunCode Name="SphairaiAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>
+					<If Condition="ClassName == ((ClassJobType.Ninja))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 9251">
+							<Log Message="Equipping Yoshimitsu Atma" />
+							<RunCode Name="YoshimitsuAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>
+					<If Condition="ClassName == ((ClassJobType.Paladin))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7824">
+							<Log Message="Equipping Curtana Atma" />
+							<RunCode Name="CurtanaAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>
+					<If Condition="ClassName == ((ClassJobType.Paladin))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.OffHand].RawItemId != 7833">
+							<Log Message="Equipping Holy Shield Atma" />
+							<RunCode Name="HolyShieldAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>			
+					<If Condition="ClassName == ((ClassJobType.Scholar))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7832">
+							<Log Message="Equipping Omnilex Atma" />
+							<RunCode Name="OmnilexAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>
+					<If Condition="ClassName == ((ClassJobType.Summoner))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7831">
+							<Log Message="Equipping Viel of Wiyu Atma" />
+							<RunCode Name="VeilAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>	
+					<If Condition="ClassName == ((ClassJobType.Warrior))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7826">
+							<Log Message="Equipping Bravura Atma" />
+							<RunCode Name="BravuraAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>
+					<If Condition="ClassName == ((ClassJobType.WhiteMage))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7829">
+							<Log Message="Equipping Thyrus Atma" />
+							<RunCode Name="ThyrusAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>				
+					<Log Message="Moving to Skyfall II - Western La Noscea - Sapsa Shelfscales" />
+					<LLoadProfile Path="../Animus/Skyfall II/Western La Noscea - Sapsa Shelfscales.xml"/>
+				</If>
+			<!-- Skyfall II Dungeons -->
+				<!-- Skyfall II Dungeon Task 1 -->	
+				<If condition="not ZodiacManager.CurrentBook.DungeonTask1Completed">
+					<If Condition="ClassName == ((ClassJobType.Bard))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7828">
+							<Log Message="Equipping Artemis Bow Atma" />
+							<RunCode Name="ArtemisAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>
+					<If Condition="ClassName == ((ClassJobType.BlackMage))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7830">
+							<Log Message="Equipping Stardust Rod Atma" />
+							<RunCode Name="StardustAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>
+					<If Condition="ClassName == ((ClassJobType.Dragoon))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7827">
+							<Log Message="Equipping Gae Bolg Atma" />
+							<RunCode Name="GaeBolgAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>	
+					<If Condition="ClassName == ((ClassJobType.Monk))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7825">
+							<Log Message="Equipping Sphairai Atma" />
+							<RunCode Name="SphairaiAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>
+					<If Condition="ClassName == ((ClassJobType.Ninja))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 9251">
+							<Log Message="Equipping Yoshimitsu Atma" />
+							<RunCode Name="YoshimitsuAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>
+					<If Condition="ClassName == ((ClassJobType.Paladin))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7824">
+							<Log Message="Equipping Curtana Atma" />
+							<RunCode Name="CurtanaAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>
+					<If Condition="ClassName == ((ClassJobType.Paladin))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.OffHand].RawItemId != 7833">
+							<Log Message="Equipping Holy Shield Atma" />
+							<RunCode Name="HolyShieldAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>			
+					<If Condition="ClassName == ((ClassJobType.Scholar))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7832">
+							<Log Message="Equipping Omnilex Atma" />
+							<RunCode Name="OmnilexAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>
+					<If Condition="ClassName == ((ClassJobType.Summoner))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7831">
+							<Log Message="Equipping Viel of Wiyu Atma" />
+							<RunCode Name="VeilAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>	
+					<If Condition="ClassName == ((ClassJobType.Warrior))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7826">
+							<Log Message="Equipping Bravura Atma" />
+							<RunCode Name="BravuraAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>
+					<If Condition="ClassName == ((ClassJobType.WhiteMage))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7829">
+							<Log Message="Equipping Thyrus Atma" />
+							<RunCode Name="ThyrusAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>				
+					<Log Message="Moving to Skyfall II - The Thousand Maws of Toto-Rak" />
+					<LLoadProfile Path="../Dungeons/The Thousand Maws of Toto-Rak.xml"/>
+				</If>
+				<!-- Skyfall II Dungeon Task 2 -->
+				<If condition="not ZodiacManager.CurrentBook.DungeonTask2Completed">
+					<If Condition="ClassName == ((ClassJobType.Bard))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7828">
+							<Log Message="Equipping Artemis Bow Atma" />
+							<RunCode Name="ArtemisAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>
+					<If Condition="ClassName == ((ClassJobType.BlackMage))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7830">
+							<Log Message="Equipping Stardust Rod Atma" />
+							<RunCode Name="StardustAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>
+					<If Condition="ClassName == ((ClassJobType.Dragoon))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7827">
+							<Log Message="Equipping Gae Bolg Atma" />
+							<RunCode Name="GaeBolgAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>	
+					<If Condition="ClassName == ((ClassJobType.Monk))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7825">
+							<Log Message="Equipping Sphairai Atma" />
+							<RunCode Name="SphairaiAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>
+					<If Condition="ClassName == ((ClassJobType.Ninja))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 9251">
+							<Log Message="Equipping Yoshimitsu Atma" />
+							<RunCode Name="YoshimitsuAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>
+					<If Condition="ClassName == ((ClassJobType.Paladin))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7824">
+							<Log Message="Equipping Curtana Atma" />
+							<RunCode Name="CurtanaAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>
+					<If Condition="ClassName == ((ClassJobType.Paladin))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.OffHand].RawItemId != 7833">
+							<Log Message="Equipping Holy Shield Atma" />
+							<RunCode Name="HolyShieldAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>			
+					<If Condition="ClassName == ((ClassJobType.Scholar))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7832">
+							<Log Message="Equipping Omnilex Atma" />
+							<RunCode Name="OmnilexAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>
+					<If Condition="ClassName == ((ClassJobType.Summoner))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7831">
+							<Log Message="Equipping Viel of Wiyu Atma" />
+							<RunCode Name="VeilAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>	
+					<If Condition="ClassName == ((ClassJobType.Warrior))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7826">
+							<Log Message="Equipping Bravura Atma" />
+							<RunCode Name="BravuraAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>
+					<If Condition="ClassName == ((ClassJobType.WhiteMage))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7829">
+							<Log Message="Equipping Thyrus Atma" />
+							<RunCode Name="ThyrusAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>					
+					<Log Message="Moving to Skyfall II - Amdapor Keep" />
+					<LLoadProfile Path="../Dungeons/Amdapor Keep.xml"/>
+				</If>
+				<!-- Skyfall II Dungeon Task 3 -->
+				<If condition="not ZodiacManager.CurrentBook.DungeonTask3Completed">
+					<If Condition="ClassName == ((ClassJobType.Bard))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7828">
+							<Log Message="Equipping Artemis Bow Atma" />
+							<RunCode Name="ArtemisAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>
+					<If Condition="ClassName == ((ClassJobType.BlackMage))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7830">
+							<Log Message="Equipping Stardust Rod Atma" />
+							<RunCode Name="StardustAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>
+					<If Condition="ClassName == ((ClassJobType.Dragoon))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7827">
+							<Log Message="Equipping Gae Bolg Atma" />
+							<RunCode Name="GaeBolgAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>	
+					<If Condition="ClassName == ((ClassJobType.Monk))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7825">
+							<Log Message="Equipping Sphairai Atma" />
+							<RunCode Name="SphairaiAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>
+					<If Condition="ClassName == ((ClassJobType.Ninja))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 9251">
+							<Log Message="Equipping Yoshimitsu Atma" />
+							<RunCode Name="YoshimitsuAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>
+					<If Condition="ClassName == ((ClassJobType.Paladin))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7824">
+							<Log Message="Equipping Curtana Atma" />
+							<RunCode Name="CurtanaAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>
+					<If Condition="ClassName == ((ClassJobType.Paladin))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.OffHand].RawItemId != 7833">
+							<Log Message="Equipping Holy Shield Atma" />
+							<RunCode Name="HolyShieldAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>			
+					<If Condition="ClassName == ((ClassJobType.Scholar))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7832">
+							<Log Message="Equipping Omnilex Atma" />
+							<RunCode Name="OmnilexAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>
+					<If Condition="ClassName == ((ClassJobType.Summoner))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7831">
+							<Log Message="Equipping Viel of Wiyu Atma" />
+							<RunCode Name="VeilAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>	
+					<If Condition="ClassName == ((ClassJobType.Warrior))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7826">
+							<Log Message="Equipping Bravura Atma" />
+							<RunCode Name="BravuraAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>
+					<If Condition="ClassName == ((ClassJobType.WhiteMage))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7829">
+							<Log Message="Equipping Thyrus Atma" />
+							<RunCode Name="ThyrusAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>					
+					<Log Message="Moving to Skyfall II - Haukke Manor (Hard)" />
+					<LLoadProfile Path="../Dungeons/Haukke Manor (Hard).xml"/>
+				</If>
+			<!-- Skyfall II Fates -->
+				<!-- Skyfall II Fate Task 1 -->
+				<If condition="not ZodiacManager.CurrentBook.FateTask1Completed">
+					<If Condition="ClassName == ((ClassJobType.Bard))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7828">
+							<Log Message="Equipping Artemis Bow Atma" />
+							<RunCode Name="ArtemisAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>
+					<If Condition="ClassName == ((ClassJobType.BlackMage))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7830">
+							<Log Message="Equipping Stardust Rod Atma" />
+							<RunCode Name="StardustAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>
+					<If Condition="ClassName == ((ClassJobType.Dragoon))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7827">
+							<Log Message="Equipping Gae Bolg Atma" />
+							<RunCode Name="GaeBolgAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>	
+					<If Condition="ClassName == ((ClassJobType.Monk))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7825">
+							<Log Message="Equipping Sphairai Atma" />
+							<RunCode Name="SphairaiAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>
+					<If Condition="ClassName == ((ClassJobType.Ninja))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 9251">
+							<Log Message="Equipping Yoshimitsu Atma" />
+							<RunCode Name="YoshimitsuAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>
+					<If Condition="ClassName == ((ClassJobType.Paladin))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7824">
+							<Log Message="Equipping Curtana Atma" />
+							<RunCode Name="CurtanaAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>
+					<If Condition="ClassName == ((ClassJobType.Paladin))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.OffHand].RawItemId != 7833">
+							<Log Message="Equipping Holy Shield Atma" />
+							<RunCode Name="HolyShieldAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>			
+					<If Condition="ClassName == ((ClassJobType.Scholar))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7832">
+							<Log Message="Equipping Omnilex Atma" />
+							<RunCode Name="OmnilexAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>
+					<If Condition="ClassName == ((ClassJobType.Summoner))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7831">
+							<Log Message="Equipping Viel of Wiyu Atma" />
+							<RunCode Name="VeilAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>	
+					<If Condition="ClassName == ((ClassJobType.Warrior))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7826">
+							<Log Message="Equipping Bravura Atma" />
+							<RunCode Name="BravuraAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>
+					<If Condition="ClassName == ((ClassJobType.WhiteMage))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7829">
+							<Log Message="Equipping Thyrus Atma" />
+							<RunCode Name="ThyrusAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>					
+					<Log Message="Moving to Skyfall II - Coerthas Central Bellyful FATE" />
+					<While Condition="not ZodiacManager.CurrentBook.FateTask1Completed">
+						<If Condition="not IsOnMap(138)">
+							<TeleportTo AetheryteId="13"/>
+						</If>
+						<FlyTo ZoneId="138" XYZ="-5.928661, -13.45268, -96.82548" land="true"/>
+						<Log Message="Waiting on FATE 'Breaching North Tidegate'" />
+						<LLFate FateId="569" MinLevel="1" MaxLevel="50" while="ZodiacManager.CurrentBook.FateTask1Completed"/> <!-- Breaching North Tidegate -->								  				  
+					</While>						
+				</If>
+				<!-- Skyfall II Fate Task 2 -->
+				<If condition="not ZodiacManager.CurrentBook.FateTask2Completed">
+					<If Condition="ClassName == ((ClassJobType.Bard))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7828">
+							<Log Message="Equipping Artemis Bow Atma" />
+							<RunCode Name="ArtemisAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>
+					<If Condition="ClassName == ((ClassJobType.BlackMage))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7830">
+							<Log Message="Equipping Stardust Rod Atma" />
+							<RunCode Name="StardustAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>
+					<If Condition="ClassName == ((ClassJobType.Dragoon))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7827">
+							<Log Message="Equipping Gae Bolg Atma" />
+							<RunCode Name="GaeBolgAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>	
+					<If Condition="ClassName == ((ClassJobType.Monk))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7825">
+							<Log Message="Equipping Sphairai Atma" />
+							<RunCode Name="SphairaiAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>
+					<If Condition="ClassName == ((ClassJobType.Ninja))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 9251">
+							<Log Message="Equipping Yoshimitsu Atma" />
+							<RunCode Name="YoshimitsuAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>
+					<If Condition="ClassName == ((ClassJobType.Paladin))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7824">
+							<Log Message="Equipping Curtana Atma" />
+							<RunCode Name="CurtanaAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>
+					<If Condition="ClassName == ((ClassJobType.Paladin))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.OffHand].RawItemId != 7833">
+							<Log Message="Equipping Holy Shield Atma" />
+							<RunCode Name="HolyShieldAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>			
+					<If Condition="ClassName == ((ClassJobType.Scholar))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7832">
+							<Log Message="Equipping Omnilex Atma" />
+							<RunCode Name="OmnilexAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>
+					<If Condition="ClassName == ((ClassJobType.Summoner))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7831">
+							<Log Message="Equipping Viel of Wiyu Atma" />
+							<RunCode Name="VeilAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>	
+					<If Condition="ClassName == ((ClassJobType.Warrior))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7826">
+							<Log Message="Equipping Bravura Atma" />
+							<RunCode Name="BravuraAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>
+					<If Condition="ClassName == ((ClassJobType.WhiteMage))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7829">
+							<Log Message="Equipping Thyrus Atma" />
+							<RunCode Name="ThyrusAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>				
+					<Log Message="Moving to Skyfall II - Western La Noscea The King's Justic FATE" />
+					<While Condition="not ZodiacManager.CurrentBook.FateTask2Completed">
+						<If Condition="not IsOnMap(156)">
+							<TeleportTo AetheryteId="24"/>
+						</If>
+						<FlyTo XYZ="-300.3827, -17.14841, -363.0392" land="true"/>
+						<Log Message="Waiting on FATE 'Black and Nburu'" />
+						<LLFate FateId="516" MinLevel="1" MaxLevel="50" while="ZodiacManager.CurrentBook.FateTask2Completed"/> <!-- Black and Nburu -->							  				  
+					</While>					
+				</If>
+				<!-- Skyfall II Fate Task 3 -->
+				<If condition="not ZodiacManager.CurrentBook.FateTask3Completed">
+					<If Condition="ClassName == ((ClassJobType.Bard))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7828">
+							<Log Message="Equipping Artemis Bow Atma" />
+							<RunCode Name="ArtemisAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>
+					<If Condition="ClassName == ((ClassJobType.BlackMage))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7830">
+							<Log Message="Equipping Stardust Rod Atma" />
+							<RunCode Name="StardustAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>
+					<If Condition="ClassName == ((ClassJobType.Dragoon))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7827">
+							<Log Message="Equipping Gae Bolg Atma" />
+							<RunCode Name="GaeBolgAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>	
+					<If Condition="ClassName == ((ClassJobType.Monk))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7825">
+							<Log Message="Equipping Sphairai Atma" />
+							<RunCode Name="SphairaiAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>
+					<If Condition="ClassName == ((ClassJobType.Ninja))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 9251">
+							<Log Message="Equipping Yoshimitsu Atma" />
+							<RunCode Name="YoshimitsuAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>
+					<If Condition="ClassName == ((ClassJobType.Paladin))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7824">
+							<Log Message="Equipping Curtana Atma" />
+							<RunCode Name="CurtanaAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>
+					<If Condition="ClassName == ((ClassJobType.Paladin))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.OffHand].RawItemId != 7833">
+							<Log Message="Equipping Holy Shield Atma" />
+							<RunCode Name="HolyShieldAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>			
+					<If Condition="ClassName == ((ClassJobType.Scholar))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7832">
+							<Log Message="Equipping Omnilex Atma" />
+							<RunCode Name="OmnilexAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>
+					<If Condition="ClassName == ((ClassJobType.Summoner))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7831">
+							<Log Message="Equipping Viel of Wiyu Atma" />
+							<RunCode Name="VeilAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>	
+					<If Condition="ClassName == ((ClassJobType.Warrior))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7826">
+							<Log Message="Equipping Bravura Atma" />
+							<RunCode Name="BravuraAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>
+					<If Condition="ClassName == ((ClassJobType.WhiteMage))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7829">
+							<Log Message="Equipping Thyrus Atma" />
+							<RunCode Name="ThyrusAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>					
+					<Log Message="Moving to Skyfall II - Eastern Thanalan Quartz Coupling" />
+					<While Condition="not ZodiacManager.CurrentBook.FateTask3Completed">
+						<If Condition="not IsOnMap(152)">
+							<TeleportTo AetheryteId="4"/>
+						</If>
+						<FlyTo XYZ="545.3613, -24.10023, -355.0022" land="true"/>
+						<Log Message="Waiting on FATE 'Breaking Dawn'" />
+						<LLFate FateId="616" MinLevel="1" MaxLevel="50" while="ZodiacManager.CurrentBook.FateTask3Completed"/> <!-- Breaking Dawn -->							  				  
+					</While>				
+				</If>				
+			<!-- Skyfall II Guildleves -->
+				<!-- Skyfall II Guildleves Task 1 -->
+				<If condition="not ZodiacManager.CurrentBook.GuildleveTask1Completed">
+					<If Condition="ClassName == ((ClassJobType.Bard))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7828">
+							<Log Message="Equipping Artemis Bow Atma" />
+							<RunCode Name="ArtemisAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>
+					<If Condition="ClassName == ((ClassJobType.BlackMage))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7830">
+							<Log Message="Equipping Stardust Rod Atma" />
+							<RunCode Name="StardustAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>
+					<If Condition="ClassName == ((ClassJobType.Dragoon))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7827">
+							<Log Message="Equipping Gae Bolg Atma" />
+							<RunCode Name="GaeBolgAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>	
+					<If Condition="ClassName == ((ClassJobType.Monk))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7825">
+							<Log Message="Equipping Sphairai Atma" />
+							<RunCode Name="SphairaiAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>
+					<If Condition="ClassName == ((ClassJobType.Ninja))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 9251">
+							<Log Message="Equipping Yoshimitsu Atma" />
+							<RunCode Name="YoshimitsuAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>
+					<If Condition="ClassName == ((ClassJobType.Paladin))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7824">
+							<Log Message="Equipping Curtana Atma" />
+							<RunCode Name="CurtanaAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>
+					<If Condition="ClassName == ((ClassJobType.Paladin))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.OffHand].RawItemId != 7833">
+							<Log Message="Equipping Holy Shield Atma" />
+							<RunCode Name="HolyShieldAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>			
+					<If Condition="ClassName == ((ClassJobType.Scholar))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7832">
+							<Log Message="Equipping Omnilex Atma" />
+							<RunCode Name="OmnilexAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>
+					<If Condition="ClassName == ((ClassJobType.Summoner))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7831">
+							<Log Message="Equipping Viel of Wiyu Atma" />
+							<RunCode Name="VeilAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>	
+					<If Condition="ClassName == ((ClassJobType.Warrior))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7826">
+							<Log Message="Equipping Bravura Atma" />
+							<RunCode Name="BravuraAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>
+					<If Condition="ClassName == ((ClassJobType.WhiteMage))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7829">
+							<Log Message="Equipping Thyrus Atma" />
+							<RunCode Name="ThyrusAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>				
+					<Log Message="Moving to Skyfall II - Nothern Thanalan Camp Bluefrog 'Someone's in the Doghouse'" />
+					<LLoadProfile Path="../GuildLeves/Camp Bluefog/Someone's in the Doghouse.xml"/>
+				</If>
+				<!-- Skyfall II Guildleves Task 2 -->
+				<If condition="not ZodiacManager.CurrentBook.GuildleveTask2Completed">
+					<If Condition="ClassName == ((ClassJobType.Bard))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7828">
+							<Log Message="Equipping Artemis Bow Atma" />
+							<RunCode Name="ArtemisAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>
+					<If Condition="ClassName == ((ClassJobType.BlackMage))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7830">
+							<Log Message="Equipping Stardust Rod Atma" />
+							<RunCode Name="StardustAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>
+					<If Condition="ClassName == ((ClassJobType.Dragoon))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7827">
+							<Log Message="Equipping Gae Bolg Atma" />
+							<RunCode Name="GaeBolgAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>	
+					<If Condition="ClassName == ((ClassJobType.Monk))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7825">
+							<Log Message="Equipping Sphairai Atma" />
+							<RunCode Name="SphairaiAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>
+					<If Condition="ClassName == ((ClassJobType.Ninja))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 9251">
+							<Log Message="Equipping Yoshimitsu Atma" />
+							<RunCode Name="YoshimitsuAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>
+					<If Condition="ClassName == ((ClassJobType.Paladin))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7824">
+							<Log Message="Equipping Curtana Atma" />
+							<RunCode Name="CurtanaAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>
+					<If Condition="ClassName == ((ClassJobType.Paladin))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.OffHand].RawItemId != 7833">
+							<Log Message="Equipping Holy Shield Atma" />
+							<RunCode Name="HolyShieldAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>			
+					<If Condition="ClassName == ((ClassJobType.Scholar))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7832">
+							<Log Message="Equipping Omnilex Atma" />
+							<RunCode Name="OmnilexAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>
+					<If Condition="ClassName == ((ClassJobType.Summoner))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7831">
+							<Log Message="Equipping Viel of Wiyu Atma" />
+							<RunCode Name="VeilAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>	
+					<If Condition="ClassName == ((ClassJobType.Warrior))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7826">
+							<Log Message="Equipping Bravura Atma" />
+							<RunCode Name="BravuraAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>
+					<If Condition="ClassName == ((ClassJobType.WhiteMage))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7829">
+							<Log Message="Equipping Thyrus Atma" />
+							<RunCode Name="ThyrusAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>				
+					<Log Message="Moving to Skyfall II - Coerthas Central Whitebrim Front 'The Area's a Bit Sketchy'" />
+						<If Condition="not IsOnMap(155)">
+							<TeleportTo Name="155 " AetheryteId="23"/>
+						</If>			
+						<FlyTo XYZ="-474.1803, 211, -232.8224" land="true"/>
+						<LLoadProfile Path="../GuildLeves/Whitebrim/The Area's a Bit Sketchy.xml"/>
+				</If>
+				<!-- Skyfall II Guildleves Task 3 -->
+				<If condition="not ZodiacManager.CurrentBook.GuildleveTask3Completed">
+					<If Condition="ClassName == ((ClassJobType.Bard))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7828">
+							<Log Message="Equipping Artemis Bow Atma" />
+							<RunCode Name="ArtemisAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>
+					<If Condition="ClassName == ((ClassJobType.BlackMage))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7830">
+							<Log Message="Equipping Stardust Rod Atma" />
+							<RunCode Name="StardustAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>
+					<If Condition="ClassName == ((ClassJobType.Dragoon))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7827">
+							<Log Message="Equipping Gae Bolg Atma" />
+							<RunCode Name="GaeBolgAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>	
+					<If Condition="ClassName == ((ClassJobType.Monk))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7825">
+							<Log Message="Equipping Sphairai Atma" />
+							<RunCode Name="SphairaiAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>
+					<If Condition="ClassName == ((ClassJobType.Ninja))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 9251">
+							<Log Message="Equipping Yoshimitsu Atma" />
+							<RunCode Name="YoshimitsuAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>
+					<If Condition="ClassName == ((ClassJobType.Paladin))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7824">
+							<Log Message="Equipping Curtana Atma" />
+							<RunCode Name="CurtanaAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>
+					<If Condition="ClassName == ((ClassJobType.Paladin))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.OffHand].RawItemId != 7833">
+							<Log Message="Equipping Holy Shield Atma" />
+							<RunCode Name="HolyShieldAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>			
+					<If Condition="ClassName == ((ClassJobType.Scholar))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7832">
+							<Log Message="Equipping Omnilex Atma" />
+							<RunCode Name="OmnilexAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>
+					<If Condition="ClassName == ((ClassJobType.Summoner))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7831">
+							<Log Message="Equipping Viel of Wiyu Atma" />
+							<RunCode Name="VeilAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>	
+					<If Condition="ClassName == ((ClassJobType.Warrior))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7826">
+							<Log Message="Equipping Bravura Atma" />
+							<RunCode Name="BravuraAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>
+					<If Condition="ClassName == ((ClassJobType.WhiteMage))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7829">
+							<Log Message="Equipping Thyrus Atma" />
+							<RunCode Name="ThyrusAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>					
+					<Log Message="Moving to Skyfall II - Mor Dhona Saint Coinarch's Find 'Get off Our Lakes'" />
+					<If Condition="not IsOnMap(156)">
+						<TeleportTo Name="Revenant's Toll " AetheryteId="24"/>
+					</If>			
+					<FlyTo XYZ="462.438, -4.445982, -469.9096" land="true"/>
+					<LLoadProfile Path="../GuildLeves/Sain Coinach's Find/Get off Our Lakes.xml"/>	
+				</If>
+				<!-- Book completed -->
+				<If condition="HasAtLeast(2001302,1) and ZodiacManager.CurrentBook.KillTask1Completed and ZodiacManager.CurrentBook.KillTask2Completed and ZodiacManager.CurrentBook.KillTask3Completed and ZodiacManager.CurrentBook.KillTask4Completed and ZodiacManager.CurrentBook.KillTask5Completed and ZodiacManager.CurrentBook.KillTask6Completed and ZodiacManager.CurrentBook.KillTask7Completed and ZodiacManager.CurrentBook.KillTask8Completed and ZodiacManager.CurrentBook.KillTask9Completed and ZodiacManager.CurrentBook.KillTask10Completed and ZodiacManager.CurrentBook.DungeonTask1Completed and ZodiacManager.CurrentBook.DungeonTask2Completed and ZodiacManager.CurrentBook.DungeonTask3Completed and ZodiacManager.CurrentBook.FateTask1Completed and ZodiacManager.CurrentBook.FateTask2Completed and ZodiacManager.CurrentBook.FateTask3Completed and ZodiacManager.CurrentBook.GuildleveTask1Completed and ZodiacManager.CurrentBook.GuildleveTask2Completed and ZodiacManager.CurrentBook.GuildleveTask3Completed">				
+					<Log Message="Skyfall II completed. Buying Skyfall III" />
+					<If Condition="not IsOnMap(156)">
+						<TeleportTo AetheryteId="24"/> 
+					</If>
+					<GetTo ZoneId="156" XYZ="71.94617,33.06656,-706.2944"/>	
+					<RunCode name="BuyFallBooks"/>					
+				</If>
+			</If>
+
+		<!-- Netherfall II -->	
+			<If Condition="HasAtLeast(2001303,1)">
+			<!-- Netherfall II Enemies -->
+				<!-- Netherfall II Kill Task 1 -->	
+				<If condition="not ZodiacManager.CurrentBook.KillTask1Completed">
+					<If Condition="ClassName == ((ClassJobType.Bard))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7828">
+							<Log Message="Equipping Artemis Bow Atma" />
+							<RunCode Name="ArtemisAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>
+					<If Condition="ClassName == ((ClassJobType.BlackMage))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7830">
+							<Log Message="Equipping Stardust Rod Atma" />
+							<RunCode Name="StardustAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>
+					<If Condition="ClassName == ((ClassJobType.Dragoon))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7827">
+							<Log Message="Equipping Gae Bolg Atma" />
+							<RunCode Name="GaeBolgAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>	
+					<If Condition="ClassName == ((ClassJobType.Monk))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7825">
+							<Log Message="Equipping Sphairai Atma" />
+							<RunCode Name="SphairaiAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>
+					<If Condition="ClassName == ((ClassJobType.Ninja))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 9251">
+							<Log Message="Equipping Yoshimitsu Atma" />
+							<RunCode Name="YoshimitsuAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>
+					<If Condition="ClassName == ((ClassJobType.Paladin))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7824">
+							<Log Message="Equipping Curtana Atma" />
+							<RunCode Name="CurtanaAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>
+					<If Condition="ClassName == ((ClassJobType.Paladin))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.OffHand].RawItemId != 7833">
+							<Log Message="Equipping Holy Shield Atma" />
+							<RunCode Name="HolyShieldAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>			
+					<If Condition="ClassName == ((ClassJobType.Scholar))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7832">
+							<Log Message="Equipping Omnilex Atma" />
+							<RunCode Name="OmnilexAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>
+					<If Condition="ClassName == ((ClassJobType.Summoner))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7831">
+							<Log Message="Equipping Viel of Wiyu Atma" />
+							<RunCode Name="VeilAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>	
+					<If Condition="ClassName == ((ClassJobType.Warrior))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7826">
+							<Log Message="Equipping Bravura Atma" />
+							<RunCode Name="BravuraAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>
+					<If Condition="ClassName == ((ClassJobType.WhiteMage))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7829">
+							<Log Message="Equipping Thyrus Atma" />
+							<RunCode Name="ThyrusAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>			
+					<Log Message="Moving to Netherfall II - Southern Thanalan - Amalj'aa Brigands" />
+					<LLoadProfile Path="../Animus/Netherfall II/Southern Thanalan - Amalj'aa Brigands.xml"/>
+				</If>
+				<!-- Netherfall II Kill Task 2 -->		
+				<If condition="not ZodiacManager.CurrentBook.KillTask2Completed">
+					<If Condition="ClassName == ((ClassJobType.Bard))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7828">
+							<Log Message="Equipping Artemis Bow Atma" />
+							<RunCode Name="ArtemisAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>
+					<If Condition="ClassName == ((ClassJobType.BlackMage))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7830">
+							<Log Message="Equipping Stardust Rod Atma" />
+							<RunCode Name="StardustAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>
+					<If Condition="ClassName == ((ClassJobType.Dragoon))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7827">
+							<Log Message="Equipping Gae Bolg Atma" />
+							<RunCode Name="GaeBolgAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>	
+					<If Condition="ClassName == ((ClassJobType.Monk))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7825">
+							<Log Message="Equipping Sphairai Atma" />
+							<RunCode Name="SphairaiAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>
+					<If Condition="ClassName == ((ClassJobType.Ninja))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 9251">
+							<Log Message="Equipping Yoshimitsu Atma" />
+							<RunCode Name="YoshimitsuAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>
+					<If Condition="ClassName == ((ClassJobType.Paladin))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7824">
+							<Log Message="Equipping Curtana Atma" />
+							<RunCode Name="CurtanaAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>
+					<If Condition="ClassName == ((ClassJobType.Paladin))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.OffHand].RawItemId != 7833">
+							<Log Message="Equipping Holy Shield Atma" />
+							<RunCode Name="HolyShieldAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>			
+					<If Condition="ClassName == ((ClassJobType.Scholar))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7832">
+							<Log Message="Equipping Omnilex Atma" />
+							<RunCode Name="OmnilexAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>
+					<If Condition="ClassName == ((ClassJobType.Summoner))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7831">
+							<Log Message="Equipping Viel of Wiyu Atma" />
+							<RunCode Name="VeilAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>	
+					<If Condition="ClassName == ((ClassJobType.Warrior))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7826">
+							<Log Message="Equipping Bravura Atma" />
+							<RunCode Name="BravuraAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>
+					<If Condition="ClassName == ((ClassJobType.WhiteMage))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7829">
+							<Log Message="Equipping Thyrus Atma" />
+							<RunCode Name="ThyrusAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>				
+					<Log Message="Moving to Netherfall II - South Shroud - Lesser Kalong" />
+					<LLoadProfile Path="../Animus/Netherfall II/South Shroud - Lesser Kalong.xml"/>
+				</If>
+				<!-- Netherfall II Kill Task 3 -->	
+				<If condition="not ZodiacManager.CurrentBook.KillTask3Completed">
+					<If Condition="ClassName == ((ClassJobType.Bard))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7828">
+							<Log Message="Equipping Artemis Bow Atma" />
+							<RunCode Name="ArtemisAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>
+					<If Condition="ClassName == ((ClassJobType.BlackMage))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7830">
+							<Log Message="Equipping Stardust Rod Atma" />
+							<RunCode Name="StardustAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>
+					<If Condition="ClassName == ((ClassJobType.Dragoon))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7827">
+							<Log Message="Equipping Gae Bolg Atma" />
+							<RunCode Name="GaeBolgAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>	
+					<If Condition="ClassName == ((ClassJobType.Monk))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7825">
+							<Log Message="Equipping Sphairai Atma" />
+							<RunCode Name="SphairaiAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>
+					<If Condition="ClassName == ((ClassJobType.Ninja))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 9251">
+							<Log Message="Equipping Yoshimitsu Atma" />
+							<RunCode Name="YoshimitsuAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>
+					<If Condition="ClassName == ((ClassJobType.Paladin))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7824">
+							<Log Message="Equipping Curtana Atma" />
+							<RunCode Name="CurtanaAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>
+					<If Condition="ClassName == ((ClassJobType.Paladin))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.OffHand].RawItemId != 7833">
+							<Log Message="Equipping Holy Shield Atma" />
+							<RunCode Name="HolyShieldAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>			
+					<If Condition="ClassName == ((ClassJobType.Scholar))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7832">
+							<Log Message="Equipping Omnilex Atma" />
+							<RunCode Name="OmnilexAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>
+					<If Condition="ClassName == ((ClassJobType.Summoner))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7831">
+							<Log Message="Equipping Viel of Wiyu Atma" />
+							<RunCode Name="VeilAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>	
+					<If Condition="ClassName == ((ClassJobType.Warrior))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7826">
+							<Log Message="Equipping Bravura Atma" />
+							<RunCode Name="BravuraAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>
+					<If Condition="ClassName == ((ClassJobType.WhiteMage))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7829">
+							<Log Message="Equipping Thyrus Atma" />
+							<RunCode Name="ThyrusAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>					
+					<Log Message="Moving to Netherfall II - Mor Dhona - 5th Cohort Laquearius" />
+					<LLoadProfile Path="../Animus/Netherfall II/Mor Dhona - 5th Cohort Laquearius.xml"/>
+				</If>
+				<!-- Netherfall II Kill Task 4 -->	
+				<If condition="not ZodiacManager.CurrentBook.KillTask4Completed">
+					<If Condition="ClassName == ((ClassJobType.Bard))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7828">
+							<Log Message="Equipping Artemis Bow Atma" />
+							<RunCode Name="ArtemisAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>
+					<If Condition="ClassName == ((ClassJobType.BlackMage))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7830">
+							<Log Message="Equipping Stardust Rod Atma" />
+							<RunCode Name="StardustAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>
+					<If Condition="ClassName == ((ClassJobType.Dragoon))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7827">
+							<Log Message="Equipping Gae Bolg Atma" />
+							<RunCode Name="GaeBolgAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>	
+					<If Condition="ClassName == ((ClassJobType.Monk))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7825">
+							<Log Message="Equipping Sphairai Atma" />
+							<RunCode Name="SphairaiAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>
+					<If Condition="ClassName == ((ClassJobType.Ninja))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 9251">
+							<Log Message="Equipping Yoshimitsu Atma" />
+							<RunCode Name="YoshimitsuAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>
+					<If Condition="ClassName == ((ClassJobType.Paladin))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7824">
+							<Log Message="Equipping Curtana Atma" />
+							<RunCode Name="CurtanaAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>
+					<If Condition="ClassName == ((ClassJobType.Paladin))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.OffHand].RawItemId != 7833">
+							<Log Message="Equipping Holy Shield Atma" />
+							<RunCode Name="HolyShieldAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>			
+					<If Condition="ClassName == ((ClassJobType.Scholar))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7832">
+							<Log Message="Equipping Omnilex Atma" />
+							<RunCode Name="OmnilexAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>
+					<If Condition="ClassName == ((ClassJobType.Summoner))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7831">
+							<Log Message="Equipping Viel of Wiyu Atma" />
+							<RunCode Name="VeilAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>	
+					<If Condition="ClassName == ((ClassJobType.Warrior))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7826">
+							<Log Message="Equipping Bravura Atma" />
+							<RunCode Name="BravuraAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>
+					<If Condition="ClassName == ((ClassJobType.WhiteMage))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7829">
+							<Log Message="Equipping Thyrus Atma" />
+							<RunCode Name="ThyrusAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>					
+					<Log Message="Moving to Netherfall II - Mor Dhona - Gigas Sozu" />
+					<LLoadProfile Path="../Animus/Netherfall II/Mor Dhona - Gigas Sozu.xml"/>
+				</If>
+				<!-- Netherfall II Kill Task 5 -->	
+				<If condition="not ZodiacManager.CurrentBook.KillTask5Completed">
+					<If Condition="ClassName == ((ClassJobType.Bard))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7828">
+							<Log Message="Equipping Artemis Bow Atma" />
+							<RunCode Name="ArtemisAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>
+					<If Condition="ClassName == ((ClassJobType.BlackMage))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7830">
+							<Log Message="Equipping Stardust Rod Atma" />
+							<RunCode Name="StardustAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>
+					<If Condition="ClassName == ((ClassJobType.Dragoon))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7827">
+							<Log Message="Equipping Gae Bolg Atma" />
+							<RunCode Name="GaeBolgAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>	
+					<If Condition="ClassName == ((ClassJobType.Monk))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7825">
+							<Log Message="Equipping Sphairai Atma" />
+							<RunCode Name="SphairaiAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>
+					<If Condition="ClassName == ((ClassJobType.Ninja))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 9251">
+							<Log Message="Equipping Yoshimitsu Atma" />
+							<RunCode Name="YoshimitsuAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>
+					<If Condition="ClassName == ((ClassJobType.Paladin))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7824">
+							<Log Message="Equipping Curtana Atma" />
+							<RunCode Name="CurtanaAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>
+					<If Condition="ClassName == ((ClassJobType.Paladin))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.OffHand].RawItemId != 7833">
+							<Log Message="Equipping Holy Shield Atma" />
+							<RunCode Name="HolyShieldAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>			
+					<If Condition="ClassName == ((ClassJobType.Scholar))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7832">
+							<Log Message="Equipping Omnilex Atma" />
+							<RunCode Name="OmnilexAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>
+					<If Condition="ClassName == ((ClassJobType.Summoner))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7831">
+							<Log Message="Equipping Viel of Wiyu Atma" />
+							<RunCode Name="VeilAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>	
+					<If Condition="ClassName == ((ClassJobType.Warrior))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7826">
+							<Log Message="Equipping Bravura Atma" />
+							<RunCode Name="BravuraAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>
+					<If Condition="ClassName == ((ClassJobType.WhiteMage))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7829">
+							<Log Message="Equipping Thyrus Atma" />
+							<RunCode Name="ThyrusAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>					
+					<Log Message="Moving to Netherfall II - Coerthas - Snow Wolf" />
+					<LLoadProfile Path="../Animus/Netherfall II/Coerthas - Snow Wolf.xml"/>
+				</If>
+				<!-- Netherfall II Kill Task 6 -->	
+				<If condition="not ZodiacManager.CurrentBook.KillTask6Completed">
+					<If Condition="ClassName == ((ClassJobType.Bard))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7828">
+							<Log Message="Equipping Artemis Bow Atma" />
+							<RunCode Name="ArtemisAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>
+					<If Condition="ClassName == ((ClassJobType.BlackMage))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7830">
+							<Log Message="Equipping Stardust Rod Atma" />
+							<RunCode Name="StardustAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>
+					<If Condition="ClassName == ((ClassJobType.Dragoon))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7827">
+							<Log Message="Equipping Gae Bolg Atma" />
+							<RunCode Name="GaeBolgAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>	
+					<If Condition="ClassName == ((ClassJobType.Monk))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7825">
+							<Log Message="Equipping Sphairai Atma" />
+							<RunCode Name="SphairaiAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>
+					<If Condition="ClassName == ((ClassJobType.Ninja))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 9251">
+							<Log Message="Equipping Yoshimitsu Atma" />
+							<RunCode Name="YoshimitsuAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>
+					<If Condition="ClassName == ((ClassJobType.Paladin))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7824">
+							<Log Message="Equipping Curtana Atma" />
+							<RunCode Name="CurtanaAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>
+					<If Condition="ClassName == ((ClassJobType.Paladin))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.OffHand].RawItemId != 7833">
+							<Log Message="Equipping Holy Shield Atma" />
+							<RunCode Name="HolyShieldAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>			
+					<If Condition="ClassName == ((ClassJobType.Scholar))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7832">
+							<Log Message="Equipping Omnilex Atma" />
+							<RunCode Name="OmnilexAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>
+					<If Condition="ClassName == ((ClassJobType.Summoner))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7831">
+							<Log Message="Equipping Viel of Wiyu Atma" />
+							<RunCode Name="VeilAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>	
+					<If Condition="ClassName == ((ClassJobType.Warrior))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7826">
+							<Log Message="Equipping Bravura Atma" />
+							<RunCode Name="BravuraAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>
+					<If Condition="ClassName == ((ClassJobType.WhiteMage))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7829">
+							<Log Message="Equipping Thyrus Atma" />
+							<RunCode Name="ThyrusAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>					
+					<Log Message="Moving to Netherfall II - North Shroud - Ixali Windtalon" />
+					<LLoadProfile Path="../Animus/Netherfall II/North Shroud - Ixali Windtalon.xml"/>
+				</If>
+				<!-- Netherfall II Kill Task 7 -->	
+				<If condition="not ZodiacManager.CurrentBook.KillTask7Completed">
+					<If Condition="ClassName == ((ClassJobType.Bard))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7828">
+							<Log Message="Equipping Artemis Bow Atma" />
+							<RunCode Name="ArtemisAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>
+					<If Condition="ClassName == ((ClassJobType.BlackMage))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7830">
+							<Log Message="Equipping Stardust Rod Atma" />
+							<RunCode Name="StardustAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>
+					<If Condition="ClassName == ((ClassJobType.Dragoon))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7827">
+							<Log Message="Equipping Gae Bolg Atma" />
+							<RunCode Name="GaeBolgAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>	
+					<If Condition="ClassName == ((ClassJobType.Monk))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7825">
+							<Log Message="Equipping Sphairai Atma" />
+							<RunCode Name="SphairaiAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>
+					<If Condition="ClassName == ((ClassJobType.Ninja))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 9251">
+							<Log Message="Equipping Yoshimitsu Atma" />
+							<RunCode Name="YoshimitsuAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>
+					<If Condition="ClassName == ((ClassJobType.Paladin))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7824">
+							<Log Message="Equipping Curtana Atma" />
+							<RunCode Name="CurtanaAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>
+					<If Condition="ClassName == ((ClassJobType.Paladin))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.OffHand].RawItemId != 7833">
+							<Log Message="Equipping Holy Shield Atma" />
+							<RunCode Name="HolyShieldAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>			
+					<If Condition="ClassName == ((ClassJobType.Scholar))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7832">
+							<Log Message="Equipping Omnilex Atma" />
+							<RunCode Name="OmnilexAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>
+					<If Condition="ClassName == ((ClassJobType.Summoner))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7831">
+							<Log Message="Equipping Viel of Wiyu Atma" />
+							<RunCode Name="VeilAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>	
+					<If Condition="ClassName == ((ClassJobType.Warrior))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7826">
+							<Log Message="Equipping Bravura Atma" />
+							<RunCode Name="BravuraAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>
+					<If Condition="ClassName == ((ClassJobType.WhiteMage))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7829">
+							<Log Message="Equipping Thyrus Atma" />
+							<RunCode Name="ThyrusAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>				
+					<Log Message="Moving to Outer La Noscea - Outer La Noscea - U'Ghamaro Priest" />
+					<LLoadProfile Path="../Animus/Netherfall II/Outer La Noscea - U'Ghamaro Priest.xml"/>
+				</If>
+				<!-- Netherfall II Kill Task 8 -->	
+				<If condition="not ZodiacManager.CurrentBook.KillTask8Completed">
+					<If Condition="ClassName == ((ClassJobType.Bard))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7828">
+							<Log Message="Equipping Artemis Bow Atma" />
+							<RunCode Name="ArtemisAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>
+					<If Condition="ClassName == ((ClassJobType.BlackMage))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7830">
+							<Log Message="Equipping Stardust Rod Atma" />
+							<RunCode Name="StardustAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>
+					<If Condition="ClassName == ((ClassJobType.Dragoon))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7827">
+							<Log Message="Equipping Gae Bolg Atma" />
+							<RunCode Name="GaeBolgAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>	
+					<If Condition="ClassName == ((ClassJobType.Monk))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7825">
+							<Log Message="Equipping Sphairai Atma" />
+							<RunCode Name="SphairaiAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>
+					<If Condition="ClassName == ((ClassJobType.Ninja))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 9251">
+							<Log Message="Equipping Yoshimitsu Atma" />
+							<RunCode Name="YoshimitsuAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>
+					<If Condition="ClassName == ((ClassJobType.Paladin))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7824">
+							<Log Message="Equipping Curtana Atma" />
+							<RunCode Name="CurtanaAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>
+					<If Condition="ClassName == ((ClassJobType.Paladin))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.OffHand].RawItemId != 7833">
+							<Log Message="Equipping Holy Shield Atma" />
+							<RunCode Name="HolyShieldAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>			
+					<If Condition="ClassName == ((ClassJobType.Scholar))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7832">
+							<Log Message="Equipping Omnilex Atma" />
+							<RunCode Name="OmnilexAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>
+					<If Condition="ClassName == ((ClassJobType.Summoner))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7831">
+							<Log Message="Equipping Viel of Wiyu Atma" />
+							<RunCode Name="VeilAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>	
+					<If Condition="ClassName == ((ClassJobType.Warrior))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7826">
+							<Log Message="Equipping Bravura Atma" />
+							<RunCode Name="BravuraAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>
+					<If Condition="ClassName == ((ClassJobType.WhiteMage))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7829">
+							<Log Message="Equipping Thyrus Atma" />
+							<RunCode Name="ThyrusAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>					
+					<Log Message="Moving to Netherfall II - Western Thanlan - 4th Cohort Secutor" />
+					<LLoadProfile Path="../Animus/Netherfall II/Western Thanlan - 4th Cohort Secutor.xml"/>
+				</If>
+				<!-- Netherfall II Kill Task 9 -->	
+				<If condition="not ZodiacManager.CurrentBook.KillTask9Completed">
+					<If Condition="ClassName == ((ClassJobType.Bard))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7828">
+							<Log Message="Equipping Artemis Bow Atma" />
+							<RunCode Name="ArtemisAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>
+					<If Condition="ClassName == ((ClassJobType.BlackMage))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7830">
+							<Log Message="Equipping Stardust Rod Atma" />
+							<RunCode Name="StardustAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>
+					<If Condition="ClassName == ((ClassJobType.Dragoon))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7827">
+							<Log Message="Equipping Gae Bolg Atma" />
+							<RunCode Name="GaeBolgAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>	
+					<If Condition="ClassName == ((ClassJobType.Monk))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7825">
+							<Log Message="Equipping Sphairai Atma" />
+							<RunCode Name="SphairaiAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>
+					<If Condition="ClassName == ((ClassJobType.Ninja))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 9251">
+							<Log Message="Equipping Yoshimitsu Atma" />
+							<RunCode Name="YoshimitsuAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>
+					<If Condition="ClassName == ((ClassJobType.Paladin))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7824">
+							<Log Message="Equipping Curtana Atma" />
+							<RunCode Name="CurtanaAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>
+					<If Condition="ClassName == ((ClassJobType.Paladin))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.OffHand].RawItemId != 7833">
+							<Log Message="Equipping Holy Shield Atma" />
+							<RunCode Name="HolyShieldAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>			
+					<If Condition="ClassName == ((ClassJobType.Scholar))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7832">
+							<Log Message="Equipping Omnilex Atma" />
+							<RunCode Name="OmnilexAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>
+					<If Condition="ClassName == ((ClassJobType.Summoner))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7831">
+							<Log Message="Equipping Viel of Wiyu Atma" />
+							<RunCode Name="VeilAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>	
+					<If Condition="ClassName == ((ClassJobType.Warrior))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7826">
+							<Log Message="Equipping Bravura Atma" />
+							<RunCode Name="BravuraAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>
+					<If Condition="ClassName == ((ClassJobType.WhiteMage))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7829">
+							<Log Message="Equipping Thyrus Atma" />
+							<RunCode Name="ThyrusAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>					
+					<Log Message="Moving to Netherfall II - East Shroud - Violet Screech" />
+					<LLoadProfile Path="../Animus/Netherfall II/East Shroud - Violet Screech.xml"/>
+				</If>
+				<!-- Netherfall II Kill Task 10 -->	
+				<If condition="not ZodiacManager.CurrentBook.KillTask10Completed">
+					<If Condition="ClassName == ((ClassJobType.Bard))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7828">
+							<Log Message="Equipping Artemis Bow Atma" />
+							<RunCode Name="ArtemisAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>
+					<If Condition="ClassName == ((ClassJobType.BlackMage))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7830">
+							<Log Message="Equipping Stardust Rod Atma" />
+							<RunCode Name="StardustAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>
+					<If Condition="ClassName == ((ClassJobType.Dragoon))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7827">
+							<Log Message="Equipping Gae Bolg Atma" />
+							<RunCode Name="GaeBolgAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>	
+					<If Condition="ClassName == ((ClassJobType.Monk))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7825">
+							<Log Message="Equipping Sphairai Atma" />
+							<RunCode Name="SphairaiAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>
+					<If Condition="ClassName == ((ClassJobType.Ninja))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 9251">
+							<Log Message="Equipping Yoshimitsu Atma" />
+							<RunCode Name="YoshimitsuAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>
+					<If Condition="ClassName == ((ClassJobType.Paladin))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7824">
+							<Log Message="Equipping Curtana Atma" />
+							<RunCode Name="CurtanaAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>
+					<If Condition="ClassName == ((ClassJobType.Paladin))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.OffHand].RawItemId != 7833">
+							<Log Message="Equipping Holy Shield Atma" />
+							<RunCode Name="HolyShieldAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>			
+					<If Condition="ClassName == ((ClassJobType.Scholar))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7832">
+							<Log Message="Equipping Omnilex Atma" />
+							<RunCode Name="OmnilexAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>
+					<If Condition="ClassName == ((ClassJobType.Summoner))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7831">
+							<Log Message="Equipping Viel of Wiyu Atma" />
+							<RunCode Name="VeilAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>	
+					<If Condition="ClassName == ((ClassJobType.Warrior))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7826">
+							<Log Message="Equipping Bravura Atma" />
+							<RunCode Name="BravuraAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>
+					<If Condition="ClassName == ((ClassJobType.WhiteMage))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7829">
+							<Log Message="Equipping Thyrus Atma" />
+							<RunCode Name="ThyrusAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>				
+					<Log Message="Moving to Netherfall II - Western La Noscea - Sapsa Shelfclaws" />
+					<LLoadProfile Path="../Animus/Netherfall II/Western La Noscea - Sapsa Shelfclaws.xml"/>
+				</If>
+			<!-- Netherfall II Dungeons -->
+				<!-- Netherfall II Dungeon Task 1 -->	
+				<If condition="not ZodiacManager.CurrentBook.DungeonTask1Completed">
+					<If Condition="ClassName == ((ClassJobType.Bard))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7828">
+							<Log Message="Equipping Artemis Bow Atma" />
+							<RunCode Name="ArtemisAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>
+					<If Condition="ClassName == ((ClassJobType.BlackMage))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7830">
+							<Log Message="Equipping Stardust Rod Atma" />
+							<RunCode Name="StardustAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>
+					<If Condition="ClassName == ((ClassJobType.Dragoon))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7827">
+							<Log Message="Equipping Gae Bolg Atma" />
+							<RunCode Name="GaeBolgAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>	
+					<If Condition="ClassName == ((ClassJobType.Monk))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7825">
+							<Log Message="Equipping Sphairai Atma" />
+							<RunCode Name="SphairaiAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>
+					<If Condition="ClassName == ((ClassJobType.Ninja))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 9251">
+							<Log Message="Equipping Yoshimitsu Atma" />
+							<RunCode Name="YoshimitsuAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>
+					<If Condition="ClassName == ((ClassJobType.Paladin))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7824">
+							<Log Message="Equipping Curtana Atma" />
+							<RunCode Name="CurtanaAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>
+					<If Condition="ClassName == ((ClassJobType.Paladin))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.OffHand].RawItemId != 7833">
+							<Log Message="Equipping Holy Shield Atma" />
+							<RunCode Name="HolyShieldAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>			
+					<If Condition="ClassName == ((ClassJobType.Scholar))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7832">
+							<Log Message="Equipping Omnilex Atma" />
+							<RunCode Name="OmnilexAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>
+					<If Condition="ClassName == ((ClassJobType.Summoner))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7831">
+							<Log Message="Equipping Viel of Wiyu Atma" />
+							<RunCode Name="VeilAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>	
+					<If Condition="ClassName == ((ClassJobType.Warrior))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7826">
+							<Log Message="Equipping Bravura Atma" />
+							<RunCode Name="BravuraAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>
+					<If Condition="ClassName == ((ClassJobType.WhiteMage))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7829">
+							<Log Message="Equipping Thyrus Atma" />
+							<RunCode Name="ThyrusAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>				
+					<Log Message="Moving to Netherfall II - Cutter's Cry" />
+					<LLoadProfile Path="../Dungeons/Cutter's Cry.xml"/>
+				</If>
+				<!-- Netherfall II Dungeon Task 2 -->
+				<If condition="not ZodiacManager.CurrentBook.DungeonTask2Completed">
+					<If Condition="ClassName == ((ClassJobType.Bard))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7828">
+							<Log Message="Equipping Artemis Bow Atma" />
+							<RunCode Name="ArtemisAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>
+					<If Condition="ClassName == ((ClassJobType.BlackMage))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7830">
+							<Log Message="Equipping Stardust Rod Atma" />
+							<RunCode Name="StardustAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>
+					<If Condition="ClassName == ((ClassJobType.Dragoon))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7827">
+							<Log Message="Equipping Gae Bolg Atma" />
+							<RunCode Name="GaeBolgAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>	
+					<If Condition="ClassName == ((ClassJobType.Monk))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7825">
+							<Log Message="Equipping Sphairai Atma" />
+							<RunCode Name="SphairaiAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>
+					<If Condition="ClassName == ((ClassJobType.Ninja))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 9251">
+							<Log Message="Equipping Yoshimitsu Atma" />
+							<RunCode Name="YoshimitsuAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>
+					<If Condition="ClassName == ((ClassJobType.Paladin))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7824">
+							<Log Message="Equipping Curtana Atma" />
+							<RunCode Name="CurtanaAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>
+					<If Condition="ClassName == ((ClassJobType.Paladin))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.OffHand].RawItemId != 7833">
+							<Log Message="Equipping Holy Shield Atma" />
+							<RunCode Name="HolyShieldAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>			
+					<If Condition="ClassName == ((ClassJobType.Scholar))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7832">
+							<Log Message="Equipping Omnilex Atma" />
+							<RunCode Name="OmnilexAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>
+					<If Condition="ClassName == ((ClassJobType.Summoner))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7831">
+							<Log Message="Equipping Viel of Wiyu Atma" />
+							<RunCode Name="VeilAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>	
+					<If Condition="ClassName == ((ClassJobType.Warrior))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7826">
+							<Log Message="Equipping Bravura Atma" />
+							<RunCode Name="BravuraAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>
+					<If Condition="ClassName == ((ClassJobType.WhiteMage))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7829">
+							<Log Message="Equipping Thyrus Atma" />
+							<RunCode Name="ThyrusAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>					
+					<Log Message="Moving to Netherfall II - Pharos Sirius" />
+					<LLoadProfile Path="../Dungeons/Pharos Sirius.xml"/>
+				</If>
+				<!-- Netherfall II Dungeon Task 3 -->
+				<If condition="not ZodiacManager.CurrentBook.DungeonTask3Completed">
+					<If Condition="ClassName == ((ClassJobType.Bard))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7828">
+							<Log Message="Equipping Artemis Bow Atma" />
+							<RunCode Name="ArtemisAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>
+					<If Condition="ClassName == ((ClassJobType.BlackMage))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7830">
+							<Log Message="Equipping Stardust Rod Atma" />
+							<RunCode Name="StardustAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>
+					<If Condition="ClassName == ((ClassJobType.Dragoon))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7827">
+							<Log Message="Equipping Gae Bolg Atma" />
+							<RunCode Name="GaeBolgAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>	
+					<If Condition="ClassName == ((ClassJobType.Monk))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7825">
+							<Log Message="Equipping Sphairai Atma" />
+							<RunCode Name="SphairaiAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>
+					<If Condition="ClassName == ((ClassJobType.Ninja))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 9251">
+							<Log Message="Equipping Yoshimitsu Atma" />
+							<RunCode Name="YoshimitsuAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>
+					<If Condition="ClassName == ((ClassJobType.Paladin))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7824">
+							<Log Message="Equipping Curtana Atma" />
+							<RunCode Name="CurtanaAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>
+					<If Condition="ClassName == ((ClassJobType.Paladin))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.OffHand].RawItemId != 7833">
+							<Log Message="Equipping Holy Shield Atma" />
+							<RunCode Name="HolyShieldAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>			
+					<If Condition="ClassName == ((ClassJobType.Scholar))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7832">
+							<Log Message="Equipping Omnilex Atma" />
+							<RunCode Name="OmnilexAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>
+					<If Condition="ClassName == ((ClassJobType.Summoner))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7831">
+							<Log Message="Equipping Viel of Wiyu Atma" />
+							<RunCode Name="VeilAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>	
+					<If Condition="ClassName == ((ClassJobType.Warrior))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7826">
+							<Log Message="Equipping Bravura Atma" />
+							<RunCode Name="BravuraAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>
+					<If Condition="ClassName == ((ClassJobType.WhiteMage))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7829">
+							<Log Message="Equipping Thyrus Atma" />
+							<RunCode Name="ThyrusAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>					
+					<Log Message="Moving to Netherfall II - The Lost City of Amdapor" />
+					<LLoadProfile Path="../Dungeons/The Lost City of Amdapor.xml"/>
+				</If>
+			<!-- Netherfall II Fates -->
+				<!-- Netherfall II Fate Task 1 -->
+				<If condition="not ZodiacManager.CurrentBook.FateTask1Completed">
+					<If Condition="ClassName == ((ClassJobType.Bard))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7828">
+							<Log Message="Equipping Artemis Bow Atma" />
+							<RunCode Name="ArtemisAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>
+					<If Condition="ClassName == ((ClassJobType.BlackMage))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7830">
+							<Log Message="Equipping Stardust Rod Atma" />
+							<RunCode Name="StardustAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>
+					<If Condition="ClassName == ((ClassJobType.Dragoon))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7827">
+							<Log Message="Equipping Gae Bolg Atma" />
+							<RunCode Name="GaeBolgAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>	
+					<If Condition="ClassName == ((ClassJobType.Monk))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7825">
+							<Log Message="Equipping Sphairai Atma" />
+							<RunCode Name="SphairaiAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>
+					<If Condition="ClassName == ((ClassJobType.Ninja))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 9251">
+							<Log Message="Equipping Yoshimitsu Atma" />
+							<RunCode Name="YoshimitsuAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>
+					<If Condition="ClassName == ((ClassJobType.Paladin))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7824">
+							<Log Message="Equipping Curtana Atma" />
+							<RunCode Name="CurtanaAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>
+					<If Condition="ClassName == ((ClassJobType.Paladin))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.OffHand].RawItemId != 7833">
+							<Log Message="Equipping Holy Shield Atma" />
+							<RunCode Name="HolyShieldAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>			
+					<If Condition="ClassName == ((ClassJobType.Scholar))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7832">
+							<Log Message="Equipping Omnilex Atma" />
+							<RunCode Name="OmnilexAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>
+					<If Condition="ClassName == ((ClassJobType.Summoner))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7831">
+							<Log Message="Equipping Viel of Wiyu Atma" />
+							<RunCode Name="VeilAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>	
+					<If Condition="ClassName == ((ClassJobType.Warrior))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7826">
+							<Log Message="Equipping Bravura Atma" />
+							<RunCode Name="BravuraAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>
+					<If Condition="ClassName == ((ClassJobType.WhiteMage))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7829">
+							<Log Message="Equipping Thyrus Atma" />
+							<RunCode Name="ThyrusAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>					
+					<Log Message="Moving to Netherfall II - Coerthas Central Bellyful FATE" />
+					<While Condition="not ZodiacManager.CurrentBook.FateTask1Completed">
+						<If Condition="not IsOnMap(154)">
+							<TeleportTo AetheryteId="7"/>
+						</If>
+						<FlyTo ZoneId="138" XYZ="60.93443, 6.697236, -85.05267" land="true"/>
+						<Log Message="Waiting on FATE 'Rude Awakening'" />
+						<LLFate FateId="632" MinLevel="1" MaxLevel="50" while="ZodiacManager.CurrentBook.FateTask1Completed"/> <!-- Rude Awakening -->								  				  
+					</While>						
+				</If>
+				<!-- Netherfall II Fate Task 2 -->
+				<If condition="not ZodiacManager.CurrentBook.FateTask2Completed">
+					<If Condition="ClassName == ((ClassJobType.Bard))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7828">
+							<Log Message="Equipping Artemis Bow Atma" />
+							<RunCode Name="ArtemisAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>
+					<If Condition="ClassName == ((ClassJobType.BlackMage))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7830">
+							<Log Message="Equipping Stardust Rod Atma" />
+							<RunCode Name="StardustAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>
+					<If Condition="ClassName == ((ClassJobType.Dragoon))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7827">
+							<Log Message="Equipping Gae Bolg Atma" />
+							<RunCode Name="GaeBolgAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>	
+					<If Condition="ClassName == ((ClassJobType.Monk))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7825">
+							<Log Message="Equipping Sphairai Atma" />
+							<RunCode Name="SphairaiAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>
+					<If Condition="ClassName == ((ClassJobType.Ninja))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 9251">
+							<Log Message="Equipping Yoshimitsu Atma" />
+							<RunCode Name="YoshimitsuAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>
+					<If Condition="ClassName == ((ClassJobType.Paladin))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7824">
+							<Log Message="Equipping Curtana Atma" />
+							<RunCode Name="CurtanaAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>
+					<If Condition="ClassName == ((ClassJobType.Paladin))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.OffHand].RawItemId != 7833">
+							<Log Message="Equipping Holy Shield Atma" />
+							<RunCode Name="HolyShieldAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>			
+					<If Condition="ClassName == ((ClassJobType.Scholar))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7832">
+							<Log Message="Equipping Omnilex Atma" />
+							<RunCode Name="OmnilexAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>
+					<If Condition="ClassName == ((ClassJobType.Summoner))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7831">
+							<Log Message="Equipping Viel of Wiyu Atma" />
+							<RunCode Name="VeilAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>	
+					<If Condition="ClassName == ((ClassJobType.Warrior))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7826">
+							<Log Message="Equipping Bravura Atma" />
+							<RunCode Name="BravuraAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>
+					<If Condition="ClassName == ((ClassJobType.WhiteMage))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7829">
+							<Log Message="Equipping Thyrus Atma" />
+							<RunCode Name="ThyrusAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>				
+					<Log Message="Moving to Netherfall II - Western La Noscea The King's Justic FATE" />
+					<While Condition="not ZodiacManager.CurrentBook.FateTask2Completed">
+						<GetTo ZoneId="147" XYZ="21.62751, 3.989435, 396.3339" land="true"/>
+						<Log Message="Waiting on FATE 'The Ceruleum Road'" />
+						<LLFate FateId="642" MinLevel="1" MaxLevel="50" while="ZodiacManager.CurrentBook.FateTask2Completed"/> <!-- The Ceruleum Road -->							  				  
+					</While>					
+				</If>
+				<!-- Netherfall II Fate Task 3 -->
+				<If condition="not ZodiacManager.CurrentBook.FateTask3Completed">
+					<If Condition="ClassName == ((ClassJobType.Bard))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7828">
+							<Log Message="Equipping Artemis Bow Atma" />
+							<RunCode Name="ArtemisAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>
+					<If Condition="ClassName == ((ClassJobType.BlackMage))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7830">
+							<Log Message="Equipping Stardust Rod Atma" />
+							<RunCode Name="StardustAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>
+					<If Condition="ClassName == ((ClassJobType.Dragoon))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7827">
+							<Log Message="Equipping Gae Bolg Atma" />
+							<RunCode Name="GaeBolgAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>	
+					<If Condition="ClassName == ((ClassJobType.Monk))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7825">
+							<Log Message="Equipping Sphairai Atma" />
+							<RunCode Name="SphairaiAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>
+					<If Condition="ClassName == ((ClassJobType.Ninja))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 9251">
+							<Log Message="Equipping Yoshimitsu Atma" />
+							<RunCode Name="YoshimitsuAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>
+					<If Condition="ClassName == ((ClassJobType.Paladin))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7824">
+							<Log Message="Equipping Curtana Atma" />
+							<RunCode Name="CurtanaAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>
+					<If Condition="ClassName == ((ClassJobType.Paladin))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.OffHand].RawItemId != 7833">
+							<Log Message="Equipping Holy Shield Atma" />
+							<RunCode Name="HolyShieldAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>			
+					<If Condition="ClassName == ((ClassJobType.Scholar))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7832">
+							<Log Message="Equipping Omnilex Atma" />
+							<RunCode Name="OmnilexAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>
+					<If Condition="ClassName == ((ClassJobType.Summoner))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7831">
+							<Log Message="Equipping Viel of Wiyu Atma" />
+							<RunCode Name="VeilAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>	
+					<If Condition="ClassName == ((ClassJobType.Warrior))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7826">
+							<Log Message="Equipping Bravura Atma" />
+							<RunCode Name="BravuraAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>
+					<If Condition="ClassName == ((ClassJobType.WhiteMage))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7829">
+							<Log Message="Equipping Thyrus Atma" />
+							<RunCode Name="ThyrusAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>					
+					<Log Message="Moving to Netherfall II - Eastern Thanalan Quartz Coupling" />
+					<While Condition="not ZodiacManager.CurrentBook.FateTask3Completed">
+						<If Condition="not IsOnMap(155)">
+							<TeleportTo AetheryteId="23"/>
+						</If>
+						<FlyTo XYZ="657.3947, 301.7377, -27.8295" land="true"/>
+						<Log Message="Waiting on FATE 'The Four Winds'" />
+						<LLFate FateId="499" MinLevel="1" MaxLevel="50" while="ZodiacManager.CurrentBook.FateTask3Completed"/> <!-- The Four Winds -->							  				  
+					</While>				
+				</If>				
+			<!-- Netherfall II Guildleves -->
+				<!-- Netherfall II Guildleves Task 1 -->
+				<If condition="not ZodiacManager.CurrentBook.GuildleveTask1Completed">
+					<If Condition="ClassName == ((ClassJobType.Bard))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7828">
+							<Log Message="Equipping Artemis Bow Atma" />
+							<RunCode Name="ArtemisAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>
+					<If Condition="ClassName == ((ClassJobType.BlackMage))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7830">
+							<Log Message="Equipping Stardust Rod Atma" />
+							<RunCode Name="StardustAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>
+					<If Condition="ClassName == ((ClassJobType.Dragoon))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7827">
+							<Log Message="Equipping Gae Bolg Atma" />
+							<RunCode Name="GaeBolgAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>	
+					<If Condition="ClassName == ((ClassJobType.Monk))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7825">
+							<Log Message="Equipping Sphairai Atma" />
+							<RunCode Name="SphairaiAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>
+					<If Condition="ClassName == ((ClassJobType.Ninja))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 9251">
+							<Log Message="Equipping Yoshimitsu Atma" />
+							<RunCode Name="YoshimitsuAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>
+					<If Condition="ClassName == ((ClassJobType.Paladin))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7824">
+							<Log Message="Equipping Curtana Atma" />
+							<RunCode Name="CurtanaAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>
+					<If Condition="ClassName == ((ClassJobType.Paladin))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.OffHand].RawItemId != 7833">
+							<Log Message="Equipping Holy Shield Atma" />
+							<RunCode Name="HolyShieldAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>			
+					<If Condition="ClassName == ((ClassJobType.Scholar))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7832">
+							<Log Message="Equipping Omnilex Atma" />
+							<RunCode Name="OmnilexAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>
+					<If Condition="ClassName == ((ClassJobType.Summoner))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7831">
+							<Log Message="Equipping Viel of Wiyu Atma" />
+							<RunCode Name="VeilAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>	
+					<If Condition="ClassName == ((ClassJobType.Warrior))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7826">
+							<Log Message="Equipping Bravura Atma" />
+							<RunCode Name="BravuraAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>
+					<If Condition="ClassName == ((ClassJobType.WhiteMage))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7829">
+							<Log Message="Equipping Thyrus Atma" />
+							<RunCode Name="ThyrusAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>				
+					<Log Message="Moving to Netherfall II - Coerthas Central Whitebrim Front 'Got a Gut Feeling about This'" />
+						<If Condition="not IsOnMap(155)">
+							<TeleportTo Name="155 " AetheryteId="23"/>
+						</If>			
+						<FlyTo XYZ="-474.1803, 211, -232.8224" land="true"/>
+						<LLoadProfile Path="../GuildLeves/Whitebrim/Got a Gut Feeling about This.xml"/>
+				</If>
+				<!-- Netherfall II Guildleves Task 2 -->
+				<If condition="not ZodiacManager.CurrentBook.GuildleveTask2Completed">
+					<If Condition="ClassName == ((ClassJobType.Bard))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7828">
+							<Log Message="Equipping Artemis Bow Atma" />
+							<RunCode Name="ArtemisAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>
+					<If Condition="ClassName == ((ClassJobType.BlackMage))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7830">
+							<Log Message="Equipping Stardust Rod Atma" />
+							<RunCode Name="StardustAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>
+					<If Condition="ClassName == ((ClassJobType.Dragoon))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7827">
+							<Log Message="Equipping Gae Bolg Atma" />
+							<RunCode Name="GaeBolgAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>	
+					<If Condition="ClassName == ((ClassJobType.Monk))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7825">
+							<Log Message="Equipping Sphairai Atma" />
+							<RunCode Name="SphairaiAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>
+					<If Condition="ClassName == ((ClassJobType.Ninja))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 9251">
+							<Log Message="Equipping Yoshimitsu Atma" />
+							<RunCode Name="YoshimitsuAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>
+					<If Condition="ClassName == ((ClassJobType.Paladin))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7824">
+							<Log Message="Equipping Curtana Atma" />
+							<RunCode Name="CurtanaAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>
+					<If Condition="ClassName == ((ClassJobType.Paladin))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.OffHand].RawItemId != 7833">
+							<Log Message="Equipping Holy Shield Atma" />
+							<RunCode Name="HolyShieldAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>			
+					<If Condition="ClassName == ((ClassJobType.Scholar))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7832">
+							<Log Message="Equipping Omnilex Atma" />
+							<RunCode Name="OmnilexAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>
+					<If Condition="ClassName == ((ClassJobType.Summoner))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7831">
+							<Log Message="Equipping Viel of Wiyu Atma" />
+							<RunCode Name="VeilAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>	
+					<If Condition="ClassName == ((ClassJobType.Warrior))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7826">
+							<Log Message="Equipping Bravura Atma" />
+							<RunCode Name="BravuraAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>
+					<If Condition="ClassName == ((ClassJobType.WhiteMage))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7829">
+							<Log Message="Equipping Thyrus Atma" />
+							<RunCode Name="ThyrusAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>				
+					<Log Message="Moving to Netherfall II - Northern Thanalan Camp Bluefog 'Subdueing the Subprime'" />
+
+				</If>
+				<!-- Netherfall II Guildleves Task 3 -->
+				<If condition="not ZodiacManager.CurrentBook.GuildleveTask3Completed">
+					<If Condition="ClassName == ((ClassJobType.Bard))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7828">
+							<Log Message="Equipping Artemis Bow Atma" />
+							<RunCode Name="ArtemisAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>
+					<If Condition="ClassName == ((ClassJobType.BlackMage))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7830">
+							<Log Message="Equipping Stardust Rod Atma" />
+							<RunCode Name="StardustAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>
+					<If Condition="ClassName == ((ClassJobType.Dragoon))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7827">
+							<Log Message="Equipping Gae Bolg Atma" />
+							<RunCode Name="GaeBolgAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>	
+					<If Condition="ClassName == ((ClassJobType.Monk))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7825">
+							<Log Message="Equipping Sphairai Atma" />
+							<RunCode Name="SphairaiAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>
+					<If Condition="ClassName == ((ClassJobType.Ninja))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 9251">
+							<Log Message="Equipping Yoshimitsu Atma" />
+							<RunCode Name="YoshimitsuAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>
+					<If Condition="ClassName == ((ClassJobType.Paladin))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7824">
+							<Log Message="Equipping Curtana Atma" />
+							<RunCode Name="CurtanaAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>
+					<If Condition="ClassName == ((ClassJobType.Paladin))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.OffHand].RawItemId != 7833">
+							<Log Message="Equipping Holy Shield Atma" />
+							<RunCode Name="HolyShieldAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>			
+					<If Condition="ClassName == ((ClassJobType.Scholar))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7832">
+							<Log Message="Equipping Omnilex Atma" />
+							<RunCode Name="OmnilexAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>
+					<If Condition="ClassName == ((ClassJobType.Summoner))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7831">
+							<Log Message="Equipping Viel of Wiyu Atma" />
+							<RunCode Name="VeilAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>	
+					<If Condition="ClassName == ((ClassJobType.Warrior))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7826">
+							<Log Message="Equipping Bravura Atma" />
+							<RunCode Name="BravuraAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>
+					<If Condition="ClassName == ((ClassJobType.WhiteMage))"> 
+						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7829">
+							<Log Message="Equipping Thyrus Atma" />
+							<RunCode Name="ThyrusAtma" />
+							<WaitTimer WaitTime="3" />
+						</If>
+					</If>					
+					<Log Message="Moving to Netherfall II - Mor Dhona Saint Coinarch's Find 'Who Write History'" />
+					<If Condition="not IsOnMap(156)">
+						<TeleportTo Name="Revenant's Toll " AetheryteId="24"/>
+					</If>			
+					<FlyTo XYZ="462.438, -4.445982, -469.9096" land="true"/>
+					<LLoadProfile Path="../GuildLeves/Sain Coinach's Find/Who Writes History.xml"/>	
+				</If>
+				<!-- Book completed -->
+				<If condition="HasAtLeast(2001303,1) and ZodiacManager.CurrentBook.KillTask1Completed and ZodiacManager.CurrentBook.KillTask2Completed and ZodiacManager.CurrentBook.KillTask3Completed and ZodiacManager.CurrentBook.KillTask4Completed and ZodiacManager.CurrentBook.KillTask5Completed and ZodiacManager.CurrentBook.KillTask6Completed and ZodiacManager.CurrentBook.KillTask7Completed and ZodiacManager.CurrentBook.KillTask8Completed and ZodiacManager.CurrentBook.KillTask9Completed and ZodiacManager.CurrentBook.KillTask10Completed and ZodiacManager.CurrentBook.DungeonTask1Completed and ZodiacManager.CurrentBook.DungeonTask2Completed and ZodiacManager.CurrentBook.DungeonTask3Completed and ZodiacManager.CurrentBook.FateTask1Completed and ZodiacManager.CurrentBook.FateTask2Completed and ZodiacManager.CurrentBook.FateTask3Completed and ZodiacManager.CurrentBook.GuildleveTask1Completed and ZodiacManager.CurrentBook.GuildleveTask2Completed and ZodiacManager.CurrentBook.GuildleveTask3Completed">				
+					<Log Message="Netherfall II completed. Buying Netherfall III" />
+					<If Condition="not IsOnMap(156)">
+						<TeleportTo AetheryteId="24"/> 
+					</If>
+					<GetTo ZoneId="156" XYZ="71.94617,33.06656,-706.2944"/>						
+				</If>
+			</If>
+
+
 			
   </Order>
  	<CodeChunks>

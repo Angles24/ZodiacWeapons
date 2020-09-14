@@ -18,6 +18,7 @@
 		<TeleportTo Name="Fallgourd Float" AetheryteId="7" />
 	</If>
 	<NoCombatMoveTo Name="ixali_windtalon" XYZ="-70.89735, -7.248418, -68.06041"/>
-      <Grind grindRef="ixali_windtalon" while="True" />
+      <Grind grindRef="ixali_windtalon" while="not ZodiacManager.CurrentBook.KillTask6Completed" />
+	  <LLoadProfile Path="../../Start.xml"/>
 	</Order>
 	</Profile>

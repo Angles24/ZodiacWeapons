@@ -18,6 +18,7 @@
 		<TeleportTo Name="Hawthorne Hut" AetheryteId="4" />
 	</If>
 	<NoCombatMoveTo Name="Sylph Bonnet" XYZ="230.6563, -21.62398, -402.8146"/>
-    <Grind grindRef="Sylph Bonnet" while="True" />
+    <Grind grindRef="Sylph Bonnet" while="not ZodiacManager.CurrentBook.KillTask7Completed" />
+	<LLoadProfile Path="../../Start.xml"/>
   </Order>
 </Profile>

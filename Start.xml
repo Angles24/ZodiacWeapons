@@ -16,7 +16,7 @@
 <!ENTITY nin "0"> 		
 <!ENTITY pld "1"> 		
 <!ENTITY sch "0"> 
-<!ENTITY smn "1"> 
+<!ENTITY smn "0"> 
 <!ENTITY war "0"> 
 <!ENTITY whm "0"> 
 <!-- 		Items required for quest. Have these in your inventory before starting profile.
@@ -41,7 +41,7 @@
   <Name>Start Relic Weapon</Name>
   <BehaviorDirectory></BehaviorDirectory>
   <Order>
-	<RunCode Name="DisableAnimus"/>	
+	<RunCode Name="Disable_Flight"/>	
 	<!-- Load Paladin -->
 	<If Condition="&pld; == 1">
 		<If Condition="not ClassName == ClassJobType.Paladin">	
@@ -114,9 +114,9 @@
 	</If>	
   </Order>
   <CodeChunks>
-	<CodeChunk Name="DisableAnimus">
+		<CodeChunk Name="Disable_Flight">
 		<![CDATA[
-			foreach (var plugin in PluginManager.Plugins.Where(p => p.Plugin.Name == "Animus Book HS"))
+			foreach (var plugin in PluginManager.Plugins.Where(p => p.Plugin.Name == "Enable Flight" || p.Plugin.Name == "启用飞行"))
 			{
 			try
 			{
@@ -125,6 +125,6 @@
 			catch (Exception ex) {  }
 			}
 		]]>
-	</CodeChunk>
+		</CodeChunk>
    </CodeChunks>	
 </Profile>

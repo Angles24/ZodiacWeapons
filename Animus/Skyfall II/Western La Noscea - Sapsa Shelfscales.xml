@@ -18,6 +18,7 @@
 		<TeleportTo Name="Aleport" AetheryteId="14" />
 	</If>
 	<NoCombatMoveTo Name="Sapsa Shelfscales" XYZ="-357.3316, -39.56125, -358.9421"/>
-    <Grind grindRef="Sapsa Shelfscales" while="True" />
+    <Grind grindRef="Sapsa Shelfscales" while="not ZodiacManager.CurrentBook.KillTask10Completed" />
+	<LLoadProfile Path="../../Start.xml"/>
   </Order>
 </Profile>

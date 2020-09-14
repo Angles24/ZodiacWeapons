@@ -11,14 +11,14 @@
 	<KillRadius>50</KillRadius>
 	<BehaviorDirectory>..\..\Quest Behaviors</BehaviorDirectory>
 	<Order>	
-			<If Condition="not ExBuddy.Windows.GuildLeve.HasLeve(875)">
+			<If Condition="not ExBuddy.Windows.GuildLeve.HasLeve(873)">
 				<If Condition="not IsOnMap(156)">
 					<TeleportTo Name="Revenant's Toll " AetheryteId="24"/>
 				</If>			
 				<FlyTo XYZ="462.438, -4.445982, -469.9096" land="true"/>
-				<ExPickupGuildLeve leveIds="875" leveType="Immortal" npcId="1007070" npcLocation="464.5914,-4.057395,-467.4297" Timeout="5" /> <!-- The Museum Is Closed -->
-				<If Condition="not ExBuddy.Windows.GuildLeve.HasLeve(875)">
-					<ExPickupGuildLeve leveIds="873" leveType="Immortal" npcId="1007070" npcLocation="464.5914,-4.057395,-467.4297" Timeout="5" /> <!-- Who Writes History -->				
+				<ExPickupGuildLeve leveIds="873" leveType="Immortal" npcId="1007070" npcLocation="464.5914,-4.057395,-467.4297" Timeout="5" /> <!-- Who Writes History -->
+				<If Condition="not ExBuddy.Windows.GuildLeve.HasLeve(873)">
+					<ExPickupGuildLeve leveIds="875" leveType="Immortal" npcId="1007070" npcLocation="464.5914,-4.057395,-467.4297" Timeout="5" /> <!-- The Museum Is Closed -->				
 				</If>
 			</If>	
 
