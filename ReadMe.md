@@ -92,3 +92,4 @@ You must already have levequests unlocked for the Whitebrim, Saint Coinarch's Fi
 Levequests sometimes don't turn in all the way. May have to turn them in manually.
 
 Copperbell Mines (Hard): One of the Collapsed Rocks has a smaller hitbox then RB thinks it does. Sometimes melee classes don't get close enough. Watch this.
+The Tousand Maws of Toto-Rak: The meshing here is absolutely horrible. Keep an eye on it as you run as it may not be able to get to some of the photocells that drop. And could possibly get stuck on things.
