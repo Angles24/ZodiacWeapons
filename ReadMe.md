@@ -86,10 +86,12 @@ You will also need the latest version of LlamaLibrary installed in your botbases
 If you die at any time, you'll need to restart the bot.
 
 * Fates
-	* Fates are wonky. Mostly due to Navigation with RB, so don't completely AFK during this part.
+	* Fates are wonky. Mostly due to Navigation with RB, so don't completely AFK during this part. Or ever, really.
+	
 * Dungeons
 	* Copperbell Mines (Hard): One of the Collapsed Rocks has a smaller hitbox then RB thinks it does. Sometimes melee classes don't get close enough. Watch this.
 	* The Tousand Maws of Toto-Rak: The meshing here is absolutely horrible. Keep an eye on it as you run as it may not be able to get to some of the photocells that drop. And could possibly get stuck on things.
+	
 * Leves
 	* You must already have levequests unlocked for the Whitebrim, Saint Coinarch's Find and Camp Bluefog. I can't automate those quests yet as they combine a quest and a levequest in one.
 	* Levequests sometimes don't turn in all the way. May have to turn them in manually.
