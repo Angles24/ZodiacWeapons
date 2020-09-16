@@ -4,7 +4,7 @@
    <GrindAreas>
    <GrindArea name="violet_screech">
         <Hotspots>
-			<Hotspot Radius="500" XYZ="131.0687, -23.35597, -467.1554" name="violet_screech" />
+			<Hotspot Radius="500" XYZ="161.1987, -26.37445, -525.7709" name="violet_screech" />
 		</Hotspots>
 			<TargetMobs>
 				<TargetMob id="2319"  /> 
@@ -17,7 +17,7 @@
 	<If Condition="not IsOnMap(152)">
 		<TeleportTo Name="Hawthorne Hut" AetheryteId="4" />
 	</If>
-	<NoCombatMoveTo Name="violet_screech" XYZ="131.0687, -23.35597, -467.1554"/>
+	<NoCombatMoveTo Name="violet_screech" XYZ="161.1987, -26.37445, -525.7709"/>
       <Grind grindRef="violet_screech" while="not ZodiacManager.CurrentBook.KillTask9Completed" />
 	  <LLoadProfile Path="../../Start.xml"/>
 	</Order>

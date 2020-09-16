@@ -929,7 +929,7 @@
 						</If>
 					</If>				
 					<Log Message="Moving to Skyfire I - Tam Tara Deepcroft" />
-					<LLoadProfile Path="../Dungeons/TamTaraDeepcroft.xml"/>
+					<LLoadProfile Path="../Dungeons/Tam Tara Deepcroft.xml"/>
 				</If>
 				<!-- Skyfire I Dungeons Task 2 -->
 				<If condition="not ZodiacManager.CurrentBook.DungeonTask2Completed">
@@ -1011,7 +1011,7 @@
 						</If>
 					</If>					
 					<Log Message="Moving to Skyfire I - The Stone Vigil" />
-					<LLoadProfile Path="../Dungeons/TheStoneVigil.xml"/>
+					<LLoadProfile Path="../Dungeons/The Stone Vigil.xml"/>
 				</If>
 				<!-- Skyfire I Dungeons Task 3 -->
 				<If condition="not ZodiacManager.CurrentBook.DungeonTask3Completed">
@@ -8191,10 +8191,10 @@
 				</If>
 			</If>
 
-		<!-- Netherfall II -->	
+		<!-- Netherfall I -->	
 			<If Condition="HasAtLeast(2001303,1)">
-			<!-- Netherfall II Enemies -->
-				<!-- Netherfall II Kill Task 1 -->	
+			<!-- Netherfall I Enemies -->
+				<!-- Netherfall I Kill Task 1 -->	
 				<If condition="not ZodiacManager.CurrentBook.KillTask1Completed">
 					<If Condition="ClassName == ((ClassJobType.Bard))"> 
 						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7828">
@@ -8273,10 +8273,10 @@
 							<WaitTimer WaitTime="3" />
 						</If>
 					</If>			
-					<Log Message="Moving to Netherfall II - Southern Thanalan - Amalj'aa Brigands" />
-					<LLoadProfile Path="../Animus/Netherfall II/Southern Thanalan - Amalj'aa Brigands.xml"/>
+					<Log Message="Moving to Netherfall I - Southern Thanalan - Amalj'aa Brigands" />
+					<LLoadProfile Path="../Animus/Netherfall I/Southern Thanalan - Amalj'aa Brigands.xml"/>
 				</If>
-				<!-- Netherfall II Kill Task 2 -->		
+				<!-- Netherfall I Kill Task 2 -->		
 				<If condition="not ZodiacManager.CurrentBook.KillTask2Completed">
 					<If Condition="ClassName == ((ClassJobType.Bard))"> 
 						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7828">
@@ -8355,10 +8355,10 @@
 							<WaitTimer WaitTime="3" />
 						</If>
 					</If>				
-					<Log Message="Moving to Netherfall II - South Shroud - Lesser Kalong" />
-					<LLoadProfile Path="../Animus/Netherfall II/South Shroud - Lesser Kalong.xml"/>
+					<Log Message="Moving to Netherfall I - South Shroud - Lesser Kalong" />
+					<LLoadProfile Path="../Animus/Netherfall I/South Shroud - Lesser Kalong.xml"/>
 				</If>
-				<!-- Netherfall II Kill Task 3 -->	
+				<!-- Netherfall I Kill Task 3 -->	
 				<If condition="not ZodiacManager.CurrentBook.KillTask3Completed">
 					<If Condition="ClassName == ((ClassJobType.Bard))"> 
 						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7828">
@@ -8437,10 +8437,10 @@
 							<WaitTimer WaitTime="3" />
 						</If>
 					</If>					
-					<Log Message="Moving to Netherfall II - Mor Dhona - 5th Cohort Laquearius" />
-					<LLoadProfile Path="../Animus/Netherfall II/Mor Dhona - 5th Cohort Laquearius.xml"/>
+					<Log Message="Moving to Netherfall I - Mor Dhona - 5th Cohort Laquearius" />
+					<LLoadProfile Path="../Animus/Netherfall I/Mor Dhona - 5th Cohort Laquearius.xml"/>
 				</If>
-				<!-- Netherfall II Kill Task 4 -->	
+				<!-- Netherfall I Kill Task 4 -->	
 				<If condition="not ZodiacManager.CurrentBook.KillTask4Completed">
 					<If Condition="ClassName == ((ClassJobType.Bard))"> 
 						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7828">
@@ -8519,10 +8519,10 @@
 							<WaitTimer WaitTime="3" />
 						</If>
 					</If>					
-					<Log Message="Moving to Netherfall II - Mor Dhona - Gigas Sozu" />
-					<LLoadProfile Path="../Animus/Netherfall II/Mor Dhona - Gigas Sozu.xml"/>
+					<Log Message="Moving to Netherfall I - Mor Dhona - Gigas Sozu" />
+					<LLoadProfile Path="../Animus/Netherfall I/Mor Dhona - Gigas Sozu.xml"/>
 				</If>
-				<!-- Netherfall II Kill Task 5 -->	
+				<!-- Netherfall I Kill Task 5 -->	
 				<If condition="not ZodiacManager.CurrentBook.KillTask5Completed">
 					<If Condition="ClassName == ((ClassJobType.Bard))"> 
 						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7828">
@@ -8601,10 +8601,10 @@
 							<WaitTimer WaitTime="3" />
 						</If>
 					</If>					
-					<Log Message="Moving to Netherfall II - Coerthas - Snow Wolf" />
-					<LLoadProfile Path="../Animus/Netherfall II/Coerthas - Snow Wolf.xml"/>
+					<Log Message="Moving to Netherfall I - Coerthas - Snow Wolf" />
+					<LLoadProfile Path="../Animus/Netherfall I/Coerthas - Snow Wolf.xml"/>
 				</If>
-				<!-- Netherfall II Kill Task 6 -->	
+				<!-- Netherfall I Kill Task 6 -->	
 				<If condition="not ZodiacManager.CurrentBook.KillTask6Completed">
 					<If Condition="ClassName == ((ClassJobType.Bard))"> 
 						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7828">
@@ -8683,10 +8683,10 @@
 							<WaitTimer WaitTime="3" />
 						</If>
 					</If>					
-					<Log Message="Moving to Netherfall II - North Shroud - Ixali Windtalon" />
-					<LLoadProfile Path="../Animus/Netherfall II/North Shroud - Ixali Windtalon.xml"/>
+					<Log Message="Moving to Netherfall I - North Shroud - Ixali Windtalon" />
+					<LLoadProfile Path="../Animus/Netherfall I/North Shroud - Ixali Windtalon.xml"/>
 				</If>
-				<!-- Netherfall II Kill Task 7 -->	
+				<!-- Netherfall I Kill Task 7 -->	
 				<If condition="not ZodiacManager.CurrentBook.KillTask7Completed">
 					<If Condition="ClassName == ((ClassJobType.Bard))"> 
 						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7828">
@@ -8766,9 +8766,9 @@
 						</If>
 					</If>				
 					<Log Message="Moving to Outer La Noscea - Outer La Noscea - U'Ghamaro Priest" />
-					<LLoadProfile Path="../Animus/Netherfall II/Outer La Noscea - U'Ghamaro Priest.xml"/>
+					<LLoadProfile Path="../Animus/Netherfall I/Outer La Noscea - U'Ghamaro Priest.xml"/>
 				</If>
-				<!-- Netherfall II Kill Task 8 -->	
+				<!-- Netherfall I Kill Task 8 -->	
 				<If condition="not ZodiacManager.CurrentBook.KillTask8Completed">
 					<If Condition="ClassName == ((ClassJobType.Bard))"> 
 						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7828">
@@ -8847,10 +8847,10 @@
 							<WaitTimer WaitTime="3" />
 						</If>
 					</If>					
-					<Log Message="Moving to Netherfall II - Western Thanlan - 4th Cohort Secutor" />
-					<LLoadProfile Path="../Animus/Netherfall II/Western Thanlan - 4th Cohort Secutor.xml"/>
+					<Log Message="Moving to Netherfall I - Western Thanlan - 4th Cohort Secutor" />
+					<LLoadProfile Path="../Animus/Netherfall I/Western Thanlan - 4th Cohort Secutor.xml"/>
 				</If>
-				<!-- Netherfall II Kill Task 9 -->	
+				<!-- Netherfall I Kill Task 9 -->	
 				<If condition="not ZodiacManager.CurrentBook.KillTask9Completed">
 					<If Condition="ClassName == ((ClassJobType.Bard))"> 
 						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7828">
@@ -8929,10 +8929,10 @@
 							<WaitTimer WaitTime="3" />
 						</If>
 					</If>					
-					<Log Message="Moving to Netherfall II - East Shroud - Violet Screech" />
-					<LLoadProfile Path="../Animus/Netherfall II/East Shroud - Violet Screech.xml"/>
+					<Log Message="Moving to Netherfall I - East Shroud - Violet Screech" />
+					<LLoadProfile Path="../Animus/Netherfall I/East Shroud - Violet Screech.xml"/>
 				</If>
-				<!-- Netherfall II Kill Task 10 -->	
+				<!-- Netherfall I Kill Task 10 -->	
 				<If condition="not ZodiacManager.CurrentBook.KillTask10Completed">
 					<If Condition="ClassName == ((ClassJobType.Bard))"> 
 						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7828">
@@ -9011,11 +9011,11 @@
 							<WaitTimer WaitTime="3" />
 						</If>
 					</If>				
-					<Log Message="Moving to Netherfall II - Western La Noscea - Sapsa Shelfclaws" />
-					<LLoadProfile Path="../Animus/Netherfall II/Western La Noscea - Sapsa Shelfclaws.xml"/>
+					<Log Message="Moving to Netherfall I - Western La Noscea - Sapsa Shelfclaws" />
+					<LLoadProfile Path="../Animus/Netherfall I/Western La Noscea - Sapsa Shelfclaws.xml"/>
 				</If>
-			<!-- Netherfall II Dungeons -->
-				<!-- Netherfall II Dungeon Task 1 -->	
+			<!-- Netherfall I Dungeons -->
+				<!-- Netherfall I Dungeon Task 1 -->	
 				<If condition="not ZodiacManager.CurrentBook.DungeonTask1Completed">
 					<If Condition="ClassName == ((ClassJobType.Bard))"> 
 						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7828">
@@ -9094,10 +9094,10 @@
 							<WaitTimer WaitTime="3" />
 						</If>
 					</If>				
-					<Log Message="Moving to Netherfall II - Cutter's Cry" />
+					<Log Message="Moving to Netherfall I - Cutter's Cry" />
 					<LLoadProfile Path="../Dungeons/Cutter's Cry.xml"/>
 				</If>
-				<!-- Netherfall II Dungeon Task 2 -->
+				<!-- Netherfall I Dungeon Task 2 -->
 				<If condition="not ZodiacManager.CurrentBook.DungeonTask2Completed">
 					<If Condition="ClassName == ((ClassJobType.Bard))"> 
 						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7828">
@@ -9176,10 +9176,10 @@
 							<WaitTimer WaitTime="3" />
 						</If>
 					</If>					
-					<Log Message="Moving to Netherfall II - Pharos Sirius" />
+					<Log Message="Moving to Netherfall I - Pharos Sirius" />
 					<LLoadProfile Path="../Dungeons/Pharos Sirius.xml"/>
 				</If>
-				<!-- Netherfall II Dungeon Task 3 -->
+				<!-- Netherfall I Dungeon Task 3 -->
 				<If condition="not ZodiacManager.CurrentBook.DungeonTask3Completed">
 					<If Condition="ClassName == ((ClassJobType.Bard))"> 
 						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7828">
@@ -9258,11 +9258,11 @@
 							<WaitTimer WaitTime="3" />
 						</If>
 					</If>					
-					<Log Message="Moving to Netherfall II - The Lost City of Amdapor" />
+					<Log Message="Moving to Netherfall I - The Lost City of Amdapor" />
 					<LLoadProfile Path="../Dungeons/The Lost City of Amdapor.xml"/>
 				</If>
-			<!-- Netherfall II Fates -->
-				<!-- Netherfall II Fate Task 1 -->
+			<!-- Netherfall I Fates -->
+				<!-- Netherfall I Fate Task 1 -->
 				<If condition="not ZodiacManager.CurrentBook.FateTask1Completed">
 					<If Condition="ClassName == ((ClassJobType.Bard))"> 
 						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7828">
@@ -9341,7 +9341,7 @@
 							<WaitTimer WaitTime="3" />
 						</If>
 					</If>					
-					<Log Message="Moving to Netherfall II - Coerthas Central Bellyful FATE" />
+					<Log Message="Moving to Netherfall I - Coerthas Central Bellyful FATE" />
 					<While Condition="not ZodiacManager.CurrentBook.FateTask1Completed">
 						<If Condition="not IsOnMap(154)">
 							<TeleportTo AetheryteId="7"/>
@@ -9351,7 +9351,7 @@
 						<LLFate FateId="632" MinLevel="1" MaxLevel="50" while="ZodiacManager.CurrentBook.FateTask1Completed"/> <!-- Rude Awakening -->								  				  
 					</While>						
 				</If>
-				<!-- Netherfall II Fate Task 2 -->
+				<!-- Netherfall I Fate Task 2 -->
 				<If condition="not ZodiacManager.CurrentBook.FateTask2Completed">
 					<If Condition="ClassName == ((ClassJobType.Bard))"> 
 						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7828">
@@ -9430,14 +9430,14 @@
 							<WaitTimer WaitTime="3" />
 						</If>
 					</If>				
-					<Log Message="Moving to Netherfall II - Western La Noscea The King's Justic FATE" />
+					<Log Message="Moving to Netherfall I - Western La Noscea The King's Justic FATE" />
 					<While Condition="not ZodiacManager.CurrentBook.FateTask2Completed">
 						<GetTo ZoneId="147" XYZ="21.62751, 3.989435, 396.3339" land="true"/>
 						<Log Message="Waiting on FATE 'The Ceruleum Road'" />
 						<LLFate FateId="642" MinLevel="1" MaxLevel="50" while="ZodiacManager.CurrentBook.FateTask2Completed"/> <!-- The Ceruleum Road -->							  				  
 					</While>					
 				</If>
-				<!-- Netherfall II Fate Task 3 -->
+				<!-- Netherfall I Fate Task 3 -->
 				<If condition="not ZodiacManager.CurrentBook.FateTask3Completed">
 					<If Condition="ClassName == ((ClassJobType.Bard))"> 
 						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7828">
@@ -9516,7 +9516,7 @@
 							<WaitTimer WaitTime="3" />
 						</If>
 					</If>					
-					<Log Message="Moving to Netherfall II - Eastern Thanalan Quartz Coupling" />
+					<Log Message="Moving to Netherfall I - Eastern Thanalan Quartz Coupling" />
 					<While Condition="not ZodiacManager.CurrentBook.FateTask3Completed">
 						<If Condition="not IsOnMap(155)">
 							<TeleportTo AetheryteId="23"/>
@@ -9526,8 +9526,8 @@
 						<LLFate FateId="499" MinLevel="1" MaxLevel="50" while="ZodiacManager.CurrentBook.FateTask3Completed"/> <!-- The Four Winds -->							  				  
 					</While>				
 				</If>				
-			<!-- Netherfall II Guildleves -->
-				<!-- Netherfall II Guildleves Task 1 -->
+			<!-- Netherfall I Guildleves -->
+				<!-- Netherfall I Guildleves Task 1 -->
 				<If condition="not ZodiacManager.CurrentBook.GuildleveTask1Completed">
 					<If Condition="ClassName == ((ClassJobType.Bard))"> 
 						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7828">
@@ -9606,14 +9606,14 @@
 							<WaitTimer WaitTime="3" />
 						</If>
 					</If>				
-					<Log Message="Moving to Netherfall II - Coerthas Central Whitebrim Front 'Got a Gut Feeling about This'" />
+					<Log Message="Moving to Netherfall I - Coerthas Central Whitebrim Front 'Got a Gut Feeling about This'" />
 						<If Condition="not IsOnMap(155)">
 							<TeleportTo Name="155 " AetheryteId="23"/>
 						</If>			
 						<FlyTo XYZ="-474.1803, 211, -232.8224" land="true"/>
 						<LLoadProfile Path="../GuildLeves/Whitebrim/Got a Gut Feeling about This.xml"/>
 				</If>
-				<!-- Netherfall II Guildleves Task 2 -->
+				<!-- Netherfall I Guildleves Task 2 -->
 				<If condition="not ZodiacManager.CurrentBook.GuildleveTask2Completed">
 					<If Condition="ClassName == ((ClassJobType.Bard))"> 
 						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7828">
@@ -9692,10 +9692,10 @@
 							<WaitTimer WaitTime="3" />
 						</If>
 					</If>				
-					<Log Message="Moving to Netherfall II - Northern Thanalan Camp Bluefog 'Subdueing the Subprime'" />
-
+					<Log Message="Moving to Netherfall I - Northern Thanalan Camp Bluefog 'Subdueing the Subprime'" />
+					<LLoadProfile Path="../GuildLeves/Camp Bluefog/Subduing the Subprime.xml"/>
 				</If>
-				<!-- Netherfall II Guildleves Task 3 -->
+				<!-- Netherfall I Guildleves Task 3 -->
 				<If condition="not ZodiacManager.CurrentBook.GuildleveTask3Completed">
 					<If Condition="ClassName == ((ClassJobType.Bard))"> 
 						<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7828">
@@ -9774,7 +9774,7 @@
 							<WaitTimer WaitTime="3" />
 						</If>
 					</If>					
-					<Log Message="Moving to Netherfall II - Mor Dhona Saint Coinarch's Find 'Who Write History'" />
+					<Log Message="Moving to Netherfall I - Mor Dhona Saint Coinarch's Find 'Who Write History'" />
 					<If Condition="not IsOnMap(156)">
 						<TeleportTo Name="Revenant's Toll " AetheryteId="24"/>
 					</If>			
@@ -9783,11 +9783,12 @@
 				</If>
 				<!-- Book completed -->
 				<If condition="HasAtLeast(2001303,1) and ZodiacManager.CurrentBook.KillTask1Completed and ZodiacManager.CurrentBook.KillTask2Completed and ZodiacManager.CurrentBook.KillTask3Completed and ZodiacManager.CurrentBook.KillTask4Completed and ZodiacManager.CurrentBook.KillTask5Completed and ZodiacManager.CurrentBook.KillTask6Completed and ZodiacManager.CurrentBook.KillTask7Completed and ZodiacManager.CurrentBook.KillTask8Completed and ZodiacManager.CurrentBook.KillTask9Completed and ZodiacManager.CurrentBook.KillTask10Completed and ZodiacManager.CurrentBook.DungeonTask1Completed and ZodiacManager.CurrentBook.DungeonTask2Completed and ZodiacManager.CurrentBook.DungeonTask3Completed and ZodiacManager.CurrentBook.FateTask1Completed and ZodiacManager.CurrentBook.FateTask2Completed and ZodiacManager.CurrentBook.FateTask3Completed and ZodiacManager.CurrentBook.GuildleveTask1Completed and ZodiacManager.CurrentBook.GuildleveTask2Completed and ZodiacManager.CurrentBook.GuildleveTask3Completed">				
-					<Log Message="Netherfall II completed. Buying Netherfall III" />
+					<Log Message="Netherfall I completed. Buying Netherfall II" />
 					<If Condition="not IsOnMap(156)">
 						<TeleportTo AetheryteId="24"/> 
 					</If>
-					<GetTo ZoneId="156" XYZ="71.94617,33.06656,-706.2944"/>						
+					<GetTo ZoneId="156" XYZ="71.94617,33.06656,-706.2944"/>	
+					<RunCode name="BuyWindBooks"/>	
 				</If>
 			</If>
 
@@ -9882,6 +9883,42 @@
                 await Buddy.Coroutines.Coroutine.Sleep(1000);
                 if (ff14bot.RemoteWindows.SelectString.IsOpen)
                     ff14bot.RemoteWindows.SelectString.ClickSlot(1);
+				await Buddy.Coroutines.Coroutine.Sleep(1000);
+                if (ff14bot.RemoteWindows.SelectString.IsOpen)
+                    ff14bot.RemoteWindows.SelectString.ClickSlot(0);					
+                await Buddy.Coroutines.Coroutine.Sleep(1000);
+                 if (ff14bot.RemoteWindows.SelectYesno.IsOpen)
+                    ff14bot.RemoteWindows.SelectYesno.ClickYes();
+                await Buddy.Coroutines.Coroutine.Sleep(1000);
+                if (await Coroutine.Wait(1000, () => Talk.DialogOpen))
+                {
+                    Talk.Next();
+                }
+                if (await Coroutine.Wait(1000, () => Talk.DialogOpen))
+                {
+                    Talk.Next();
+                }
+                if (await Coroutine.Wait(1000, () => Talk.DialogOpen))
+                {
+                    Talk.Next();				 			
+                }				
+            ]]>
+        </CodeChunk>
+        <CodeChunk Name="BuyWindBooks">
+            <![CDATA[ 
+                await Buddy.Coroutines.Coroutine.Sleep(500);
+                ff14bot.Managers.GameObjectManager.GetObjectByNPCId(1006976).Interact();
+                await Buddy.Coroutines.Coroutine.Sleep(1000);
+                if (ff14bot.RemoteWindows.SelectIconString.IsOpen)
+                    ff14bot.RemoteWindows.SelectIconString.ClickSlot(0);
+				await Buddy.Coroutines.Coroutine.Sleep(1000);	
+                if (await Coroutine.Wait(1000, () => Talk.DialogOpen))
+                {
+                    Talk.Next();
+                }
+                await Buddy.Coroutines.Coroutine.Sleep(1000);
+                if (ff14bot.RemoteWindows.SelectString.IsOpen)
+                    ff14bot.RemoteWindows.SelectString.ClickSlot(2);
 				await Buddy.Coroutines.Coroutine.Sleep(1000);
                 if (ff14bot.RemoteWindows.SelectString.IsOpen)
                     ff14bot.RemoteWindows.SelectString.ClickSlot(0);					

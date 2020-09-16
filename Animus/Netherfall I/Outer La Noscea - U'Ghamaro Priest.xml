@@ -4,7 +4,8 @@
    <GrindAreas>
    <GrindArea name="ughamaro_priest">
         <Hotspots>
-			<Hotspot Radius="500" XYZ="108.2132, 29.0041, -598.1495" name="ughamaro_priest" />
+			<Hotspot Radius="500" XYZ="90.87029, 21.52316, -641.2864"/>
+			<Hotspot Radius="500" XYZ="81.81933, 23.76285, -713.5776"/>
 		</Hotspots>
 			<TargetMobs>
 				<TargetMob id="1835"  /> 
