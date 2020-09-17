@@ -58,48 +58,24 @@
 				<RunCode name="OpenChest" />
 			</If>			
 		</If>
+		
 		<!-- Clear the Rosarium of Lalafuto 0/1 -->
 		<If Condition="GetInstanceTodo(1) == 0">
 			<Log Message="Clear the Rosarium of Lalafuto 0/1" />
 			<MoveTo XYZ="-15.16113, -17.99999, -0.1686751"/>
 			<Grind GrindRef="Avoirdupois1" While="GetInstanceTodo(1) == 0"/> <!-- Open First Door -->				
 		</If>
+		
 		<!-- Clear the Adytum of Lalafuto 0/1 -->
 		<If Condition="GetInstanceTodo(2) == 0">
 			<Log Message="Clear the Adytum of Lalafuto 0/1" />
-			<If condition="GameObjectManager.GetObjectByNPCId(2000651).IsVisible">
-				<MoveTo XYZ="14.03086, -19.00006, -20.11547"/>
-				<WaitTimer WaitTime="15" />
-			</If>				
-			<If condition="GameObjectManager.GetObjectByNPCId(2000651).IsVisible">
-				<MoveTo XYZ="16.50711, -19.00005, -15.52631"/>
-				<WaitTimer WaitTime="15" />
-			</If>			
-			<If condition="GameObjectManager.GetObjectByNPCId(2000651).IsVisible">
-				<MoveTo XYZ="9.322417, -19.00004, -21.10491"/>
-				<WaitTimer WaitTime="15" />
-			</If>
-			<If condition="GameObjectManager.GetObjectByNPCId(2000651).IsVisible">
-				<MoveTo XYZ="2.777714, -19.00001, -15.19517"/>
-				<WaitTimer WaitTime="15" />
-			</If>
-			<If condition="GameObjectManager.GetObjectByNPCId(2000651).IsVisible">
-				<MoveTo XYZ="9.638913, -19.00001, -8.745749"/>
-				<WaitTimer WaitTime="13" />
-			</If>
-			<Grind GrindRef="AvoirdupoisLeftDoor" While="GameObjectManager.GetObjectByNPCId(2000432).IsVisible"/> <!-- Open Right Door -->				
-			<MoveTo XYZ="9.100137, -19.00014, 20.79346"/>
-			<Grind GrindRef="AvoirdupoisRightDoor" While="GameObjectManager.GetObjectByNPCId(2000433).IsVisible"/> <!-- Open Right Door -->	
-			<MoveTo XYZ="9.888427, -18.54112, 55.41161"/>
-			<UseObject XYZ="8.987488,-17.39903,53.99815" NpcIds="2000415" condition="GameObjectManager.GetObjectByNPCId(2000415).IsVisible"/>
-			<MoveTo XYZ="8.005405, -19, -55.53722"/>
-			<UseObject XYZ="9.005134,-17.40953,-53.99197" NpcIds="2000416" condition="GameObjectManager.GetObjectByNPCId(2000416).IsVisible"/>
-			<MoveTo XYZ="66.00563, -47.95884, -24.10617"/>
+			<NoCombatMoveTo XYZ="66.00563, -47.95884, -24.10617"/>
 			<Grind GrindRef="SecondBoss" While="not GameObjectManager.GetObjectByNPCId(1569).CurrentHealth == 0"/> <!-- Fight second boss -->
 			<If Condition="&openchest; == 1">
 				<RunCode name="OpenChest" />
 			</If>				
 		</If>
+		
 		<!-- Tip the Scales of Judgment 0/1 -->
 		<If Condition="GetInstanceTodo(3) == 0">
 			<Log Message="Tip the Scales of Judgment 0/1" />
@@ -121,13 +97,12 @@
 				<WaitTimer WaitTime="15" />
 			</If>		
 			<Grind GrindRef="AvoirdupoisCourtyard" While="GameObjectManager.GetObjectByNPCId(2000434).IsVisible"/> <!-- Open courtyard Door -->	
-			<MoveTo XYZ="129.6967, -4.000001, -0.1147157"/>	
+			<MoveTo XYZ="129.6967, -4.000001, -0.1147157" distance="1"/>	
 			<Grind GrindRef="AvoirdupoisFinal" While="GameObjectManager.GetObjectByNPCId(2000435).IsVisible"/> <!-- Open final Door -->	
 			<MoveTo XYZ="190.142, -3.682699, -0.04042793"/>
-			<RunCode name="LeftPan"/>
-			<RunCode name="RightPan"/>
 			<RunCode name="Scales"/>
 		</If>
+		
 		<!-- Tip the Scales of Judgment 0/1 -->
 		<If Condition="GetInstanceTodo(4) == 0">
 			<MoveTo XYZ="212.5167, -4.00001, -0.4450949"/>

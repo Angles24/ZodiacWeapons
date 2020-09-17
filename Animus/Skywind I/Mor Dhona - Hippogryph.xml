@@ -19,6 +19,7 @@
 		<TeleportTo Name="Revenant's Toll" AetheryteId="24" />
 	</If>
 	<NoCombatMoveTo Name="Hippogryph" XYZ="295.5058, 21.49305, -704.1329"/>
-      <Grind grindRef="Hippogryph" while="True" />
+      <Grind grindRef="Hippogryph" while="not ZodiacManager.CurrentBook.KillTask5Completed" />
+	   <LLoadProfile Path="../../Start.xml"/>
 	</Order>
 	</Profile>

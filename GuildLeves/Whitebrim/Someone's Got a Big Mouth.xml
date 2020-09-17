@@ -1,24 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <!--
-  Profile: Whitebrim Leves
+  Profile: Someone's Got a Big Mouth Leves
   Authors: Zamphire
   Code Credit: TuckMeIntoBread, Kayla, Sodimm, y2krazy, Ken_512
 -->
 
 <Profile>
-	<Name>Whitebrim Leves</Name>
+	<Name>Someone's Got a Big Mouth Leves</Name>
 	<KillRadius>50</KillRadius>
 	<BehaviorDirectory>..\..\Quest Behaviors</BehaviorDirectory>
 	<Order>	
-			<If Condition="not ExBuddy.Windows.GuildLeve.HasLeve(849)">
+			<If Condition="not ExBuddy.Windows.GuildLeve.HasLeve(848)">
 				<If Condition="not IsOnMap(155)">
 					<TeleportTo Name="155 " AetheryteId="23"/>
 				</If>			
 				<FlyTo XYZ="-471.4019, 211, -233.8166" land="true"/>
-				<ExPickupGuildLeve leveIds="849" leveType="Maelstrom" npcId="1007069" npcLocation="-476.2188,211,-233.4173" Timeout="5" /> <!-- An Imp Mobile -->
-				<If Condition="not ExBuddy.Windows.GuildLeve.HasLeve(849)">
-					<ExPickupGuildLeve leveIds="850" leveType="Maelstrom" npcId="1007069" npcLocation="-476.2188,211,-233.4173" Timeout="5" /> <!-- Papal Dispensation -->				
+				<ExPickupGuildLeve leveIds="848" leveType="Maelstrom" npcId="1007069" npcLocation="-476.2188,211,-233.4173" Timeout="5" /> <!-- Someone's Got a Big Mouth -->
+				<If Condition="not ExBuddy.Windows.GuildLeve.HasLeve(848)">
+					<ExPickupGuildLeve leveIds="849" leveType="Maelstrom" npcId="1007069" npcLocation="-476.2188,211,-233.4173" Timeout="5" /> <!-- An Imp Mobile -->				
 				</If>
 			</If>	
 
@@ -35,12 +35,12 @@
 				<LLoadProfile Path="../../Start.xml"/>		
 			</If>
 			
-			<!-- Papal Dispensation -->
-			<If Condition="ExBuddy.Windows.GuildLeve.HasLeve(850)">
-				<GetTo ZoneId="155" XYZ="-409.8659, 225.0875, -149.9402"/>
-				<InitiateLeve LeveId="850"/> <!-- Papal Dispensation -->
+			<!-- Someone's Got a Big Mouth -->
+			<If Condition="ExBuddy.Windows.GuildLeve.HasLeve(848)">
+				<GetTo ZoneId="155" XYZ="-510.3486, 206.3344, -335.4715"/>
+				<InitiateLeve LeveId="848"/> <!-- Someone's Got a Big Mouth -->
 				<WaitTimer WaitTime="2" />
-				<Grind GrindRef="PapalDispensation" While="not ff14bot.RemoteWindows.SelectYesno.IsOpen"/> 						
+				<Grind GrindRef="SomeonesGotaBigMouth" While="not ff14bot.RemoteWindows.SelectYesno.IsOpen"/> 						
 				<WaitTimer WaitTime="1" />
 				<RunCode Name="CloseTimer"/>
 				<GetTo ZoneId="155" XYZ="-472.4178, 211, -233.0762"/>
@@ -50,14 +50,6 @@
 
 	</Order>
   <GrindAreas> 
- 	<GrindArea name="BlizzardBiast">
-        <Hotspots>
-			<Hotspot Radius="200" XYZ="-418.7997, 223.8091, -151.5482" />
-        </Hotspots>
-        <TargetMobs>
-			<TargetMob Name="Blizzard Biast" Id="1761" Weight="1" />					
-        </TargetMobs>		
-	</GrindArea>
  	<GrindArea name="AnImpMobile">
         <Hotspots>
 			<Hotspot Radius="200" XYZ="-602.0076, 209.7236, -346.7596" />
@@ -69,14 +61,12 @@
 			<TargetMob Name="Dusty Devilet" Id="1788" Weight="2" />	
         </TargetMobs>		
 	</GrindArea>	
-   	<GrindArea name="PapalDispensation">
+   	<GrindArea name="SomeonesGotaBigMouth">
         <Hotspots>
-			<Hotspot Radius="200" XYZ="-418.7997, 223.8091, -151.5482" />
+			<Hotspot Radius="200" XYZ="-485.2217,205.2312,-346.0594" />
         </Hotspots>
         <TargetMobs>
-			<TargetMob Name="Blood Bateleur" Id="1789" Weight="1" />
-			<TargetMob Name="Downcast Hippocerf" Id="1762" Weight="1" />
-			<TargetMob Name="Snowshoe Mouse" Id="1763" Weight="1" />			
+			<TargetMob Name="Mimas " Id="1786" Weight="1" />			
         </TargetMobs>		
 	</GrindArea>
   </GrindAreas>	

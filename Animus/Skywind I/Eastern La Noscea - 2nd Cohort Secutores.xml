@@ -20,7 +20,8 @@
 		<TeleportTo Name="Wineport" AetheryteId="12" />
 	</If>
 	<NoCombatMoveTo Name="secutor" XYZ="301.0808, 76.472, -16.33543"/>
-      <Grind grindRef="secutor" while="True" />
+      <Grind grindRef="secutor" while="not ZodiacManager.CurrentBook.KillTask10Completed" />
+	  <LLoadProfile Path="../../Start.xml"/>
 	</Order>
 	</Profile>
 

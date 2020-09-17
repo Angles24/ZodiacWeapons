@@ -18,6 +18,7 @@
 		<TeleportTo Name="Revenant's Toll" AetheryteId="24" />
 	</If>
 	<NoCombatMoveTo Name="Eques" XYZ="-575.4393, -3.216822, -369.9198"/>
-      <Grind grindRef="Eques" while="True" />
+      <Grind grindRef="Eques" while="not ZodiacManager.CurrentBook.KillTask3Completed" />
+	  <LLoadProfile Path="../../Start.xml"/>
 	</Order>
 	</Profile>

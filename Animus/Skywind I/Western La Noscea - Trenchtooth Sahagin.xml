@@ -18,6 +18,7 @@
 		<TeleportTo Name="Aleport" AetheryteId="14" />
 	</If>
 	<NoCombatMoveTo Name="trenchtooth_sahagin" XYZ="-72.0739, -25.79697, -84.91359"/>
-      <Grind grindRef="trenchtooth_sahagin" while="True" />
+      <Grind grindRef="trenchtooth_sahagin" while="not ZodiacManager.CurrentBook.KillTask6Completed" />
+	  <LLoadProfile Path="../../Start.xml"/>
 	</Order>
 	</Profile>

@@ -18,6 +18,7 @@
 		<TeleportTo Name="Ceruleum Processing Plant" AetheryteId="22" />
 	</If>
 	<NoCombatMoveTo Name="Ahriman" XYZ="150.3447, 36.99925, -0.1666906"/>
-      <Grind grindRef="Ahriman" while="True" />
+      <Grind grindRef="Ahriman" while="not ZodiacManager.CurrentBook.KillTask9Completed" />
+	  <LLoadProfile Path="../../Start.xml"/>
 	</Order>
 	</Profile>

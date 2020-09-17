@@ -20,6 +20,7 @@
 		<TeleportTo Name="Forgotten Springs" AetheryteId="20" />
 	</If>
 	<NoCombatMoveTo Name="amal_thm" XYZ="-36.94783, -0.9500495, -153.3837"/>
-      <Grind grindRef="amal_thm" while="True" />
+      <Grind grindRef="amal_thm" while="not ZodiacManager.CurrentBook.KillTask2Completed" />
+	  <LLoadProfile Path="../../Start.xml"/>
 	</Order>
 	</Profile>

@@ -19,7 +19,8 @@
 		<TeleportTo Name="Camp Overlook" AetheryteId="16" />
 	</If>
 	<NoCombatMoveTo Name="elite_roundsman" XYZ="269.5532, 21.50454, -812.5344"/>
-      <Grind grindRef="elite_roundsman" while="True" />
+      <Grind grindRef="elite_roundsman" while="not ZodiacManager.CurrentBook.KillTask8Completed" />
+	  <LLoadProfile Path="../../Start.xml"/>
 	</Order>
 	</Profile>
 

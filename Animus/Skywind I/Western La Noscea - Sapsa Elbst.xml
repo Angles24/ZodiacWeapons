@@ -19,7 +19,8 @@
 		<TeleportTo Name="Aleport" AetheryteId="14" />
 	</If>
 	<NoCombatMoveTo Name="sapsa_elbst" XYZ="-185.0424, -42.12393, -279.0041"/>
-      <Grind grindRef="sapsa_elbst" while="True" />
+      <Grind grindRef="sapsa_elbst" while="not ZodiacManager.CurrentBook.KillTask4Completed" />
+	  <LLoadProfile Path="../../Start.xml"/>
 	</Order>
 	</Profile>
 	
