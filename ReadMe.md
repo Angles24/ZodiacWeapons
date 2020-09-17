@@ -87,6 +87,7 @@ If you die at any time, you'll need to restart the bot.
 
 * Fates
 	* Fates are wonky. Mostly due to Navigation with RB, so don't completely AFK during this part. Or ever, really.
+	* Tower of Power is triggered by speaking to the House Haillenarte Guard at Boulder Downs, Coerthas Central Highlands (x10,y28).
 	
 * Dungeons
 	* Copperbell Mines (Hard): One of the Collapsed Rocks has a smaller hitbox then RB thinks it does. Sometimes melee classes don't get close enough. Watch this.
