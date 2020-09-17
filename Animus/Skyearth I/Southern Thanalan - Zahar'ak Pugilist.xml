@@ -18,6 +18,7 @@
 		<TeleportTo Name="Little Ala Mhigo" AetheryteId="19" />
 	</If>
 	<NoCombatMoveTo Name="zaharak_pugilist" XYZ="270.5645, 8, -24.61582"/>
-      <Grind grindRef="zaharak_pugilist" while="True" />
+      <Grind grindRef="zaharak_pugilist" while="not ZodiacManager.CurrentBook.KillTask4Completed" />
+	  <LLoadProfile Path="../../Start.xml"/>
 	</Order>
 	</Profile>

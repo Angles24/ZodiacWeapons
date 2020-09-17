@@ -18,6 +18,7 @@
 		<TeleportTo Name="Little Ala Mhigo" AetheryteId="19" />
 	</If>
 	<NoCombatMoveTo Name="battle_drake" XYZ="437.7634, 18.18146, -82.14142"/>
-      <Grind grindRef="battle_drake" while="True" />
+      <Grind grindRef="battle_drake" while="not ZodiacManager.CurrentBook.KillTask7Completed" />
+	  <LLoadProfile Path="../../Start.xml"/>
 	</Order>
 	</Profile>

@@ -18,7 +18,8 @@
 		<TeleportTo Name="Camp Overlook" AetheryteId="16" />
 	</If>
 	<NoCombatMoveTo Name="elite_quarryman" XYZ="176.1813, 23.8851, -661.9181"/>
-      <Grind grindRef="elite_quarryman" while="True" />
+      <Grind grindRef="elite_quarryman" while="not ZodiacManager.CurrentBook.KillTask7Completed" />
+	  <LLoadProfile Path="../../Start.xml"/>
 	</Order>
 	</Profile>
 

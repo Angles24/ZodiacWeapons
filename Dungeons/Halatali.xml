@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-  Profile: The Thousand Maws of Toto-Rak
+  Profile: Halatali
   Authors: Zamphire
 -->
 
@@ -10,16 +10,16 @@
 ]>
 
 <Profile>
-  <Name>The Thousand Maws of Toto-Rak</Name>
+  <Name>Halatali</Name>
   <BehaviorDirectory></BehaviorDirectory>
   <Order>
-	<If Condition="not IsOnMap(169)">
-		<RunCode Name="QueueToto"/>
+	<If Condition="not IsOnMap(162)">
+		<RunCode Name="QueueHalatali"/>
 	</If>
-	<If Condition="IsOnMap(169)">
-		<!-- Activate confession chamber terminal 0/1 -->
-		<If Condition="GetInstanceTodo(1) == 0">
-			<Log Message="Activate confession chamber terminal 0/1" />
+	<If Condition="IsOnMap(162)">
+		<!-- Clear the Hall of the Cesti 0/1 -->
+		<If Condition="GetInstanceTodo(0) == 0">
+			<Log Message="Clear the Hall of the Cesti 0/1" />
 			<If Condition="ClassName == ((ClassJobType.Bard))"> 
 				<ChangeClass Job="Bard" />
 			</If>
@@ -50,103 +50,71 @@
 			<If Condition="ClassName == ((ClassJobType.WhiteMage))"> 
 					<ChangeClass Job="White Mage" />
 			</If>
-			<MoveTo XYZ="-285.7021, 4.016828, -80.56113" usemesh="false" />
-			<MoveTo XYZ="-268.2238, 4.325056, -76.88233" usemesh="false" />
-			<MoveTo XYZ="-229.1414, -0.1515648, -79.26531" usemesh="false" />
-			<MoveTo XYZ="-202.1058,0.3189341,-79.17911" />
-			<UseObject NpcId="2000100" Radius="25" XYZ="-202.1058,0.3189341,-79.17911" condition="not HasAtLeast(2000123,1)"/>
-			<MoveTo XYZ="-209.6193, 0.7250316, -41.07095" usemesh="false" />
-			<MoveTo XYZ="-207.7579, -5.814096, 44.28054" usemesh="false" />
-			<MoveTo XYZ="-221.6592,-4.425579,54.98545" />
-			<UseObject NpcId="2000101" Radius="25" XYZ="-221.6592,-4.425579,54.98545" condition="not HasAtLeast(2000123,2)"/>
-			<MoveTo XYZ="-204.6998,-4.926546,88.82272" />
-			<UseObject NpcId="2000102" Radius="25" XYZ="-204.6998,-4.926546,88.82272" condition="not HasAtLeast(2000123,3)"/>
-			<MoveTo XYZ="-174.2854, -5.564174, 106.4951"/>
-			<MoveTo XYZ="-135.2303, -5.1954, 111.5916" usemesh="false"/>
-			<MoveTo XYZ="-123.6275, -4.191036, 111.9735" usemesh="false" />
-			<MoveTo XYZ="-104.0233,-3.463795,104.0759" />
-			<UseObject NpcId="2000103" Radius="25" XYZ="-104.0233,-3.463795,104.0759" condition="not HasAtLeast(2000123,4)"/>
-			<MoveTo XYZ="-112.0132,-4.132327,112.0314" />
-			<RunCode name="MagitekTerminal1"/>
+			<MoveTo XYZ="136.3633, -1.641945, -6.24647"/>
+			<MoveTo XYZ="124.9414, -1.557076, 13.21165" usemesh="false"/>
+			<MoveTo XYZ="15.73978, 0.9251912, 102.9684"/>
+			<Grind GrindRef="FirstBoss" While="not GameObjectManager.GetObjectByNPCId(1194).CurrentHealth == 0"/> <!-- Fight First Boss -->
+			<MoveTo XYZ="26.29976, 0.9276656, 126.539" distance="1"/>		
 			<If Condition="&openchest; == 1">
 				<RunCode name="OpenChest" />
 			</If>
-			<While Condition="GetInstanceTodo(1) == 0">
-				<MoveTo XYZ="-112.0132,-4.132327,112.0314" />
-				<RunCode name="MagitekTerminal1"/>
-			</While>	
-		</If>
-		<!-- Activate the Fool's Rest terminal 0/1 -->
-		<If Condition="GetInstanceTodo(2) == 0 and GetInstanceTodo(1) == 1">
-			<Log Message="Activate the Fool's Rest terminal 0/1" />
-			<MoveTo XYZ="-86.87109, -5.125576, 109.2075" usemesh="false" />
-			<MoveTo XYZ="-72.60854, -5.23104, 110.4429"/>
-			<UseObject NpcId="2000104" Radius="50" XYZ="-72.25058,-5.027275,113.9492" usemesh="false" condition="not HasAtLeast(2000123,1)"/>			
-			<MoveTo XYZ="-58.03041, -3.458385, 113.3145" usemesh="false" />
-			<MoveTo XYZ="-46.45894, -3.89155, 109.9752" usemesh="false" />
-			<MoveTo XYZ="-16.57946, -6.192002, 111.0816" usemesh="false" />
-			<MoveTo XYZ="-13.04198, -10.78637, 74.66694" usemesh="false" />
-			<MoveTo XYZ="14.30246, -13.01504, 81.81731" usemesh="false" />
-			<MoveTo XYZ="47.59051, -14.19678, 78.95296" usemesh="false" />
-			<MoveTo XYZ="47.1979, -17.68386, 43.9256" usemesh="false" />
-			<UseObject NpcId="2000105" Radius="50" XYZ="48.56729,-17.60531,45.63805" condition="not HasAtLeast(2000123,2)"/>
-			<MoveTo XYZ="50.38009, -15.29711, 18.39678" usemesh="false" />
-			<MoveTo XYZ="15.02664, -15.93424, 2.794812"/>
-			<UseObject NpcId="2000106" Radius="50" XYZ="16.02465,-15.60229,12.18657" condition="not HasAtLeast(2000123,3)"/>
-			<MoveTo XYZ="14.41137, -15.57543, -13.18796" usemesh="false" />
 			<RunCode name="Hall_Jump"/>
-			<MoveTo XYZ="15.24751, -11.82217, -43.20376" usemesh="false" />
-			<MoveTo XYZ="9.047042, -11.26379, -47.74325" usemesh="false" />
-			<MoveTo XYZ="-0.7624951, -11.99356, -48.62696" usemesh="false"/>
-			<MoveTo XYZ="-30.21068, -8.051693, -47.90864" usemesh="false" />
-			<MoveTo XYZ="-60.70927, -8.381741, -48.71635"/>
-			<Grind GrindRef="StickyWeb1" While="GameObjectManager.GetObjectByNPCId(2000397).IsVisible"/> <!-- Clear Sticky Web -->
-			<MoveTo XYZ="-73.45654, -8.06311, -46.09786" usemesh="false" />
-			<MoveTo XYZ="-75.64314, -6.977234, 19.53588"/>
-			<MoveTo XYZ="-74.23898, -6.697017, 22.38813" distance="1" usemesh="false" />
-			<While condition="not HasAtLeast(2000123,4)">
-				<RunCode name="MagitekPhotocell1"/>
-			</While>
-			<MoveTo XYZ="-80.02608,-8.132326,-47.97176" />
-			<RunCode name="MagitekTerminal2"/>
+			<MoveTo XYZ="32.96885,3.815735,131.1792" distance="2" usemesh="false" />
+			<RunCode name="AetherialFlow1"/>
+		</If>
+		
+		<!-- Activate the chain winches 0/5 -->
+		<If Condition="GetInstanceTodo(1) == 0 and GetInstanceTodo(0) == 1">
+			<Log Message="Activate the chain winches 0/5" />
+			<MoveTo XYZ="74.51806,-10.9883,-107.0677" />
+			<UseObject NpcId="2001624" XYZ="74.51806,-10.9883,-107.0677" Radius="25" condition="GetInstanceTodo(1) == 0"/> <!-- Activate first Chain Winch -->
+		</If>		
+
+		<!-- Activate the chain winches 1/5 -->
+		<If Condition="GetInstanceTodo(1) == 1 and GetInstanceTodo(0) == 1">
+			<Log Message="Activate the chain winches 1/5" />
+			<MoveTo XYZ="42.15417,-10.94164,-84.66408" />
+			<UseObject NpcId="2001625" XYZ="42.15417,-10.94164,-84.66408" Radius="25" condition="GetInstanceTodo(1) == 1"/> <!-- Activate second Chain Winch -->
+		</If>
+
+		<!-- Activate the chain winches 2/5 -->
+		<If Condition="GetInstanceTodo(1) == 2 and GetInstanceTodo(0) == 1">
+			<Log Message="Activate the chain winches 2/5" />
+			<MoveTo XYZ="17.51502,-10.95732,-190.0231" />
+			<UseObject NpcId="2001626" XYZ="17.51502,-10.95732,-190.0231" Radius="25" condition="GetInstanceTodo(1) == 2"/> <!-- Activate third Chain Winch -->
+		</If>
+		
+		<!-- Activate the chain winches 3/5 -->
+		<If Condition="GetInstanceTodo(1) == 3 and GetInstanceTodo(0) == 1">
+			<Log Message="Activate the chain winches 3/5" />
+			<MoveTo XYZ="-39.12749,-11.06655,-129.0975" />
+			<UseObject NpcId="2001627" XYZ="-39.12749,-11.06655,-129.0975" Radius="25" condition="GetInstanceTodo(1) == 3"/> <!-- Activate fourth Chain Winch -->
+		</If>
+
+		<!-- Activate the chain winches 4/5 -->
+		<If Condition="GetInstanceTodo(1) == 4 and GetInstanceTodo(0) == 1">
+			<Log Message="Activate the chain winches 4/5" />
+			<MoveTo XYZ="-82.47455,-10.95254,-113.1372" />
+			<UseObject NpcId="2001628" XYZ="-82.47455,-10.95254,-113.1372" Radius="25" condition="GetInstanceTodo(1) == 4"/> <!-- Activate fifth Chain Winch -->
+		</If>
+
+		<!-- Clear the Hall of Secutores 0/1 -->
+		<If Condition="GetInstanceTodo(2) == 0 and GetInstanceTodo(1) == 5">
+			<Log Message="Clear the Hall of Secutores 0/1" />
+			<MoveTo XYZ="-183.4071, -13.84949, -106.4521"/>
+			<Grind GrindRef="SecondBoss" While="not GameObjectManager.GetObjectByNPCId(1196).CurrentHealth == 0"/> <!-- Fight second Boss -->
 			<If Condition="&openchest; == 1">
 				<RunCode name="OpenChest" />
 			</If>
-			<While Condition="GetInstanceTodo(2) == 0">
-				<MoveTo XYZ="-80.02608,-8.132326,-47.97176" />
-				<RunCode name="MagitekTerminal2"/>
-			</While>				
+			<MoveTo XYZ="-177.9965,-14.69446,-133.0435" />
+			<RunCode name="AetherialFlow2"/>
 		</If>
-		<!-- Open the abacination chamber door 0/1 -->
+
+		<!-- Clear Tangata 0/1 -->
 		<If Condition="GetInstanceTodo(3) == 0 and GetInstanceTodo(2) == 1">
-			<Log Message="Open the abacination chamber door 0/1" />
-			<MoveTo XYZ="-92.58643, -8.173712, -48.49692" usemesh="false" />
-			<MoveTo XYZ="-111.6033, -10.05801, -49.48994" distance="1" usemesh="false" />
-			<MoveTo XYZ="-110.3584, -11.33349, -82.4106" usemesh="false" />
-			<MoveTo XYZ="-107.7415, -13.28238, -125.7081" usemesh="false" />
-			<MoveTo XYZ="-107.3089, -12.75002, -135.4144"/>
-			<Grind GrindRef="StickyWeb2" While="GameObjectManager.GetObjectByNPCId(2000398).IsVisible"/> <!-- Clear Sticky Web -->
-			<MoveTo XYZ="-98.06004, -12.93906, -143.3602" usemesh="false" />
-			<MoveTo XYZ="-55.80048, -12.65775, -139.0893"/>
-			<MoveTo XYZ="-51.85534, -13.00212, -129.5555" usemesh="false" />
-			<MoveTo XYZ="-8.746709, -12.54546, -136.2716"/>
-			<Grind GrindRef="StickyWeb3" While="GameObjectManager.GetObjectByNPCId(2000399).IsVisible"/> <!-- Clear Sticky Web -->
-			<MoveTo XYZ="-4.135502, -12.8559, -141.6241" usemesh="false" />
-			<MoveTo XYZ="37.77343, -12.36483, -115.2103"/>
-			<MoveTo XYZ="90.65367, -20.91084, -110.6605"/>
-			<MoveTo XYZ="96.21089,-19.92786,-112.0021" distance="1" usemesh="false"/>
-			<UseObject NpcId="2000385" Radius="50" distance="3" XYZ="16.02465,-15.60229,12.18657" condition="GetInstanceTodo(3) == 0"/>
-		</If>
-				
-		<!-- Open the abacination chamber door 0/1 -->
-		<If Condition="GetInstanceTodo(4) == 0 and GetInstanceTodo(3) == 1">
-			<MoveTo XYZ="101.3038, -20.21534, -112.5759" usemesh="false" />
-			<MoveTo XYZ="113.4365, -21.89203, -108.6371" usemesh="false" />
-			<MoveTo XYZ="121.7865, -23.32427, -110.7883" usemesh="false"/>
-			<MoveTo XYZ="140.2859, -25.78484, -112.3939" usemesh="false" />
-			<MoveTo XYZ="171.4194, -33.18044, -140.7459"/>
-			<Grind GrindRef="StickyWeb4" While="GameObjectManager.GetObjectByNPCId(2000400).IsVisible"/> <!-- Clear Sticky Web -->
-			<MoveTo XYZ="179.2035, -34.28531, -143.0123" usemesh="false" />	
+			<Log Message="Clear Tangata 0/1" />
+			<MoveTo XYZ="-172.2497,12.55991,12.74213" />
+			<UseObject NpcId="2001623" XYZ="-172.2497,12.55991,12.74213" Radius="25" condition="GameObjectManager.GetObjectByNPCId(2001623).IsTargetable"/> <!-- Open Ludus Door -->			
 			<If Condition="ClassName == ((ClassJobType.Bard))"> 
 				<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 6261">
 					<Log Message="Equipping Artemis Bow Zenith" />
@@ -223,87 +191,69 @@
 					<RunCode Name="ThyrusAtma" />
 					<WaitTimer WaitTime="3" />
 				</If>
-			</If>						
-			<MoveTo XYZ="202.1871, -39.64367, -137.199" usemesh="false" />
-			<Grind GrindRef="FinalBoss" While="not GetInstanceTodo(4) == 1"/> <!-- Fight Final Boss -->
+			</If>			
+			<MoveTo XYZ="-235.5623, 17.22563, 16.8393" usemesh="false"/>
+			<Grind GrindRef="FinalBoss" While="not GameObjectManager.GetObjectByNPCId(1197).CurrentHealth == 0"/> <!-- Fight final Boss -->
 			<If Condition="&openchest; == 1">
 				<RunCode name="OpenChest" />
 			</If>
-			<MoveTo XYZ="237.5655,-38.9003,-144.1951" />
+			<MoveTo XYZ="-280.5123,17.2406,20.0575" />
 			<RunCode name="ExitDuty"/>
-			<LLoadProfile Path="../Start.xml"/>			
+			<LLoadProfile Path="../Start.xml"/>	
 		</If>			
+
+				
 	</If>
   </Order>
   <GrindAreas>
- 	<GrindArea name="StickyWeb1">
+	<GrindArea name="FirstBoss">
         <Hotspots>
-			<Hotspot Radius="20" XYZ="-66.35851,-8.021791,-47.9917" />
+			<Hotspot Radius="200" XYZ="21.62897,1.304748,135.9669" />
         </Hotspots>
         <TargetMobs>
-			<TargetMob Id="439" Weight="1000" />	<!-- Sticky Web -->		
-        </TargetMobs>
-	</GrindArea>
- 	<GrindArea name="StickyWeb2">
-        <Hotspots>
-			<Hotspot Radius="20" XYZ="-103.1449,-12.54914,-138.0616" />
-        </Hotspots>
-        <TargetMobs>
-			<TargetMob Id="439" Weight="1000" />	<!-- Sticky Web -->		
-        </TargetMobs>
-	</GrindArea>
-	 <GrindArea name="StickyWeb3">
-        <Hotspots>
-			<Hotspot Radius="20" XYZ="-7.133959,-12.65162,-138.0652" />
-        </Hotspots>
-        <TargetMobs>
-			<TargetMob Id="439" Weight="1000" />	<!-- Sticky Web -->		
-        </TargetMobs>
-	</GrindArea>
-	 <GrindArea name="StickyWeb4">
-        <Hotspots>
-			<Hotspot Radius="20" XYZ="175.9945,-33.91741,-140.0029" />
-        </Hotspots>
-        <TargetMobs>
-			<TargetMob Id="439" Weight="1000" />	<!-- Sticky Web -->		
+			<TargetMob Id="1194" Weight="1" /> <!-- Firemane -->
         </TargetMobs>
 	</GrindArea>	
-	<GrindArea name="FinalBoss">
+	<GrindArea name="SecondBoss">
         <Hotspots>
-			<Hotspot Radius="50" XYZ="217.3342,-39.25175,-144.2436" />
+			<Hotspot Radius="200" XYZ="-179.7016,-15.30659,-135.8186" />
         </Hotspots>
         <TargetMobs>
-			<TargetMob Id="444" Weight="1" />		
+			<TargetMob Id="1196" Weight="1" /> <!-- Thunderclap Guivre -->	
+			<TargetMob Id="117" Weight="10" /> <!-- Lightning Sprite -->		
+        </TargetMobs>
+	</GrindArea>
+	<GrindArea name="FinalBoss">
+        <Hotspots>
+			<Hotspot Radius="200" XYZ="-271.1314,17.22563,19.9572" />
+        </Hotspots>
+        <TargetMobs>
+        <TargetMob Id="1197" Weight="1"/> <!-- Tangata -->	
+        <TargetMob Id="116" Weight="1000"/> <!-- Fire Sprite -->			
         </TargetMobs>
 	</GrindArea>	
   </GrindAreas>
-  <CodeChunks>
- 	<CodeChunk Name="MagitekTerminal1">
+  <CodeChunks>		
+	<CodeChunk Name="AetherialFlow1">
 		<![CDATA[
-			ff14bot.Managers.GameObjectManager.GetObjectByNPCId(2000116).Interact();
+			ff14bot.Managers.GameObjectManager.GetObjectByNPCId(2001619).Interact();
 			await Coroutine.Sleep(1000);
 			ff14bot.RemoteWindows.SelectYesno.ClickYes();
-			await Coroutine.Sleep(3000);
+			while (!CommonBehaviors.IsLoading) { await Coroutine.Yield(); }
       ]]>
 	</CodeChunk>
- 	<CodeChunk Name="MagitekPhotocell1">
+	<CodeChunk Name="AetherialFlow2">
 		<![CDATA[
-			ff14bot.Managers.GameObjectManager.GetObjectByNPCId(2000039).Interact();
-			await Coroutine.Sleep(3000);
+			ff14bot.Managers.GameObjectManager.GetObjectByNPCId(2001647).Interact();
+			await Coroutine.Sleep(1000);
+			ff14bot.RemoteWindows.SelectYesno.ClickYes();
+			while (!CommonBehaviors.IsLoading) { await Coroutine.Yield(); }
       ]]>
 	</CodeChunk>	
- 	<CodeChunk Name="MagitekTerminal2">
-		<![CDATA[
-			ff14bot.Managers.GameObjectManager.GetObjectByNPCId(2000118).Interact();
-			await Coroutine.Sleep(1000);
-			ff14bot.RemoteWindows.SelectYesno.ClickYes();
-			await Coroutine.Sleep(3000);
-      ]]>
-	</CodeChunk>
 	<CodeChunk Name="Hall_Jump">
 		<![CDATA[
 			await Coroutine.Sleep(1000);
-			ff14bot.Managers.MovementManager.SetFacing(3.136448f);
+			ff14bot.Managers.MovementManager.SetFacing(0.991708f);
 			ff14bot.Managers.MovementManager.MoveForwardStart();
 			await Coroutine.Sleep(1000);
 			ff14bot.Managers.MovementManager.Jump();
@@ -320,7 +270,7 @@
 	</CodeChunk>	
 	<CodeChunk Name="ExitDuty">
 		<![CDATA[
-			ff14bot.Managers.GameObjectManager.GetObjectByNPCId(2000683).Interact();
+			ff14bot.Managers.GameObjectManager.GetObjectByNPCId(2001610).Interact();
 			await Coroutine.Sleep(1000);
 			ff14bot.RemoteWindows.SelectYesno.ClickYes();
 			await Coroutine.Sleep(3000);
@@ -377,11 +327,11 @@
 			}
 		]]>
 	</CodeChunk> 
-	<CodeChunk Name="QueueToto">
+	<CodeChunk Name="QueueHalatali">
 		<![CDATA[ 
            Logging.WriteDiagnostic("Queuing for Dungeon");
 		GameSettingsManager.JoinWithUndersizedParty = true;
-           DutyManager.Queue(DataManager.InstanceContentResults[1]);
+           DutyManager.Queue(DataManager.InstanceContentResults[7]);
            await Coroutine.Wait(5000, () => (DutyManager.QueueState == QueueState.InQueue || DutyManager.QueueState == QueueState.JoiningInstance));
 
            Logging.WriteDiagnostic("Queued for Dungeon");

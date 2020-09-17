@@ -20,6 +20,7 @@
 		<TeleportTo Name="Horizon" AetheryteId="17" />
 	</If>
 	<NoCombatMoveTo Name="4th_cohort_signifier" XYZ="-496.6395, 50.30017, -714.3695"/>
-      <Grind grindRef="4th_cohort_signifier" while="True" />
+      <Grind grindRef="4th_cohort_signifier" while="not ZodiacManager.CurrentBook.KillTask6Completed" />
+	  <LLoadProfile Path="../../Start.xml"/>
 	</Order>
 	</Profile>

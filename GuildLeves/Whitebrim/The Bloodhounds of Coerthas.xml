@@ -1,33 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <!--
-  Profile: Yellow Is the New Black Leve
+  Profile: The Bloodhounds of Coerthas Leve
   Authors: Zamphire
   Code Credit: TuckMeIntoBread, Kayla, Sodimm, y2krazy, Ken_512
 -->
 
 <Profile>
-	<Name>Yellow Is the New Black Leve</Name>
+	<Name>The Bloodhounds of Coerthas Leve</Name>
 	<KillRadius>50</KillRadius>
 	<BehaviorDirectory>..\..\Quest Behaviors</BehaviorDirectory>
 	<Order>	
-			<If Condition="not ExBuddy.Windows.GuildLeve.HasLeve(o ,')">
+			<If Condition="not ExBuddy.Windows.GuildLeve.HasLeve(855)">
 				<If Condition="not IsOnMap(155)">
 					<TeleportTo Name="155 " AetheryteId="23"/>
 				</If>			
 				<FlyTo XYZ="-471.4019, 211, -233.8166" land="true"/>
-				<ExPickupGuildLeve leveIds="853" leveType="Order" npcId="1007069" npcLocation="-476.2188,211,-233.4173" Timeout="5" /> <!-- Yellow Is the New Black -->
-				<If Condition="not ExBuddy.Windows.GuildLeve.HasLeve(853)">
+				<ExPickupGuildLeve leveIds="855" leveType="Order" npcId="1007069" npcLocation="-476.2188,211,-233.4173" Timeout="5" /> <!-- The Bloodhounds of Coerthas -->
+				<If Condition="not ExBuddy.Windows.GuildLeve.HasLeve(855)">
 					<ExPickupGuildLeve leveIds="854" leveType="Order" npcId="1007069" npcLocation="-476.2188,211,-233.4173" Timeout="5" /> <!-- Talk to My Voidsent -->				
 				</If>
 			</If>	
 
-			<!-- Yellow Is the New Black -->
-			<If Condition="ExBuddy.Windows.GuildLeve.HasLeve(853)">
-				<FlyTo ZoneId="155" XYZ="-600.8062, 210.4736, -340.5136" land="true"/>
-				<InitiateLeve LeveId="853"/> <!-- Yellow Is the New Black -->
+			<!-- The Bloodhounds of Coerthas -->
+			<If Condition="ExBuddy.Windows.GuildLeve.HasLeve(855)">
+				<FlyTo ZoneId="155" XYZ="-466.9695, 205.2967, -352.9378" land="true"/>
+				<InitiateLeve LeveId="855"/> <!-- The Bloodhounds of Coerthas -->
 				<WaitTimer WaitTime="2" />
-				<Grind GrindRef="YellowIstheNewBlack" While="not ff14bot.RemoteWindows.SelectYesno.IsOpen"/> 						
+				<Grind GrindRef="TheBloodhoundsofCoerthas" While="not ff14bot.RemoteWindows.SelectYesno.IsOpen"/> 						
 				<WaitTimer WaitTime="1" />					
 				<RunCode Name="CloseTimer"/> 
 				<FlyTo ZoneId="155" XYZ="-472.4178, 211, -233.0762" land="true"/>
@@ -50,15 +50,15 @@
 
 	</Order>
   <GrindAreas> 
- 	<GrindArea name="YellowIstheNewBlack">
+ 	<GrindArea name="TheBloodhoundsofCoerthas">
         <Hotspots>
-			<Hotspot Radius="200" XYZ="-600.8062, 210.4736, -340.5136" />
+			<Hotspot Radius="200" XYZ="-466.9695, 205.2967, -352.9378" />
         </Hotspots>
         <TargetMobs>
-			<TargetMob Name="Blizzard Biast" Id="1761" Weight="1" />
-			<TargetMob Name="Winter Nix" Id="1757" Weight="1" />
-			<TargetMob Name="Frostbitten Goobbue" Id="1747" Weight="1" />
-			<TargetMob Name="Snowpuppy" Id="1758" Weight="1" />	
+			<TargetMob Name="Snowshoe Mouse" Id="1763" Weight="1" />
+			<TargetMob Name="Dragonfly Chaser" Id="1638" Weight="1" />
+			<TargetMob Name="Blood Bateleur" Id="1789" Weight="1" />
+			<TargetMob Name="Red Aevis" Id="1756" Weight="1" />	
         </TargetMobs>		
 	</GrindArea>
    	<GrindArea name="TalktoMyVoidsent">

@@ -18,6 +18,7 @@
 		<TeleportTo Name="Hawthorne Hut" AetheryteId="4" />
 	</If>
 	<NoCombatMoveTo Name="dreamtoad" XYZ="290.1808, -13.57023, -162.3801"/>
-      <Grind grindRef="dreamtoad" while="True" />
+      <Grind grindRef="dreamtoad" while="not ZodiacManager.CurrentBook.KillTask3Completed" />
+	  <LLoadProfile Path="../../Start.xml"/>
 	</Order>
 	</Profile>

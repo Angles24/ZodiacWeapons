@@ -18,6 +18,7 @@
 		<TeleportTo Name="Wineport" AetheryteId="12" />
 	</If>
 	<NoCombatMoveTo Name="2nd_cohort_signifier" XYZ="412.1894, 76.33809, -41.38135"/>
-    <Grind grindRef="2nd_cohort_signifier" while="True" />
+    <Grind grindRef="2nd_cohort_signifier" while="not ZodiacManager.CurrentBook.KillTask10Completed" />
+	<LLoadProfile Path="../../Start.xml"/>
   </Order>
 </Profile>

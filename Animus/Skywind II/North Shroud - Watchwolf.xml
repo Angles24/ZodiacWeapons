@@ -19,6 +19,7 @@
 		<TeleportTo Name="Fallgourd Float" AetheryteId="7" />
 	</If>
 	<NoCombatMoveTo Name="watchwolf" XYZ="-70.89735, -7.248418, -68.06041"/>
-      <Grind grindRef="watchwolf" while="True" />
+      <Grind grindRef="watchwolf" while="not ZodiacManager.CurrentBook.KillTask4Completed" />
+	  <LLoadProfile Path="../../Start.xml"/>
 	</Order>
 	</Profile>

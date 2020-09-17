@@ -23,18 +23,16 @@
 			<!-- Necrologos: Pale Oblation -->
 			<If Condition="ExBuddy.Windows.GuildLeve.HasLeve(644)">
 				<GetTo ZoneId="147" XYZ="45.68184, 7.582094, 344.8144"/>
-				<InitiateLeve LeveId="644"/> <!-- Necrologos: Pale Oblation -->
+				<RunCode Name="Announce_Manual_Completion"/>
+				<!--
+				<InitiateLeve LeveId="644"/> 
 				<WaitTimer WaitTime="2" /> 
-				<UseObject Radius="500" XYZ="5.107096, 2.950484, 312.0914" NpcIds="2001098" condition="DirectorManager.ActiveDirector.GetTodoArgs(1).Item1 &lt; DirectorManager.ActiveDirector.GetTodoArgs(1).Item2"/>
-				<WaitTimer WaitTime="2" />
-				<If condition="ObjectExistsWithId(1737)">
-					<Grind GrindRef="VoidSlave" While="not ff14bot.RemoteWindows.SelectYesno.IsOpen"/>
-				</If>	
-				<WaitTimer WaitTime="5" />	
+				<UseObject Radius="500" InCombat="true" XYZ="5.107096, 2.950484, 312.0914" NpcIds="2001098" condition="not DirectorManager.ActiveDirector.GetTodoArgs(4).Item1 == 1"/>	
+				<WaitTimer WaitTime="2" />	
 				<RunCode Name="CloseTimer"/> 
 				<GetTo ZoneId="147" XYZ="33.91326, 4.68145, 399.2563"/>
 				<ExTurnInGuildLeve NpcId="1002398" NpcLocation="33.91326, 4.68145, 399.2563"/>
-				<LLoadProfile Path="../../Start.xml"/>
+				<LLoadProfile Path="../../Start.xml"/> -->
 			</If>
 	
 			<!-- Circling the Ceruleum -->
@@ -63,6 +61,10 @@
 	</GrindArea> 
   </GrindAreas>
   <CodeChunks>
+      <CodeChunk Name="Announce_Manual_Completion"><![CDATA[ 
+        Core.OverlayManager.AddToast(() => "Please complete the next Quest Objective manually.", TimeSpan.FromMilliseconds(25000), System.Windows.Media.Color.FromRgb(29,213,226), System.Windows.Media.Color.FromRgb(13,106,175), new System.Windows.Media.FontFamily("Gautami"));
+        await Coroutine.Sleep(26000);
+      ]]></CodeChunk>
   		<CodeChunk Name="CloseTimer">
 			<![CDATA[ 
 			await Buddy.Coroutines.Coroutine.Sleep(2000);

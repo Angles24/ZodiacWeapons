@@ -4,7 +4,7 @@
    <GrindAreas>
    <GrindArea name="hapalit">
         <Hotspots>
-			<Hotspot Radius="500" XYZ="600.0938, 8.269004, -510.9147" name="hapalit" />
+			<Hotspot Radius="500" XYZ="481.2334, -3.055959, -778.9774" name="hapalit" />
 		</Hotspots>
 			<TargetMobs>
 				<TargetMob id="793"  /> 
@@ -17,7 +17,8 @@
 	<If Condition="not IsOnMap(154)">
 		<TeleportTo Name="Revenant's Toll" AetheryteId="24" />
 	</If>
-	<NoCombatMoveTo Name="hapalit" XYZ="600.0938, 8.269004, -510.9147"/>
-      <Grind grindRef="hapalit" while="True" />
+	<NoCombatMoveTo Name="hapalit" XYZ="481.2334, -3.055959, -778.9774"/>
+      <Grind grindRef="hapalit" while="not ZodiacManager.CurrentBook.KillTask6Completed" />
+	  <LLoadProfile Path="../../Start.xml"/>
 	</Order>
 	</Profile>

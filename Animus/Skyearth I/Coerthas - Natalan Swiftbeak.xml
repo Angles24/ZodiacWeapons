@@ -4,7 +4,7 @@
    <GrindAreas>
    <GrindArea name="natalan_swiftbeak">
         <Hotspots>
-			<Hotspot Radius="500" XYZ="495.3212, 303.8207, -207.1652" name="natalan_swiftbeak" />	
+			<Hotspot Radius="500" XYZ="641.0512, 289.026, 21.08164" name="natalan_swiftbeak" />	
 		</Hotspots>
 			<TargetMobs>
 				<TargetMob id="1844"  /> 
@@ -17,7 +17,8 @@
 	<If Condition="not IsOnMap(155)">
 		<TeleportTo Name="Camp Dragonhead" AetheryteId="23" />
 	</If>
-	<NoCombatMoveTo Name="natalan_swiftbeak" XYZ="495.3212, 303.8207, -207.1652"/>
-      <Grind grindRef="natalan_swiftbeak" while="True" />
+	<NoCombatMoveTo Name="natalan_swiftbeak" XYZ="641.0512, 289.026, 21.08164"/>
+      <Grind grindRef="natalan_swiftbeak" while="not ZodiacManager.CurrentBook.KillTask8Completed" />
+	  <LLoadProfile Path="../../Start.xml"/>
 	</Order>
 	</Profile>

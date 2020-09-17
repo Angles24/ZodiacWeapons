@@ -19,6 +19,7 @@
 		<TeleportTo Name="Revenant's Toll" AetheryteId="24" />
 	</If>
 		<NoCombatMoveTo Name="5th_cohort_signifier" XYZ="-575.4393, -3.216822, -369.9198"/>
-      <Grind grindRef="5th_cohort_signifier" while="True" />
+      <Grind grindRef="5th_cohort_signifier" while="not ZodiacManager.CurrentBook.KillTask2Completed" />
+	  <LLoadProfile Path="../../Start.xml"/>
 	</Order>
 	</Profile>
