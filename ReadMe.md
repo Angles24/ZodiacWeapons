@@ -97,6 +97,7 @@ If you die at any time, you'll need to restart the bot.
 	* You must already have levequests unlocked for the Whitebrim, Saint Coinarch's Find and Camp Bluefog. I can't automate those quests yet as they combine a quest and a levequest in one.
 	* Levequests sometimes don't turn in all the way. May have to turn them in manually.
 	* "Someone's in the Doghouse" will need to be done manually until I can find a way to automate the beckon escort quest.
+	* Necrologos: The Liminal Ones & Necrologos: Pale Oblation. I can't figure ou thow to get these to exit the UseObject tag properly. So for now they're set to manual completion.
 
 
 
