@@ -50,9 +50,9 @@ You will also need the latest version of LlamaLibrary installed in your botbases
 - [X] Book of Skyfall I
 - [X] Book of Skyfall II
 - [X] Book of Netherfall I
-- [ ] Book of Skywind I
-- [ ] Book of Skywind II
-- [ ] Book of Skyearth I
+- [X] Book of Skywind I
+- [X] Book of Skywind II
+- [X] Book of Skyearth I
 - [ ] Purchase Animus from Jalzahn
 
 ### Novus Zodiac Weapons
