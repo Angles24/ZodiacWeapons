@@ -202,7 +202,7 @@
 				</If>
 			</If>				
 			<MoveTo XYZ="-44.58178, 34.72327, -235.4707"/> <!-- Move to final boss -->
-			<Grind GrindRef="FinalBoss" While="GetInstanceTodo(5) == 0" /> --> <!-- Kill second boss -->			
+			<Grind GrindRef="FinalBoss" While="GetInstanceTodo(5) == 0" /> <!-- Kill second boss -->			
 			<If Condition="&openchest; == 1">
 				<RunCode name="OpenChest" />
 			</If>	

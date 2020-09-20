@@ -54,8 +54,11 @@
 		</If>
 		<!-- Access Brayflox's Runstop 0/1 -->
 		<If Condition="GetInstanceTodo(1) == 0">
-			<MoveTo XYZ="105.282, -0.1312774, 12.01039"/>
-			<RunCode name="RunstopHeadgate"/> 
+			<MoveTo XYZ="105.282, -0.1312774, 12.01039"/>		
+			<While condition="GameObjectManager.GetObjectByNPCId(2001462).IsTargetable">
+				<MoveTo XYZ="105.282, -0.1312774, 12.01039"/>
+				<RunCode name="RunstopHeadgate"/> 
+			</While>	
 			<MoveTo XYZ="109.2574, -1.952292, -0.2141497"/>
 			<Grind GrindRef="FirstBoss" While="not GameObjectManager.GetObjectByNPCId(1280).CurrentHealth == 0"/> <!-- Fight First Boss -->
 			<If Condition="&openchest; == 1">
