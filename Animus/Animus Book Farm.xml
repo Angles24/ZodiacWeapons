@@ -1266,7 +1266,7 @@
 					</If>				
 					<Log Message="Moving to Skyfire I - Outer La Noscea Make It Rain FATE" />
 					<While Condition="not ZodiacManager.CurrentBook.FateTask2Completed">
-						<If Condition="not IsOnMap(155)">
+						<If Condition="not IsOnMap(180)">
 							<TeleportTo Name="Camp Overlook" AetheryteId="16"/>
 						</If>
 						<FlyTo XYZ="184.3023, 60.99683, -163.5332" land="true"/>
