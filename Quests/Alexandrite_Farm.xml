@@ -10,10 +10,10 @@
   <BehaviorDirectory>..\Quest Behaviors</BehaviorDirectory>
     <Order>
 		<!-- Alexandrite farm -->
-			<!-- Farm Atma of the Crab in Western La Noscea. -->
+			<!-- Farm Alexandrite in Western La Noscea. -->
 
-            <While Condition="not HasAtLeast(7862,1)">
-                <Log Message="Farming Atma of the Crab in Western La Noscea..." />
+            <While Condition="not HasAtLeast(7883,75)">
+                <Log Message="Farming Alexandrite in Western La Noscea..." />
 			<If Condition="ClassName == ((ClassJobType.Bard))"> 
 				<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7838">
 					<RunCode Name="ArtemisAnimus" />
@@ -83,12 +83,12 @@
 			  <If Condition="not IsOnMap(138)">
                 <GetTo ZoneId="138" XYZ="261.1299, -22.75, 224.9563" /> <!-- Aleport -->
 			  </If>					
-                <While Condition="not (HasAtLeast(7883,75)">
-                    <LLFate MinLevel="1" MaxLevel="50" while="not (HasAtLeast(7883,75)"/>
+                <While Condition="not HasAtLeast(7883,75)">
+                    <LLFate MinLevel="1" MaxLevel="50" while="HasAtLeast(7883,75)"/>
                 </While>
             </While>
 			
-		<If Condition="(HasAtLeast(7883,75)">
+		<If Condition="HasAtLeast(7883,75)">
 			<LLoadProfile Path="../Start.xml"/>
 		</If>			
 

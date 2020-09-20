@@ -634,6 +634,7 @@
 					<PickupQuest QuestId="66998" NpcId="1008948"/>
 				</If>
 			</If>
+		</If>	
 			<If Condition="GetQuestStep(66998) == 1">
 			  <GetTo ZoneId="141" XYZ="115.5095, 31, -389.3664"/>
 			  <TalkTo NpcId="1001425" XYZ="115.1293, 31.8761, -392.2027" QuestId="66998" StepId="1"/>
@@ -656,13 +657,13 @@
 				  <GetTo ZoneId="141" XYZ="106.7625, 30.98244, -384.8175"/>
 				  <TurnIn NpcId="1009151" XYZ="105.3329, 30.90404, -385.153" QuestId="66998" StepId="255"/>
 				</If>	
-			</If>
-			<!-- Star Light, Star Bright -->
-			<If Condition="not HasQuest(67000) and not IsQuestCompleted(67000)">
-			  <GetTo ZoneId="141" XYZ="106.5433, 30.96623, -383.0377"/>
-			  <If Condition="IsQuestAcceptQualified(67000)">
+			</If>	
+		<!-- Star Light, Star Bright -->
+		<If Condition="not HasQuest(67000) and not IsQuestCompleted(67000)">
+			<GetTo ZoneId="141" XYZ="106.5433, 30.96623, -383.0377"/>
+			<If Condition="IsQuestAcceptQualified(67000)">
 				<PickupQuest QuestId="67000" NpcId="1009151"/>
-			  </If>
+			</If>
 			</If>
 			<If Condition="GetQuestStep(67000) == 255">
 			  <If Condition="not IsOnMap(154)">
@@ -683,13 +684,9 @@
 			  <GetTo ZoneId="156" XYZ="27.14867, 28.99997, -739.166"/>
 			  <TurnIn QuestId="66676" NpcId="1006981" XYZ="25.71143, 28.99997, -738.2162"/>
 			</If>			
-		</If>
-		
-		<If Condition="not HasQuest(67000) and IsQuestCompleted(66998)">
-			<GetTo ZoneId="141" XYZ="106.5433, 30.96623, -383.0377"/>
-		<If Condition="IsQuestAcceptQualified(67000)">
-			<PickupQuest QuestId="67000" NpcId="1009151"/>
-			</If>
+
+		<If Condition="IsQuestCompleted(67000) and not HasAtLeast(7883,75)">
+			<LLoadProfile Path="Alexandrite_Farm.xml"/>
 		</If>		
 		
 	</If>

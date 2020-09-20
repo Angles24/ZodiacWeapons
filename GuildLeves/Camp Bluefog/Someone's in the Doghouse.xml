@@ -90,7 +90,7 @@
   </GrindAreas>
   <CodeChunks>
       <CodeChunk Name="Announce_Manual_Completion"><![CDATA[ 
-        Core.OverlayManager.AddToast(() => "Please complete the next Quest Objective manually.", TimeSpan.FromMilliseconds(25000), System.Windows.Media.Color.FromRgb(29,213,226), System.Windows.Media.Color.FromRgb(13,106,175), new System.Windows.Media.FontFamily("Gautami"));
+        Core.OverlayManager.AddToast(() => "Please complete 'Someone's in the Doghouse' manually and then reload the Start profile.", TimeSpan.FromMilliseconds(25000), System.Windows.Media.Color.FromRgb(29,213,226), System.Windows.Media.Color.FromRgb(13,106,175), new System.Windows.Media.FontFamily("Gautami"));
         await Coroutine.Sleep(26000);
       ]]></CodeChunk>
   		<CodeChunk Name="CloseTimer">

@@ -57,6 +57,7 @@
 				<RunCode name="OpenChest" />
 			</If>			
 		</If>
+		
 		<!-- Cultist orbs destroyed 1/4 -->	
 		<If Condition="GetInstanceTodo(0) == 1">
 			<Log Message="Cultist orbs destroyed 1/4" />
@@ -66,27 +67,33 @@
 				<RunCode name="OpenChest" />
 			</If>			
 		</If>
+		
 		<!-- Cultist rosary 0/1 -->	
-		<If Condition="GetInstanceTodo(1) == 0">
+		<If Condition="GetInstanceTodo(1) == 0 and GetInstanceTodo(0) == 2">
 			<Log Message="Cultist rosary 0/1" />
-			<MoveTo XYZ="-180.8298, 13.61397, -7.697925"/> <!-- Move to cultist rosary -->
-			<RunCode name="CultistRosary"/>
+			<While Condition="GetInstanceTodo(1) == 0">
+				<MoveTo XYZ="-180.8298, 13.61397, -7.697925"/> <!-- Move to cultist rosary -->
+				<RunCode name="CultistRosary"/>
+			</While>
 		</If>
+		
 		<!-- Sealed barrier broken 0/1 -->	
-		<If Condition="GetInstanceTodo(2) == 0">
+		<If Condition="GetInstanceTodo(2) == 0 and GetInstanceTodo(1) == 1">
 			<Log Message="Sealed barrier broken 0/1" />
 			<MoveTo XYZ="-103.6168, 13.859, 15.76518"/> <!-- Move to sealed barrier -->
 			<RunCode name="SealedBarrier"/>
-		</If>		
+		</If>
+		
 		<!-- Cultist orbs destroyed 2/4 -->	
-		<If Condition="GetInstanceTodo(0) == 2">
+		<If Condition="GetInstanceTodo(0) == 2 and GetInstanceTodo(2) == 1">
 			<Log Message="Cultist orbs destroyed 2/4" />
 			<MoveTo XYZ="-95.11863, 13.859, 10.65544"/> <!-- Move into final orb room -->		
 			<MoveTo XYZ="-94.79001, 14.90759, 3.811112"/> <!-- Move to cultist orb 3/4 -->
 			<RunCode name="CultistOrb3"/>			
 		</If>
+		
 		<!-- Cultist orbs destroyed 3/4 -->	
-		<If Condition="GetInstanceTodo(0) == 3">
+		<If Condition="GetInstanceTodo(0) == 3 and GetInstanceTodo(2) == 1">
 			<Log Message="Cultist orbs destroyed 3/4" />
 			<MoveTo XYZ="-89.50608, 14.89957, 13.94871"/> <!-- Move to cultist orb 4/4 -->
 			<RunCode name="CultistOrb4"/>
@@ -94,8 +101,9 @@
 				<RunCode name="OpenChest" />
 			</If>			
 		</If>
+		
 		<!-- Defeat Galvanth the Dominator -->	
-		<If Condition="GetInstanceTodo(3) == 0">
+		<If Condition="GetInstanceTodo(3) == 0 and GetInstanceTodo(0) == 4">
 			<Log Message="Defeat Galvanth the Dominator" />
 			<If Condition="ClassName == ((ClassJobType.Bard))"> 
 				<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 6261">
