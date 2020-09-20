@@ -216,6 +216,7 @@
 			</If>
 			<MoveTo XYZ="-278.0287, 17.62265, 19.22942" usemesh="false"/>
 			<RunCode name="ExitDuty"/>
+			<WaitTimer WaitTime="10"/>
 			<LLoadProfile Path="../Start.xml"/>	
 		</If>		
 				

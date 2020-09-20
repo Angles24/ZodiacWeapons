@@ -155,6 +155,7 @@
 			</If>
 			<MoveTo XYZ="0.004403681,0.07694488,-268.7161"/> <!-- Move to Exit -->			
 			<RunCode name="ExitDuty"/>
+			<WaitTimer WaitTime="10"/>
 			<LLoadProfile Path="../Start.xml"/>
 		</If>		
 	</If>	

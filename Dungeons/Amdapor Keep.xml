@@ -4,6 +4,12 @@
   Authors: Zamphire
   Code Credit: TuckMeIntoBread, Kayla.
 -->
+
+<!DOCTYPE Profile [
+<!-- Profile Settings -->
+<!ENTITY openchest "0">
+]>
+
 <Profile>
   <Name>Amdapor Keep</Name>
   <BehaviorDirectory></BehaviorDirectory>
@@ -57,7 +63,9 @@
 			<MoveTo XYZ="-83.99593, 3.099442E-06, -0.1227691" usemesh="false"/> <!-- Move to sealed gate -->
 			<MoveTo XYZ="-73.51895, 0.1999929, 0.2118544" usemesh="false"/>
 			<Grind GrindRef="LunaticPriest" While="not GameObjectManager.GetObjectByNPCId(1690).CurrentHealth == 0"/> <!-- Fight first boss -->
-			<RunCode name="OpenChest"/>
+			<If Condition="&openchest; == 1">
+				<RunCode name="OpenChest" />
+			</If>	
 			<MoveTo XYZ="-10.23611,-1.192093E-07,-0.01531982" usemesh="false"/>
 			<RunCode name="AstralFlow1"/>			
 			<LogMessage Message="First boss dead"/>
@@ -73,7 +81,9 @@
 		</If>
 		<!-- Defeat Anantaboga 0/1-->
 		<If Condition="not GetInstanceTodo(2) == 1">
-			<RunCode name="OpenChest"/>
+			<If Condition="&openchest; == 1">
+				<RunCode name="OpenChest" />
+			</If>
 			<MoveTo XYZ="200.061,22,-165.266" usemesh="false"/> <!-- Move Astral Flow 2 -->
 			<RunCode name="AstralFlow2"/>
 			<MoveTo XYZ="136.8121, 44, -0.5193871"/> <!-- Move to first big door -->
@@ -158,9 +168,12 @@
 			<Grind GrindRef="Anantaboga" While="not GameObjectManager.GetObjectByNPCId(1696).CurrentHealth == 0"/> <!-- Fight final boss -->
 		</If>
 		<MoveTo XYZ="-12.46667,48.28507,-0.01531982"/> <!-- Move to chest -->
-		<RunCode name="OpenChest"/>
+			<If Condition="&openchest; == 1">
+				<RunCode name="OpenChest" />
+			</If>	
 		<MoveTo XYZ="-12.46667,48.28507,-0.01531982"/> <!-- Move to Exit -->
 		<RunCode name="ExitDuty"/>
+		<WaitTimer WaitTime="10"/>
 		<LLoadProfile Path="../Start.xml"/>
 	</If>	
   </Order>

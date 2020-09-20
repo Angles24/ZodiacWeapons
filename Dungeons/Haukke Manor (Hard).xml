@@ -179,6 +179,7 @@
 			</If>
 			<MoveTo XYZ="17.64492, -18.8, -0.1502467"/>
 			<RunCode name="ExitDuty"/>
+			<WaitTimer WaitTime="10"/>
 			<LLoadProfile Path="../Start.xml"/>				
 		</If>		
 				

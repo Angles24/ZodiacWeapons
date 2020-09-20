@@ -25,6 +25,7 @@
 		</If>
 		<MoveTo XYZ="16,0,0"/> <!-- Move to Exit -->
 		<RunCode name="ExitDuty"/>
+		<WaitTimer WaitTime="10"/>
 		<LLoadProfile Path="../Start.xml"/>
 	</If>  
  </Order>

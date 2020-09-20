@@ -320,7 +320,7 @@
 			<If Condition="not ClassName == ClassJobType.Scholar">	
 				<ChangeClass Job="Scholar" />
 			</If>
-			<LLoadProfile Path="..Dungeons/Amdapor Keep.xml"/>
+			<LLoadProfile Path="../Dungeons/Amdapor Keep.xml"/>
 		</If>
 		<If Condition="GetQuestStep(66663) == 8">
 		  <GetTo ZoneId="156" XYZ="25.67217, 29, -823.6172"/>
@@ -365,7 +365,7 @@
 				<RunCode Name="UnfinishedOmnilex" />
 				<WaitTimer WaitTime="3" />
 			</If>			
-			<LLoadProfile Path="..Dungeons/A Relic Reborn the Hydra.xml"/>
+			<LLoadProfile Path="../Dungeons/A Relic Reborn the Hydra.xml"/>
 		</If>
 		<If Condition="GetQuestStep(66663) == 13">
 			<If Condition="not IsOnMap(154)">
@@ -383,19 +383,19 @@
 			<If Condition="not ClassName == ClassJobType.Scholar">	
 				<ChangeClass Job="Scholar" />
 			</If>
-			<LLoadProfile Path="..Dungeons/The Bowl of Embers (Hard).xml"/>	
+			<LLoadProfile Path="../Dungeons/The Bowl of Embers (Hard).xml"/>	
 		</If>
 		<If Condition="GetQuestStep(66663) == 16">
 			<If Condition="not ClassName == ClassJobType.Scholar">	
 				<ChangeClass Job="Scholar" />
 			</If>	
-			<LLoadProfile Path="..Dungeons/The Howling Eye (Hard).xml"/>
+			<LLoadProfile Path="../Dungeons/The Howling Eye (Hard).xml"/>
 		</If>		
 		<If Condition="GetQuestStep(66663) == 17">
 			<If Condition="not ClassName == ClassJobType.Scholar">	
 				<ChangeClass Job="Scholar" />
 			</If>
-			<LLoadProfile Path="..Dungeons/The Navel (Hard).xml"/>
+			<LLoadProfile Path="../Dungeons/The Navel (Hard).xml"/>
 		</If>
 		<If Condition="GetQuestStep(66663) == 18">
 			<If Condition="not IsOnMap(154)">

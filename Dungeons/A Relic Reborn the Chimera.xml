@@ -11,6 +11,7 @@
 		<Grind GrindRef="Chimera" while="not GameObjectManager.GetObjectByNPCId(2162).CurrentHealth == 0"/> <!-- Defeat Dhorme Chimera -->
 		<MoveTo XYZ="556.0494,348.1025,-752.4357"/> <!-- Move to Exit -->
 		<RunCode Name="ExitDuty"/>
+		<WaitTimer WaitTime="10"/>
 		<LLoadProfile Path="../Start.xml"/>
   </Order>
   <GrindAreas>

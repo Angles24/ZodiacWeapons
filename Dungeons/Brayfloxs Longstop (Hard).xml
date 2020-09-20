@@ -21,6 +21,36 @@
 		<!-- Farm first Tiny Key -->
 		<If Condition="GetInstanceTodo(0) == 0 and GetInstanceTodo(1) == 0">
 			<Log Message="Farming first Tiny Key" />
+			<If Condition="ClassName == ((ClassJobType.Bard))"> 
+				<ChangeClass Job="Bard" />
+			</If>
+			<If Condition="ClassName == ((ClassJobType.BlackMage))"> 
+				<ChangeClass Job="Black Mage" />
+			</If>
+			<If Condition="ClassName == ((ClassJobType.Dragoon))"> 
+					<ChangeClass Job="Dragoon" />
+			</If>	
+			<If Condition="ClassName == ((ClassJobType.Monk))"> 
+					<ChangeClass Job="Monk" />
+			</If>
+			<If Condition="ClassName == ((ClassJobType.Ninja))"> 
+					<ChangeClass Job="Ninja" />
+			</If>
+			<If Condition="ClassName == ((ClassJobType.Paladin))"> 
+				<ChangeClass Job="Paladin" />
+			</If>		
+			<If Condition="ClassName == ((ClassJobType.Scholar))"> 
+					<ChangeClass Job="Scholar" />
+			</If>
+			<If Condition="ClassName == ((ClassJobType.Summoner))"> 
+					<ChangeClass Job="Summoner" />
+			</If>	
+			<If Condition="ClassName == ((ClassJobType.Warrior))"> 
+					<ChangeClass Job="Warrior" />
+			</If>
+			<If Condition="ClassName == ((ClassJobType.WhiteMage))"> 
+					<ChangeClass Job="White Mage" />
+			</If>			
 			<Grind GrindRef="FarmTinyKey" While="not GameObjectManager.GetObjectByNPCId(2660).CurrentHealth == 0"/>
 			<RunCode Name="DisableSideStep"/>
 			<UseObject NpcIds="2002325" radius="200" XYZ="-7.703425,-1.383872,-2.724141" condition="GetInstanceTodo(0) == 0"/>
@@ -169,6 +199,7 @@
 			</If>	
 			<MoveTo XYZ="-25.89465,35.01941,-222.9496"/> <!-- Move to Exit -->
 			<RunCode Name="ExitDuty"/>
+			<WaitTimer WaitTime="10"/>
 			<LLoadProfile Path="../Start.xml"/>
 		</If>	
 	</If>	  

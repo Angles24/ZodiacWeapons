@@ -190,6 +190,7 @@
 			<WaitTimer WaitTime="2" />
 			<MoveTo XYZ="255,-3.999998,0"/>
 			<RunCode name="ExitDuty"/>
+			<WaitTimer WaitTime="10"/>
 			<LLoadProfile Path="../Start.xml"/>	
 		</If>		
 				

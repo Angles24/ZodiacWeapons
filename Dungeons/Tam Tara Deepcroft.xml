@@ -181,6 +181,7 @@
 				<RunCode name="OpenChest" />
 			</If>			
 			<RunCode name="ExitDuty"/>
+			<WaitTimer WaitTime="10"/>
 			<LLoadProfile Path="../Start.xml"/>
 		</If>			
 	</If>	
