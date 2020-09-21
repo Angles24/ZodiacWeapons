@@ -18,7 +18,6 @@
 		<RunCode Name="QueueIfritHard"/>
 	</If>
 	<If Condition="IsOnMap(292)">
-		<MoveTo XYZ="15,0,0"/> <!-- Move to Ifrit -->
 		<Grind GrindRef="Ifrit" While="GameObjectManager.GetObjectByNPCId(1185).CurrentHealth == 0"/> <!-- Kill Ifrit -->
 		<If Condition="&openchest; == 1">
 			<RunCode name="OpenChest" />

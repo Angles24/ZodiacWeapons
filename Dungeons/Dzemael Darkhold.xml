@@ -193,7 +193,7 @@
 					<WaitTimer WaitTime="3" />
 				</If>
 			</If>			
-			<MoveTo XYZ="63.08361, -38.30007, -155.1239"/>
+			<MoveTo XYZ="66.4438, -38.24007, -157.4374" distance="2"/>
 			<Grind GrindRef="FinalBoss" While="not GameObjectManager.GetObjectByNPCId(1396).CurrentHealth == 0"/> <!-- Fight final Boss -->
 			<If Condition="&openchest; == 1">
 				<RunCode name="OpenChest" />

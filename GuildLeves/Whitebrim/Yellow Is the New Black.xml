@@ -11,7 +11,7 @@
 	<KillRadius>50</KillRadius>
 	<BehaviorDirectory>..\..\Quest Behaviors</BehaviorDirectory>
 	<Order>	
-			<If Condition="not ExBuddy.Windows.GuildLeve.HasLeve(o ,')">
+			<If Condition="not ExBuddy.Windows.GuildLeve.HasLeve(853)">
 				<If Condition="not IsOnMap(155)">
 					<TeleportTo Name="155 " AetheryteId="23"/>
 				</If>			

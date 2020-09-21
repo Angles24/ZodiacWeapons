@@ -264,7 +264,7 @@
 		  </If>
 		  <FlyTo XYZ="427.4873, -5.342077, -74.43809" Land="True"/>
 		  <!-- Turn in Sanguine Scepter -->
-		  <TurnIn QuestId="66659" NpcId="1003075" XYZ="440.7262, -0.9374562, -62.21112"/>	
+		  <HandOver StepId="3" QuestId="66659" NpcId="1003075" XYZ="440.7262, -0.9374562, -62.21112"/>	
 		</If>				 
 		<If Condition="GetQuestStep(66659) == 4">
 		<!-- Check if the duty A Relic Reborn: The Chimera is unlocked -->

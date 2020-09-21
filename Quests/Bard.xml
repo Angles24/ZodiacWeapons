@@ -278,7 +278,7 @@
 			<TeleportTo Name="Fallgourd Float" AetheryteId="7"/>
 		  </If>
 		  <FlyTo XYZ="427.4873, -5.342077, -74.43809" Land="True"/>
-		  <TurnIn ItemId="2201" QuestId="66661" NpcId="1003075" XYZ="440.7262, -0.9374562, -62.21112"/>	
+		  <HandOver StepId="3" ItemId="2201" QuestId="66661" NpcId="1003075" XYZ="440.7262, -0.9374562, -62.21112"/>	
 		</If>				 
 		<If Condition="GetQuestStep(66661) == 4">
 		<!-- Check if the duty A Relic Reborn: The Chimera is unlocked -->

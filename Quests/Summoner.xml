@@ -6,6 +6,11 @@
   Code Credit: TuckMeIntoBread, Kayla, Sodimm
 -->
 
+<!DOCTYPE Profile [
+<!-- Profile Settings -->
+<!ENTITY alexandrite "0"> 		
+]>
+
 <Profile>
   <Name>Summoner Relic Weapon</Name>
   <BehaviorDirectory>..\Quest Behaviors</BehaviorDirectory>
@@ -280,7 +285,7 @@
 		  </If>
 		  <FlyTo XYZ="427.4873, -5.342077, -74.43809" Land="True"/>
 		  <!-- Turn in Erudite's Picatrix of Casting -->
-		  <TurnIn QuestId="66662" NpcId="1003075" XYZ="440.7262, -0.9374562, -62.21112"/>	
+		  <HandOver StepId="3" QuestId="66662" NpcId="1003075" XYZ="440.7262, -0.9374562, -62.21112"/>	
 		</If>				 
 		<If Condition="GetQuestStep(66662) == 4">
 		<!-- Check if the duty A Relic Reborn: The Chimera is unlocked -->
@@ -686,7 +691,12 @@
 			</If>			
 
 		<If Condition="IsQuestCompleted(67000) and not HasAtLeast(7883,75)">
-			<LLoadProfile Path="Alexandrite_Farm.xml"/>
+			<If Condition="&alexandrite; == 1">
+				<LLoadProfile Path="Alexandrite_Farm.xml"/>
+			</If>
+			<If Condition="&alexandrite; == 0">
+				<LLoadProfile Path="Mystery Maps.xml"/>
+			</If>			
 		</If>		
 		
 	</If>
