@@ -9528,7 +9528,7 @@
 							<WaitTimer WaitTime="3" />
 						</If>
 					</If>					
-					<Log Message="Moving to Netherfall I - Eastern Thanalan Quartz Coupling" />
+					<Log Message="Moving to Netherfall I - Coerthas Central Highlands 'The Four Winds'" />
 					<While Condition="not ZodiacManager.CurrentBook.FateTask3Completed">
 						<If Condition="not IsOnMap(155)">
 							<TeleportTo AetheryteId="23"/>

@@ -375,7 +375,9 @@
 			<TalkTo NpcId="1003075" XYZ="440.7262, -0.9374562, -62.21112" QuestId="66657" StepId="13"/>
 		</If>
 		<If Condition="GetQuestStep(66657) == 14">
-			<ChangeClass Job="Monk" />
+			<While Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId == 1735">
+				<ChangeClass Job="Monk" />
+			</While>		
 			<!-- Turn in Unfinished Sphairai -->			
 			<HandOver ItemId="1735" NpcId="1003075" XYZ="440.7262, -0.9374562, -62.21112" QuestId="66657" StepId="14"/>	
 		</If>
@@ -388,11 +390,13 @@
 		<If Condition="GetQuestStep(66657) == 16">
 			<If Condition="not ClassName == ClassJobType.Monk">	
 				<ChangeClass Job="Monk" />
+			</If>	
 			<LLoadProfile Path="../Dungeons/The Howling Eye (Hard).xml"/>	
 		</If>
 		<If Condition="GetQuestStep(66657) == 17">
 			<If Condition="not ClassName == ClassJobType.Monk">	
 				<ChangeClass Job="Monk" />
+			</If>	
 			<LLoadProfile Path="../Dungeons/The Navel (Hard).xml"/>
 		</If>
 		<If Condition="GetQuestStep(66657) == 18">

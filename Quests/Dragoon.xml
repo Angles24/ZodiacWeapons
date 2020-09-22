@@ -240,13 +240,8 @@
 		  </If>
 		</If>
 		<If Condition="GetQuestStep(66658) == 1">
-<!--	Need to get Dragoon chest	
-		  <If Condition="not IsOnMap(152)">
-			<TeleportTo Name="The Hawthorne Hut" AetheryteId="4"/>
-		  </If>
-		  <FlyTo XYZ="118.9358, -21.49729, -298.3354" Land="True"/>
-		  <UseObject NpcIds="2002498" XYZ="116.0448,-21.43903,-294.9112"  Radius="25"  QuestId="66658" StepId="1"/>
--->		  
+			<LisbethTravel Area="Coerthas Central Highlands" Position="640.0771, 286.305, 140.4273"/>
+			<UseObject NpcIds="2002494" XYZ="638.2086, 286.427, 140.4897"  Radius="25"  QuestId="66658" StepId="1"/>
 		</If>  
 		<If Condition="GetQuestStep(66658) == 2">
 			<If Condition="not IsOnMap(154)">
