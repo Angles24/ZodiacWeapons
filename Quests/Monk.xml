@@ -236,27 +236,18 @@
 	<If Condition="ClassName == ((ClassJobType.Monk))">
 		<!-- A Relic Reborn (Sphairai) -->
 		<If Condition="not HasQuest(66657) and not IsQuestCompleted(66657)">
-		  <If Condition="not IsOnMap(154)">
-			<TeleportTo Name="Fallgourd Float" AetheryteId="7"/>
-		  </If>
-		  <FlyTo XYZ="427.4873, -5.342077, -74.43809" Land="True"/>
+		  <LisbethTravel Area="North Shroud" Position="440.463, -0.9374608, -64.74161"/>
 		  <ChangeClass Job="Monk" />
 		  <If Condition="IsQuestAcceptQualified(66657)">
 			<PickupQuest QuestId="66657" NpcId="1003075"/>
 		  </If>
 		</If>
 		<If Condition="GetQuestStep(66657) == 1">
-			<If Condition="not IsOnMap(146)">
-				<TeleportTo Name="Forgotten Springs" AetheryteId="20"/>
-			</If>
-		  <FlyTo XYZ="545.9636, 7.599625, -162.1209" Land="True"/>
+		  <LisbethTravel Area="Southern Thanalan" Position="551.4755, 7.599624, -170.2551"/>
 		  <UseObject NpcIds="2002493" XYZ="553.6736, 7.583679, -172.1676" Radius="25"  QuestId="66657" StepId="1"/>
 		</If>  
 		<If Condition="GetQuestStep(66657) == 2">
-			<If Condition="not IsOnMap(154)">
-				<TeleportTo Name="Fallgourd Float" AetheryteId="7"/>
-			</If>
-			<FlyTo XYZ="427.4873, -5.342077, -74.43809" Land="True"/>
+			<LisbethTravel Area="North Shroud" Position="440.463, -0.9374608, -64.74161"/>
 			<!-- Handover pair of timeworn Sphairai --> 
 			<HandOver ItemId="2000990" NpcId="1003075" XYZ="440.7262, -0.9374562, -62.21112" QuestId="66657" StepId="2"/>
 		</If>
@@ -264,16 +255,13 @@
 			<RunCode name="NoCesti"/>	
 		</If>
 		<If Condition="GetQuestStep(66657) == 3 and HasAtLeast(1740,1)">
-		  <If Condition="not IsOnMap(154)">
-			<TeleportTo Name="Fallgourd Float" AetheryteId="7"/>
-		  </If>
-		  <FlyTo XYZ="427.4873, -5.342077, -74.43809" Land="True"/>
-		  <HandOver StepId="3" ItemId="1740" QuestId="66657" NpcId="1003075" XYZ="440.7262, -0.9374562, -62.21112"/>	
+			<LisbethTravel Area="North Shroud" Position="440.463, -0.9374608, -64.74161"/>
+			<HandOver StepId="3" ItemId="1740" QuestId="66657" NpcId="1003075" XYZ="440.7262, -0.9374562, -62.21112"/>	
 		</If>				 
 		<If Condition="GetQuestStep(66657) == 4">
 		<!-- Check if the duty A Relic Reborn: The Chimera is unlocked -->
 			<If condition="not (IsQuestCompleted(66655) or IsQuestCompleted(66657) or IsQuestCompleted(66657) or IsQuestCompleted(66658) or IsQuestCompleted(66659) or IsQuestCompleted(66660) or IsQuestCompleted(66661) or IsQuestCompleted(66662) or IsQuestCompleted(66663))">
-				<GetTo ZoneId="155" XYZ="531.1261, 350.3369, -710.7814"/>
+				<LisbethTravel Area="Coerthas Central Highlands" Position="530.7706, 350.1871, -709.9794"/>
 				<If condition="GameObjectManager.GetObjectByNPCId(2003993).IsTargetable">  
 				  <UseObject NpcIds="2003993" XYZ="532.5856, 350.6066, -710.9941"  Radius="25"  QuestId="66657"/>
 				</If>  
@@ -281,10 +269,7 @@
 		  <LLoadProfile Path="../Dungeons/A Relic Reborn the Chimera.xml"/>
 		</If>
 		<If Condition="GetQuestStep(66657) == 5">
-			<If Condition="not IsOnMap(154)">
-				<TeleportTo Name="Fallgourd Float" AetheryteId="7"/>
-			</If>
-			<FlyTo XYZ="427.4873, -5.342077, -74.43809" Land="True"/>
+			<LisbethTravel Area="North Shroud" Position="440.463, -0.9374608, -64.74161"/>
 			<!-- Handover pinch of alumina salts MNK -->
 			<HandOver ItemId="2000999" NpcId="1003075" XYZ="440.7262, -0.9374562, -62.21112" QuestId="66657" StepId="5"/>
 		</If>
@@ -325,10 +310,7 @@
 		  <HandOver ItemId="2001008" NpcId="1001304" XYZ="25.58936, 29, -825.3757" QuestId="66657" StepId="8"/>
 		</If>
 		<If Condition="GetQuestStep(66657) == 9">
-			<If Condition="not IsOnMap(154)">
-				<TeleportTo Name="Fallgourd Float" AetheryteId="7"/>
-			</If>	
-			<FlyTo XYZ="427.4873, -5.342077, -74.43809" Land="True"/>
+			<LisbethTravel Area="North Shroud" Position="440.463, -0.9374608, -64.74161"/>
 			<!-- Handover copy of Enter the Coeurl -->
 			<HandOver ItemId="2001017" NpcId="1003075" XYZ="440.7262, -0.9374562, -62.21112" QuestId="66657" StepId="9"/>
 		</If>
@@ -337,26 +319,17 @@
 				<RunCode Name="UnfinishedSphairai" />
 				<WaitTimer WaitTime="3" />
 			</While>
-			<If Condition="not IsOnMap(146)">
-				<TeleportTo Name="Forgotten Springs" AetheryteId="20"/>
-			</If>
-			<FlyTo XYZ="236.5246, 8, -18.19426" Land="True"/>
+			<LisbethTravel Area="Southern Thanalan" Position="238.0863, 8, -18.49473"/>
 			<Grind grindRef="RelicRebornSphairai" postCombatDelay="1" while="GetQuestStep(66657) == 10"/>
 		</If>
 		<If Condition="GetQuestStep(66657) == 11">
-			<If Condition="not IsOnMap(154)">
-				<TeleportTo Name="Fallgourd Float" AetheryteId="7"/>
-			</If>	
-			<FlyTo XYZ="427.4873, -5.342077, -74.43809" Land="True"/>	
+			<LisbethTravel Area="North Shroud" Position="440.463, -0.9374608, -64.74161"/>	
 			<TalkTo NpcId="1003075" XYZ="440.7262, -0.9374562, -62.21112" QuestId="66657" StepId="11"/>	
 		</If>
 		<If Condition="GetQuestStep(66657) == 12">		
 			<!-- If does not have access to A Relic Reborn: the Hydra -->
 			<If condition="not (IsQuestCompleted(66655) or IsQuestCompleted(66657) or IsQuestCompleted(66657) or IsQuestCompleted(66658) or IsQuestCompleted(66659) or IsQuestCompleted(66660) or IsQuestCompleted(66661) or IsQuestCompleted(66662) or IsQuestCompleted(66663))">
-				<If Condition="not IsOnMap(145)">
-					<TeleportTo Name="Camp Drybone" AetheryteId="18"/>
-				</If>
-				<FlyTo XYZ="-334.4535, -22.49262, 429.417" Land="True"/>	
+				<LisbethTravel Area="Eastern Thanalan" Position="-334.4583, -22.48309, 430.3237"/>
 				<While condition="GameObjectManager.GetObjectByNPCId(2003994).IsTargetable">  
 				  <UseObject NpcIds="2003994" XYZ="-336.8429, -22.38501, 435.5992"  Radius="25"/>
 				</While>  
@@ -368,10 +341,7 @@
 			<LLoadProfile Path="../Dungeons/A Relic Reborn the Hydra.xml"/>
 		</If>
 		<If Condition="GetQuestStep(66657) == 13">
-			<If Condition="not IsOnMap(154)">
-				<TeleportTo Name="Fallgourd Float" AetheryteId="7"/>
-			</If>	
-			<FlyTo XYZ="427.4873, -5.342077, -74.43809" Land="True"/>	
+			<LisbethTravel Area="North Shroud" Position="440.463, -0.9374608, -64.74161"/>	
 			<TalkTo NpcId="1003075" XYZ="440.7262, -0.9374562, -62.21112" QuestId="66657" StepId="13"/>
 		</If>
 		<If Condition="GetQuestStep(66657) == 14">
@@ -400,10 +370,7 @@
 			<LLoadProfile Path="../Dungeons/The Navel (Hard).xml"/>
 		</If>
 		<If Condition="GetQuestStep(66657) == 18">
-			<If Condition="not IsOnMap(154)">
-				<TeleportTo Name="Fallgourd Float" AetheryteId="7"/>
-			</If>	
-			<FlyTo XYZ="427.4873, -5.342077, -74.43809" Land="True"/>	
+			<LisbethTravel Area="North Shroud" Position="440.463, -0.9374608, -64.74161"/>	
 			<!-- Handin white-hot ember, howling gale, and hyperfused ore MNK -->			
 			<HandOver ItemIds="2001025,2001034,2001043" NpcId="1003075" XYZ="440.7262, -0.9374562, -62.21112" QuestId="66657" StepId="18"/>			
 		</If>
@@ -444,10 +411,7 @@
 				
 		<!-- Up in Arms -->
 		<If Condition="IsQuestCompleted(66657)and not HasQuest(66971) and not IsQuestCompleted(66971)">
-		  <If Condition="not IsOnMap(154)">
-			<TeleportTo Name="Fallgourd Float" AetheryteId="7"/>
-		  </If>
-		  <FlyTo XYZ="427.4873, -5.342077, -74.43809" Land="True"/>
+<LisbethTravel Area="North Shroud" Position="440.463, -0.9374608, -64.74161"/>
 		  <If Condition="not HasAtLeast(6258,1)">
 			<RunCode name="NoSphairaiZenith"/>
 		  </If>
