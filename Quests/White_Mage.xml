@@ -420,7 +420,9 @@
 			<TalkTo NpcId="1003075" XYZ="440.7262, -0.9374562, -62.21112" QuestId="66660" StepId="13"/>
 		</If>
 		<If Condition="GetQuestStep(66660) == 14">
-			<ChangeClass Job="WhiteMage" />
+			<While Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId == 2046">
+				<ChangeClass Job="WhiteMage" />
+			</While>					
 			<!-- Turn in Unfinished Thyrus -->
 			<HandOver ItemId="2046" NpcId="1003075" XYZ="440.7262, -0.9374562, -62.21112" QuestId="66660" StepId="14"/>	
 		</If>
