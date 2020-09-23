@@ -534,18 +534,18 @@
 		</If>	
 
 		<!-- Trials of the Braves -->
-		<!-- If has Veil of Wiyu Atma -->							 
+		<!-- If has Thyrus Atma -->							 
 		<If Condition="HasAtLeast(7829,1) and not HasQuest(66972) and not IsQuestCompleted(66972)">
+		  <!-- Equip The Thyrus Atma so quest is available -->
+		  <If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7829">
+			<RunCode Name="ThyrusAtma" />
+			<WaitTimer WaitTime="3" />
+		  </If>		
 		  <If Condition="not IsOnMap(154)">
 			<TeleportTo Name="Fallgourd Float" AetheryteId="7"/>
 		  </If>
 		  <FlyTo XYZ="410.7605, -6.053607, -88.41638" Land="True"/>		
-		  <GetTo ZoneId="154" XYZ="407.8153, -4.709439, -88.4598"/>
-			<!-- Equip The Veil of Wiyu Atma so quest is available -->
-			  <If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7829">
-					<RunCode Name="ThyrusZenith" />
-					<WaitTimer WaitTime="3" />
-			  </If>		  
+		  <GetTo ZoneId="154" XYZ="407.8153, -4.709439, -88.4598"/>		  
 		  <If Condition="IsQuestAcceptQualified(66972)">
 			<PickupQuest QuestId="66972" NpcId="1008948"/>
 		  </If>
@@ -561,7 +561,7 @@
 
 	<!-- Start Animus Book Farm -->
 		<!-- Purchase first book if has none -->
-			<If Condition="HasAtLeast(7829,1) and not HasAtLeast(2001298,1) and not HasAtLeast(2001299,1) and not HasAtLeast(2001300,1) and not HasAtLeast(2001301,1) and not HasAtLeast(2001302,1) and not HasAtLeast(2001303,1) and not HasAtLeast(2001304,1) and not HasAtLeast(2001305,1) and not HasAtLeast(2001306,1)">
+			<If Condition="IsQuestCompleted(66972) and HasAtLeast(7829,1) and not HasAtLeast(2001298,1) and not HasAtLeast(2001299,1) and not HasAtLeast(2001300,1) and not HasAtLeast(2001301,1) and not HasAtLeast(2001302,1) and not HasAtLeast(2001303,1) and not HasAtLeast(2001304,1) and not HasAtLeast(2001305,1) and not HasAtLeast(2001306,1)">
 				<!-- Purchase Skyfire I -->
 				<Log Message="Moving to purchase Skyfire I" />
 				<If Condition="not IsOnMap(156)">
