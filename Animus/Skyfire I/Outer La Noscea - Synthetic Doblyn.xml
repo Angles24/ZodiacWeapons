@@ -15,10 +15,7 @@
 		</GrindArea>
 	</GrindAreas>
 	<Order>
-	<If Condition="not IsOnMap(180)">
-		<TeleportTo Name="Camp Overlook" AetheryteId="16" />
-	</If>
-	<NoCombatMoveTo Name="synthetic_doblyn" XYZ="168.7409, 21.90005, -696.0637"/>
+	  <LisbethTravel Area="Outer La Noscea" Position="109.4875, 23.91594, -715.1216"/>
       <Grind grindRef="synthetic_doblyn" while="not ZodiacManager.CurrentBook.KillTask5Completed" />
 	  <LLoadProfile Path="../../Start.xml"/>
 	</Order>

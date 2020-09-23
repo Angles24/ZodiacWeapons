@@ -1,26 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Profile: Skyfire I - 4th Cohort Hoplomachi
+  Authors: Zamphire
+  Code Credit: nishap
+-->
+
 <Profile>
   <Name>Skyfire I - 4th Cohort Hoplomachi</Name>
-  <KillRadius>500</KillRadius>
-  <GrindAreas>
-    <GrindArea name="4th_cohort_hoplomachi">
-      <Hotspots>
-        <Hotspot Radius="500" XYZ="-500.4765, 51.02969, -748.5467" name="4th_cohort_hoplomachi" />
-        <!-- <Hotspot Radius="120" X="-565.5568" Y="53.31147" Z="-743.2831" name="4th_cohort_hoplomachi" />
-		<Hotspot Radius="120" X="-455.4377" Y="51.2007" Z="-760.4438" name="4th_cohort_hoplomachi" /> -->
-      </Hotspots>
-      <TargetMobs>
-        <TargetMob id="1815"  />
-      </TargetMobs>
-      <MinLevel>1</MinLevel>
-      <MaxLevel>60</MaxLevel>
-    </GrindArea>
-  </GrindAreas>
   <Order>
-	<If Condition="not IsOnMap(140)">
-		<TeleportTo Name="Horizon" AetheryteId="17" />
-	</If>
-	<NoCombatMoveTo Name="4th_cohort_hoplomachi" XYZ="-500.4765, 51.02969, -748.5467"/>
+	<LisbethTravel Area="Western Thanalan" Position="-498.4164, 50.98945, -746.5322"/>
     <Grind grindRef="4th_cohort_hoplomachi" while="not ZodiacManager.CurrentBook.KillTask6Completed" />
 	<LLoadProfile Path="../../Start.xml"/>
   </Order>
+  <GrindAreas>
+    <GrindArea name="4th_cohort_hoplomachi">
+		<Hotspots>
+			<Hotspot Radius="500" XYZ="-500.4765, 51.02969, -748.5467"/>
+			<Hotspot Radius="500" XYZ="-611.7562, 57.82459, -787.7922"/>
+		</Hotspots>
+		<TargetMobs>
+			<TargetMob id="1815"  />
+		</TargetMobs>
+    </GrindArea>
+  </GrindAreas>
 </Profile>

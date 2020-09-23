@@ -4,8 +4,9 @@
   <GrindAreas>
     <GrindArea name="5th_cohort_vanguard">
       <Hotspots>
-        <Hotspot Radius="500" XYZ="-458.4229, -9.032833, -464.0986" name="5th_cohort_vanguard" />
-		<!-- <Hotspot Radius="120" X="-474.1818" Y="-4.006067" Z="-233.7749" name="5th_cohort_vanguard" /> -->
+        <Hotspot Radius="500" XYZ="-546.3675, -3.710563, -392.4852"/>
+		<Hotspot Radius="500" XYZ="-490.4448, -3.216822, -265.3788"/>
+		<Hotspot Radius="500" XYZ="-547.0346, -3.767937, -398.7435"/>
       </Hotspots>
       <TargetMobs>
         <TargetMob id="1814"  />
@@ -15,9 +16,7 @@
     </GrindArea>
   </GrindAreas>
   <Order>
-	<If Condition="not IsOnMap(154)">
-		<TeleportTo Name="Revenant's Toll" AetheryteId="24" />
-	</If>
+	<LisbethTravel Area="Mor Dhona" Position="-559.3, -3.146109, -351.7"/>
     <Grind grindRef="5th_cohort_vanguard" while="not ZodiacManager.CurrentBook.KillTask4Completed" />
 	<LLoadProfile Path="../../Start.xml"/>
   </Order>

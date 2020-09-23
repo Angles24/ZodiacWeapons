@@ -536,6 +536,7 @@
 		<!-- Trials of the Braves -->
 		<!-- If has Thyrus Atma -->							 
 		<If Condition="HasAtLeast(7829,1) and not HasQuest(66972) and not IsQuestCompleted(66972)">
+		  <Log Message="Picking up Trials of the Braves." />	
 		  <!-- Equip The Thyrus Atma so quest is available -->
 		  <If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7829">
 			<RunCode Name="ThyrusAtma" />
