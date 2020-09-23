@@ -18,7 +18,7 @@
 		<RunCode Name="QueueGarudaHard"/>
 	</If>
 	<If Condition="IsOnMap(294)">
-		<Grind GrindRef="Garuda" While="GameObjectManager.GetObjectByNPCId(1644).CurrentHealth == 0"/> <!-- Kill Garuda -->
+		<Grind GrindRef="Garuda" While="not GameObjectManager.GetObjectByNPCId(1644).CurrentHealth == 0"/> <!-- Kill Garuda -->
 		<If Condition="&openchest; == 1">
 			<RunCode name="OpenChest" />
 		</If>

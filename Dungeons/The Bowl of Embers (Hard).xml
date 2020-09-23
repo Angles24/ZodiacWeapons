@@ -18,7 +18,7 @@
 		<RunCode Name="QueueIfritHard"/>
 	</If>
 	<If Condition="IsOnMap(292)">
-		<Grind GrindRef="Ifrit" While="GameObjectManager.GetObjectByNPCId(1185).CurrentHealth == 0"/> <!-- Kill Ifrit -->
+		<Grind GrindRef="Ifrit" While="not GameObjectManager.GetObjectByNPCId(1185).CurrentHealth == 0"/> <!-- Kill Ifrit -->
 		<If Condition="&openchest; == 1">
 			<RunCode name="OpenChest" />
 		</If>
@@ -34,7 +34,8 @@
 			<Hotspot Radius="200" XYZ="15,0,0" />
         </Hotspots>
         <TargetMobs>
-			<TargetMob Name="Ifrit" Id="1185" Weight="1" />		
+			<TargetMob Name="Ifrit" Id="1185" Weight="1" />	
+			<TargetMob Name="Infernal Nail" Id="1186" Weight="1000" />				
         </TargetMobs>
 	</GrindArea>
   </GrindAreas>		
