@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
   Profile: Bard Relic Weapon
-  Version: 0.4
+  Version: 0.5
   Authors: Zamphire
   Code Credit: TuckMeIntoBread, Kayla, Sodimm
 -->
@@ -194,6 +194,46 @@
                 }				
             ]]>
         </CodeChunk>
+      <CodeChunk Name="BuySphereScroll">
+            <![CDATA[ 
+                await Buddy.Coroutines.Coroutine.Sleep(500);
+                ff14bot.Managers.GameObjectManager.GetObjectByNPCId(1009151).Interact();
+                await Buddy.Coroutines.Coroutine.Sleep(1000);
+                if (ff14bot.RemoteWindows.SelectIconString.IsOpen)
+                    ff14bot.RemoteWindows.SelectIconString.ClickSlot(0);
+                await Buddy.Coroutines.Coroutine.Sleep(1000);
+                if (ff14bot.RemoteWindows.SelectString.IsOpen)
+                    ff14bot.RemoteWindows.SelectString.ClickSlot(0);					
+				await Buddy.Coroutines.Coroutine.Sleep(1000);	
+                if (await Coroutine.Wait(1000, () => Talk.DialogOpen))
+                {
+                    Talk.Next();
+                }
+				await Buddy.Coroutines.Coroutine.Sleep(1000);	
+                if (ff14bot.RemoteWindows.SelectString.IsOpen)
+                    ff14bot.RemoteWindows.SelectString.ClickSlot(5);
+                if (await Coroutine.Wait(1000, () => Talk.DialogOpen))
+                {
+                    Talk.Next();
+                }
+                await Buddy.Coroutines.Coroutine.Sleep(1000);
+                 if (ff14bot.RemoteWindows.SelectYesno.IsOpen)
+                    ff14bot.RemoteWindows.SelectYesno.ClickYes();
+                await Buddy.Coroutines.Coroutine.Sleep(1000);
+                if (await Coroutine.Wait(1000, () => Talk.DialogOpen))
+                {
+                    Talk.Next();
+                }
+                if (await Coroutine.Wait(1000, () => Talk.DialogOpen))
+                {
+                    Talk.Next();
+                }
+                if (await Coroutine.Wait(1000, () => Talk.DialogOpen))
+                {
+                    Talk.Next();
+                }				
+            ]]>
+        </CodeChunk>		
 		<CodeChunk Name="Disable_Flight">
 		<![CDATA[
 			foreach (var plugin in PluginManager.Plugins.Where(p => p.Plugin.Name == "Enable Flight" || p.Plugin.Name == "启用飞行"))
@@ -223,7 +263,7 @@
 	</GrindArea>
   </GrindAreas>
   <Order>
-	<Log Message="Starting Bard Zodiac Questing Version 0.4" />
+	<Log Message="Starting Bard Zodiac Questing Version 0.5" />
     <!-- The Weaponsmith of Legend -->
     <If Condition="not HasQuest(66241) and not IsQuestCompleted(66241)">
 	  <ChangeClass Job="Bard" />	
@@ -611,6 +651,87 @@
 				<LLoadProfile Path="../Animus/Animus Book Farm.xml"/>
 			</If>	
 		
+	<!-- Animus Weapon Upgrade -->
+		<If condition="HasAtLeast(7841,1) and not IsQuestCompleted(66998)">
+			<!-- Celestial Radiance -->		
+			<If Condition="not HasQuest(66998) and not IsQuestCompleted(66998)">		
+				<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7841">
+					<RunCode Name="VeilAnimus" />
+					<WaitTimer WaitTime="3" />
+				</If>
+				<If Condition="not IsOnMap(154)">
+					<TeleportTo Name="Fallgourd Float" AetheryteId="7"/>
+				</If>
+				<FlyTo XYZ="410.7605, -6.053607, -88.41638" Land="True"/>		
+				<GetTo ZoneId="154" XYZ="407.8153, -4.709439, -88.4598"/>			
+				<If Condition="IsQuestAcceptQualified(66998)">
+					<PickupQuest QuestId="66998" NpcId="1008948"/>
+				</If>
+			</If>
+		</If>	
+			<If Condition="GetQuestStep(66998) == 1">
+			  <GetTo ZoneId="141" XYZ="115.5095, 31, -389.3664"/>
+			  <TalkTo NpcId="1001425" XYZ="115.1293, 31.8761, -392.2027" QuestId="66998" StepId="1"/>
+			</If>
+			<If Condition="GetQuestStep(66998) == 2">
+			  <GetTo ZoneId="141" XYZ="106.7625, 30.98244, -384.8175"/>
+			  <TalkTo NpcId="1009151" XYZ="105.3329, 30.90404, -385.153" QuestId="66998" StepId="2"/>
+			</If>
+			<If Condition="GetQuestStep(66998) == 3">
+			  <GetTo ZoneId="156" XYZ="26.42607, 29, -823.7854"/>
+			  <TalkTo NpcId="1001304" XYZ="25.58936, 29, -825.3757" QuestId="66998" StepId="3"/>
+			</If>
+			<If Condition="GetQuestStep(66998) == 255">
+				<If condition="not HasAtLeast(7885,3)">
+					<GetTo ZoneId="156" XYZ="63.40987, 31.12387, -735.2782"/>
+					<!-- Superior Enchanted Ink -->										   
+					<BuyShopExchangeCurrency NpcId= "1008119" ItemId="7885" SelectString="2" Count="3"/>
+				</If>	
+				<If condition="HasAtLeast(7885,3)">
+				  <GetTo ZoneId="141" XYZ="106.7625, 30.98244, -384.8175"/>
+				  <TurnIn NpcId="1009151" XYZ="105.3329, 30.90404, -385.153" QuestId="66998" StepId="255"/>
+				</If>	
+			</If>	
+		<!-- Star Light, Star Bright -->
+		<If Condition="not HasQuest(67000) and not IsQuestCompleted(67000)">
+			<GetTo ZoneId="141" XYZ="106.5433, 30.96623, -383.0377"/>
+			<If Condition="IsQuestAcceptQualified(67000)">
+				<PickupQuest QuestId="67000" NpcId="1009151"/>
+			</If>
+			</If>
+			<If Condition="GetQuestStep(67000) == 255">
+			  <If Condition="not IsOnMap(154)">
+				<TeleportTo Name="Fallgourd Float" AetheryteId="7"/>
+			  </If>
+			  <FlyTo XYZ="410.7605, -6.053607, -88.41638" Land="True"/>	
+			  <GetTo ZoneId="154" XYZ="415.2936, -5.886055, -86.30912"/>
+			  <TurnIn QuestId="67000" NpcId="1008948" XYZ="405.1117, -4.498068, -89.15851"/>
+			</If>
+			<!-- One Man's Trash -->
+			<If Condition="not HasQuest(66676) and not IsQuestCompleted(66676)">
+			  <GetTo ZoneId="154" XYZ="408.0326, -5.942129, -82.63373"/>
+			  <If Condition="IsQuestAcceptQualified(66676)">
+				<PickupQuest QuestId="66676" NpcId="1009381"/>
+			  </If>
+			</If>
+			<If Condition="GetQuestStep(66676) == 255">
+			  <GetTo ZoneId="156" XYZ="27.14867, 28.99997, -739.166"/>
+			  <TurnIn QuestId="66676" NpcId="1006981" XYZ="25.71143, 28.99997, -738.2162"/>
+			</If>			
+
+		<If Condition="IsQuestCompleted(67000) and HasAtLeast(7883,75)">
+			<LisbethTravel Area="Central Thanalan" Position="106.6467, 30.97388, -384.5325"/>
+			<RunCode name="BuySphereScroll"/>
+		</If>	
+		<If Condition="IsQuestCompleted(67000) and not HasAtLeast(7883,75)">
+			<If Condition="&alexandrite; == 1">
+				<LLoadProfile Path="Alexandrite_Farm.xml"/>
+			</If>
+			<If Condition="&alexandrite; == 0">
+				<LLoadProfile Path="Mystery Maps.xml"/>
+			</If>			
+		</If>
+
 		
 	</If>
   </Order>
