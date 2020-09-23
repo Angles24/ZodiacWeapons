@@ -543,7 +543,7 @@
 		  <GetTo ZoneId="154" XYZ="407.8153, -4.709439, -88.4598"/>
 			<!-- Equip The Veil of Wiyu Atma so quest is available -->
 			  <If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7829">
-					<RunCode Name="ThyrusAtma" />
+					<RunCode Name="ThyrusZenith" />
 					<WaitTimer WaitTime="3" />
 			  </If>		  
 		  <If Condition="IsQuestAcceptQualified(66972)">
