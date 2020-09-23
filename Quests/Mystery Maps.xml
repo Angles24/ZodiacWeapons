@@ -13,7 +13,7 @@
 	<If condition="LlamaLibrary.TreasureMap.PrimaryKey != 6">
 		<RunCode Name="Announce_Manual_Completion"/>
 	</If> -->
-	<If condition="not HasAtLeast(7883,75)">
+	<While condition="not HasAtLeast(7883,75)">
 		<!-- If has Mystery Map -->
 		<If condition="HasAtLeast(7884,1) and not HasAtLeast(2001223,1)">
 			<LogMessage Message="Opening Mysterious Map." />
@@ -206,7 +206,7 @@
 				<RunCode name="BuyMysteriousMap"/>
 			</If>
 		</If>			
-	</If>
+	</While>
 	<If condition="HasAtLeast(7883,75)">
 		<LLoadProfile Path="../Start.xml"/>
 	</If>	
