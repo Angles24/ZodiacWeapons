@@ -6,6 +6,11 @@
   Code Credit: TuckMeIntoBread, Kayla, Sodimm
 -->
 
+<!DOCTYPE Profile [
+<!-- Profile Settings -->
+<!ENTITY alexandrite "0"> 		
+]>
+
 <Profile>
   <Name>Bard Relic Weapon</Name>
   <BehaviorDirectory>..\Quest Behaviors</BehaviorDirectory>
