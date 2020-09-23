@@ -14,7 +14,7 @@
   <BehaviorDirectory></BehaviorDirectory>
   <Order>
  <!-- [The Lost City of Amdapor] One Night in Amdapor Unlock -->
-    <If Condition="IsQuestCompleted(66060) and IsQuestCompleted(66751) and not HasQuest(66925) and not IsQuestCompleted(66925)">
+    <If Condition="not HasQuest(66925) and not IsQuestCompleted(66925)">
       <GetTo ZoneId="133" XYZ="-257.9622, -5.774355, -26.26284"/>
       <If Condition="IsQuestAcceptQualified(66925)">
         <PickupQuest QuestId="66925" NpcId="1000692" XYZ="-258.8083, -5.773526, -27.26788"/>
