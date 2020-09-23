@@ -323,7 +323,7 @@
 			<If condition="not (IsQuestCompleted(66655) or IsQuestCompleted(66660) or IsQuestCompleted(66660) or IsQuestCompleted(66658) or IsQuestCompleted(66659) or IsQuestCompleted(66660) or IsQuestCompleted(66661) or IsQuestCompleted(66662) or IsQuestCompleted(66663))">
 				<GetTo ZoneId="155" XYZ="531.1261, 350.3369, -710.7814"/>
 				<If condition="GameObjectManager.GetObjectByNPCId(2003993).IsTargetable">  
-				  <UseObject NpcIds="2003993" XYZ="532.5856, 350.6066, -710.9941"  Radius="25"  QuestId="66660"/>
+				  <UseObject NpcIds="2003993" XYZ="532.5856, 350.6066, -710.9941"  Radius="25"  QuestId="66660" condition="GameObjectManager.GetObjectByNPCId(2003993).IsTargetable"/>
 				</If>  
 			</If> 
 		  <LLoadProfile Path="../Dungeons/A Relic Reborn the Chimera.xml"/>
@@ -470,7 +470,8 @@
 		
 		<!-- Buy Zenith weapons -->
 		<!-- If Has Completed A Relic Reborn (Thyrus) and has Thyrus -->																										
-		<If Condition="IsQuestCompleted(66662) and HasAtLeast(2052,1)">
+		<If Condition="IsQuestCompleted(66660) and HasAtLeast(2052,1)">
+			<GetTo ZoneId="154" XYZ="449.7941, -0.3727861, -70.40031"/>
 			<If Condition="HasAtLeast(6268,2)"> <!-- Thavnairian Mist -->
 				<GetTo ZoneId="154" XYZ="450.1296, -0.3836476, -69.53964"/>
 				<RunCode name="ExchangeThyrus"/>
