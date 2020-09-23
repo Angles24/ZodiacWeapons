@@ -7,7 +7,7 @@
 
 <Profile>
   <Name>Mystery Map Farm</Name>
-  <BehaviorDirectory></BehaviorDirectory>
+  <BehaviorDirectory>..\Quest Behaviors</BehaviorDirectory>
   <Order>
 	<!--
 	<If condition="LlamaLibrary.TreasureMap.PrimaryKey != 6">
@@ -198,6 +198,7 @@
 		<If condition="not HasAtLeast(7884,1) and not HasAtLeast(2001223,1) and not HasAtLeast(7883,75)">
 			<If Condition="not HasAtLeast(28,75)">
 				<RunCode name="NeedPoetics"/>
+				<StopBot/>
 			</If>		
 			<If Condition="HasAtLeast(28,75)">
 				<LogMessage Message="Going to buy new Mysterious Map." />

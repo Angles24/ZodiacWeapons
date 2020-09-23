@@ -104,7 +104,7 @@
                 await Buddy.Coroutines.Coroutine.Sleep(120);
                 foreach(ff14bot.Managers.BagSlot slot in ff14bot.Managers.InventoryManager.FilledSlots)
                 {
-                    if(slot.RawItemId == 1675)
+                    if(slot.RawItemId == 1816)
                     {
                         slot.Handover();
                     }
@@ -254,7 +254,7 @@
         <TargetMobs>
 			<TargetMob Name="U'Ghamaro Bedesman" Id="1834" Weight="1" />
 			<TargetMob Name="U'Ghamaro Quarryman" Id="1833" Weight="1" />
-			<TargetMob Name="U'Ghamaro Priest" Id="1835" Weight="1" />			
+			<TargetMob Name="U'Ghamaro Roundsman" Id="1832" Weight="1" />			
         </TargetMobs>
 	</GrindArea>
   </GrindAreas>
@@ -289,7 +289,7 @@
 		  </If>
 		</If>
 		<If Condition="GetQuestStep(66655) == 1">
-		  <GetTo ZoneId="180" XYZ="160.0519, 22.75116, -694.0261"/>
+		  <LisbethTravel Area="Outer La Noscea" Position="159.8774, 21.42216, -702.3598"/>
 		  <UseObject NpcIds="2002491" XYZ="160.0519, 22.75116, -694.0261" Radius="25"  QuestId="66655" StepId="1"/>
 		</If>  
 		<If Condition="GetQuestStep(66655) == 2">
@@ -299,7 +299,7 @@
 		</If>
 		<If Condition="GetQuestStep(66655) == 3 and HasAtLeast(1810,1)">
 		  <LisbethTravel Area="North Shroud" Position="440.463, -0.9374608, -64.74161"/>
-		  <HandOver ItemId="1810" StepId="3" ItemId="1810" QuestId="66655" NpcId="1003075" XYZ="440.7262, -0.9374562, -62.21112"/>	
+		  <HandOver StepId="3" ItemId="1810" QuestId="66655" NpcId="1003075" XYZ="440.7262, -0.9374562, -62.21112"/>	
 		</If>		
 		<If Condition="GetQuestStep(66655) == 3 and not HasAtLeast(1810,1)">
 			<RunCode name="NoBardiche"/>	
@@ -341,7 +341,7 @@
 				</If>
 			</If>
 		  <RunCode name="Disable_Flight"/>			
-		  <GetTo ZoneId="156" XYZ="26.15508, 29, -823.166"/>
+		  <LisbethTravel Area="Mor Dhona" Position="25.60284, 29, -823.7947"/>
 		  <TalkTo NpcId="1001304" XYZ="25.58936, 29, -825.3757" QuestId="66655" StepId="6"/>
 		</If>
 		<If Condition="GetQuestStep(66655) == 7">
@@ -351,7 +351,7 @@
 			<LLoadProfile Path="../Dungeons/Amdapor Keep.xml"/>
 		</If>
 		<If Condition="GetQuestStep(66655) == 8">
-		  <GetTo ZoneId="156" XYZ="25.67217, 29, -823.6172"/>
+		  <LisbethTravel Area="Mor Dhona" Position="25.60284, 29, -823.7947"/>
 		  <!-- Handover Amdapor glyph WAR -->
 		  <HandOver ItemId="2001006" NpcId="1001304" XYZ="25.58936, 29, -825.3757" QuestId="66655" StepId="8"/>
 		</If>
@@ -365,10 +365,7 @@
 				<RunCode Name="UnfinishedBravura" />
 				<WaitTimer WaitTime="3" />
 			</While>
-			<If Condition="not IsOnMap(146)">
-				<TeleportTo Name="Forgotten Springs" AetheryteId="20"/>
-			</If>
-			<FlyTo XYZ="236.5246, 8, -18.19426" Land="True"/>
+			<LisbethTravel Area="Outer La Noscea" Position="113.715, 27.02575, -595.6255"/>
 			<Grind grindRef="RelicRebornBravura" postCombatDelay="1" while="GetQuestStep(66655) == 10"/>
 		</If>
 		<If Condition="GetQuestStep(66655) == 11">
@@ -393,7 +390,7 @@
 			<LLoadProfile Path="../Dungeons/A Relic Reborn the Hydra.xml"/>
 		</If>
 		<If Condition="GetQuestStep(66655) == 13">
-<LisbethTravel Area="North Shroud" Position="440.463, -0.9374608, -64.74161"/>	
+			<LisbethTravel Area="North Shroud" Position="440.463, -0.9374608, -64.74161"/>	
 			<TalkTo NpcId="1003075" XYZ="440.7262, -0.9374562, -62.21112" QuestId="66655" StepId="13"/>
 		</If>
 		<If Condition="GetQuestStep(66655) == 14">
@@ -420,9 +417,9 @@
 			<LLoadProfile Path="../Dungeons/The Navel (Hard).xml"/>
 		</If>
 		<If Condition="GetQuestStep(66655) == 18">
-<LisbethTravel Area="North Shroud" Position="440.463, -0.9374608, -64.74161"/>
+			<LisbethTravel Area="North Shroud" Position="440.463, -0.9374608, -64.74161"/>
 			<!-- Handin white-hot ember, howling gale, and hyperfused ore WAR -->				
-			<HandOver ItemIds="2001024,200103,2001042" NpcId="1003075" XYZ="440.7262, -0.9374562, -62.21112" QuestId="66655" StepId="18"/>			
+			<HandOver ItemIds="2001024,2001033,2001042" NpcId="1003075" XYZ="440.7262, -0.9374562, -62.21112" QuestId="66655" StepId="18"/>			
 		</If>
 		<If Condition="GetQuestStep(66655) == 255">
 			<If Condition="not HasAtLeast(6267,1)">
@@ -462,7 +459,7 @@
 		
 		<!-- Up in Arms -->
 		<If Condition="IsQuestCompleted(66655)and not HasQuest(66971) and not IsQuestCompleted(66971)">
-<LisbethTravel Area="North Shroud" Position="440.463, -0.9374608, -64.74161"/>
+		<LisbethTravel Area="North Shroud" Position="440.463, -0.9374608, -64.74161"/>
 		  <If Condition="not HasAtLeast(6259,1)">
 			<RunCode name="NoBravuraZenith"/>
 		  </If>  
