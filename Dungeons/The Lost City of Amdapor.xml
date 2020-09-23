@@ -13,6 +13,23 @@
   <Name>The Lost City of Amdapor</Name>
   <BehaviorDirectory></BehaviorDirectory>
   <Order>
+ <!-- [The Lost City of Amdapor] One Night in Amdapor Unlock -->
+    <If Condition="IsQuestCompleted(66060) and IsQuestCompleted(66751) and not HasQuest(66925) and not IsQuestCompleted(66925)">
+      <GetTo ZoneId="133" XYZ="-257.9622, -5.774355, -26.26284"/>
+      <If Condition="IsQuestAcceptQualified(66925)">
+        <PickupQuest QuestId="66925" NpcId="1000692" XYZ="-258.8083, -5.773526, -27.26788"/>
+      </If>
+    </If>
+    <If Condition="HasQuest(66925) and not IsQuestCompleted(66925) and GetQuestStep(66925) == 1">
+      <GetTo ZoneId="153" XYZ="-143.6555, 8.149665, 269.7762"/>
+      <RunCode Name="Camp_Tranquil_Jump"/>
+      <TalkTo NpcId="1006751" XYZ="-139.1237, 8.535714, 280.539" QuestId="67950" StepId="1"/>
+      <RunCode Name="Camp_Tranquil_Jump"/>
+    </If>
+    <If Condition="HasQuest(66925) and not IsQuestCompleted(66925) and GetQuestStep(66925) == 255">
+      <GetTo ZoneId="153" XYZ="-358.264, 0.9375556, 458.9185"/>
+      <TurnIn QuestId="66925" NpcId="1008543" XYZ="-360.0062, 1.264419, 459.8306"/>
+    </If> 
  	<If Condition="not IsOnMap(363)">
 		<RunCode Name="QueueLostCity"/>
 	</If>
@@ -348,6 +365,22 @@
 	      Logging.WriteDiagnostic("Should be ready");
 		]]>
 	</CodeChunk>
+    <CodeChunk Name="Camp_Tranquil_Jump">
+      <![CDATA[ 
+        if (Core.Player.IsMounted)
+        {
+          await CommonTasks.StopAndDismount();
+          await Coroutine.Wait(3000, () => !Core.Player.IsMounted);
+        }
+    
+        MovementManager.SetFacing(0.8310049f);
+        MovementManager.MoveForwardStart();
+        await Coroutine.Sleep(500);
+        MovementManager.Jump();
+        await Coroutine.Sleep(1500);
+        MovementManager.MoveStop();
+      ]]>
+    </CodeChunk>	
  		<CodeChunk Name="OmnilexAtma">
 		<![CDATA[ 
 			BagSlot EquipSlot = ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand];
