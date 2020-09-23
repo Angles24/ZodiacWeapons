@@ -27,6 +27,8 @@ You will need to take the ExTurnInGuildLeveTag.cs file from my Plugins folder an
 You will also need the latest version of LlamaLibrary installed in your botbases folder which can be found here https://github.com/nt153133/LlamaLibrary
 (Make sure you update before running the profiles, Kayla is constantly making new tags for this set and you'll need the absolute latest.)
 
+I'm in the process of changing over all the movement in this profile to be handled by Lisbeth. Saga's new Sextant 2.0 is far suprior to anything else RebornBuddy has to offer and makes for a much smoother questing experience. As such, you will need Lisbeth to make these profiles work. If you don't have it, you can find it here: https://www.siune.io/
+
 
 ## Current Progress
 
