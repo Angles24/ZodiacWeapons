@@ -19,12 +19,15 @@
 	</If>
 	<If Condition="IsOnMap(293)">
 		<MoveTo XYZ="-0.1087532, 2.384186E-07, 1.400909" usemesh="false"/> <!-- Move to center -->
-			<Grind GrindRef="Titan" While="not GameObjectManager.GetObjectByNPCId(1801).CurrentHealth == 0"/> <!-- Kill Titan -->
+		<Grind GrindRef="Titan" While="not GameObjectManager.GetObjectByNPCId(1801).CurrentHealth == 0"/> <!-- Kill Titan -->
 		<If Condition="&openchest; == 1">
 			<RunCode name="OpenChest" />
 		</If>
-		<MoveTo XYZ="0,1.192093E-07,-10"/> <!-- Move to Exit -->
-		<RunCode name="ExitDuty"/>
+		<While condition="not GameObjectManager.GetObjectByNPCId(2000139).IsVisible">
+			<MoveTo XYZ="-0.004150338, 2.384186E-07, 1.241452" usemesh="false"/>
+			<MoveTo XYZ="0,1.192093E-07,-10" usemesh="false"/> <!-- Move to Exit -->
+			<RunCode name="ExitDuty"/>
+		</While>	
 		<WaitTimer WaitTime="10"/>
 		<LLoadProfile Path="../Start.xml"/>
 	</If>  
