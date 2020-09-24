@@ -1694,6 +1694,7 @@
 						</If>
 					</If>
 					<GetTo ZoneId="156" XYZ="71.94617,33.06656,-706.2944"/>
+					<Dismount/>
 					<RunCode name="BuyFireBooks"/>				
 				</If>
 			</If>
@@ -3365,6 +3366,7 @@
 					</If>					
 					<Log Message="Skyfire II completed. Buying Netherfire I" />
 					<GetTo ZoneId="156" XYZ="71.94617,33.06656,-706.2944"/>
+					<Dismount/>
 					<If Condition="ClassName == ((ClassJobType.Paladin))"> 
 						<RunCode name="BuyShieldFireBooks"/>
 					</If>
@@ -4964,6 +4966,7 @@
 						<TeleportTo AetheryteId="24"/> 
 					</If>
 					<GetTo ZoneId="156" XYZ="71.94617,33.06656,-706.2944"/>
+					<Dismount/>
 					<If Condition="ClassName == ((ClassJobType.Paladin))"> 
 						<RunCode name="BuyPaladinFallBooks"/>
 					</If>					
@@ -6566,6 +6569,7 @@
 						<TeleportTo AetheryteId="24"/> 
 					</If>
 					<GetTo ZoneId="156" XYZ="71.94617,33.06656,-706.2944"/>
+					<Dismount/>
 					<If Condition="ClassName == ((ClassJobType.Paladin))"> 
 						<RunCode name="BuyPaladinFallBooks"/>
 					</If>					
@@ -8170,7 +8174,8 @@
 					<If Condition="not IsOnMap(156)">
 						<TeleportTo AetheryteId="24"/> 
 					</If>
-					<GetTo ZoneId="156" XYZ="71.94617,33.06656,-706.2944"/>	
+					<GetTo ZoneId="156" XYZ="71.94617,33.06656,-706.2944"/>
+					<Dismount/>					
 					<If Condition="ClassName == ((ClassJobType.Paladin))"> 
 						<RunCode name="BuyShieldFallBooks"/>
 					</If>					
@@ -9772,7 +9777,8 @@
 					<If Condition="not IsOnMap(156)">
 						<TeleportTo AetheryteId="24"/> 
 					</If>
-					<GetTo ZoneId="156" XYZ="71.94617,33.06656,-706.2944"/>	
+					<GetTo ZoneId="156" XYZ="71.94617,33.06656,-706.2944"/>
+					<Dismount/>
 					<If Condition="ClassName == ((ClassJobType.Paladin))"> 
 						<RunCode name="BuyPaladinWindBooks"/>
 					</If>					
@@ -11368,7 +11374,8 @@
 					<If Condition="not IsOnMap(156)">
 						<TeleportTo AetheryteId="24"/> 
 					</If>
-					<GetTo ZoneId="156" XYZ="71.94617,33.06656,-706.2944"/>	
+					<GetTo ZoneId="156" XYZ="71.94617,33.06656,-706.2944"/>
+					<Dismount/>					
 					<If Condition="ClassName == ((ClassJobType.Paladin))"> 
 						<RunCode name="BuyPaladinWindBooks"/>
 					</If>					
@@ -12960,7 +12967,8 @@
 					<If Condition="not IsOnMap(156)">
 						<TeleportTo AetheryteId="24"/> 
 					</If>
-					<GetTo ZoneId="156" XYZ="71.94617,33.06656,-706.2944"/>	
+					<GetTo ZoneId="156" XYZ="71.94617,33.06656,-706.2944"/>
+					<Dismount/>	
 					<If Condition="ClassName == ((ClassJobType.Paladin))"> 
 						<RunCode name="BuyPaladinEarthBooks"/>
 					</If>					
@@ -14587,6 +14595,36 @@
 					</If>								  
 					<FlyTo XYZ="414.9715, -5.889436, -87.11148" land="true"/>
 					<GetTo ZoneId="154" XYZ="405.1117,-4.498068,-89.15851" distance="2"/>
+					<If Condition="ClassName == ((ClassJobType.Bard))"> 
+						<ChangeClass Job="Bard" />
+					</If>
+					<If Condition="ClassName == ((ClassJobType.BlackMage))"> 
+						<ChangeClass Job="Black Mage" />
+					</If>
+					<If Condition="ClassName == ((ClassJobType.Dragoon))"> 
+							<ChangeClass Job="Dragoon" />
+					</If>	
+					<If Condition="ClassName == ((ClassJobType.Monk))"> 
+							<ChangeClass Job="Monk" />
+					</If>
+					<If Condition="ClassName == ((ClassJobType.Ninja))"> 
+							<ChangeClass Job="Ninja" />
+					</If>
+					<If Condition="ClassName == ((ClassJobType.Paladin))"> 
+						<ChangeClass Job="Paladin" />
+					</If>		
+					<If Condition="ClassName == ((ClassJobType.Scholar))"> 
+							<ChangeClass Job="Scholar" />
+					</If>
+					<If Condition="ClassName == ((ClassJobType.Summoner))"> 
+							<ChangeClass Job="Summoner" />
+					</If>	
+					<If Condition="ClassName == ((ClassJobType.Warrior))"> 
+							<ChangeClass Job="Warrior" />
+					</If>
+					<If Condition="ClassName == ((ClassJobType.WhiteMage))"> 
+							<ChangeClass Job="White Mage" />
+					</If>						
 					<If Condition="ClassName == ((ClassJobType.Bard))"> 
 						<RunCode name="BuyArtemisAnimus"/>
 					</If>
