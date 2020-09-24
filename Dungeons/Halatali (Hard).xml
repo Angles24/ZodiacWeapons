@@ -13,6 +13,20 @@
   <Name>Halatali (Hard)</Name>
   <BehaviorDirectory></BehaviorDirectory>
   <Order>
+    <!-- [Halatali (Hard)] This Times for Fun -->
+    <If Condition="not HasQuest(66946) and not IsQuestCompleted(66946)">
+      <GetTo ZoneId="156" XYZ="26.55988, 21.25273, -637.308"/>
+      <If Condition="not IsQuestAcceptQualified(66946)">
+        <RunCode Name="Unlock_Normal_Mode"/>
+      </If>
+      <If Condition="IsQuestAcceptQualified(66946)">
+        <PickupQuest QuestId="66946" NpcId="1005524" XYZ="27.29834, 21.2714, -635.9808"/>
+      </If>
+    </If>
+    <If Condition="HasQuest(66946) and not IsQuestCompleted(66946) and GetQuestStep(66946) == 255">
+      <LisbethTravel Area="Eastern Thanalan" Position="-338.9011, -22.52325, 428.8506"/>
+      <TurnIn QuestId="66946" NpcId="1008697" XYZ="-339.1013, -22.49097, 431.3878"/>
+    </If>  
 	<If Condition="not IsOnMap(360)">
 		<RunCode Name="QueueHalataliHard"/>
 	</If>
