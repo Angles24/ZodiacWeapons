@@ -1,24 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Profile: Netherfire I - Gigas Bonze
+  Authors: Zamphire
+  Code Credit: nishap
+-->
+
 <Profile>
-   <Name>Book of Netherfire I - Gigas Bonze</Name>
-   <KillRadius>500</KillRadius>    
-   <GrindAreas>
-   <GrindArea name="gigas_bonze">
-        <Hotspots>
-			<Hotspot Radius="500" XYZ="395.9183, -17.14769, -350.0159" name="gigas_bonze" />
-		</Hotspots>
+	<Name>Book of Netherfire I - Gigas Bonze</Name>
+	<Order>
+		<LisbethTravel Area="Mor Dhona" Position="394.6808, -17.17175, -351.4547"/>
+		<Grind grindRef="gigas_bonze" while="not ZodiacManager.CurrentBook.KillTask6Completed" />
+		<LLoadProfile Path="../../Start.xml"/>
+	</Order>
+	<GrindAreas>
+		<GrindArea name="gigas_bonze">
+			<Hotspots>
+				<Hotspot Radius="500" XYZ="395.9183, -17.14769, -350.0159" name="gigas_bonze" />
+				<Hotspot Radius="500" XYZ="355.889, -5.684522, -466.8147" name="gigas_bonze" />
+				<Hotspot Radius="500" XYZ="515.3716, -9.512436, -381.3398" name="gigas_bonze" />
+			</Hotspots>
 			<TargetMobs>
 				<TargetMob id="646"  /> 
 			</TargetMobs>
-			<MinLevel>1</MinLevel>
-			<MaxLevel>60</MaxLevel>
 		</GrindArea>
-	</GrindAreas>
-	<Order>
-	<If Condition="not IsOnMap(154)">
-		<TeleportTo Name="Revenant's Toll" AetheryteId="24" />
-	</If>
-	<NoCombatMoveTo Name="gigas_bonze" XYZ="395.9183, -17.14769, -350.0159"/>
-      <Grind grindRef="gigas_bonze" while="not ZodiacManager.CurrentBook.KillTask6Completed" />
-	  <LLoadProfile Path="../../Start.xml"/>
-	</Order>
-	</Profile>
+	</GrindAreas>	
+</Profile>

@@ -13,6 +13,24 @@
   <Name>Haukke Manor (Hard)</Name>
   <BehaviorDirectory></BehaviorDirectory>
   <Order>
+     <!-- [Haukke Manor (Hard)] Maniac Manor -->
+    <If Condition="not HasQuest(66751) and not IsQuestCompleted(66751)">
+      <GetTo ZoneId="156" XYZ="34.59256, 21.25268, -643.4342"/>
+      <If Condition="not IsQuestAcceptQualified(66751)">
+        <RunCode Name="Unlock_Normal_Mode"/>
+      </If>
+      <If Condition="IsQuestAcceptQualified(66751)">
+        <PickupQuest QuestId="66751" NpcId="1005523" XYZ="35.44666, 21.25268, -643.7629"/>
+      </If>
+    </If>
+    <If Condition="HasQuest(66751) and not IsQuestCompleted(66751) and GetQuestStep(66751) == 1">
+      <GetTo ZoneId="133" XYZ="35.15276, 16.26963, -334.0671"/>
+      <TalkTo NpcId="1006263" XYZ="36.81995, 16.35147, -334.5846" QuestId="66751" StepId="1"/>
+    </If>
+    <If Condition="HasQuest(66751) and not IsQuestCompleted(66751) and GetQuestStep(66751) == 255">
+      <LisbethTravel Area="Central Shroud" Position="-572.4536, 67.00565, 69.71553"/>
+      <TurnIn QuestId="66751" NpcId="2003023" XYZ="-576.1349, 68.13147, 69.41321"/>
+    </If> 
 	<If Condition="not IsOnMap(350)">
 		<RunCode Name="QueueHaukkeHard"/>
 	</If>
