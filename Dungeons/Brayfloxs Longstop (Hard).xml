@@ -13,6 +13,24 @@
   <Name>Brayflox's Longstop (Hard)</Name>
   <BehaviorDirectory></BehaviorDirectory>
   <Order>
+     <!-- [Brayflox's Longstop (Hard)] Curds and Slay -->
+    <If Condition="not HasQuest(66947) and not IsQuestCompleted(66947)">
+      <GetTo ZoneId="156" XYZ="32.51, 21.27503, -636.2501"/>
+      <If Condition="not IsQuestAcceptQualified(66947)">
+        <RunCode Name="Unlock_Normal_Mode"/>
+      </If>
+      <If Condition="IsQuestAcceptQualified(66947)">
+        <PickupQuest QuestId="66947" NpcId="1006975" XYZ="32.82214, 21.25273, -635.462"/>
+      </If>
+    </If>
+    <If Condition="HasQuest(66947) and not IsQuestCompleted(66947) and GetQuestStep(66947) == 1">
+      <GetTo ZoneId="137" XYZ="559.1483, 20.75329, 455.952"/>
+      <TalkTo NpcId="1006266" XYZ="560.3571, 20.75329, 455.8937" QuestId="66947" StepId="1"/>
+    </If>
+    <If Condition="HasQuest(66947) and not IsQuestCompleted(66947) and GetQuestStep(66947) == 255">
+      <LisbethTravel Area="Eastern La Noscea (Raincatcher Gully)" Position="-331.2567, 69.03585, 155.8954"/>
+      <TurnIn QuestId="66947" NpcId="1006268" XYZ="-334.6151, 69.69995, 153.7957"/>
+    </If> 
 	<If Condition="not IsOnMap(362)">
 		<RunCode Name="QueueBrayFlox"/>
 	</If>
