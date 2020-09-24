@@ -12,10 +12,7 @@
 	<BehaviorDirectory>..\..\Quest Behaviors</BehaviorDirectory>
 	<Order>	
 			<If Condition="not ExBuddy.Windows.GuildLeve.HasLeve(649)">
-				<If Condition="not IsOnMap(155)">
-					<TeleportTo Name="155 " AetheryteId="23"/>
-				</If>			
-				<FlyTo XYZ="-443.8516, 211, -233.8817" land="true"/>
+				<LisbethTravel Area="Coerthas Central Highlands" Position="-444.7947, 211, -231.8197"/>
 				<ExPickupGuildLeve leveIds="649" leveType="Battlecraft" npcId="1002401" npcLocation="-441.1231,211,-235.5231" Timeout="5" /> <!-- Necrologos: Whispers of the Gem -->
 				<If Condition="not ExBuddy.Windows.GuildLeve.HasLeve(649)">
 					<ExPickupGuildLeve leveIds="651" leveType="Battlecraft" npcId="1002401" npcLocation="-441.1231,211,-235.5231" Timeout="5" /> <!-- You Look Good Enough To Eat -->				
@@ -24,20 +21,20 @@
 
 			<!-- Necrologos: Whispers of the Gem -->
 			<If Condition="ExBuddy.Windows.GuildLeve.HasLeve(649)">
-				<FlyTo XYZ="-522.1238, 206.3355, -331.3058" land="true"/>
+				<LisbethTravel Area="Coerthas Central Highlands" Position="-517.4034, 206.5329, -335.8235"/>
 				<InitiateLeve LeveId="649"/> <!-- Necrologos: Whispers of the Gem -->
 				<WaitTimer WaitTime="2" />
 				<Grind GrindRef="Necrologos" While="not ff14bot.RemoteWindows.SelectYesno.IsOpen"/> 						
 				<WaitTimer WaitTime="2" />					
 				<RunCode Name="CloseTimer"/> 
-				<FlyTo XYZ="-443.8516, 211, -233.8817" land="true"/>
+				<LisbethTravel Area="Coerthas Central Highlands" Position="-444.7947, 211, -231.8197"/>
 				<ExTurnInGuildLeve NpcId="1002401" NpcLocation="-441.1231,211,-235.5231"/>
 				<LLoadProfile Path="../../Start.xml"/>		
 			</If>
 			
 			<!-- You Look Good Enough To Eat -->
 			<If Condition="ExBuddy.Windows.GuildLeve.HasLeve(651)">
-				<FlyTo XYZ="-600.0139, 209.8965, -352.694" land="true"/>
+				<LisbethTravel Area="Coerthas Central Highlands" Position="-595.8066, 209.2229, -358.313"/>
 				<InitiateLeve LeveId="651"/> <!-- Papal Dispensation -->
 				<WaitTimer WaitTime="2" />
 				<Grind GrindRef="651" While="not HasAtLeast(2000881,6)"/>
@@ -50,7 +47,7 @@
 				</UseItem>
 				<WaitTimer WaitTime="2" />
 				<RunCode Name="CloseTimer"/>
-				<FlyTo XYZ="-443.8516, 211, -233.8817" land="true"/>
+				<LisbethTravel Area="Coerthas Central Highlands" Position="-444.7947, 211, -231.8197"/>
 				<ExTurnInGuildLeve NpcId="1002401" NpcLocation="-441.1231,211,-235.5231"/>
 				<LLoadProfile Path="../../Start.xml"/>		
 			</If>			

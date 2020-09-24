@@ -12,10 +12,7 @@
 	<BehaviorDirectory>..\..\Quest Behaviors</BehaviorDirectory>
 	<Order>	
 			<If Condition="not ExBuddy.Windows.GuildLeve.HasLeve(860)">
-				<If Condition="not IsOnMap(155)">
-					<TeleportTo Name="155 " AetheryteId="23"/>
-				</If>			
-				<FlyTo XYZ="-471.4019, 211, -233.8166" land="true"/>
+				<LisbethTravel Area="Coerthas Central Highlands" Position="-466.4981, 211, -232.1504"/>
 				<ExPickupGuildLeve leveIds="860" leveType="Immortal" npcId="1007069" npcLocation="-476.2188,211,-233.4173" Timeout="5" /> <!-- If You Put It That Way -->
 				<If Condition="not ExBuddy.Windows.GuildLeve.HasLeve(860)">
 					<ExPickupGuildLeve leveIds="858" leveType="Immortal" npcId="1007069" npcLocation="-476.2188,211,-233.4173" Timeout="5" /> <!-- You Dropped Something -->				
@@ -24,26 +21,26 @@
 
 			<!-- If You Put It That Way -->
 			<If Condition="ExBuddy.Windows.GuildLeve.HasLeve(860)">
-				<FlyTo ZoneId="155" XYZ="-402.698, 225.8024, -153.2489" land="true"/>
+				<LisbethTravel Area="Coerthas Central Highlands" Position="-404.871, 226.0574, -148.1656"/>
 				<InitiateLeve LeveId="860"/> <!-- If You Put It That Way -->
 				<WaitTimer WaitTime="2" />
 				<Grind GrindRef="IfYouPutItThatWay" While="not ff14bot.RemoteWindows.SelectYesno.IsOpen"/> 						
 				<WaitTimer WaitTime="1" />					
 				<RunCode Name="CloseTimer"/> 
-				<FlyTo ZoneId="155" XYZ="-472.4178, 211, -233.0762" land="true"/>
+				<LisbethTravel Area="Coerthas Central Highlands" Position="-466.4981, 211, -232.1504"/>
 				<ExTurnInGuildLeve NpcId="1007069" NpcLocation="-476.2188,211,-233.4173"/>
 				<LLoadProfile Path="../../Start.xml"/>		
 			</If>
 			
 			<!-- You Dropped Something -->
 			<If Condition="ExBuddy.Windows.GuildLeve.HasLeve(858)">
-				<FlyTo ZoneId="155" XYZ="-378.7407, 224.1126, -178.207" land="true"/>
+				<LisbethTravel Area="Coerthas Central Highlands" Position="-380.1317, 223.5466, -172.0834"/>
 				<InitiateLeve LeveId="858"/> <!-- You Dropped Something -->
 				<WaitTimer WaitTime="2" />
 				<Grind GrindRef="YouDroppedSomething" While="not ff14bot.RemoteWindows.SelectYesno.IsOpen"/> 						
 				<WaitTimer WaitTime="1" />
 				<RunCode Name="CloseTimer"/>
-				<GetTo ZoneId="155" XYZ="-472.4178, 211, -233.0762"/>
+				<LisbethTravel Area="Coerthas Central Highlands" Position="-466.4981, 211, -232.1504"/>
 				<ExTurnInGuildLeve NpcId="1007069" NpcLocation="-476.2188,211,-233.4173"/>
 				<LLoadProfile Path="../../Start.xml"/>		
 			</If>			

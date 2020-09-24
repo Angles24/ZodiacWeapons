@@ -12,10 +12,7 @@
 	<BehaviorDirectory>..\..\Quest Behaviors</BehaviorDirectory>
 	<Order>	
 			<If Condition="not ExBuddy.Windows.GuildLeve.HasLeve(650)">
-				<If Condition="not IsOnMap(155)">
-					<TeleportTo Name="155 " AetheryteId="23"/>
-				</If>			
-				<FlyTo XYZ="-443.8516, 211, -233.8817" land="true"/>
+				<LisbethTravel Area="Coerthas Central Highlands" Position="-444.7947, 211, -231.8197"/>
 				<ExPickupGuildLeve leveIds="650" leveType="Battlecraft" npcId="1002401" npcLocation="-441.1231,211,-235.5231" Timeout="5" /> <!-- Got a Gut Feeling about This -->
 				<If Condition="not ExBuddy.Windows.GuildLeve.HasLeve(650)">
 					<ExPickupGuildLeve leveIds="651" leveType="Battlecraft" npcId="1002401" npcLocation="-441.1231,211,-235.5231" Timeout="5" /> <!-- You Look Good Enough To Eat -->				
@@ -24,7 +21,7 @@
 
 			<!-- Got a Gut Feeling about This -->
 			<If Condition="ExBuddy.Windows.GuildLeve.HasLeve(650)">
-				<GetTo ZoneId="155" XYZ="-392.8214, 229.1412, -145.7838" />
+				<LisbethTravel Area="Coerthas Central Highlands" Position="-393.0016, 228.915, -147.3137"/>
 				<InitiateLeve LeveId="650"/> <!-- Got a Gut Feeling about This -->
 				<WaitTimer WaitTime="2" />
 				<Grind GrindRef="GotaGutFeelingaboutThis" While="not HasAtLeast(2000880,5)"/>				
@@ -36,14 +33,14 @@
 				</UseItem>				
 				<WaitTimer WaitTime="2" />					
 				<RunCode Name="CloseTimer"/> 
-				<FlyTo XYZ="-443.8516, 211, -233.8817" land="true"/>
+				<LisbethTravel Area="Coerthas Central Highlands" Position="-444.7947, 211, -231.8197"/>
 				<ExTurnInGuildLeve NpcId="1002401" NpcLocation="-441.1231,211,-235.5231"/>
 				<LLoadProfile Path="../../Start.xml"/>		
 			</If>
 			
 			<!-- You Look Good Enough To Eat -->
 			<If Condition="ExBuddy.Windows.GuildLeve.HasLeve(651)">
-				<FlyTo XYZ="-600.0139, 209.8965, -352.694" land="true"/>
+				<LisbethTravel Area="Coerthas Central Highlands" Position="-606.1251, 210.1997, -354.1651"/>
 				<InitiateLeve LeveId="651"/> <!-- Papal Dispensation -->
 				<WaitTimer WaitTime="2" />
 				<Grind GrindRef="651" While="not HasAtLeast(2000881,6)"/>
@@ -56,7 +53,7 @@
 				</UseItem>
 				<WaitTimer WaitTime="2" />
 				<RunCode Name="CloseTimer"/>
-				<FlyTo XYZ="-443.8516, 211, -233.8817" land="true"/>
+				<LisbethTravel Area="Coerthas Central Highlands" Position="-444.7947, 211, -231.8197"/>
 				<ExTurnInGuildLeve NpcId="1002401" NpcLocation="-441.1231,211,-235.5231"/>
 				<LLoadProfile Path="../../Start.xml"/>		
 			</If>			

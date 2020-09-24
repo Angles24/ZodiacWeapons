@@ -24,7 +24,7 @@
 
 			<!-- The Area's a Bit Sketchy -->
 			<If Condition="ExBuddy.Windows.GuildLeve.HasLeve(652)">
-				<GetTo ZoneId="155" XYZ="-412.2287, 223.9546, -157.087" />
+				<LisbethTravel Area="Coerthas Central Highlands" Position="-413.8824, 223.8988, -157.1951"/>
 				<InitiateLeve LeveId="652"/> <!-- The Area's a Bit Sketchy -->
 				<WaitTimer WaitTime="2" />
 				<UseObject InCombat="True" Radius="500" XYZ="-412.2287, 223.9546, -157.087" NpcIds="2001104" condition="not ff14bot.RemoteWindows.SelectYesno.IsOpen"/>							
@@ -37,7 +37,7 @@
 			
 			<!-- You Look Good Enough To Eat -->
 			<If Condition="ExBuddy.Windows.GuildLeve.HasLeve(651)">
-				<FlyTo XYZ="-600.0139, 209.8965, -352.694" land="true"/>
+				<LisbethTravel Area="Coerthas Central Highlands" Position="-595.8066, 209.2229, -358.313"/>
 				<InitiateLeve LeveId="651"/> <!-- Papal Dispensation -->
 				<WaitTimer WaitTime="2" />
 				<Grind GrindRef="651" While="not HasAtLeast(2000881,6)"/>
@@ -50,7 +50,7 @@
 				</UseItem>
 				<WaitTimer WaitTime="2" />
 				<RunCode Name="CloseTimer"/>
-				<FlyTo XYZ="-443.8516, 211, -233.8817" land="true"/>
+				<LisbethTravel Area="Coerthas Central Highlands" Position="-444.7947, 211, -231.8197"/>
 				<ExTurnInGuildLeve NpcId="1002401" NpcLocation="-441.1231,211,-235.5231"/>
 				<LLoadProfile Path="../../Start.xml"/>		
 			</If>			

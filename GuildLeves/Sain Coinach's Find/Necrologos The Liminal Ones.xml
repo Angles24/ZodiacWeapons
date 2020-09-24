@@ -12,10 +12,7 @@
 	<BehaviorDirectory>..\..\Quest Behaviors</BehaviorDirectory>
 	<Order>	
 			<If Condition="not ExBuddy.Windows.GuildLeve.HasLeve(657)">
-				<If Condition="not IsOnMap(156)">
-					<TeleportTo Name="Revenant's Toll " AetheryteId="24"/>
-				</If>			
-				<FlyTo XYZ="418.955, -5.784621, -447.8905" land="true"/>
+				<LisbethTravel Area="Mor Dhona" Position="420.7729, -5.853507, -443.9117"/>
 				<ExPickupGuildLeve leveIds="657" leveType="Battlecraft" npcId="1004348" npcLocation="415.9761,-6.061038,-444.419" Timeout="5" /> <!-- Necrologos: The Liminal Ones -->
 				<If Condition="not ExBuddy.Windows.GuildLeve.HasLeve(657)">
 					<ExPickupGuildLeve leveIds="656" leveType="Battlecraft" npcId="1004348" npcLocation="415.9761,-6.061038,-444.419" Timeout="5" /> <!-- Turnabout's Fair Play -->
@@ -24,10 +21,7 @@
 
 			<!-- Necrologos: The Liminal Ones -->	
 			<If Condition="ExBuddy.Windows.GuildLeve.HasLeve(657)">
-				<If Condition="not IsOnMap(156)">
-					<TeleportTo Name="Revenant's Toll " AetheryteId="24"/>
-				</If>			
-				<FlyTo ZoneId="155" XYZ="103.42, -5.008227, -492.581" land="true"/>
+				<LisbethTravel Area="Mor Dhona" Position="109.913, -5.043104, -496.5076"/>
 				<RunCode Name="Announce_Manual_Completion"/>
 				<!--
 				<InitiateLeve LeveId="657"/> 
@@ -37,7 +31,7 @@
 				<Grind GrindRef="Denizen" While="not ff14bot.RemoteWindows.SelectYesno.IsOpen"/> 				
 				<WaitTimer WaitTime="1" />					
 				<RunCode Name="CloseTimer"/> 
-				<FlyTo XYZ="418.955, -5.784621, -447.8905" land="true"/>
+				<LisbethTravel Area="Mor Dhona" Position="420.7729, -5.853507, -443.9117"/>
 				<ExTurnInGuildLeve NpcId="1004348" NpcLocation="415.9761,-6.061038,-444.419"/>
 				<LLoadProfile Path="../../Start.xml"/> -->
 			</If>
@@ -45,16 +39,13 @@
 
 			<!-- Turnabout's Fair Play -->	
 			<If Condition="ExBuddy.Windows.GuildLeve.HasLeve(656)">
-				<If Condition="not IsOnMap(156)">
-					<TeleportTo Name="Revenant's Toll " AetheryteId="24"/>
-				</If>			
-				<FlyTo ZoneId="155" XYZ="131.5322, -14.72913, -461.6263" land="true"/>
+				<LisbethTravel Area="Mor Dhona" Position="131.4192, -15.22016, -455.426"/>
 				<InitiateLeve LeveId="656"/> <!-- Turnabout's Fair Play -->
 				<WaitTimer WaitTime="2" />
 				<Grind GrindRef="TurnaboutsFairPlay" While="not ff14bot.RemoteWindows.SelectYesno.IsOpen"/> 						
 				<WaitTimer WaitTime="1" />					
 				<RunCode Name="CloseTimer"/> 
-				<FlyTo XYZ="418.955, -5.784621, -447.8905" land="true"/>
+				<LisbethTravel Area="Mor Dhona" Position="420.7729, -5.853507, -443.9117"/>
 				<ExTurnInGuildLeve NpcId="1004348" NpcLocation="415.9761,-6.061038,-444.419"/>
 				<LLoadProfile Path="../../Start.xml"/>			
 			</If>

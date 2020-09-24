@@ -12,10 +12,7 @@
 	<BehaviorDirectory>..\..\Quest Behaviors</BehaviorDirectory>
 	<Order>	
 			<If Condition="not ExBuddy.Windows.GuildLeve.HasLeve(849)">
-				<If Condition="not IsOnMap(155)">
-					<TeleportTo Name="155 " AetheryteId="23"/>
-				</If>			
-				<FlyTo XYZ="-471.4019, 211, -233.8166" land="true"/>
+				<LisbethTravel Area="Coerthas Central Highlands" Position="-466.4981, 211, -232.1504"/>
 				<ExPickupGuildLeve leveIds="849" leveType="Maelstrom" npcId="1007069" npcLocation="-476.2188,211,-233.4173" Timeout="5" /> <!-- An Imp Mobile -->
 				<If Condition="not ExBuddy.Windows.GuildLeve.HasLeve(849)">
 					<ExPickupGuildLeve leveIds="850" leveType="Maelstrom" npcId="1007069" npcLocation="-476.2188,211,-233.4173" Timeout="5" /> <!-- Papal Dispensation -->				
@@ -24,26 +21,26 @@
 
 			<!-- An Imp Mobile -->
 			<If Condition="ExBuddy.Windows.GuildLeve.HasLeve(849)">
-				<GetTo ZoneId="155" XYZ="-603.4999, 209.8585, -347.8258"/>
+				<LisbethTravel Area="Coerthas Central Highlands" Position="-601.9395, 209.717, -346.7201"/>
 				<InitiateLeve LeveId="849"/> <!-- An Imp Mobile -->
 				<WaitTimer WaitTime="2" />
 				<Grind GrindRef="AnImpMobile" While="not ff14bot.RemoteWindows.SelectYesno.IsOpen"/> 						
 				<WaitTimer WaitTime="1" />					
 				<RunCode Name="CloseTimer"/> 
-				<GetTo ZoneId="155" XYZ="-472.4178, 211, -233.0762"/>
+				<LisbethTravel Area="Coerthas Central Highlands" Position="-466.4981, 211, -232.1504"/>
 				<ExTurnInGuildLeve NpcId="1007069" NpcLocation="-476.2188,211,-233.4173"/>
 				<LLoadProfile Path="../../Start.xml"/>		
 			</If>
 			
 			<!-- Papal Dispensation -->
 			<If Condition="ExBuddy.Windows.GuildLeve.HasLeve(850)">
-				<GetTo ZoneId="155" XYZ="-409.8659, 225.0875, -149.9402"/>
+				<LisbethTravel Area="Coerthas Central Highlands" Position="-411.6314, 224.8277, -150.528"/>
 				<InitiateLeve LeveId="850"/> <!-- Papal Dispensation -->
 				<WaitTimer WaitTime="2" />
 				<Grind GrindRef="PapalDispensation" While="not ff14bot.RemoteWindows.SelectYesno.IsOpen"/> 						
 				<WaitTimer WaitTime="1" />
 				<RunCode Name="CloseTimer"/>
-				<GetTo ZoneId="155" XYZ="-472.4178, 211, -233.0762"/>
+				<LisbethTravel Area="Coerthas Central Highlands" Position="-466.4981, 211, -232.1504"/>
 				<ExTurnInGuildLeve NpcId="1007069" NpcLocation="-476.2188,211,-233.4173"/>
 				<LLoadProfile Path="../../Start.xml"/>		
 			</If>			

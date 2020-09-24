@@ -12,10 +12,7 @@
 	<BehaviorDirectory>..\..\Quest Behaviors</BehaviorDirectory>
 	<Order>	
 			<If Condition="not ExBuddy.Windows.GuildLeve.HasLeve(870)">
-				<If Condition="not IsOnMap(156)">
-					<TeleportTo Name="Revenant's Toll " AetheryteId="24"/>
-				</If>			
-				<FlyTo XYZ="462.438, -4.445982, -469.9096" land="true"/>
+				<LisbethTravel Area="Mor Dhona" Position="461.1251, -4.846787, -472.2902"/>
 				<ExPickupGuildLeve leveIds="870" leveType="Order" npcId="1007070" npcLocation="464.5914,-4.057395,-467.4297" Timeout="5" /> <!-- Get off Our Lake -->
 				<If Condition="not ExBuddy.Windows.GuildLeve.HasLeve(870)">
 					<ExPickupGuildLeve leveIds="869" leveType="Order" npcId="1007070" npcLocation="464.5914,-4.057395,-467.4297" Timeout="5" /> <!-- Amateur Hour -->				
@@ -24,32 +21,26 @@
 
 			<!-- Get off Our Lake -->	
 			<If Condition="ExBuddy.Windows.GuildLeve.HasLeve(870)">
-				<If Condition="not IsOnMap(156)">
-					<TeleportTo Name="Revenant's Toll " AetheryteId="24"/>
-				</If>			
-				<FlyTo ZoneId="155" XYZ="99.88879, -4.610106, -533.06" land="true"/>
+				<LisbethTravel Area="Mor Dhona" Position="93.29433, -4.327748, -533.973"/>
 				<InitiateLeve LeveId="870"/> <!-- Get off Our Lake -->
 				<WaitTimer WaitTime="2" />
 				<Grind GrindRef="GetoffOurLake" While="not ff14bot.RemoteWindows.SelectYesno.IsOpen"/> 						
 				<WaitTimer WaitTime="1" />					
 				<RunCode Name="CloseTimer"/> 
-				<FlyTo XYZ="462.438, -4.445982, -469.9096" land="true"/>
+				<LisbethTravel Area="Mor Dhona" Position="461.1251, -4.846787, -472.2902"/>
 				<ExTurnInGuildLeve NpcId="1007070" NpcLocation="464.5914,-4.057395,-467.42973"/>
 				<LLoadProfile Path="../../Start.xml"/>		
 			</If>
 
 			<!-- Amateur Hour -->	
 			<If Condition="ExBuddy.Windows.GuildLeve.HasLeve(869)">
-				<If Condition="not IsOnMap(156)">
-					<TeleportTo Name="Revenant's Toll " AetheryteId="24"/>
-				</If>			
-				<FlyTo ZoneId="155" XYZ="121.6689, -10.02974, -475.5452" land="true"/>
+				<LisbethTravel Area="Mor Dhona" Position="125.8319, -11.72157, -473.2422"/>
 				<InitiateLeve LeveId="869"/> <!-- Amateur Hour -->
 				<WaitTimer WaitTime="2" />
 				<Grind GrindRef="AmateurHour" While="not ff14bot.RemoteWindows.SelectYesno.IsOpen"/> 						
 				<WaitTimer WaitTime="1" />					
 				<RunCode Name="CloseTimer"/> 
-				<FlyTo XYZ="462.438, -4.445982, -469.9096" land="true"/>
+				<LisbethTravel Area="Mor Dhona" Position="461.1251, -4.846787, -472.2902"/>
 				<ExTurnInGuildLeve NpcId="1007070" NpcLocation="464.5914,-4.057395,-467.42973"/>
 				<LLoadProfile Path="../../Start.xml"/>		
 			</If>		

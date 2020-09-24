@@ -1612,10 +1612,6 @@
 						</If>
 					</If>					
 					<Log Message="Moving to Skyfire I - Mor Dhona Saint Coinarch's Find 'The Awry Savages'" />
-					<If Condition="not IsOnMap(156)">
-						<TeleportTo Name="Revenant's Toll " AetheryteId="24"/>
-					</If>			
-					<FlyTo XYZ="462.438, -4.445982, -469.9096" land="true"/>
 					<LLoadProfile Path="../GuildLeves/Sain Coinach's Find/The Awry Salvages.xml"/>	
 				</If>
 				<!-- Book completed -->
@@ -2943,10 +2939,7 @@
 					</If>					
 					<Log Message="Moving to Skyfire II - Heroes of the 2nd FATE" />
 					<While Condition="not ZodiacManager.CurrentBook.FateTask2Completed">
-						<If Condition="not IsOnMap(146)">
-							<TeleportTo AetheryteId="19"/>
-						</If>
-						<GetTo ZoneId="146" XYZ="8.539169, 0.5683023, -250.2028" />
+						<LisbethTravel Area="Southern Thanalan" Position="10.31318, 0.6397393, -250.8835"/>
 						<Log Message="Waiting on FATE 'Heroes of the 2nd'" />
 						<LLFate FateId="424" MinLevel="1" MaxLevel="50" while="ZodiacManager.CurrentBook.FateTask2Completed"/> <!-- Heroes of the 2nd -->							  				  
 					</While>					
@@ -3289,10 +3282,6 @@
 						</If>
 					</If>					
 					<Log Message="Moving to Skyfire II - Mor Dhona Saint Coinarch's Find 'The Museum Is Closed'" />
-					<If Condition="not IsOnMap(156)">
-						<TeleportTo Name="Revenant's Toll " AetheryteId="24"/>
-					</If>			
-					<FlyTo XYZ="462.438, -4.445982, -469.9096" land="true"/>
 					<LLoadProfile Path="../GuildLeves/Sain Coinach's Find/The Museum Is Closed.xml"/>	
 				</If>
 				<!-- Book completed -->
@@ -4966,10 +4955,6 @@
 						</If>
 					</If>					
 					<Log Message="Moving to Netherfire I - Mor Dhona Saint Coinarch's Find 'One Big Problem Solved'" />
-					<If Condition="not IsOnMap(156)">
-						<TeleportTo Name="Revenant's Toll " AetheryteId="24"/>
-					</If>			
-					<FlyTo XYZ="462.438, -4.445982, -469.9096" land="true"/>
 					<LLoadProfile Path="../GuildLeves/Sain Coinach's Find/One Big Problem Solved.xml"/>	
 				</If>
 				<!-- Book completed -->
@@ -6572,10 +6557,6 @@
 						</If>
 					</If>					
 					<Log Message="Moving to Skyfall I - Mor Dhona Saint Coinarch's Find 'Go Home to Mama'" />
-					<If Condition="not IsOnMap(156)">
-						<TeleportTo Name="Revenant's Toll " AetheryteId="24"/>
-					</If>			
-					<FlyTo XYZ="462.438, -4.445982, -469.9096" land="true"/>
 					<LLoadProfile Path="../GuildLeves/Sain Coinach's Find/Go Home to Mama.xml"/>	
 				</If>
 				<!-- Book completed -->
@@ -8181,10 +8162,6 @@
 						</If>
 					</If>					
 					<Log Message="Moving to Skyfall II - Mor Dhona Saint Coinarch's Find 'Get off Our Lakes'" />
-					<If Condition="not IsOnMap(156)">
-						<TeleportTo Name="Revenant's Toll " AetheryteId="24"/>
-					</If>			
-					<FlyTo XYZ="462.438, -4.445982, -469.9096" land="true"/>
 					<LLoadProfile Path="../GuildLeves/Sain Coinach's Find/Get off Our Lakes.xml"/>	
 				</If>
 				<!-- Book completed -->
@@ -9787,10 +9764,6 @@
 						</If>
 					</If>					
 					<Log Message="Moving to Netherfall I - Mor Dhona Saint Coinarch's Find 'Who Write History'" />
-					<If Condition="not IsOnMap(156)">
-						<TeleportTo Name="Revenant's Toll " AetheryteId="24"/>
-					</If>			
-					<FlyTo XYZ="462.438, -4.445982, -469.9096" land="true"/>
 					<LLoadProfile Path="../GuildLeves/Sain Coinach's Find/Who Writes History.xml"/>	
 				</If>
 				<!-- Book completed -->
@@ -11301,10 +11274,6 @@
 						</If>
 					</If>				
 					<Log Message="Moving to Skywind I - Mor Dhona Saint Coinarch's Find 'Big, Bad Idea'" />
-					<If Condition="not IsOnMap(156)">
-						<TeleportTo Name="Revenant's Toll " AetheryteId="24"/>
-					</If>			
-					<FlyTo XYZ="462.438, -4.445982, -469.9096" land="true"/>
 					<LLoadProfile Path="../GuildLeves/Sain Coinach's Find/Big, Bad Idea.xml"/>	
 				</If>
 				<!-- Skywind I Guildleves Task 3 -->

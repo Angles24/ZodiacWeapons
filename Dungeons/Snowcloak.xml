@@ -85,7 +85,8 @@
 		<If Condition="not GetInstanceTodo(3) == 1 and GetInstanceTodo(2) == 1">
 			<Log Message="Finger of the Apostate 0/1" />
 			<MoveTo XYZ="-57.41408, 28.4, -9.616822" />
-			<Grind GrindRef="ClearRoom" while="not GameObjectManager.GetObjectByNPCId(3035)"/>
+			<Grind GrindRef="ClearRoom" while="not GameObjectManager.GetObjectByNPCId(3032)"/>
+			<Grind GrindRef="ClearRoom" while="not GameObjectManager.GetObjectByNPCId(3032).CurrentHealth == 0"/>
 			<MoveTo XYZ="-68.24632, 40.78313, 65.11944" />
 			<UseObject NpcId="2004226" XYZ="-74.95443,40.51212,64.15948" Radius="100" condition="not HasAtLeast(2001448,1)"/>			
 		</If>		
