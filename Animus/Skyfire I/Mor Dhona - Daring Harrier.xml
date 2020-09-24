@@ -1,25 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Profile: Skyfire I - 5th Cohort Vanguard
+  Authors: Zamphire
+  Code Credit: nishap
+-->
+
 <Profile>
-   <Name>Book of Skyfire I - Daring Harrier</Name>
-   <KillRadius>500</KillRadius>    
-   <GrindAreas>
-   <GrindArea name="daring_harrier">
-        <Hotspots>
-			<Hotspot Radius="500" XYZ="-225.0232, -3.818664, -299.8137" name="daring_harrier" />
-			<!-- <Hotspot Radius="115" X="-227.6002" Y="19.57638" Z="-218.34" name="daring_harrier" /> -->
-		</Hotspots>
+	<Name>Book of Skyfire I - Daring Harrier</Name>
+	<Order>
+		<LisbethTravel Area="Mor Dhona" Position="-227.1997, -4.063313, -301.7137"/>
+		<Grind grindRef="daring_harrier" while="not ZodiacManager.CurrentBook.KillTask1Completed" />
+		<LLoadProfile Path="../../Start.xml"/>
+	</Order>
+	<GrindAreas>
+		<GrindArea name="daring_harrier">
+			<Hotspots>
+				<Hotspot Radius="500" XYZ="-225.0232, -3.818664, -299.8137" />
+				<Hotspot Radius="500" XYZ="-202.7963, 26.82085, -204.7632" />
+			</Hotspots>
 			<TargetMobs>
 				<TargetMob id="650"  /> 
 			</TargetMobs>
-			<MinLevel>1</MinLevel>
-			<MaxLevel>60</MaxLevel>
 		</GrindArea>
-	</GrindAreas>
-	<Order>
-	<If Condition="not IsOnMap(154)">
-		<TeleportTo Name="Revenant's Toll" AetheryteId="24" />
-	</If>
-	<NoCombatMoveTo Name="daring_harrier" XYZ="-225.0232, -3.818664, -299.8137"/>
-      <Grind grindRef="daring_harrier" while="not ZodiacManager.CurrentBook.KillTask1Completed" />
-	  <LLoadProfile Path="../../Start.xml"/>
-	</Order>
-	</Profile>
+	</GrindAreas>	
+</Profile>

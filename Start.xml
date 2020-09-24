@@ -16,8 +16,8 @@
 <!ENTITY nin "0"> 		
 <!ENTITY pld "0"> 		
 <!ENTITY sch "0"> 
-<!ENTITY smn "0"> 
-<!ENTITY war "1"> 
+<!ENTITY smn "1"> 
+<!ENTITY war "0"> 
 <!ENTITY whm "0"> 
 <!-- 		Items required for quest. Have these in your inventory before starting profile.
 
@@ -34,6 +34,16 @@
 			
 			You will also need 3x Thavnairian Mist and 1x Radz-at-Han Quenching Oil. Both 
 			purchased from  Auriana in Mor Dhona (x22,y6) for each relic weapon desired.
+			
+			For the Zodiac stage of the Relic weapon quest you will need the following:
+			
+			Item					Cost											Where
+			4 Bombard Core			80,000 Company Seals (20,000 each)				Grand Company Quartermaster
+			4 Sacred Spring Water	800 Allagan Tomestone of Poetics (200 each)		Auriana in Mor Dhona (x22,y6)
+			1 Bronze Lake Crystal	100,000 Gil										Junkmonger at Jijiroon's Trading Post in Upper La Noscea (x26,y26)
+			1 Allagan Resin			100,000 Gil										Merchant & Mender in Forgotten Springs in Southern Thanalan (x15,y29)
+			1 Furite Sand			100,000 Gil										Merchant & Mender in Whitebrim Front in Coerthas Central Highlands (x13,y16)
+			1 Brass Kettle			100,000 Gil										Tool Supplier & Mender in Hyrstmill in North Shroud (x29,y19)
 
 -->
 ]>

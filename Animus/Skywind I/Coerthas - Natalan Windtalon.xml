@@ -1,26 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Profile: Skywind I - Natalan Windtalon
+  Authors: Zamphire
+  Code Credit: nishap
+-->
+
 <Profile>
-   <Name>Book of Skywind I - Natalan Windtalon</Name>
-   <KillRadius>500</KillRadius>    
-   <GrindAreas>
-   <GrindArea name="natalan_windtalon">
-        <Hotspots>
-			<Hotspot Radius="500" XYZ="594.697, 302.9182, -102.3506" name="natalan_windtalon" />
-			<!-- <Hotspot Radius="115" X="670.7619" Y="286.3577" Z="51.08676" name="natalan_windtalon" />
-			<Hotspot Radius="115" X="508.2964" Y="302.9662" Z="-186.1486" name="natalan_windtalon" /> -->
-		</Hotspots>
+	<Name>Book of Skywind I - Natalan Windtalon</Name>   
+	<Order>
+		<LisbethTravel Area="Coerthas Central Highlands" Position="505.4167, 303.1907, -191.9184"/>
+		<Grind grindRef="natalan_windtalon" while="not ZodiacManager.CurrentBook.KillTask7Completed" />
+		<LLoadProfile Path="../../Start.xml"/>
+	</Order>
+	<GrindAreas>
+		<GrindArea name="natalan_windtalon">
+			<Hotspots>
+				<Hotspot Radius="500" XYZ="505.4167, 303.1907, -191.9184" />
+				<Hotspot Radius="500" XYZ="617.6274, 302.1369, -98.6545" />
+				<Hotspot Radius="500" XYZ="670.0501, 286.173, 26.64226" />
+			</Hotspots>
 			<TargetMobs>
 				<TargetMob id="1842"  /> 
 			</TargetMobs>
-			<MinLevel>1</MinLevel>
-			<MaxLevel>60</MaxLevel>
 		</GrindArea>
-	</GrindAreas>
-	<Order>
-	<If Condition="not IsOnMap(155)">
-		<TeleportTo Name="Camp Dragonhead" AetheryteId="23" />
-	</If>
-	<NoCombatMoveTo Name="natalan_windtalon" XYZ="594.697, 302.9182, -102.3506"/>
-      <Grind grindRef="natalan_windtalon" while="not ZodiacManager.CurrentBook.KillTask7Completed" />
-	  <LLoadProfile Path="../../Start.xml"/>
-	</Order>
-	</Profile>
+	</GrindAreas>	
+</Profile>

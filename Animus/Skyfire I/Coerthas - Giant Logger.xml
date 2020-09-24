@@ -1,24 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Profile: Skyfire I - Giant Logger
+  Authors: Zamphire
+  Code Credit: nishap
+-->
+
 <Profile>
-   <Name>Book of Skyfire I - Giant Logger</Name>
-   <KillRadius>500</KillRadius>    
-   <GrindAreas>
-   <GrindArea name="giant_logger">
-        <Hotspots>
-			<Hotspot Radius="500" XYZ="-472.8304,275.3853, 236.0151" name="giant_logger" />
-		</Hotspots>
+	<Name>Book of Skyfire I - Giant Logger</Name>  
+	<Order>
+		<LisbethTravel Area="Coerthas Central Highlands" Position="-473.0542, 276.0642, 233.3405"/>
+		<Grind grindRef="giant_logger" while="not ZodiacManager.CurrentBook.KillTask2Completed" />
+		<LLoadProfile Path="../../Start.xml"/>
+	</Order>
+	<GrindAreas>
+		<GrindArea name="giant_logger">
+			<Hotspots>
+				<Hotspot Radius="500" XYZ="-472.8304,275.3853, 236.0151" />
+				<Hotspot Radius="500" XYZ="-398.6384, 302.9339, 192.3537" />
+				<Hotspot Radius="500" XYZ="-360.0799, 271.8206, 254.4776" />
+			</Hotspots>
 			<TargetMobs>
 				<TargetMob id="785"  /> 
 			</TargetMobs>
-			<MinLevel>1</MinLevel>
-			<MaxLevel>60</MaxLevel>
 		</GrindArea>
-	</GrindAreas>
-	<Order>
-	<If Condition="not IsOnMap(155)">
-		<TeleportTo Name="Camp Dragonhead" AetheryteId="23" />
-	</If>
-	<NoCombatMoveTo Name="giant_logger" XYZ="-472.8304,275.3853, 236.0151"/>
-      <Grind grindRef="giant_logger" while="not ZodiacManager.CurrentBook.KillTask2Completed" />
-	  <LLoadProfile Path="../../Start.xml"/>
-	</Order>
-	</Profile>
+	</GrindAreas>	
+</Profile>
