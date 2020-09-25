@@ -97,6 +97,7 @@ If you die at any time, you'll need to restart the bot.
 	* Copperbell Mines (Hard): One of the Collapsed Rocks has a smaller hitbox then RB thinks it does. Sometimes melee classes don't get close enough. Watch this.
 	* The Tousand Maws of Toto-Rak: The meshing here is absolutely horrible. Keep an eye on it as you run as it may not be able to get to some of the photocells that drop. And could possibly get stuck on things.
 	* Hullbreaker Isle: Currently cannot fight the kraken due to no meshing of the fight area. You will need to do this fight manually, but the bot will do the rest of the instance.
+	* Stone Vigil (Hard): The second fight Curca Fera is neigh impossible to solo, even by hand. Do this dungeon synced manually.
 	
 * Leves
 	* You must already have levequests unlocked for the Whitebrim, Saint Coinarch's Find and Camp Bluefog. I can't automate those quests yet as they combine a quest and a levequest in one.
