@@ -392,7 +392,7 @@
 		
 		<!-- Buy Zenith weapons -->
 		<!-- If Has Completed A Relic Reborn (The Sphairai) and has Sphairai -->																										
-		<If Condition="IsQuestCompleted(66662) and HasAtLeast(1746,1)">
+		<If Condition="IsQuestCompleted(66657) and HasAtLeast(1746,1)">
 			<GetTo ZoneId="154" XYZ="449.7941, -0.3727861, -70.40031"/>
 			<If Condition="HasAtLeast(6268,2)"> <!-- Thavnairian Mist -->
 				<RunCode name="ExchangeSphairai"/>
