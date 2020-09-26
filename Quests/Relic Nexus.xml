@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Profile: Relic Nexus
+  Authors: Zamphire
+  Code Credit: ZZI, Kayla
+-->
+
+<Profile>
+  <Name>Relic Nexus</Name>
+  <BehaviorDirectory>..\Quest Behaviors</BehaviorDirectory>
+	<Order>
+		<!-- Mmmmmm, Soulglazed Relics -->
+		<If Condition="not HasQuest(65742) and not IsQuestCompleted(65742) and HasAtLeast(7868,1)">
+		  <LisbethTravel Area="North Shroud" Position="406.5041, -4.498047, -89.74722"/>
+				<If Condition="ClassName == ((ClassJobType.Bard))"> 
+					<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7838">
+						<RunCode Name="ArtemisNovus" />
+						<WaitTimer WaitTime="3" />
+					</If>					
+				</If>
+				<If Condition="ClassName == ((ClassJobType.BlackMage))">
+					<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7869">
+						<RunCode Name="StardustNovus" />
+						<WaitTimer WaitTime="3" />
+					</If>						
+				</If>	
+				<If Condition="ClassName == ((ClassJobType.Dragoon))">
+					<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7866">
+						<RunCode Name="GaeBolgNovus" />
+						<WaitTimer WaitTime="3" />
+					</If>				
+				</If>
+				<If Condition="ClassName == ((ClassJobType.Monk))">
+					<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7864">
+						<RunCode Name="SphairaiNovus" />
+						<WaitTimer WaitTime="3" />
+					</If>				
+				</If>
+				<If Condition="ClassName == ((ClassJobType.Ninja))"> 
+					<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 9253">
+						<RunCode Name="YoshiNovus" />
+						<WaitTimer WaitTime="3" />
+					</If>				
+				</If>
+				<If Condition="ClassName == ((ClassJobType.Paladin))">
+					<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7863">
+						<RunCode Name="CurtanaNovus" />
+						<WaitTimer WaitTime="5" />
+					</If>	
+					<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7872">						
+						<RunCode Name="HolyNovus" />
+					</If>				
+				</If>
+				<If Condition="ClassName == ((ClassJobType.Summoner))">	
+					<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7871">
+						<RunCode Name="OmnilexNovus" />
+						<WaitTimer WaitTime="3" />
+					</If>
+				</If>
+				<If Condition="ClassName == ((ClassJobType.Scholar))">	
+					<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7870">
+						<RunCode Name="VeilNovus" />
+						<WaitTimer WaitTime="3" />
+					</If>
+				</If>	
+				<If Condition="ClassName == ((ClassJobType.Warrior))"> 		
+					<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7865">
+						<RunCode Name="BravuraNovus" />
+						<WaitTimer WaitTime="3" />
+					</If>
+				</If>	
+				<If Condition="ClassName == ((ClassJobType.WhiteMage))">	
+					<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7868">
+						<RunCode Name="ThyrusNovus" />
+						<WaitTimer WaitTime="3" />
+					</If>
+				</If>	  
+		  <If Condition="IsQuestAcceptQualified(65742)">
+			<PickupQuest QuestId="65742" NpcId="1008948"/>
+		  </If>
+		</If>
+		<If Condition="GetQuestStep(65742) == 1">
+		  <GetTo ZoneId="154" XYZ="440.8398, -0.937443, -64.02361"/>
+		  <TalkTo NpcId="1003075" XYZ="440.7262, -0.9374562, -62.21112" QuestId="65742" StepId="1"/>
+		</If>
+		<If Condition="GetQuestStep(65742) == 2">
+		  <GetTo ZoneId="154" XYZ="406.4768, -4.498047, -88.84937"/>
+		  <TalkTo NpcId="1008948" XYZ="405.1117, -4.498068, -89.15851" QuestId="65742" StepId="2"/>
+		</If>
+		<If Condition="GetQuestStep(65742) == 255">
+		  <GetTo ZoneId="154" XYZ="406.4768, -4.498047, -88.84937"/>
+		  <TurnIn QuestId="65742" NpcId="1008948" XYZ="405.1117, -4.498068, -89.15851"/>
+		</If>
+
+	<!-- Light Farm -->
+		<If condition="IsQuestCompleted(65742)">
+			<RunCode name="LightFarm"/>
+			<LLoadProfile Path="../Dungeons/The Howling Eye (Extreme) - SoulGlazed.xml"/>
+		</If>
+	
+		
+	</Order>
+	<CodeChunks>
+		<CodeChunk Name="LightFarm">
+		  <![CDATA[ 
+			Core.OverlayManager.AddToast(() => "We are about to load Gardua Extreme to farm light, however it will NOT stop automatically. Watch it.", TimeSpan.FromMilliseconds(25000), System.Windows.Media.Color.FromRgb(29,213,226), System.Windows.Media.Color.FromRgb(13,106,175), new System.Windows.Media.FontFamily("Gautami"));
+			await Coroutine.Sleep(26000);
+		  ]]>
+		</CodeChunk>	
+ 		<CodeChunk Name="ArtemisNovus">
+		<![CDATA[ 
+			BagSlot EquipSlot = ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand];
+			
+			foreach(ff14bot.Managers.BagSlot slot in ff14bot.Managers.InventoryManager.FilledInventoryAndArmory)
+			{
+				if(slot.RawItemId == 7867)
+				{
+					slot.Move(EquipSlot);
+				}
+			}
+		]]>
+		</CodeChunk>	
+ 		<CodeChunk Name="StardustNovus">
+		<![CDATA[ 
+			BagSlot EquipSlot = ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand];
+			
+			foreach(ff14bot.Managers.BagSlot slot in ff14bot.Managers.InventoryManager.FilledInventoryAndArmory)
+			{
+				if(slot.RawItemId == 7869)
+				{
+					slot.Move(EquipSlot);
+				}
+			}
+		]]>
+		</CodeChunk>
+ 		<CodeChunk Name="GaeBolgNovus">
+		<![CDATA[ 
+			BagSlot EquipSlot = ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand];
+			
+			foreach(ff14bot.Managers.BagSlot slot in ff14bot.Managers.InventoryManager.FilledInventoryAndArmory)
+			{
+				if(slot.RawItemId == 7866)
+				{
+					slot.Move(EquipSlot);
+				}
+			}
+		]]>
+		</CodeChunk>
+ 		<CodeChunk Name="SphairaiNovus">
+		<![CDATA[ 
+			BagSlot EquipSlot = ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand];
+			
+			foreach(ff14bot.Managers.BagSlot slot in ff14bot.Managers.InventoryManager.FilledInventoryAndArmory)
+			{
+				if(slot.RawItemId == 7864)
+				{
+					slot.Move(EquipSlot);
+				}
+			}
+		]]>
+		</CodeChunk>
+ 		<CodeChunk Name="YoshiNovus">
+		<![CDATA[ 
+			BagSlot EquipSlot = ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand];
+			
+			foreach(ff14bot.Managers.BagSlot slot in ff14bot.Managers.InventoryManager.FilledInventoryAndArmory)
+			{
+				if(slot.RawItemId == 9253)
+				{
+					slot.Move(EquipSlot);
+				}
+			}
+		]]>
+		</CodeChunk> 
+ 		<CodeChunk Name="CurtanaNovus">
+		<![CDATA[ 
+			BagSlot EquipSlot = ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand];
+			
+			foreach(ff14bot.Managers.BagSlot slot in ff14bot.Managers.InventoryManager.FilledInventoryAndArmory)
+			{
+				if(slot.RawItemId == 7863)
+				{
+					slot.Move(EquipSlot);
+				}
+			}
+		]]>
+		</CodeChunk> 
+ 		<CodeChunk Name="HolyNovus">
+		<![CDATA[ 
+			BagSlot EquipSlot = ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand];
+			
+			foreach(ff14bot.Managers.BagSlot slot in ff14bot.Managers.InventoryManager.FilledInventoryAndArmory)
+			{
+				if(slot.RawItemId == 7872)
+				{
+					slot.Move(EquipSlot);
+				}
+			}
+		]]>
+		</CodeChunk>		
+		<CodeChunk Name="VeilNovus">
+		<![CDATA[ 
+			BagSlot EquipSlot = ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand];
+			
+			foreach(ff14bot.Managers.BagSlot slot in ff14bot.Managers.InventoryManager.FilledInventoryAndArmory)
+			{
+				if(slot.RawItemId == 7841)
+				{
+					slot.Move(EquipSlot);
+				}
+			}
+		]]>
+		</CodeChunk> 		
+		<CodeChunk Name="OmnilexNovus">
+		<![CDATA[ 
+			BagSlot EquipSlot = ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand];
+			
+			foreach(ff14bot.Managers.BagSlot slot in ff14bot.Managers.InventoryManager.FilledInventoryAndArmory)
+			{
+				if(slot.RawItemId == 7870)
+				{
+					slot.Move(EquipSlot);
+				}
+			}
+		]]>
+		</CodeChunk>				
+ 		<CodeChunk Name="BravuraNovus">
+		<![CDATA[ 
+			BagSlot EquipSlot = ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand];
+			
+			foreach(ff14bot.Managers.BagSlot slot in ff14bot.Managers.InventoryManager.FilledInventoryAndArmory)
+			{
+				if(slot.RawItemId == 7865)
+				{
+					slot.Move(EquipSlot);
+				}
+			}
+		]]>
+		</CodeChunk>				
+ 		<CodeChunk Name="ThyrusNovus">
+		<![CDATA[ 
+			BagSlot EquipSlot = ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand];
+			
+			foreach(ff14bot.Managers.BagSlot slot in ff14bot.Managers.InventoryManager.FilledInventoryAndArmory)
+			{
+				if(slot.RawItemId == 7868)
+				{
+					slot.Move(EquipSlot);
+				}
+			}
+		]]>
+		</CodeChunk>	
+	</CodeChunks>
+</Profile>	

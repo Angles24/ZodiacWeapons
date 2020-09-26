@@ -10,6 +10,98 @@
   <Name>Zodiac Braves Quests</Name>
   <BehaviorDirectory>..\Quest Behaviors</BehaviorDirectory>		
 	<Order>
+		<!-- Wherefore Art Thou, Zodiac -->
+		<If Condition="not HasQuest(65892) and not IsQuestCompleted(65892) and HasAtLeast(8656,1)">
+		  <LisbethTravel Area="North Shroud" Position="406.5759, -4.498047, -89.70448"/>
+				<If Condition="ClassName == ((ClassJobType.Bard))"> 
+					<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 8653">
+						<Log Message="Equipping Artemis Bow Nexus" />
+						<RunCode Name="ArtemisNexus" />
+						<WaitTimer WaitTime="3" />
+					</If>
+				</If>
+				<If Condition="ClassName == ((ClassJobType.BlackMage))"> 
+					<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 8655">
+						<Log Message="Equipping Stardust Rod Nexus" />
+						<RunCode Name="StardustNexus" />
+						<WaitTimer WaitTime="3" />
+					</If>
+				</If>
+				<If Condition="ClassName == ((ClassJobType.Dragoon))"> 
+					<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 8652">
+						<Log Message="Equipping Gae Bolg Nexus" />
+						<RunCode Name="GaeBolgNexus" />
+						<WaitTimer WaitTime="3" />
+					</If>
+				</If>	
+				<If Condition="ClassName == ((ClassJobType.Monk))"> 
+					<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 8650">
+						<Log Message="Equipping Sphairai Nexus" />
+						<RunCode Name="SphairaiNexus" />
+						<WaitTimer WaitTime="3" />
+					</If>
+				</If>
+				<If Condition="ClassName == ((ClassJobType.Ninja))"> 
+					<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 9254">
+						<Log Message="Equipping Yoshimitsu Nexus" />
+						<RunCode Name="YoshiNexus" />
+						<WaitTimer WaitTime="3" />
+					</If>
+				</If>
+				<If Condition="ClassName == ((ClassJobType.Paladin))"> 
+					<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 8649">
+						<Log Message="Equipping Curtana Nexus" />
+						<RunCode Name="CurtanaNexus" />
+						<WaitTimer WaitTime="3" />
+					</If>
+				</If>
+				<If Condition="ClassName == ((ClassJobType.Paladin))"> 
+					<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.OffHand].RawItemId != 8658">
+						<Log Message="Equipping Holy Shield Nexus" />
+						<RunCode Name="HolyShieldNexus" />
+						<WaitTimer WaitTime="3" />
+					</If>
+				</If>			
+				<If Condition="ClassName == ((ClassJobType.Scholar))"> 
+					<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 8657">
+						<Log Message="Equipping Omnilex Nexus" />
+						<RunCode Name="OmnilexNexus" />
+						<WaitTimer WaitTime="3" />
+					</If>
+				</If>
+				<If Condition="ClassName == ((ClassJobType.Summoner))"> 
+					<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 8656">
+						<Log Message="Equipping Viel of Wiyu Nexus" />
+						<RunCode Name="VeilNexus" />
+						<WaitTimer WaitTime="3" />
+					</If>
+				</If>	
+				<If Condition="ClassName == ((ClassJobType.Warrior))"> 
+					<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 8651">
+						<Log Message="Equipping Bravura Nexus" />
+						<RunCode Name="BravuraNexus" />
+						<WaitTimer WaitTime="3" />
+					</If>
+				</If>
+				<If Condition="ClassName == ((ClassJobType.WhiteMage))"> 
+					<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 8654">
+						<Log Message="Equipping Thyrus Nexus" />
+						<RunCode Name="ThyrusNexus" />
+						<WaitTimer WaitTime="3" />
+					</If>
+				</If>						  
+		  <If Condition="IsQuestAcceptQualified(65892)">
+			<PickupQuest QuestId="65892" NpcId="1008948"/>
+		  </If>
+		</If>
+		<If Condition="GetQuestStep(65892) == 1">
+		  <GetTo ZoneId="154" XYZ="441.2254, -0.9374369, -63.66126"/>
+		  <TalkTo NpcId="1003075" XYZ="440.7262, -0.9374562, -62.21112" QuestId="65892" StepId="1"/>
+		</If>
+		<If Condition="GetQuestStep(65892) == 255">
+		  <GetTo ZoneId="154" XYZ="406.7891, -4.498047, -89.25395"/>
+		  <TurnIn QuestId="65892" NpcId="1008948" XYZ="405.1117, -4.498068, -89.15851"/>
+		</If>	
 		<!-- A Ponze of Flesh -->
 		<If Condition="not HasAtLeast(9506,1)">
 			<If Condition="not HasQuest(65893) and not IsQuestCompleted(65893) and HasAtLeast(8656,1)">

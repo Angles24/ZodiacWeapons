@@ -596,7 +596,27 @@
 					<WaitTimer WaitTime="3" />
 				</If>
 				<LLoadProfile Path="../Animus/Animus Book Farm.xml"/>
-			</If>	
+			</If>
+
+	<!-- Animus Weapon Upgrade -->
+		<If condition="HasAtLeast(7840,1)">
+			<LLoadProfile Path="Relic Novus.xml"/>
+		</If>
+		
+	<!-- Novus Weapon Upgrade -->
+		<If condition="HasAtLeast(7869,1)">
+			<LLoadProfile Path="Relic Nexus.xml"/>
+		</If>
+
+	<!-- Nexus Weapon Upgrade -->
+		<If condition="HasAtLeast(8655,1)">
+			<LLoadProfile Path="Zodiac Braves.xml"/>
+		</If>
+		
+	<!-- Zodiac Weapn Upgrade -->	
+		<If condition="HasAtLeast(9497,1)">
+			<LLoadProfile Path="Zodiac Zeta.xml"/>
+		</If>		
 		
 	</If>
   </Order>

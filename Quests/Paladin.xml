@@ -724,7 +724,25 @@
 				<LLoadProfile Path="../Animus/Animus Book Farm.xml"/>
 			</If>	
 	
-	
+	<!-- Animus Weapon Upgrade -->
+		<If condition="HasAtLeast(7834,1)">
+			<LLoadProfile Path="Relic Novus.xml"/>
+		</If>
+		
+	<!-- Novus Weapon Upgrade -->
+		<If condition="HasAtLeast(7863,1)">
+			<LLoadProfile Path="Relic Nexus.xml"/>
+		</If>
+
+	<!-- Nexus Weapon Upgrade -->
+		<If condition="HasAtLeast(8649,1)">
+			<LLoadProfile Path="Zodiac Braves.xml"/>
+		</If>
+		
+	<!-- Zodiac Weapn Upgrade -->	
+		<If condition="HasAtLeast(9491,1)">
+			<LLoadProfile Path="Zodiac Zeta.xml"/>
+		</If>		
 	
 	</If>
   </Order>
