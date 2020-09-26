@@ -9,10 +9,33 @@
   <Name>Mystery Map Farm</Name>
   <BehaviorDirectory>..\Quest Behaviors</BehaviorDirectory>
   <Order>
-	<!--
-	<If condition="LlamaLibrary.TreasureMap.PrimaryKey != 6">
-		<RunCode Name="Announce_Manual_Completion"/>
-	</If> -->
+    <!-- Treasures and Tribulations -->
+    <If Condition="not HasQuest(66747) and not IsQuestCompleted(66747)">
+      <GetTo ZoneId="137" XYZ="-17.55099, 70.4419, -15.79933"/>
+      <If Condition="IsQuestAcceptQualified(66747)">
+        <PickupQuest QuestId="66747" NpcId="1005526"/>
+      </If>
+    </If>
+    <If Condition="GetQuestStep(66747) == 1">
+      <LisbethTravel Area="Eastern La Noscea (Raincatcher Gully)" Position="-71.1013, 46.03115, 178.3747"/>
+      <TalkTo NpcId="1005527" XYZ="-68.2536, 46.91121, 178.2406" QuestId="66747" StepId="1"/>
+    </If>
+    <If Condition="GetQuestStep(66747) == 2">
+      <LisbethTravel Area="Upper La Noscea (Bronze Lake)" Position="622.546, -3.002749, 163.6767"/>
+      <TalkTo NpcId="1005528" XYZ="624.2312, -3.052744, 165.2704" QuestId="66747" StepId="2"/>
+    </If>
+    <If Condition="GetQuestStep(66747) == 3">
+      <GetTo ZoneId="139" XYZ="600.6975, -2.371613, 171.8951"/>
+      <UseObject InCombat="True" NpcIds="2003139" XYZ="600.5187, -2.517761, 173.1135"  Radius="25"  QuestId="66747" StepId="3"/>
+    </If>
+    <If Condition="GetQuestStep(66747) == 4">
+      <GetTo ZoneId="139" XYZ="600.5825, -2.38104, 171.7163"/>
+      <UseObject NpcIds="2003007" XYZ="600.5187, -2.365173, 173.1135"  Radius="25"  QuestId="66747" StepId="4"/>
+    </If>
+    <If Condition="GetQuestStep(66747) == 255">
+      <GetTo ZoneId="139" XYZ="622.7817, -3.002749, 163.7838"/>
+      <TurnIn QuestId="66747" NpcId="1005528" XYZ="624.2312, -3.052744, 165.2704"/>
+    </If>	
 	<While condition="not HasAtLeast(7883,75)">
 		<!-- If has Mystery Map -->
 		<If condition="HasAtLeast(7884,1) and not HasAtLeast(2001223,1)">
