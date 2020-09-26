@@ -61,7 +61,7 @@ I'm in the process of changing over all the movement in this profile to be handl
 - [ ] Celestial Radiance
 - [ ] Star Light, Star Bright
 - [ ] Farming 75 Alexandrite
-- [ ] Melding Materia
+- [ ] Melding Materia to Sphere
 - [ ] Purchase Novus Zodiac
 
 ### Nexus Zodiac Weapons
