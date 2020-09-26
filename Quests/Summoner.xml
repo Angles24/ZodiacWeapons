@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
   Profile: Summoner Relic Weapon
-  Version: 0.7
+  Version: 0.9
   Authors: Zamphire
   Code Credit: TuckMeIntoBread, Kayla, Sodimm
 -->
@@ -333,7 +333,7 @@
 	</GrindArea>
   </GrindAreas>
   <Order>
-	<Log Message="Starting Summoner Zodiac Questing Version 0.7" />
+	<Log Message="Starting Summoner Zodiac Questing Version 0.9" />
     <!-- The Weaponsmith of Legend -->
     <If Condition="not HasQuest(66241) and not IsQuestCompleted(66241)">
 	  <ChangeClass Job="Summoner" />							 
