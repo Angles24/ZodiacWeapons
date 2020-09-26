@@ -620,7 +620,10 @@
 				<LLoadProfile Path="../Animus/Animus Book Farm.xml"/>
 			</If>		
 	
-			
+	<!-- Animus Weapon Upgrade -->
+		<If condition="HasAtLeast(7839,1)">
+			<LLoadProfile Path="../Animus/Relic Novus.xml"/>
+		</If>			
 		
 	</If>
   </Order>

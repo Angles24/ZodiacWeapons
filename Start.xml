@@ -35,7 +35,8 @@
 			You will also need 3x Thavnairian Mist and 1x Radz-at-Han Quenching Oil. Both 
 			purchased from  Auriana in Mor Dhona (x22,y6) for each relic weapon desired.
 			
-			For the Zodiac stage of the Relic weapon quest you will need the following:
+			For the Zodiac stage of the Relic weapon quest you will need the following, 
+			the bot will get these for you but make sure you have the required currency:
 			
 			Item					Cost											Where
 			4 Bombard Core			80,000 Company Seals (20,000 each)				Grand Company Quartermaster
@@ -44,7 +45,18 @@
 			1 Allagan Resin			100,000 Gil										Merchant & Mender in Forgotten Springs in Southern Thanalan (x15,y29)
 			1 Furite Sand			100,000 Gil										Merchant & Mender in Whitebrim Front in Coerthas Central Highlands (x13,y16)
 			1 Brass Kettle			100,000 Gil										Tool Supplier & Mender in Hyrstmill in North Shroud (x29,y19)
-
+			
+			These items the bot can not get for you and will need to be obtained prior:
+			
+			Item							Source
+			HQ Furnace Ring					Market Board. Or crafted, requires material obtained from desynthesising Aged Ring from Silver Bazaar, Western Thanalan (x15 y29).
+			HQ Bundle of Perfect Firewood	Market Board. Or crafted, requires material obtained from desynthesising Aged Spear from Silver Bazaar, Western Thanalan (x15 y29).
+			HQ Perfect Mortar				Market Board. Or crafted, requires material obtained from desynthesising Aged Mortar from Silver Bazaar, Western Thanalan (x15 y29).
+			HQ Perfect Pestle				Market Board. Or crafted, requires material obtained from desynthesising Aged Pestle from Silver Bazaar, Western Thanalan (x15 y29).
+			HQ Perfect Vellum				Market Board. Or crafted, requires material obtained from desynthesising Aged Vellum from Silver Bazaar, Western Thanalan (x15 y29).
+			HQ Perfect Pounce				Market Board. Or crafted, requires material obtained from desynthesising Aged goods from Silver Bazaar, Western Thanalan (x15 y29).
+			HQ Tailor-made Eel Pie			Market Board. Or crafted, requires material obtained from desynthesising Aged goods from Silver Bazaar, Western Thanalan (x15 y29).
+			HQ Perfect Cloth				Market Board. Or crafted, requires material obtained from desynthesising Aged goods from Silver Bazaar, Western Thanalan (x15 y29).
 -->
 ]>
 <Profile>

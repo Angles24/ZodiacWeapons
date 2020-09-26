@@ -11,6 +11,7 @@
   <Order>
     <!-- Treasures and Tribulations -->
     <If Condition="not HasQuest(66747) and not IsQuestCompleted(66747)">
+	  <LogMessage Message="Going to unlock treasure maps." />
       <GetTo ZoneId="137" XYZ="-17.55099, 70.4419, -15.79933"/>
       <If Condition="IsQuestAcceptQualified(66747)">
         <PickupQuest QuestId="66747" NpcId="1005526"/>
@@ -178,7 +179,7 @@
 			</If>
 			<If condition="LlamaLibrary.TreasureMap.SecondaryKey == 26">
 				<!-- <GetTo XYZ="49.0729, 2.47277, 871.301" ZoneId="146"/>-->
-				<!-- <LisbethTravel Area="Southern Thanalan" Position="48.33005, 2.393195, 869.457"/> -->
+				<LisbethTravel Area="Southern Thanalan" Position="48.33005, 2.393195, 869.457"/>
 				<BasicTreasureFight XYZ="48.33005, 2.393195, 869.457" ZoneId="146" SubzoneID="257"/>
 			</If>
 			<If condition="LlamaLibrary.TreasureMap.SecondaryKey == 27">
@@ -198,7 +199,7 @@
 			</If>
 			<If condition="LlamaLibrary.TreasureMap.SecondaryKey == 30">
 				<!-- <GetTo XYZ="85.4213, 358.71, -274.26" ZoneId="155"/>-->
-				<!-- <LisbethTravel Area="Coerthas Central Highlands" Position="86.29926, 358.651, -275.789"/> -->
+				<LisbethTravel Area="Coerthas Central Highlands" Position="87.67933, 358.5755, -276.1248"/>
 				<BasicTreasureFight XYZ="86.29926, 358.651, -275.789" ZoneId="155" SubzoneID="381"/>
 			</If>
 			<If condition="LlamaLibrary.TreasureMap.SecondaryKey == 31">

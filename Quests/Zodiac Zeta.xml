@@ -37,6 +37,23 @@
 		<!-- Mahatma Farm -->
 		<If condition="IsQuestCompleted(66096)">
 			<LLoadProfile Path="../Dungeons/Tam Tara Deepcroft (Zodiac Zeta).xml"/>
-		</If>	
+		</If>
+
+		<!-- The Vital Title -->
+		<If Condition="not HasQuest(66097) and not IsQuestCompleted(66097)">
+		  <LisbethTravel Area="North Shroud" Position="406.5853, -4.498047, -89.02557"/>
+		  <If Condition="IsQuestAcceptQualified(66097)">
+			<PickupQuest QuestId="66097" NpcId="1008948"/>
+		  </If>
+		</If>
+		<If Condition="GetQuestStep(66097) == 1">
+		  <GetTo ZoneId="154" XYZ="440.9404, -0.9374378, -63.81174"/>
+		  <TalkTo NpcId="1003075" XYZ="440.7262, -0.9374562, -62.21112" QuestId="66097" StepId="1"/>
+		</If>
+		<If Condition="GetQuestStep(66097) == 255">
+		  <GetTo ZoneId="154" XYZ="407.2799, -4.506161, -88.44955"/>
+		  <TurnIn QuestId="66097" NpcId="1008948" XYZ="405.1117, -4.498068, -89.15851"/>
+		</If>
+		
 	</Order>
 </Profile>	
