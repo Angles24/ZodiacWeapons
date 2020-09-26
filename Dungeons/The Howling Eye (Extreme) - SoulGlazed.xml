@@ -104,7 +104,8 @@
 			<If Condition="GameObjectManager.GetObjectByNPCId(2000275).IsVisible">
 				<MoveTo XYZ="1.078937,-2.041544,-18.36319"/> <!-- Move to Exit -->
 				<RunCode name="ExitDuty"/>
-			</If>			
+			</If>
+			<RunCode name="LightFarm"/>	
 			<WaitTimer WaitTime="10"/>
 		</If>
 	</While>	
@@ -122,6 +123,12 @@
 	</GrindArea>
   </GrindAreas>		
   <CodeChunks>
+ 		<CodeChunk Name="LightFarm">
+		  <![CDATA[ 
+			Core.OverlayManager.AddToast(() => "Make sure to check your light level!", TimeSpan.FromMilliseconds(25000), System.Windows.Media.Color.FromRgb(29,213,226), System.Windows.Media.Color.FromRgb(13,106,175), new System.Windows.Media.FontFamily("Gautami"));
+			await Coroutine.Sleep(26000);
+		  ]]>
+		</CodeChunk> 
 	<CodeChunk Name="ExitDuty">
 		<![CDATA[
 			ff14bot.Managers.GameObjectManager.GetObjectByNPCId(2000275).Interact();
