@@ -622,7 +622,7 @@
 	
 	<!-- Animus Weapon Upgrade -->
 		<If condition="HasAtLeast(7836,1)">
-			<LLoadProfile Path="../Animus/Relic Novus.xml"/>
+			<LLoadProfile Path="Relic Novus.xml"/>
 		</If>			
 		
 	</If>
