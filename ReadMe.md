@@ -58,34 +58,43 @@ I'm in the process of changing over all the movement in this profile to be handl
 - [ ] Purchase Animus from Jalzahn
 
 ### Novus Zodiac Weapons
-- [ ] Celestial Radiance
-- [ ] Star Light, Star Bright
-- [ ] Farming 75 Alexandrite
+- [X] Celestial Radiance
+- [X] Star Light, Star Bright
+- [X  Farming 75 Alexandrite
 - [ ] Melding Materia to Sphere
 - [ ] Purchase Novus Zodiac
 
 ### Nexus Zodiac Weapons
-- [ ] Mmmmmm, Soulglazed Relics
-- [ ] Light Farming
-- [ ] Purchase Nexus Zodiac
+- [X] Mmmmmm, Soulglazed Relics
+- [X] Light Farming
+- [ ] Purchase Nexus Zodiac 
 
 ### Zodiac Braves Weapons
-- [ ] Wherefore Art Thou, Zodiac
-- [ ] One Man's Trash
-- [ ] A Ponze of Flesh
-- [ ] Labor of Love
-- [ ] Mtheod in His Malice
-- [ ] A Treasured Mother
-- [ ] His Dark Materia
+- [X] Wherefore Art Thou, Zodiac
+- [X] One Man's Trash
+- [X] A Ponze of Flesh
+- [X] Labor of Love
+- [X] Mtheod in His Malice
+- [X] A Treasured Mother *
+- [X] His Dark Materia
+- [ ] Purchase Zodiac Weapon
 
 ### Zodiac Zeta Weapons
-- [ ] Rise and Shine
-- [ ] The Vital Title
-- [ ] Mahatma Light Farming
+- [X] Rise and Shine
+- [X] The Vital Title
+- [X] Mahatma Light Farming
+- [ ] Purchase Zodiac Zeta
 
 ## Known Issues
 
 If you die at any time, you'll need to restart the bot.
+
+We cannot manually meld materia to your Sphere scroll. It will farm the 75 Alexandrite and obtain your Sphere scroll but you will need to manually meld the materia and go purchase the next level of relic.
+
+Right now Light Level cannot be automatically detected. The bot will spam Garuda indefinitely. You will need to check it periodically and go buy the next level of relic when your light level is complete.
+
+You will need to atach new Mahatma's every two Tam-Tara runs. The bot will stop to allow you to do so.
+
 
 * Fates
 	* Fates are wonky. Mostly due to Navigation with RB, so don't completely AFK during this part. Or ever, really.
