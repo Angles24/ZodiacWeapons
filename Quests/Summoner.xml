@@ -136,7 +136,29 @@
 				#endif
 				Core.OverlayManager.AddToast(() => _msg, TimeSpan.FromMilliseconds(25000), System.Windows.Media.Color.FromRgb(29,213,226), System.Windows.Media.Color.FromRgb(13,106,175), new System.Windows.Media.FontFamily("Gautami"));
 			  ]]>
-		</CodeChunk>		
+		</CodeChunk>
+		<CodeChunk Name="NeedFurnaceRingandPerfectFirewood">
+			  <![CDATA[
+				var _msg = String.Empty;
+				#if RB_CN
+						_msg = "请手动完成下一个任务。";
+				#else
+						_msg = "Please obtain HQ Furnace Ring and HQ Perfect Firewood.";
+				#endif
+				Core.OverlayManager.AddToast(() => _msg, TimeSpan.FromMilliseconds(25000), System.Windows.Media.Color.FromRgb(29,213,226), System.Windows.Media.Color.FromRgb(13,106,175), new System.Windows.Media.FontFamily("Gautami"));
+			  ]]>
+		</CodeChunk>
+		<CodeChunk Name="NeedMortarAndPestle">
+			  <![CDATA[
+				var _msg = String.Empty;
+				#if RB_CN
+						_msg = "请手动完成下一个任务。";
+				#else
+						_msg = "Please obtain HQ Perfect Mortar and HQ Perfect Pestle.";
+				#endif
+				Core.OverlayManager.AddToast(() => _msg, TimeSpan.FromMilliseconds(25000), System.Windows.Media.Color.FromRgb(29,213,226), System.Windows.Media.Color.FromRgb(13,106,175), new System.Windows.Media.FontFamily("Gautami"));
+			  ]]>
+		</CodeChunk>			
 		<CodeChunk Name="ExchangeVeil">
             <![CDATA[ 
 				ff14bot.Managers.GameObjectManager.GetObjectByNPCId(2002555).Interact();
@@ -828,57 +850,17 @@
 		  <GetTo ZoneId="154" XYZ="406.7891, -4.498047, -89.25395"/>
 		  <TurnIn QuestId="65892" NpcId="1008948" XYZ="405.1117, -4.498068, -89.15851"/>
 		</If>
-		<!-- A Ponze of Flesh -->
-		<If Condition="not HasQuest(65893) and not IsQuestCompleted(65893) and HasAtLeast(8656,1)">
-		  <LisbethTravel Area="Mor Dhona" Position="70.82111, 33.06655, -705.2316"/>
-		  <If Condition="IsQuestAcceptQualified(65893)">
-			<PickupQuest QuestId="65893" NpcId="1010809"/>
-		  </If>
+		
+		<!-- Zodiac Braves Quests -->
+		<If condition="HasAtLeast(8656,1)">
+			<LLoadProfile Path="Zodiac Braves.xml"/>
 		</If>
-		<If Condition="GetQuestStep(65893) == 1 and not HasAtLeast(9540,1)">
-			<If Condition="not HasAtLeast(28,200)">
-				<RunCode name="NeedPoetics"/>
-			</If>		
-			<If Condition="HasAtLeast(28,200)">
-				<LisbethTravel Area="Mor Dhona" Position="63.4094, 31.15338, -736.7321"/>
-				<BuyShopExchangeCurrency NpcId= "1008119" ItemId="9540" SelectString="2" Count="1"/>
-			</If>				
+		
+		<!-- Zodiac Zeta -->
+		<If condition="HasAtLeast(9498,1)">
+			<LLoadProfile Path="Zodiac Zeta.xml"/>
 		</If>		
-		<If Condition="GetQuestStep(65893) == 1 and not HasAtLeast(9539,1)">
-			<If condition="CurrentGCSeals() &lt; 20000">
-				<RunCode name="NeedGCSeals"/>
-			</If>			
-			<If condition="CurrentGCSeals() &gt; 20000">
-				<Log Message="Moving to buy Bombard Core." />
-				<BuyGCItem ItemId="9539" Count="1"/>
-			</If>		
-		</If>
-		<If Condition="GetQuestStep(65893) == 1 and not HasAtLeast(9538,1)">
-			<LisbethTravel Area="Upper La Noscea (Bronze Lake)" Position="237.4163, -0.8985498, 248.4056"/>
-			<BuyItem ItemIds="9538" ItemCounts="1" DialogOption="4" NpcId="1003270" XYZ="234.4854,-0.9121512,248.2795" />
-		</If>
-		<If Condition="GetQuestStep(65893) == 1 and HasAtLeast(9538,1) and HasAtLeast(9539,1) and HasAtLeast(9540,1)">
-			<LisbethTravel Area="Mor Dhona" Position="70.42073, 33.06654, -704.3105"/>
-			<HandOver ItemIds="9540,9539,9538" NpcId="1010809" XYZ="73.10596, 33.06655, -704.4022" QuestId="65893" StepId="1"/>	
-		</If>
-		<If Condition="GetQuestStep(65893) == 2 and not HasAtLeast(2001528,1)">
-			<LLoadProfile Path="../Dungeons/Dzemael Darkhold.xml"/>	
-		</If>
-		<If Condition="GetQuestStep(65893) == 2 and not HasAtLeast(2001529,1)">
-			<LLoadProfile Path="../Dungeons/Brayfloxs Longstop (Hard).xml"/>
-		</If>
-		<If Condition="GetQuestStep(65893) == 3">
-			<LisbethTravel Area="Mor Dhona" Position="70.42073, 33.06654, -704.3105"/>
-			<HandOver ItemIds="2001529,2001528" NpcId="1010809" XYZ="73.10596, 33.06655, -704.4022" QuestId="65893" StepId="3"/>
-		</If>
-
-<!-- A Ponze of Flesh -->
-<If Condition="GetQuestStep(65893) == 4 and not HasAtLeast(2001530,1)">
-    <LLoadProfile Path="../Dungeons/Halatali (Hard).xml"/>    
-</If>
-<If Condition="GetQuestStep(65893) == 4 and not HasAtLeast(2001533,1)">
-    <LLoadProfile Path="../Dungeons/Snowcloak.xml"/>    
-</If>		
+		
 	</If>
   </Order>
 </Profile>

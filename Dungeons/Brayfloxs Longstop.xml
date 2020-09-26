@@ -23,7 +23,7 @@
 				<ChangeClass Job="Bard" />
 			</If>
 			<If Condition="ClassName == ((ClassJobType.BlackMage))"> 
-				<ChangeClass Job="Black Mage" />
+				<ChangeClass Job="Blackmage" />
 			</If>
 			<If Condition="ClassName == ((ClassJobType.Dragoon))"> 
 					<ChangeClass Job="Dragoon" />
@@ -47,7 +47,7 @@
 					<ChangeClass Job="Warrior" />
 			</If>
 			<If Condition="ClassName == ((ClassJobType.WhiteMage))"> 
-					<ChangeClass Job="White Mage" />
+					<ChangeClass Job="Whitemage" />
 			</If>
 			<MoveTo XYZ="21.54947, 7.105875, 27.33947"/>
 			<TalkTo NpcId="1004346" XYZ="20.64305,7.105875,27.7913"/>

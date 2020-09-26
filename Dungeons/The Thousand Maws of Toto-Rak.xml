@@ -24,7 +24,7 @@
 				<ChangeClass Job="Bard" />
 			</If>
 			<If Condition="ClassName == ((ClassJobType.BlackMage))"> 
-				<ChangeClass Job="Black Mage" />
+				<ChangeClass Job="Blackmage" />
 			</If>
 			<If Condition="ClassName == ((ClassJobType.Dragoon))"> 
 					<ChangeClass Job="Dragoon" />
@@ -48,7 +48,7 @@
 					<ChangeClass Job="Warrior" />
 			</If>
 			<If Condition="ClassName == ((ClassJobType.WhiteMage))"> 
-					<ChangeClass Job="White Mage" />
+					<ChangeClass Job="Whitemage" />
 			</If>
 			<MoveTo XYZ="-285.7021, 4.016828, -80.56113" usemesh="false" />
 			<MoveTo XYZ="-268.2238, 4.325056, -76.88233" usemesh="false" />

@@ -42,7 +42,7 @@
 				<ChangeClass Job="Bard" />
 			</If>
 			<If Condition="ClassName == ((ClassJobType.BlackMage))"> 
-				<ChangeClass Job="Black Mage" />
+				<ChangeClass Job="Blackmage" />
 			</If>
 			<If Condition="ClassName == ((ClassJobType.Dragoon))"> 
 					<ChangeClass Job="Dragoon" />
@@ -66,7 +66,7 @@
 					<ChangeClass Job="Warrior" />
 			</If>
 			<If Condition="ClassName == ((ClassJobType.WhiteMage))"> 
-					<ChangeClass Job="White Mage" />
+					<ChangeClass Job="Whitemage" />
 			</If>
 			<MoveTo XYZ="16.98096, 17, -52.54222"/>
 			<UseObject NpcIds="2003312" XYZ="16.23937,17,-54.15789" Radius="50" condition="GetInstanceTodo(0) &lt; 1"/>

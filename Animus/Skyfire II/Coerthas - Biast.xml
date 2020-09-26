@@ -1,25 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Profile: Skyfire II - Biast
+  Authors: Zamphire
+  Code Credit: nishap
+-->
+
 <Profile>
-   <Name>Book of Skyfire II - Biast</Name>
-   <KillRadius>500</KillRadius>    
-   <GrindAreas>
-   <GrindArea name="biast">
-        <Hotspots>
-			<Hotspot Radius="500" XYZ="-384.1367, 239.2375, 370.6691" name="biast" />
-			<!-- <Hotspot Radius="115" X="-151.2353" Y="218.5926" Z="430.8557" name="biast" />	-->
-		</Hotspots>
+	<Name>Book of Skyfire II - Biast</Name>   
+	<Order>
+		<LisbethTravel Area="Coerthas Central Highlands" Position="-381.1835, 239.0962, 370.6928"/>
+		<Grind grindRef="biast" while="not ZodiacManager.CurrentBook.KillTask3Completed"/>
+		<LLoadProfile Path="../../Start.xml"/>
+	</Order>
+	<GrindAreas>
+	   <GrindArea name="biast">
+			<Hotspots>
+				<Hotspot Radius="500" XYZ="-384.1367, 239.2375, 370.6691" name="biast" />
+				<Hotspot Radius="500" XYZ="-474.2264, 237.1896, 388.277" name="biast" />
+				<Hotspot Radius="500" XYZ="-521.6495, 238.8871, 337.5859" name="biast" />
+			</Hotspots>
 			<TargetMobs>
 				<TargetMob id="788"  /> 
 			</TargetMobs>
-			<MinLevel>1</MinLevel>
-			<MaxLevel>60</MaxLevel>
 		</GrindArea>
-	</GrindAreas>
-	<Order>
-	<If Condition="not IsOnMap(155)">
-		<TeleportTo Name="Camp Dragonhead" AetheryteId="23" />
-	</If>
-	<NoCombatMoveTo Name="biast" XYZ="-384.1367, 239.2375, 370.6691"/>
-      <Grind grindRef="biast" while="not ZodiacManager.CurrentBook.KillTask3Completed"/>
-	  <LLoadProfile Path="../../Start.xml"/>
-	</Order>
-	</Profile>
+	</GrindAreas>	
+</Profile>

@@ -24,7 +24,7 @@
 				<ChangeClass Job="Bard" />
 			</If>
 			<If Condition="ClassName == ((ClassJobType.BlackMage))"> 
-				<ChangeClass Job="Black Mage" />
+				<ChangeClass Job="Blackmage" />
 			</If>
 			<If Condition="ClassName == ((ClassJobType.Dragoon))"> 
 					<ChangeClass Job="Dragoon" />
@@ -48,9 +48,9 @@
 					<ChangeClass Job="Warrior" />
 			</If>
 			<If Condition="ClassName == ((ClassJobType.WhiteMage))"> 
-					<ChangeClass Job="White Mage" />
+					<ChangeClass Job="Whitemage" />
 			</If>
-			<MoveTo XYZ="75.8698,35.10142,-32.53721" distance="2"/> <!-- Move To Blue Coral -->
+			<NoCombatMoveTo XYZ="75.8698,35.10142,-32.53721" distance="2"/> <!-- Move To Blue Coral -->
 			<If condition="not GameObjectManager.GetObjectByNPCId(2000216).IsTargetable">
 				<RunCode name="BlueCoral"/>
 			</If>

@@ -2851,10 +2851,7 @@
 					</If>				
 					<Log Message="Moving to Skyfire II - Western La Noscea Breaching South Tidegate FATE" />
 					<While Condition="not ZodiacManager.CurrentBook.FateTask1Completed">
-						<If Condition="not IsOnMap(138)">
-							<TeleportTo AetheryteId="13"/>
-						</If>
-						<FlyTo XYZ="-139.2711, -25.04512, 41.7734" land="true"/>
+						<LisbethTravel Area="Western La Noscea" Position="-135.9394, -24.52357, 45.16578"/>
 						<Log Message="Waiting on FATE 'Breaching South Tidegate'" />
 						<LLFate FateId="571" MinLevel="1" MaxLevel="50" while="ZodiacManager.CurrentBook.FateTask1Completed"/> <!-- Breaching South Tidegate -->								  				  
 					</While>						
@@ -6214,10 +6211,7 @@
 					</If>				
 					<Log Message="Moving to Skyfall I - Western La Noscea The King's Justic FATE" />
 					<While Condition="not ZodiacManager.CurrentBook.FateTask2Completed">
-						<If Condition="not IsOnMap(138)">
-							<TeleportTo AetheryteId="13"/>
-						</If>
-						<FlyTo XYZ="-336.2559, -39.93802, 654.0422" land="true"/>
+						<LisbethTravel Area="Western La Noscea (The Isles of Umbra)" Position="-332.9584, -40.17844, 656.6729"/>
 						<Log Message="Waiting on FATE 'The King's Justice'" />
 						<LLFate FateId="577" MinLevel="1" MaxLevel="50" while="ZodiacManager.CurrentBook.FateTask2Completed"/> <!-- The King's Justice -->							  				  
 					</While>					
@@ -6303,10 +6297,7 @@
 					</If>					
 					<Log Message="Moving to Skyfall I - Eastern Thanalan Quartz Coupling" />
 					<While Condition="not ZodiacManager.CurrentBook.FateTask3Completed">
-						<If Condition="not IsOnMap(145)">
-							<TeleportTo AetheryteId="18"/>
-						</If>
-						<FlyTo XYZ="278.7669, -10.51159, 156.8069" land="true"/>
+						<LisbethTravel Area="Eastern Thanalan" Position="276.9111, -9.786183, 162.1579"/>
 						<Log Message="Waiting on FATE 'The Quartz Coupling'" />
 						<LLFate FateId="540" MinLevel="1" MaxLevel="50" while="ZodiacManager.CurrentBook.FateTask3Completed"/> <!-- The Quartz Coupling -->							  				  
 					</While>				
@@ -7729,12 +7720,9 @@
 							<WaitTimer WaitTime="3" />
 						</If>
 					</If>					
-					<Log Message="Moving to Skyfall II - Coerthas Central Bellyful FATE" />
+					<Log Message="Moving to Skyfall II - Western La Noscea Breaching North Tidegate FATE" />
 					<While Condition="not ZodiacManager.CurrentBook.FateTask1Completed">
-						<If Condition="not IsOnMap(138)">
-							<TeleportTo AetheryteId="13"/>
-						</If>
-						<FlyTo ZoneId="138" XYZ="-5.928661, -13.45268, -96.82548" land="true"/>
+						<LisbethTravel Area="Western La Noscea" Position="-21.49667, -14.01646, -94.32803"/>
 						<Log Message="Waiting on FATE 'Breaching North Tidegate'" />
 						<LLFate FateId="569" MinLevel="1" MaxLevel="50" while="ZodiacManager.CurrentBook.FateTask1Completed"/> <!-- Breaching North Tidegate -->								  				  
 					</While>						
@@ -7820,10 +7808,7 @@
 					</If>				
 					<Log Message="Moving to Skyfall II - Western La Noscea The King's Justic FATE" />
 					<While Condition="not ZodiacManager.CurrentBook.FateTask2Completed">
-						<If Condition="not IsOnMap(156)">
-							<TeleportTo AetheryteId="24"/>
-						</If>
-						<FlyTo XYZ="-300.3827, -17.14841, -363.0392" land="true"/>
+						<LisbethTravel Area="Mor Dhona" Position="-302.8999, -17.14841, -366.7635"/>
 						<Log Message="Waiting on FATE 'Black and Nburu'" />
 						<LLFate FateId="516" MinLevel="1" MaxLevel="50" while="ZodiacManager.CurrentBook.FateTask2Completed"/> <!-- Black and Nburu -->							  				  
 					</While>					
@@ -7909,10 +7894,7 @@
 					</If>					
 					<Log Message="Moving to Skyfall II - Eastern Thanalan Quartz Coupling" />
 					<While Condition="not ZodiacManager.CurrentBook.FateTask3Completed">
-						<If Condition="not IsOnMap(152)">
-							<TeleportTo AetheryteId="4"/>
-						</If>
-						<FlyTo XYZ="545.3613, -24.10023, -355.0022" land="true"/>
+						<LisbethTravel Area="East Shroud" Position="541.1946, -23.89933, -360.2263"/>
 						<Log Message="Waiting on FATE 'Breaking Dawn'" />
 						<LLFate FateId="616" MinLevel="1" MaxLevel="50" while="ZodiacManager.CurrentBook.FateTask3Completed"/> <!-- Breaking Dawn -->							  				  
 					</While>				
@@ -8080,11 +8062,7 @@
 						</If>
 					</If>				
 					<Log Message="Moving to Skyfall II - Coerthas Central Whitebrim Front 'The Area's a Bit Sketchy'" />
-						<If Condition="not IsOnMap(155)">
-							<TeleportTo Name="155 " AetheryteId="23"/>
-						</If>			
-						<FlyTo XYZ="-474.1803, 211, -232.8224" land="true"/>
-						<LLoadProfile Path="../GuildLeves/Whitebrim/The Area's a Bit Sketchy.xml"/>
+					<LLoadProfile Path="../GuildLeves/Whitebrim/The Area's a Bit Sketchy.xml"/>
 				</If>
 				<!-- Skyfall II Guildleves Task 3 -->
 				<If condition="not ZodiacManager.CurrentBook.GuildleveTask3Completed">
@@ -9428,7 +9406,8 @@
 					<While Condition="not ZodiacManager.CurrentBook.FateTask2Completed">
 						<GetTo ZoneId="147" XYZ="21.62751, 3.989435, 396.3339" land="true"/>
 						<Log Message="Waiting on FATE 'The Ceruleum Road'" />
-						<LLFate FateId="642" MinLevel="1" MaxLevel="50" while="ZodiacManager.CurrentBook.FateTask2Completed"/> <!-- The Ceruleum Road -->							  				  
+						<RunCode name="CeruleumRoad"/>
+						<!-- <LLFate FateId="642" MinLevel="1" MaxLevel="50" while="ZodiacManager.CurrentBook.FateTask2Completed"/> --><!-- The Ceruleum Road -->							  				  
 					</While>					
 				</If>
 				<!-- Netherfall I Fate Task 3 -->
@@ -10939,7 +10918,7 @@
 						</If>
 					</If>					
 					<While Condition="not ZodiacManager.CurrentBook.FateTask1Completed">
-						<GetTo ZoneId="139" XYZ="268.6463, 30.50666, -132.521" land="true"/>
+						<LisbethTravel Area="Upper La Noscea (Bronze Lake)" Position="268.4039, 29.40405, -127.1923"/>
 						<Log Message="Waiting on FATE 'Surprise'" />
 						<LLFate FateId="317" MinLevel="1" MaxLevel="50" while="ZodiacManager.CurrentBook.FateTask1Completed"/> <!-- Surprise -->								  				  
 					</While>						
@@ -11024,7 +11003,7 @@
 						</If>
 					</If>				
 					<While Condition="not ZodiacManager.CurrentBook.FateTask2Completed">
-						<GetTo ZoneId="148" XYZ="-525.1811, 20.06985, -175.5294" land="true"/>
+						<LisbethTravel Area="Central Shroud" Position="-525.1988, 20.05402, -177.2084"/>
 						<Log Message="Waiting on FATE 'In Spite of It All" />
 						<LLFate FateId="604" MinLevel="1" MaxLevel="50" while="ZodiacManager.CurrentBook.FateTask2Completed"/> <!-- In Spite of It All -->							  				  
 					</While>					
@@ -11109,10 +11088,7 @@
 						</If>
 					</If>					
 					<While Condition="not ZodiacManager.CurrentBook.FateTask3Completed">
-						<If Condition="not IsOnMap(156)">
-							<TeleportTo AetheryteId="24"/>
-						</If>
-						<FlyTo XYZ="-388.209, -17.14841, -449.1887" land="true"/>
+						<LisbethTravel Area="Mor Dhona" Position="-389.1424, -17.14841, -443.3513"/>
 						<Log Message="Waiting on FATE 'Good to Be Bud'" />
 						<LLFate FateId="517" MinLevel="1" MaxLevel="50" while="ZodiacManager.CurrentBook.FateTask3Completed"/> <!-- Good to Be Bud -->							  				  
 					</While>				
@@ -14217,7 +14193,7 @@
 						</If>
 					</If>				
 					<While Condition="not ZodiacManager.CurrentBook.FateTask2Completed">
-						<GetTo ZoneId="180" XYZ="199.5521, 62.89363, -272.1743" land="true"/>
+						<LisbethTravel Area="Outer La Noscea" Position="198.0787, 63.1253, -272.2718"/>
 						<Log Message="Waiting on FATE 'Schism'" />
 						<LLFate FateId="587" MinLevel="1" MaxLevel="50" while="ZodiacManager.CurrentBook.FateTask2Completed"/> <!-- Schism -->								  				  
 					</While>					
@@ -14302,10 +14278,7 @@
 						</If>
 					</If>					
 					<While Condition="not ZodiacManager.CurrentBook.FateTask3Completed">
-						<If Condition="not IsOnMap(145)">
-							<TeleportTo AetheryteId="18"/>
-						</If>
-						<FlyTo XYZ="464.0797, -12.897, 231.1597" land="true"/>	
+						<LisbethTravel Area="Eastern Thanalan" Position="434.8353, -64.536, 204.8842"/>
 						<Log Message="Waiting on FATE 'The Big Bagoly Theroy'" />
 						<LLFate FateId="543" MinLevel="1" MaxLevel="50" while="ZodiacManager.CurrentBook.FateTask3Completed"/> <!-- The Big Bagoly Theroy -->							  				  
 					</While>				
@@ -15747,6 +15720,12 @@
                     Talk.Next();
                 }				
             ]]>
-        </CodeChunk>		
+        </CodeChunk>
+    <CodeChunk Name="CeruleumRoad">
+      <![CDATA[ 
+        Core.OverlayManager.AddToast(() => "Please complete Ceruleum Road FATE manually.", TimeSpan.FromMilliseconds(25000), System.Windows.Media.Color.FromRgb(29,213,226), System.Windows.Media.Color.FromRgb(13,106,175), new System.Windows.Media.FontFamily("Gautami"));
+        await Coroutine.Sleep(26000);
+      ]]>
+    </CodeChunk>		
   </CodeChunks> 
 </Profile>			

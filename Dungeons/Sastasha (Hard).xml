@@ -13,6 +13,21 @@
   <Name>Sastasha (Hard)</Name>
   <BehaviorDirectory></BehaviorDirectory>
   <Order>
+<!-- [Sastasha (Hard)] It's Definitely Pirates -->
+    <If Condition="IsQuestCompleted(66060) and IsQuestCompleted(67060) and not HasQuest(65630) and not IsQuestCompleted(65630)">
+      <GetTo ZoneId="156" XYZ="32.08445, 21.27369, -636.3706"/>
+      <If Condition="IsQuestAcceptQualified(65630)">
+        <PickupQuest QuestId="65630" NpcId="1006975" XYZ="32.82214, 21.25273, -635.462"/>
+      </If>
+    </If>
+    <If Condition="HasQuest(65630) and not IsQuestCompleted(65630) and GetQuestStep(65630) == 1">
+      <GetTo ZoneId="128" XYZ="-3.679293, 47.99985, -263.7214"/>
+      <TalkTo NpcId="1003282" XYZ="-3.03656, 48.168, -261.7075" QuestId="65630" StepId="1"/>
+    </If>
+    <If Condition="HasQuest(65630) and not IsQuestCompleted(65630) and GetQuestStep(65630) == 2">
+      <GetTo ZoneId="138" XYZ="336.0811, 10.48328, 5.218501"/>
+      <TalkTo NpcId="1005064" XYZ="335.0117, 10.59511, 3.92157" QuestId="65630" StepId="2"/>
+    </If>  
 	<If Condition="not IsOnMap(387)">
 		<RunCode Name="QueueSastashaHard"/>
 	</If> 
@@ -24,7 +39,7 @@
 				<ChangeClass Job="Bard" />
 			</If>
 			<If Condition="ClassName == ((ClassJobType.BlackMage))"> 
-				<ChangeClass Job="Black Mage" />
+				<ChangeClass Job="Blackmage" />
 			</If>
 			<If Condition="ClassName == ((ClassJobType.Dragoon))"> 
 					<ChangeClass Job="Dragoon" />
@@ -48,7 +63,7 @@
 					<ChangeClass Job="Warrior" />
 			</If>
 			<If Condition="ClassName == ((ClassJobType.WhiteMage))"> 
-					<ChangeClass Job="White Mage" />
+					<ChangeClass Job="Whitemage" />
 			</If>
 			<MoveTo XYZ="225.7066, 39.96008, -168.2137" />
 			<MoveTo XYZ="225.6939, 40.27448, -157.4729" usemesh="false" />
@@ -111,6 +126,16 @@
 			</If>
 			<MoveTo XYZ="-326.1246,5.082251,320.0724" />
 			<RunCode name="ExitDuty"/>
+			<If Condition="HasQuest(65630) and not IsQuestCompleted(65630) and GetQuestStep(65630) == 4">
+			  <GetTo ZoneId="138" XYZ="336.0192, 10.48926, 5.162549"/>
+			  <TalkTo NpcId="1005064" XYZ="335.0117, 10.59511, 3.92157" QuestId="65630" StepId="4"/>
+			</If>
+			<If Condition="HasQuest(65630) and not IsQuestCompleted(65630) and GetQuestStep(65630) == 255">
+			  <GetTo ZoneId="138" XYZ="208.6451, -24.99569, 242.1597"/>
+			  <TurnIn QuestId="65630" NpcId="1010359" XYZ="206.6833, -24.99666, 242.0538"/>
+			</If>			
+			<WaitTimer WaitTime="10"/>
+			<LLoadProfile Path="../Start.xml"/>			
 		</If>		
 	</If>
   </Order>

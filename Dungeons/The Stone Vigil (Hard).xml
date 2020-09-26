@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Profile: The Stone Vigil (Hard)
+  Authors: Zamphire
+  Code Credit: TuckMeIntoBread, Kayla.
+-->
+
+<!DOCTYPE Profile [
+<!-- Profile Settings -->
+<!ENTITY openchest "0">
+]>
+<Profile>
+  <Name>The Stone Vigil (Hard)</Name>
+  <BehaviorDirectory></BehaviorDirectory>
+  <Order>
+    <!-- [The Stone Vigil (Hard)] Blood for Stone -->
+    <If Condition="not HasQuest(67061) and not IsQuestCompleted(67061)">
+      <GetTo ZoneId="156" XYZ="23.17937, 21.25273, -649.3959"/>
+      <If Condition="IsQuestAcceptQualified(67061)">
+        <PickupQuest QuestId="67061" NpcId="1006977" XYZ="23.36151, 21.25273, -650.2938"/>
+      </If>
+    </If>
+    <If Condition="HasQuest(67061) and not IsQuestCompleted(67061) and GetQuestStep(67061) == 1">
+      <LisbethTravel Area="Coerthas Central Highlands" Position="-430.1921, 233.4727, -201.4863"/>
+      <TalkTo NpcId="1006444" XYZ="-432.9748, 233.4727, -199.6643" QuestId="67061" StepId="1"/>
+    </If>
+    <If Condition="HasQuest(67061) and not IsQuestCompleted(67061) and GetQuestStep(67061) == 2">
+      <LisbethTravel Area="Coerthas Central Highlands" Position="-672.224, 205.919, -511.7126"/>
+      <TalkTo NpcId="1006490" XYZ="-673.2128, 205.9598, -515.7702" QuestId="67061" StepId="2"/>
+    </If>  
+ 	<If Condition="not IsOnMap(365)">
+		<RunCode Name="QueueStoneVigilHard"/>
+	</If>
+	<If Condition="IsOnMap(365)">
+		<!-- Slay Gorynich 0/1 -->
+		<If Condition="GetInstanceTodo(0) == 0">
+			<If Condition="ClassName == ((ClassJobType.Bard))"> 
+				<ChangeClass Job="Bard" />
+			</If>
+			<If Condition="ClassName == ((ClassJobType.BlackMage))"> 
+				<ChangeClass Job="Blackmage" />
+			</If>
+			<If Condition="ClassName == ((ClassJobType.Dragoon))"> 
+					<ChangeClass Job="Dragoon" />
+			</If>	
+			<If Condition="ClassName == ((ClassJobType.Monk))"> 
+					<ChangeClass Job="Monk" />
+			</If>
+			<If Condition="ClassName == ((ClassJobType.Ninja))"> 
+					<ChangeClass Job="Ninja" />
+			</If>
+			<If Condition="ClassName == ((ClassJobType.Paladin))"> 
+				<ChangeClass Job="Paladin" />
+			</If>		
+			<If Condition="ClassName == ((ClassJobType.Scholar))"> 
+					<ChangeClass Job="Scholar" />
+			</If>
+			<If Condition="ClassName == ((ClassJobType.Summoner))"> 
+					<ChangeClass Job="Summoner" />
+			</If>	
+			<If Condition="ClassName == ((ClassJobType.Warrior))"> 
+					<ChangeClass Job="Warrior" />
+			</If>
+			<If Condition="ClassName == ((ClassJobType.WhiteMage))"> 
+					<ChangeClass Job="Whitemage" />
+			</If>					
+			<Log Message="Slay Gorynich 0/1" />
+			<MoveTo XYZ="-47.94945, -4.059809, 31.49866" />
+			<Grind GrindRef="FirstBoss" while="GetInstanceTodo(0) == 0"/>
+			<If Condition="&openchest; == 1">
+				<RunCode name="OpenChest" />
+			</If>			
+		</If>	
+
+		<!-- Slay Cuca Fera 0/1 -->
+		<If Condition="GetInstanceTodo(1) == 0 and GetInstanceTodo(0) == 1">
+			<Log Message="Slay Cuca Fera 0/1" />
+			<MoveTo XYZ="24.45055, -0.04560792, -143.214" />
+			<!--
+			<While condition="GameObjectManager.GetObjectByNPCId(2003543).IsVisible">
+				<UseObject NpcIds="2003540" XYZ="24.45055, -0.04560792, -143.214" radius="50" UseTimes="1"/>
+				<UseObject NpcIds="2003541" XYZ="24.45055, -0.04560792, -143.214" radius="50" UseTimes="1"/>
+				<UseObject NpcIds="2003542" XYZ="24.45055, -0.04560792, -143.214" radius="50" UseTimes="1"/>
+			</While> -->
+			<MoveTo XYZ="22.82559, 0.1989076, -184.6261" usemesh="false" />
+			<MoveTo XYZ="0.4119263,3.8,-248.0965" />
+			<Grind GrindRef="SecondBoss" while="GetInstanceTodo(1) == 0"/>
+			<If Condition="&openchest; == 1">
+				<RunCode name="OpenChest" />
+			</If>				
+		</If>
+
+		<If Condition="GetInstanceTodo(2) == 0">
+			<Log Message="Defeat Isgebind 0/1" />
+			<MoveTo XYZ="-0.2418478, 4, -217.653"/> <!-- Move to Strongroom Gate -->
+			<RunCode name="StrongroomGate"/>
+			<MoveTo XYZ="-0.0006421171, 0.04041038, -241.1199" usemesh="false"/> <!-- Move into final boss room -->
+			<Grind GrindRef="Isgebind" While="GameObjectManager.GetObjectByNPCId(1680)"/> <!-- Fight Isgebind -->
+			<If Condition="&openchest; == 1">
+				<RunCode name="OpenChest" />
+			</If>
+			<MoveTo XYZ="0.004403681,0.07694488,-268.7161"/> <!-- Move to Exit -->			
+			<RunCode name="ExitDuty"/>
+			<WaitTimer WaitTime="10"/>
+			<LLoadProfile Path="../Start.xml"/>
+		</If>		
+	</If>	
+  </Order>
+  <GrindAreas>
+	<GrindArea name="FirstBoss">
+        <Hotspots>
+			<Hotspot Radius="200" XYZ="-61.10171,-3.999901,13.31782" />
+        </Hotspots>
+        <TargetMobs>
+			<TargetMob Id="2778" Weight="1" /> <!-- Gorynich -->	
+        </TargetMobs>
+	</GrindArea>
+	<GrindArea name="SecondBoss">
+        <Hotspots>
+			<Hotspot Radius="200" XYZ="0.4119263,3.8,-248.0965" />
+        </Hotspots>
+        <TargetMobs>
+			<TargetMob Id="2775" Weight="1" /> <!-- Cuca Fera  -->
+        </TargetMobs>
+	</GrindArea>
+	<GrindArea name="FinalBoss">
+        <Hotspots>
+			<Hotspot Radius="200" XYZ="-0.01531982,0.05585395,-262.7756" />
+        </Hotspots>
+        <TargetMobs>
+			<TargetMob Name="Isgebind" Id="1680" Weight="1" />	
+        </TargetMobs>
+	</GrindArea>	
+  </GrindAreas>		
+  <CodeChunks>
+  	<CodeChunk Name="StrongroomGate">
+		  <![CDATA[
+			ff14bot.Managers.GameObjectManager.GetObjectByNPCId(2001880).Interact();
+			await Coroutine.Sleep(3000);
+		  ]]>	 	  
+	</CodeChunk>
+	<CodeChunk Name="ExitDuty">
+		<![CDATA[
+			ff14bot.Managers.GameObjectManager.GetObjectByNPCId(2001871).Interact();
+			await Coroutine.Sleep(1000);
+			ff14bot.RemoteWindows.SelectYesno.ClickYes();
+			await Coroutine.Sleep(3000);
+      ]]>
+	</CodeChunk>
+	<CodeChunk name="OpenChest">
+		<![CDATA[    
+		if (GameObjectManager.GetObjectsOfType<Treasure>().Where(r => r.Distance() < 50 && (r.Name == "Treasure Coffer" || r.Name == "treasure coffer")).Any())
+		{
+			var _chest = GameObjectManager.GetObjectsOfType<Treasure>().Where(r => r.Distance() < 50 && (r.Name == "宝箱" || r.Name == "Treasure Coffer" || r.Name == "treasure coffer")).FirstOrDefault();
+			while (Core.Me.Distance(_chest.Location) > 1)
+			{
+			await CommonTasks.MoveTo(_chest.Location);
+			await Coroutine.Yield();
+			}
+			
+			Navigator.PlayerMover.MoveStop();
+			await Coroutine.Sleep(1000);
+			Poi.Current = new Poi(_chest, PoiType.Kill);
+			Poi.Current.Unit.Interact();                    
+			await Coroutine.Sleep(1000);        
+		}
+		]]>
+	</CodeChunk>	
+	<CodeChunk Name="QueueStoneVigilHard">
+		<![CDATA[ 
+           Logging.WriteDiagnostic("Queuing for Dungeon");
+		GameSettingsManager.JoinWithUndersizedParty = true;
+           DutyManager.Queue(DataManager.InstanceContentResults[25]);
+           await Coroutine.Wait(5000, () => (DutyManager.QueueState == QueueState.InQueue || DutyManager.QueueState == QueueState.JoiningInstance));
+
+           Logging.WriteDiagnostic("Queued for Dungeon");
+
+           await Coroutine.Wait(10000, () => (DutyManager.QueueState == QueueState.JoiningInstance));
+			
+           await Coroutine.Wait(10000, () => (RaptureAtkUnitManager.GetWindowByName("ContentsFinderConfirm") != null));
+
+           Logging.WriteDiagnostic("Commencing");
+           DutyManager.Commence();
+           Logging.WriteDiagnostic("Waiting for Loading");
+           await Coroutine.Wait(10000, () => CommonBehaviors.IsLoading || QuestLogManager.InCutscene);
+			
+           if (CommonBehaviors.IsLoading)
+           {
+               await Coroutine.Wait(-1, () => !CommonBehaviors.IsLoading);
+           }
+
+           if (QuestLogManager.InCutscene)
+           {
+               TreeRoot.StatusText = "InCutscene";
+               if (ff14bot.RemoteAgents.AgentCutScene.Instance != null)
+               {
+                   ff14bot.RemoteAgents.AgentCutScene.Instance.PromptSkip();
+                   await Coroutine.Wait(250, () => SelectString.IsOpen);
+                   if (SelectString.IsOpen)
+                       SelectString.ClickSlot(0);
+               }
+           }
+
+           Logging.WriteDiagnostic("Should be in duty");
+		   
+           var director = ((ff14bot.Directors.InstanceContentDirector) DirectorManager.ActiveDirector);
+           if (director !=null)
+		   {
+               if (director.TimeLeftInDungeon >= new TimeSpan(1,30,0))
+               {
+				   Logging.WriteDiagnostic("Barrier up");
+                   await Coroutine.Wait(30000, () => director.TimeLeftInDungeon < new TimeSpan(1,29,58));
+               }
+		   }
+		   else
+		   {
+			Logging.WriteDiagnostic("Director is null");
+		   }
+			   
+	      Logging.WriteDiagnostic("Should be ready");
+		]]>
+	</CodeChunk>		
+  </CodeChunks>  
+</Profile>  

@@ -24,7 +24,7 @@
 				<ChangeClass Job="Bard" />
 			</If>
 			<If Condition="ClassName == ((ClassJobType.BlackMage))"> 
-				<ChangeClass Job="Black Mage" />
+				<ChangeClass Job="Blackmage" />
 			</If>
 			<If Condition="ClassName == ((ClassJobType.Dragoon))"> 
 					<ChangeClass Job="Dragoon" />
@@ -48,7 +48,7 @@
 					<ChangeClass Job="Warrior" />
 			</If>
 			<If Condition="ClassName == ((ClassJobType.WhiteMage))"> 
-					<ChangeClass Job="White Mage" />
+					<ChangeClass Job="Whitemage" />
 			</If>
 			<Grind GrindRef="ClearFirstRoom" While="GetInstanceTodo(0) &lt; 8"/> <!-- Clear first room -->
 			<MoveTo XYZ="259.5017,-3.5003,88.0854" distance="1"/> <!-- Move to Shifting Sands -->	

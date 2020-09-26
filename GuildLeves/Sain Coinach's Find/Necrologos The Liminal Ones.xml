@@ -22,18 +22,19 @@
 			<!-- Necrologos: The Liminal Ones -->	
 			<If Condition="ExBuddy.Windows.GuildLeve.HasLeve(657)">
 				<LisbethTravel Area="Mor Dhona" Position="109.913, -5.043104, -496.5076"/>
-				<RunCode Name="Announce_Manual_Completion"/>
-				<!--
 				<InitiateLeve LeveId="657"/> 
 				<WaitTimer WaitTime="2" />
-				<UseObject Radius="500" XYZ="103.42, -5.008227, -492.581" NpcId="2001098" conidition="DirectorManager.ActiveDirector.GetTodoArgs(1).Item1 &lt; DirectorManager.ActiveDirector.GetTodoArgs(1).Item2"/>
+				<While condition="not GameObjectManager.GetObjectByNPCId(1769)">
+					<UseObject Radius="500" XYZ="103.42, -5.008227, -492.581" NpcId="2001098" UseTimes="1"/>
+					<WaitTimer WaitTime="3" />
+				</While>	
 				<WaitTimer WaitTime="2" />
 				<Grind GrindRef="Denizen" While="not ff14bot.RemoteWindows.SelectYesno.IsOpen"/> 				
 				<WaitTimer WaitTime="1" />					
 				<RunCode Name="CloseTimer"/> 
 				<LisbethTravel Area="Mor Dhona" Position="420.7729, -5.853507, -443.9117"/>
 				<ExTurnInGuildLeve NpcId="1004348" NpcLocation="415.9761,-6.061038,-444.419"/>
-				<LLoadProfile Path="../../Start.xml"/> -->
+				<LLoadProfile Path="../../Start.xml"/>
 			</If>
 
 
@@ -58,8 +59,7 @@
         <Hotspot Radius="500" XYZ="103.42, -5.008227, -492.581"/>
       </Hotspots>
       <TargetMobs>
-        <TargetMob Id="1769" Weight="1"/> <!-- Denizen of the Dark -->
-		
+        <TargetMob Id="1769" Weight="1"/> <!-- Denizen of the Dark -->		
       </TargetMobs>
     </GrindArea>
  	<GrindArea name="TurnaboutsFairPlay">

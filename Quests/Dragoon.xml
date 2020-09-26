@@ -484,6 +484,7 @@
 					<TeleportTo AetheryteId="24"/> 
 				</If>
 				<GetTo ZoneId="156" XYZ="71.94617,33.06656,-706.2944"/>
+				<Dismount/>
 				<RunCode name="BuyFireBooks"/>
 			</If>
 			

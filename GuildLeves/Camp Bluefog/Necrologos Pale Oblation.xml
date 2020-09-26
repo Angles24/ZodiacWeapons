@@ -23,16 +23,16 @@
 			<!-- Necrologos: Pale Oblation -->
 			<If Condition="ExBuddy.Windows.GuildLeve.HasLeve(644)">
 				<GetTo ZoneId="147" XYZ="45.68184, 7.582094, 344.8144"/>
-				<RunCode Name="Announce_Manual_Completion"/>
-				<!--
 				<InitiateLeve LeveId="644"/> 
-				<WaitTimer WaitTime="2" /> 
-				<UseObject Radius="500" InCombat="true" XYZ="5.107096, 2.950484, 312.0914" NpcIds="2001098" condition="not DirectorManager.ActiveDirector.GetTodoArgs(4).Item1 == 1"/>	
+				<While condition="not GameObjectManager.GetObjectByNPCId(1737)">
+					<UseObject Radius="500" InCombat="true" XYZ="5.107096, 2.950484, 312.0914" NpcIds="2001098" UseTimes="1"/>
+					<WaitTimer WaitTime="3" />
+				</While>		
 				<WaitTimer WaitTime="2" />	
 				<RunCode Name="CloseTimer"/> 
 				<GetTo ZoneId="147" XYZ="33.91326, 4.68145, 399.2563"/>
 				<ExTurnInGuildLeve NpcId="1002398" NpcLocation="33.91326, 4.68145, 399.2563"/>
-				<LLoadProfile Path="../../Start.xml"/> -->
+				<LLoadProfile Path="../../Start.xml"/>
 			</If>
 	
 			<!-- Circling the Ceruleum -->
@@ -56,7 +56,7 @@
         </Hotspots>
         <TargetMobs>
 			<TargetMob Name="Void Slave" Id="1737" Weight="1" />
-			<TargetMob Name="Fernehalwes" Id="1008" Weight="2" />		
+			<TargetMob Name="Fernehalwes" Id="1008" Weight="1000" />		
         </TargetMobs>		
 	</GrindArea> 
   </GrindAreas>

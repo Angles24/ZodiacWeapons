@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Profile: Zodiac Zeta Quests
+  Version: 0.7
+  Authors: Zamphire
+  Code Credit: TuckMeIntoBread, Kayla, Sodimm
+-->
+
+<Profile>
+  <Name>Zodiac Zeta Quests</Name>
+  <BehaviorDirectory>..\Quest Behaviors</BehaviorDirectory>
+	<Order>
+		<!-- Rise and Shine -->
+		<If Condition="not HasQuest(66096) and not IsQuestCompleted(66096)">
+		  <LisbethTravel Area="North Shroud" Position="406.334, -4.498047, -88.8383"/>
+		  <If Condition="IsQuestAcceptQualified(66096)">
+			<PickupQuest QuestId="66096" NpcId="1008948"/>
+		  </If>
+		</If>
+		<If Condition="GetQuestStep(66096) == 1">
+		  <GetTo ZoneId="154" XYZ="440.4735, -0.9374537, -64.28922"/>
+		  <HandOver ItemId="2001561" NpcId="1003075" XYZ="440.7262, -0.9374562, -62.21112" QuestId="66096" StepId="1"/>
+		</If>
+		<If Condition="GetQuestStep(66096) == 2">
+		  <LisbethTravel Area="Mor Dhona" Position="25.59059, 29, -823.7938"/>
+		  <TalkTo NpcId="1001304" XYZ="25.58936, 29, -825.3757" QuestId="66096" StepId="2"/>
+		</If>
+		<If Condition="GetQuestStep(66096) == 3">
+		  <LisbethTravel Area="North Shroud" Position="440.3532, -0.9374504, -63.92621"/>
+		  <TalkTo NpcId="1003075" XYZ="440.7262, -0.9374562, -62.21112" QuestId="66096" StepId="3"/>
+		</If>
+		<If Condition="GetQuestStep(66096) == 255">
+		  <GetTo ZoneId="138" XYZ="642.504, 9.31869, 512.4894"/>
+		  <TurnIn ItemId="2001561" QuestId="66096" NpcId="1011791" XYZ="641.657, 9.446683, 511.1925"/>
+		</If>
+
+		<!-- Mahatma Farm -->
+		<If condition="IsQuestCompleted(66096)">
+			<LLoadProfile Path="../Dungeons/Tam Tara Deepcroft (Zodiac Zeta).xml"/>
+		</If>	
+	</Order>
+</Profile>	

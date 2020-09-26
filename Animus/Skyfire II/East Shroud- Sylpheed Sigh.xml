@@ -1,25 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Profile: Skyfire II - Sylpheed Sigh
+  Authors: Zamphire
+  Code Credit: nishap
+-->
+
 <Profile>
-   <Name>Book of Skyfire II - Sylpheed Sigh</Name>
-   <KillRadius>500</KillRadius>    
-   <GrindAreas>
-   <GrindArea name="sylpheed_sigh">
-        <Hotspots>
-			<Hotspot Radius="500" XYZ="359.1274, -20.93504, -169.1136" name="sylpheed_sigh" />
-			<!-- <Hotspot Radius="115" X="359.2983" Y="-16.99334" Z="-249.9681" name="sylpheed_sigh" /> -->
-		</Hotspots>
+	<Name>Book of Skyfire II - Sylpheed Sigh</Name>  
+	<Order>
+		<LisbethTravel Area="East Shroud" Position="367.3162, -26.90956, -399.1715"/>
+		<Grind grindRef="sylpheed_sigh" while="not ZodiacManager.CurrentBook.KillTask2Completed"/>
+		<LLoadProfile Path="../../Start.xml"/>
+	</Order>
+	<GrindAreas>
+		<GrindArea name="sylpheed_sigh">
+			<Hotspots>
+				<Hotspot Radius="500" XYZ="367.3162, -26.90956, -399.1715" name="sylpheed_sigh" />
+				<Hotspot Radius="500" XYZ="334.7604, -27.64189, -460.9011" name="sylpheed_sigh" />
+				<Hotspot Radius="500" XYZ="400.9423, -27.76131, -494.3886" name="sylpheed_sigh" />
+				<Hotspot Radius="500" XYZ="428.4693, -28.3173, -421.0958" name="sylpheed_sigh" />
+			</Hotspots>
 			<TargetMobs>
 				<TargetMob id="68"  /> 
 			</TargetMobs>
-			<MinLevel>1</MinLevel>
-			<MaxLevel>60</MaxLevel>
 		</GrindArea>
-	</GrindAreas>
-	<Order>
-	<If Condition="not IsOnMap(152)">
-		<TeleportTo Name="Hawthorne Hut" AetheryteId="4" />
-	</If>
-	<NoCombatMoveTo Name="sylpheed_sigh" XYZ="359.1274, -20.93504, -169.1136"/>
-      <Grind grindRef="sylpheed_sigh" while="not ZodiacManager.CurrentBook.KillTask2Completed"/>
-	  <LLoadProfile Path="../../Start.xml"/>
-	</Order>
-	</Profile>
+	</GrindAreas>	
+</Profile>
