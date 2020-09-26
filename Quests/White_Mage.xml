@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
   Profile: White Mage Relic Weapon
-  Version: 0.4  
+  Version: 0.9  
   Authors: Zamphire
   Code Credit: TuckMeIntoBread, Kayla, Sodimm
 -->
@@ -270,7 +270,47 @@
                     Talk.Next();
                 }				
             ]]>
-        </CodeChunk>				
+        </CodeChunk>
+      <CodeChunk Name="BuySphereScroll">
+            <![CDATA[ 
+                await Buddy.Coroutines.Coroutine.Sleep(500);
+                ff14bot.Managers.GameObjectManager.GetObjectByNPCId(1009151).Interact();
+                await Buddy.Coroutines.Coroutine.Sleep(1000);
+                if (ff14bot.RemoteWindows.SelectIconString.IsOpen)
+                    ff14bot.RemoteWindows.SelectIconString.ClickSlot(0);
+                await Buddy.Coroutines.Coroutine.Sleep(1000);
+                if (ff14bot.RemoteWindows.SelectString.IsOpen)
+                    ff14bot.RemoteWindows.SelectString.ClickSlot(0);					
+				await Buddy.Coroutines.Coroutine.Sleep(1000);	
+                if (await Coroutine.Wait(1000, () => Talk.DialogOpen))
+                {
+                    Talk.Next();
+                }
+				await Buddy.Coroutines.Coroutine.Sleep(1000);	
+                if (ff14bot.RemoteWindows.SelectString.IsOpen)
+                    ff14bot.RemoteWindows.SelectString.ClickSlot(7);
+                if (await Coroutine.Wait(1000, () => Talk.DialogOpen))
+                {
+                    Talk.Next();
+                }
+                await Buddy.Coroutines.Coroutine.Sleep(1000);
+                 if (ff14bot.RemoteWindows.SelectYesno.IsOpen)
+                    ff14bot.RemoteWindows.SelectYesno.ClickYes();
+                await Buddy.Coroutines.Coroutine.Sleep(1000);
+                if (await Coroutine.Wait(1000, () => Talk.DialogOpen))
+                {
+                    Talk.Next();
+                }
+                if (await Coroutine.Wait(1000, () => Talk.DialogOpen))
+                {
+                    Talk.Next();
+                }
+                if (await Coroutine.Wait(1000, () => Talk.DialogOpen))
+                {
+                    Talk.Next();
+                }				
+            ]]>
+        </CodeChunk>		
 		<CodeChunk Name="Disable_Flight">
 		<![CDATA[
 			foreach (var plugin in PluginManager.Plugins.Where(p => p.Plugin.Name == "Enable Flight" || p.Plugin.Name == "启用飞行"))
@@ -304,7 +344,7 @@
 	</GrindArea>
   </GrindAreas>
   <Order>
-	<Log Message="Starting White Mage Zodiac Questing Version 0.4" />
+	<Log Message="Starting White Mage Zodiac Questing Version 0.9" />
     <!-- The Weaponsmith of Legend -->
     <If Condition="not HasQuest(66241) and not IsQuestCompleted(66241)">
 	  <ChangeClass Job="WhiteMage" />
