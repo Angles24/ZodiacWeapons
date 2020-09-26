@@ -138,8 +138,16 @@
 		<If Condition="GetQuestStep(66676) == 255">
 		  <GetTo ZoneId="156" XYZ="27.14867, 28.99997, -739.166"/>
 		  <TurnIn QuestId="66676" NpcId="1006981" XYZ="25.71143, 28.99997, -738.2162"/>
-		</If>			
-		<If Condition="IsQuestCompleted(67000) and HasAtLeast(7883,75) and HasAtLeast(7839,1)">
+		</If>
+		<If Condition="IsQuestCompleted(67000) and not HasAtLeast(7883,75)">
+			<If Condition="&alexandrite; == 1">
+				<LLoadProfile Path="Alexandrite_Farm.xml"/>
+			</If>
+			<If Condition="&alexandrite; == 0">
+				<LLoadProfile Path="Mystery Maps.xml"/>
+			</If>			
+		</If>		
+		<If Condition="IsQuestCompleted(67000) and HasAtLeast(7883,75)">
 			<LisbethTravel Area="Central Thanalan" Position="106.6467, 30.97388, -384.5325"/>
 			<If Condition="ClassName == ((ClassJobType.Bard))"> 
 				<RunCode name="BuyBRDSphereScroll"/>
@@ -174,16 +182,12 @@
 				<RunCode name="BuyWHMSphereScroll"/>
 			</If>
 		</If>	
-		<If Condition="IsQuestCompleted(67000) and not HasAtLeast(7883,75) and HasAtLeast(7839,1)">
-			<If Condition="&alexandrite; == 1">
-				<LLoadProfile Path="Alexandrite_Farm.xml"/>
-			</If>
-			<If Condition="&alexandrite; == 0">
-				<LLoadProfile Path="Mystery Maps.xml"/>
-			</If>			
-		</If>
+
 
 		<!-- Upgrade to Nexus -->
+		<If condition="HasAtLeast(7883,75)"/>
+			<RunCode name="MeldMateria"/>
+		</If>
 		
 	</Order>
 	<CodeChunks>
@@ -756,6 +760,12 @@
 				}
 			}
 		]]>
-		</CodeChunk>				
+		</CodeChunk>
+		<CodeChunk Name="MeldMateria">
+		  <![CDATA[ 
+			Core.OverlayManager.AddToast(() => "Please complete your Sphere Scroll by melding ANY 75 materia to the scroll.", TimeSpan.FromMilliseconds(25000), System.Windows.Media.Color.FromRgb(29,213,226), System.Windows.Media.Color.FromRgb(13,106,175), new System.Windows.Media.FontFamily("Gautami"));
+			await Coroutine.Sleep(26000);
+		  ]]>
+		</CodeChunk>		
 	</CodeChunks>		
  </Profile> 
