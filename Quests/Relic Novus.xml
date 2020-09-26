@@ -185,7 +185,7 @@
 
 
 		<!-- Upgrade to Nexus -->
-		<If condition="HasAtLeast(7883,75)"/>
+		<If condition="HasAtLeast(7883,75)">
 			<RunCode name="MeldMateria"/>
 		</If>
 		
