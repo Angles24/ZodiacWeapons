@@ -60,7 +60,7 @@ I'm in the process of changing over all the movement in this profile to be handl
 ### Novus Zodiac Weapons
 - [X] Celestial Radiance
 - [X] Star Light, Star Bright
-- [X  Farming 75 Alexandrite
+- [X]  Farming 75 Alexandrite
 - [ ] Melding Materia to Sphere
 - [ ] Purchase Novus Zodiac
 
