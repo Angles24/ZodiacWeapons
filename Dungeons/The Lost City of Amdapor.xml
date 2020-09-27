@@ -108,13 +108,12 @@
 			<Log Message="Defeat Diabolos  0/1" />
 			<MoveTo XYZ="16.79603, -252.503, -61.70649"/> 
 			<Grind GrindRef="WhiteMagestone1" while="GameObjectManager.GetObjectByNPCId(2571)"/> <!-- Fight White Magestone -->
-			<MoveTo XYZ="62.08236, -261.003, -16.79322"/>
 			<If Condition="&openchest; == 1">
+				<MoveTo XYZ="62.08236, -261.003, -16.79322"/>
 				<RunCode name="OpenChest" />
 			</If>
 			<MoveTo XYZ="45.36511,-272.303,44.81567"/>
 			<Grind GrindRef="WhiteMagestone2" while="GameObjectManager.GetObjectByNPCId(2571)"/> <!-- Fight White Magestone -->	
-			<MoveTo XYZ="10.08472, -279.773, 22.51568"/>
 			<If Condition="ClassName == ((ClassJobType.Bard))"> 
 				<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 6261">
 					<Log Message="Equipping Artemis Bow Atma" />

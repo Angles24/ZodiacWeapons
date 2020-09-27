@@ -5,12 +5,18 @@
   Code Credit: ZZI, Kayla
 -->
 
+<!DOCTYPE Profile [
+<!-- Profile Settings -->
+<!ENTITY garuda "0">
+<!ENTITY ifrit "1">  		
+]>
+
 <Profile>
   <Name>Relic Nexus</Name>
   <BehaviorDirectory>..\Quest Behaviors</BehaviorDirectory>
 	<Order>
 		<!-- Mmmmmm, Soulglazed Relics -->
-		<If Condition="not HasQuest(65742) and not IsQuestCompleted(65742) and HasAtLeast(7868,1)">
+		<If Condition="not HasQuest(65742) and not IsQuestCompleted(65742)">
 		  <LisbethTravel Area="North Shroud" Position="406.5041, -4.498047, -89.74722"/>
 				<If Condition="ClassName == ((ClassJobType.Bard))"> 
 					<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7838">
@@ -95,7 +101,12 @@
 	<!-- Light Farm -->
 		<If condition="IsQuestCompleted(65742)">
 			<RunCode name="LightFarm"/>
-			<LLoadProfile Path="../Dungeons/The Howling Eye (Extreme) - SoulGlazed.xml"/>
+			<If Condition="&garuda; == 1">
+				<LLoadProfile Path="../Dungeons/The Howling Eye (Extreme) - SoulGlazed.xml"/>
+			</If>
+			<If Condition="&ifrit; == 1">	
+				<LLoadProfile Path="../Dungeons/The Bowl of Embers - SoulGlazed.xml"/>
+			</If>		
 		</If>
 	
 		

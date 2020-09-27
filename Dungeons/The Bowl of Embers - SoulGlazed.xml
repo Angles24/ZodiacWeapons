@@ -100,8 +100,11 @@
 			<If Condition="&openchest; == 1">
 				<RunCode name="OpenChest" />
 			</If>
-			<MoveTo XYZ="16,0,0"/> <!-- Move to Exit -->
-			<RunCode name="ExitDuty"/>
+			<If Condition="GameObjectManager.GetObjectByNPCId(2000139).IsVisible">
+				<MoveTo XYZ="16,0,0"/> <!-- Move to Exit -->
+				<RunCode name="ExitDuty"/>
+			</If>			
+			<RunCode name="LightFarm"/>				
 			<WaitTimer WaitTime="10"/>
 		</If> 
 	</While>		
@@ -117,6 +120,12 @@
 	</GrindArea>
   </GrindAreas>		
   <CodeChunks>
+ 		<CodeChunk Name="LightFarm">
+		  <![CDATA[ 
+			Core.OverlayManager.AddToast(() => "Make sure to check your light level!", TimeSpan.FromMilliseconds(25000), System.Windows.Media.Color.FromRgb(29,213,226), System.Windows.Media.Color.FromRgb(13,106,175), new System.Windows.Media.FontFamily("Gautami"));
+			await Coroutine.Sleep(5000);
+		  ]]>
+		</CodeChunk>  
 	<CodeChunk Name="ExitDuty">
 		<![CDATA[
 			ff14bot.Managers.GameObjectManager.GetObjectByNPCId(2000139).Interact();
