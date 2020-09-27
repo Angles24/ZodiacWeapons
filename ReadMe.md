@@ -51,11 +51,12 @@ I'm in the process of changing over all the movement in this profile to be handl
 - [x] Book of Netherfire I
 - [X] Book of Skyfall I
 - [X] Book of Skyfall II
-- [X] Book of Netherfall I
+- [X] Book of Netherfall I *
 - [X] Book of Skywind I
 - [X] Book of Skywind II
 - [X] Book of Skyearth I
 - [ ] Purchase Animus from Jalzahn
+* The Ceruleum Road is triggered by speaking to the Wary Merchant at Camp Bluefog, Northern Thanalan (x21,y29). 
 
 ### Novus Zodiac Weapons
 - [X] Celestial Radiance
