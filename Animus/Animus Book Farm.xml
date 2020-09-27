@@ -189,7 +189,7 @@
 				</If>
 				
 			<!-- Skyfire I Dungeons -->
-				<If condition="not ZodiacManager.CurrentBook.DungeonTask1Completed and not ZodiacManager.CurrentBook.DungeonTask2Completed amd not ZodiacManager.CurrentBook.DungeonTask3Completed">				
+				<If condition="not ZodiacManager.CurrentBook.DungeonTask1Completed and not ZodiacManager.CurrentBook.DungeonTask2Completed and not ZodiacManager.CurrentBook.DungeonTask3Completed">				
 					<Log Message="Skyfire I Dungeons not complete, fixing that." />
 					<LLoadProfile Path="../Skyfire I/Skyfire I - Dungeons.xml"/>
 				</If>
