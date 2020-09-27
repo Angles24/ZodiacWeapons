@@ -114,7 +114,7 @@
 	<CodeChunks>
 		<CodeChunk Name="LightFarm">
 		  <![CDATA[ 
-			Core.OverlayManager.AddToast(() => "We are about to load Gardua Extreme to farm light, however it will NOT stop automatically. Watch it.", TimeSpan.FromMilliseconds(25000), System.Windows.Media.Color.FromRgb(29,213,226), System.Windows.Media.Color.FromRgb(13,106,175), new System.Windows.Media.FontFamily("Gautami"));
+			Core.OverlayManager.AddToast(() => "We are about to load Ifrit to farm light, however it will NOT stop automatically. Watch it.", TimeSpan.FromMilliseconds(25000), System.Windows.Media.Color.FromRgb(29,213,226), System.Windows.Media.Color.FromRgb(13,106,175), new System.Windows.Media.FontFamily("Gautami"));
 			await Coroutine.Sleep(26000);
 		  ]]>
 		</CodeChunk>	

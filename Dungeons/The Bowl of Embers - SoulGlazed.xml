@@ -95,7 +95,8 @@
 					<RunCode Name="ThyrusNovus" />
 					<WaitTimer WaitTime="3" />
 				</If>
-			</If>			
+			</If>
+			<MoveTo XYZ="-10.94788, 0, 0.2903477" usemesh="false" />	
 			<Grind GrindRef="Ifrit" While="not GameObjectManager.GetObjectByNPCId(1185).CurrentHealth == 0"/> <!-- Kill Ifrit -->
 			<If Condition="&openchest; == 1">
 				<RunCode name="OpenChest" />
