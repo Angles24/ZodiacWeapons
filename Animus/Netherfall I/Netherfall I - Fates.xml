@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Profile: Book of Netherfall I - FATEs
+  Authors: Zamphire
+  Code Credit: nishap
+-->
+
+<Profile>
+	<Name>Book of Netherfall I - FATEs</Name>
+	<BehaviorDirectory>..\..\Quest Behaviors</BehaviorDirectory>	
+	<Order>
+		
+		<!-- Book of Netherfall I FATE Task 1 - Rude Awakening -->	
+		<If condition="not ZodiacManager.CurrentBook.FateTask1Completed">
+			<LisbethTravel Area="North Shroud" Position="64.49603, 6.874514, -80.28871"/>
+			<Log Message="Waiting on FATE 'Rude Awakening'" />
+			<LLFate FateId="632" MinLevel="1" MaxLevel="50" while="ZodiacManager.CurrentBook.FateTask1Completed"/> <!-- Rude Awakening -->	
+		</If>
+
+		<!-- Book of Netherfall I FATE Task 2 - The Ceruleum Road -->	
+		<If condition="not ZodiacManager.CurrentBook.DungeonTask1Completed">
+			<LisbethTravel Area="Northern Thanalan" Position="21.60414, 3.991567, 397.9374"/>
+			<Log Message="Waiting on FATE 'The Ceruleum Road'" />
+			<RunCode name="CeruleumRoad"/>
+			<StopBot/>
+		</If>
+
+		<!-- Book of Netherfall I FATE Task 3 - The Four Winds -->	
+		<If condition="not ZodiacManager.CurrentBook.DungeonTask1Completed">
+			<LisbethTravel Area="Coerthas Central Highlands" Position="656.0725, 300.6156, -21.86666"/>
+			<Log Message="Waiting on FATE 'The Four Winds'" />
+			<LLFate FateId="499" MinLevel="1" MaxLevel="50" while="ZodiacManager.CurrentBook.FateTask3Completed"/> <!-- The Four Winds -->	
+		</If>
+
+		<LLoadProfile Path="../../Start.xml"/>	
+		
+	</Order>
+	<CodeChunks>
+		<CodeChunk Name="CeruleumRoad">
+		  <![CDATA[ 
+			Core.OverlayManager.AddToast(() => "Please complete Ceruleum Road FATE manually. Starts from Wary Merchant.", TimeSpan.FromMilliseconds(25000), System.Windows.Media.Color.FromRgb(29,213,226), System.Windows.Media.Color.FromRgb(13,106,175), new System.Windows.Media.FontFamily("Gautami"));
+			await Coroutine.Sleep(26000);
+		  ]]>
+		</CodeChunk>	
+	</CodeChunks>
+</Profile>	

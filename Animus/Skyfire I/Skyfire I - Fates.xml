@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Profile: Book of Skyfire I - FATEs
+  Authors: Zamphire
+  Code Credit: nishap
+-->
+
+<Profile>
+	<Name>Book of Skyfire I - FATEs</Name>
+	<BehaviorDirectory>..\..\Quest Behaviors</BehaviorDirectory>	
+	<Order>
+		
+		<!-- Book of Skyfire I FATE Task 1 - Giant Seps -->	
+		<If condition="not ZodiacManager.CurrentBook.FateTask1Completed">
+			<LisbethTravel Area="Coerthas Central Highlands" Position="-629.055, 205.407, -440.3233"/>
+			<Log Message="Waiting on FATE 'Giant Seps'" />
+			<LLFate FateId="480" MinLevel="1" MaxLevel="50" while="ZodiacManager.CurrentBook.FateTask1Completed"/> <!-- Giant Seps -->
+		</If>
+
+		<!-- Book of Skyfire I FATE Task 2 - Make It Rain -->	
+		<If condition="not ZodiacManager.CurrentBook.DungeonTask1Completed">
+			<LisbethTravel Area="Outer La Noscea" Position="188.0067, 60.83277, -160.1679"/>
+			<Log Message="Waiting on FATE 'Make It Rain'" />
+			<LLFate FateId="589" MinLevel="1" MaxLevel="50" while="ZodiacManager.CurrentBook.FateTask2Completed"/> <!-- Make It Rain -->
+			<StopBot/>
+		</If>
+
+		<!-- Book of Skyfire I FATE Task 3 - The Enmity of my Enemy -->	
+		<If condition="not ZodiacManager.CurrentBook.DungeonTask1Completed">
+			<LisbethTravel Area="East Shroud" Position="282.3805, -5.300717, 25.26396"/>
+			<Log Message="Waiting on FATE 'The Enmity of my Enemy'" />
+			<LLFate FateId="611" MinLevel="1" MaxLevel="50" while="ZodiacManager.CurrentBook.FateTask3Completed"/> <!-- The Enmity of my Enemy -->	
+		</If>
+
+		<LLoadProfile Path="../../Start.xml"/>	
+		
+	</Order>
+</Profile>	
