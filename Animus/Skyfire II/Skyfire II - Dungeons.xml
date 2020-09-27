@@ -24,7 +24,7 @@
 		<!-- Book of Skyfire II Dungeon Task 3 - The Copperbell Mines (Hard) -->	
 		<If condition="not ZodiacManager.CurrentBook.DungeonTask3Completed">
 			<Log Message="Moving to Skyfire II - The Copperbell Mines (Hard)" />
-			<LLoadProfile Path="../Dungeons/The Copperbell Mines (Hard).xml"/>
+			<LLoadProfile Path="../../Dungeons/The Copperbell Mines (Hard).xml"/>
 		</If>		
 		
 		<LLoadProfile Path="../../Start.xml"/>

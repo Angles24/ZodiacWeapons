@@ -25,7 +25,7 @@
 		<!-- Book of Skyfire I Leve Task 3 - The Awry Savages -->	
 		<If condition="not ZodiacManager.CurrentBook.GuildleveTask3Completed">
 			<Log Message="Moving to Skyfire I - Mor Dhona - Saint Coinarch's Find 'The Awry Savages'" />
-			<LLoadProfile Path="../GuildLeves/Sain Coinach's Find/The Awry Salvages.xml"/>
+			<LLoadProfile Path="../../GuildLeves/Sain Coinach's Find/The Awry Salvages.xml"/>
 		</If>
 
 		<LLoadProfile Path="../../Start.xml"/>	
