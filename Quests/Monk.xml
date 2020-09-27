@@ -478,7 +478,7 @@
 		</If>	
 
 	<!-- Atma Weapon Upgrade - Animus Book Farm -->
-		<If Condition="HasAtLeast(7825,1))">
+		<If Condition="HasAtLeast(7825,1)">
 			<Log Message="Staring Sphairai Atma Upgrade!" />
 			<LLoadProfile Path="../Animus/Animus Book Farm.xml"/>
 		</If>
