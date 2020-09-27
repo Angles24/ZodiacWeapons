@@ -11,7 +11,7 @@
   <BehaviorDirectory>..\Quest Behaviors</BehaviorDirectory>		
 	<Order>
 		<!-- Wherefore Art Thou, Zodiac -->
-		<If Condition="not HasQuest(65892) and not IsQuestCompleted(65892) and HasAtLeast(8656,1)">
+		<If Condition="not HasQuest(65892) and not IsQuestCompleted(65892)">
 		  <LisbethTravel Area="North Shroud" Position="406.5759, -4.498047, -89.70448"/>
 				<If Condition="ClassName == ((ClassJobType.Bard))"> 
 					<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 8653">
