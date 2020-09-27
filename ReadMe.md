@@ -66,8 +66,9 @@ I'm in the process of changing over all the movement in this profile to be handl
 
 ### Nexus Zodiac Weapons
 - [X] Mmmmmm, Soulglazed Relics
-- [X] Light Farming
-- [ ] Purchase Nexus Zodiac 
+- [X] Light Farming *
+- [ ] Purchase Nexus Zodiac
+* You must manually have Jalzhan soulglaze your relic before starting light farming.
 
 ### Zodiac Braves Weapons
 - [X] Wherefore Art Thou, Zodiac
