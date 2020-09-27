@@ -96,15 +96,17 @@
 					<WaitTimer WaitTime="3" />
 				</If>
 			</If>
-			<MoveTo XYZ="-10.94788, 0, 0.2903477" usemesh="false" />	
-			<Grind GrindRef="Ifrit" While="not GameObjectManager.GetObjectByNPCId(1185).CurrentHealth == 0"/> <!-- Kill Ifrit -->
+			<MoveTo XYZ="-12.55511, 0, -9.238441" usemesh="false" />
+			<While Condition="not GameObjectManager.GetObjectByNPCId(2000139).IsVisible">	
+				<Grind GrindRef="Ifrit" While="not GameObjectManager.GetObjectByNPCId(1185).CurrentHealth == 0"/> <!-- Kill Ifrit -->
+			</While>	
 			<If Condition="&openchest; == 1">
 				<RunCode name="OpenChest" />
 			</If>
-			<If Condition="GameObjectManager.GetObjectByNPCId(2000139).IsVisible">
+			<While Condition="IsOnMap(202)">
 				<MoveTo XYZ="16,0,0"/> <!-- Move to Exit -->
 				<RunCode name="ExitDuty"/>
-			</If>			
+			</While>				
 			<RunCode name="LightFarm"/>				
 			<WaitTimer WaitTime="10"/>
 		</If> 
@@ -132,7 +134,7 @@
 			ff14bot.Managers.GameObjectManager.GetObjectByNPCId(2000139).Interact();
 			await Coroutine.Sleep(1000);
 			ff14bot.RemoteWindows.SelectYesno.ClickYes();
-			await Coroutine.Sleep(3000);
+			await Coroutine.Sleep(5000);
       ]]>
 	</CodeChunk>		
 	<CodeChunk Name="QueueIfrit">

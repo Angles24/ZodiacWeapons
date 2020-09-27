@@ -96,6 +96,8 @@
 		<If Condition="GetQuestStep(65742) == 255">
 		  <GetTo ZoneId="154" XYZ="406.4768, -4.498047, -88.84937"/>
 		  <TurnIn QuestId="65742" NpcId="1008948" XYZ="405.1117, -4.498068, -89.15851"/>
+		  <RunCode name="SoulGlazed"/>
+		  <StopBot/>
 		</If>
 
 	<!-- Light Farm -->
@@ -112,9 +114,15 @@
 		
 	</Order>
 	<CodeChunks>
+		<CodeChunk Name="SoulGlazed">
+		  <![CDATA[ 
+			Core.OverlayManager.AddToast(() => "Talk to Jalzahn and have him Soulglaze your relic then start this profile again.", TimeSpan.FromMilliseconds(25000), System.Windows.Media.Color.FromRgb(29,213,226), System.Windows.Media.Color.FromRgb(13,106,175), new System.Windows.Media.FontFamily("Gautami"));
+			await Coroutine.Sleep(60000);
+		  ]]>
+		</CodeChunk>	
 		<CodeChunk Name="LightFarm">
 		  <![CDATA[ 
-			Core.OverlayManager.AddToast(() => "We are about to load Ifrit to farm light, however it will NOT stop automatically. Watch it.", TimeSpan.FromMilliseconds(25000), System.Windows.Media.Color.FromRgb(29,213,226), System.Windows.Media.Color.FromRgb(13,106,175), new System.Windows.Media.FontFamily("Gautami"));
+			Core.OverlayManager.AddToast(() => "We are about to load Ifrit to farm light, however it will NOT stop automatically. Check your light level occasionally.", TimeSpan.FromMilliseconds(25000), System.Windows.Media.Color.FromRgb(29,213,226), System.Windows.Media.Color.FromRgb(13,106,175), new System.Windows.Media.FontFamily("Gautami"));
 			await Coroutine.Sleep(26000);
 		  ]]>
 		</CodeChunk>	
