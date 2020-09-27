@@ -18,14 +18,14 @@
 		</If>
 
 		<!-- Book of Skyfire II FATE Task 2 - Heroes of the 2nd -->	
-		<If condition="not ZodiacManager.CurrentBook.DungeonTask1Completed">
+		<If condition="not ZodiacManager.CurrentBook.DungeonTask2Completed">
 			<LisbethTravel Area="Southern Thanalan" Position="10.31318, 0.6397393, -250.8835"/>
 			<Log Message="Waiting on FATE 'Heroes of the 2nd'" />
 			<LLFate FateId="424" MinLevel="1" MaxLevel="50" while="ZodiacManager.CurrentBook.FateTask2Completed"/> <!-- Heroes of the 2nd -->
 		</If>
 
 		<!-- Book of Skyfire II FATE Task 3 - Air Supply -->	
-		<If condition="not ZodiacManager.CurrentBook.DungeonTask1Completed">
+		<If condition="not ZodiacManager.CurrentBook.DungeonTask3Completed">
 			<LisbethTravel Area="North Shroud" Position="-110.479, -8.697146, -51.66109"/>
 			<Log Message="Waiting on FATE 'Air Supply'" />
 			<LLFate FateId="633" MinLevel="1" MaxLevel="50" while="ZodiacManager.CurrentBook.FateTask3Completed"/> <!-- Air Supply -->	
