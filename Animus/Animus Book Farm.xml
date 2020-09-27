@@ -181,10 +181,11 @@
 							<WaitTimer WaitTime="3" />
 						</If>
 					</If>				
+			
 			<!-- Skyfire I Enemies -->
 				<If condition="not ZodiacManager.CurrentBook.KillTask1Completed and not ZodiacManager.CurrentBook.KillTask2Completed and not ZodiacManager.CurrentBook.KillTask3Completed and not ZodiacManager.CurrentBook.KillTask4Completed and not ZodiacManager.CurrentBook.KillTask5Completed and not ZodiacManager.CurrentBook.KillTask6Completed and not ZodiacManager.CurrentBook.KillTask7Completed and not ZodiacManager.CurrentBook.KillTask8Completed and not ZodiacManager.CurrentBook.KillTask9Completed and not ZodiacManager.CurrentBook.KillTask10Completed">
 					<Log Message="Skyfire I Enemies not complete, fixing that." />	
-					<LLoadProfile Path="/Skyfire I/Skyfire I - Enemies.xml"/>					
+					<LLoadProfile Path="../Skyfire I/Skyfire I - Enemies.xml"/>					
 				</If>
 				
 			<!-- Skyfire I Dungeons -->
@@ -284,7 +285,7 @@
 							<WaitTimer WaitTime="3" />
 						</If>
 					</If>
-					<GetTo ZoneId="156" XYZ="71.94617,33.06656,-706.2944"/>
+					<LisbethTravel Area="Mor Dhona" Position="71.13229, 33.06656, -707.7657"/>
 					<Dismount/>
 					<RunCode name="BuyFireBooks"/>				
 				</If>
@@ -6861,10 +6862,7 @@
 			<!-- Book completed -->
 				<If condition="HasAtLeast(2001303,1) and ZodiacManager.CurrentBook.KillTask1Completed and ZodiacManager.CurrentBook.KillTask2Completed and ZodiacManager.CurrentBook.KillTask3Completed and ZodiacManager.CurrentBook.KillTask4Completed and ZodiacManager.CurrentBook.KillTask5Completed and ZodiacManager.CurrentBook.KillTask6Completed and ZodiacManager.CurrentBook.KillTask7Completed and ZodiacManager.CurrentBook.KillTask8Completed and ZodiacManager.CurrentBook.KillTask9Completed and ZodiacManager.CurrentBook.KillTask10Completed and ZodiacManager.CurrentBook.DungeonTask1Completed and ZodiacManager.CurrentBook.DungeonTask2Completed and ZodiacManager.CurrentBook.DungeonTask3Completed and ZodiacManager.CurrentBook.FateTask1Completed and ZodiacManager.CurrentBook.FateTask2Completed and ZodiacManager.CurrentBook.FateTask3Completed and ZodiacManager.CurrentBook.GuildleveTask1Completed and ZodiacManager.CurrentBook.GuildleveTask2Completed and ZodiacManager.CurrentBook.GuildleveTask3Completed">				
 					<Log Message="Netherfall I completed. Buying Skywind I" />
-					<If Condition="not IsOnMap(156)">
-						<TeleportTo AetheryteId="24"/> 
-					</If>
-					<GetTo ZoneId="156" XYZ="71.94617,33.06656,-706.2944"/>
+					<LisbethTravel Area="Mor Dhona" Position="71.13229, 33.06656, -707.7657"/>
 					<Dismount/>
 					<If Condition="ClassName == ((ClassJobType.Paladin))"> 
 						<RunCode name="BuyPaladinWindBooks"/>
