@@ -96,10 +96,8 @@
 					<WaitTimer WaitTime="3" />
 				</If>
 			</If>
-			<MoveTo XYZ="-12.55511, 0, -9.238441" usemesh="false" />
-			<While Condition="not GameObjectManager.GetObjectByNPCId(2000139).IsVisible">	
-				<Grind GrindRef="Ifrit" While="not GameObjectManager.GetObjectByNPCId(1185).CurrentHealth == 0"/> <!-- Kill Ifrit -->
-			</While>	
+			<MoveTo XYZ="-12.55511, 0, -9.238441" usemesh="false" />	
+			<Grind GrindRef="Ifrit" While="not GameObjectManager.GetObjectByNPCId(1185).CurrentHealth == 0"/> <!-- Kill Ifrit -->	
 			<If Condition="&openchest; == 1">
 				<RunCode name="OpenChest" />
 			</If>
