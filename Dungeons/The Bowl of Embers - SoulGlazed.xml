@@ -14,7 +14,7 @@
   <Name>The Bowl of Embers</Name>
   <BehaviorDirectory></BehaviorDirectory>
   <Order>
-	<While Condition="1 == 1"> 
+	<While Condition="NovusLightLevel() &lt; 2000"> 
 		<If Condition="not IsOnMap(202)">
 			<RunCode Name="QueueIfrit"/>
 		</If>

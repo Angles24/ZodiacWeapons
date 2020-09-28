@@ -102,12 +102,76 @@
 
 	<!-- Light Farm -->
 		<If condition="IsQuestCompleted(65742)">
-			<RunCode name="LightFarm"/>
-			<If Condition="&garuda; == 1">
-				<LLoadProfile Path="../Dungeons/The Howling Eye (Extreme) - SoulGlazed.xml"/>
+			<If Condition="ClassName == ((ClassJobType.Bard))"> 
+				<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7838">
+					<RunCode Name="ArtemisNovus" />
+					<WaitTimer WaitTime="3" />
+				</If>					
 			</If>
-			<If Condition="&ifrit; == 1">	
-				<LLoadProfile Path="../Dungeons/The Bowl of Embers - SoulGlazed.xml"/>
+			<If Condition="ClassName == ((ClassJobType.BlackMage))">
+				<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7869">
+					<RunCode Name="StardustNovus" />
+					<WaitTimer WaitTime="3" />
+				</If>						
+			</If>	
+			<If Condition="ClassName == ((ClassJobType.Dragoon))">
+				<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7866">
+					<RunCode Name="GaeBolgNovus" />
+					<WaitTimer WaitTime="3" />
+				</If>				
+			</If>
+			<If Condition="ClassName == ((ClassJobType.Monk))">
+				<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7864">
+					<RunCode Name="SphairaiNovus" />
+					<WaitTimer WaitTime="3" />
+				</If>				
+			</If>
+			<If Condition="ClassName == ((ClassJobType.Ninja))"> 
+				<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 9253">
+					<RunCode Name="YoshiNovus" />
+					<WaitTimer WaitTime="3" />
+				</If>				
+			</If>
+			<If Condition="ClassName == ((ClassJobType.Paladin))">
+				<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7863">
+					<RunCode Name="CurtanaNovus" />
+					<WaitTimer WaitTime="5" />
+				</If>	
+				<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7872">						
+					<RunCode Name="HolyNovus" />
+				</If>				
+			</If>
+			<If Condition="ClassName == ((ClassJobType.Summoner))">	
+				<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7871">
+					<RunCode Name="OmnilexNovus" />
+					<WaitTimer WaitTime="3" />
+				</If>
+			</If>
+			<If Condition="ClassName == ((ClassJobType.Scholar))">	
+				<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7870">
+					<RunCode Name="VeilNovus" />
+					<WaitTimer WaitTime="3" />
+				</If>
+			</If>	
+			<If Condition="ClassName == ((ClassJobType.Warrior))"> 		
+				<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7865">
+					<RunCode Name="BravuraNovus" />
+					<WaitTimer WaitTime="3" />
+				</If>
+			</If>	
+			<If Condition="ClassName == ((ClassJobType.WhiteMage))">			
+				<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7868">
+					<RunCode Name="ThyrusNovus" />
+					<WaitTimer WaitTime="3" />
+				</If>
+			</If>
+			<If Condition="NovusLightLevel() &lt; 2000">	
+				<If Condition="&garuda; == 1">
+					<LLoadProfile Path="../Dungeons/The Howling Eye (Extreme) - SoulGlazed.xml"/>
+				</If>
+				<If Condition="&ifrit; == 1">	
+					<LLoadProfile Path="../Dungeons/The Bowl of Embers - SoulGlazed.xml"/>
+				</If>
 			</If>		
 		</If>
 	
@@ -119,13 +183,7 @@
 			Core.OverlayManager.AddToast(() => "Talk to Jalzahn and have him Soulglaze your relic then start this profile again.", TimeSpan.FromMilliseconds(25000), System.Windows.Media.Color.FromRgb(29,213,226), System.Windows.Media.Color.FromRgb(13,106,175), new System.Windows.Media.FontFamily("Gautami"));
 			await Coroutine.Sleep(60000);
 		  ]]>
-		</CodeChunk>	
-		<CodeChunk Name="LightFarm">
-		  <![CDATA[ 
-			Core.OverlayManager.AddToast(() => "We are about to load Ifrit to farm light, however it will NOT stop automatically. Check your light level occasionally.", TimeSpan.FromMilliseconds(25000), System.Windows.Media.Color.FromRgb(29,213,226), System.Windows.Media.Color.FromRgb(13,106,175), new System.Windows.Media.FontFamily("Gautami"));
-			await Coroutine.Sleep(26000);
-		  ]]>
-		</CodeChunk>	
+		</CodeChunk>		
  		<CodeChunk Name="ArtemisNovus">
 		<![CDATA[ 
 			BagSlot EquipSlot = ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand];
