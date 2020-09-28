@@ -3489,25 +3489,25 @@
 				</If>
 				
 			<!-- Netherfall I Enemies -->
-				<If condition="not ZodiacManager.CurrentBook.KillTask1Completed and not ZodiacManager.CurrentBook.KillTask2Completed and not ZodiacManager.CurrentBook.KillTask3Completed and not ZodiacManager.CurrentBook.KillTask4Completed and not ZodiacManager.CurrentBook.KillTask5Completed and not ZodiacManager.CurrentBook.KillTask6Completed and not ZodiacManager.CurrentBook.KillTask7Completed and not ZodiacManager.CurrentBook.KillTask8Completed and not ZodiacManager.CurrentBook.KillTask9Completed and not ZodiacManager.CurrentBook.KillTask10Completed">
+				<If condition="not ZodiacManager.CurrentBook.KillTask1Completed or not ZodiacManager.CurrentBook.KillTask2Completed or not ZodiacManager.CurrentBook.KillTask3Completed or not ZodiacManager.CurrentBook.KillTask4Completed or not ZodiacManager.CurrentBook.KillTask5Completed or not ZodiacManager.CurrentBook.KillTask6Completed or not ZodiacManager.CurrentBook.KillTask7Completed or not ZodiacManager.CurrentBook.KillTask8Completed or not ZodiacManager.CurrentBook.KillTask9Completed or not ZodiacManager.CurrentBook.KillTask10Completed">
 					<Log Message="Netherfall I Enemies not complete, fixing that." />	
 					<LLoadProfile Path="../Animus/Netherfall I/Netherfall I - Enemies.xml"/>
 				</If>
 
 			<!-- Netherfall I Dungeons -->	
-				<If condition="not ZodiacManager.CurrentBook.DungeonTask1Completed and not ZodiacManager.CurrentBook.DungeonTask2Completed and not ZodiacManager.CurrentBook.DungeonTask3Completed">				
+				<If condition="not ZodiacManager.CurrentBook.DungeonTask1Completed or not ZodiacManager.CurrentBook.DungeonTask2Completed or not ZodiacManager.CurrentBook.DungeonTask3Completed">				
 					<Log Message="Netherfall I Dungeons not complete, fixing that." />
 					<LLoadProfile Path="../Animus/Netherfall I/Netherfall I - Dungeons.xml"/>
 				</If>
 
 			<!-- Netherfall I Fates -->
-				<If condition="not ZodiacManager.CurrentBook.FateTask1Completed and not ZodiacManager.CurrentBook.FateTask2Completed and not ZodiacManager.CurrentBook.FateTask3Completed">				
+				<If condition="not ZodiacManager.CurrentBook.FateTask1Completed or not ZodiacManager.CurrentBook.FateTask2Completed or not ZodiacManager.CurrentBook.FateTask3Completed">				
 					<Log Message="Netherfall I FATEs not complete, fixing that." />
 					<LLoadProfile Path="../Animus/Netherfall I/Netherfall I - Fates.xml"/>								  				  						
 				</If>
 				
 			<!-- Netherfall I Guildleves -->
-				<If condition="not ZodiacManager.CurrentBook.GuildleveTask1Completed and not ZodiacManager.CurrentBook.GuildleveTask2Completed and not ZodiacManager.CurrentBook.GuildleveTask3Completed">
+				<If condition="not ZodiacManager.CurrentBook.GuildleveTask1Completed or not ZodiacManager.CurrentBook.GuildleveTask2Completed or not ZodiacManager.CurrentBook.GuildleveTask3Completed">
 					<Log Message="Netherfall I Leves not complete, fixing that." />
 					<LLoadProfile Path="../Animus/Netherfall I/Netherfall I - Fates.xml"/>	
 				</If>
