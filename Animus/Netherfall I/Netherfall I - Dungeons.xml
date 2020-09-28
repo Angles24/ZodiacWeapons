@@ -16,13 +16,13 @@
 		</If>
 
 		<!-- Book of Netherfall I Dungeon Task 2 - Pharos Sirius -->	
-		<If condition="not ZodiacManager.CurrentBook.DungeonTask1Completed">
+		<If condition="not ZodiacManager.CurrentBook.DungeonTask2Completed">
 			<Log Message="Moving to Netherfall I - Pharos Sirius" />
 			<LLoadProfile Path="../../Dungeons/Pharos Sirius.xml"/>
 		</If>
 
 		<!-- Book of Netherfall I Dungeon Task 3 - The Lost City of Amdapor -->	
-		<If condition="not ZodiacManager.CurrentBook.DungeonTask1Completed">
+		<If condition="not ZodiacManager.CurrentBook.DungeonTask3Completed">
 			<Log Message="Moving to Netherfall I - The Lost City of Amdapor" />
 			<LLoadProfile Path="../../Dungeons/The Lost City of Amdapor.xml"/>
 		</If>		

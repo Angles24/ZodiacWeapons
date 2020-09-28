@@ -3509,7 +3509,7 @@
 			<!-- Netherfall I Guildleves -->
 				<If condition="not ZodiacManager.CurrentBook.GuildleveTask1Completed or not ZodiacManager.CurrentBook.GuildleveTask2Completed or not ZodiacManager.CurrentBook.GuildleveTask3Completed">
 					<Log Message="Netherfall I Leves not complete, fixing that." />
-					<LLoadProfile Path="../Animus/Netherfall I/Netherfall I - Fates.xml"/>	
+					<LLoadProfile Path="../Animus/Netherfall I/Netherfall I - Leves.xml"/>	
 				</If>
 
 			<!-- Book completed -->
