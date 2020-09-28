@@ -28,13 +28,6 @@
       <GetTo ZoneId="135" XYZ="274.0709, 4.403121, 727.8066"/>
       <TalkTo NpcId="1009382" XYZ="275.1659, 4.403121, 729.1523" QuestId="67062" StepId="2"/>
     </If>
-    <If Condition="HasQuest(67062) and not IsQuestCompleted(67062) and GetQuestStep(67062) == 3">
-      <RunCode Name="Announce_Manual_Completion"/>
-    </If>
-    <If Condition="HasQuest(67062) and not IsQuestCompleted(67062) and GetQuestStep(67062) == 255">
-      <GetTo ZoneId="128" XYZ="-10.35705, 32, -38.90331"/>
-      <TurnIn ItemId="2001349" QuestId="67062" NpcId="1009231" XYZ="-9.140198, 31.99998, -40.08551"/>
-    </If>
 	
 	<If Condition="not IsOnMap(361)">
 		<RunCode Name="QueueHullbreaker"/>
