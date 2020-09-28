@@ -14,7 +14,7 @@
   <BehaviorDirectory></BehaviorDirectory>
   <Order>
 <!-- [Sastasha (Hard)] It's Definitely Pirates -->
-    <If Condition="IsQuestCompleted(66060) and IsQuestCompleted(67060) and not HasQuest(65630) and not IsQuestCompleted(65630)">
+    <If Condition="not HasQuest(65630) and not IsQuestCompleted(65630)">
       <GetTo ZoneId="156" XYZ="32.08445, 21.27369, -636.3706"/>
       <If Condition="IsQuestAcceptQualified(65630)">
         <PickupQuest QuestId="65630" NpcId="1006975" XYZ="32.82214, 21.25273, -635.462"/>
