@@ -103,8 +103,7 @@
 				<RunCode name="OpenChest" />
 			</If>
 			<While Condition="IsOnMap(202)">
-				<MoveTo XYZ="16,0,0"/> <!-- Move to Exit -->
-				<RunCode name="ExitDuty"/>
+				<RunCode name="LeaveDuty"/>
 			</While>							
 			<WaitTimer WaitTime="10"/>
 			<If Condition="NovusLightLevel() &lt; 2000">
@@ -132,7 +131,13 @@
 			ff14bot.Helpers.Logging.Write(string.Format("Current Novus LightLevel: {0}", (InventoryManager.EquippedItems.First().SpiritBond * 100)));
 			await Coroutine.Sleep(5000);
 		  ]]>
-		</CodeChunk>  
+		</CodeChunk> 
+	<CodeChunk Name="LeaveDuty">
+		<![CDATA[
+			ff14bot.Managers.DutyManager.LeaveActiveDuty();
+			while (!CommonBehaviors.IsLoading) { await Coroutine.Yield(); }
+		]]>
+	</CodeChunk>		
 	<CodeChunk Name="ExitDuty">
 		<![CDATA[
 			ff14bot.Managers.GameObjectManager.GetObjectByNPCId(2000139).Interact();
