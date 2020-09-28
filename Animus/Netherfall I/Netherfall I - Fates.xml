@@ -13,8 +13,10 @@
 		<!-- Book of Netherfall I FATE Task 1 - Rude Awakening -->	
 		<If condition="not ZodiacManager.CurrentBook.FateTask1Completed">
 			<LisbethTravel Area="North Shroud" Position="64.49603, 6.874514, -80.28871"/>
-			<Log Message="Waiting on FATE 'Rude Awakening'" />
-			<LLFate FateId="632" MinLevel="1" MaxLevel="50" while="ZodiacManager.CurrentBook.FateTask1Completed"/> <!-- Rude Awakening -->	
+			<While Condition="not ZodiacManager.CurrentBook.FateTask1Completed">
+				<Log Message="Waiting on FATE 'Rude Awakening'" />
+				<LLFate FateId="632" MinLevel="1" MaxLevel="50" while="ZodiacManager.CurrentBook.FateTask1Completed"/> <!-- Rude Awakening -->
+			</While>	
 		</If>
 
 		<!-- Book of Netherfall I FATE Task 2 - The Ceruleum Road -->	
@@ -28,8 +30,10 @@
 		<!-- Book of Netherfall I FATE Task 3 - The Four Winds -->	
 		<If condition="not ZodiacManager.CurrentBook.FateTask3Completed">
 			<LisbethTravel Area="Coerthas Central Highlands" Position="656.0725, 300.6156, -21.86666"/>
-			<Log Message="Waiting on FATE 'The Four Winds'" />
-			<LLFate FateId="499" MinLevel="1" MaxLevel="50" while="ZodiacManager.CurrentBook.FateTask3Completed"/> <!-- The Four Winds -->	
+			<While Condition="not ZodiacManager.CurrentBook.FateTask3Completed">
+				<Log Message="Waiting on FATE 'The Four Winds'" />
+				<LLFate FateId="499" MinLevel="1" MaxLevel="50" while="ZodiacManager.CurrentBook.FateTask3Completed"/> <!-- The Four Winds -->	
+			</While>	
 		</If>
 
 		<LLoadProfile Path="../../Start.xml"/>	
@@ -39,7 +43,7 @@
 		<CodeChunk Name="CeruleumRoad">
 		  <![CDATA[ 
 			Core.OverlayManager.AddToast(() => "Please complete Ceruleum Road FATE manually. Starts from Wary Merchant.", TimeSpan.FromMilliseconds(25000), System.Windows.Media.Color.FromRgb(29,213,226), System.Windows.Media.Color.FromRgb(13,106,175), new System.Windows.Media.FontFamily("Gautami"));
-			await Coroutine.Sleep(26000);
+			await Coroutine.Sleep(60000);
 		  ]]>
 		</CodeChunk>	
 	</CodeChunks>

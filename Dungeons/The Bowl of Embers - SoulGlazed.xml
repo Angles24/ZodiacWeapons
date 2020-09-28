@@ -104,12 +104,11 @@
 			<While Condition="IsOnMap(202)">
 				<MoveTo XYZ="16,0,0"/> <!-- Move to Exit -->
 				<RunCode name="ExitDuty"/>
-			</While>				
-			<RunCode name="LightFarm"/>				
+			</While>							
 			<WaitTimer WaitTime="10"/>
 		</If> 
 	</While>
-	<If Condition="NovusLightLevel() &gt; 2000">
+	<If Condition="NovusLightLevel() == 2000">
 		<LLoadProfile Path="../Start.xml"/>
 	</If>	
  </Order>
