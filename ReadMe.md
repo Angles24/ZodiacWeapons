@@ -50,9 +50,10 @@ I'm in the process of changing over all the movement in this profile to be handl
 - [x] Book of Skyfire II
 - [x] Book of Netherfire I
 - [X] Book of Skyfall I
-- [X] Book of Skyfall II
+- [X] Book of Skyfall II *
+- Leve "Someone's In The Doghouse" must be done manually. The profile will pick it up and stop at the place for you to do it. Load the Start profile after.
 - [X] Book of Netherfall I *
-- The Ceruleum Road is triggered by speaking to the Wary Merchant at Camp Bluefog, Northern Thanalan (x21,y29). 
+- The Ceruleum Road is triggered by speaking to the Wary Merchant at Camp Bluefog, Northern Thanalan (x21,y29). Start this manually.
 - [X] Book of Skywind I
 - [X] Book of Skywind II
 - [X] Book of Skyearth I
