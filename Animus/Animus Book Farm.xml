@@ -148,7 +148,7 @@
 			<!-- Skyfire II Dungeons -->
 				<If condition="not ZodiacManager.CurrentBook.DungeonTask1Completed or not ZodiacManager.CurrentBook.DungeonTask2Completed or not ZodiacManager.CurrentBook.DungeonTask3Completed">				
 					<Log Message="Skyfire II Dungeons not complete, fixing that." />
-					<LLoadProfile Path="../Animus/Skyfire I/Skyfire I - Dungeons.xml"/>
+					<LLoadProfile Path="../Animus/Skyfire II/Skyfire II - Dungeons.xml"/>
 				</If>
 
 			<!-- Skyfire II Fates -->
