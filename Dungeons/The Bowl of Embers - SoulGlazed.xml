@@ -8,6 +8,7 @@
 <!DOCTYPE Profile [
 <!-- Profile Settings -->
 <!ENTITY openchest "0">
+<!ENTITY lightlevel "NovusLightLevel()">
 ]>
 
 <Profile>
@@ -106,6 +107,9 @@
 				<RunCode name="ExitDuty"/>
 			</While>							
 			<WaitTimer WaitTime="10"/>
+			<If Condition="NovusLightLevel() &lt; 2000">
+				<RunCode name="LightLevel"/>
+			</If>			
 		</If> 
 	</While>
 	<If Condition="NovusLightLevel() == 2000">
@@ -123,9 +127,9 @@
 	</GrindArea>
   </GrindAreas>		
   <CodeChunks>
- 		<CodeChunk Name="LightFarm">
+ 		<CodeChunk Name="LightLevel">
 		  <![CDATA[ 
-			Core.OverlayManager.AddToast(() => "Make sure to check your light level!", TimeSpan.FromMilliseconds(25000), System.Windows.Media.Color.FromRgb(29,213,226), System.Windows.Media.Color.FromRgb(13,106,175), new System.Windows.Media.FontFamily("Gautami"));
+			ff14bot.Helpers.Logging.Write(string.Format("Current Novus LightLevel: {0}", (InventoryManager.EquippedItems.First().SpiritBond * 100)));
 			await Coroutine.Sleep(5000);
 		  ]]>
 		</CodeChunk>  
