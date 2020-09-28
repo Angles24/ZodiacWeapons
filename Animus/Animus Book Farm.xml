@@ -3495,7 +3495,7 @@
 				</If>
 
 			<!-- Netherfall I Dungeons -->	
-				<If condition="not ZodiacManager.CurrentBook.DungeonTask1Completed and not ZodiacManager.CurrentBook.DungeonTask2Completed amd not ZodiacManager.CurrentBook.DungeonTask3Completed">				
+				<If condition="not ZodiacManager.CurrentBook.DungeonTask1Completed and not ZodiacManager.CurrentBook.DungeonTask2Completed and not ZodiacManager.CurrentBook.DungeonTask3Completed">				
 					<Log Message="Netherfall I Dungeons not complete, fixing that." />
 					<LLoadProfile Path="../Animus/Netherfall I/Netherfall I - Dungeons.xml"/>
 				</If>
