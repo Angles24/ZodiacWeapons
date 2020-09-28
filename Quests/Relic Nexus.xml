@@ -173,8 +173,9 @@
 					<LLoadProfile Path="../Dungeons/The Bowl of Embers - SoulGlazed.xml"/>
 				</If>
 			</If>
-			<If Condition="NovusLightLevel() &gt; 2000">
+			<If Condition="NovusLightLevel() == 2000">
 				<LisbethTravel Area="North Shroud" Position="408.0551, -4.836707, -87.85005"/>
+				<RunCode name="LightComplete"/>
 			</If>			
 		</If>
 	

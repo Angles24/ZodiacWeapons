@@ -68,7 +68,7 @@
 		<If Condition="GetInstanceTodo(2) == 0 and GetInstanceTodo(1) == 1">
 			<Log Message="Clear the Coincounter's Chest 0/1" />
 			<MoveTo XYZ="-129.4953, -30.09197, -135.3869"/>
-			<Grind GrindRef="SecondBoss" While="not GameObjectManager.GetObjectByNPCId(1533).CurrentHealth == 0"/> <!-- Fight second boss -->
+			<Grind GrindRef="SecondBoss" While="GetInstanceTodo(2) == 0"/> <!-- Fight second boss -->
 			<If Condition="&openchest; == 1">
 				<RunCode name="OpenChest" />
 			</If>			
