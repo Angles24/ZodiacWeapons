@@ -54,7 +54,8 @@ I'm in the process of changing over all the movement in this profile to be handl
 - Leve "Someone's In The Doghouse" must be done manually. The profile will pick it up and stop at the place for you to do it. Load the Start profile after.
 - [X] Book of Netherfall I *
 - The Ceruleum Road is triggered by speaking to the Wary Merchant at Camp Bluefog, Northern Thanalan (x21,y29). Start this manually.
-- [X] Book of Skywind I
+- [X] Book of Skywind I *
+- Fate "Suprise" is kinda hard for the bot to solo. It lets the NPCs die and then the Fate fails. Might need to do this manually.
 - [X] Book of Skywind II
 - [X] Book of Skyearth I
 - [ ] Purchase Animus from Jalzahn
