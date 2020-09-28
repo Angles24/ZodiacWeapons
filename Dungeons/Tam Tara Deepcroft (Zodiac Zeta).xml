@@ -7,7 +7,7 @@
 
 <!DOCTYPE Profile [
 <!-- Profile Settings -->
-<!ENTITY openchest "1">
+<!ENTITY openchest "0">
 ]>
 <Profile>
   <Name>The Tam-Tara Deepcroft</Name>
