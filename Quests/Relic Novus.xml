@@ -107,7 +107,7 @@
 				<GetTo ZoneId="156" XYZ="63.40987, 31.12387, -735.2782"/>
 				<!-- Superior Enchanted Ink -->										   
 				<BuyShopExchangeCurrency NpcId= "1008119" ItemId="7885" SelectString="2" Count="3"/>
-		</If>	
+			</If>	
 			<If condition="HasAtLeast(7885,3)">
 			  <GetTo ZoneId="141" XYZ="106.7625, 30.98244, -384.8175"/>
 			  <TurnIn NpcId="1009151" XYZ="105.3329, 30.90404, -385.153" QuestId="66998" StepId="255"/>
@@ -148,6 +148,11 @@
 			</If>			
 		</If>		
 		<If Condition="IsQuestCompleted(67000) and HasAtLeast(7883,75)">
+			<If condition="not HasAtLeast(7885,3)">
+				<GetTo ZoneId="156" XYZ="63.40987, 31.12387, -735.2782"/>
+				<!-- Superior Enchanted Ink -->										   
+				<BuyShopExchangeCurrency NpcId= "1008119" ItemId="7885" SelectString="2" Count="3"/>
+			</If>		
 			<LisbethTravel Area="Central Thanalan" Position="106.6467, 30.97388, -384.5325"/>
 			<If Condition="ClassName == ((ClassJobType.Bard))"> 
 				<RunCode name="BuyBRDSphereScroll"/>
