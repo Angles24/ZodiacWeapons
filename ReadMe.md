@@ -80,7 +80,8 @@ I'm in the process of changing over all the movement in this profile to be handl
 - [X] A Ponze of Flesh
 - [X] Labor of Love
 - [X] Mtheod in His Malice
-- [X] A Treasured Mother *
+- [X] A Treasured Mother
+- Hullbreaker Isle: You will need to kill the final boss manually, then restart the Start.xml profile.
 - [X] His Dark Materia
 - [ ] Purchase Zodiac Weapon
 
