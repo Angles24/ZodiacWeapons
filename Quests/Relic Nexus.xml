@@ -172,7 +172,10 @@
 				<If Condition="&ifrit; == 1">	
 					<LLoadProfile Path="../Dungeons/The Bowl of Embers - SoulGlazed.xml"/>
 				</If>
-			</If>		
+			</If>
+			<If Condition="NovusLightLevel() &gt; 2000">
+				<LisbethTravel Area="North Shroud" Position="408.0551, -4.836707, -87.85005"/>
+			</If>			
 		</If>
 	
 		
@@ -181,6 +184,12 @@
 		<CodeChunk Name="SoulGlazed">
 		  <![CDATA[ 
 			Core.OverlayManager.AddToast(() => "Talk to Jalzahn and have him Soulglaze your relic then start this profile again.", TimeSpan.FromMilliseconds(25000), System.Windows.Media.Color.FromRgb(29,213,226), System.Windows.Media.Color.FromRgb(13,106,175), new System.Windows.Media.FontFamily("Gautami"));
+			await Coroutine.Sleep(60000);
+		  ]]>
+		</CodeChunk>
+		<CodeChunk Name="LightComplete">
+		  <![CDATA[ 
+			Core.OverlayManager.AddToast(() => "Talk to Jalzahn purchase Nexus weapon.", TimeSpan.FromMilliseconds(25000), System.Windows.Media.Color.FromRgb(29,213,226), System.Windows.Media.Color.FromRgb(13,106,175), new System.Windows.Media.FontFamily("Gautami"));
 			await Coroutine.Sleep(60000);
 		  ]]>
 		</CodeChunk>		

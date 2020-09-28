@@ -108,7 +108,10 @@
 			<RunCode name="LightFarm"/>	
 			<WaitTimer WaitTime="10"/>
 		</If>
-	</While>	
+	</While>
+	<If Condition="NovusLightLevel() &gt; 2000">
+		<LLoadProfile Path="../Start.xml"/>
+	</If>	
  </Order>
   <GrindAreas>
 	<GrindArea name="Garuda">
