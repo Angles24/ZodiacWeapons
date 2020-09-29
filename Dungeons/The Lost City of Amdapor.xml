@@ -29,7 +29,7 @@
       <TurnIn QuestId="66925" NpcId="1008543" XYZ="-360.0062, 1.264419, 459.8306"/>
     </If> 
  	<If Condition="not IsOnMap(363)">
-		<RunCode Name="QueueLostCity"/>
+		<LLJoinDuty DutyId="22"/>
 	</If>
 	<If Condition="IsOnMap(363)">
 		<!-- Clear Halcyon Court 0/1 -->
@@ -196,9 +196,10 @@
 			<If Condition="&openchest; == 1">
 				<RunCode name="OpenChest" />
 			</If>
-			<MoveTo XYZ="-6.668615,-279.99,-16.12109"/> <!-- Move to exit -->
-			<RunCode name="ExitDuty"/>
-			<WaitTimer WaitTime="10"/>
+			<If Condition="IsOnMap(363)">
+				<WaitTimer WaitTime="5" />
+				<LLLeaveDuty/>
+			</If>
 			<LLoadProfile Path="../Start.xml"/>
 		</If>			
 	</If>	
@@ -308,60 +309,6 @@
 			MovementManager.MoveStop();
 		]]>
 	</CodeChunk>	
-	<CodeChunk Name="QueueLostCity">
-		<![CDATA[ 
-           Logging.WriteDiagnostic("Queuing for Dungeon");
-		GameSettingsManager.JoinWithUndersizedParty = true;
-           DutyManager.Queue(DataManager.InstanceContentResults[22]);
-           await Coroutine.Wait(5000, () => (DutyManager.QueueState == QueueState.InQueue || DutyManager.QueueState == QueueState.JoiningInstance));
-
-           Logging.WriteDiagnostic("Queued for Dungeon");
-
-           await Coroutine.Wait(10000, () => (DutyManager.QueueState == QueueState.JoiningInstance));
-			
-           await Coroutine.Wait(10000, () => (RaptureAtkUnitManager.GetWindowByName("ContentsFinderConfirm") != null));
-
-           Logging.WriteDiagnostic("Commencing");
-           DutyManager.Commence();
-           Logging.WriteDiagnostic("Waiting for Loading");
-           await Coroutine.Wait(10000, () => CommonBehaviors.IsLoading || QuestLogManager.InCutscene);
-			
-           if (CommonBehaviors.IsLoading)
-           {
-               await Coroutine.Wait(-1, () => !CommonBehaviors.IsLoading);
-           }
-
-           if (QuestLogManager.InCutscene)
-           {
-               TreeRoot.StatusText = "InCutscene";
-               if (ff14bot.RemoteAgents.AgentCutScene.Instance != null)
-               {
-                   ff14bot.RemoteAgents.AgentCutScene.Instance.PromptSkip();
-                   await Coroutine.Wait(250, () => SelectString.IsOpen);
-                   if (SelectString.IsOpen)
-                       SelectString.ClickSlot(0);
-               }
-           }
-
-           Logging.WriteDiagnostic("Should be in duty");
-		   
-           var director = ((ff14bot.Directors.InstanceContentDirector) DirectorManager.ActiveDirector);
-           if (director !=null)
-		   {
-               if (director.TimeLeftInDungeon >= new TimeSpan(1,30,0))
-               {
-				   Logging.WriteDiagnostic("Barrier up");
-                   await Coroutine.Wait(30000, () => director.TimeLeftInDungeon < new TimeSpan(1,29,58));
-               }
-		   }
-		   else
-		   {
-			Logging.WriteDiagnostic("Director is null");
-		   }
-			   
-	      Logging.WriteDiagnostic("Should be ready");
-		]]>
-	</CodeChunk>
     <CodeChunk Name="Camp_Tranquil_Jump">
       <![CDATA[ 
         if (Core.Player.IsMounted)

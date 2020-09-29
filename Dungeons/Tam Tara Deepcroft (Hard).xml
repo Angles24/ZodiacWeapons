@@ -30,7 +30,7 @@
       <TalkTo NpcId="1001173" XYZ="-113.2372, -39.73311, 338.6434" QuestId="67060" StepId="2"/>
     </If>
  	<If Condition="not IsOnMap(373)">
-		<RunCode Name="QueueTamTaraHard"/>
+		<LLJoinDuty DutyId="24"/>
 	</If>
 	<If Condition="IsOnMap(373)">
 		<!-- Clear the interring chamber 0/1 -->
@@ -100,9 +100,10 @@
 			<If Condition="&openchest; == 1">
 				<RunCode name="OpenChest" />
 			</If>
-			<While Condition="IsOnMap(373)">
+			<If Condition="IsOnMap(373)">
+				<WaitTimer WaitTime="5" />
 				<LLLeaveDuty/>
-			</While>	
+			</If>	
 			<If Condition="HasQuest(67060) and not IsQuestCompleted(67060) and GetQuestStep(67060) == 255">
 			  <GetTo ZoneId="148" XYZ="-95.1187, -40.04695, 322.5074"/>
 			  <TurnIn QuestId="67060" NpcId="1009367" XYZ="-94.52972, -40.05186, 324.5747"/>
@@ -183,60 +184,6 @@
 		}
 		]]>
 	</CodeChunk>	
-	<CodeChunk Name="QueueTamTaraHard">
-		<![CDATA[ 
-           Logging.WriteDiagnostic("Queuing for Dungeon");
-		GameSettingsManager.JoinWithUndersizedParty = true;
-           DutyManager.Queue(DataManager.InstanceContentResults[24]);
-           await Coroutine.Wait(5000, () => (DutyManager.QueueState == QueueState.InQueue || DutyManager.QueueState == QueueState.JoiningInstance));
-
-           Logging.WriteDiagnostic("Queued for Dungeon");
-
-           await Coroutine.Wait(10000, () => (DutyManager.QueueState == QueueState.JoiningInstance));
-			
-           await Coroutine.Wait(10000, () => (RaptureAtkUnitManager.GetWindowByName("ContentsFinderConfirm") != null));
-
-           Logging.WriteDiagnostic("Commencing");
-           DutyManager.Commence();
-           Logging.WriteDiagnostic("Waiting for Loading");
-           await Coroutine.Wait(10000, () => CommonBehaviors.IsLoading || QuestLogManager.InCutscene);
-			
-           if (CommonBehaviors.IsLoading)
-           {
-               await Coroutine.Wait(-1, () => !CommonBehaviors.IsLoading);
-           }
-
-           if (QuestLogManager.InCutscene)
-           {
-               TreeRoot.StatusText = "InCutscene";
-               if (ff14bot.RemoteAgents.AgentCutScene.Instance != null)
-               {
-                   ff14bot.RemoteAgents.AgentCutScene.Instance.PromptSkip();
-                   await Coroutine.Wait(250, () => SelectString.IsOpen);
-                   if (SelectString.IsOpen)
-                       SelectString.ClickSlot(0);
-               }
-           }
-
-           Logging.WriteDiagnostic("Should be in duty");
-		   
-           var director = ((ff14bot.Directors.InstanceContentDirector) DirectorManager.ActiveDirector);
-           if (director !=null)
-		   {
-               if (director.TimeLeftInDungeon >= new TimeSpan(1,30,0))
-               {
-				   Logging.WriteDiagnostic("Barrier up");
-                   await Coroutine.Wait(30000, () => director.TimeLeftInDungeon < new TimeSpan(1,29,58));
-               }
-		   }
-		   else
-		   {
-			Logging.WriteDiagnostic("Director is null");
-		   }
-			   
-	      Logging.WriteDiagnostic("Should be ready");
-		]]>
-	</CodeChunk>
  		<CodeChunk Name="OmnilexNovus">
 		<![CDATA[ 
 			BagSlot EquipSlot = ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand];

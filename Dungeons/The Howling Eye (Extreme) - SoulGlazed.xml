@@ -16,7 +16,7 @@
   <Order>
 	<While Condition="NovusLightLevel() &lt; 2000">
 		<If Condition="not IsOnMap(294)">
-			<RunCode Name="QueueGarudaEx"/>
+			<LLJoinDuty DutyId="65" trial="true"/>
 		</If>
 		<If Condition="IsOnMap(294)">
 			<If Condition="ClassName == ((ClassJobType.Bard))"> 
@@ -101,12 +101,13 @@
 			<If Condition="&openchest; == 1">
 				<RunCode name="OpenChest" />
 			</If>
-			<If Condition="GameObjectManager.GetObjectByNPCId(2000275).IsVisible">
-				<MoveTo XYZ="1.078937,-2.041544,-18.36319"/> <!-- Move to Exit -->
-				<RunCode name="ExitDuty"/>
+			<While Condition="IsOnMap(202)">
+				<WaitTimer WaitTime="3" />
+				<LLLeaveDuty/>
+			</While>
+			<If Condition="NovusLightLevel() &lt; 2000">
+				<RunCode name="LightLevel"/>
 			</If>
-			<RunCode name="LightFarm"/>	
-			<WaitTimer WaitTime="10"/>
 		</If>
 	</While>
 	<If Condition="NovusLightLevel() == 2000">
@@ -126,12 +127,12 @@
 	</GrindArea>
   </GrindAreas>		
   <CodeChunks>
- 		<CodeChunk Name="LightFarm">
+ 		<CodeChunk Name="LightLevel">
 		  <![CDATA[ 
-			Core.OverlayManager.AddToast(() => "Make sure to check your light level!", TimeSpan.FromMilliseconds(25000), System.Windows.Media.Color.FromRgb(29,213,226), System.Windows.Media.Color.FromRgb(13,106,175), new System.Windows.Media.FontFamily("Gautami"));
-			await Coroutine.Sleep(26000);
+			ff14bot.Helpers.Logging.Write(string.Format("Current Novus LightLevel: {0}", (InventoryManager.EquippedItems.First().SpiritBond * 100)));
+			await Coroutine.Sleep(5000);
 		  ]]>
-		</CodeChunk> 
+		</CodeChunk>
 	<CodeChunk Name="ExitDuty">
 		<![CDATA[
 			ff14bot.Managers.GameObjectManager.GetObjectByNPCId(2000275).Interact();
@@ -140,60 +141,6 @@
 			await Coroutine.Sleep(3000);
       ]]>
 	</CodeChunk>		
-	<CodeChunk Name="QueueGarudaEx">
-		<![CDATA[ 
-           Logging.WriteDiagnostic("Queuing for Dungeon");
-		GameSettingsManager.JoinWithUndersizedParty = true;
-           DutyManager.Queue(DataManager.InstanceContentResults[65]);
-           await Coroutine.Wait(5000, () => (DutyManager.QueueState == QueueState.InQueue || DutyManager.QueueState == QueueState.JoiningInstance));
-
-           Logging.WriteDiagnostic("Queued for Dungeon");
-
-           await Coroutine.Wait(10000, () => (DutyManager.QueueState == QueueState.JoiningInstance));
-			
-           await Coroutine.Wait(10000, () => (RaptureAtkUnitManager.GetWindowByName("ContentsFinderConfirm") != null));
-
-           Logging.WriteDiagnostic("Commencing");
-           DutyManager.Commence();
-           Logging.WriteDiagnostic("Waiting for Loading");
-           await Coroutine.Wait(10000, () => CommonBehaviors.IsLoading || QuestLogManager.InCutscene);
-			
-           if (CommonBehaviors.IsLoading)
-           {
-               await Coroutine.Wait(-1, () => !CommonBehaviors.IsLoading);
-           }
-
-           if (QuestLogManager.InCutscene)
-           {
-               TreeRoot.StatusText = "InCutscene";
-               if (ff14bot.RemoteAgents.AgentCutScene.Instance != null)
-               {
-                   ff14bot.RemoteAgents.AgentCutScene.Instance.PromptSkip();
-                   await Coroutine.Wait(250, () => SelectString.IsOpen);
-                   if (SelectString.IsOpen)
-                       SelectString.ClickSlot(0);
-               }
-           }
-
-           Logging.WriteDiagnostic("Should be in duty");
-		   
-           var director = ((ff14bot.Directors.InstanceContentDirector) DirectorManager.ActiveDirector);
-           if (director !=null)
-		   {
-                if (director.TimeLeftInDungeon >= new TimeSpan(1,0,0))
-               {
-                   Logging.WriteDiagnostic("Barrier up");
-                   await Coroutine.Wait(30000, () => director.TimeLeftInDungeon < new TimeSpan(0,59,58));
-               }
-		   }
-		   else
-		   {
-			Logging.WriteDiagnostic("Director is null");
-		   }
-			   
-	      Logging.WriteDiagnostic("Should be ready");
-		]]>
-	</CodeChunk>
 	<CodeChunk name="OpenChest">
 		<![CDATA[    
 		if (GameObjectManager.GetObjectsOfType<Treasure>().Where(r => r.Distance() < 50 && (r.Name == "Treasure Coffer" || r.Name == "treasure coffer")).Any())

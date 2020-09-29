@@ -29,7 +29,7 @@
       <TalkTo NpcId="1005064" XYZ="335.0117, 10.59511, 3.92157" QuestId="65630" StepId="2"/>
     </If>  
 	<If Condition="not IsOnMap(387)">
-		<RunCode Name="QueueSastashaHard"/>
+		<LLJoinDuty DutyId="28"/>
 	</If> 
 	<If Condition="IsOnMap(387)">
 		<!-- Defeat Karlabos 0/1 -->
@@ -124,7 +124,10 @@
 			<If Condition="&openchest; == 1">
 				<RunCode name="OpenChest" />
 			</If>
-			<RunCode name="LeaveDuty"/>
+			<While Condition="IsOnMap(387)">
+				<WaitTimer WaitTime="5" />
+				<LLLeaveDuty/>
+			</While>
 			<If Condition="HasQuest(65630) and not IsQuestCompleted(65630) and GetQuestStep(65630) == 4">
 			  <GetTo ZoneId="138" XYZ="336.0192, 10.48926, 5.162549"/>
 			  <TalkTo NpcId="1005064" XYZ="335.0117, 10.59511, 3.92157" QuestId="65630" StepId="4"/>
