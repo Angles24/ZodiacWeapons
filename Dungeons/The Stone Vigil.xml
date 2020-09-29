@@ -149,14 +149,12 @@
 				</If>
 			</If>			
 			<MoveTo XYZ="-0.0006421171, 0.04041038, -241.1199" usemesh="false"/> <!-- Move into final boss room -->
-			<Grind GrindRef="Isgebind" While="GameObjectManager.GetObjectByNPCId(1680)"/> <!-- Fight Isgebind -->
+			<Grind GrindRef="Isgebind" While="not GameObjectManager.GetObjectByNPCId(1680).CurrentHealth == 0"/> <!-- Fight Isgebind -->
 			<If Condition="&openchest; == 1">
 				<RunCode name="OpenChest" />
 			</If>		
-			<If Condition="IsOnMap(168)">
-				<WaitTimer WaitTime="5" />
-				<LLLeaveDuty/>
-			</If>
+			<WaitTimer WaitTime="10" />
+			<LLLeaveDuty/>
 			<LLoadProfile Path="../Start.xml"/>
 		</If>		
 	</If>	

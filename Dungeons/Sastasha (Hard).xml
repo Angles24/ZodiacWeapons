@@ -124,10 +124,8 @@
 			<If Condition="&openchest; == 1">
 				<RunCode name="OpenChest" />
 			</If>
-			<While Condition="IsOnMap(387)">
-				<WaitTimer WaitTime="5" />
-				<LLLeaveDuty/>
-			</While>
+			<WaitTimer WaitTime="10" />
+			<LLLeaveDuty/>
 			<If Condition="HasQuest(65630) and not IsQuestCompleted(65630) and GetQuestStep(65630) == 4">
 			  <GetTo ZoneId="138" XYZ="336.0192, 10.48926, 5.162549"/>
 			  <TalkTo NpcId="1005064" XYZ="335.0117, 10.59511, 3.92157" QuestId="65630" StepId="4"/>

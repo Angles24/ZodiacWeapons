@@ -166,15 +166,13 @@
 				</If>
 			</If>			
 			<Grind GrindRef="Anantaboga" While="not GameObjectManager.GetObjectByNPCId(1696).CurrentHealth == 0"/> <!-- Fight final boss -->
-		</If>
-		<MoveTo XYZ="-12.46667,48.28507,-0.01531982"/> <!-- Move to chest -->
 			<If Condition="&openchest; == 1">
 				<RunCode name="OpenChest" />
 			</If>
-		<While Condition="IsOnMap(167)">
+			<WaitTimer WaitTime="10" />
 			<LLLeaveDuty/>
-		</While>
-		<LLoadProfile Path="../Start.xml"/>
+			<LLoadProfile Path="../Start.xml"/>
+		</If>
 	</If>	
   </Order>
   <GrindAreas>

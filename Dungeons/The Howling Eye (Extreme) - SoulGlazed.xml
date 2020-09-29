@@ -101,10 +101,8 @@
 			<If Condition="&openchest; == 1">
 				<RunCode name="OpenChest" />
 			</If>
-			<While Condition="IsOnMap(202)">
-				<WaitTimer WaitTime="3" />
-				<LLLeaveDuty/>
-			</While>
+			<WaitTimer WaitTime="10" />
+			<LLLeaveDuty/>
 			<If Condition="NovusLightLevel() &lt; 2000">
 				<RunCode name="LightLevel"/>
 			</If>

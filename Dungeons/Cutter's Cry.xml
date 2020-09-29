@@ -178,10 +178,8 @@
 				<RunCode name="OpenChest" />
 			</If>
 			<MoveTo XYZ="-180.6612,-4.240662,-222.7976" />
-			<While Condition="IsOnMap(170)">
-				<WaitTimer WaitTime="5" />
-				<LLLeaveDuty/>
-			</If>
+			<WaitTimer WaitTime="10" />
+			<LLLeaveDuty/>
 			<LLoadProfile Path="../Start.xml"/>	
 		</If>			
 				

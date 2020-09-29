@@ -229,10 +229,8 @@
 			<If Condition="&openchest; == 1">
 				<RunCode name="OpenChest" />
 			</If>
-			<If Condition="IsOnMap(169)">
-				<WaitTimer WaitTime="5" />
-				<LLLeaveDuty/>
-			</If>
+			<WaitTimer WaitTime="10" />
+			<LLLeaveDuty/>
 			<LLoadProfile Path="../Start.xml"/>			
 		</If>			
 	</If>
