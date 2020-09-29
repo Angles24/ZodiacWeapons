@@ -100,7 +100,9 @@
 			<If Condition="&openchest; == 1">
 				<RunCode name="OpenChest" />
 			</If>
-			<RunCode name="LeaveDuty"/>
+			<While Condition="IsOnMap(373)">
+				<LLLeaveDuty/>
+			</While>	
 			<If Condition="HasQuest(67060) and not IsQuestCompleted(67060) and GetQuestStep(67060) == 255">
 			  <GetTo ZoneId="148" XYZ="-95.1187, -40.04695, 322.5074"/>
 			  <TurnIn QuestId="67060" NpcId="1009367" XYZ="-94.52972, -40.05186, 324.5747"/>
