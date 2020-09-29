@@ -714,7 +714,7 @@
 		</If>
 		
 		<!-- Zodiac Zeta -->
-		<If condition="HasAtLeast(9498,1)">
+		<If condition="HasAtLeast(9496,1)">
 			<LLoadProfile Path="Zodiac Zeta.xml"/>
 		</If>		
 		
