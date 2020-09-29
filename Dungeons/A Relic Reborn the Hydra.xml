@@ -9,12 +9,15 @@
   <BehaviorDirectory></BehaviorDirectory>
   <Order>
  	<If Condition="not IsOnMap(162)">
-		<RunCode Name="QueueRelicHydra"/>
+		<LLJoinDuty DutyId="75" trial="true"/>
 	</If>
 	<If Condition="IsOnMap(162)">
 		<Grind GrindRef="Hydra" While="GameObjectManager.GetObjectByNPCId(2161).CurrentHealth == 0"/> <!-- Kill Hydra -->
 		<MoveTo XYZ="-279.7734,17.23317,19.43468"/> <!-- Move to Exit -->
-		<RunCode name="LeaveDuty"/>
+		<While Condition="IsOnMap(162)">
+			<WaitTimer WaitTime="5" />
+			<LLLeaveDuty/>
+		</While>	
 		<LLoadProfile Path="../Start.xml"/>
 	</If>	
   </Order>

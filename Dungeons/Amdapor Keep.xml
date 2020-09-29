@@ -15,7 +15,7 @@
   <BehaviorDirectory></BehaviorDirectory>
   <Order>
  	<If Condition="not IsOnMap(167)">
-		<RunCode Name="QueueAmdapor"/>
+		<LLJoinDuty DutyId="14"/>
 	</If>
 	<If Condition="IsOnMap(167)">
 		<!-- Clear the Gier Hall 0/1 -->
@@ -170,8 +170,10 @@
 		<MoveTo XYZ="-12.46667,48.28507,-0.01531982"/> <!-- Move to chest -->
 			<If Condition="&openchest; == 1">
 				<RunCode name="OpenChest" />
-			</If>	
-		<RunCode name="LeaveDuty"/>
+			</If>
+		<While Condition="IsOnMap(167)">
+			<LLLeaveDuty/>
+		</While>
 		<LLoadProfile Path="../Start.xml"/>
 	</If>	
   </Order>

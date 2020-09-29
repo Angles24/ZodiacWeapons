@@ -14,7 +14,7 @@
   <BehaviorDirectory></BehaviorDirectory>
   <Order>
 	<If Condition="not IsOnMap(161)">
-		<RunCode Name="QueueCopperbell"/>
+		<LLJoinDuty DutyId="3"/>
 	</If>
 	<If Condition="IsOnMap(161)">
 		<!-- Clear shaft B4 of rubble 0/1 -->

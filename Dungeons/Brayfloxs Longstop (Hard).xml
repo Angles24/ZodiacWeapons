@@ -32,7 +32,7 @@
       <TurnIn QuestId="66947" NpcId="1006268" XYZ="-334.6151, 69.69995, 153.7957"/>
     </If> 
 	<If Condition="not IsOnMap(362)">
-		<RunCode Name="QueueBrayFlox"/>
+		<LLJoinDuty DutyId="20" />
 	</If>
 	<If Condition="IsOnMap(362)">
 
@@ -223,8 +223,11 @@
 			<Grind GrindRef="FinalBoss" While="GetInstanceTodo(5) == 0" /> <!-- Kill second boss -->			
 			<If Condition="&openchest; == 1">
 				<RunCode name="OpenChest" />
-			</If>	
-			<RunCode Name="LeaveDuty"/>
+			</If>
+			<While Condition="IsOnMap(362)">
+				<WaitTimer WaitTime="5" />
+				<LLLeaveDuty/>
+			</While>
 			<LLoadProfile Path="../Start.xml"/>
 		</If>	
 	</If>	  

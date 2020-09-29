@@ -15,9 +15,9 @@
   <Name>The Bowl of Embers</Name>
   <BehaviorDirectory></BehaviorDirectory>
   <Order>
-	<While Condition="NovusLightLevel() &lt; 2000"> 
+	<While Condition="NovusLightLevel() &lt; 2000">
 		<If Condition="not IsOnMap(202)">
-			<RunCode Name="QueueIfrit"/>
+			<LLJoinDuty DutyId="56" trial="true"/>
 		</If>
 		<If Condition="IsOnMap(202)">
 			<If Condition="ClassName == ((ClassJobType.Bard))"> 
@@ -97,12 +97,14 @@
 					<WaitTimer WaitTime="3" />
 				</If>
 			</If>
+			<MoveTo XYZ="-13.12728, 0, -8.592924" usemesh="false" />
 			<Grind GrindRef="Ifrit" While="not GameObjectManager.GetObjectByNPCId(1185).CurrentHealth == 0"/> <!-- Kill Ifrit -->	
 			<If Condition="&openchest; == 1">
 				<RunCode name="OpenChest" />
 			</If>
 			<While Condition="IsOnMap(202)">
-				<RunCode name="LeaveDuty"/>
+				<WaitTimer WaitTime="2" />
+				<LLLeaveDuty/>
 			</While>							
 			<If Condition="NovusLightLevel() &lt; 2000">
 				<RunCode name="LightLevel"/>

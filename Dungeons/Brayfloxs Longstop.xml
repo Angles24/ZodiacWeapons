@@ -14,7 +14,7 @@
   <BehaviorDirectory></BehaviorDirectory>
   <Order>
 	<If Condition="not IsOnMap(158)">
-		<RunCode Name="QueueBrayFlox"/>
+		<LLJoinDuty DutyId="8"/>
 	</If>
 	<If Condition="IsOnMap(158)">
 		<!-- Meet a Longstop ally 0/1 -->
@@ -169,7 +169,10 @@
 			<If Condition="&openchest; == 1">
 				<RunCode name="OpenChest" />
 			</If>
-			<RunCode name="LeaveDuty"/>
+			<While Condition="IsOnMap(158)">
+				<WaitTimer WaitTime="5" />
+				<LLLeaveDuty/>
+			</While>	
 			<LLoadProfile Path="../Start.xml"/>
 		</If>				
 	</If>
