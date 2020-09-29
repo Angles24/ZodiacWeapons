@@ -152,9 +152,8 @@
 			<Grind GrindRef="Isgebind" While="GameObjectManager.GetObjectByNPCId(1680)"/> <!-- Fight Isgebind -->
 			<If Condition="&openchest; == 1">
 				<RunCode name="OpenChest" />
-			</If>
-			<MoveTo XYZ="0.004403681,0.07694488,-268.7161"/> <!-- Move to Exit -->			
-			<RunCode name="ExitDuty"/>
+			</If>		
+			<RunCode name="LeaveDuty"/>
 			<WaitTimer WaitTime="10"/>
 			<LLoadProfile Path="../Start.xml"/>
 		</If>		
@@ -201,6 +200,16 @@
 			await Coroutine.Sleep(3000);
       ]]>
 	</CodeChunk>
+	<CodeChunk Name="LeaveDuty">
+		<![CDATA[
+			ff14bot.Managers.DutyManager.LeaveActiveDuty();
+			await Coroutine.Wait(20000, () => CommonBehaviors.IsLoading);
+			if (CommonBehaviors.IsLoading)
+			{
+				await Coroutine.Wait(-1, () => !CommonBehaviors.IsLoading);
+			}
+		]]>
+	</CodeChunk>	
 	<CodeChunk name="OpenChest">
 		<![CDATA[    
 		if (GameObjectManager.GetObjectsOfType<Treasure>().Where(r => r.Distance() < 50 && (r.Name == "Treasure Coffer" || r.Name == "treasure coffer")).Any())

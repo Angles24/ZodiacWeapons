@@ -35,6 +35,7 @@
 	<If Condition="IsOnMap(373)">
 		<!-- Clear the interring chamber 0/1 -->
 		<If Condition="GetInstanceTodo(0) == 0">
+			<Log Message="Clear the interring chamber 0/1" />
 			<If Condition="ClassName == ((ClassJobType.Bard))"> 
 				<ChangeClass Job="Bard" />
 			</If>
@@ -65,7 +66,6 @@
 			<If Condition="ClassName == ((ClassJobType.WhiteMage))"> 
 					<ChangeClass Job="Whitemage" />
 			</If>			
-			<Log Message="Clear the interring chamber 0/1" />
 			<MoveTo XYZ="23.0666, 16.28374, 78.035" />
 			<Grind GrindRef="FirstBoss" while="GetInstanceTodo(0) == 0"/>
 			<If Condition="&openchest; == 1">
@@ -100,13 +100,11 @@
 			<If Condition="&openchest; == 1">
 				<RunCode name="OpenChest" />
 			</If>
-			<MoveTo XYZ="-42.77108,14.06775,-17.28852" />
-			<RunCode name="ExitDuty"/>
+			<RunCode name="LeaveDuty"/>
 			<If Condition="HasQuest(67060) and not IsQuestCompleted(67060) and GetQuestStep(67060) == 255">
 			  <GetTo ZoneId="148" XYZ="-95.1187, -40.04695, 322.5074"/>
 			  <TurnIn QuestId="67060" NpcId="1009367" XYZ="-94.52972, -40.05186, 324.5747"/>
 			</If>			
-			<WaitTimer WaitTime="10"/>
 			<LLoadProfile Path="../Start.xml"/>			
 		</If>
 	</If>	
@@ -153,6 +151,16 @@
 			ff14bot.RemoteWindows.SelectYesno.ClickYes();
 			await Coroutine.Sleep(3000);
       ]]>
+	</CodeChunk>
+		<CodeChunk Name="LeaveDuty">
+		<![CDATA[
+			ff14bot.Managers.DutyManager.LeaveActiveDuty();
+			await Coroutine.Wait(20000, () => CommonBehaviors.IsLoading);
+			if (CommonBehaviors.IsLoading)
+			{
+				await Coroutine.Wait(-1, () => !CommonBehaviors.IsLoading);
+			}
+		]]>
 	</CodeChunk>
 	<CodeChunk name="OpenChest">
 		<![CDATA[    

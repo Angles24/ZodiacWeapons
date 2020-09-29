@@ -178,8 +178,7 @@
 				<RunCode name="OpenChest" />
 			</If>
 			<MoveTo XYZ="-180.6612,-4.240662,-222.7976" />
-			<RunCode name="ExitDuty"/>
-			<WaitTimer WaitTime="10"/>
+			<RunCode name="LeaveDuty"/>
 			<LLoadProfile Path="../Start.xml"/>	
 		</If>			
 				
@@ -285,6 +284,16 @@
 			ff14bot.RemoteWindows.SelectYesno.ClickYes();
 			await Coroutine.Sleep(3000);
       ]]>
+	</CodeChunk>
+	<CodeChunk Name="LeaveDuty">
+		<![CDATA[
+			ff14bot.Managers.DutyManager.LeaveActiveDuty();
+			await Coroutine.Wait(20000, () => CommonBehaviors.IsLoading);
+			if (CommonBehaviors.IsLoading)
+			{
+				await Coroutine.Wait(-1, () => !CommonBehaviors.IsLoading);
+			}
+		]]>
 	</CodeChunk>	
 	<CodeChunk Name="ChangeZone">
 		<![CDATA[

@@ -19,6 +19,7 @@
 	<If Condition="IsOnMap(164)">
 		<!-- Cultist orbs destroyed 0/4 -->
 		<If Condition="GetInstanceTodo(0) == 0">
+			<Log Message="Cultist orbs destroyed 0/4" />		
 			<If Condition="ClassName == ((ClassJobType.Bard))"> 
 				<ChangeClass Job="Bard" />
 			</If>
@@ -49,7 +50,6 @@
 			<If Condition="ClassName == ((ClassJobType.WhiteMage))"> 
 					<ChangeClass Job="Whitemage" />
 			</If>			
-			<Log Message="Cultist orbs destroyed 0/4" />
 			<MoveTo XYZ="-0.1274785, 29.54992, -16.90282"/> <!-- Move to first boss room -->
 			<While Condition="GetInstanceTodo(0) == 0">
 				<MoveTo XYZ="-8.080134, 30.82913, -16.51366" distance="2"/> <!-- Move to first orb -->			
@@ -219,8 +219,7 @@
 			<If Condition="&openchest; == 1">
 				<RunCode name="OpenChest" />
 			</If>			
-			<RunCode name="ExitDuty"/>
-			<WaitTimer WaitTime="10"/>
+			<RunCode name="LeaveDuty"/>
 			<LLoadProfile Path="../Start.xml"/>
 		</If>			
 	</If>	
@@ -283,6 +282,16 @@
 			await Coroutine.Sleep(3000);
       ]]>
 	</CodeChunk>
+	<CodeChunk Name="LeaveDuty">
+		<![CDATA[
+			ff14bot.Managers.DutyManager.LeaveActiveDuty();
+			await Coroutine.Wait(20000, () => CommonBehaviors.IsLoading);
+			if (CommonBehaviors.IsLoading)
+			{
+				await Coroutine.Wait(-1, () => !CommonBehaviors.IsLoading);
+			}
+		]]>
+	</CodeChunk>	
 	<CodeChunk name="OpenChest">
 		<![CDATA[    
 		if (GameObjectManager.GetObjectsOfType<Treasure>().Where(r => r.Distance() < 50 && (r.Name == "Treasure Coffer" || r.Name == "treasure coffer")).Any())

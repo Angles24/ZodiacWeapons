@@ -20,6 +20,7 @@
 	<If Condition="IsOnMap(167)">
 		<!-- Clear the Gier Hall 0/1 -->
 		<If Condition="not GetInstanceTodo(0) == 1">
+			<Log Message="Clear the Gier Hall 0/1" />
 			<If Condition="ClassName == ((ClassJobType.Bard))"> 
 				<ChangeClass Job="Bard" />
 			</If>
@@ -49,8 +50,7 @@
 			</If>
 			<If Condition="ClassName == ((ClassJobType.WhiteMage))"> 
 					<ChangeClass Job="Whitemage" />
-			</If>			
-			<Log Message="Clear the Gier Hall 0/1" />
+			</If>						
 			<MoveTo XYZ="-196.265, -4.200005, 13.03519"/> <!-- Move to bridge -->
 			<MoveTo XYZ="-193.4538, -3.800007, 63.08482" usemesh="false"/> <!-- Move across bridge -->
 			<MoveTo XYZ="-153.0291, -4, 87.56704" usemesh="false"/>
@@ -171,9 +171,7 @@
 			<If Condition="&openchest; == 1">
 				<RunCode name="OpenChest" />
 			</If>	
-		<MoveTo XYZ="-12.46667,48.28507,-0.01531982"/> <!-- Move to Exit -->
-		<RunCode name="ExitDuty"/>
-		<WaitTimer WaitTime="10"/>
+		<RunCode name="LeaveDuty"/>
 		<LLoadProfile Path="../Start.xml"/>
 	</If>	
   </Order>
@@ -228,6 +226,16 @@
 			ff14bot.RemoteWindows.SelectYesno.ClickYes();
 			await Coroutine.Sleep(3000);
       ]]>
+	</CodeChunk>
+	<CodeChunk Name="LeaveDuty">
+		<![CDATA[
+			ff14bot.Managers.DutyManager.LeaveActiveDuty();
+			await Coroutine.Wait(20000, () => CommonBehaviors.IsLoading);
+			if (CommonBehaviors.IsLoading)
+			{
+				await Coroutine.Wait(-1, () => !CommonBehaviors.IsLoading);
+			}
+		]]>
 	</CodeChunk>	
 	<CodeChunk Name="ChangeZone">
 		<![CDATA[

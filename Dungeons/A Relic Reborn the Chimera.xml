@@ -10,8 +10,7 @@
 		<RunCode Name="QueueTheChimera"/>
 		<Grind GrindRef="Chimera" while="not GameObjectManager.GetObjectByNPCId(2162).CurrentHealth == 0"/> <!-- Defeat Dhorme Chimera -->
 		<MoveTo XYZ="556.0494,348.1025,-752.4357"/> <!-- Move to Exit -->
-		<RunCode Name="ExitDuty"/>
-		<WaitTimer WaitTime="10"/>
+		<RunCode Name="LeaveDuty"/>
 		<LLoadProfile Path="../Start.xml"/>
   </Order>
   <GrindAreas>
@@ -32,6 +31,16 @@
 			ff14bot.RemoteWindows.SelectYesno.ClickYes();
 			await Coroutine.Sleep(3000);
       ]]>
+	</CodeChunk>
+	<CodeChunk Name="LeaveDuty">
+		<![CDATA[
+			ff14bot.Managers.DutyManager.LeaveActiveDuty();
+			await Coroutine.Wait(20000, () => CommonBehaviors.IsLoading);
+			if (CommonBehaviors.IsLoading)
+			{
+				await Coroutine.Wait(-1, () => !CommonBehaviors.IsLoading);
+			}
+		]]>
 	</CodeChunk>
 	<CodeChunk Name="QueueTheChimera">
 		<![CDATA[ 
@@ -73,10 +82,10 @@
            var director = ((ff14bot.Directors.InstanceContentDirector) DirectorManager.ActiveDirector);
            if (director !=null)
 		   {
-               if (director.TimeLeftInDungeon >= new TimeSpan(1,30,0))
+                if (director.TimeLeftInDungeon >= new TimeSpan(1,0,0))
                {
-				   Logging.WriteDiagnostic("Barrier up");
-                   await Coroutine.Wait(30000, () => director.TimeLeftInDungeon < new TimeSpan(1,29,58));
+                   Logging.WriteDiagnostic("Barrier up");
+                   await Coroutine.Wait(30000, () => director.TimeLeftInDungeon < new TimeSpan(0,59,58));
                }
 		   }
 		   else

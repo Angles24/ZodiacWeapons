@@ -14,8 +14,7 @@
 	<If Condition="IsOnMap(162)">
 		<Grind GrindRef="Hydra" While="GameObjectManager.GetObjectByNPCId(2161).CurrentHealth == 0"/> <!-- Kill Hydra -->
 		<MoveTo XYZ="-279.7734,17.23317,19.43468"/> <!-- Move to Exit -->
-		<RunCode name="ExitDuty"/>
-		<WaitTimer WaitTime="10"/>
+		<RunCode name="LeaveDuty"/>
 		<LLoadProfile Path="../Start.xml"/>
 	</If>	
   </Order>
@@ -38,7 +37,17 @@
 			ff14bot.RemoteWindows.SelectYesno.ClickYes();
 			await Coroutine.Sleep(3000);
       ]]>
-	</CodeChunk>		
+	</CodeChunk>
+	<CodeChunk Name="LeaveDuty">
+		<![CDATA[
+			ff14bot.Managers.DutyManager.LeaveActiveDuty();
+			await Coroutine.Wait(20000, () => CommonBehaviors.IsLoading);
+			if (CommonBehaviors.IsLoading)
+			{
+				await Coroutine.Wait(-1, () => !CommonBehaviors.IsLoading);
+			}
+		]]>
+	</CodeChunk>	
 	<CodeChunk Name="QueueRelicHydra">
 		<![CDATA[ 
            Logging.WriteDiagnostic("Queuing for Dungeon");
@@ -79,10 +88,10 @@
            var director = ((ff14bot.Directors.InstanceContentDirector) DirectorManager.ActiveDirector);
            if (director !=null)
 		   {
-               if (director.TimeLeftInDungeon >= new TimeSpan(1,30,0))
+                if (director.TimeLeftInDungeon >= new TimeSpan(1,0,0))
                {
-				   Logging.WriteDiagnostic("Barrier up");
-                   await Coroutine.Wait(30000, () => director.TimeLeftInDungeon < new TimeSpan(1,29,58));
+                   Logging.WriteDiagnostic("Barrier up");
+                   await Coroutine.Wait(30000, () => director.TimeLeftInDungeon < new TimeSpan(0,59,58));
                }
 		   }
 		   else

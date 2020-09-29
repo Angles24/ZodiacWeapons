@@ -124,8 +124,7 @@
 			<If Condition="&openchest; == 1">
 				<RunCode name="OpenChest" />
 			</If>
-			<MoveTo XYZ="-326.1246,5.082251,320.0724" />
-			<RunCode name="ExitDuty"/>
+			<RunCode name="LeaveDuty"/>
 			<If Condition="HasQuest(65630) and not IsQuestCompleted(65630) and GetQuestStep(65630) == 4">
 			  <GetTo ZoneId="138" XYZ="336.0192, 10.48926, 5.162549"/>
 			  <TalkTo NpcId="1005064" XYZ="335.0117, 10.59511, 3.92157" QuestId="65630" StepId="4"/>
@@ -134,7 +133,6 @@
 			  <GetTo ZoneId="138" XYZ="208.6451, -24.99569, 242.1597"/>
 			  <TurnIn QuestId="65630" NpcId="1010359" XYZ="206.6833, -24.99666, 242.0538"/>
 			</If>			
-			<WaitTimer WaitTime="10"/>
 			<LLoadProfile Path="../Start.xml"/>			
 		</If>		
 	</If>
@@ -197,6 +195,16 @@
 			ff14bot.RemoteWindows.SelectYesno.ClickYes();
 			await Coroutine.Sleep(3000);
       ]]>
+	</CodeChunk>
+	<CodeChunk Name="LeaveDuty">
+		<![CDATA[
+			ff14bot.Managers.DutyManager.LeaveActiveDuty();
+			await Coroutine.Wait(20000, () => CommonBehaviors.IsLoading);
+			if (CommonBehaviors.IsLoading)
+			{
+				await Coroutine.Wait(-1, () => !CommonBehaviors.IsLoading);
+			}
+		]]>
 	</CodeChunk>	
 	<CodeChunk Name="ChangeZone">
 		<![CDATA[

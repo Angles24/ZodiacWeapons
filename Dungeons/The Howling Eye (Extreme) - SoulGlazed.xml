@@ -180,10 +180,10 @@
            var director = ((ff14bot.Directors.InstanceContentDirector) DirectorManager.ActiveDirector);
            if (director !=null)
 		   {
-               if (director.TimeLeftInDungeon >= new TimeSpan(1,30,0))
+                if (director.TimeLeftInDungeon >= new TimeSpan(1,0,0))
                {
-				   Logging.WriteDiagnostic("Barrier up");
-                   await Coroutine.Wait(30000, () => director.TimeLeftInDungeon < new TimeSpan(1,29,58));
+                   Logging.WriteDiagnostic("Barrier up");
+                   await Coroutine.Wait(30000, () => director.TimeLeftInDungeon < new TimeSpan(0,59,58));
                }
 		   }
 		   else
