@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Profile: Book of Skyearth I - FATEs
+  Authors: Zamphire
+  Code Credit: nishap
+-->
+
+<Profile>
+	<Name>Book of Skyearth I - FATEs</Name>
+	<BehaviorDirectory>..\..\Quest Behaviors</BehaviorDirectory>	
+	<Order>
+		
+		<!-- Book of Skyearth I FATE Task 1 - The Taste of Fear -->	
+		<If condition="not ZodiacManager.CurrentBook.FateTask1Completed">
+			<Log Message="Moving to FATE 'The Taste of Fear'" />
+			<LisbethTravel Area="Coerthas Central Highlands" Position="-850.8272, 225.6802, 21.82901"/>
+			<While Condition="not ZodiacManager.CurrentBook.FateTask1Completed">
+				<Log Message="Waiting on FATE 'The Taste of Fear'" />
+				<LLFate FateId="493" MinLevel="1" MaxLevel="50" while="ZodiacManager.CurrentBook.FateTask1Completed"/> <!-- The Taste of Fear -->		
+			</While>	
+		</If>
+
+		<!-- Book of Skyearth I FATE Task 2 - Schism -->	
+		<If condition="not ZodiacManager.CurrentBook.FateTask2Completed">
+			<Log Message="Moving to FATE 'Schism'" />
+			<LisbethTravel Area="Outer La Noscea" Position="198.0787, 63.1253, -272.2718"/>
+			<While Condition="not ZodiacManager.CurrentBook.FateTask2Completed">
+				<Log Message="Waiting on FATE 'Schism'" />
+				<LLFate FateId="587" MinLevel="1" MaxLevel="50" while="ZodiacManager.CurrentBook.FateTask2Completed"/> <!-- Schism -->	
+			</While>	
+		</If>
+
+		<!-- Book of Skyearth I FATE Task 3 - The Big Bagoly Theroy -->	
+		<If condition="not ZodiacManager.CurrentBook.FateTask3Completed">
+			<Log Message="Moving to FATE 'The Big Bagoly Theroy'" />
+			<LisbethTravel Area="Eastern Thanalan" Position="434.8353, -64.536, 204.8842"/>
+			<While Condition="not ZodiacManager.CurrentBook.FateTask3Completed">
+				<Log Message="Waiting on FATE 'The Big Bagoly Theroy'" />
+				<LLFate FateId="543" MinLevel="1" MaxLevel="50" while="ZodiacManager.CurrentBook.FateTask3Completed"/> <!-- The Big Bagoly Theroy -->
+			</While>	
+		</If>
+
+		<LLoadProfile Path="../../Start.xml"/>	
+		
+	</Order>
+	<CodeChunks>
+		<CodeChunk Name="TowerOfPower">
+		  <![CDATA[ 
+			Core.OverlayManager.AddToast(() => "Please complete Tower Of Power FATE manually. Starts from NPC.", TimeSpan.FromMilliseconds(25000), System.Windows.Media.Color.FromRgb(29,213,226), System.Windows.Media.Color.FromRgb(13,106,175), new System.Windows.Media.FontFamily("Gautami"));
+			await Coroutine.Sleep(60000);
+		  ]]>
+		</CodeChunk>	
+	</CodeChunks>	
+</Profile>	

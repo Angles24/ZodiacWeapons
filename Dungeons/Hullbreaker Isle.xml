@@ -149,7 +149,7 @@
 		<If Condition="GetInstanceTodo(5) &lt; 10 and GetInstanceTodo(4) == 2">
 			<Log Message="Dismemeber the arms and tentacles 0/10" />
 			<RunCode name="DisableSideStep"/>
-			<MoveTo XYZ="-329.357, 1.9, 40.10876" />
+			<MoveTo XYZ="-317.9591, 1.899866, 36.26224" />
 			<RunCode name="Announce_Manual_Completion"/>
 			<StopBot/>
 		</If>	
@@ -215,7 +215,7 @@
   <CodeChunks>
       <CodeChunk Name="Announce_Manual_Completion">
       <![CDATA[ 
-        Core.OverlayManager.AddToast(() => "Please killed the Kraken manually.", TimeSpan.FromMilliseconds(25000), System.Windows.Media.Color.FromRgb(29,213,226), System.Windows.Media.Color.FromRgb(13,106,175), new System.Windows.Media.FontFamily("Gautami"));
+        Core.OverlayManager.AddToast(() => "Please kill the Kraken manually then reload the Start profile.", TimeSpan.FromMilliseconds(25000), System.Windows.Media.Color.FromRgb(29,213,226), System.Windows.Media.Color.FromRgb(13,106,175), new System.Windows.Media.FontFamily("Gautami"));
         await Coroutine.Sleep(26000);
       ]]>
     </CodeChunk>

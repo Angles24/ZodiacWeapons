@@ -97,7 +97,6 @@
 					<WaitTimer WaitTime="3" />
 				</If>
 			</If>
-			<MoveTo XYZ="-12.55511, 0, -9.238441" usemesh="false" />	
 			<Grind GrindRef="Ifrit" While="not GameObjectManager.GetObjectByNPCId(1185).CurrentHealth == 0"/> <!-- Kill Ifrit -->	
 			<If Condition="&openchest; == 1">
 				<RunCode name="OpenChest" />
@@ -105,7 +104,6 @@
 			<While Condition="IsOnMap(202)">
 				<RunCode name="LeaveDuty"/>
 			</While>							
-			<WaitTimer WaitTime="10"/>
 			<If Condition="NovusLightLevel() &lt; 2000">
 				<RunCode name="LightLevel"/>
 			</If>			
@@ -135,7 +133,11 @@
 	<CodeChunk Name="LeaveDuty">
 		<![CDATA[
 			ff14bot.Managers.DutyManager.LeaveActiveDuty();
-			while (!CommonBehaviors.IsLoading) { await Coroutine.Yield(); }
+			await Coroutine.Wait(20000, () => CommonBehaviors.IsLoading);
+			if (CommonBehaviors.IsLoading)
+			{
+				await Coroutine.Wait(-1, () => !CommonBehaviors.IsLoading);
+			}
 		]]>
 	</CodeChunk>		
 	<CodeChunk Name="ExitDuty">
@@ -186,10 +188,10 @@
            var director = ((ff14bot.Directors.InstanceContentDirector) DirectorManager.ActiveDirector);
            if (director !=null)
 		   {
-               if (director.TimeLeftInDungeon >= new TimeSpan(1,30,0))
+                if (director.TimeLeftInDungeon >= new TimeSpan(1,0,0))
                {
-				   Logging.WriteDiagnostic("Barrier up");
-                   await Coroutine.Wait(30000, () => director.TimeLeftInDungeon < new TimeSpan(1,29,58));
+                   Logging.WriteDiagnostic("Barrier up");
+                   await Coroutine.Wait(30000, () => director.TimeLeftInDungeon < new TimeSpan(0,59,58));
                }
 		   }
 		   else
