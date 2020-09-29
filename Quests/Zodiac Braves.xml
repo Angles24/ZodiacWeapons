@@ -392,6 +392,21 @@
 				<HandOver ItemIds="2001540,2001541,2001542" NpcId="1010811" XYZ="645.2583, 5.631262, 551.5983" QuestId="65896" StepId="4"/>
 			</If>
 			<If Condition="GetQuestStep(65896) == 5">
+			  <!-- [Unlock The Stone Vigil (Hard)] Blood for Stone -->
+				<If Condition="not HasQuest(67061) and not IsQuestCompleted(67061)">
+				  <GetTo ZoneId="156" XYZ="23.17937, 21.25273, -649.3959"/>
+				  <If Condition="IsQuestAcceptQualified(67061)">
+					<PickupQuest QuestId="67061" NpcId="1006977" XYZ="23.36151, 21.25273, -650.2938"/>
+				  </If>
+				</If>
+				<If Condition="HasQuest(67061) and not IsQuestCompleted(67061) and GetQuestStep(67061) == 1">
+				  <GetTo ZoneId="155" XYZ="-431.6497, 233.4727, -200.7168"/>
+				  <TalkTo NpcId="1006444" XYZ="-432.9748, 233.4727, -199.6643" QuestId="67061" StepId="1"/>
+				</If>
+				<If Condition="HasQuest(67061) and not IsQuestCompleted(67061) and GetQuestStep(67061) == 2">
+				  <GetTo ZoneId="155" XYZ="-672.3635, 205.9623, -513.5798"/>
+				  <TalkTo NpcId="1006490" XYZ="-673.2128, 205.9598, -515.7702" QuestId="67061" StepId="2"/>
+				</If>			
 				<RunCode name="AnnounceStoneVigilHard"/>	
 			</If>
 			<If Condition="GetQuestStep(65896) == 6">
