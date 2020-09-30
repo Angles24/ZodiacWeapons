@@ -23,11 +23,11 @@
 		<!-- Book of Skywind II FATE Task 2 - Tower of Power -->	
 		<If condition="not ZodiacManager.CurrentBook.FateTask2Completed">
 			<Log Message="Moving to FATE 'Tower of Power'" />
-			<LisbethTravel Area="Central Shroud" Position="-525.1988, 20.05402, -177.2084"/>
+			<LisbethTravel Area="Coerthas Central Highlands" Position="-546.1525, 238.769, 353.947"/>
 			<While Condition="not ZodiacManager.CurrentBook.FateTask2Completed">
 				<Log Message="Waiting on FATE 'Tower of Power'" />
 				<RunCode name="TowerOfPower"/>
-				<StopBot/>
+				<LLFate FateId="486" MinLevel="1" Timeout="60" MaxLevel="50" while="ZodiacManager.CurrentBook.FateTask1Completed"/> <!-- Tower of Power -->
 			</While>	
 		</If>
 
