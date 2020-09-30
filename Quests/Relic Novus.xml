@@ -18,67 +18,67 @@
 			<!-- Celestial Radiance -->		
 			<If Condition="not HasQuest(66998) and not IsQuestCompleted(66998)">
 				<If Condition="ClassName == ((ClassJobType.Bard))"> 
-					<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7838">
+					<While Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7838">
 						<RunCode Name="ArtemisAnimus" />
 						<WaitTimer WaitTime="3" />
-					</If>					
+					</While>					
 				</If>
 				<If Condition="ClassName == ((ClassJobType.BlackMage))">
-					<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7840">
+					<While Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7840">
 						<RunCode Name="StardustAnimus" />
 						<WaitTimer WaitTime="3" />
-					</If>						
+					</While>						
 				</If>	
 				<If Condition="ClassName == ((ClassJobType.Dragoon))">
-					<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7837">
+					<While Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7837">
 						<RunCode Name="GaeBolgAnimus" />
 						<WaitTimer WaitTime="3" />
-					</If>				
+					</While>				
 				</If>
 				<If Condition="ClassName == ((ClassJobType.Monk))">
-					<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7835">
+					<While Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7835">
 						<RunCode Name="SphairaiAnimus" />
 						<WaitTimer WaitTime="3" />
-					</If>				
+					</While>				
 				</If>
 				<If Condition="ClassName == ((ClassJobType.Ninja))"> 
-					<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 9252">
+					<While Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 9252">
 						<RunCode Name="YoshiAnimus" />
 						<WaitTimer WaitTime="3" />
-					</If>				
+					</While>				
 				</If>
 				<If Condition="ClassName == ((ClassJobType.Paladin))">
-					<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7834">
+					<While Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7834">
 						<RunCode Name="CurtanaAnimus" />
 						<WaitTimer WaitTime="5" />
-					</If>	
-					<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7843">						
+					</While>	
+					<While Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7843">						
 						<RunCode Name="HolyAnimus" />
-					</If>				
+					</While>				
 				</If>
 				<If Condition="ClassName == ((ClassJobType.Summoner))">	
-					<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7842">
+					<While Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7842">
 						<RunCode Name="OmnliexAnimus" />
 						<WaitTimer WaitTime="3" />
-					</If>
+					</While>
 				</If>
 				<If Condition="ClassName == ((ClassJobType.Scholar))">	
-					<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7842">
+					<While Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7842">
 						<RunCode Name="OmnliexAnimus" />
 						<WaitTimer WaitTime="3" />
-					</If>
+					</While>
 				</If>	
 				<If Condition="ClassName == ((ClassJobType.Warrior))"> 		
-					<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7836">
+					<While Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7836">
 						<RunCode Name="BravuraAnimus" />
 						<WaitTimer WaitTime="3" />
-					</If>
+					</While>
 				</If>	
 				<If Condition="ClassName == ((ClassJobType.WhiteMage))">	
-					<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7839">
+					<While Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7839">
 						<RunCode Name="ThyrusAnimus" />
 						<WaitTimer WaitTime="3" />
-					</If>
+					</While>
 				</If>	
 				<If Condition="not IsOnMap(154)">
 					<TeleportTo Name="Fallgourd Float" AetheryteId="7"/>
@@ -114,7 +114,7 @@
 			</If>	
 		</If>	
 		<!-- Star Light, Star Bright -->
-		<If Condition="not HasQuest(67000) and not IsQuestCompleted(67000)">
+		<If Condition="IsQuestCompleted(66998) and not HasQuest(67000) and not IsQuestCompleted(67000)">
 			<GetTo ZoneId="141" XYZ="106.5433, 30.96623, -383.0377"/>
 			<If Condition="IsQuestAcceptQualified(67000)">
 				<PickupQuest QuestId="67000" NpcId="1009151"/>
