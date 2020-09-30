@@ -8,7 +8,6 @@
 <!DOCTYPE Profile [
 <!-- Profile Settings -->
 <!ENTITY openchest "0">
-<!ENTITY lightlevel "NovusLightLevel()">
 ]>
 
 <Profile>
@@ -16,10 +15,10 @@
   <BehaviorDirectory></BehaviorDirectory>
   <Order>
 	<While Condition="NovusLightLevel() &lt; 2000">
-		<If Condition="not IsOnMap(202)">
+		<If condition="not DutyManager.InInstance">
 			<LLJoinDuty DutyId="56" trial="true"/>
 		</If>
-		<If Condition="IsOnMap(202)">
+		<If condition="DutyManager.InInstance">
 			<If Condition="ClassName == ((ClassJobType.Bard))"> 
 				<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7867">
 					<Log Message="Equipping Artemis Bow Novus" />
@@ -99,19 +98,21 @@
 			</If>
 			<MoveTo XYZ="-13.12728, 0, -8.592924" usemesh="false" />
 			<Grind GrindRef="Ifrit" While="not GameObjectManager.GetObjectByNPCId(1185).CurrentHealth == 0"/> <!-- Kill Ifrit -->	
-			<If Condition="&openchest; == 1">
-				<RunCode name="OpenChest" />
-			</If>
-			<WaitTimer WaitTime="10" />
-			<LLLeaveDuty/>							
+			<While condition="DutyManager.InInstance">	
+				<WaitTimer WaitTime="10" />
+				<LLLeaveDuty/>
+			</While>						
 			<If Condition="NovusLightLevel() &lt; 2000">
 				<RunCode name="LightLevel"/>
 			</If>			
 		</If> 
 	</While>
+	
 	<If Condition="NovusLightLevel() == 2000">
+		<RunCode name="LightLevel"/>
 		<LLoadProfile Path="../Start.xml"/>
-	</If>	
+	</If>
+	
  </Order>
   <GrindAreas>
 	<GrindArea name="Ifrit">
@@ -130,97 +131,6 @@
 			await Coroutine.Sleep(5000);
 		  ]]>
 		</CodeChunk> 
-	<CodeChunk Name="LeaveDuty">
-		<![CDATA[
-			ff14bot.Managers.DutyManager.LeaveActiveDuty();
-			await Coroutine.Wait(20000, () => CommonBehaviors.IsLoading);
-			if (CommonBehaviors.IsLoading)
-			{
-				await Coroutine.Wait(-1, () => !CommonBehaviors.IsLoading);
-			}
-		]]>
-	</CodeChunk>		
-	<CodeChunk Name="ExitDuty">
-		<![CDATA[
-			ff14bot.Managers.GameObjectManager.GetObjectByNPCId(2000139).Interact();
-			await Coroutine.Sleep(1000);
-			ff14bot.RemoteWindows.SelectYesno.ClickYes();
-			await Coroutine.Sleep(5000);
-      ]]>
-	</CodeChunk>		
-	<CodeChunk Name="QueueIfrit">
-		<![CDATA[ 
-           Logging.WriteDiagnostic("Queuing for Dungeon");
-		GameSettingsManager.JoinWithUndersizedParty = true;
-           DutyManager.Queue(DataManager.InstanceContentResults[56]);
-           await Coroutine.Wait(5000, () => (DutyManager.QueueState == QueueState.InQueue || DutyManager.QueueState == QueueState.JoiningInstance));
-
-           Logging.WriteDiagnostic("Queued for Dungeon");
-
-           await Coroutine.Wait(10000, () => (DutyManager.QueueState == QueueState.JoiningInstance));
-			
-           await Coroutine.Wait(10000, () => (RaptureAtkUnitManager.GetWindowByName("ContentsFinderConfirm") != null));
-
-           Logging.WriteDiagnostic("Commencing");
-           DutyManager.Commence();
-           Logging.WriteDiagnostic("Waiting for Loading");
-           await Coroutine.Wait(10000, () => CommonBehaviors.IsLoading || QuestLogManager.InCutscene);
-			
-           if (CommonBehaviors.IsLoading)
-           {
-               await Coroutine.Wait(-1, () => !CommonBehaviors.IsLoading);
-           }
-
-           if (QuestLogManager.InCutscene)
-           {
-               TreeRoot.StatusText = "InCutscene";
-               if (ff14bot.RemoteAgents.AgentCutScene.Instance != null)
-               {
-                   ff14bot.RemoteAgents.AgentCutScene.Instance.PromptSkip();
-                   await Coroutine.Wait(250, () => SelectString.IsOpen);
-                   if (SelectString.IsOpen)
-                       SelectString.ClickSlot(0);
-               }
-           }
-
-           Logging.WriteDiagnostic("Should be in duty");
-		   
-           var director = ((ff14bot.Directors.InstanceContentDirector) DirectorManager.ActiveDirector);
-           if (director !=null)
-		   {
-                if (director.TimeLeftInDungeon >= new TimeSpan(1,0,0))
-               {
-                   Logging.WriteDiagnostic("Barrier up");
-                   await Coroutine.Wait(30000, () => director.TimeLeftInDungeon < new TimeSpan(0,59,58));
-               }
-		   }
-		   else
-		   {
-			Logging.WriteDiagnostic("Director is null");
-		   }
-			   
-	      Logging.WriteDiagnostic("Should be ready");
-		]]>
-	</CodeChunk>
-	<CodeChunk name="OpenChest">
-		<![CDATA[    
-		if (GameObjectManager.GetObjectsOfType<Treasure>().Where(r => r.Distance() < 50 && (r.Name == "Treasure Coffer" || r.Name == "treasure coffer")).Any())
-		{
-			var _chest = GameObjectManager.GetObjectsOfType<Treasure>().Where(r => r.Distance() < 50 && (r.Name == "宝箱" || r.Name == "Treasure Coffer" || r.Name == "treasure coffer")).FirstOrDefault();
-			while (Core.Me.Distance(_chest.Location) > 1)
-			{
-			await CommonTasks.MoveTo(_chest.Location);
-			await Coroutine.Yield();
-			}
-			
-			Navigator.PlayerMover.MoveStop();
-			await Coroutine.Sleep(1000);
-			Poi.Current = new Poi(_chest, PoiType.Kill);
-			Poi.Current.Unit.Interact();                    
-			await Coroutine.Sleep(1000);        
-		}
-		]]>
-	</CodeChunk>
  		<CodeChunk Name="OmnilexNovus">
 		<![CDATA[ 
 			BagSlot EquipSlot = ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand];

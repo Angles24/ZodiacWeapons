@@ -193,15 +193,17 @@
 				</If>
 			</If>			
 			<MoveTo XYZ="-235.5623, 17.22563, 16.8393" usemesh="false"/>
-			<Grind GrindRef="FinalBoss" While="not GameObjectManager.GetObjectByNPCId(1197).CurrentHealth == 0"/> <!-- Fight final Boss -->
+			<Grind GrindRef="FinalBoss" While="GetInstanceTodo(3) == 0"/> <!-- Fight final Boss -->
+		</If>
+		<While condition="DutyManager.InInstance">
 			<If Condition="&openchest; == 1">
 				<RunCode name="OpenChest" />
 			</If>
 			<WaitTimer WaitTime="10" />
-			<LLLeaveDuty/>
-			<LLoadProfile Path="../Start.xml"/>	
-		</If>			
+			<LLLeaveDuty/>			
+		</While>			
 
+		<LLoadProfile Path="../Start.xml"/>	
 				
 	</If>
   </Order>

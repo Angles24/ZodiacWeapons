@@ -30,11 +30,13 @@
     <If Condition="HasQuest(66947) and not IsQuestCompleted(66947) and GetQuestStep(66947) == 255">
       <LisbethTravel Area="Eastern La Noscea (Raincatcher Gully)" Position="-331.2567, 69.03585, 155.8954"/>
       <TurnIn QuestId="66947" NpcId="1006268" XYZ="-334.6151, 69.69995, 153.7957"/>
-    </If> 
-	<If Condition="not IsOnMap(362)">
+    </If>
+
+		
+	<If condition="not DutyManager.InInstance">
 		<LLJoinDuty DutyId="20" />
 	</If>
-	<If Condition="IsOnMap(362)">
+	<If condition="DutyManager.InInstance">
 
 		<!-- Farm first Tiny Key -->
 		<If Condition="GetInstanceTodo(0) == 0 and GetInstanceTodo(1) == 0">
@@ -224,11 +226,15 @@
 			<If Condition="&openchest; == 1">
 				<RunCode name="OpenChest" />
 			</If>
-			<WaitTimer WaitTime="10" />
-			<LLLeaveDuty/>
-			<LLoadProfile Path="../Start.xml"/>
-		</If>	
-	</If>	  
+			<While condition="DutyManager.InInstance">	
+				<WaitTimer WaitTime="10" />
+				<LLLeaveDuty/>
+			</While>			
+		</If>		
+	</If>
+
+	<LLoadProfile Path="../Start.xml"/>
+	
   </Order>
   <GrindAreas>
 	<GrindArea name="FarmTinyKey">

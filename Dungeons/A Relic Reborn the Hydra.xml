@@ -8,15 +8,19 @@
   <Name>A Relic Reborn: the Hydra</Name>
   <BehaviorDirectory></BehaviorDirectory>
   <Order>
- 	<If Condition="not IsOnMap(162)">
+ 	<If condition="not DutyManager.InInstance">
 		<LLJoinDuty DutyId="75" trial="true"/>
 	</If>
-	<If Condition="IsOnMap(162)">
+	<If condition="DutyManager.InInstance">
 		<Grind GrindRef="Hydra" While="GameObjectManager.GetObjectByNPCId(2161).CurrentHealth == 0"/> <!-- Kill Hydra -->
-		<WaitTimer WaitTime="10" />
-		<LLLeaveDuty/>	
-		<LLoadProfile Path="../Start.xml"/>
-	</If>	
+		<While condition="DutyManager.InInstance">	
+			<WaitTimer WaitTime="10" />
+			<LLLeaveDuty/>
+		</While>
+	</If>
+
+	<LLoadProfile Path="../Start.xml"/>
+	
   </Order>
   <GrindAreas>
 	<GrindArea name="Hydra">

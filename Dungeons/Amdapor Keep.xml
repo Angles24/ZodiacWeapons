@@ -14,10 +14,10 @@
   <Name>Amdapor Keep</Name>
   <BehaviorDirectory></BehaviorDirectory>
   <Order>
- 	<If Condition="not IsOnMap(167)">
+ 	<If condition="not DutyManager.InInstance">
 		<LLJoinDuty DutyId="14"/>
 	</If>
-	<If Condition="IsOnMap(167)">
+	<If condition="DutyManager.InInstance">
 		<!-- Clear the Gier Hall 0/1 -->
 		<If Condition="not GetInstanceTodo(0) == 1">
 			<Log Message="Clear the Gier Hall 0/1" />
@@ -169,11 +169,15 @@
 			<If Condition="&openchest; == 1">
 				<RunCode name="OpenChest" />
 			</If>
-			<WaitTimer WaitTime="10" />
-			<LLLeaveDuty/>
-			<LLoadProfile Path="../Start.xml"/>
+			<While condition="DutyManager.InInstance">	
+				<WaitTimer WaitTime="10" />
+				<LLLeaveDuty/>
+			</While>
 		</If>
-	</If>	
+	</If>
+
+	<LLoadProfile Path="../Start.xml"/>
+	
   </Order>
   <GrindAreas>
 	<GrindArea name="LunaticPriest">
