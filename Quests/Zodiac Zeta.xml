@@ -35,7 +35,7 @@
 		</If>
 		
 		<If condition="IsQuestCompleted(66096)">
-			<While condition="ZodiacCompletedMahatma() == 12">
+			<While condition="ZodiacCompletedMahatma() == 11 and ZodiacMahatmaIsDone()">
 				<LisbethTravel Area="North Shroud" Position="440.9087, -0.9374468, -64.35789"/>
 				<RunCode name="PurchaseZodiacZenith"/>
 			</While>
@@ -45,7 +45,7 @@
 					<StopBot/>
 				</If>
 				<If Condition="not HasAtLeast(28,50)">	
-					<MoveTo XYZ="641.657,9.446683,511.1925" />
+					<LisbethTravel Area="Western La Noscea" Position="642.0411, 9.382738, 511.8205"/>
 					<RunCode name="AttachMahatma"/>
 				</If>	
 			</If>
