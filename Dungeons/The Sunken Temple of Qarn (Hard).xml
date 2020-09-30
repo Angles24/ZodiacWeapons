@@ -30,12 +30,13 @@
     <If Condition="HasQuest(65632) and not IsQuestCompleted(65632) and GetQuestStep(65632) == 2">
       <LisbethTravel Area="Southern Thanalan" Position="182.8132, 13.60193, -444.9475"/>
       <TalkTo NpcId="1006220" XYZ="185.748, 13.7212, -443.1983" QuestId="65632" StepId="2"/>
-    </If> 
-	<If Condition="not IsOnMap(367)">
+    </If>
+	
+	<If condition="not DutyManager.InInstance">
 		<LLJoinDuty DutyId="26"/>
 	</If>
 	
-	<If Condition="IsOnMap(367)">
+	<If condition="DutyManager.InInstance">
 		<!-- Find a sun sphere 0/1 -->
 		<If Condition="GetInstanceTodo(0) == 0">
 			<Log Message="Find a sun sphere 0/1" />
@@ -167,16 +168,21 @@
 			<If Condition="&openchest; == 1">
 				<RunCode name="OpenChest" />
 			</If>
-			<WaitTimer WaitTime="10" />
-			<LLLeaveDuty/>
-			<If Condition="HasQuest(65632) and not IsQuestCompleted(65632) and GetQuestStep(65632) == 255">
-				<GetTo ZoneId="131" XYZ="-9.669962, 7.5, 147.9098"/>
-				<TurnIn QuestId="65632" NpcId="1010365" XYZ="-10.63556, 7.499994, 146.6849"/>
-			</If>
-			<WaitTimer WaitTime="10"/>
-			<LLoadProfile Path="../Start.xml"/>				
+			<While condition="DutyManager.InInstance">	
+				<WaitTimer WaitTime="10" />
+				<LLLeaveDuty/>
+			</While>			
 		</If>	
 	</If>
+	
+	<!-- Turn In Unlock Quest -->
+	<If Condition="HasQuest(65632) and not IsQuestCompleted(65632) and GetQuestStep(65632) == 255">
+		<GetTo ZoneId="131" XYZ="-9.669962, 7.5, 147.9098"/>
+		<TurnIn QuestId="65632" NpcId="1010365" XYZ="-10.63556, 7.499994, 146.6849"/>
+	</If>
+
+	<LLoadProfile Path="../Start.xml"/>		
+	
   </Order>
   <GrindAreas>
 	<GrindArea name="SunSphere">

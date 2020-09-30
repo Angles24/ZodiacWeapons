@@ -14,18 +14,22 @@
   <Name>The Howling Eye (Hard)</Name>
   <BehaviorDirectory></BehaviorDirectory>
   <Order>
- 	<If Condition="not IsOnMap(294)">
+ 	<If condition="not DutyManager.InInstance">
 		<LLJoinDuty DutyId="61" trial="true"/>
 	</If>
-	<If Condition="IsOnMap(294)">
+	<If condition="DutyManager.InInstance">
 		<Grind GrindRef="Garuda" While="not GameObjectManager.GetObjectByNPCId(1644).CurrentHealth == 0"/> <!-- Kill Garuda -->
 		<If Condition="&openchest; == 1">
 			<RunCode name="OpenChest" />
 		</If>
-		<WaitTimer WaitTime="10" />
-		<LLLeaveDuty/>	
-		<LLoadProfile Path="../Start.xml"/>
-	</If>  
+		<While condition="DutyManager.InInstance">	
+			<WaitTimer WaitTime="10" />
+			<LLLeaveDuty/>
+		</While>
+	</If>
+
+	<LLoadProfile Path="../Start.xml"/>
+	
  </Order>
   <GrindAreas>
 	<GrindArea name="Garuda">

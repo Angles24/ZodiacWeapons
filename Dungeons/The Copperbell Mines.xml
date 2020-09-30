@@ -210,13 +210,12 @@
 			<While condition="DutyManager.InInstance">	
 				<WaitTimer WaitTime="10" />
 				<LLLeaveDuty/>
-			</While>
-			<LLoadProfile Path="../Start.xml"/>					
-		</If>	
-			
-
-				
+			</While>				
+		</If>				
 	</If>
+	
+	<LLoadProfile Path="../Start.xml"/>		
+	
   </Order>
   <GrindAreas>
      <GrindArea name="FirstKey">

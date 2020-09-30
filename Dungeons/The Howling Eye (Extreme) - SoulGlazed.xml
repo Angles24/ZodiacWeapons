@@ -15,10 +15,10 @@
   <BehaviorDirectory></BehaviorDirectory>
   <Order>
 	<While Condition="NovusLightLevel() &lt; 2000">
-		<If Condition="not IsOnMap(294)">
+		<If condition="not DutyManager.InInstance">
 			<LLJoinDuty DutyId="65" trial="true"/>
 		</If>
-		<If Condition="IsOnMap(294)">
+		<If condition="DutyManager.InInstance">
 			<If Condition="ClassName == ((ClassJobType.Bard))"> 
 				<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7867">
 					<Log Message="Equipping Artemis Bow Novus" />
@@ -101,8 +101,10 @@
 			<If Condition="&openchest; == 1">
 				<RunCode name="OpenChest" />
 			</If>
-			<WaitTimer WaitTime="10" />
-			<LLLeaveDuty/>
+			<While condition="DutyManager.InInstance">	
+				<WaitTimer WaitTime="10" />
+				<LLLeaveDuty/>
+			</While>
 			<If Condition="NovusLightLevel() &lt; 2000">
 				<RunCode name="LightLevel"/>
 			</If>

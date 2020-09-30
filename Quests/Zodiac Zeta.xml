@@ -40,8 +40,14 @@
 				<StopBot/>
 			</If>
 			<If condition="ZodiacCompletedMahatma() == 0">
-				<MoveTo XYZ="641.657,9.446683,511.1925" />
-				<RunCode name="AttachMahatma"/>			
+				<If Condition="not HasAtLeast(28,50)">
+					<RunCode name="NeedPoetics"/>
+					<StopBot/>
+				</If>
+				<If Condition="not HasAtLeast(28,50)">	
+					<MoveTo XYZ="641.657,9.446683,511.1925" />
+					<RunCode name="AttachMahatma"/>
+				</If>	
 			</If>
 			<!-- Buy Next Mahatma -->
 			<While condition="ZodiacMahatmaIsDone()">
@@ -90,6 +96,17 @@
                     await Coroutine.Wait(2000, () => !Talk.DialogOpen);
                 }				
             ]]>
+		</CodeChunk>
+		<CodeChunk Name="NeedPoetics">
+			  <![CDATA[
+				var _msg = String.Empty;
+				#if RB_CN
+						_msg = "请手动完成下一个任务。";
+				#else
+						_msg = "Please farm more poetics.";
+				#endif
+				Core.OverlayManager.AddToast(() => _msg, TimeSpan.FromMilliseconds(25000), System.Windows.Media.Color.FromRgb(29,213,226), System.Windows.Media.Color.FromRgb(13,106,175), new System.Windows.Media.FontFamily("Gautami"));
+			  ]]>
 		</CodeChunk>		
 	</CodeChunks>
 </Profile>	

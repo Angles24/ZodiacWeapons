@@ -13,7 +13,7 @@
   <Name>The Lost City of Amdapor</Name>
   <BehaviorDirectory></BehaviorDirectory>
   <Order>
- <!-- [The Lost City of Amdapor] One Night in Amdapor Unlock -->
+ <!-- [Unlock The Lost City of Amdapor] One Night in Amdapor Unlock -->
     <If Condition="not HasQuest(66925) and not IsQuestCompleted(66925)">
       <GetTo ZoneId="133" XYZ="-257.9622, -5.774355, -26.26284"/>
       <If Condition="IsQuestAcceptQualified(66925)">
@@ -28,10 +28,11 @@
       <LisbethTravel Area="South Shroud" Position="-356.6788, 0.5880998, 457.7809"/>
       <TurnIn QuestId="66925" NpcId="1008543" XYZ="-360.0062, 1.264419, 459.8306"/>
     </If> 
- 	<If Condition="not IsOnMap(363)">
+	
+ 	<If condition="not DutyManager.InInstance">
 		<LLJoinDuty DutyId="22"/>
 	</If>
-	<If Condition="IsOnMap(363)">
+	<If condition="DutyManager.InInstance">
 		<!-- Clear Halcyon Court 0/1 -->
 		<If Condition="GetInstanceTodo(0) == 0">				
 			<Log Message="Clear Halcyon Court 0/1" />
@@ -196,11 +197,15 @@
 			<If Condition="&openchest; == 1">
 				<RunCode name="OpenChest" />
 			</If>
-			<WaitTimer WaitTime="10" />
-			<LLLeaveDuty/>
-			<LLoadProfile Path="../Start.xml"/>
+			<While condition="DutyManager.InInstance">	
+				<WaitTimer WaitTime="10" />
+				<LLLeaveDuty/>
+			</While>
 		</If>			
-	</If>	
+	</If>
+
+	<LLoadProfile Path="../Start.xml"/>
+	
   </Order>
   <GrindAreas>
  	<GrindArea name="MoldColony1">

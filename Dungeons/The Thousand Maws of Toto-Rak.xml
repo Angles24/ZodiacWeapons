@@ -13,10 +13,10 @@
   <Name>The Thousand Maws of Toto-Rak</Name>
   <BehaviorDirectory></BehaviorDirectory>
   <Order>
-	<If Condition="not IsOnMap(169)">
+	<If condition="not DutyManager.InInstance">
 		<LLJoinDuty DutyId="1"/>
 	</If>
-	<If Condition="IsOnMap(169)">
+	<If condition="DutyManager.InInstance">
 		<!-- Activate confession chamber terminal 0/1 -->
 		<If Condition="GetInstanceTodo(1) == 0">
 			<Log Message="Activate confession chamber terminal 0/1" />
@@ -229,11 +229,15 @@
 			<If Condition="&openchest; == 1">
 				<RunCode name="OpenChest" />
 			</If>
-			<WaitTimer WaitTime="10" />
-			<LLLeaveDuty/>
-			<LLoadProfile Path="../Start.xml"/>			
+			<While condition="DutyManager.InInstance">	
+				<WaitTimer WaitTime="10" />
+				<LLLeaveDuty/>
+			</While>		
 		</If>			
 	</If>
+	
+	<LLoadProfile Path="../Start.xml"/>		
+	
   </Order>
   <GrindAreas>
  	<GrindArea name="StickyWeb1">

@@ -31,10 +31,11 @@
       <LisbethTravel Area="Central Shroud" Position="-572.4536, 67.00565, 69.71553"/>
       <TurnIn QuestId="66751" NpcId="2003023" XYZ="-576.1349, 68.13147, 69.41321"/>
     </If> 
-	<If Condition="not IsOnMap(350)">
+	
+	<If condition="not DutyManager.InInstance">
 		<LLJoinDuty DutyId="19"/>
 	</If>
-	<If Condition="IsOnMap(350)">
+	<If condition="DutyManager.InInstance">
 		<!-- Clear the White Hall 0/1 -->
 		<If Condition="GetInstanceTodo(1) == 0">
 			<Log Message="Clear the White Hall 0/1" />
@@ -195,12 +196,15 @@
 			<If Condition="&openchest; == 1">
 				<RunCode name="OpenChest" />
 			</If>
-			<WaitTimer WaitTime="10" />
-			<LLLeaveDuty/>
-			<LLoadProfile Path="../Start.xml"/>				
-		</If>		
-				
+			<While condition="DutyManager.InInstance">	
+				<WaitTimer WaitTime="10" />
+				<LLLeaveDuty/>
+			</While>			
+		</If>						
 	</If>
+	
+	<LLoadProfile Path="../Start.xml"/>	
+	
   </Order>
   <GrindAreas>
 	<GrindArea name="FirstBoss">

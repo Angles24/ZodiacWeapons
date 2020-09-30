@@ -14,19 +14,23 @@
   <Name>The Navel (Hard)</Name>
   <BehaviorDirectory></BehaviorDirectory>
   <Order>
- 	<If Condition="not IsOnMap(293)">
+ 	<If condition="not DutyManager.InInstance">
 		<LLJoinDuty DutyId="60" trial="true"/>
 	</If>
-	<If Condition="IsOnMap(293)">
+	<If condition="DutyManager.InInstance">
 		<MoveTo XYZ="-0.1087532, 2.384186E-07, 1.400909" usemesh="false"/> <!-- Move to center -->
 		<Grind GrindRef="Titan" While="not GameObjectManager.GetObjectByNPCId(1801).CurrentHealth == 0"/> <!-- Kill Titan -->
 		<If Condition="&openchest; == 1">
 			<RunCode name="OpenChest" />
 		</If>
-		<WaitTimer WaitTime="10" />
-		<LLLeaveDuty/>
-		<LLoadProfile Path="../Start.xml"/>
-	</If>  
+		<While condition="DutyManager.InInstance">	
+			<WaitTimer WaitTime="10" />
+			<LLLeaveDuty/>
+		</While>
+	</If>
+
+	<LLoadProfile Path="../Start.xml"/>
+	
  </Order>
   <GrindAreas>
 	<GrindArea name="Titan">

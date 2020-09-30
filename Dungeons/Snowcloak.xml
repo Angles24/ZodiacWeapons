@@ -14,10 +14,10 @@
   <Name>Snowcloak</Name>
   <BehaviorDirectory></BehaviorDirectory>
   <Order>
- 	<If Condition="not IsOnMap(371)">
+ 	<If condition="not DutyManager.InInstance">
 		<LLJoinDuty DutyId="27"/>>
 	</If>
-	<If Condition="IsOnMap(371)">
+	<If condition="DutyManager.InInstance">
 		<!-- Tiny Key 0/1 -->
 		<If Condition="not GetInstanceTodo(0) == 1">
 			<If Condition="ClassName == ((ClassJobType.Bard))"> 
@@ -103,11 +103,14 @@
 			<If Condition="&openchest; == 1">
 				<RunCode name="OpenChest" />
 			</If>
-			<WaitTimer WaitTime="10" />
-			<LLLeaveDuty/>
-			<LLoadProfile Path="../Start.xml"/>			
+			<While condition="DutyManager.InInstance">	
+				<WaitTimer WaitTime="10" />
+				<LLLeaveDuty/>
+			</While>			
 		</If>
 	</If>
+
+	<LLoadProfile Path="../Start.xml"/>
 	
   </Order>
   <GrindAreas>

@@ -24,7 +24,8 @@
       <LisbethTravel Area="Western Thanalan" Position="324.6464, 62.9999, -228.8189"/>
       <TurnIn QuestId="66752" NpcId="1002285" XYZ="326.4667, 63, -231.6473"/>
     </If> 
-	<If Condition="not IsOnMap(349)">
+	
+	<If condition="not DutyManager.InInstance">
 		<LLJoinDuty DutyId="18"/>
 	</If>
 	<If Condition="IsOnMap(349)">
@@ -180,11 +181,15 @@
 			<If Condition="&openchest; == 1">
 				<RunCode name="OpenChest" />
 			</If>
-			<WaitTimer WaitTime="10" />
-			<LLLeaveDuty/>
-			<LLoadProfile Path="../Start.xml"/>			
+			<While condition="DutyManager.InInstance">	
+				<WaitTimer WaitTime="10" />
+				<LLLeaveDuty/>
+			</While>			
 		</If>			
 	</If>
+	
+	<LLoadProfile Path="../Start.xml"/>	
+	
   </Order>
   <GrindAreas>
  	<GrindArea name="CollapsedRock">

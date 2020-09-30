@@ -13,10 +13,10 @@
   <Name>The Tam-Tara Deepcroft</Name>
   <BehaviorDirectory></BehaviorDirectory>
   <Order>
- 	<If Condition="not IsOnMap(164)">
+ 	<If condition="not DutyManager.InInstance">
 		<LLJoinDuty DutyId="2"/>
 	</If>
-	<If Condition="IsOnMap(164)">
+	<If condition="DutyManager.InInstance">
 		<!-- Cultist orbs destroyed 0/4 -->
 		<If Condition="GetInstanceTodo(0) == 0">
 			<Log Message="Cultist orbs destroyed 0/4" />		
@@ -219,11 +219,15 @@
 			<If Condition="&openchest; == 1">
 				<RunCode name="OpenChest" />
 			</If>			
-			<WaitTimer WaitTime="10" />
-			<LLLeaveDuty/>
-			<LLoadProfile Path="../Start.xml"/>
+			<While condition="DutyManager.InInstance">	
+				<WaitTimer WaitTime="10" />
+				<LLLeaveDuty/>
+			</While>
 		</If>			
-	</If>	
+	</If>
+
+	<LLoadProfile Path="../Start.xml"/>
+	
   </Order>
   <GrindAreas>
 	<GrindArea name="Galvanth">

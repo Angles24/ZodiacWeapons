@@ -13,10 +13,10 @@
   <Name>Halatali</Name>
   <BehaviorDirectory></BehaviorDirectory>
   <Order>
-	<If Condition="not IsOnMap(162)">
+	<If condition="not DutyManager.InInstance">
 		<LLJoinDuty DutyId="7"/>
 	</If>
-	<If Condition="IsOnMap(162)">
+	<If condition="DutyManager.InInstance">
 		<!-- Clear the Hall of the Cesti 0/1 -->
 		<If Condition="GetInstanceTodo(0) == 0">
 			<Log Message="Clear the Hall of the Cesti 0/1" />
@@ -195,17 +195,18 @@
 			<MoveTo XYZ="-235.5623, 17.22563, 16.8393" usemesh="false"/>
 			<Grind GrindRef="FinalBoss" While="GetInstanceTodo(3) == 0"/> <!-- Fight final Boss -->
 		</If>
-		<While condition="DutyManager.InInstance">
-			<If Condition="&openchest; == 1">
-				<RunCode name="OpenChest" />
-			</If>
+		<If Condition="&openchest; == 1">
+			<RunCode name="OpenChest" />
+		</If>
+		<While condition="DutyManager.InInstance">	
 			<WaitTimer WaitTime="10" />
-			<LLLeaveDuty/>			
-		</While>			
-
-		<LLoadProfile Path="../Start.xml"/>	
-				
+			<LLLeaveDuty/>
+		</While>					
 	</If>
+	
+	<LLoadProfile Path="../Start.xml"/>	
+				
+
   </Order>
   <GrindAreas>
 	<GrindArea name="FirstBoss">

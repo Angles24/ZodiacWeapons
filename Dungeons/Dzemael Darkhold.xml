@@ -13,10 +13,10 @@
   <Name>Dzemael Darkhold</Name>
   <BehaviorDirectory></BehaviorDirectory>
   <Order>
-	<If Condition="not IsOnMap(171)">
+	<If condition="not DutyManager.InInstance">
 		<LLJoinDuty DutyId="13"/>
 	</If>
-	<If Condition="IsOnMap(171)">
+	<If condition="DutyManager.InInstance">
 		<!-- Open the grand hall gate 0/1 -->
 		<If Condition="GetInstanceTodo(0) == 0">
 			<Log Message="Open the grand hall gate 0/1" />
@@ -198,12 +198,15 @@
 			<If Condition="&openchest; == 1">
 				<RunCode name="OpenChest" />
 			</If>
-			<WaitTimer WaitTime="10" />
-			<LLLeaveDuty/>
-			<LLoadProfile Path="../Start.xml"/>				
-		</If>		
-				
+			<While condition="DutyManager.InInstance">	
+				<WaitTimer WaitTime="10" />
+				<LLLeaveDuty/>
+			</While>			
+		</If>						
 	</If>
+	
+	<LLoadProfile Path="../Start.xml"/>		
+	
   </Order>
   <GrindAreas>
     <GrindArea name="ClearRoom">

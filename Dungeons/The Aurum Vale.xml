@@ -13,10 +13,10 @@
   <Name>The Aurum Vale</Name>
   <BehaviorDirectory></BehaviorDirectory>
   <Order>
-	<If Condition="not IsOnMap(172)">
+	<If condition="not DutyManager.InInstance">
 		<LLJoinDuty DutyId="5"/>
 	</If> 
-	<If Condition="IsOnMap(172)">
+	<If condition="DutyManager.InInstance">
 		<!-- Breach the Lock 0/1 -->
 		<If Condition="GetInstanceTodo(0) == 0">
 			<Log Message="Breach the Lock 0/1" />
@@ -166,13 +166,15 @@
 			<If Condition="&openchest; == 1">
 				<RunCode name="OpenChest" />
 			</If>
-			<WaitTimer WaitTime="10" />
-			<LLLeaveDuty/>
-			<LLoadProfile Path="../Start.xml"/>			
-		</If>		
-	
-				
+			<While condition="DutyManager.InInstance">	
+				<WaitTimer WaitTime="10" />
+				<LLLeaveDuty/>
+			</While>		
+		</If>					
 	</If>
+	
+	<LLoadProfile Path="../Start.xml"/>		
+	
   </Order>
   <GrindAreas>
 	<GrindArea name="FirstBoss">

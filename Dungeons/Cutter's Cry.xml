@@ -13,10 +13,10 @@
   <Name>Cutter's Cry</Name>
   <BehaviorDirectory></BehaviorDirectory>
   <Order>
-	<If Condition="not IsOnMap(170)">
+	<If condition="not DutyManager.InInstance">
 		<LLJoinDuty DutyId="12"/>
 	</If>
-	<If Condition="IsOnMap(170)">
+	<If condition="DutyManager.InInstance">
 		<!-- Slay all the enemies 0/8 -->
 		<If Condition="GetInstanceTodo(0) == 0">
 			<Log Message="Slay all the enemies 0/8" />
@@ -178,12 +178,15 @@
 				<RunCode name="OpenChest" />
 			</If>
 			<MoveTo XYZ="-180.6612,-4.240662,-222.7976" />
-			<WaitTimer WaitTime="10" />
-			<LLLeaveDuty/>
-			<LLoadProfile Path="../Start.xml"/>	
-		</If>			
-				
+			<While condition="DutyManager.InInstance">	
+				<WaitTimer WaitTime="10" />
+				<LLLeaveDuty/>
+			</While>
+		</If>					
 	</If>
+	
+	<LLoadProfile Path="../Start.xml"/>
+	
   </Order>
   <GrindAreas>
     <GrindArea name="ClearFirstRoom">

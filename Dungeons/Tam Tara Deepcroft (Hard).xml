@@ -29,10 +29,11 @@
       <LisbethTravel Area="Central Shroud" Position="-110.2082, -39.8921, 337.0283"/>
       <TalkTo NpcId="1001173" XYZ="-113.2372, -39.73311, 338.6434" QuestId="67060" StepId="2"/>
     </If>
- 	<If Condition="not IsOnMap(373)">
+	
+ 	<If condition="not DutyManager.InInstance">
 		<LLJoinDuty DutyId="24"/>
 	</If>
-	<If Condition="IsOnMap(373)">
+	<If condition="DutyManager.InInstance">
 		<!-- Clear the interring chamber 0/1 -->
 		<If Condition="GetInstanceTodo(0) == 0">
 			<Log Message="Clear the interring chamber 0/1" />
@@ -100,15 +101,21 @@
 			<If Condition="&openchest; == 1">
 				<RunCode name="OpenChest" />
 			</If>
-			<WaitTimer WaitTime="10" />
-			<LLLeaveDuty/>	
-			<If Condition="HasQuest(67060) and not IsQuestCompleted(67060) and GetQuestStep(67060) == 255">
-			  <GetTo ZoneId="148" XYZ="-95.1187, -40.04695, 322.5074"/>
-			  <TurnIn QuestId="67060" NpcId="1009367" XYZ="-94.52972, -40.05186, 324.5747"/>
-			</If>			
-			<LLoadProfile Path="../Start.xml"/>			
+			<While condition="DutyManager.InInstance">	
+				<WaitTimer WaitTime="10" />
+				<LLLeaveDuty/>
+			</While>			
 		</If>
-	</If>	
+	</If>
+	
+	<!-- Turn In Unlock Quest -->
+	<If Condition="HasQuest(67060) and not IsQuestCompleted(67060) and GetQuestStep(67060) == 255">
+	  <GetTo ZoneId="148" XYZ="-95.1187, -40.04695, 322.5074"/>
+	  <TurnIn QuestId="67060" NpcId="1009367" XYZ="-94.52972, -40.05186, 324.5747"/>
+	</If>			
+		
+	<LLoadProfile Path="../Start.xml"/>		
+	
   </Order>
   <GrindAreas>
 	<GrindArea name="FirstBoss">

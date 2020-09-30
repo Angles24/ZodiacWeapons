@@ -28,10 +28,11 @@
       <GetTo ZoneId="138" XYZ="336.0811, 10.48328, 5.218501"/>
       <TalkTo NpcId="1005064" XYZ="335.0117, 10.59511, 3.92157" QuestId="65630" StepId="2"/>
     </If>  
-	<If Condition="not IsOnMap(387)">
+	
+	<If condition="not DutyManager.InInstance">
 		<LLJoinDuty DutyId="28"/>
 	</If> 
-	<If Condition="IsOnMap(387)">
+	<If condition="DutyManager.InInstance">
 		<!-- Defeat Karlabos 0/1 -->
 		<If Condition="GetInstanceTodo(0) == 0">
 			<Log Message="Defeat Karlabos 0/1" />
@@ -124,19 +125,25 @@
 			<If Condition="&openchest; == 1">
 				<RunCode name="OpenChest" />
 			</If>
-			<WaitTimer WaitTime="10" />
-			<LLLeaveDuty/>
-			<If Condition="HasQuest(65630) and not IsQuestCompleted(65630) and GetQuestStep(65630) == 4">
-			  <GetTo ZoneId="138" XYZ="336.0192, 10.48926, 5.162549"/>
-			  <TalkTo NpcId="1005064" XYZ="335.0117, 10.59511, 3.92157" QuestId="65630" StepId="4"/>
-			</If>
-			<If Condition="HasQuest(65630) and not IsQuestCompleted(65630) and GetQuestStep(65630) == 255">
-			  <GetTo ZoneId="138" XYZ="208.6451, -24.99569, 242.1597"/>
-			  <TurnIn QuestId="65630" NpcId="1010359" XYZ="206.6833, -24.99666, 242.0538"/>
-			</If>			
-			<LLoadProfile Path="../Start.xml"/>			
+			<While condition="DutyManager.InInstance">	
+				<WaitTimer WaitTime="10" />
+				<LLLeaveDuty/>
+			</While>		
 		</If>		
 	</If>
+	
+	<!-- Turn in unlock quest -->
+	<If Condition="HasQuest(65630) and not IsQuestCompleted(65630) and GetQuestStep(65630) == 4">
+		<GetTo ZoneId="138" XYZ="336.0192, 10.48926, 5.162549"/>
+	  <TalkTo NpcId="1005064" XYZ="335.0117, 10.59511, 3.92157" QuestId="65630" StepId="4"/>
+	</If>
+	<If Condition="HasQuest(65630) and not IsQuestCompleted(65630) and GetQuestStep(65630) == 255">
+		<GetTo ZoneId="138" XYZ="208.6451, -24.99569, 242.1597"/>
+		<TurnIn QuestId="65630" NpcId="1010359" XYZ="206.6833, -24.99666, 242.0538"/>
+	</If>			
+			
+	<LLoadProfile Path="../Start.xml"/>		
+	
   </Order>
   <GrindAreas>
 	<GrindArea name="FirstBoss">

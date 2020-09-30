@@ -29,10 +29,10 @@
       <TalkTo NpcId="1009382" XYZ="275.1659, 4.403121, 729.1523" QuestId="67062" StepId="2"/>
     </If>
 	
-	<If Condition="not IsOnMap(361)">
+	<If condition="not DutyManager.InInstance">
 		<LLJoinDuty DutyId="23"/>
 	</If> 
-	<If Condition="IsOnMap(361)">
+	<If condition="DutyManager.InInstance">
 		<!-- Defeat the sifakas 0/5 -->
 		<If Condition="GetInstanceTodo(0) == 0">
 			<Log Message="Defeat the sifakas 0/5" />
