@@ -27,7 +27,7 @@
 			<While Condition="not ZodiacManager.CurrentBook.FateTask2Completed">
 				<Log Message="Waiting on FATE 'Tower of Power'" />
 				<RunCode name="TowerOfPower"/>
-				<LLFate FateId="486" MinLevel="1" Timeout="60" MaxLevel="50" while="ZodiacManager.CurrentBook.FateTask1Completed"/> <!-- Tower of Power -->
+				<LLFate FateId="486" MinLevel="1" Timeout="60" MaxLevel="50" while="ZodiacManager.CurrentBook.FateTask2Completed"/> <!-- Tower of Power -->
 			</While>	
 		</If>
 
