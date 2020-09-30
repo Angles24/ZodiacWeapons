@@ -44,10 +44,10 @@
 				<RunCode name="AttachMahatma"/>			
 			</If>
 			<!-- Buy Next Mahatma -->
-			<If condition="ZodiacMahatmaIsDone()">
+			<While condition="ZodiacMahatmaIsDone()">
 				<MoveTo XYZ="641.657,9.446683,511.1925" />
 				<RunCode name="AttachMahatma"/>
-			</If>
+			</While>
 			<!-- Mahatma Farm -->	
 			<If condition="not ZodiacMahatmaIsDone()">			
 				<LLoadProfile Path="../Dungeons/Tam Tara Deepcroft (Zodiac Zeta).xml"/>
