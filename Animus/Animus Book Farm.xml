@@ -530,8 +530,7 @@
 					</If>
 					<If Condition="ClassName == ((ClassJobType.Paladin))"> 
 						<RunCode name="BuyCurtanaAnimus"/>
-					</If>
-					<If Condition="ClassName == ((ClassJobType.Paladin))"> 
+						<WaitTimer WaitTime="3" />
 						<RunCode name="BuyHolyShieldAnimus"/>
 					</If>					
 					<If Condition="ClassName == ((ClassJobType.Scholar))"> 
