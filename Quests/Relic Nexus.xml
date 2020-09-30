@@ -41,6 +41,7 @@
 						<RunCode Name="SphairaiNovus" />
 						<WaitTimer WaitTime="3" />
 					</While>
+				</If>	
 				<If Condition="ClassName == ((ClassJobType.Ninja))"> 
 					<While Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 9253">
 						<RunCode Name="YoshiNovus" />
@@ -79,7 +80,7 @@
 						<RunCode Name="ThyrusNovus" />
 						<WaitTimer WaitTime="3" />
 					</While>
-				</If>	  
+				</If>	
 		  <If Condition="IsQuestAcceptQualified(65742)">
 			<PickupQuest QuestId="65742" NpcId="1008948"/>
 		  </If>

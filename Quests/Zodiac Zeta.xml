@@ -36,7 +36,7 @@
 		
 		<If condition="IsQuestCompleted(66096)">
 			<While condition="ZodiacCompletedMahatma() == 11 and ZodiacMahatmaIsDone()">
-				<LisbethTravel Area="North Shroud" Position="440.9087, -0.9374468, -64.35789"/>
+				<LisbethTravel Area="North Shroud" Position="407.7509, -4.688663, -89.3384"/>
 				<RunCode name="PurchaseZodiacZenith"/>
 			</While>
 			<If condition="ZodiacCompletedMahatma() == 0">

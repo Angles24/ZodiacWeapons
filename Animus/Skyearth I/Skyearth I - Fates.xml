@@ -26,7 +26,7 @@
 			<LisbethTravel Area="Outer La Noscea" Position="122.8284, 73.77152, -256.0686"/>
 			<While Condition="not ZodiacManager.CurrentBook.FateTask2Completed">
 				<Log Message="Waiting on FATE 'Schism'" />
-				<Runcode name="Schism"/>
+				<RunCode name="Schism"/>
 				<LLFate FateId="587" MinLevel="1" MaxLevel="50" timeout="60" while="ZodiacManager.CurrentBook.FateTask2Completed"/> <!-- Schism -->	
 			</While>	
 		</If>

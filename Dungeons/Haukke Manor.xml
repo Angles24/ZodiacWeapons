@@ -94,7 +94,7 @@
 				<RunCode name="OpenChest" />
 			</If>
 			<UseObject NpcId="2001235" Radius="50" XYZ="3.950047,-18.77998,-1.937151" condition="GetInstanceTodo(3) == 0"/>	<!-- Pickup bloody parchment -->
-			<If condition="GetInstanceTodo(3) == 1">
+			<If condition="GetInstanceTodo(3) == 1 and ActionManager.IsReturnReady">
 				<RunCode name="Return"/>
 			</If>	
 		</If>

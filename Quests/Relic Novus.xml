@@ -190,12 +190,20 @@
 
 
 		<!-- Upgrade to Nexus -->
-		<If condition="HasAtLeast(7883,75)">
-			<RunCode name="MeldMateria"/>
-		</If>
+		<If condition="HasAtLeast(7873,1) or HasAtLeast(7874,1) or HasAtLeast(7875,1) or HasAtLeast(7876,1) or HasAtLeast(7877,1) or HasAtLeast(7878,1) or HasAtLeast(7879,1) or HasAtLeast(7880,1) or HasAtLeast(7881,1) or HasAtLeast(7882,1) or HasAtLeast(9255,1)">
+			<While condition="HasAtLeast(7883,75)">
+				<RunCode name="MeldMateria"/>
+			</While>
+		</If>	
 		
 	</Order>
 	<CodeChunks>
+		<CodeChunk Name="MeldMateria">
+		  <![CDATA[ 
+			Core.OverlayManager.AddToast(() => "Please complete your Sphere Scroll by melding ANY 75 materia to the scroll then upgrade your relic at Jalzhan.", TimeSpan.FromMilliseconds(25000), System.Windows.Media.Color.FromRgb(29,213,226), System.Windows.Media.Color.FromRgb(13,106,175), new System.Windows.Media.FontFamily("Gautami"));
+			await Coroutine.Sleep(26000);
+		  ]]>
+		</CodeChunk>	
 		  <CodeChunk Name="BuyBRDSphereScroll">
 				<![CDATA[ 
 					await Buddy.Coroutines.Coroutine.Sleep(500);
@@ -222,18 +230,11 @@
 					 if (ff14bot.RemoteWindows.SelectYesno.IsOpen)
 						ff14bot.RemoteWindows.SelectYesno.ClickYes();
 					await Buddy.Coroutines.Coroutine.Sleep(1000);
-					if (await Coroutine.Wait(1000, () => Talk.DialogOpen))
+					while (Talk.DialogOpen)
 					{
 						Talk.Next();
-					}
-					if (await Coroutine.Wait(1000, () => Talk.DialogOpen))
-					{
-						Talk.Next();
-					}
-					if (await Coroutine.Wait(1000, () => Talk.DialogOpen))
-					{
-						Talk.Next();
-					}				
+						await Coroutine.Wait(2000, () => !Talk.DialogOpen);
+					}					
 				]]>
 			</CodeChunk>
 		  <CodeChunk Name="BuyBLMSphereScroll">
@@ -262,18 +263,11 @@
 					 if (ff14bot.RemoteWindows.SelectYesno.IsOpen)
 						ff14bot.RemoteWindows.SelectYesno.ClickYes();
 					await Buddy.Coroutines.Coroutine.Sleep(1000);
-					if (await Coroutine.Wait(1000, () => Talk.DialogOpen))
+					while (Talk.DialogOpen)
 					{
 						Talk.Next();
-					}
-					if (await Coroutine.Wait(1000, () => Talk.DialogOpen))
-					{
-						Talk.Next();
-					}
-					if (await Coroutine.Wait(1000, () => Talk.DialogOpen))
-					{
-						Talk.Next();
-					}				
+						await Coroutine.Wait(2000, () => !Talk.DialogOpen);
+					}					
 				]]>
 			</CodeChunk>
 		  <CodeChunk Name="BuyDRGSphereScroll">
@@ -302,17 +296,10 @@
 					 if (ff14bot.RemoteWindows.SelectYesno.IsOpen)
 						ff14bot.RemoteWindows.SelectYesno.ClickYes();
 					await Buddy.Coroutines.Coroutine.Sleep(1000);
-					if (await Coroutine.Wait(1000, () => Talk.DialogOpen))
+					while (Talk.DialogOpen)
 					{
 						Talk.Next();
-					}
-					if (await Coroutine.Wait(1000, () => Talk.DialogOpen))
-					{
-						Talk.Next();
-					}
-					if (await Coroutine.Wait(1000, () => Talk.DialogOpen))
-					{
-						Talk.Next();
+						await Coroutine.Wait(2000, () => !Talk.DialogOpen);
 					}				
 				]]>
 			</CodeChunk>
@@ -342,18 +329,11 @@
 					 if (ff14bot.RemoteWindows.SelectYesno.IsOpen)
 						ff14bot.RemoteWindows.SelectYesno.ClickYes();
 					await Buddy.Coroutines.Coroutine.Sleep(1000);
-					if (await Coroutine.Wait(1000, () => Talk.DialogOpen))
+					while (Talk.DialogOpen)
 					{
 						Talk.Next();
-					}
-					if (await Coroutine.Wait(1000, () => Talk.DialogOpen))
-					{
-						Talk.Next();
-					}
-					if (await Coroutine.Wait(1000, () => Talk.DialogOpen))
-					{
-						Talk.Next();
-					}				
+						await Coroutine.Wait(2000, () => !Talk.DialogOpen);
+					}					
 				]]>
 			</CodeChunk>
 		  <CodeChunk Name="BuyNINSphereScroll">
@@ -382,17 +362,10 @@
 					 if (ff14bot.RemoteWindows.SelectYesno.IsOpen)
 						ff14bot.RemoteWindows.SelectYesno.ClickYes();
 					await Buddy.Coroutines.Coroutine.Sleep(1000);
-					if (await Coroutine.Wait(1000, () => Talk.DialogOpen))
+					while (Talk.DialogOpen)
 					{
 						Talk.Next();
-					}
-					if (await Coroutine.Wait(1000, () => Talk.DialogOpen))
-					{
-						Talk.Next();
-					}
-					if (await Coroutine.Wait(1000, () => Talk.DialogOpen))
-					{
-						Talk.Next();
+						await Coroutine.Wait(2000, () => !Talk.DialogOpen);
 					}				
 				]]>
 			</CodeChunk>
@@ -422,17 +395,10 @@
 					 if (ff14bot.RemoteWindows.SelectYesno.IsOpen)
 						ff14bot.RemoteWindows.SelectYesno.ClickYes();
 					await Buddy.Coroutines.Coroutine.Sleep(1000);
-					if (await Coroutine.Wait(1000, () => Talk.DialogOpen))
+					while (Talk.DialogOpen)
 					{
 						Talk.Next();
-					}
-					if (await Coroutine.Wait(1000, () => Talk.DialogOpen))
-					{
-						Talk.Next();
-					}
-					if (await Coroutine.Wait(1000, () => Talk.DialogOpen))
-					{
-						Talk.Next();
+						await Coroutine.Wait(2000, () => !Talk.DialogOpen);
 					}				
 				]]>
 			</CodeChunk>
@@ -462,18 +428,11 @@
 					 if (ff14bot.RemoteWindows.SelectYesno.IsOpen)
 						ff14bot.RemoteWindows.SelectYesno.ClickYes();
 					await Buddy.Coroutines.Coroutine.Sleep(1000);
-					if (await Coroutine.Wait(1000, () => Talk.DialogOpen))
+					while (Talk.DialogOpen)
 					{
 						Talk.Next();
-					}
-					if (await Coroutine.Wait(1000, () => Talk.DialogOpen))
-					{
-						Talk.Next();
-					}
-					if (await Coroutine.Wait(1000, () => Talk.DialogOpen))
-					{
-						Talk.Next();
-					}				
+						await Coroutine.Wait(2000, () => !Talk.DialogOpen);
+					}					
 				]]>
 			</CodeChunk>
 		  <CodeChunk Name="BuySCHSphereScroll">
@@ -502,17 +461,10 @@
 					 if (ff14bot.RemoteWindows.SelectYesno.IsOpen)
 						ff14bot.RemoteWindows.SelectYesno.ClickYes();
 					await Buddy.Coroutines.Coroutine.Sleep(1000);
-					if (await Coroutine.Wait(1000, () => Talk.DialogOpen))
+					while (Talk.DialogOpen)
 					{
 						Talk.Next();
-					}
-					if (await Coroutine.Wait(1000, () => Talk.DialogOpen))
-					{
-						Talk.Next();
-					}
-					if (await Coroutine.Wait(1000, () => Talk.DialogOpen))
-					{
-						Talk.Next();
+						await Coroutine.Wait(2000, () => !Talk.DialogOpen);
 					}				
 				]]>
 			</CodeChunk>				
@@ -542,18 +494,11 @@
 					 if (ff14bot.RemoteWindows.SelectYesno.IsOpen)
 						ff14bot.RemoteWindows.SelectYesno.ClickYes();
 					await Buddy.Coroutines.Coroutine.Sleep(1000);
-					if (await Coroutine.Wait(1000, () => Talk.DialogOpen))
+					while (Talk.DialogOpen)
 					{
 						Talk.Next();
-					}
-					if (await Coroutine.Wait(1000, () => Talk.DialogOpen))
-					{
-						Talk.Next();
-					}
-					if (await Coroutine.Wait(1000, () => Talk.DialogOpen))
-					{
-						Talk.Next();
-					}				
+						await Coroutine.Wait(2000, () => !Talk.DialogOpen);
+					}					
 				]]>
 			</CodeChunk>
 		  <CodeChunk Name="BuyWARSphereScroll">
@@ -582,17 +527,10 @@
 					 if (ff14bot.RemoteWindows.SelectYesno.IsOpen)
 						ff14bot.RemoteWindows.SelectYesno.ClickYes();
 					await Buddy.Coroutines.Coroutine.Sleep(1000);
-					if (await Coroutine.Wait(1000, () => Talk.DialogOpen))
+					while (Talk.DialogOpen)
 					{
 						Talk.Next();
-					}
-					if (await Coroutine.Wait(1000, () => Talk.DialogOpen))
-					{
-						Talk.Next();
-					}
-					if (await Coroutine.Wait(1000, () => Talk.DialogOpen))
-					{
-						Talk.Next();
+						await Coroutine.Wait(2000, () => !Talk.DialogOpen);
 					}				
 				]]>
 			</CodeChunk>				
@@ -622,17 +560,10 @@
 					 if (ff14bot.RemoteWindows.SelectYesno.IsOpen)
 						ff14bot.RemoteWindows.SelectYesno.ClickYes();
 					await Buddy.Coroutines.Coroutine.Sleep(1000);
-					if (await Coroutine.Wait(1000, () => Talk.DialogOpen))
+					while (Talk.DialogOpen)
 					{
 						Talk.Next();
-					}
-					if (await Coroutine.Wait(1000, () => Talk.DialogOpen))
-					{
-						Talk.Next();
-					}
-					if (await Coroutine.Wait(1000, () => Talk.DialogOpen))
-					{
-						Talk.Next();
+						await Coroutine.Wait(2000, () => !Talk.DialogOpen);
 					}				
 				]]>
 				</CodeChunk>
@@ -778,12 +709,6 @@
 				}
 			}
 		]]>
-		</CodeChunk>
-		<CodeChunk Name="MeldMateria">
-		  <![CDATA[ 
-			Core.OverlayManager.AddToast(() => "Please complete your Sphere Scroll by melding ANY 75 materia to the scroll.", TimeSpan.FromMilliseconds(25000), System.Windows.Media.Color.FromRgb(29,213,226), System.Windows.Media.Color.FromRgb(13,106,175), new System.Windows.Media.FontFamily("Gautami"));
-			await Coroutine.Sleep(26000);
-		  ]]>
 		</CodeChunk>		
 	</CodeChunks>		
  </Profile> 
