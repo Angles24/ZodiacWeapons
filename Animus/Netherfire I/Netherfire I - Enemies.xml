@@ -132,18 +132,16 @@
 			</TargetMobs>
 		</GrindArea>
 		<!-- Kill Task 6 -->
-		<GrindAreas>
-			<GrindArea name="gigas_bonze">
-				<Hotspots>
-					<Hotspot Radius="500" XYZ="395.9183, -17.14769, -350.0159" name="gigas_bonze" />
-					<Hotspot Radius="500" XYZ="355.889, -5.684522, -466.8147" name="gigas_bonze" />
-					<Hotspot Radius="500" XYZ="515.3716, -9.512436, -381.3398" name="gigas_bonze" />
-				</Hotspots>
-				<TargetMobs>
-					<TargetMob id="646"  /> 
-				</TargetMobs>
-			</GrindArea>
-		</GrindAreas>
+		<GrindArea name="gigas_bonze">
+			<Hotspots>
+				<Hotspot Radius="500" XYZ="395.9183, -17.14769, -350.0159" name="gigas_bonze" />
+				<Hotspot Radius="500" XYZ="355.889, -5.684522, -466.8147" name="gigas_bonze" />
+				<Hotspot Radius="500" XYZ="515.3716, -9.512436, -381.3398" name="gigas_bonze" />
+			</Hotspots>
+			<TargetMobs>
+				<TargetMob id="646"  /> 
+			</TargetMobs>
+		</GrindArea>
 		<!-- Kill Task 7 -->
 		<GrindArea name="ughamaro_roundsman">
 			<Hotspots>
