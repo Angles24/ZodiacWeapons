@@ -53,9 +53,9 @@
 			<MoveTo XYZ="71.39691,-0.001626727,28.64114" />
 			<UseObject NpcId="2000302" Radius="50" XYZ="71.39691,-0.001626727,28.64114" condition="GetInstanceTodo(0) == 0"/>
 			<MoveTo XYZ="0.5093936,0.1435532,56.9761" />
-			<If condition="GameObjectManager.GetObjectByNPCId(2000329).IsVisible">
+			<While condition="GameObjectManager.GetObjectByNPCId(2000329).IsVisible">
 				<RunCode name="LockedDoor1"/>
-			</If>
+			</While>
 			<MoveTo XYZ="-52.42435,-0.002903374,22.51591" />
 			<UseObject NpcId="2000304" Radius="50" XYZ="-52.42435,-0.002903374,22.51591" condition="GetInstanceTodo(0) == 0"/>
 			<MoveTo XYZ="-18.92133, -1.192093E-07, 0.3697742"/>
@@ -74,9 +74,9 @@
 				<RunCode name="IvyDoor"/>
 			</If>
 			<MoveTo XYZ="-1.89994,-18.6151,34.6209" />
-			<If condition="GameObjectManager.GetObjectByNPCId(2000343).IsVisible">
+			<While condition="GameObjectManager.GetObjectByNPCId(2000343).IsVisible">
 				<RunCode name="LockedDoor2"/>
-			</If>
+			</While>
 			<MoveTo XYZ="-12.3487,-18.80323,52.29088" />
 			<UseObject NpcId="2000325" Radius="50" XYZ="-12.3487,-18.80323,52.29088" condition="GetInstanceTodo(2) == 0"/>	<!-- Pickup Yellow Key -->
 		</If>
@@ -85,9 +85,9 @@
 		<If Condition="GetInstanceTodo(3) == 0 and GetInstanceTodo(2) == 1">
 			<Log Message="Find the bloody parchment 0/1" />		
 			<MoveTo XYZ="-25.55891,-18.57028,-0.07634211" />
-			<If condition="GameObjectManager.GetObjectByNPCId(2000356).IsVisible">
+			<While condition="GameObjectManager.GetObjectByNPCId(2000356).IsVisible">
 				<RunCode name="CarnationDoor"/>
-			</If>
+			</While>
 			<MoveTo XYZ="-18.87221, -18.93448, -0.6442814"/>	
 			<Grind GrindRef="SecondBoss" While="not GameObjectManager.GetObjectByNPCId(2001235)"/> <!-- Fight Second Boss -->
 			<If Condition="&openchest; == 1">
@@ -103,9 +103,9 @@
 		<If Condition="GetInstanceTodo(4) == 0 and GetInstanceTodo(3) == 1">
 			<Log Message="Defeat Lady Amandine 0/1" />
 			<MoveTo XYZ="46.69981,9.875019,-0.2538557" />
-			<If condition="GameObjectManager.GetObjectByNPCId(2001233).IsVisible">
+			<While condition="GameObjectManager.GetObjectByNPCId(2001233).IsVisible">
 				<RunCode name="SealedBarrier"/>
-			</If>
+			</While>
 			<MoveTo XYZ="30.17896,16.99996,0.192634" />
 			<If Condition="ClassName == ((ClassJobType.Bard))"> 
 				<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 6261">
