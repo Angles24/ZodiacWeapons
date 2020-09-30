@@ -35,10 +35,10 @@
 		</If>
 		
 		<If condition="IsQuestCompleted(66096)">
-			<If condition="ZodiacCompletedMahatma() == 12">
+			<While condition="ZodiacCompletedMahatma() == 12">
 				<LisbethTravel Area="North Shroud" Position="440.9087, -0.9374468, -64.35789"/>
-				<StopBot/>
-			</If>
+				<RunCode name="PurchaseZodiacZenith"/>
+			</While>
 			<If condition="ZodiacCompletedMahatma() == 0">
 				<If Condition="not HasAtLeast(28,50)">
 					<RunCode name="NeedPoetics"/>
@@ -107,6 +107,12 @@
 				#endif
 				Core.OverlayManager.AddToast(() => _msg, TimeSpan.FromMilliseconds(25000), System.Windows.Media.Color.FromRgb(29,213,226), System.Windows.Media.Color.FromRgb(13,106,175), new System.Windows.Media.FontFamily("Gautami"));
 			  ]]>
+		</CodeChunk>
+		<CodeChunk Name="PurchaseZodiacZenith">
+		  <![CDATA[ 
+			Core.OverlayManager.AddToast(() => "Talk to Jalzahn and purchase your final relic upgrade.", TimeSpan.FromMilliseconds(25000), System.Windows.Media.Color.FromRgb(29,213,226), System.Windows.Media.Color.FromRgb(13,106,175), new System.Windows.Media.FontFamily("Gautami"));
+			await Coroutine.Sleep(60000);
+		  ]]>
 		</CodeChunk>		
 	</CodeChunks>
 </Profile>	

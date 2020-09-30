@@ -13,7 +13,7 @@
 		<!-- Book of Skyearth I FATE Task 1 - The Taste of Fear -->	
 		<If condition="not ZodiacManager.CurrentBook.FateTask1Completed">
 			<Log Message="Moving to FATE 'The Taste of Fear'" />
-			<LisbethTravel Area="Coerthas Central Highlands" Position="-850.8272, 225.6802, 21.82901"/>
+			<LisbethTravel Area="Coerthas Central Highlands" Position="-820.2712, 224.3287, 21.67726"/>
 			<While Condition="not ZodiacManager.CurrentBook.FateTask1Completed">
 				<Log Message="Waiting on FATE 'The Taste of Fear'" />
 				<LLFate FateId="493" MinLevel="1" MaxLevel="50" while="ZodiacManager.CurrentBook.FateTask1Completed"/> <!-- The Taste of Fear -->		
