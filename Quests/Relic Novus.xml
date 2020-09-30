@@ -52,7 +52,7 @@
 						<RunCode Name="CurtanaAnimus" />
 						<WaitTimer WaitTime="5" />
 					</While>	
-					<While Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7843">						
+					<While Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.OffHand].RawItemId != 7843">						
 						<RunCode Name="HolyAnimus" />
 					</While>				
 				</If>
