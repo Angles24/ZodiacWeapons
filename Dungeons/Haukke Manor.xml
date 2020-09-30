@@ -94,6 +94,9 @@
 				<RunCode name="OpenChest" />
 			</If>
 			<UseObject NpcId="2001235" Radius="50" XYZ="3.950047,-18.77998,-1.937151" condition="GetInstanceTodo(3) == 0"/>	<!-- Pickup bloody parchment -->
+			<If condition="GetInstanceTodo(3) == 1">
+				<RunCode name="Return"/>
+			</If>	
 		</If>
 		
 		<!-- Defeat Lady Amandine 0/1 -->
@@ -263,24 +266,19 @@
 			ff14bot.RemoteWindows.SelectYesno.ClickYes();
 			await Coroutine.Sleep(4000);
       ]]>
-	</CodeChunk>	
-	<CodeChunk Name="ExitDuty">
+	</CodeChunk>
+	<CodeChunk Name="Return">
 		<![CDATA[
-			ff14bot.Managers.GameObjectManager.GetObjectByNPCId(2000370).Interact();
+			ActionManager.DoAction(ActionType.General, 8, Core.Me);
 			await Coroutine.Sleep(1000);
 			ff14bot.RemoteWindows.SelectYesno.ClickYes();
-			await Coroutine.Sleep(3000);
-      ]]>
-	</CodeChunk>
-	<CodeChunk Name="LeaveDuty">
-		<![CDATA[
-			ff14bot.Managers.DutyManager.LeaveActiveDuty();
+			await Coroutine.Sleep(4000);
 			await Coroutine.Wait(20000, () => CommonBehaviors.IsLoading);
 			if (CommonBehaviors.IsLoading)
 			{
 				await Coroutine.Wait(-1, () => !CommonBehaviors.IsLoading);
 			}
-		]]>
+      ]]>
 	</CodeChunk>	
 	<CodeChunk Name="ChangeZone">
 		<![CDATA[

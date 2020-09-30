@@ -23,10 +23,11 @@
 		<!-- Book of Skyearth I FATE Task 2 - Schism -->	
 		<If condition="not ZodiacManager.CurrentBook.FateTask2Completed">
 			<Log Message="Moving to FATE 'Schism'" />
-			<LisbethTravel Area="Outer La Noscea" Position="198.0787, 63.1253, -272.2718"/>
+			<LisbethTravel Area="Outer La Noscea" Position="122.8284, 73.77152, -256.0686"/>
 			<While Condition="not ZodiacManager.CurrentBook.FateTask2Completed">
 				<Log Message="Waiting on FATE 'Schism'" />
-				<LLFate FateId="587" MinLevel="1" MaxLevel="50" while="ZodiacManager.CurrentBook.FateTask2Completed"/> <!-- Schism -->	
+				<Runcode name="Schism"/>
+				<LLFate FateId="587" MinLevel="1" MaxLevel="50" timeout="60" while="ZodiacManager.CurrentBook.FateTask2Completed"/> <!-- Schism -->	
 			</While>	
 		</If>
 
@@ -44,9 +45,9 @@
 		
 	</Order>
 	<CodeChunks>
-		<CodeChunk Name="TowerOfPower">
+		<CodeChunk Name="Schism">
 		  <![CDATA[ 
-			Core.OverlayManager.AddToast(() => "Please complete Tower Of Power FATE manually. Starts from NPC.", TimeSpan.FromMilliseconds(25000), System.Windows.Media.Color.FromRgb(29,213,226), System.Windows.Media.Color.FromRgb(13,106,175), new System.Windows.Media.FontFamily("Gautami"));
+			Core.OverlayManager.AddToast(() => "Please complete Schism FATE manually. Starts from NPC.", TimeSpan.FromMilliseconds(25000), System.Windows.Media.Color.FromRgb(29,213,226), System.Windows.Media.Color.FromRgb(13,106,175), new System.Windows.Media.FontFamily("Gautami"));
 			await Coroutine.Sleep(60000);
 		  ]]>
 		</CodeChunk>	
