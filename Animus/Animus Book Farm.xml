@@ -296,36 +296,36 @@
 				</If>
 			</If>
 
-		<!-- Skywind I -->	
+		<!-- Netherfall I -->	
 			<If Condition="HasAtLeast(2001303,1)">
 				
-			<!-- Skywind I Enemies -->
+			<!-- Netherfall I Enemies -->
 				<If condition="not ZodiacManager.CurrentBook.KillTask1Completed or not ZodiacManager.CurrentBook.KillTask2Completed or not ZodiacManager.CurrentBook.KillTask3Completed or not ZodiacManager.CurrentBook.KillTask4Completed or not ZodiacManager.CurrentBook.KillTask5Completed or not ZodiacManager.CurrentBook.KillTask6Completed or not ZodiacManager.CurrentBook.KillTask7Completed or not ZodiacManager.CurrentBook.KillTask8Completed or not ZodiacManager.CurrentBook.KillTask9Completed or not ZodiacManager.CurrentBook.KillTask10Completed">
-					<Log Message="Skywind I Enemies not complete, fixing that." />	
-					<LLoadProfile Path="../Animus/Skywind I/Skywind I - Enemies.xml"/>
+					<Log Message="Netherfall I Enemies not complete, fixing that." />	
+					<LLoadProfile Path="../Animus/Netherfall I/Netherfall I - Enemies.xml"/>
 				</If>
 
-			<!-- Skywind I Dungeons -->	
+			<!-- Netherfall I Dungeons -->	
 				<If condition="not ZodiacManager.CurrentBook.DungeonTask1Completed or not ZodiacManager.CurrentBook.DungeonTask2Completed or not ZodiacManager.CurrentBook.DungeonTask3Completed">				
-					<Log Message="Skywind I Dungeons not complete, fixing that." />
-					<LLoadProfile Path="../Animus/Skywind I/Skywind I - Dungeons.xml"/>
+					<Log Message="Netherfall I Dungeons not complete, fixing that." />
+					<LLoadProfile Path="../Animus/Netherfall I/Netherfall I - Dungeons.xml"/>
 				</If>
 
-			<!-- Skywind I Fates -->
+			<!-- Netherfall I Fates -->
 				<If condition="not ZodiacManager.CurrentBook.FateTask1Completed or not ZodiacManager.CurrentBook.FateTask2Completed or not ZodiacManager.CurrentBook.FateTask3Completed">				
-					<Log Message="Skywind I FATEs not complete, fixing that." />
-					<LLoadProfile Path="../Animus/Skywind I/Skywind I - Fates.xml"/>								  				  						
+					<Log Message="Netherfall I FATEs not complete, fixing that." />
+					<LLoadProfile Path="../Animus/Netherfall I/Netherfall I - Fates.xml"/>								  				  						
 				</If>
 				
-			<!-- Skywind I Guildleves -->
+			<!-- Netherfall I Guildleves -->
 				<If condition="not ZodiacManager.CurrentBook.GuildleveTask1Completed or not ZodiacManager.CurrentBook.GuildleveTask2Completed or not ZodiacManager.CurrentBook.GuildleveTask3Completed">
-					<Log Message="Skywind I Leves not complete, fixing that." />
-					<LLoadProfile Path="../Animus/Skywind I/Skywind I - Leves.xml"/>	
+					<Log Message="Netherfall I Leves not complete, fixing that." />
+					<LLoadProfile Path="../Animus/Netherfall I/Netherfall I - Leves.xml"/>	
 				</If>
 
 			<!-- Book completed -->
 				<If condition="HasAtLeast(2001303,1) and ZodiacManager.CurrentBook.KillTask1Completed and ZodiacManager.CurrentBook.KillTask2Completed and ZodiacManager.CurrentBook.KillTask3Completed and ZodiacManager.CurrentBook.KillTask4Completed and ZodiacManager.CurrentBook.KillTask5Completed and ZodiacManager.CurrentBook.KillTask6Completed and ZodiacManager.CurrentBook.KillTask7Completed and ZodiacManager.CurrentBook.KillTask8Completed and ZodiacManager.CurrentBook.KillTask9Completed and ZodiacManager.CurrentBook.KillTask10Completed and ZodiacManager.CurrentBook.DungeonTask1Completed and ZodiacManager.CurrentBook.DungeonTask2Completed and ZodiacManager.CurrentBook.DungeonTask3Completed and ZodiacManager.CurrentBook.FateTask1Completed and ZodiacManager.CurrentBook.FateTask2Completed and ZodiacManager.CurrentBook.FateTask3Completed and ZodiacManager.CurrentBook.GuildleveTask1Completed and ZodiacManager.CurrentBook.GuildleveTask2Completed and ZodiacManager.CurrentBook.GuildleveTask3Completed">				
-					<Log Message="Skywind I completed. Buying Skywind I" />
+					<Log Message="Netherfall I completed. Buying Netherfall I" />
 					<LisbethTravel Area="Mor Dhona" Position="71.13229, 33.06656, -707.7657"/>
 					<Dismount/>
 					<If Condition="ClassName == ((ClassJobType.Paladin))"> 
