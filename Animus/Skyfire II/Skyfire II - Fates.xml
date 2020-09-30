@@ -31,7 +31,7 @@
 		</If>
 
 		<!-- Book of Skyfire II FATE Task 3 - Air Supply -->	
-		<If condition="not ZodiacManager.CurrentBook.FateTask3ompleted">
+		<If condition="not ZodiacManager.CurrentBook.FateTask3Completed">
 			<Log Message="Moving to FATE 'Air Supply'" />
 			<LisbethTravel Area="North Shroud" Position="-110.479, -8.697146, -51.66109"/>
 			<While Condition="not ZodiacManager.CurrentBook.FateTask3Completed">
