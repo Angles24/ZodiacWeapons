@@ -122,7 +122,7 @@
 				</While>
 				<If Condition="HasAtLeast(28,50)">	
 					<LisbethTravel Area="Western La Noscea" Position="642.0411, 9.382738, 511.8205"/>
-					<RunCode name="AttachMahatma"/>
+					<RunCode name="FirstMahatma"/>
 				</If>	
 			</If>
 			<!-- Buy Next Mahatma -->
@@ -138,6 +138,40 @@
 		
 	</Order>
 	<CodeChunks>
+		<CodeChunk Name="FirstMahatma">
+            <![CDATA[ 
+				uint Slot = (uint)(LlamaLibrary.ScriptConditions.Helpers.ZodiacCompletedMahatma());
+				await Buddy.Coroutines.Coroutine.Sleep(500);
+                ff14bot.Managers.GameObjectManager.GetObjectByNPCId(1011791).Interact();
+                await Buddy.Coroutines.Coroutine.Sleep(1000);
+                if (ff14bot.RemoteWindows.SelectIconString.IsOpen)
+                    ff14bot.RemoteWindows.SelectIconString.ClickSlot(0);
+				await Buddy.Coroutines.Coroutine.Sleep(1000);
+                if (await Coroutine.Wait(1000, () => Talk.DialogOpen))
+                {
+                    Talk.Next();
+                }
+                await Buddy.Coroutines.Coroutine.Sleep(1000);					
+                if (ff14bot.RemoteWindows.SelectString.IsOpen)
+                    SelectString.ClickLineContains(InventoryManager.EquippedItems.First().Name);
+				await Buddy.Coroutines.Coroutine.Sleep(1000);	
+                if (ff14bot.RemoteWindows.SelectString.IsOpen)
+					SelectString.ClickSlot(0);
+				await Buddy.Coroutines.Coroutine.Sleep(1000);		
+                if (await Coroutine.Wait(1000, () => Talk.DialogOpen))
+                {
+                    Talk.Next();
+                }
+                await Buddy.Coroutines.Coroutine.Sleep(1000);
+                if (ff14bot.RemoteWindows.SelectYesno.IsOpen)
+                    ff14bot.RemoteWindows.SelectYesno.ClickYes();
+				await Buddy.Coroutines.Coroutine.Sleep(1000);
+                while (Talk.DialogOpen)
+                {
+                    Talk.Next();
+                    await Coroutine.Wait(2000, () => !Talk.DialogOpen);
+                }				
+            ]]>	
 		<CodeChunk Name="AttachMahatma">
             <![CDATA[ 
 				uint Slot = (uint)(LlamaLibrary.ScriptConditions.Helpers.ZodiacCompletedMahatma());
