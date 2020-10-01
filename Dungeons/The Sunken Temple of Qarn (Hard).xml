@@ -112,7 +112,7 @@
 			<MoveTo XYZ="219.3703, -41.22675, -0.4101346" />
 			<RunCode name="ChangeZone"/>
 			<MoveTo XYZ="254.3246, -3.999998, 0.05864016" distance="1" />
-			<Grind GrindRef="SecondBoss" while="GetInstanceTodo(4) == 0"/> <!-- Fight the second boss -->
+			<Grind GrindRef="SecondBoss" while="GetInstanceTodo(3) == 0"/> <!-- Fight the second boss -->
 			<If Condition="&openchest; == 1">
 				<RunCode name="OpenChest" />
 			</If>			
