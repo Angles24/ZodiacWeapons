@@ -207,7 +207,7 @@
 			<MoveTo XYZ="82.4129, 10, -380.4955"/>
 			<RunCode name="RustedNymianDevice2001130"/>
 			<MoveTo XYZ="67.09601, 6, -423.0093"/>
-			<Grind GrindRef="FinalBoss" While="GameObjectManager.GetObjectByNPCId(1547).CurrentHealth == 0"/> <!-- Fight Final Boss -->			
+			<Grind GrindRef="FinalBoss" While="not GameObjectManager.GetObjectByNPCId(1547).CurrentHealth == 0"/> <!-- Fight Final Boss -->			
 			<If Condition="&openchest; == 1">
 				<RunCode name="OpenChest" />
 			</If>
