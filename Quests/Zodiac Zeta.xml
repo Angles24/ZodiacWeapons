@@ -172,6 +172,7 @@
                     await Coroutine.Wait(2000, () => !Talk.DialogOpen);
                 }				
             ]]>	
+		</CodeChunk>	
 		<CodeChunk Name="AttachMahatma">
             <![CDATA[ 
 				uint Slot = (uint)(LlamaLibrary.ScriptConditions.Helpers.ZodiacCompletedMahatma());
