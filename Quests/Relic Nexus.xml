@@ -96,8 +96,9 @@
 		<If Condition="GetQuestStep(65742) == 255">
 		  <GetTo ZoneId="154" XYZ="406.4768, -4.498047, -88.84937"/>
 		  <TurnIn QuestId="65742" NpcId="1008948" XYZ="405.1117, -4.498068, -89.15851"/>
-		  <RunCode name="SoulGlazed"/>
-		  <StopBot/>
+		  <While condition="1 == 1">
+			<RunCode name="SoulGlazed"/>
+		  </While>		
 		</If>
 
 	<!-- Light Farm -->
@@ -137,7 +138,7 @@
 					<RunCode Name="CurtanaNovus" />
 					<WaitTimer WaitTime="5" />
 				</If>	
-				<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7872">						
+				<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.OffHand].RawItemId != 7872">						
 					<RunCode Name="HolyNovus" />
 				</If>				
 			</If>
@@ -165,11 +166,10 @@
 					<WaitTimer WaitTime="3" />
 				</If>
 			</If>
-			<If Condition="NovusLightLevel() == 2000">
+			<While Condition="NovusLightLevel() == 2000">
 				<LisbethTravel Area="North Shroud" Position="408.0551, -4.836707, -87.85005"/>
 				<RunCode name="LightComplete"/>
-				<StopBot/>
-			</If>			
+			</While>			
 			<If Condition="NovusLightLevel() &lt; 2000">	
 				<If Condition="&garuda; == 1">
 					<LLoadProfile Path="../Dungeons/The Howling Eye (Extreme) - SoulGlazed.xml"/>
@@ -191,7 +191,7 @@
 		</CodeChunk>
 		<CodeChunk Name="LightComplete">
 		  <![CDATA[ 
-			Core.OverlayManager.AddToast(() => "Talk to Jalzahn purchase Nexus weapon.", TimeSpan.FromMilliseconds(25000), System.Windows.Media.Color.FromRgb(29,213,226), System.Windows.Media.Color.FromRgb(13,106,175), new System.Windows.Media.FontFamily("Gautami"));
+			Core.OverlayManager.AddToast(() => "Talk to Jalzahn and purchase Nexus weapon.", TimeSpan.FromMilliseconds(25000), System.Windows.Media.Color.FromRgb(29,213,226), System.Windows.Media.Color.FromRgb(13,106,175), new System.Windows.Media.FontFamily("Gautami"));
 			await Coroutine.Sleep(60000);
 		  ]]>
 		</CodeChunk>		
