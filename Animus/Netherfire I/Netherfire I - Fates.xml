@@ -20,7 +20,7 @@
 		</If>
 
 		<!-- Book of Netherfire I FATE Task 2 - Everthing's Better -->	
-		<If condition="not ZodiacManager.CurrentBook.DungeonTask2Completed">
+		<If condition="not ZodiacManager.CurrentBook.FateTask2Completed">
 			<LisbethTravel Area="East Shroud" Position="106.4527, -27.47261, -348.3219"/>
 			<While Condition="not ZodiacManager.CurrentBook.FateTask2Completed">
 				<Log Message="Waiting on FATE 'Everthing's Better'" />
@@ -29,7 +29,7 @@
 		</If>
 
 		<!-- Book of Netherfire I FATE Task 3 - Return to Cinder -->	
-		<If condition="not ZodiacManager.CurrentBook.DungeonTask3Completed">
+		<If condition="not ZodiacManager.CurrentBook.FateTask3Completed">
 			<LisbethTravel Area="Southern Thanalan" Position="162.4769, 14.11975, 254.5353"/>
 			<While Condition="not ZodiacManager.CurrentBook.FateTask3Completed">
 				<Log Message="Waiting on FATE 'Return to Cinder'" />
