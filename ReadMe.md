@@ -97,10 +97,6 @@ If you die at any time, you'll need to restart the bot.
 
 We cannot manually meld materia to your Sphere scroll. It will farm the 75 Alexandrite and obtain your Sphere scroll but you will need to manually meld the materia and go purchase the next level of relic.
 
-Right now Light Level cannot be automatically detected. The bot will spam Garuda indefinitely. You will need to check it periodically and go buy the next level of relic when your light level is complete.
-
-You will need to atach new Mahatma's every two Tam-Tara runs. The bot will stop to allow you to do so.
-
 
 * Fates
 	* Fates are wonky. Mostly due to Navigation with RB, so don't completely AFK during this part. Or ever, really.
@@ -118,7 +114,6 @@ You will need to atach new Mahatma's every two Tam-Tara runs. The bot will stop 
 	* You must already have levequests unlocked for the Whitebrim, Saint Coinarch's Find and Camp Bluefog. I can't automate those quests yet as they combine a quest and a levequest in one.
 	* Levequests sometimes don't turn in all the way. May have to turn them in manually.
 	* "Someone's in the Doghouse" will need to be done manually until I can find a way to automate the beckon escort quest.
-	* Necrologos: The Liminal Ones & Necrologos: Pale Oblation. I can't figure ou thow to get these to exit the UseObject tag properly. So for now they're set to manual completion.
 
 
 
