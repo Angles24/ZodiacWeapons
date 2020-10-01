@@ -164,10 +164,9 @@
 			</If>
 			<If Condition="GetQuestStep(65893) == 255">
 				<!-- Perfet Firewood and Furnace Ring -->
-				<If Condition="not HasHqItem(9511) and not HasHqItem(9510)">
+				<While Condition="not HasHqItem(9511) or not HasHqItem(9510)">
 					<RunCode name="NeedFurnaceRingandPerfectFirewood"/>
-					<StopBot/>
-				</If>		
+				</While>		
 				<If Condition="HasHqItem(9511) and HasHqItem(9510)">
 					<LisbethTravel Area="Mor Dhona" Position="70.42073, 33.06654, -704.3105"/>
 					<TurnIn ItemIds="9510,9511" NpcId="1010809" XYZ="73.10596, 33.06655, -704.4022" QuestId="65893" StepId="255"/>
@@ -213,10 +212,9 @@
 			</If>
 			<If Condition="GetQuestStep(65894) == 6">
 				<!-- Perfet Mortar and Perfect Pestle -->
-				<If Condition="not HasHqItem(9512) and not HasHqItem(9513)">
+				<While Condition="not HasHqItem(9512) or not HasHqItem(9513)">
 					<RunCode name="NeedMortarAndPestle"/>
-					<StopBot/>
-				</If>
+				</While>
 				<If Condition="HasHqItem(9512) and HasHqItem(9513)">				
 					<LisbethTravel Area="Mor Dhona" Position="24.34158, 28.99997, -729.7673"/>>
 					<HandOver ItemIds="9512,9513" NpcId="1006971" XYZ="24.3075,29.02171,-726.86352" QuestId="65894" StepId="6"/>
@@ -224,10 +222,9 @@
 			</If>
 			<!-- Sacred Spring Water -->
 			<If Condition="GetQuestStep(65894) == 255 and not HasAtLeast(9540,1)">
-				<If Condition="not HasAtLeast(28,200)">
+				<While Condition="not HasAtLeast(28,200)">
 					<RunCode name="NeedPoetics"/>
-					<StopBot/>
-				</If>		
+				</While>		
 				<If Condition="HasAtLeast(28,200)">
 					<LisbethTravel Area="Mor Dhona" Position="63.4094, 31.15338, -736.7321"/>
 					<BuyShopExchangeCurrency NpcId= "1008119" ItemId="9540" SelectString="2" Count="1"/>
@@ -235,10 +232,9 @@
 			</If>
 			<!-- Bombard Core -->	
 			<If Condition="GetQuestStep(65894) == 255 and not HasAtLeast(9539,1)">
-				<If condition="CurrentGCSeals() &lt; 20000">
+				<While condition="CurrentGCSeals() &lt; 20000">
 					<RunCode name="NeedGCSeals"/>
-					<StopBot/>
-				</If>			
+				</While>			
 				<If condition="CurrentGCSeals() &gt; 20000">
 					<Log Message="Moving to buy Bombard Core." />
 					<BuyGCItem ItemId="9539" Count="1"/>
@@ -288,10 +284,9 @@
 			</If>
 			<If Condition="GetQuestStep(65895) == 9">
 				<!-- Perfect Vellum and Perfect Pounce -->
-				<If Condition="not HasHqItem(9514) and not HasHqItem(9515)">
+				<While Condition="not HasHqItem(9514) or not HasHqItem(9515)">
 					<RunCode name="NeedVellumAndPounce"/>
-					<StopBot/>
-				</If>
+				</While>
 				<If Condition="HasHqItem(9514) and HasHqItem(9515)">				
 					<LisbethTravel Area="Central Thanalan" Position="109.4787, 31, -387.5287"/>
 					<HandOver ItemIds="9514,9515" NpcId="1010810" XYZ="109.4834, 31, -388.8457" QuestId="65895" StepId="9"/>
@@ -300,10 +295,9 @@
 			<If Condition="GetQuestStep(65895) == 255">
 				<!-- Sacred Spring Water -->
 				<If Condition="not HasAtLeast(9540,1)">
-					<If Condition="not HasAtLeast(28,200)">
+					<While Condition="not HasAtLeast(28,200)">
 						<RunCode name="NeedPoetics"/>
-						<StopBot/>
-					</If>		
+					</While>		
 					<If Condition="HasAtLeast(28,200)">
 						<LisbethTravel Area="Mor Dhona" Position="63.4094, 31.15338, -736.7321"/>
 						<BuyShopExchangeCurrency NpcId= "1008119" ItemId="9540" SelectString="2" Count="1"/>
@@ -311,10 +305,9 @@
 				</If>			
 				<!-- Bombard core -->
 				<If Condition="not HasAtLeast(9539,1)">
-					<If condition="CurrentGCSeals() &lt; 20000">
+					<While condition="CurrentGCSeals() &lt; 20000">
 						<RunCode name="NeedGCSeals"/>
-						<StopBot/>
-					</If>			
+					</While>			
 					<If condition="CurrentGCSeals() &gt; 20000">
 						<Log Message="Moving to buy Bombard Core." />
 						<BuyGCItem ItemId="9539" Count="1"/>
@@ -343,9 +336,9 @@
 			<If Condition="GetQuestStep(65896) == 1">
 				<!-- Sacred Spring Water -->
 				<If Condition="not HasAtLeast(9540,1)">
-					<If Condition="not HasAtLeast(28,200)">
+					<While Condition="not HasAtLeast(28,200)">
 						<RunCode name="NeedPoetics"/>
-					</If>		
+					</While>		
 					<If Condition="HasAtLeast(28,200)">
 						<LisbethTravel Area="Mor Dhona" Position="63.4094, 31.15338, -736.7321"/>
 						<BuyShopExchangeCurrency NpcId= "1008119" ItemId="9540" SelectString="2" Count="1"/>
@@ -353,10 +346,9 @@
 				</If>			
 				<!-- Bombard core -->
 				<If Condition="not HasAtLeast(9539,1)">
-					<If condition="CurrentGCSeals() &lt; 20000">
+					<While condition="CurrentGCSeals() &lt; 20000">
 						<RunCode name="NeedGCSeals"/>
-						<StopBot/>
-					</If>			
+					</While>			
 					<If condition="CurrentGCSeals() &gt; 20000">
 						<Log Message="Moving to buy Bombard Core." />
 						<BuyGCItem ItemId="9539" Count="1"/>
@@ -391,7 +383,7 @@
 				<LisbethTravel Area="Western La Noscea" Position="647.5743, 5.666206, 551.7373"/>
 				<HandOver ItemIds="2001540,2001541,2001542" NpcId="1010811" XYZ="645.2583, 5.631262, 551.5983" QuestId="65896" StepId="4"/>
 			</If>
-			<If Condition="GetQuestStep(65896) == 5">
+			<While Condition="GetQuestStep(65896) == 5">
 			  <!-- [Unlock The Stone Vigil (Hard)] Blood for Stone -->
 				<If Condition="not HasQuest(67061) and not IsQuestCompleted(67061)">
 				  <GetTo ZoneId="156" XYZ="23.17937, 21.25273, -649.3959"/>
@@ -408,15 +400,15 @@
 				  <TalkTo NpcId="1006490" XYZ="-673.2128, 205.9598, -515.7702" QuestId="67061" StepId="2"/>
 				</If>			
 				<RunCode name="AnnounceStoneVigilHard"/>	
-			</If>
+			</While>
 			<If Condition="GetQuestStep(65896) == 6">
 				<LisbethTravel Area="Western La Noscea" Position="647.5743, 5.666206, 551.7373"/>
 				<HandOver ItemIds="2001543" NpcId="1010811" XYZ="645.2583, 5.631262, 551.5983" QuestId="65896" StepId="6"/>
 			</If>
 			<If Condition="GetQuestStep(65896) == 255">
-				<If condition="not HasHqItem(9516) and not HasHqItem(9517)">
+				<While condition="not HasHqItem(9516) and not HasHqItem(9517)">
 					<RunCode name="NeedPieAndCloth"/>
-				</If>				
+				</While>				
 				<If condition="HasHqItem(9516) and HasHqItem(9517)">
 					<LisbethTravel Area="Mor Dhona" Position="27.53231, 28.99997, -737.4474"/>
 					<TurnIn ItemIds="9516,9517" NpcId="1006981" XYZ="27.53231, 28.99997, -737.4474" QuestId="65896" StepId="255"/>
@@ -429,81 +421,81 @@
 			<If Condition="not HasQuest(65897) and not IsQuestCompleted(65897)">
 			  <LisbethTravel Area="North Shroud" Position="440.9087, -0.9374468, -64.35789"/>
 				<If Condition="ClassName == ((ClassJobType.Bard))"> 
-					<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 8653">
+					<While Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 8653">
 						<Log Message="Equipping Artemis Bow Nexus" />
 						<RunCode Name="ArtemisNexus" />
 						<WaitTimer WaitTime="3" />
-					</If>
+					</While>
 				</If>
 				<If Condition="ClassName == ((ClassJobType.BlackMage))"> 
-					<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 8655">
+					<While Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 8655">
 						<Log Message="Equipping Stardust Rod Nexus" />
 						<RunCode Name="StardustNexus" />
 						<WaitTimer WaitTime="3" />
-					</If>
+					</While>
 				</If>
 				<If Condition="ClassName == ((ClassJobType.Dragoon))"> 
-					<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 8652">
+					<While Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 8652">
 						<Log Message="Equipping Gae Bolg Nexus" />
 						<RunCode Name="GaeBolgNexus" />
 						<WaitTimer WaitTime="3" />
-					</If>
+					</While>
 				</If>	
 				<If Condition="ClassName == ((ClassJobType.Monk))"> 
-					<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 8650">
+					<While Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 8650">
 						<Log Message="Equipping Sphairai Nexus" />
 						<RunCode Name="SphairaiNexus" />
 						<WaitTimer WaitTime="3" />
-					</If>
+					</While>
 				</If>
 				<If Condition="ClassName == ((ClassJobType.Ninja))"> 
-					<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 9254">
+					<While Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 9254">
 						<Log Message="Equipping Yoshimitsu Nexus" />
 						<RunCode Name="YoshiNexus" />
 						<WaitTimer WaitTime="3" />
-					</If>
+					</While>
 				</If>
 				<If Condition="ClassName == ((ClassJobType.Paladin))"> 
-					<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 8649">
+					<While Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 8649">
 						<Log Message="Equipping Curtana Nexus" />
 						<RunCode Name="CurtanaNexus" />
 						<WaitTimer WaitTime="3" />
-					</If>
+					</While>
 				</If>
 				<If Condition="ClassName == ((ClassJobType.Paladin))"> 
-					<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.OffHand].RawItemId != 8658">
+					<While Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.OffHand].RawItemId != 8658">
 						<Log Message="Equipping Holy Shield Nexus" />
 						<RunCode Name="HolyShieldNexus" />
 						<WaitTimer WaitTime="3" />
-					</If>
+					</While>
 				</If>			
 				<If Condition="ClassName == ((ClassJobType.Scholar))"> 
-					<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 8657">
+					<While Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 8657">
 						<Log Message="Equipping Omnilex Nexus" />
 						<RunCode Name="OmnilexNexus" />
 						<WaitTimer WaitTime="3" />
-					</If>
+					</While>
 				</If>
 				<If Condition="ClassName == ((ClassJobType.Summoner))"> 
-					<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 8656">
+					<While Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 8656">
 						<Log Message="Equipping Viel of Wiyu Nexus" />
 						<RunCode Name="VeilNexus" />
 						<WaitTimer WaitTime="3" />
-					</If>
+					</While>
 				</If>	
 				<If Condition="ClassName == ((ClassJobType.Warrior))"> 
-					<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 8651">
+					<While Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 8651">
 						<Log Message="Equipping Bravura Nexus" />
 						<RunCode Name="BravuraNexus" />
 						<WaitTimer WaitTime="3" />
-					</If>
+					</While>
 				</If>
 				<If Condition="ClassName == ((ClassJobType.WhiteMage))"> 
-					<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 8654">
+					<While Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 8654">
 						<Log Message="Equipping Thyrus Nexus" />
 						<RunCode Name="ThyrusNexus" />
 						<WaitTimer WaitTime="3" />
-					</If>
+					</While>
 				</If>			  
 			  <If Condition="IsQuestAcceptQualified(65897)">
 				<PickupQuest QuestId="65897" NpcId="1003075"/>
