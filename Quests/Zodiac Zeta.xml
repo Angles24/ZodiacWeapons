@@ -117,11 +117,10 @@
 				<RunCode name="PurchaseZodiacZenith"/>
 			</While>
 			<If condition="ZodiacCompletedMahatma() == 0">
-				<If Condition="not HasAtLeast(28,50)">
+				<While Condition="not HasAtLeast(28,50)">
 					<RunCode name="NeedPoetics"/>
-					<StopBot/>
-				</If>
-				<If Condition="not HasAtLeast(28,50)">	
+				</While>
+				<If Condition="HasAtLeast(28,50)">	
 					<LisbethTravel Area="Western La Noscea" Position="642.0411, 9.382738, 511.8205"/>
 					<RunCode name="AttachMahatma"/>
 				</If>	
