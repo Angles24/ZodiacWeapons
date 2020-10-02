@@ -50,7 +50,7 @@
 			<If Condition="ClassName == ((ClassJobType.WhiteMage))"> 
 					<ChangeClass Job="Whitemage" />
 			</If>
-			<NoCombatMoveTo XYZ="75.8698,35.10142,-32.53721" distance="2"/> <!-- Move To Blue Coral -->
+			<MoveTo XYZ="75.8698,35.10142,-32.53721" distance="2"/> <!-- Move To Blue Coral -->
 			<If condition="not GameObjectManager.GetObjectByNPCId(2000216).IsTargetable">
 				<RunCode name="BlueCoral"/>
 			</If>

@@ -8,7 +8,8 @@
 <!DOCTYPE Profile [
 <!-- Profile Settings -->
 <!ENTITY garuda "0">
-<!ENTITY ifrit "1">  		
+<!ENTITY ifrit "1">
+<!ENTITY sastasha "0">   		
 ]>
 
 <Profile>
@@ -177,6 +178,9 @@
 				<If Condition="&ifrit; == 1">	
 					<LLoadProfile Path="../Dungeons/The Bowl of Embers - SoulGlazed.xml"/>
 				</If>
+				<If Condition="&sastasha; == 1">	
+					<LLoadProfile Path="../Dungeons/Sastasha - SoulGlazed.xml"/>
+				</If>				
 			</If>			
 		</If>
 	
