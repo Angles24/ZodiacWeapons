@@ -70,9 +70,10 @@ I'm in the process of changing over all the movement in this profile to be handl
 
 ### Nexus Zodiac Weapons
 - [X] Mmmmmm, Soulglazed Relics
-- [X] Light Farming *
+- [X] Light Farming * +
 - [ ] Purchase Nexus Zodiac
 * You must manually have Jalzhan soulglaze your relic before starting light farming.
++ You have three choices for Light Farming, see below.
 
 ### Zodiac Braves Weapons
 - [X] Wherefore Art Thou, Zodiac
@@ -90,6 +91,10 @@ I'm in the process of changing over all the movement in this profile to be handl
 - [X] The Vital Title
 - [X] Mahatma Light Farming
 - [ ] Purchase Zodiac Zeta
+
+
+
++ I have written profiles to run Ifrit (Normal), Garuda (Extreme), and Satasha (Normal). By default the profiles will do Ifrit, which is the fastest but requires 250 runs, taking about 2.5hrs. Satasha takes 3.5hrs unless it's on bonus then it only takes 1.7hr. There's no way to check bonus other than just running the dungeon. Bonus rotates every2 hours. Gardua (Ex) is just slightly slwer than Ifrit, clocking in at about 2.7hr but it gets the advantage of possibly getting the Nightmare pony while running it. You can choose which one you want to do by opening /Quests/Relic Nexus.xml and changing the dungeon you wish to do to 1 at the top.
 
 ## Known Issues
 
