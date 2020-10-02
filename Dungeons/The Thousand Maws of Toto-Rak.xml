@@ -63,6 +63,7 @@
 			<UseObject NpcId="2000102" Radius="25" XYZ="-204.6998,-4.926546,88.82272" condition="not HasAtLeast(2000123,3)"/>
 			<MoveTo XYZ="-174.2854, -5.564174, 106.4951"/>
 			<MoveTo XYZ="-135.2303, -5.1954, 111.5916" usemesh="false"/>
+			<MoveTo XYZ="-141.8412, -5.318174, 107.7744" usemesh="false"/>
 			<MoveTo XYZ="-123.6275, -4.191036, 111.9735" usemesh="false" />
 			<MoveTo XYZ="-104.0233,-3.463795,104.0759" />
 			<UseObject NpcId="2000103" Radius="25" XYZ="-104.0233,-3.463795,104.0759" condition="not HasAtLeast(2000123,4)"/>
