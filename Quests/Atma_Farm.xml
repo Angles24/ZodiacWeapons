@@ -163,7 +163,7 @@
 		  </If>			
             <Log Message="Atma of the Water-bearer in Upper La Noscea..." />
             <While Condition="not HasAtLeast(7853,1)">
-                <LLFate MinLevel="1" MaxLevel="50" while="HasAtLeast(7853,1)"/>
+                <LLFate MinLevel="1" MaxLevel="50" while="not HasAtLeast(7853,1)"/>
             </While>
         </While>
 
@@ -247,7 +247,7 @@
 				<GetTo ZoneId="134" XYZ="222.3688, 113.1, -256.9429" /> <!-- Summerford Farms -->
 			  </If>				             
                 <While Condition="not HasAtLeast(7856,1)">
-                    <LLFate MinLevel="1" MaxLevel="50" while="HasAtLeast(7856,1)"/>
+                    <LLFate MinLevel="1" MaxLevel="50" while="not HasAtLeast(7856,1)"/>
                 </While>
             </While>
 			
@@ -325,7 +325,7 @@
                 <GetTo ZoneId="138" XYZ="261.1299, -22.75, 224.9563" /> <!-- Aleport -->
 			  </If>					
                 <While Condition="not HasAtLeast(7862,1)">
-                    <LLFate MinLevel="1" MaxLevel="50" while="HasAtLeast(7862,1)"/>
+                    <LLFate MinLevel="1" MaxLevel="50" while="not HasAtLeast(7862,1)"/>
                 </While>
             </While>
 
@@ -403,7 +403,7 @@
                 <GetTo ZoneId="135" XYZ="163.1953, 14.09587, 673.3568" /> <!-- Moraby Drydocks -->
 			  </If>							
                 <While Condition="not HasAtLeast(7859,1)">
-                    <LLFate MinLevel="1" MaxLevel="50" while="HasAtLeast(7859,1)"/>
+                    <LLFate MinLevel="1" MaxLevel="50" while="not HasAtLeast(7859,1)"/>
                 </While>
             </While>
 
@@ -481,7 +481,7 @@
                 <GetTo ZoneId="145" XYZ="-386.3481, -59, 134.0927" /> <!-- Camp Drybone -->
 			  </If>						                
                 <While Condition="not HasAtLeast(7855,1)">
-                    <LLFate MinLevel="1" MaxLevel="50" while="HasAtLeast(7855,1)"/>
+                    <LLFate MinLevel="1" MaxLevel="50" while="not HasAtLeast(7855,1)"/>
                 </While>
             </While>			
 
@@ -559,7 +559,7 @@
 					<GetTo ZoneId="141" XYZ="-13.56739, -1.877733, -163.8" /> <!-- Black Brush Station -->
 				  </If>						                				
 					<While Condition="not HasAtLeast(7861,1)">
-						<LLFate MinLevel="1" MaxLevel="50" while="HasAtLeast(7861,1)"/>
+						<LLFate MinLevel="1" MaxLevel="50" while="not HasAtLeast(7861,1)"/>
 					</While>
 			</While>
 
@@ -638,7 +638,7 @@
 					<GetTo ZoneId="140" XYZ="61.26291, 45, -227.1376" /> <!-- Horizon -->
 				</If>	
                 <While Condition="not HasAtLeast(7857,1)">
-                    <LLFate MinLevel="1" MaxLevel="50" while="HasAtLeast(7857,1)"/>
+                    <LLFate MinLevel="1" MaxLevel="50" while="not HasAtLeast(7857,1)"/>
                 </While>
             </While>
 		
@@ -716,7 +716,7 @@
 					 <GetTo ZoneId="146" XYZ="-158.9477, 26.13835, -407.9711" /> <!-- Little Ala Mhigo -->
 				</If>				              
                 <While Condition="not HasAtLeast(7852,1)">
-                    <LLFate MinLevel="1" MaxLevel="50" while="HasAtLeast(7852,1)"/>
+                    <LLFate MinLevel="1" MaxLevel="50" while="not HasAtLeast(7852,1)"/>
                 </While>
             </While>
 
@@ -794,7 +794,7 @@
 					<GetTo ZoneId="154" XYZ="-43.92079, -40.88041, 241.8634" /> <!-- Fallgourd Float -->
 				</If>				
                 <While Condition="not HasAtLeast(7860,1)">
-                    <LLFate MinLevel="1" MaxLevel="50" while="HasAtLeast(7860,1)"/>
+                    <LLFate MinLevel="1" MaxLevel="50" while="not HasAtLeast(7860,1)"/>
                 </While>
             </While>
 
@@ -872,7 +872,7 @@
 					<GetTo ZoneId="152" XYZ="-192.3292, 3.769932, 291.1943" /> <!-- The Hawthorne Hut -->
 				</If>					
                 <While Condition="not HasAtLeast(7854,1)">
-                    <LLFate MinLevel="1" MaxLevel="50" while="HasAtLeast(7854,1)"/>
+                    <LLFate MinLevel="1" MaxLevel="50" while="not HasAtLeast(7854,1)"/>
                 </While>
             </While>
 
@@ -950,7 +950,7 @@
 					<GetTo ZoneId="148" XYZ="5.736485, -1.221331, 36.01854" /> <!-- Bentbranch Meadows -->
 				</If>									
                 <While Condition="not HasAtLeast(7851,1)">
-                    <LLFate MinLevel="1" MaxLevel="50" while="HasAtLeast(7851,1)"/>
+                    <LLFate MinLevel="1" MaxLevel="50" while="not HasAtLeast(7851,1)"/>
                 </While>
             </While>
 			

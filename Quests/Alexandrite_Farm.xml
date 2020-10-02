@@ -84,7 +84,7 @@
                 <GetTo ZoneId="138" XYZ="261.1299, -22.75, 224.9563" /> <!-- Aleport -->
 			  </If>					
                 <While Condition="not HasAtLeast(7883,75)">
-                    <LLFate MinLevel="1" MaxLevel="50" while="HasAtLeast(7883,75)"/>
+                    <LLFate MinLevel="1" MaxLevel="50" while="not HasAtLeast(7883,75)"/>
                 </While>
             </While>
 			

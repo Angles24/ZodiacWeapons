@@ -16,7 +16,7 @@
 			<LisbethTravel Area="Coerthas Central Highlands" Position="-820.2712, 224.3287, 21.67726"/>
 			<While Condition="not ZodiacManager.CurrentBook.FateTask1Completed">
 				<Log Message="Waiting on FATE 'The Taste of Fear'" />
-				<LLFate FateId="493" MinLevel="1" MaxLevel="50" while="ZodiacManager.CurrentBook.FateTask1Completed"/> <!-- The Taste of Fear -->		
+				<LLFate FateId="493" MinLevel="1" MaxLevel="50" while="not ZodiacManager.CurrentBook.FateTask1Completed"/> <!-- The Taste of Fear -->		
 			</While>	
 		</If>
 
@@ -27,7 +27,7 @@
 			<While Condition="not ZodiacManager.CurrentBook.FateTask2Completed">
 				<Log Message="Waiting on FATE 'Schism'" />
 				<RunCode name="Schism"/>
-				<LLFate FateId="587" MinLevel="1" MaxLevel="50" timeout="60" while="ZodiacManager.CurrentBook.FateTask2Completed"/> <!-- Schism -->	
+				<LLFate FateId="587" MinLevel="1" MaxLevel="50" timeout="60" while="not ZodiacManager.CurrentBook.FateTask2Completed"/> <!-- Schism -->	
 			</While>	
 		</If>
 
@@ -37,7 +37,7 @@
 			<LisbethTravel Area="Eastern Thanalan" Position="434.8353, -64.536, 204.8842"/>
 			<While Condition="not ZodiacManager.CurrentBook.FateTask3Completed">
 				<Log Message="Waiting on FATE 'The Big Bagoly Theroy'" />
-				<LLFate FateId="543" MinLevel="1" MaxLevel="50" while="ZodiacManager.CurrentBook.FateTask3Completed"/> <!-- The Big Bagoly Theroy -->
+				<LLFate FateId="543" MinLevel="1" MaxLevel="50" while="not ZodiacManager.CurrentBook.FateTask3Completed"/> <!-- The Big Bagoly Theroy -->
 			</While>	
 		</If>
 

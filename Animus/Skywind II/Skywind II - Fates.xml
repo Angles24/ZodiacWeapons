@@ -16,7 +16,7 @@
 			<LisbethTravel Area="Southern Thanalan" Position="-165.2147, 5.232397, -83.4871"/>
 			<While Condition="not ZodiacManager.CurrentBook.FateTask1Completed">
 				<Log Message="Waiting on FATE 'Taken'" />
-				<LLFate FateId="552" MinLevel="1" MaxLevel="50" while="ZodiacManager.CurrentBook.FateTask1Completed"/> <!-- Taken -->	
+				<LLFate FateId="552" MinLevel="1" MaxLevel="50" while="not ZodiacManager.CurrentBook.FateTask1Completed"/> <!-- Taken -->	
 			</While>	
 		</If>
 
@@ -27,7 +27,7 @@
 			<While Condition="not ZodiacManager.CurrentBook.FateTask2Completed">
 				<Log Message="Waiting on FATE 'Tower of Power'" />
 				<RunCode name="TowerOfPower"/>
-				<LLFate FateId="486" MinLevel="1" Timeout="60" MaxLevel="50" while="ZodiacManager.CurrentBook.FateTask2Completed"/> <!-- Tower of Power -->
+				<LLFate FateId="486" MinLevel="1" Timeout="60" MaxLevel="50" while="not ZodiacManager.CurrentBook.FateTask2Completed"/> <!-- Tower of Power -->
 			</While>	
 		</If>
 
@@ -37,7 +37,7 @@
 			<LisbethTravel Area="South Shroud" Position="532.0834, 8.188749, 194.1838"/>
 			<While Condition="not ZodiacManager.CurrentBook.FateTask3Completed">
 				<Log Message="Waiting on FATE 'What Gored Before'" />
-				<LLFate FateId="628" MinLevel="1" MaxLevel="50" while="ZodiacManager.CurrentBook.FateTask3Completed"/> <!-- What Gored Before -->
+				<LLFate FateId="628" MinLevel="1" MaxLevel="50" while="not ZodiacManager.CurrentBook.FateTask3Completed"/> <!-- What Gored Before -->
 			</While>	
 		</If>
 

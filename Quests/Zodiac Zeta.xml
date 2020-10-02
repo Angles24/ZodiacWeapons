@@ -170,6 +170,12 @@
                 {
                     Talk.Next();
                     await Coroutine.Wait(2000, () => !Talk.DialogOpen);
+                }
+				await Buddy.Coroutines.Coroutine.Sleep(3000);
+                while (Talk.DialogOpen)
+                {
+                    Talk.Next();
+                    await Coroutine.Wait(2000, () => !Talk.DialogOpen);
                 }				
             ]]>	
 		</CodeChunk>	

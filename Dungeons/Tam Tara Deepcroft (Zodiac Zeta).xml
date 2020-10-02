@@ -199,7 +199,7 @@
 					<RunCode name="OpenChest" />
 				</If>			
 				<While condition="DutyManager.InInstance">	
-					<WaitTimer WaitTime="10" />
+					<WaitTimer WaitTime="5" />
 					<LLLeaveDuty/>
 				</While>	
 			</If>			
