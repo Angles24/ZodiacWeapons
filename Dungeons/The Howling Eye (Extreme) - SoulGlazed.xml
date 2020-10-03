@@ -99,7 +99,7 @@
 			<Grind GrindRef="Garuda" While="not GameObjectManager.GetObjectByNPCId(1644).CurrentHealth == 0"/> <!-- Kill Garuda -->
 			<WaitTimer WaitTime="2"/>
 			<If Condition="&openchest; == 1">
-				<RunCode name="OpenChest" />
+				<LLOpenChest/>
 			</If>
 			<While condition="DutyManager.InInstance">	
 				<WaitTimer WaitTime="10" />
@@ -133,33 +133,6 @@
 			await Coroutine.Sleep(5000);
 		  ]]>
 		</CodeChunk>
-	<CodeChunk Name="ExitDuty">
-		<![CDATA[
-			ff14bot.Managers.GameObjectManager.GetObjectByNPCId(2000275).Interact();
-			await Coroutine.Sleep(1000);
-			ff14bot.RemoteWindows.SelectYesno.ClickYes();
-			await Coroutine.Sleep(3000);
-      ]]>
-	</CodeChunk>		
-	<CodeChunk name="OpenChest">
-		<![CDATA[    
-		if (GameObjectManager.GetObjectsOfType<Treasure>().Where(r => r.Distance() < 50 && (r.Name == "Treasure Coffer" || r.Name == "treasure coffer")).Any())
-		{
-			var _chest = GameObjectManager.GetObjectsOfType<Treasure>().Where(r => r.Distance() < 50 && (r.Name == "宝箱" || r.Name == "Treasure Coffer" || r.Name == "treasure coffer")).FirstOrDefault();
-			while (Core.Me.Distance(_chest.Location) > 1)
-			{
-			await CommonTasks.MoveTo(_chest.Location);
-			await Coroutine.Yield();
-			}
-			
-			Navigator.PlayerMover.MoveStop();
-			await Coroutine.Sleep(1000);
-			Poi.Current = new Poi(_chest, PoiType.Kill);
-			Poi.Current.Unit.Interact();                    
-			await Coroutine.Sleep(1000);        
-		}
-		]]>
-	</CodeChunk>
  		<CodeChunk Name="OmnilexNovus">
 		<![CDATA[ 
 			BagSlot EquipSlot = ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand];
