@@ -27,7 +27,6 @@
 				<Grind GrindRef="TheMuseumIsClosed" While="not ff14bot.RemoteWindows.SelectYesno.IsOpen"/> 						
 				<WaitTimer WaitTime="1" />					
 				<RunCode Name="CloseTimer"/> 
-				<LisbethTravel Area="Mor Dhona" Position="461.1251, -4.846787, -472.2902"/>
 				<ExTurnInGuildLeve NpcId="1007070" NpcLocation="464.5914,-4.057395,-467.42973"/>
 				<LLoadProfile Path="../../Start.xml"/>		
 			</If>
@@ -40,7 +39,6 @@
 				<Grind GrindRef="WhoWritesHistory" While="not ff14bot.RemoteWindows.SelectYesno.IsOpen"/> 						
 				<WaitTimer WaitTime="1" />					
 				<RunCode Name="CloseTimer"/> 
-				<LisbethTravel Area="Mor Dhona" Position="461.1251, -4.846787, -472.2902"/>
 				<ExTurnInGuildLeve NpcId="1007070" NpcLocation="464.5914,-4.057395,-467.42973"/>
 				<LLoadProfile Path="../../Start.xml"/>					
 			</If>			
@@ -72,11 +70,12 @@
   <CodeChunks>
   		<CodeChunk Name="CloseTimer">
 			<![CDATA[ 
-			await Buddy.Coroutines.Coroutine.Sleep(2000);
-			if (SelectYesno.IsOpen)
-            {
-                SelectYesno.ClickNo();
-            }
+				await Buddy.Coroutines.Coroutine.Sleep(2000);
+				if (SelectYesno.IsOpen)
+				{
+					SelectYesno.ClickYes();
+				}
+				while (!CommonBehaviors.IsLoading) { await Coroutine.Yield(); }			
 			]]>
 		</CodeChunk>
   </CodeChunks>

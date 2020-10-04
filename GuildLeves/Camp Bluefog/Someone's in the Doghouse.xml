@@ -66,7 +66,6 @@
 				</If>	
 				<WaitTimer WaitTime="5" />	
 				<RunCode Name="CloseTimer"/> 
-				<GetTo ZoneId="147" XYZ="33.91326, 4.68145, 399.2563"/>
 				<ExTurnInGuildLeve NpcId="1002398" NpcLocation="33.91326, 4.68145, 399.2563"/>
 				<LLoadProfile Path="../../Start.xml"/>
 			</If>
@@ -95,11 +94,12 @@
       ]]></CodeChunk>
   		<CodeChunk Name="CloseTimer">
 			<![CDATA[ 
-			await Buddy.Coroutines.Coroutine.Sleep(2000);
-			if (SelectYesno.IsOpen)
-            {
-                SelectYesno.ClickNo();
-            }
+				await Buddy.Coroutines.Coroutine.Sleep(2000);
+				if (SelectYesno.IsOpen)
+				{
+					SelectYesno.ClickYes();
+				}
+				while (!CommonBehaviors.IsLoading) { await Coroutine.Yield(); }	
 			]]>
 		</CodeChunk>
   </CodeChunks>

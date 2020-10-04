@@ -32,7 +32,6 @@
 				<Grind GrindRef="Denizen" While="not ff14bot.RemoteWindows.SelectYesno.IsOpen"/> 				
 				<WaitTimer WaitTime="1" />					
 				<RunCode Name="CloseTimer"/> 
-				<LisbethTravel Area="Mor Dhona" Position="420.7729, -5.853507, -443.9117"/>
 				<ExTurnInGuildLeve NpcId="1004348" NpcLocation="415.9761,-6.061038,-444.419"/>
 				<LLoadProfile Path="../../Start.xml"/>
 			</If>
@@ -46,7 +45,6 @@
 				<Grind GrindRef="TurnaboutsFairPlay" While="not ff14bot.RemoteWindows.SelectYesno.IsOpen"/> 						
 				<WaitTimer WaitTime="1" />					
 				<RunCode Name="CloseTimer"/> 
-				<LisbethTravel Area="Mor Dhona" Position="420.7729, -5.853507, -443.9117"/>
 				<ExTurnInGuildLeve NpcId="1004348" NpcLocation="415.9761,-6.061038,-444.419"/>
 				<LLoadProfile Path="../../Start.xml"/>			
 			</If>
@@ -73,17 +71,20 @@
 	</GrindArea>
   </GrindAreas>	
   <CodeChunks>
-      <CodeChunk Name="Announce_Manual_Completion"><![CDATA[ 
-        Core.OverlayManager.AddToast(() => "Please complete 'Necrologos: The Liminal Ones' manually then reload the Start profile.", TimeSpan.FromMilliseconds(25000), System.Windows.Media.Color.FromRgb(29,213,226), System.Windows.Media.Color.FromRgb(13,106,175), new System.Windows.Media.FontFamily("Gautami"));
-        await Coroutine.Sleep(26000);
-      ]]></CodeChunk>
+    <CodeChunk Name="Announce_Manual_Completion">
+		<![CDATA[ 
+			Core.OverlayManager.AddToast(() => "Please complete 'Necrologos: The Liminal Ones' manually then reload the Start profile.", TimeSpan.FromMilliseconds(25000), System.Windows.Media.Color.FromRgb(29,213,226), System.Windows.Media.Color.FromRgb(13,106,175), new System.Windows.Media.FontFamily("Gautami"));
+			await Coroutine.Sleep(26000);
+		]]>
+	</CodeChunk>
   		<CodeChunk Name="CloseTimer">
 			<![CDATA[ 
-			await Buddy.Coroutines.Coroutine.Sleep(2000);
-			if (SelectYesno.IsOpen)
-            {
-                SelectYesno.ClickNo();
-            }
+				await Buddy.Coroutines.Coroutine.Sleep(2000);
+				if (SelectYesno.IsOpen)
+				{
+					SelectYesno.ClickYes();
+				}
+				while (!CommonBehaviors.IsLoading) { await Coroutine.Yield(); }			
 			]]>
 		</CodeChunk>
   </CodeChunks>

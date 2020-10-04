@@ -29,6 +29,13 @@
 			<LisbethTravel Area="Mor Dhona" Position="-463.8192, -8.046604, -456.6935"/>
 			<Grind grindRef="Eques" while="not ZodiacManager.CurrentBook.KillTask3Completed" />
 		</If>
+		
+		<!-- Book of Skywind I Kill Task 5 - Hippogryph-->
+		<If condition="not ZodiacManager.CurrentBook.KillTask5Completed">
+			<Log Message="Moving to Skywind I Kill Task 5 - Hippogryph" />
+			<LisbethTravel Area="Mor Dhona" Position="357.846, 20.13774, -735.8298"/>
+			<Grind grindRef="Hippogryph" while="not ZodiacManager.CurrentBook.KillTask5Completed" />
+		</If>		
 
 		<!-- Book of Skywind I Kill Task 4 - Sapsa Elbst-->
 		<If condition="not ZodiacManager.CurrentBook.KillTask4Completed">
@@ -37,12 +44,6 @@
 			<Grind grindRef="sapsa_elbst" while="not ZodiacManager.CurrentBook.KillTask4Completed" />
 		</If>		
 	
-		<!-- Book of Skywind I Kill Task 5 - Hippogryph-->
-		<If condition="not ZodiacManager.CurrentBook.KillTask5Completed">
-			<Log Message="Moving to Skywind I Kill Task 5 - Hippogryph" />
-			<LisbethTravel Area="Mor Dhona" Position="357.846, 20.13774, -735.8298"/>
-			<Grind grindRef="Hippogryph" while="not ZodiacManager.CurrentBook.KillTask5Completed" />
-		</If>
 		
 		<!-- Book of Skywind I Kill Task 6 - Trenchtooth Sahagin-->
 		<If condition="not ZodiacManager.CurrentBook.KillTask6Completed">

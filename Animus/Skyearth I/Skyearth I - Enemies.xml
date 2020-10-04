@@ -22,6 +22,13 @@
 			<LisbethTravel Area="Mor Dhona" Position="-472.3758, -6.630922, -448.7328"/>
 			<Grind grindRef="5th_cohort_secutor" while="not ZodiacManager.CurrentBook.KillTask2Completed" />
 		</If>
+		
+		<!-- Book of Skyearth I Kill Task 6 - Hapalit-->
+		<If condition="not ZodiacManager.CurrentBook.KillTask6Completed">
+			<Log Message="Moving to Skyearth I Kill Task 6 - Hapalit" />
+			<LisbethTravel Area="Mor Dhona" Position="478.7662, -3.015847, -780.0237"/>
+			<Grind grindRef="hapalit" while="not ZodiacManager.CurrentBook.KillTask6Completed" />
+		</If>		
 
 		<!-- Book of Skyearth I Kill Task 3 - Ixali Boldwing-->
 		<If condition="not ZodiacManager.CurrentBook.KillTask3Completed">
@@ -44,12 +51,6 @@
 			<Grind grindRef="axolotl" while="not ZodiacManager.CurrentBook.KillTask5Completed" />
 		</If>
 		
-		<!-- Book of Skyearth I Kill Task 6 - Hapalit-->
-		<If condition="not ZodiacManager.CurrentBook.KillTask6Completed">
-			<Log Message="Moving to Skyearth I Kill Task 6 - Hapalit" />
-			<LisbethTravel Area="Mor Dhona" Position="478.7662, -3.015847, -780.0237"/>
-			<Grind grindRef="hapalit" while="not ZodiacManager.CurrentBook.KillTask6Completed" />
-		</If>
 
 		<!-- Book of Skyearth I Kill Task 7 - Elite Quarryman-->
 		<If condition="not ZodiacManager.CurrentBook.KillTask7Completed">

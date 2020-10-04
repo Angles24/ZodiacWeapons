@@ -33,7 +33,7 @@
 			<LisbethTravel Area="East Shroud" Position="282.3805, -5.300717, 25.26396"/>
 			<While Condition="not ZodiacManager.CurrentBook.FateTask3Completed">
 				<Log Message="Waiting on FATE 'The Enmity of my Enemy'" />
-				<LLFate FateId="611" MinLevel="1" MaxLevel="50" while="not ZodiacManager.CurrentBook.FateTask3Completed"/> <!-- The Enmity of my Enemy -->
+				<LLFate FateIds="611,610" MinLevel="1" MaxLevel="50" while="not ZodiacManager.CurrentBook.FateTask3Completed"/> <!-- The Enmity of my Enemy -->
 			</While>			
 		</If>
 

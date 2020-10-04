@@ -22,6 +22,13 @@
 			<LisbethTravel Area="Mor Dhona" Position="-228.0124, -3.759467, -288.2885"/>
 			<Grind grindRef="hexing_harrier" while="not ZodiacManager.CurrentBook.KillTask2Completed" />
 		</If>
+		
+		<!-- Book of Netherfire I Kill Task 6 - Gigas Bonze -->
+		<If condition="not ZodiacManager.CurrentBook.KillTask6Completed">
+			<Log Message="Moving to Netherfire I Kill Task 6 - Gigas Bonze" />
+			<LisbethTravel Area="Mor Dhona" Position="394.6808, -17.17175, -351.4547"/>
+			<Grind grindRef="gigas_bonze" while="not ZodiacManager.CurrentBook.KillTask6Completed" />
+		</If>		
 
 		<!-- Book of Netherfire I Kill Task 3 - Sylpheed Screech -->
 		<If condition="not ZodiacManager.CurrentBook.KillTask3Completed">
@@ -44,12 +51,6 @@
 			<Grind grindRef="tempered_orator" while="not ZodiacManager.CurrentBook.KillTask5Completed" />
 		</If>
 		
-		<!-- Book of Netherfire I Kill Task 6 - Gigas Bonze -->
-		<If condition="not ZodiacManager.CurrentBook.KillTask6Completed">
-			<Log Message="Moving to Netherfire I Kill Task 6 - Gigas Bonze" />
-			<LisbethTravel Area="Mor Dhona" Position="394.6808, -17.17175, -351.4547"/>
-			<Grind grindRef="gigas_bonze" while="not ZodiacManager.CurrentBook.KillTask6Completed" />
-		</If>
 
 		<!-- Book of Netherfire I Kill Task 7 - U'Ghamaro Roundsman -->
 		<If condition="not ZodiacManager.CurrentBook.KillTask7Completed">

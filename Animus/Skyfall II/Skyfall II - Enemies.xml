@@ -22,6 +22,13 @@
 			<LisbethTravel Area="Mor Dhona" Position="-456.2664, -10.54829, -457.3391"/>
 			<Grind grindRef="5th Cohort Hoplomachus" while="not ZodiacManager.CurrentBook.KillTask2Completed" />
 		</If>
+		
+		<!-- Book of Skyfall II Kill Task 9 - -->
+		<If condition="not ZodiacManager.CurrentBook.KillTask9Completed">
+			<Log Message="Moving to Skyfall II Kill Task 9 - " />
+			<LisbethTravel Area="Mor Dhona" Position="595.0859, -3.377753, -286.8719"/>
+			<Grind grindRef="Gigas Bhikkhu" while="not ZodiacManager.CurrentBook.KillTask9Completed" />
+		</If>		
 
 		<!-- Book of Skyfall II Kill Task 3 - Ked-->
 		<If condition="not ZodiacManager.CurrentBook.KillTask3Completed">
@@ -65,12 +72,6 @@
 			<Grind grindRef="Natalan Watchwolf" while="not ZodiacManager.CurrentBook.KillTask8Completed" />
 		</If>		
 		
-		<!-- Book of Skyfall II Kill Task 9 - -->
-		<If condition="not ZodiacManager.CurrentBook.KillTask9Completed">
-			<Log Message="Moving to Skyfall II Kill Task 9 - " />
-			<LisbethTravel Area="Mor Dhona" Position="595.0859, -3.377753, -286.8719"/>
-			<Grind grindRef="Gigas Bhikkhu" while="not ZodiacManager.CurrentBook.KillTask9Completed" />
-		</If>
 
 		<!-- Book of Skyfall II Kill Task 10 - -->
 		<If condition="not ZodiacManager.CurrentBook.KillTask10Completed">

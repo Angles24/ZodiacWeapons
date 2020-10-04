@@ -121,6 +121,15 @@
 		<!-- Defeat the tonberry king 0/1 -->
 		<If Condition="GetInstanceTodo(5) == 0">
 			<Log Message="Defeat the tonberry king 0/1" />
+			<MoveTo XYZ="72.65417, 9.950102, -318.8521"/>
+			<UseObject NpcId="2002789" XYZ="73.60564, 9.836, -369.6367" Radius="100" condition="GetInstanceTodo(2) == 0"/>			
+			<MoveTo XYZ="73.60564, 9.836, -369.6367"/>
+			<UseObject NpcId="2002789" XYZ="73.60564, 9.836, -369.6367" Radius="100" condition="GetInstanceTodo(2) == 1"/>
+			<MoveTo XYZ="63.589, 10, -380.4978"/>
+			<RunCode name="RustedNymianDevice2001131"/>
+			<MoveTo XYZ="82.4129, 10, -380.4955"/>
+			<RunCode name="RustedNymianDevice2001130"/>
+			<WaitTimer WaitTime="3" />
 			<If Condition="ClassName == ((ClassJobType.Bard))"> 
 				<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 6261">
 					<Log Message="Equipping Artemis Bow Atma" />
@@ -197,15 +206,7 @@
 					<RunCode Name="ThyrusAtma" />
 					<WaitTimer WaitTime="3" />
 				</If>
-			</If>
-			<MoveTo XYZ="72.65417, 9.950102, -318.8521"/>
-			<UseObject NpcId="2002789" XYZ="73.60564, 9.836, -369.6367" Radius="100" condition="GetInstanceTodo(2) == 0"/>			
-			<MoveTo XYZ="73.60564, 9.836, -369.6367"/>
-			<UseObject NpcId="2002789" XYZ="73.60564, 9.836, -369.6367" Radius="100" condition="GetInstanceTodo(2) == 1"/>
-			<MoveTo XYZ="63.589, 10, -380.4978"/>
-			<RunCode name="RustedNymianDevice2001131"/>
-			<MoveTo XYZ="82.4129, 10, -380.4955"/>
-			<RunCode name="RustedNymianDevice2001130"/>
+			</If>		
 			<MoveTo XYZ="67.09601, 6, -423.0093"/>
 			<Grind GrindRef="FinalBoss" While="not GameObjectManager.GetObjectByNPCId(1547).CurrentHealth == 0"/> <!-- Fight Final Boss -->			
 			<If Condition="&openchest; == 1">

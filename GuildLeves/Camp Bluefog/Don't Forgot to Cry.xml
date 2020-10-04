@@ -27,7 +27,6 @@
 				<Grind GrindRef="DontForgettoCry" While="not HasAtLeast(2000872,6)"/> 
 				<UseItem InCombat="True" Radius="200" ItemId="2000872" NpcIds="2000610" XYZ="7.94269, 4.983315, 285.5678" condition="not ff14bot.RemoteWindows.SelectYesno.IsOpen"/>
 				<WaitTimer WaitTime="3" />
-				<GetTo ZoneId="147" XYZ="33.91326, 4.68145, 399.2563"/>
 				<ExTurnInGuildLeve NpcId="1002398" NpcLocation="33.91326, 4.68145, 399.2563"/>
 				<LLoadProfile Path="../../Start.xml"/>		
 			</If>
@@ -36,19 +35,18 @@
 			<!-- Necrologos: Pale Oblation -->
 			<If Condition="ExBuddy.Windows.GuildLeve.HasLeve(644)">
 				<GetTo ZoneId="147" XYZ="45.68184, 7.582094, 344.8144"/>
-				<RunCode Name="Announce_Manual_Completion"/>
-				<!--
-				<InitiateLeve LeveId="644"/> --><!-- Necrologos: Pale Oblation -->
-				<!--<WaitTimer WaitTime="2" /> 
-				<UseObject Radius="500" XYZ="5.107096, 2.950484, 312.0914" NpcIds="2001098" condition="DirectorManager.ActiveDirector.GetTodoArgs(1).Item1 &lt; DirectorManager.ActiveDirector.GetTodoArgs(1).Item2"/>
-				<If condition="ObjectExistsWithId(1737)">
-					<Grind GrindRef="VoidSlave" While="not ff14bot.RemoteWindows.SelectYesno.IsOpen"/>
-				</If>	
+				<InitiateLeve LeveId="644"/><!-- Necrologos: Pale Oblation -->
+				<WaitTimer WaitTime="2" /> 
+				<While condition="not GameObjectManager.GetObjectByNPCId(1737)">
+					<UseObject Radius="500" XYZ="103.42, -5.008227, -492.581" NpcId="2001098" UseTimes="1"/>
+					<WaitTimer WaitTime="3" />
+				</While>					
+				<Grind GrindRef="VoidSlave" While="not ff14bot.RemoteWindows.SelectYesno.IsOpen"/>	
 				<WaitTimer WaitTime="5" />	
 				<RunCode Name="CloseTimer"/> 
 				<GetTo ZoneId="147" XYZ="33.91326, 4.68145, 399.2563"/>
 				<ExTurnInGuildLeve NpcId="1002398" NpcLocation="33.91326, 4.68145, 399.2563"/>
-				<LLoadProfile Path="../../Start.xml"/> -->
+				<LLoadProfile Path="../../Start.xml"/>
 			</If>
 	
 
@@ -80,17 +78,14 @@
 	</GrindArea> 	
   </GrindAreas>
   <CodeChunks>
-       <CodeChunk Name="Announce_Manual_Completion"><![CDATA[ 
-        Core.OverlayManager.AddToast(() => "Please complete 'Necrologos: Pale Oblation' manually then reload the Start profile.", TimeSpan.FromMilliseconds(25000), System.Windows.Media.Color.FromRgb(29,213,226), System.Windows.Media.Color.FromRgb(13,106,175), new System.Windows.Media.FontFamily("Gautami"));
-        await Coroutine.Sleep(26000);
-      ]]></CodeChunk> 
   		<CodeChunk Name="CloseTimer">
 			<![CDATA[ 
-			await Buddy.Coroutines.Coroutine.Sleep(2000);
-			if (SelectYesno.IsOpen)
-            {
-                SelectYesno.ClickNo();
-            }
+				await Buddy.Coroutines.Coroutine.Sleep(2000);
+				if (SelectYesno.IsOpen)
+				{
+					SelectYesno.ClickYes();
+				}
+				while (!CommonBehaviors.IsLoading) { await Coroutine.Yield(); }		
 			]]>
 		</CodeChunk>
   </CodeChunks>

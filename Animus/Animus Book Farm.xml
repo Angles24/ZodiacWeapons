@@ -575,16 +575,10 @@
                     ff14bot.RemoteWindows.SelectYesno.ClickYes();
                 await Buddy.Coroutines.Coroutine.Sleep(1000);
                 if (await Coroutine.Wait(1000, () => Talk.DialogOpen))
+                while (Talk.DialogOpen)
                 {
                     Talk.Next();
-                }
-                if (await Coroutine.Wait(1000, () => Talk.DialogOpen))
-                {
-                    Talk.Next();
-                }
-                if (await Coroutine.Wait(1000, () => Talk.DialogOpen))
-                {
-                    Talk.Next();				 			
+                    await Coroutine.Wait(2000, () => !Talk.DialogOpen);
                 }				
             ]]>
         </CodeChunk>
@@ -611,16 +605,10 @@
                     ff14bot.RemoteWindows.SelectYesno.ClickYes();
                 await Buddy.Coroutines.Coroutine.Sleep(1000);
                 if (await Coroutine.Wait(1000, () => Talk.DialogOpen))
+                while (Talk.DialogOpen)
                 {
                     Talk.Next();
-                }
-                if (await Coroutine.Wait(1000, () => Talk.DialogOpen))
-                {
-                    Talk.Next();
-                }
-                if (await Coroutine.Wait(1000, () => Talk.DialogOpen))
-                {
-                    Talk.Next();				 			
+                    await Coroutine.Wait(2000, () => !Talk.DialogOpen);
                 }				
             ]]>
         </CodeChunk>
@@ -647,16 +635,10 @@
                     ff14bot.RemoteWindows.SelectYesno.ClickYes();
                 await Buddy.Coroutines.Coroutine.Sleep(1000);
                 if (await Coroutine.Wait(1000, () => Talk.DialogOpen))
+                while (Talk.DialogOpen)
                 {
                     Talk.Next();
-                }
-                if (await Coroutine.Wait(1000, () => Talk.DialogOpen))
-                {
-                    Talk.Next();
-                }
-                if (await Coroutine.Wait(1000, () => Talk.DialogOpen))
-                {
-                    Talk.Next();				 			
+                    await Coroutine.Wait(2000, () => !Talk.DialogOpen);
                 }				
             ]]>
         </CodeChunk>		
@@ -683,16 +665,10 @@
                     ff14bot.RemoteWindows.SelectYesno.ClickYes();
                 await Buddy.Coroutines.Coroutine.Sleep(1000);
                 if (await Coroutine.Wait(1000, () => Talk.DialogOpen))
+                while (Talk.DialogOpen)
                 {
                     Talk.Next();
-                }
-                if (await Coroutine.Wait(1000, () => Talk.DialogOpen))
-                {
-                    Talk.Next();
-                }
-                if (await Coroutine.Wait(1000, () => Talk.DialogOpen))
-                {
-                    Talk.Next();				 			
+                    await Coroutine.Wait(2000, () => !Talk.DialogOpen);
                 }				
             ]]>
         </CodeChunk>
@@ -719,17 +695,11 @@
                     ff14bot.RemoteWindows.SelectYesno.ClickYes();
                 await Buddy.Coroutines.Coroutine.Sleep(1000);
                 if (await Coroutine.Wait(1000, () => Talk.DialogOpen))
+                while (Talk.DialogOpen)
                 {
                     Talk.Next();
-                }
-                if (await Coroutine.Wait(1000, () => Talk.DialogOpen))
-                {
-                    Talk.Next();
-                }
-                if (await Coroutine.Wait(1000, () => Talk.DialogOpen))
-                {
-                    Talk.Next();				 			
-                }				
+                    await Coroutine.Wait(2000, () => !Talk.DialogOpen);
+                }			
             ]]>
         </CodeChunk>			
         <CodeChunk Name="BuyWindBooks">
@@ -755,17 +725,11 @@
                     ff14bot.RemoteWindows.SelectYesno.ClickYes();
                 await Buddy.Coroutines.Coroutine.Sleep(1000);
                 if (await Coroutine.Wait(1000, () => Talk.DialogOpen))
+                while (Talk.DialogOpen)
                 {
                     Talk.Next();
-                }
-                if (await Coroutine.Wait(1000, () => Talk.DialogOpen))
-                {
-                    Talk.Next();
-                }
-                if (await Coroutine.Wait(1000, () => Talk.DialogOpen))
-                {
-                    Talk.Next();				 			
-                }				
+                    await Coroutine.Wait(2000, () => !Talk.DialogOpen);
+                }			
             ]]>
         </CodeChunk>
         <CodeChunk Name="BuyPaladinWindBooks">
@@ -791,17 +755,11 @@
                     ff14bot.RemoteWindows.SelectYesno.ClickYes();
                 await Buddy.Coroutines.Coroutine.Sleep(1000);
                 if (await Coroutine.Wait(1000, () => Talk.DialogOpen))
+                while (Talk.DialogOpen)
                 {
                     Talk.Next();
-                }
-                if (await Coroutine.Wait(1000, () => Talk.DialogOpen))
-                {
-                    Talk.Next();
-                }
-                if (await Coroutine.Wait(1000, () => Talk.DialogOpen))
-                {
-                    Talk.Next();				 			
-                }				
+                    await Coroutine.Wait(2000, () => !Talk.DialogOpen);
+                }			
             ]]>
         </CodeChunk>			
         <CodeChunk Name="BuyEarthBooks">
@@ -827,16 +785,10 @@
                     ff14bot.RemoteWindows.SelectYesno.ClickYes();
                 await Buddy.Coroutines.Coroutine.Sleep(1000);
                 if (await Coroutine.Wait(1000, () => Talk.DialogOpen))
+                while (Talk.DialogOpen)
                 {
                     Talk.Next();
-                }
-                if (await Coroutine.Wait(1000, () => Talk.DialogOpen))
-                {
-                    Talk.Next();
-                }
-                if (await Coroutine.Wait(1000, () => Talk.DialogOpen))
-                {
-                    Talk.Next();				 			
+                    await Coroutine.Wait(2000, () => !Talk.DialogOpen);
                 }				
             ]]>
         </CodeChunk>
@@ -863,16 +815,10 @@
                     ff14bot.RemoteWindows.SelectYesno.ClickYes();
                 await Buddy.Coroutines.Coroutine.Sleep(1000);
                 if (await Coroutine.Wait(1000, () => Talk.DialogOpen))
+                while (Talk.DialogOpen)
                 {
                     Talk.Next();
-                }
-                if (await Coroutine.Wait(1000, () => Talk.DialogOpen))
-                {
-                    Talk.Next();
-                }
-                if (await Coroutine.Wait(1000, () => Talk.DialogOpen))
-                {
-                    Talk.Next();				 			
+                    await Coroutine.Wait(2000, () => !Talk.DialogOpen);
                 }				
             ]]>
         </CodeChunk>		
@@ -1025,7 +971,7 @@
                 ff14bot.Managers.GameObjectManager.GetObjectByNPCId(1008948).Interact();
                 await Buddy.Coroutines.Coroutine.Sleep(1000);
                 if (ff14bot.RemoteWindows.SelectIconString.IsOpen)
-                    ff14bot.RemoteWindows.SelectIconString.ClickSlot(2);
+                    SelectIconString.ClickLineContains("Relic Weapon Atma Enhancement");
                 if (await Coroutine.Wait(1000, () => Talk.DialogOpen))
                 {
                     Talk.Next();
@@ -1038,41 +984,11 @@
                     ff14bot.RemoteWindows.SelectYesno.ClickYes();
                 await Buddy.Coroutines.Coroutine.Sleep(1000);
                 if (await Coroutine.Wait(1000, () => Talk.DialogOpen))
+                while (Talk.DialogOpen)
                 {
                     Talk.Next();
-                }
-                if (await Coroutine.Wait(1000, () => Talk.DialogOpen))
-                {
-                    Talk.Next();
-                }
-                if (await Coroutine.Wait(1000, () => Talk.DialogOpen))
-                {
-                    Talk.Next();
-                }
-                if (await Coroutine.Wait(1000, () => Talk.DialogOpen))
-                {
-                    Talk.Next();
-                }
-                if (await Coroutine.Wait(1000, () => Talk.DialogOpen))
-                {
-                    Talk.Next();
-                }
-                if (await Coroutine.Wait(1000, () => Talk.DialogOpen))
-                {
-                    Talk.Next();
-                }
-                if (await Coroutine.Wait(1000, () => Talk.DialogOpen))
-                {
-                    Talk.Next();
-                }
-                if (await Coroutine.Wait(1000, () => Talk.DialogOpen))
-                {
-                    Talk.Next();
-                }
-                if (await Coroutine.Wait(1000, () => Talk.DialogOpen))
-                {
-                    Talk.Next();
-                }				
+                    await Coroutine.Wait(2000, () => !Talk.DialogOpen);
+                }			
             ]]>
         </CodeChunk>
           <CodeChunk Name="BuyHolyShieldAnimus"> 
@@ -1081,7 +997,7 @@
                 ff14bot.Managers.GameObjectManager.GetObjectByNPCId(1008948).Interact();
                 await Buddy.Coroutines.Coroutine.Sleep(1000);
                 if (ff14bot.RemoteWindows.SelectIconString.IsOpen)
-                    ff14bot.RemoteWindows.SelectIconString.ClickSlot(2);
+                    SelectIconString.ClickLineContains("Relic Weapon Atma Enhancement");
                 if (await Coroutine.Wait(1000, () => Talk.DialogOpen))
                 {
                     Talk.Next();
@@ -1094,41 +1010,11 @@
                     ff14bot.RemoteWindows.SelectYesno.ClickYes();
                 await Buddy.Coroutines.Coroutine.Sleep(1000);
                 if (await Coroutine.Wait(1000, () => Talk.DialogOpen))
+                while (Talk.DialogOpen)
                 {
                     Talk.Next();
-                }
-                if (await Coroutine.Wait(1000, () => Talk.DialogOpen))
-                {
-                    Talk.Next();
-                }
-                if (await Coroutine.Wait(1000, () => Talk.DialogOpen))
-                {
-                    Talk.Next();
-                }
-                if (await Coroutine.Wait(1000, () => Talk.DialogOpen))
-                {
-                    Talk.Next();
-                }
-                if (await Coroutine.Wait(1000, () => Talk.DialogOpen))
-                {
-                    Talk.Next();
-                }
-                if (await Coroutine.Wait(1000, () => Talk.DialogOpen))
-                {
-                    Talk.Next();
-                }
-                if (await Coroutine.Wait(1000, () => Talk.DialogOpen))
-                {
-                    Talk.Next();
-                }
-                if (await Coroutine.Wait(1000, () => Talk.DialogOpen))
-                {
-                    Talk.Next();
-                }
-                if (await Coroutine.Wait(1000, () => Talk.DialogOpen))
-                {
-                    Talk.Next();
-                }				
+                    await Coroutine.Wait(2000, () => !Talk.DialogOpen);
+                }			
             ]]>
         </CodeChunk>
           <CodeChunk Name="BuySphairaiAnimus"> 
@@ -1137,7 +1023,7 @@
                 ff14bot.Managers.GameObjectManager.GetObjectByNPCId(1008948).Interact();
                 await Buddy.Coroutines.Coroutine.Sleep(1000);
                 if (ff14bot.RemoteWindows.SelectIconString.IsOpen)
-                    ff14bot.RemoteWindows.SelectIconString.ClickSlot(2);
+                    SelectIconString.ClickLineContains("Relic Weapon Atma Enhancement");
                 if (await Coroutine.Wait(1000, () => Talk.DialogOpen))
                 {
                     Talk.Next();
@@ -1150,41 +1036,11 @@
                     ff14bot.RemoteWindows.SelectYesno.ClickYes();
                 await Buddy.Coroutines.Coroutine.Sleep(1000);
                 if (await Coroutine.Wait(1000, () => Talk.DialogOpen))
+                while (Talk.DialogOpen)
                 {
                     Talk.Next();
-                }
-                if (await Coroutine.Wait(1000, () => Talk.DialogOpen))
-                {
-                    Talk.Next();
-                }
-                if (await Coroutine.Wait(1000, () => Talk.DialogOpen))
-                {
-                    Talk.Next();
-                }
-                if (await Coroutine.Wait(1000, () => Talk.DialogOpen))
-                {
-                    Talk.Next();
-                }
-                if (await Coroutine.Wait(1000, () => Talk.DialogOpen))
-                {
-                    Talk.Next();
-                }
-                if (await Coroutine.Wait(1000, () => Talk.DialogOpen))
-                {
-                    Talk.Next();
-                }
-                if (await Coroutine.Wait(1000, () => Talk.DialogOpen))
-                {
-                    Talk.Next();
-                }
-                if (await Coroutine.Wait(1000, () => Talk.DialogOpen))
-                {
-                    Talk.Next();
-                }
-                if (await Coroutine.Wait(1000, () => Talk.DialogOpen))
-                {
-                    Talk.Next();
-                }				
+                    await Coroutine.Wait(2000, () => !Talk.DialogOpen);
+                }			
             ]]>
         </CodeChunk>
           <CodeChunk Name="BuyBravuraAnimus"> 
@@ -1193,7 +1049,7 @@
                 ff14bot.Managers.GameObjectManager.GetObjectByNPCId(1008948).Interact();
                 await Buddy.Coroutines.Coroutine.Sleep(1000);
                 if (ff14bot.RemoteWindows.SelectIconString.IsOpen)
-                    ff14bot.RemoteWindows.SelectIconString.ClickSlot(2);
+                    SelectIconString.ClickLineContains("Relic Weapon Atma Enhancement");
                 if (await Coroutine.Wait(1000, () => Talk.DialogOpen))
                 {
                     Talk.Next();
@@ -1206,40 +1062,10 @@
                     ff14bot.RemoteWindows.SelectYesno.ClickYes();
                 await Buddy.Coroutines.Coroutine.Sleep(1000);
                 if (await Coroutine.Wait(1000, () => Talk.DialogOpen))
+                while (Talk.DialogOpen)
                 {
                     Talk.Next();
-                }
-                if (await Coroutine.Wait(1000, () => Talk.DialogOpen))
-                {
-                    Talk.Next();
-                }
-                if (await Coroutine.Wait(1000, () => Talk.DialogOpen))
-                {
-                    Talk.Next();
-                }
-                if (await Coroutine.Wait(1000, () => Talk.DialogOpen))
-                {
-                    Talk.Next();
-                }
-                if (await Coroutine.Wait(1000, () => Talk.DialogOpen))
-                {
-                    Talk.Next();
-                }
-                if (await Coroutine.Wait(1000, () => Talk.DialogOpen))
-                {
-                    Talk.Next();
-                }
-                if (await Coroutine.Wait(1000, () => Talk.DialogOpen))
-                {
-                    Talk.Next();
-                }
-                if (await Coroutine.Wait(1000, () => Talk.DialogOpen))
-                {
-                    Talk.Next();
-                }
-                if (await Coroutine.Wait(1000, () => Talk.DialogOpen))
-                {
-                    Talk.Next();
+                    await Coroutine.Wait(2000, () => !Talk.DialogOpen);
                 }				
             ]]>
         </CodeChunk>
@@ -1249,7 +1075,7 @@
                 ff14bot.Managers.GameObjectManager.GetObjectByNPCId(1008948).Interact();
                 await Buddy.Coroutines.Coroutine.Sleep(1000);
                 if (ff14bot.RemoteWindows.SelectIconString.IsOpen)
-                    ff14bot.RemoteWindows.SelectIconString.ClickSlot(2);
+                    SelectIconString.ClickLineContains("Relic Weapon Atma Enhancement");
                 if (await Coroutine.Wait(1000, () => Talk.DialogOpen))
                 {
                     Talk.Next();
@@ -1262,41 +1088,11 @@
                     ff14bot.RemoteWindows.SelectYesno.ClickYes();
                 await Buddy.Coroutines.Coroutine.Sleep(1000);
                 if (await Coroutine.Wait(1000, () => Talk.DialogOpen))
+                while (Talk.DialogOpen)
                 {
                     Talk.Next();
-                }
-                if (await Coroutine.Wait(1000, () => Talk.DialogOpen))
-                {
-                    Talk.Next();
-                }
-                if (await Coroutine.Wait(1000, () => Talk.DialogOpen))
-                {
-                    Talk.Next();
-                }
-                if (await Coroutine.Wait(1000, () => Talk.DialogOpen))
-                {
-                    Talk.Next();
-                }
-                if (await Coroutine.Wait(1000, () => Talk.DialogOpen))
-                {
-                    Talk.Next();
-                }
-                if (await Coroutine.Wait(1000, () => Talk.DialogOpen))
-                {
-                    Talk.Next();
-                }
-                if (await Coroutine.Wait(1000, () => Talk.DialogOpen))
-                {
-                    Talk.Next();
-                }
-                if (await Coroutine.Wait(1000, () => Talk.DialogOpen))
-                {
-                    Talk.Next();
-                }
-                if (await Coroutine.Wait(1000, () => Talk.DialogOpen))
-                {
-                    Talk.Next();
-                }				
+                    await Coroutine.Wait(2000, () => !Talk.DialogOpen);
+                }			
             ]]>
         </CodeChunk>
           <CodeChunk Name="BuyArtemisAnimus"> 
@@ -1305,7 +1101,7 @@
                 ff14bot.Managers.GameObjectManager.GetObjectByNPCId(1008948).Interact();
                 await Buddy.Coroutines.Coroutine.Sleep(1000);
                 if (ff14bot.RemoteWindows.SelectIconString.IsOpen)
-                    ff14bot.RemoteWindows.SelectIconString.ClickSlot(2);
+                    SelectIconString.ClickLineContains("Relic Weapon Atma Enhancement");
                 if (await Coroutine.Wait(1000, () => Talk.DialogOpen))
                 {
                     Talk.Next();
@@ -1317,42 +1113,11 @@
                  if (ff14bot.RemoteWindows.SelectYesno.IsOpen)
                     ff14bot.RemoteWindows.SelectYesno.ClickYes();
                 await Buddy.Coroutines.Coroutine.Sleep(1000);
-                if (await Coroutine.Wait(1000, () => Talk.DialogOpen))
+                while (Talk.DialogOpen)
                 {
                     Talk.Next();
-                }
-                if (await Coroutine.Wait(1000, () => Talk.DialogOpen))
-                {
-                    Talk.Next();
-                }
-                if (await Coroutine.Wait(1000, () => Talk.DialogOpen))
-                {
-                    Talk.Next();
-                }
-                if (await Coroutine.Wait(1000, () => Talk.DialogOpen))
-                {
-                    Talk.Next();
-                }
-                if (await Coroutine.Wait(1000, () => Talk.DialogOpen))
-                {
-                    Talk.Next();
-                }
-                if (await Coroutine.Wait(1000, () => Talk.DialogOpen))
-                {
-                    Talk.Next();
-                }
-                if (await Coroutine.Wait(1000, () => Talk.DialogOpen))
-                {
-                    Talk.Next();
-                }
-                if (await Coroutine.Wait(1000, () => Talk.DialogOpen))
-                {
-                    Talk.Next();
-                }
-                if (await Coroutine.Wait(1000, () => Talk.DialogOpen))
-                {
-                    Talk.Next();
-                }				
+                    await Coroutine.Wait(2000, () => !Talk.DialogOpen);
+                }			
             ]]>
         </CodeChunk>
           <CodeChunk Name="BuyYoshimitsuAnimus"> 
@@ -1361,7 +1126,7 @@
                 ff14bot.Managers.GameObjectManager.GetObjectByNPCId(1008948).Interact();
                 await Buddy.Coroutines.Coroutine.Sleep(1000);
                 if (ff14bot.RemoteWindows.SelectIconString.IsOpen)
-                    ff14bot.RemoteWindows.SelectIconString.ClickSlot(2);
+                    SelectIconString.ClickLineContains("Relic Weapon Atma Enhancement");
                 if (await Coroutine.Wait(1000, () => Talk.DialogOpen))
                 {
                     Talk.Next();
@@ -1373,42 +1138,11 @@
                  if (ff14bot.RemoteWindows.SelectYesno.IsOpen)
                     ff14bot.RemoteWindows.SelectYesno.ClickYes();
                 await Buddy.Coroutines.Coroutine.Sleep(1000);
-                if (await Coroutine.Wait(1000, () => Talk.DialogOpen))
+                while (Talk.DialogOpen)
                 {
                     Talk.Next();
-                }
-                if (await Coroutine.Wait(1000, () => Talk.DialogOpen))
-                {
-                    Talk.Next();
-                }
-                if (await Coroutine.Wait(1000, () => Talk.DialogOpen))
-                {
-                    Talk.Next();
-                }
-                if (await Coroutine.Wait(1000, () => Talk.DialogOpen))
-                {
-                    Talk.Next();
-                }
-                if (await Coroutine.Wait(1000, () => Talk.DialogOpen))
-                {
-                    Talk.Next();
-                }
-                if (await Coroutine.Wait(1000, () => Talk.DialogOpen))
-                {
-                    Talk.Next();
-                }
-                if (await Coroutine.Wait(1000, () => Talk.DialogOpen))
-                {
-                    Talk.Next();
-                }
-                if (await Coroutine.Wait(1000, () => Talk.DialogOpen))
-                {
-                    Talk.Next();
-                }
-                if (await Coroutine.Wait(1000, () => Talk.DialogOpen))
-                {
-                    Talk.Next();
-                }				
+                    await Coroutine.Wait(2000, () => !Talk.DialogOpen);
+                }			
             ]]>
         </CodeChunk>
           <CodeChunk Name="BuyThyrusAnimus"> 
@@ -1417,7 +1151,7 @@
                 ff14bot.Managers.GameObjectManager.GetObjectByNPCId(1008948).Interact();
                 await Buddy.Coroutines.Coroutine.Sleep(1000);
                 if (ff14bot.RemoteWindows.SelectIconString.IsOpen)
-                    ff14bot.RemoteWindows.SelectIconString.ClickSlot(2);
+                    SelectIconString.ClickLineContains("Relic Weapon Atma Enhancement");
                 if (await Coroutine.Wait(1000, () => Talk.DialogOpen))
                 {
                     Talk.Next();
@@ -1429,41 +1163,10 @@
                  if (ff14bot.RemoteWindows.SelectYesno.IsOpen)
                     ff14bot.RemoteWindows.SelectYesno.ClickYes();
                 await Buddy.Coroutines.Coroutine.Sleep(1000);
-                if (await Coroutine.Wait(1000, () => Talk.DialogOpen))
+                while (Talk.DialogOpen)
                 {
                     Talk.Next();
-                }
-                if (await Coroutine.Wait(1000, () => Talk.DialogOpen))
-                {
-                    Talk.Next();
-                }
-                if (await Coroutine.Wait(1000, () => Talk.DialogOpen))
-                {
-                    Talk.Next();
-                }
-                if (await Coroutine.Wait(1000, () => Talk.DialogOpen))
-                {
-                    Talk.Next();
-                }
-                if (await Coroutine.Wait(1000, () => Talk.DialogOpen))
-                {
-                    Talk.Next();
-                }
-                if (await Coroutine.Wait(1000, () => Talk.DialogOpen))
-                {
-                    Talk.Next();
-                }
-                if (await Coroutine.Wait(1000, () => Talk.DialogOpen))
-                {
-                    Talk.Next();
-                }
-                if (await Coroutine.Wait(1000, () => Talk.DialogOpen))
-                {
-                    Talk.Next();
-                }
-                if (await Coroutine.Wait(1000, () => Talk.DialogOpen))
-                {
-                    Talk.Next();
+                    await Coroutine.Wait(2000, () => !Talk.DialogOpen);
                 }				
             ]]>
         </CodeChunk>
@@ -1473,7 +1176,7 @@
                 ff14bot.Managers.GameObjectManager.GetObjectByNPCId(1008948).Interact();
                 await Buddy.Coroutines.Coroutine.Sleep(1000);
                 if (ff14bot.RemoteWindows.SelectIconString.IsOpen)
-                    ff14bot.RemoteWindows.SelectIconString.ClickSlot(2);
+                    SelectIconString.ClickLineContains("Relic Weapon Atma Enhancement");
                 if (await Coroutine.Wait(1000, () => Talk.DialogOpen))
                 {
                     Talk.Next();
@@ -1485,41 +1188,10 @@
                  if (ff14bot.RemoteWindows.SelectYesno.IsOpen)
                     ff14bot.RemoteWindows.SelectYesno.ClickYes();
                 await Buddy.Coroutines.Coroutine.Sleep(1000);
-                if (await Coroutine.Wait(1000, () => Talk.DialogOpen))
+                while (Talk.DialogOpen)
                 {
                     Talk.Next();
-                }
-                if (await Coroutine.Wait(1000, () => Talk.DialogOpen))
-                {
-                    Talk.Next();
-                }
-                if (await Coroutine.Wait(1000, () => Talk.DialogOpen))
-                {
-                    Talk.Next();
-                }
-                if (await Coroutine.Wait(1000, () => Talk.DialogOpen))
-                {
-                    Talk.Next();
-                }
-                if (await Coroutine.Wait(1000, () => Talk.DialogOpen))
-                {
-                    Talk.Next();
-                }
-                if (await Coroutine.Wait(1000, () => Talk.DialogOpen))
-                {
-                    Talk.Next();
-                }
-                if (await Coroutine.Wait(1000, () => Talk.DialogOpen))
-                {
-                    Talk.Next();
-                }
-                if (await Coroutine.Wait(1000, () => Talk.DialogOpen))
-                {
-                    Talk.Next();
-                }
-                if (await Coroutine.Wait(1000, () => Talk.DialogOpen))
-                {
-                    Talk.Next();
+                    await Coroutine.Wait(2000, () => !Talk.DialogOpen);
                 }				
             ]]>
         </CodeChunk>				
@@ -1529,7 +1201,7 @@
                 ff14bot.Managers.GameObjectManager.GetObjectByNPCId(1008948).Interact();
                 await Buddy.Coroutines.Coroutine.Sleep(1000);
                 if (ff14bot.RemoteWindows.SelectIconString.IsOpen)
-                    ff14bot.RemoteWindows.SelectIconString.ClickSlot(2);
+                    SelectIconString.ClickLineContains("Relic Weapon Atma Enhancement");
                 if (await Coroutine.Wait(1000, () => Talk.DialogOpen))
                 {
                     Talk.Next();
@@ -1541,41 +1213,10 @@
                  if (ff14bot.RemoteWindows.SelectYesno.IsOpen)
                     ff14bot.RemoteWindows.SelectYesno.ClickYes();
                 await Buddy.Coroutines.Coroutine.Sleep(1000);
-                if (await Coroutine.Wait(1000, () => Talk.DialogOpen))
+                while (Talk.DialogOpen)
                 {
                     Talk.Next();
-                }
-                if (await Coroutine.Wait(1000, () => Talk.DialogOpen))
-                {
-                    Talk.Next();
-                }
-                if (await Coroutine.Wait(1000, () => Talk.DialogOpen))
-                {
-                    Talk.Next();
-                }
-                if (await Coroutine.Wait(1000, () => Talk.DialogOpen))
-                {
-                    Talk.Next();
-                }
-                if (await Coroutine.Wait(1000, () => Talk.DialogOpen))
-                {
-                    Talk.Next();
-                }
-                if (await Coroutine.Wait(1000, () => Talk.DialogOpen))
-                {
-                    Talk.Next();
-                }
-                if (await Coroutine.Wait(1000, () => Talk.DialogOpen))
-                {
-                    Talk.Next();
-                }
-                if (await Coroutine.Wait(1000, () => Talk.DialogOpen))
-                {
-                    Talk.Next();
-                }
-                if (await Coroutine.Wait(1000, () => Talk.DialogOpen))
-                {
-                    Talk.Next();
+                    await Coroutine.Wait(2000, () => !Talk.DialogOpen);
                 }				
             ]]>
         </CodeChunk>
@@ -1585,7 +1226,7 @@
                 ff14bot.Managers.GameObjectManager.GetObjectByNPCId(1008948).Interact();
                 await Buddy.Coroutines.Coroutine.Sleep(1000);
                 if (ff14bot.RemoteWindows.SelectIconString.IsOpen)
-                    ff14bot.RemoteWindows.SelectIconString.ClickSlot(2);
+                    SelectIconString.ClickLineContains("Relic Weapon Atma Enhancement");
                 if (await Coroutine.Wait(1000, () => Talk.DialogOpen))
                 {
                     Talk.Next();
@@ -1597,41 +1238,10 @@
                  if (ff14bot.RemoteWindows.SelectYesno.IsOpen)
                     ff14bot.RemoteWindows.SelectYesno.ClickYes();
                 await Buddy.Coroutines.Coroutine.Sleep(1000);
-                if (await Coroutine.Wait(1000, () => Talk.DialogOpen))
+                while (Talk.DialogOpen)
                 {
                     Talk.Next();
-                }
-                if (await Coroutine.Wait(1000, () => Talk.DialogOpen))
-                {
-                    Talk.Next();
-                }
-                if (await Coroutine.Wait(1000, () => Talk.DialogOpen))
-                {
-                    Talk.Next();
-                }
-                if (await Coroutine.Wait(1000, () => Talk.DialogOpen))
-                {
-                    Talk.Next();
-                }
-                if (await Coroutine.Wait(1000, () => Talk.DialogOpen))
-                {
-                    Talk.Next();
-                }
-                if (await Coroutine.Wait(1000, () => Talk.DialogOpen))
-                {
-                    Talk.Next();
-                }
-                if (await Coroutine.Wait(1000, () => Talk.DialogOpen))
-                {
-                    Talk.Next();
-                }
-                if (await Coroutine.Wait(1000, () => Talk.DialogOpen))
-                {
-                    Talk.Next();
-                }
-                if (await Coroutine.Wait(1000, () => Talk.DialogOpen))
-                {
-                    Talk.Next();
+                    await Coroutine.Wait(2000, () => !Talk.DialogOpen);
                 }				
             ]]>
         </CodeChunk>

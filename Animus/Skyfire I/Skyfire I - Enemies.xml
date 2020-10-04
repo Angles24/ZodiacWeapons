@@ -15,6 +15,13 @@
 			<LisbethTravel Area="Mor Dhona" Position="-227.1997, -4.063313, -301.7137"/>
 			<Grind grindRef="daring_harrier" while="not ZodiacManager.CurrentBook.KillTask1Completed" />
 		</If>
+		
+		<!-- Book of Skyfire I Kill Task 4 - 5th Cohort Vanguard  -->
+		<If condition="not ZodiacManager.CurrentBook.KillTask4Completed">
+			<Log Message="Moving to Skyfire I Kill Task 4 - 5th Cohort Vanguard" />
+			<LisbethTravel Area="Mor Dhona" Position="-559.3, -3.146109, -351.7"/>
+			<Grind grindRef="5th_cohort_vanguard" while="not ZodiacManager.CurrentBook.KillTask4Completed" />
+		</If>		
 
 		<!-- Book of Skyfire I Kill Task 2 - Giant Logger  -->
 		<If condition="not ZodiacManager.CurrentBook.KillTask2Completed">
@@ -29,13 +36,7 @@
 			<LisbethTravel Area="Western La Noscea" Position="-206.0953, -42.0848, -239.8467"/>
 			<Grind grindRef="shoalspine_sahagin" while="not ZodiacManager.CurrentBook.KillTask3Completed" />
 		</If>
-
-		<!-- Book of Skyfire I Kill Task 4 - 5th Cohort Vanguard  -->
-		<If condition="not ZodiacManager.CurrentBook.KillTask4Completed">
-			<Log Message="Moving to Skyfire I Kill Task 4 - 5th Cohort Vanguard" />
-			<LisbethTravel Area="Mor Dhona" Position="-559.3, -3.146109, -351.7"/>
-			<Grind grindRef="5th_cohort_vanguard" while="not ZodiacManager.CurrentBook.KillTask4Completed" />
-		</If>		
+		
 	
 		<!-- Book of Skyfire I Kill Task 5 - Synthetic Doblyn  -->
 		<If condition="not ZodiacManager.CurrentBook.KillTask5Completed">

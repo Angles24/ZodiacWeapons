@@ -12,7 +12,7 @@
 		<LLJoinDuty DutyId="75" trial="true"/>
 	</If>
 	<If condition="DutyManager.InInstance">
-		<Grind GrindRef="Hydra" While="GameObjectManager.GetObjectByNPCId(2161).CurrentHealth == 0"/> <!-- Kill Hydra -->
+		<Grind GrindRef="Hydra" While="not GameObjectManager.GetObjectByNPCId(2161).CurrentHealth == 0"/> <!-- Kill Hydra -->
 		<While condition="DutyManager.InInstance">	
 			<WaitTimer WaitTime="10" />
 			<LLLeaveDuty/>
@@ -34,77 +34,5 @@
 	</GrindArea>
   </GrindAreas>		
   <CodeChunks>
-	<CodeChunk Name="ExitDuty">
-		<![CDATA[
-			ff14bot.Managers.GameObjectManager.GetObjectByNPCId(2000139).Interact();
-			await Coroutine.Sleep(1000);
-			ff14bot.RemoteWindows.SelectYesno.ClickYes();
-			await Coroutine.Sleep(3000);
-      ]]>
-	</CodeChunk>
-	<CodeChunk Name="LeaveDuty">
-		<![CDATA[
-			ff14bot.Managers.DutyManager.LeaveActiveDuty();
-			await Coroutine.Wait(20000, () => CommonBehaviors.IsLoading);
-			if (CommonBehaviors.IsLoading)
-			{
-				await Coroutine.Wait(-1, () => !CommonBehaviors.IsLoading);
-			}
-		]]>
-	</CodeChunk>	
-	<CodeChunk Name="QueueRelicHydra">
-		<![CDATA[ 
-           Logging.WriteDiagnostic("Queuing for Dungeon");
-		GameSettingsManager.JoinWithUndersizedParty = true;
-           DutyManager.Queue(DataManager.InstanceContentResults[75]);
-           await Coroutine.Wait(5000, () => (DutyManager.QueueState == QueueState.InQueue || DutyManager.QueueState == QueueState.JoiningInstance));
-
-           Logging.WriteDiagnostic("Queued for Dungeon");
-
-           await Coroutine.Wait(10000, () => (DutyManager.QueueState == QueueState.JoiningInstance));
-			
-           await Coroutine.Wait(10000, () => (RaptureAtkUnitManager.GetWindowByName("ContentsFinderConfirm") != null));
-
-           Logging.WriteDiagnostic("Commencing");
-           DutyManager.Commence();
-           Logging.WriteDiagnostic("Waiting for Loading");
-           await Coroutine.Wait(10000, () => CommonBehaviors.IsLoading || QuestLogManager.InCutscene);
-			
-           if (CommonBehaviors.IsLoading)
-           {
-               await Coroutine.Wait(-1, () => !CommonBehaviors.IsLoading);
-           }
-
-           if (QuestLogManager.InCutscene)
-           {
-               TreeRoot.StatusText = "InCutscene";
-               if (ff14bot.RemoteAgents.AgentCutScene.Instance != null)
-               {
-                   ff14bot.RemoteAgents.AgentCutScene.Instance.PromptSkip();
-                   await Coroutine.Wait(250, () => SelectString.IsOpen);
-                   if (SelectString.IsOpen)
-                       SelectString.ClickSlot(0);
-               }
-           }
-
-           Logging.WriteDiagnostic("Should be in duty");
-		   
-           var director = ((ff14bot.Directors.InstanceContentDirector) DirectorManager.ActiveDirector);
-           if (director !=null)
-		   {
-                if (director.TimeLeftInDungeon >= new TimeSpan(1,0,0))
-               {
-                   Logging.WriteDiagnostic("Barrier up");
-                   await Coroutine.Wait(30000, () => director.TimeLeftInDungeon < new TimeSpan(0,59,58));
-               }
-		   }
-		   else
-		   {
-			Logging.WriteDiagnostic("Director is null");
-		   }
-			   
-	      Logging.WriteDiagnostic("Should be ready");
-		]]>
-	</CodeChunk>	
   </CodeChunks>  
 </Profile>  

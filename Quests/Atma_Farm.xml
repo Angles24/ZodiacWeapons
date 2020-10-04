@@ -85,7 +85,7 @@
 		  </If>
                 <Log Message="Farming Atma of the Lion in Outer La Noscea..." />
                 <While Condition="not HasAtLeast(7858,1)">
-                    <LLFate MinLevel="1" MaxLevel="50" while="HasAtLeast(7858,1)"/>
+                    <LLFate MinLevel="1" MaxLevel="50" while="not HasAtLeast(7858,1)" UseFlight="false"/>
                 </While>		  
 		 </If>
 
@@ -163,7 +163,7 @@
 		  </If>			
             <Log Message="Atma of the Water-bearer in Upper La Noscea..." />
             <While Condition="not HasAtLeast(7853,1)">
-                <LLFate MinLevel="1" MaxLevel="50" while="not HasAtLeast(7853,1)"/>
+                <LLFate MinLevel="1" MaxLevel="50" while="not HasAtLeast(7853,1)" Ground="true"/>
             </While>
         </While>
 

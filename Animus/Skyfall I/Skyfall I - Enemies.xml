@@ -22,6 +22,13 @@
 			<LisbethTravel Area="Mor Dhona" Position="-351.531, -4.07704, -541.1299"/>
 			<Grind grindRef="Mudpuppy" while="not ZodiacManager.CurrentBook.KillTask2Completed" />
 		</If>
+		
+		<!-- Book of Skyfall I Kill Task 4 - Lake Cobra -->
+		<If condition="not ZodiacManager.CurrentBook.KillTask4Completed">
+			<Log Message="Moving to Skyfall I Kill Task 4 - Lake Cobra" />
+			<LisbethTravel Area="Mor Dhona" Position="188.706, -21.87852, -452.7528"/>
+			<Grind grindRef="Lake Cobra" while="not ZodiacManager.CurrentBook.KillTask4Completed" />
+		</If>			
 
 		<!-- Book of Skyfall I Kill Task 3 - Amalj'aa Lancer -->
 		<If condition="not ZodiacManager.CurrentBook.KillTask3Completed">
@@ -29,13 +36,7 @@
 			<LisbethTravel Area="Southern Thanalan" Position="-114.8358, -2.113218, 12.66018"/>
 			<Grind grindRef="Amalj'aa Lancer" while="not ZodiacManager.CurrentBook.KillTask3Completed" />
 		</If>
-
-		<!-- Book of Skyfall I Kill Task 4 - Lake Cobra -->
-		<If condition="not ZodiacManager.CurrentBook.KillTask4Completed">
-			<Log Message="Moving to Skyfall I Kill Task 4 - Lake Cobra" />
-			<LisbethTravel Area="Mor Dhona" Position="188.706, -21.87852, -452.7528"/>
-			<Grind grindRef="Lake Cobra" while="not ZodiacManager.CurrentBook.KillTask4Completed" />
-		</If>		
+	
 	
 		<!-- Book of Skyfall I Kill Task 5 - Giant Reader -->
 		<If condition="not ZodiacManager.CurrentBook.KillTask5Completed">

@@ -15,7 +15,7 @@
 			<LisbethTravel Area="Western La Noscea" Position="-21.49667, -14.01646, -94.32803"/>
 			<While Condition="not ZodiacManager.CurrentBook.FateTask1Completed">
 				<Log Message="Waiting on FATE 'Breaching North Tidegate'" />
-				<LLFate FateId="569" MinLevel="1" MaxLevel="50" while="not ZodiacManager.CurrentBook.FateTask1Completed"/> <!-- Breaching North Tidegate -->
+				<LLFate FateIds="569,568" MinLevel="1" MaxLevel="50" while="not ZodiacManager.CurrentBook.FateTask1Completed"/> <!-- Breaching North Tidegate -->
 			</While>	
 		</If>
 
