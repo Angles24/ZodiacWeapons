@@ -26,8 +26,10 @@
 			<LisbethTravel Area="Coerthas Central Highlands" Position="-546.1525, 238.769, 353.947"/>
 			<While Condition="not ZodiacManager.CurrentBook.FateTask2Completed">
 				<Log Message="Waiting on FATE 'Tower of Power'" />
-				<RunCode name="TowerOfPower"/>
-				<LLFate FateId="486" MinLevel="1" Timeout="60" MaxLevel="50" while="not ZodiacManager.CurrentBook.FateTask2Completed"/> <!-- Tower of Power -->
+				<If condition="GameObjectManager.GetObjectByNPCId(1603)">
+					<RunCode name="StartTower"/>
+				</If>
+				<LLFate FateId="486" MinLevel="1" Timeout="60" Timeout="60" MaxLevel="50" while="not ZodiacManager.CurrentBook.FateTask2Completed"/> <!-- Tower of Power -->
 			</While>	
 		</If>
 
@@ -50,6 +52,31 @@
 			Core.OverlayManager.AddToast(() => "Please complete Tower Of Power FATE manually. Starts from NPC.", TimeSpan.FromMilliseconds(25000), System.Windows.Media.Color.FromRgb(29,213,226), System.Windows.Media.Color.FromRgb(13,106,175), new System.Windows.Media.FontFamily("Gautami"));
 			await Coroutine.Sleep(60000);
 		  ]]>
-		</CodeChunk>	
+		</CodeChunk>
+		<CodeChunk Name="StartTower">
+			<![CDATA[ 
+				var x = GameObjectManager.GetObjectByNPCId(1603);
+				var pos = new Vector3(x.Location.X, x.Location.Y, x.Location.Z);
+				Navigator.PlayerMover.MoveTowards(pos);
+				await Coroutine.Wait(-1, () => Core.Me.Distance(pos) < 3f);
+				Navigator.PlayerMover.MoveStop();
+				await Coroutine.Sleep(1000);
+				ff14bot.Managers.GameObjectManager.GetObjectByNPCId(x.NpcId).Interact();				
+				await Buddy.Coroutines.Coroutine.Sleep(1000);
+                while (Talk.DialogOpen)
+                {
+                    Talk.Next();
+                    await Coroutine.Wait(2000, () => !Talk.DialogOpen);
+                }		
+				await Buddy.Coroutines.Coroutine.Sleep(1000);				
+                if (ff14bot.RemoteWindows.SelectYesno.IsOpen)
+					ff14bot.RemoteWindows.SelectYesno.ClickYes();
+				await Buddy.Coroutines.Coroutine.Sleep(1000);	
+                {
+                    Talk.Next();
+                    await Coroutine.Wait(2000, () => !Talk.DialogOpen);
+                }						
+			]]>
+		</CodeChunk>		
 	</CodeChunks>	
 </Profile>	
