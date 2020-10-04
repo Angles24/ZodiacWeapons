@@ -29,7 +29,7 @@
 				<If condition="GameObjectManager.GetObjectByNPCId(1603)">
 					<RunCode name="StartTower"/>
 				</If>
-				<LLFate FateId="486" MinLevel="1" Timeout="60" Timeout="60" MaxLevel="50" while="not ZodiacManager.CurrentBook.FateTask2Completed"/> <!-- Tower of Power -->
+				<LLFate FateId="486" MinLevel="1" Timeout="60" MaxLevel="50" while="not ZodiacManager.CurrentBook.FateTask2Completed"/> <!-- Tower of Power -->
 			</While>	
 		</If>
 
