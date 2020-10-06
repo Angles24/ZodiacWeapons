@@ -102,11 +102,6 @@
 		<!-- Defeat Lady Amandine 0/1 -->
 		<If Condition="GetInstanceTodo(4) == 0 and GetInstanceTodo(3) == 1">
 			<Log Message="Defeat Lady Amandine 0/1" />
-			<MoveTo XYZ="46.69981,9.875019,-0.2538557" />
-			<While condition="GameObjectManager.GetObjectByNPCId(2001233).IsVisible">
-				<RunCode name="SealedBarrier"/>
-			</While>
-			<MoveTo XYZ="30.17896,16.99996,0.192634" />
 			<If Condition="ClassName == ((ClassJobType.Bard))"> 
 				<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 6261">
 					<Log Message="Equipping Artemis Bow Atma" />
@@ -183,7 +178,12 @@
 					<RunCode Name="ThyrusAtma" />
 					<WaitTimer WaitTime="3" />
 				</If>
-			</If>			
+			</If>						
+			<MoveTo XYZ="46.69981,9.875019,-0.2538557" />
+			<While condition="GameObjectManager.GetObjectByNPCId(2001233).IsVisible">
+				<RunCode name="SealedBarrier"/>
+			</While>
+			<MoveTo XYZ="30.17896,16.99996,0.192634" />
 			<MoveTo XYZ="17.09274, 17, -0.02151978"/>
 			<Grind GrindRef="FinalBoss" While="not GameObjectManager.GetObjectByNPCId(422).CurrentHealth == 0"/> <!-- Fight final boss -->
 			<If Condition="&openchest; == 1">

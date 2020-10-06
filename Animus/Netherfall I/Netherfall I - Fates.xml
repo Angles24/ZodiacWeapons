@@ -22,9 +22,13 @@
 		<!-- Book of Netherfall I FATE Task 2 - The Ceruleum Road -->	
 		<If condition="not ZodiacManager.CurrentBook.FateTask2Completed">
 			<LisbethTravel Area="Northern Thanalan" Position="21.60414, 3.991567, 397.9374"/>
-			<Log Message="Waiting on FATE 'The Ceruleum Road'" />
-			<RunCode name="CeruleumRoad"/>
-			<StopBot/>
+			<While Condition="not ZodiacManager.CurrentBook.FateTask2Completed">
+				<Log Message="Waiting on FATE 'The Ceruleum Road'" />
+					<If condition="GameObjectManager.GetObjectByNPCId(1718)">
+						<RunCode name="StartRoad"/>
+					</If>
+				<LLFate FateId="642" MinLevel="1" Timeout="60" MaxLevel="50" while="not ZodiacManager.CurrentBook.FateTask2Completed"/> <!-- The Ceruleum Road -->
+			</While>
 		</If>
 
 		<!-- Book of Netherfall I FATE Task 3 - The Four Winds -->	
@@ -45,6 +49,36 @@
 			Core.OverlayManager.AddToast(() => "Please complete Ceruleum Road FATE manually. Starts from Wary Merchant.", TimeSpan.FromMilliseconds(25000), System.Windows.Media.Color.FromRgb(29,213,226), System.Windows.Media.Color.FromRgb(13,106,175), new System.Windows.Media.FontFamily("Gautami"));
 			await Coroutine.Sleep(60000);
 		  ]]>
-		</CodeChunk>	
+		</CodeChunk>
+		<CodeChunk Name="StartRoad">
+			<![CDATA[ 
+				var x = GameObjectManager.GetObjectByNPCId(1718);
+				var pos = new Vector3(x.Location.X, x.Location.Y, x.Location.Z);
+				Navigator.PlayerMover.MoveTowards(pos);
+				await Coroutine.Wait(-1, () => Core.Me.Distance(pos) < 3f);
+				Navigator.PlayerMover.MoveStop();
+				await Coroutine.Sleep(1000);
+				ff14bot.Managers.GameObjectManager.GetObjectByNPCId(x.NpcId).Interact();				
+				await Buddy.Coroutines.Coroutine.Sleep(1000);
+                while (Talk.DialogOpen)
+                {
+                    Talk.Next();
+                    await Coroutine.Wait(2000, () => !Talk.DialogOpen);
+                }
+                while (Talk.DialogOpen)
+                {
+                    Talk.Next();
+                    await Coroutine.Wait(2000, () => !Talk.DialogOpen);
+                }						
+				await Buddy.Coroutines.Coroutine.Sleep(1000);				
+                if (ff14bot.RemoteWindows.SelectYesno.IsOpen)
+					ff14bot.RemoteWindows.SelectYesno.ClickYes();
+				await Buddy.Coroutines.Coroutine.Sleep(1000);	
+                {
+                    Talk.Next();
+                    await Coroutine.Wait(2000, () => !Talk.DialogOpen);
+                }						
+			]]>
+		</CodeChunk>			
 	</CodeChunks>
 </Profile>	

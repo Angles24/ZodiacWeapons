@@ -9,7 +9,7 @@
 -->
 <!DOCTYPE Profile [
 <!-- Profile Settings -->
-<!ENTITY brd "0"> 		
+<!ENTITY brd "1"> 		
 <!ENTITY blm "0"> 		
 <!ENTITY drg "0"> 
 <!ENTITY mnk "0"> 
@@ -21,7 +21,7 @@
 <!ENTITY whm "0"> 
 <!-- 		Items required for quest. Have these in your inventory before starting profile.
 
-			Bard		Longarm's Composite Bow	Heavens Eye Materia III X2
+			Bard		Longarm's Composite Bow			Heavens Eye Materia III X2
 			Black Mage	Sanguine Scepter				Savage Might Materia III X2
 			Dragoon		Champion's Lance				Savage Aim Materia III X2
 			Monk		Wildling's Cesti				Savage Aim Materia III X2

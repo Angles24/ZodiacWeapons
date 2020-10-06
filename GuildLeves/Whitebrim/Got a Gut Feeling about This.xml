@@ -16,6 +16,9 @@
 				<ExPickupGuildLeve leveIds="650" leveType="Battlecraft" npcId="1002401" npcLocation="-441.1231,211,-235.5231" Timeout="5" /> <!-- Got a Gut Feeling about This -->
 				<If Condition="not ExBuddy.Windows.GuildLeve.HasLeve(650)">
 					<ExPickupGuildLeve leveIds="651" leveType="Battlecraft" npcId="1002401" npcLocation="-441.1231,211,-235.5231" Timeout="5" /> <!-- You Look Good Enough To Eat -->				
+						<If Condition="not ExBuddy.Windows.GuildLeve.HasLeve(651)">
+							<ExPickupGuildLeve leveIds="652" leveType="Battlecraft" npcId="1002401" npcLocation="-441.1231,211,-235.5231" Timeout="5" /> <!-- The Area's a Bit Sketchy -->
+						</If>				
 				</If>
 			</If>	
 
@@ -52,6 +55,18 @@
 				</UseItem>
 				<WaitTimer WaitTime="2" />
 				<RunCode Name="CloseTimer"/>
+				<ExTurnInGuildLeve NpcId="1002401" NpcLocation="-441.1231,211,-235.5231"/>
+				<LLoadProfile Path="../../Start.xml"/>		
+			</If>
+
+			<!-- The Area's a Bit Sketchy -->
+			<If Condition="ExBuddy.Windows.GuildLeve.HasLeve(652)">
+				<LisbethTravel Area="Coerthas Central Highlands" Position="-413.8824, 223.8988, -157.1951"/>
+				<InitiateLeve LeveId="652"/> <!-- The Area's a Bit Sketchy -->
+				<WaitTimer WaitTime="2" />
+				<UseObject InCombat="True" Radius="500" XYZ="-412.2287, 223.9546, -157.087" NpcIds="2001104" condition="not ff14bot.RemoteWindows.SelectYesno.IsOpen"/>							
+				<WaitTimer WaitTime="2" />					
+				<RunCode Name="CloseTimer"/> 
 				<ExTurnInGuildLeve NpcId="1002401" NpcLocation="-441.1231,211,-235.5231"/>
 				<LLoadProfile Path="../../Start.xml"/>		
 			</If>			

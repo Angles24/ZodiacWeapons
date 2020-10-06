@@ -22,7 +22,9 @@
 			<!-- Someone's in the Doghouse -->
 			<If Condition="ExBuddy.Windows.GuildLeve.HasLeve(647)">
 				<GetTo ZoneId="147" XYZ="88.50806, 15.88555, 243.4572"/>
-				<RunCode Name="Announce_Manual_Completion"/>				
+				<While condition="1 == 1">
+					<RunCode Name="Announce_Manual_Completion"/>
+				</While>	
 				<!-- <InitiateLeve LeveId="647"/> --> <!-- Someone's in the Doghouse -->
 
 				<!-- Need to figure out how to beckon the dog

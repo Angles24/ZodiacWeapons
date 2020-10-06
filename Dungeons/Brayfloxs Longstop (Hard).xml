@@ -16,9 +16,6 @@
      <!-- [Brayflox's Longstop (Hard)] Curds and Slay -->
     <If Condition="not HasQuest(66947) and not IsQuestCompleted(66947)">
       <GetTo ZoneId="156" XYZ="32.51, 21.27503, -636.2501"/>
-      <If Condition="not IsQuestAcceptQualified(66947)">
-        <RunCode Name="Unlock_Normal_Mode"/>
-      </If>
       <If Condition="IsQuestAcceptQualified(66947)">
         <PickupQuest QuestId="66947" NpcId="1006975" XYZ="32.82214, 21.25273, -635.462"/>
       </If>
@@ -70,10 +67,14 @@
 			</If>
 			<If Condition="ClassName == ((ClassJobType.WhiteMage))"> 
 					<ChangeClass Job="Whitemage" />
-			</If>			
+			</If>
+			<RunCode name="DisableSideStep"/>
+			<MoveTo XYZ="-81.80727, -2.381622, 0.4254619" />
+			<MoveTo XYZ="-43.06401, -2.381622, 54.97089" />
+			<MoveTo XYZ="-8.675864, -0.7706152, 0.8579024" />
 			<Grind GrindRef="FarmTinyKey" While="not GameObjectManager.GetObjectByNPCId(2660).CurrentHealth == 0"/>
-			<RunCode Name="DisableSideStep"/>
 			<UseObject NpcIds="2002325" radius="200" XYZ="-7.703425,-1.383872,-2.724141" condition="GetInstanceTodo(0) == 0"/>
+			<RunCode name="EnableSideStep"/>
 		</If>	
 
 		<!-- Clear Runstop Frontblock 0/1 -->
@@ -239,9 +240,7 @@
   <GrindAreas>
 	<GrindArea name="FarmTinyKey">
         <Hotspots>
-			<Hotspot Radius="20" XYZ="-37.52596, -2.381622, 49.44011" />
-			<Hotspot Radius="20" XYZ="-83.06089, -2.381622, 9.298882" />			
-			<Hotspot Radius="20" XYZ="-2.059998,-1.160427,-0.4730835" />
+			<Hotspot Radius="20" XYZ="-8.675864, -0.7706152, 0.8579024" />
         </Hotspots>
         <TargetMobs>
 			<TargetMob Id="2660" Weight="1" /> <!-- Illuminati Soldier -->			
@@ -272,7 +271,7 @@
         </TargetMobs>
 	</GrindArea>	
   </GrindAreas>
-  <CodeChunks>
+  <CodeChunks>  
 	<CodeChunk Name="TinyKey1">
       <![CDATA[
         var x = GameObjectManager.GetObjectByNPCId(2002325);
