@@ -169,9 +169,9 @@
 			
 	<!-- SoulGlaze Your Weapon -->
 			<If Condition="NovusLightLevel() &lt; 2000">
-				<RunCode name="SoulGlazeed"/>
+				<RunCode name="SoulGlazed"/>
 				<If Condition="ClassName == ((ClassJobType.Paladin))">
-					<RunCode name="SoulGlazeedPLD"/>
+					<RunCode name="SoulGlazedPLD"/>
 				</If>
 			</If>
 			
@@ -234,7 +234,7 @@
                     await Coroutine.Wait(2000, () => !Talk.DialogOpen);
                 }
                 if (ff14bot.RemoteWindows.SelectString.IsOpen)
-                    SelectString.ClickLineContains(1);
+                    ff14bot.RemoteWindows.SelectString.ClickSlot(1);
                 await Buddy.Coroutines.Coroutine.Sleep(1000);
                 if (ff14bot.RemoteWindows.SelectYesno.IsOpen)
                     ff14bot.RemoteWindows.SelectYesno.ClickYes();
