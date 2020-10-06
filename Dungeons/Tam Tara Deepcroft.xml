@@ -192,28 +192,7 @@
 					<RunCode Name="ThyrusAtma" />
 					<WaitTimer WaitTime="3" />
 				</If>
-			</If>	
-				<If Condition="ClassName == ((ClassJobType.Summoner))"> 
-					<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7870">
-						<Log Message="Equipping Viel of Wiyu Novus" />
-						<RunCode Name="VeilNovus" />
-						<WaitTimer WaitTime="3" />
-					</If>
-				</If>	
-				<If Condition="ClassName == ((ClassJobType.Warrior))"> 
-					<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7865">
-						<Log Message="Equipping Bravura Atma" />
-						<RunCode Name="BravuraNovus" />
-						<WaitTimer WaitTime="3" />
-					</If>
-				</If>
-				<If Condition="ClassName == ((ClassJobType.WhiteMage))"> 
-					<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7868">
-						<Log Message="Equipping Thyrus Atma" />
-						<RunCode Name="ThyrusNovus" />
-						<WaitTimer WaitTime="3" />
-					</If>
-				</If>			
+			</If>				
 			<Grind grindRef="Galvanth" While="GameObjectManager.GetObjectByNPCId(73)"/> <!-- Fight Galvanth the Dominator -->
 			<MoveTo XYZ="-42.77108,14.06775,-17.28852"/> <!-- Move to exit -->
 			<If Condition="&openchest; == 1">

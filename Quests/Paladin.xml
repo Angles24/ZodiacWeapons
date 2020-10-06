@@ -477,38 +477,31 @@
 			</If>	
 		</If>
 		
+		
 		<!-- Buy Zenith weapons -->
-		<!-- If Has Completed A Relic Reborn (Curtana) and has Curtana -->																										
-		<If Condition="IsQuestCompleted(66656) and HasAtLeast(1675,1)">
-			<If Condition="HasAtLeast(6268,2)">
-				<RunCode name="ExchangeCurtana"/>
-			</If>
-			<If Condition="not HasAtLeast(6268,2)">
-				<If Condition="HasAtLeast(28,60)">
+		<!-- If Has Completed A Relic Reborn (Curtana) and Curtana -->
+		<While Condition="IsQuestCompleted(66656) and HasAtLeast(1675,1)">
+			<Log Message="Artemis Bow finished, upgrading to Curtana Zenith!" />
+			<If Condition="not HasAtLeast(6268,3)">
+				<If Condition="HasAtLeast(28,60)"> <!-- HasAtLeast 60 Poetics -->
+					<Log Message="Going to purchase Thavnairian Mist!" />
 					<GetTo ZoneId="156" XYZ="63.40987, 31.12387, -735.2782"/>
 					<!-- Buy Thavnairian Mist -->
-					<BuyShopExchangeCurrency NpcId= "1008119" ItemId="6268" SelectString="2" Count="2"/>
+					<BuyShopExchangeCurrency NpcId= "1008119" ItemId="6268" SelectString="2" Count="3"/>
 				</If>	
-				<If Condition="not HasAtLeast(28,60)">
+				<While Condition="not HasAtLeast(28,60)">
 					<RunCode name="NeedPoetics"/>
-				</If>
-			</If>
-		</If>
-		<If Condition="IsQuestCompleted(66656) and HasAtLeast(2306,1)">
-			<If Condition="HasAtLeast(6268,1)">			
-				<RunCode name="ExchangeHolyShield"/>
-			</If>	
-			<If Condition="not HasAtLeast(6268,1)">
-				<If Condition="HasAtLeast(28,60)">
-					<GetTo ZoneId="156" XYZ="63.40987, 31.12387, -735.2782"/>
-					<!-- Buy Thavnairian Mist -->
-					<BuyShopExchangeCurrency NpcId= "1008119" ItemId="6268" SelectString="2" Count="1"/>
-				</If>	
-				<If Condition="not HasAtLeast(28,60)">
-					<RunCode name="NeedPoetics"/>
-				</If>
+				</While>
 			</If>			
-		</If>		
+			<If Condition="HasAtLeast(6268,3)"> <!-- HasAtLeast 3 Thavnairian Mist -->
+				<Log Message="Exchanging Curtana with Furnace" />
+				<GetTo ZoneId="154" XYZ="449.7941, -0.3727861, -70.40031"/>
+				<RunCode name="ExchangeCurtana"/>
+				<WaitTimer WaitTime="3" />
+				<RunCode name="ExchangeHolyShield"/>
+			</If>
+		</While>
+		
 		
 		<!-- Up in Arms -->
 		<If Condition="IsQuestCompleted(66656)and not HasQuest(66971) and not IsQuestCompleted(66971)">
@@ -601,6 +594,7 @@
 					<TeleportTo AetheryteId="24"/> 
 				</If>
 				<GetTo ZoneId="156" XYZ="71.94617,33.06656,-706.2944"/>
+				<Dismount/>
 				<RunCode name="BuyFireBooks"/>
 			</If>
 			
