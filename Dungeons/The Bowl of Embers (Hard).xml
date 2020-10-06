@@ -18,6 +18,7 @@
 		<LLJoinDuty DutyId="59" trial="true"/>
 	</If>
 	<If condition="DutyManager.InInstance">
+		<MoveTo XYZ="-13.12728, 0, -8.592924" usemesh="false" />
 		<Grind GrindRef="Ifrit" While="not GameObjectManager.GetObjectByNPCId(1185).CurrentHealth == 0"/> <!-- Kill Ifrit -->
 		<If Condition="&openchest; == 1">
 			<RunCode name="OpenChest" />

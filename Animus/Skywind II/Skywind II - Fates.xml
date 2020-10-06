@@ -68,6 +68,11 @@
                     Talk.Next();
                     await Coroutine.Wait(2000, () => !Talk.DialogOpen);
                 }		
+                while (Talk.DialogOpen)
+                {
+                    Talk.Next();
+                    await Coroutine.Wait(2000, () => !Talk.DialogOpen);
+                }					
 				await Buddy.Coroutines.Coroutine.Sleep(1000);				
                 if (ff14bot.RemoteWindows.SelectYesno.IsOpen)
 					ff14bot.RemoteWindows.SelectYesno.ClickYes();

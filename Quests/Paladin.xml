@@ -219,7 +219,7 @@
                 }				
             ]]>
         </CodeChunk>
-        <CodeChunk Name="BuySkyfireI">
+         <CodeChunk Name="BuyFireBooks">
             <![CDATA[ 
                 await Buddy.Coroutines.Coroutine.Sleep(500);
                 ff14bot.Managers.GameObjectManager.GetObjectByNPCId(1006976).Interact();
@@ -242,15 +242,13 @@
                     ff14bot.RemoteWindows.SelectYesno.ClickYes();
                 await Buddy.Coroutines.Coroutine.Sleep(1000);
                 if (await Coroutine.Wait(1000, () => Talk.DialogOpen))
+                while (Talk.DialogOpen)
                 {
                     Talk.Next();
-                }
-                if (await Coroutine.Wait(1000, () => Talk.DialogOpen))
-                {
-                    Talk.Next();
-                }				
+                    await Coroutine.Wait(2000, () => !Talk.DialogOpen);
+                }			
             ]]>
-        </CodeChunk>		
+        </CodeChunk>	
   </CodeChunks>
   <GrindAreas>
 	<GrindArea name="RelicRebornCurtana">
