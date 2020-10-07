@@ -73,6 +73,7 @@
         </Hotspots>
         <TargetMobs>
 			<TargetMob Name="Blood Bateleur" Id="1789" Weight="1" />
+			<TargetMob Name="Blizzard Biast" Id="23" Weight="1" />
 			<TargetMob Name="Downcast Hippocerf" Id="1762" Weight="1" />
 			<TargetMob Name="Snowshoe Mouse" Id="1763" Weight="1" />			
         </TargetMobs>		

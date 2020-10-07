@@ -200,7 +200,7 @@
 	<CodeChunks>
 		<CodeChunk Name="MeldMateria">
 		  <![CDATA[ 
-			Core.OverlayManager.AddToast(() => "Please complete your Sphere Scroll by melding ANY 75 materia to the scroll then upgrade your relic at Jalzhan.", TimeSpan.FromMilliseconds(25000), System.Windows.Media.Color.FromRgb(29,213,226), System.Windows.Media.Color.FromRgb(13,106,175), new System.Windows.Media.FontFamily("Gautami"));
+			Core.OverlayManager.AddToast(() => "Please complete your Sphere Scroll by melding ANY 75 materia to the scroll.\n Then upgrade your relic at Jalzhan.", TimeSpan.FromMilliseconds(25000), System.Windows.Media.Color.FromRgb(29,213,226), System.Windows.Media.Color.FromRgb(13,106,175), new System.Windows.Media.FontFamily("Gautami"));
 			await Coroutine.Sleep(26000);
 		  ]]>
 		</CodeChunk>	

@@ -24,11 +24,11 @@
 			<If Condition="ExBuddy.Windows.GuildLeve.HasLeve(644)">
 				<GetTo ZoneId="147" XYZ="45.68184, 7.582094, 344.8144"/>
 				<InitiateLeve LeveId="644"/> 
-				<While condition="not GameObjectManager.GetObjectByNPCId(1737)">
+				<While condition="DirectorManager.ActiveDirector.GetTodoArgs(1).Item1 &lt; DirectorManager.ActiveDirector.GetTodoArgs(1).Item2">
 					<UseObject Radius="500" InCombat="true" XYZ="5.107096, 2.950484, 312.0914" NpcIds="2001098" UseTimes="1"/>
-					<WaitTimer WaitTime="3" />
-				</While>		
-				<WaitTimer WaitTime="2" />	
+					<WaitTimer WaitTime="5" />
+				</While>
+				<WaitTimer WaitTime="7" />	
 				<RunCode Name="CloseTimer"/> 
 				<ExTurnInGuildLeve NpcId="1002398" NpcLocation="33.91326, 4.68145, 399.2563"/>
 				<LLoadProfile Path="../../Start.xml"/>
