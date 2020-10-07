@@ -168,7 +168,7 @@
 			</If>
 			
 	<!-- SoulGlaze Your Weapon -->
-			<If Condition="NovusLightLevel() &lt; 2000">
+			<If Condition="NovusLightLevel() == 0">
 				<LisbethTravel Area="North Shroud" Position="406.5041, -4.498047, -89.74722"/>
 				<RunCode name="SoulGlazed"/>
 				<If Condition="ClassName == ((ClassJobType.Paladin))">

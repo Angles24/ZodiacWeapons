@@ -106,6 +106,7 @@
 			<MoveTo XYZ="-110.3985, 348.2341, -374.2008"/>
 			<Grind GrindRef="FinalBoss" While="not GameObjectManager.GetObjectByNPCId(3798).CurrentHealth == 0"/> <!-- Fight second boss -->
 			<If Condition="&openchest; == 1">
+				<MoveTo XYZ="-95.44525,348.1649,-406.4241" />
 				<LLOpenChest/>
 			</If>
 			<While condition="DutyManager.InInstance">	

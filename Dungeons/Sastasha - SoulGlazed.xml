@@ -68,7 +68,9 @@
 				<If Condition="&openchest; == 1">
 					<LLOpenChest/>
 				</If>
-				<UseObject NpcId="2000216" XYZ="62.90795,33.96952,-31.17228" Radius="25" condition="GameObjectManager.GetObjectByNPCId(2000216).IsTargetable"/>			
+				<While condition="GameObjectManager.GetObjectByNPCId(2000216).IsTargetable">
+					<UseObject NpcId="2000216" XYZ="62.90795,33.96952,-31.17228" Radius="25" condition="GameObjectManager.GetObjectByNPCId(2000216).IsTargetable"/>			
+				</While>
 			</If>
 			
 			<!-- Discover the pirate captain 0/1 -->
@@ -81,8 +83,9 @@
 			<!-- Obtain the Waverider Gate key 0/1 -->
 			<If Condition="GetInstanceTodo(3) == 0 and GetInstanceTodo(2) == 1">
 				<Log Message="Obtain the Waverider Gate key 0/1" />
+				<MoveTo XYZ="-97.06197, 13.84801, 147.9231" />
+				<UseObject NpcId="2000250" XYZ="-95.04467,20.51307,172.0396" Radius="200" condition="not HasAtLeast(2000512,1)"/> <!-- Pickup Captain's Quarters Key -->				
 				<MoveTo XYZ="-95.04467,20.51307,172.0396" />
-				<UseObject NpcId="2000250" XYZ="-95.04467,20.51307,172.0396" Radius="200" condition="not HasAtLeast(2000512,1)"/> <!-- Pickup Captain's Quarters Key -->
 				<While condition="GameObjectManager.GetObjectByNPCId(2000227).IsTargetable">
 					<MoveTo XYZ="-95.04467,20.51307,172.0396" />
 					<RunCode name="CaptainsQuarters"/>
