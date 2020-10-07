@@ -67,6 +67,9 @@
    	<GrindArea name="PapalDispensation">
         <Hotspots>
 			<Hotspot Radius="200" XYZ="-418.7997, 223.8091, -151.5482" />
+			<Hotspot Radius="200" XYZ="-377.2767, 235.8493, -138.9979" />
+			<Hotspot Radius="200" XYZ="-510.3351, 204.583, -182.5681" />
+			<Hotspot Radius="200" XYZ="-484.0184, 229.971, -116.6584" />
         </Hotspots>
         <TargetMobs>
 			<TargetMob Name="Blood Bateleur" Id="1789" Weight="1" />
