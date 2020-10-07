@@ -88,10 +88,8 @@
 			<RunCode name="LifeLever2"/>
 			<WaitTimer WaitTime="13" />
 			<MoveTo XYZ="59.8905, -38.59576, 40.56261" usemesh="false"/>
-			<MoveTo XYZ="10.16569, -41.04623, 42.94219"/>
-			<UseObject NpcIds="2000179" XYZ="59.8905, -38.59576, 40.56261" Radius="100" condition="GetInstanceTodo(0) == 0"/> <!-- Right side Firesand -->			
-			<MoveTo XYZ="102.6304, -41.79406, 39.8845"/>
-			<UseObject NpcIds="2001531" XYZ="59.8905, -38.59576, 40.56261" Radius="100" condition="GetInstanceTodo(0) == 1"/> <!-- Left side Firesand -->
+			<Grind GrindRef="ClearShaftE1" While="NumAttackableEnemies(70, Array[int]([1342,984,1303])) &gt; 0"/> <!-- Get key to drop -->
+			<UseObject NpcIds="2000179,2001531" XYZ="59.8905, -38.59576, 40.56261" Radius="100" condition="GetInstanceTodo(0) &lt; 2"/> <!-- Right side Firesand -->			
 			<MoveTo XYZ="58.85282,-37.77425,55.07696" />
 			<While condition="GetInstanceTodo(0) == 2">
 				<RunCode name="PowderChamber2"/>
@@ -237,13 +235,13 @@
 			<TargetMob Id="548" Weight="2"/> <!-- Kottos -->
         </TargetMobs>
 	</GrindArea>
-    <GrindArea name="Firesand1">
+    <GrindArea name="ClearShaftE1">
       <Hotspots>
         <Hotspot Radius="200" XYZ="59.8905, -38.59576, 40.56261"/>
       </Hotspots>
       <TargetMobs>
         <TargetMob Id="984" Weight="1"/> <!-- Errant Soul -->
-        <TargetMob Id="1303" Weight="1000"/> <!-- Blasting Cap -->
+        <TargetMob Id="1303" Weight="1"/> <!-- Blasting Cap -->
         <TargetMob Id="631" Weight="1"/> <!-- Spriggan Copper Copper -->
       </TargetMobs>
     </GrindArea>	
