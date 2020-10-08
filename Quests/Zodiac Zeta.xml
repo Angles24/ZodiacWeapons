@@ -141,37 +141,36 @@
 		<CodeChunk Name="FirstMahatma">
             <![CDATA[ 
 				uint Slot = (uint)(LlamaLibrary.ScriptConditions.Helpers.ZodiacCompletedMahatma());
-				await Buddy.Coroutines.Coroutine.Sleep(500);
+				await Buddy.Coroutines.Coroutine.Sleep(1000);
                 ff14bot.Managers.GameObjectManager.GetObjectByNPCId(1011791).Interact();
-                await Buddy.Coroutines.Coroutine.Sleep(1000);
+                await Buddy.Coroutines.Coroutine.Sleep(2000);
                 if (ff14bot.RemoteWindows.SelectIconString.IsOpen)
                     ff14bot.RemoteWindows.SelectIconString.ClickSlot(0);
-				await Buddy.Coroutines.Coroutine.Sleep(1000);
+				await Buddy.Coroutines.Coroutine.Sleep(3000);
                 if (await Coroutine.Wait(1000, () => Talk.DialogOpen))
                 {
                     Talk.Next();
                 }
-                await Buddy.Coroutines.Coroutine.Sleep(1000);					
+                await Buddy.Coroutines.Coroutine.Sleep(3000);					
                 if (ff14bot.RemoteWindows.SelectString.IsOpen)
-                    SelectString.ClickLineContains(InventoryManager.EquippedItems.First().Name);
-				await Buddy.Coroutines.Coroutine.Sleep(1000);	
-                if (ff14bot.RemoteWindows.SelectString.IsOpen)
-					SelectString.ClickSlot(0);
-				await Buddy.Coroutines.Coroutine.Sleep(1000);		
+                    ff14bot.RemoteWindows.SelectIconString.ClickSlot(0);
+				await Buddy.Coroutines.Coroutine.Sleep(3000);	
+				SelectString.ClickSlot(Slot);
+				await Buddy.Coroutines.Coroutine.Sleep(3000);		
                 if (await Coroutine.Wait(1000, () => Talk.DialogOpen))
                 {
                     Talk.Next();
                 }
-                await Buddy.Coroutines.Coroutine.Sleep(1000);
+                await Buddy.Coroutines.Coroutine.Sleep(3000);
                 if (ff14bot.RemoteWindows.SelectYesno.IsOpen)
                     ff14bot.RemoteWindows.SelectYesno.ClickYes();
-				await Buddy.Coroutines.Coroutine.Sleep(1000);
+				await Buddy.Coroutines.Coroutine.Sleep(3000);
                 while (Talk.DialogOpen)
                 {
                     Talk.Next();
                     await Coroutine.Wait(2000, () => !Talk.DialogOpen);
                 }
-				await Buddy.Coroutines.Coroutine.Sleep(3000);
+				await Buddy.Coroutines.Coroutine.Sleep(4000);
                 while (Talk.DialogOpen)
                 {
                     Talk.Next();
@@ -184,34 +183,40 @@
 				uint Slot = (uint)(LlamaLibrary.ScriptConditions.Helpers.ZodiacCompletedMahatma());
 				await Buddy.Coroutines.Coroutine.Sleep(500);
                 ff14bot.Managers.GameObjectManager.GetObjectByNPCId(1011791).Interact();
-                await Buddy.Coroutines.Coroutine.Sleep(1000);
+                await Buddy.Coroutines.Coroutine.Sleep(2000);
                 if (ff14bot.RemoteWindows.SelectIconString.IsOpen)
                     ff14bot.RemoteWindows.SelectIconString.ClickSlot(0);
-				await Buddy.Coroutines.Coroutine.Sleep(1000);
+				await Buddy.Coroutines.Coroutine.Sleep(2000);
                 if (await Coroutine.Wait(1000, () => Talk.DialogOpen))
                 {
                     Talk.Next();
                 }
-                await Buddy.Coroutines.Coroutine.Sleep(1000);					
+                await Buddy.Coroutines.Coroutine.Sleep(2000);					
                 if (ff14bot.RemoteWindows.SelectString.IsOpen)
                     SelectString.ClickLineContains(InventoryManager.EquippedItems.First().Name);
-				await Buddy.Coroutines.Coroutine.Sleep(1000);	
+				await Buddy.Coroutines.Coroutine.Sleep(2000);	
                 if (ff14bot.RemoteWindows.SelectString.IsOpen)
 					SelectString.ClickSlot(Slot + 1);
-				await Buddy.Coroutines.Coroutine.Sleep(1000);		
+				await Buddy.Coroutines.Coroutine.Sleep(2000);		
                 if (await Coroutine.Wait(1000, () => Talk.DialogOpen))
                 {
                     Talk.Next();
                 }
-                await Buddy.Coroutines.Coroutine.Sleep(1000);
+                await Buddy.Coroutines.Coroutine.Sleep(2000);
                 if (ff14bot.RemoteWindows.SelectYesno.IsOpen)
                     ff14bot.RemoteWindows.SelectYesno.ClickYes();
-				await Buddy.Coroutines.Coroutine.Sleep(1000);
+				await Buddy.Coroutines.Coroutine.Sleep(2000);
                 while (Talk.DialogOpen)
                 {
                     Talk.Next();
                     await Coroutine.Wait(2000, () => !Talk.DialogOpen);
-                }				
+                }
+				await Buddy.Coroutines.Coroutine.Sleep(4000);
+                while (Talk.DialogOpen)
+                {
+                    Talk.Next();
+                    await Coroutine.Wait(2000, () => !Talk.DialogOpen);
+                }					
             ]]>
 		</CodeChunk>
 		<CodeChunk Name="NeedPoetics">

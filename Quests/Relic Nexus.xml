@@ -169,7 +169,7 @@
 			
 	<!-- SoulGlaze Your Weapon -->
 			<If Condition="NovusLightLevel() == 0">
-				<LisbethTravel Area="North Shroud" Position="406.5041, -4.498047, -89.74722"/>
+				<LisbethTravel Area="North Shroud" Position="406.5041, -4.498047, -89.74722"/>				
 				<RunCode name="SoulGlazed"/>
 				<If Condition="ClassName == ((ClassJobType.Paladin))">
 					<RunCode name="SoulGlazedPLD"/>
@@ -177,9 +177,42 @@
 			</If>
 			
 			<While Condition="NovusLightLevel() == 2000">
+				<If Condition="ClassName == ((ClassJobType.Bard))"> 
+					<ChangeClass Job="Bard" />
+				</If>
+				<If Condition="ClassName == ((ClassJobType.BlackMage))"> 
+					<ChangeClass Job="Blackmage" />
+				</If>
+				<If Condition="ClassName == ((ClassJobType.Dragoon))"> 
+						<ChangeClass Job="Dragoon" />
+				</If>	
+				<If Condition="ClassName == ((ClassJobType.Monk))"> 
+						<ChangeClass Job="Monk" />
+				</If>
+				<If Condition="ClassName == ((ClassJobType.Ninja))"> 
+						<ChangeClass Job="Ninja" />
+				</If>
+				<If Condition="ClassName == ((ClassJobType.Paladin))"> 
+					<ChangeClass Job="Paladin" />
+				</If>		
+				<If Condition="ClassName == ((ClassJobType.Scholar))"> 
+						<ChangeClass Job="Scholar" />
+				</If>
+				<If Condition="ClassName == ((ClassJobType.Summoner))"> 
+						<ChangeClass Job="Summoner" />
+				</If>	
+				<If Condition="ClassName == ((ClassJobType.Warrior))"> 
+						<ChangeClass Job="Warrior" />
+				</If>
+				<If Condition="ClassName == ((ClassJobType.WhiteMage))"> 
+						<ChangeClass Job="Whitemage" />
+				</If>			
 				<LisbethTravel Area="North Shroud" Position="408.0551, -4.836707, -87.85005"/>
-				<RunCode name="LightComplete"/>
-			</While>			
+				<While condition="1 == 1"/>
+					<RunCode name="LightComplete"/>
+				</While>	
+			</While>
+			
 			<If Condition="NovusLightLevel() &lt; 2000">	
 				<If Condition="&garuda; == 1">
 					<LLoadProfile Path="../Dungeons/The Howling Eye (Extreme) - SoulGlazed.xml"/>
@@ -254,27 +287,8 @@
 		</CodeChunk>		
 		<CodeChunk Name="LightComplete">
 		  <![CDATA[ 
-                await Buddy.Coroutines.Coroutine.Sleep(500);
-                ff14bot.Managers.GameObjectManager.GetObjectByNPCId(1008948).Interact();
-                await Buddy.Coroutines.Coroutine.Sleep(1000);
-                if (ff14bot.RemoteWindows.SelectIconString.IsOpen)
-                    SelectIconString.ClickLineContains("Relic Weapon Novus Enhancement");
-                if (await Coroutine.Wait(1000, () => Talk.DialogOpen))
-                while (Talk.DialogOpen)
-                {
-                    Talk.Next();
-                    await Coroutine.Wait(2000, () => !Talk.DialogOpen);
-                }
-                if (ff14bot.RemoteWindows.SelectString.IsOpen)
-                    SelectString.ClickLineContains(InventoryManager.EquippedItems.First().Name);
-                await Buddy.Coroutines.Coroutine.Sleep(1000);
-                if (ff14bot.RemoteWindows.SelectYesno.IsOpen)
-                    ff14bot.RemoteWindows.SelectYesno.ClickYes();
-                while (Talk.DialogOpen)
-                {
-                    Talk.Next();
-                    await Coroutine.Wait(2000, () => !Talk.DialogOpen);
-                }
+			Core.OverlayManager.AddToast(() => "Please upgrade your relic at Jalzhan.", TimeSpan.FromMilliseconds(25000), System.Windows.Media.Color.FromRgb(29,213,226), System.Windows.Media.Color.FromRgb(13,106,175), new System.Windows.Media.FontFamily("Gautami"));
+			await Coroutine.Sleep(26000);
 		  ]]>
 		</CodeChunk>		
  		<CodeChunk Name="ArtemisNovus">

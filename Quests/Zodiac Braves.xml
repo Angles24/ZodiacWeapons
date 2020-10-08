@@ -166,6 +166,7 @@
 				<!-- Perfet Firewood and Furnace Ring -->
 				<While Condition="not HasHqItem(9511) or not HasHqItem(9510)">
 					<RunCode name="NeedFurnaceRingandPerfectFirewood"/>
+					<WaitTimer WaitTime="60" />
 				</While>		
 				<If Condition="HasHqItem(9511) and HasHqItem(9510)">
 					<LisbethTravel Area="Mor Dhona" Position="70.42073, 33.06654, -704.3105"/>
@@ -214,6 +215,7 @@
 				<!-- Perfet Mortar and Perfect Pestle -->
 				<While Condition="not HasHqItem(9512) or not HasHqItem(9513)">
 					<RunCode name="NeedMortarAndPestle"/>
+					<WaitTimer WaitTime="60" />
 				</While>
 				<If Condition="HasHqItem(9512) and HasHqItem(9513)">				
 					<LisbethTravel Area="Mor Dhona" Position="24.34158, 28.99997, -729.7673"/>>
@@ -224,6 +226,7 @@
 			<If Condition="GetQuestStep(65894) == 255 and not HasAtLeast(9540,1)">
 				<While Condition="not HasAtLeast(28,200)">
 					<RunCode name="NeedPoetics"/>
+					<WaitTimer WaitTime="60" />
 				</While>		
 				<If Condition="HasAtLeast(28,200)">
 					<LisbethTravel Area="Mor Dhona" Position="63.4094, 31.15338, -736.7321"/>
@@ -234,6 +237,7 @@
 			<If Condition="GetQuestStep(65894) == 255 and not HasAtLeast(9539,1)">
 				<While condition="CurrentGCSeals() &lt; 20000">
 					<RunCode name="NeedGCSeals"/>
+					<WaitTimer WaitTime="60" />
 				</While>			
 				<If condition="CurrentGCSeals() &gt; 20000">
 					<Log Message="Moving to buy Bombard Core." />
@@ -286,6 +290,7 @@
 				<!-- Perfect Vellum and Perfect Pounce -->
 				<While Condition="not HasHqItem(9514) or not HasHqItem(9515)">
 					<RunCode name="NeedVellumAndPounce"/>
+					<WaitTimer WaitTime="60" />
 				</While>
 				<If Condition="HasHqItem(9514) and HasHqItem(9515)">				
 					<LisbethTravel Area="Central Thanalan" Position="109.4787, 31, -387.5287"/>
@@ -297,6 +302,7 @@
 				<If Condition="not HasAtLeast(9540,1)">
 					<While Condition="not HasAtLeast(28,200)">
 						<RunCode name="NeedPoetics"/>
+						<WaitTimer WaitTime="60" />
 					</While>		
 					<If Condition="HasAtLeast(28,200)">
 						<LisbethTravel Area="Mor Dhona" Position="63.4094, 31.15338, -736.7321"/>
@@ -307,6 +313,7 @@
 				<If Condition="not HasAtLeast(9539,1)">
 					<While condition="CurrentGCSeals() &lt; 20000">
 						<RunCode name="NeedGCSeals"/>
+						<WaitTimer WaitTime="60" />
 					</While>			
 					<If condition="CurrentGCSeals() &gt; 20000">
 						<Log Message="Moving to buy Bombard Core." />
@@ -338,6 +345,7 @@
 				<If Condition="not HasAtLeast(9540,1)">
 					<While Condition="not HasAtLeast(28,200)">
 						<RunCode name="NeedPoetics"/>
+						<WaitTimer WaitTime="60" />
 					</While>		
 					<If Condition="HasAtLeast(28,200)">
 						<LisbethTravel Area="Mor Dhona" Position="63.4094, 31.15338, -736.7321"/>
@@ -348,6 +356,7 @@
 				<If Condition="not HasAtLeast(9539,1)">
 					<While condition="CurrentGCSeals() &lt; 20000">
 						<RunCode name="NeedGCSeals"/>
+						<WaitTimer WaitTime="60" />
 					</While>			
 					<If condition="CurrentGCSeals() &gt; 20000">
 						<Log Message="Moving to buy Bombard Core." />
@@ -398,8 +407,11 @@
 				<If Condition="HasQuest(67061) and not IsQuestCompleted(67061) and GetQuestStep(67061) == 2">
 				  <GetTo ZoneId="155" XYZ="-672.3635, 205.9623, -513.5798"/>
 				  <TalkTo NpcId="1006490" XYZ="-673.2128, 205.9598, -515.7702" QuestId="67061" StepId="2"/>
-				</If>			
-				<RunCode name="AnnounceStoneVigilHard"/>	
+				</If>
+				<While condition="1 == 1">	
+					<RunCode name="AnnounceStoneVigilHard"/>
+					<WaitTimer WaitTime="60" />
+				</While>	
 			</While>
 			<If Condition="GetQuestStep(65896) == 6">
 				<LisbethTravel Area="Western La Noscea" Position="647.5743, 5.666206, 551.7373"/>
@@ -408,6 +420,7 @@
 			<If Condition="GetQuestStep(65896) == 255">
 				<While condition="not HasHqItem(9516) and not HasHqItem(9517)">
 					<RunCode name="NeedPieAndCloth"/>
+					<WaitTimer WaitTime="60" />
 				</While>				
 				<If condition="HasHqItem(9516) and HasHqItem(9517)">
 					<LisbethTravel Area="Mor Dhona" Position="27.53231, 28.99997, -737.4474"/>
@@ -540,7 +553,7 @@
 				<If Condition="ClassName == ((ClassJobType.WhiteMage))"> 
 					<ChangeClass Job="Whitemage" />
 				</If>					
-				<GetTo ZoneId="154" XYZ="405.1117, -4.498068, -89.15851" />
+				<LisbethTravel Area="North Shroud" Position="406.6689, -4.498047, -88.39375"/>
 				<RunCode name="BuyZodiac"/>
 			</If>		
 		</If>

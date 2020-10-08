@@ -235,7 +235,7 @@
  	<CodeChunk Name="ShiftingSands1">
 		<![CDATA[
 			ff14bot.Managers.GameObjectManager.GetObjectByNPCId(2000460).Interact();
-			await Coroutine.Sleep(1000);
+			await Coroutine.Sleep(2000);
 			ff14bot.RemoteWindows.SelectYesno.ClickYes();
 			while (!CommonBehaviors.IsLoading) { await Coroutine.Yield(); }
       ]]>
@@ -243,7 +243,7 @@
  	<CodeChunk Name="ShiftingSands2">
 		<![CDATA[
 			ff14bot.Managers.GameObjectManager.GetObjectByNPCId(2000461).Interact();
-			await Coroutine.Sleep(1000);
+			await Coroutine.Sleep(2000);
 			ff14bot.RemoteWindows.SelectYesno.ClickYes();
 			while (!CommonBehaviors.IsLoading) { await Coroutine.Yield(); }
       ]]>
@@ -251,7 +251,7 @@
  	<CodeChunk Name="ShiftingSands3">
 		<![CDATA[
 			ff14bot.Managers.GameObjectManager.GetObjectByNPCId(2000464).Interact();
-			await Coroutine.Sleep(1000);
+			await Coroutine.Sleep(2000);
 			ff14bot.RemoteWindows.SelectYesno.ClickYes();
 			while (!CommonBehaviors.IsLoading) { await Coroutine.Yield(); }
       ]]>
@@ -259,7 +259,7 @@
  	<CodeChunk Name="ShiftingSands4">
 		<![CDATA[
 			ff14bot.Managers.GameObjectManager.GetObjectByNPCId(2000465).Interact();
-			await Coroutine.Sleep(1000);
+			await Coroutine.Sleep(2000);
 			ff14bot.RemoteWindows.SelectYesno.ClickYes();
 			while (!CommonBehaviors.IsLoading) { await Coroutine.Yield(); }
       ]]>
@@ -267,7 +267,7 @@
  	<CodeChunk Name="ShiftingSands5">
 		<![CDATA[
 			ff14bot.Managers.GameObjectManager.GetObjectByNPCId(2000466).Interact();
-			await Coroutine.Sleep(1000);
+			await Coroutine.Sleep(2000);
 			ff14bot.RemoteWindows.SelectYesno.ClickYes();
 			while (!CommonBehaviors.IsLoading) { await Coroutine.Yield(); }
       ]]>
@@ -275,7 +275,7 @@
  	<CodeChunk Name="ShiftingSands6">
 		<![CDATA[
 			ff14bot.Managers.GameObjectManager.GetObjectByNPCId(2000469).Interact();
-			await Coroutine.Sleep(1000);
+			await Coroutine.Sleep(2000);
 			ff14bot.RemoteWindows.SelectYesno.ClickYes();
 			while (!CommonBehaviors.IsLoading) { await Coroutine.Yield(); }
       ]]>
