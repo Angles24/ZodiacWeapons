@@ -39,33 +39,7 @@
 		<!-- Clear the White Hall 0/1 -->
 		<If Condition="GetInstanceTodo(1) == 0">
 			<Log Message="Clear the White Hall 0/1" />
-			<If Condition="ClassName == ((ClassJobType.Bard))"> 
-				<ChangeClass Job="Bard" />
-			</If>
-			<If Condition="ClassName == ((ClassJobType.BlackMage))"> 
-				<ChangeClass Job="Blackmage" />
-			</If>
-			<If Condition="ClassName == ((ClassJobType.Dragoon))"> 
-					<ChangeClass Job="Dragoon" />
-			</If>	
-			<If Condition="ClassName == ((ClassJobType.Monk))"> 
-					<ChangeClass Job="Monk" />
-			</If>
-			<If Condition="ClassName == ((ClassJobType.Ninja))"> 
-					<ChangeClass Job="Ninja" />
-			</If>
-			<If Condition="ClassName == ((ClassJobType.Paladin))"> 
-				<ChangeClass Job="Paladin" />
-			</If>		
-			<If Condition="ClassName == ((ClassJobType.Scholar))"> 
-					<ChangeClass Job="Scholar" />
-			</If>
-			<If Condition="ClassName == ((ClassJobType.Summoner))"> 
-					<ChangeClass Job="Summoner" />
-			</If>	
-			<If Condition="ClassName == ((ClassJobType.Warrior))"> 
-					<ChangeClass Job="Warrior" />
-			</If>
+			<BotSettings AutoEquip="1" />	
 			<If Condition="ClassName == ((ClassJobType.WhiteMage))"> 
 					<ChangeClass Job="Whitemage" />
 			</If>
@@ -115,6 +89,7 @@
 				<RunCode name="OpenChest" />
 			</If>
 			<MoveTo XYZ="-14.77353, -18.9, 0.1370375"/>
+			<BotSettings AutoEquip="0" />	
 			<If Condition="ClassName == ((ClassJobType.Bard))"> 
 				<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 6261">
 					<Log Message="Equipping Artemis Bow Atma" />

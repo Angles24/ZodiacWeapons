@@ -20,36 +20,7 @@
 		<!-- Clear shaft B4 of rubble 0/1 -->
 		<If Condition="GetInstanceTodo(1) == 0">
 			<Log Message="Clear shaft B4 of rubble 0/1" />
-			<If Condition="ClassName == ((ClassJobType.Bard))"> 
-				<ChangeClass Job="Bard" />
-			</If>
-			<If Condition="ClassName == ((ClassJobType.BlackMage))"> 
-				<ChangeClass Job="Blackmage" />
-			</If>
-			<If Condition="ClassName == ((ClassJobType.Dragoon))"> 
-					<ChangeClass Job="Dragoon" />
-			</If>	
-			<If Condition="ClassName == ((ClassJobType.Monk))"> 
-					<ChangeClass Job="Monk" />
-			</If>
-			<If Condition="ClassName == ((ClassJobType.Ninja))"> 
-					<ChangeClass Job="Ninja" />
-			</If>
-			<If Condition="ClassName == ((ClassJobType.Paladin))"> 
-				<ChangeClass Job="Paladin" />
-			</If>		
-			<If Condition="ClassName == ((ClassJobType.Scholar))"> 
-					<ChangeClass Job="Scholar" />
-			</If>
-			<If Condition="ClassName == ((ClassJobType.Summoner))"> 
-					<ChangeClass Job="Summoner" />
-			</If>	
-			<If Condition="ClassName == ((ClassJobType.Warrior))"> 
-					<ChangeClass Job="Warrior" />
-			</If>
-			<If Condition="ClassName == ((ClassJobType.WhiteMage))"> 
-					<ChangeClass Job="Whitemage" />
-			</If>
+			<BotSettings AutoEquip="1" />	
 			<MoveTo XYZ="-205.4989,23.81927,-208.5367"/>		
 			<UseObject InCombat="True" NpcIds="2000159" XYZ="-220.1309, 23.80412, -208.2452" Radius="50" condition="not HasAtLeast(2000441,1)"/>
 			<MoveTo XYZ="-205.4989,23.81927,-208.5367"/>
@@ -124,6 +95,7 @@
 		<!-- Defeat Gyges the Great 0/1 -->
 		<If Condition="GetInstanceTodo(4) == 0">
 			<MoveTo XYZ="-92.62537, -59.29224, 41.44617"/>
+			<BotSettings AutoEquip="0" />	
 			<If Condition="ClassName == ((ClassJobType.Bard))"> 
 				<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 6261">
 					<Log Message="Equipping Artemis Bow Atma" />

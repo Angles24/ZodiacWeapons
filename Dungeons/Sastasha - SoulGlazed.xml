@@ -21,36 +21,7 @@
 			<!-- Activate the coral trigger 0/1 -->
 			<If Condition="GetInstanceTodo(0) == 0">
 				<Log Message="Activate the coral trigger 0/1" />
-				<If Condition="ClassName == ((ClassJobType.Bard))"> 
-					<ChangeClass Job="Bard" />
-				</If>
-				<If Condition="ClassName == ((ClassJobType.BlackMage))"> 
-					<ChangeClass Job="Blackmage" />
-				</If>
-				<If Condition="ClassName == ((ClassJobType.Dragoon))"> 
-						<ChangeClass Job="Dragoon" />
-				</If>	
-				<If Condition="ClassName == ((ClassJobType.Monk))"> 
-						<ChangeClass Job="Monk" />
-				</If>
-				<If Condition="ClassName == ((ClassJobType.Ninja))"> 
-						<ChangeClass Job="Ninja" />
-				</If>
-				<If Condition="ClassName == ((ClassJobType.Paladin))"> 
-					<ChangeClass Job="Paladin" />
-				</If>		
-				<If Condition="ClassName == ((ClassJobType.Scholar))"> 
-						<ChangeClass Job="Scholar" />
-				</If>
-				<If Condition="ClassName == ((ClassJobType.Summoner))"> 
-						<ChangeClass Job="Summoner" />
-				</If>	
-				<If Condition="ClassName == ((ClassJobType.Warrior))"> 
-						<ChangeClass Job="Warrior" />
-				</If>
-				<If Condition="ClassName == ((ClassJobType.WhiteMage))"> 
-						<ChangeClass Job="Whitemage" />
-				</If>
+				<BotSettings AutoEquip="1" />	
 				<MoveTo XYZ="75.8698,35.10142,-32.53721" distance="2"/> <!-- Move To Blue Coral -->
 				<If condition="not GameObjectManager.GetObjectByNPCId(2000216).IsTargetable">
 					<RunCode name="BlueCoral"/>
@@ -105,6 +76,7 @@
 				<MoveTo XYZ="-165.2793, 7.402772, 225.4319"/>
 				<Grind GrindRef="SecondBoss2" While="GameObjectManager.GetObjectByNPCId(2000236).IsVisible"/> <!-- Fight second Boss again... -->
 				<MoveTo XYZ="-301.4477, 5.576687, 285.9107"/>	
+				<BotSettings AutoEquip="0" />	
 				<If Condition="ClassName == ((ClassJobType.Bard))"> 
 					<While Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 7867">
 						<Log Message="Equipping Artemis Bow Novus" />

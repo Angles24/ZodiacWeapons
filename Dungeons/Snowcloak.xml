@@ -20,36 +20,7 @@
 	<If condition="DutyManager.InInstance">
 		<!-- Tiny Key 0/1 -->
 		<If Condition="not GetInstanceTodo(0) == 1">
-			<If Condition="ClassName == ((ClassJobType.Bard))"> 
-				<ChangeClass Job="Bard" />
-			</If>
-			<If Condition="ClassName == ((ClassJobType.BlackMage))"> 
-				<ChangeClass Job="Blackmage" />
-			</If>
-			<If Condition="ClassName == ((ClassJobType.Dragoon))"> 
-					<ChangeClass Job="Dragoon" />
-			</If>	
-			<If Condition="ClassName == ((ClassJobType.Monk))"> 
-					<ChangeClass Job="Monk" />
-			</If>
-			<If Condition="ClassName == ((ClassJobType.Ninja))"> 
-					<ChangeClass Job="Ninja" />
-			</If>
-			<If Condition="ClassName == ((ClassJobType.Paladin))"> 
-				<ChangeClass Job="Paladin" />
-			</If>		
-			<If Condition="ClassName == ((ClassJobType.Scholar))"> 
-					<ChangeClass Job="Scholar" />
-			</If>
-			<If Condition="ClassName == ((ClassJobType.Summoner))"> 
-					<ChangeClass Job="Summoner" />
-			</If>	
-			<If Condition="ClassName == ((ClassJobType.Warrior))"> 
-					<ChangeClass Job="Warrior" />
-			</If>
-			<If Condition="ClassName == ((ClassJobType.WhiteMage))"> 
-					<ChangeClass Job="Whitemage" />
-			</If>			
+			<BotSettings AutoEquip="1" />				
 			<Log Message="Tiny Key 0/1" />
 			<MoveTo XYZ="68.58003, 5.705406, -42.91619" />
 			<Grind GrindRef="WhiteBear" While="not GameObjectManager.GetObjectByNPCId(3028).CurrentHealth == 0"/> <!-- Fight White Bear -->	

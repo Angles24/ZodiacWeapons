@@ -30,12 +30,52 @@
     </If> 
 	
  	<If condition="not DutyManager.InInstance">
+			<If Condition="ClassName == ((ClassJobType.Bard))"> 
+				<ChangeClass Job="Bard" force="true"/>
+			</If>
+			<If Condition="ClassName == ((ClassJobType.BlackMage))"> 
+				<ChangeClass Job="Blackmage" force="true"/>
+			</If>
+			<If Condition="ClassName == ((ClassJobType.Dragoon))"> 
+					<ChangeClass Job="Dragoon" force="true"/>
+			</If>	
+			<If Condition="ClassName == ((ClassJobType.Monk))"> 
+					<ChangeClass Job="Monk" force="true"/>
+			</If>
+			<If Condition="ClassName == ((ClassJobType.Ninja))"> 
+					<ChangeClass Job="Ninja" force="true"/>
+			</If>
+			<If Condition="ClassName == ((ClassJobType.Paladin))"> 
+				<ChangeClass Job="Paladin" force="true"/>
+			</If>		
+			<If Condition="ClassName == ((ClassJobType.Scholar))"> 
+					<ChangeClass Job="Scholar" force="true"/>
+			</If>
+			<If Condition="ClassName == ((ClassJobType.Summoner))"> 
+					<ChangeClass Job="Summoner" force="true"/>
+			</If>	
+			<If Condition="ClassName == ((ClassJobType.Warrior))"> 
+					<ChangeClass Job="Warrior" force="true"/>
+			</If>
+			<If Condition="ClassName == ((ClassJobType.WhiteMage))"> 
+					<ChangeClass Job="Whitemage" force="true"/>
+			</If>	
 		<LLJoinDuty DutyId="22"/>
 	</If>
 	<If condition="DutyManager.InInstance">
 		<!-- Clear Halcyon Court 0/1 -->
 		<If Condition="GetInstanceTodo(0) == 0">				
-			<Log Message="Clear Halcyon Court 0/1" />
+			<Log Message="Clear Halcyon Court 0/1" />				
+			<MoveTo XYZ="167.6067, 66.10661, -32.00096"/> <!-- Move to before first gate -->
+			<Grind GrindRef="MoldColony1" While="GameObjectManager.GetObjectByNPCId(2569)"/> <!-- Fight Mold Colony -->			
+			<MoveTo XYZ="142.8524, 66.18159, -26.45593"/> <!-- Clear first gate room -->			
+			<MoveTo XYZ="142.2002, 58, 1.920883" usemesh="false"/> 
+			<MoveTo XYZ="128.395, 58.25528, 21.71317"/> <!-- Clear second gate room -->
+			<If Condition="&openchest; == 1">
+				<RunCode name="OpenChest" />
+			</If>
+			<MoveTo XYZ="99.19931, 50, 21.79874" usemesh="false"/> 
+			<MoveTo XYZ="98.20937, 42.18911, -2.409956"/> <!-- Move into boss room -->
 			<If Condition="ClassName == ((ClassJobType.Bard))"> 
 				<ChangeClass Job="Bard" />
 			</If>
@@ -65,17 +105,7 @@
 			</If>
 			<If Condition="ClassName == ((ClassJobType.WhiteMage))"> 
 					<ChangeClass Job="Whitemage" />
-			</If>				
-			<MoveTo XYZ="167.6067, 66.10661, -32.00096"/> <!-- Move to before first gate -->
-			<Grind GrindRef="MoldColony1" While="GameObjectManager.GetObjectByNPCId(2569)"/> <!-- Fight Mold Colony -->			
-			<MoveTo XYZ="142.8524, 66.18159, -26.45593"/> <!-- Clear first gate room -->			
-			<MoveTo XYZ="142.2002, 58, 1.920883" usemesh="false"/> 
-			<MoveTo XYZ="128.395, 58.25528, 21.71317"/> <!-- Clear second gate room -->
-			<If Condition="&openchest; == 1">
-				<RunCode name="OpenChest" />
-			</If>
-			<MoveTo XYZ="99.19931, 50, 21.79874" usemesh="false"/> 
-			<MoveTo XYZ="98.20937, 42.18911, -2.409956"/> <!-- Move into boss room -->
+			</If>							
 			<Grind GrindRef="DecayingGourmand" While="not GameObjectManager.GetObjectByNPCId(2556).CurrentHealth == 0"/> <!-- Fight DecayingGourmand -->
 			<If Condition="&openchest; == 1">
 				<RunCode name="OpenChest" />

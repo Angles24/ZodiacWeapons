@@ -24,10 +24,11 @@
 			<LisbethTravel Area="Northern Thanalan" Position="21.60414, 3.991567, 397.9374"/>
 			<While Condition="not ZodiacManager.CurrentBook.FateTask2Completed">
 				<Log Message="Waiting on FATE 'The Ceruleum Road'" />
+				<LisbethTravel Area="Northern Thanalan" Position="21.60414, 3.991567, 397.9374"/>
 					<If condition="GameObjectManager.GetObjectByNPCId(1718)">
 						<RunCode name="StartRoad"/>
 					</If>
-				<LLFate FateId="642" MinLevel="1" Timeout="60" MaxLevel="50" while="not ZodiacManager.CurrentBook.FateTask2Completed"/> <!-- The Ceruleum Road -->
+				<LLFate FateId="642" MinLevel="1" Timeout="60" MaxLevel="50" while="not ZodiacManager.CurrentBook.FateTask2Completed" UseFlight="false" BlacklistIds="641,638"/> <!-- The Ceruleum Road -->
 			</While>
 		</If>
 

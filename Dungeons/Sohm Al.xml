@@ -21,36 +21,7 @@
 		<!-- Defeat Raskovnik 0/1 -->
 		<If Condition="not GetInstanceTodo(0) == 1">
 			<Log Message="Defeat Raskovnik 0/1" />
-			<If Condition="ClassName == ((ClassJobType.Bard))"> 
-				<ChangeClass Job="Bard" />
-			</If>
-			<If Condition="ClassName == ((ClassJobType.BlackMage))"> 
-				<ChangeClass Job="Blackmage" />
-			</If>
-			<If Condition="ClassName == ((ClassJobType.Dragoon))"> 
-					<ChangeClass Job="Dragoon" />
-			</If>	
-			<If Condition="ClassName == ((ClassJobType.Monk))"> 
-					<ChangeClass Job="Monk" />
-			</If>
-			<If Condition="ClassName == ((ClassJobType.Ninja))"> 
-					<ChangeClass Job="Ninja" />
-			</If>
-			<If Condition="ClassName == ((ClassJobType.Paladin))"> 
-				<ChangeClass Job="Paladin" />
-			</If>		
-			<If Condition="ClassName == ((ClassJobType.Scholar))"> 
-					<ChangeClass Job="Scholar" />
-			</If>
-			<If Condition="ClassName == ((ClassJobType.Summoner))"> 
-					<ChangeClass Job="Summoner" />
-			</If>	
-			<If Condition="ClassName == ((ClassJobType.Warrior))"> 
-					<ChangeClass Job="Warrior" />
-			</If>
-			<If Condition="ClassName == ((ClassJobType.WhiteMage))"> 
-					<ChangeClass Job="Whitemage" />
-			</If>						
+			<BotSettings AutoEquip="1" />	
 			<MoveTo XYZ="-257.2819, -3.558736, 193.1647"/>
 			<MoveTo XYZ="-166.1877, 3.651725, 199.8692"/>
 			<MoveTo XYZ="-140.7917, 11.99939, 185.2002"/>

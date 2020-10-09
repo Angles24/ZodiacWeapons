@@ -40,36 +40,7 @@
 		<!-- Find a sun sphere 0/1 -->
 		<If Condition="GetInstanceTodo(0) == 0">
 			<Log Message="Find a sun sphere 0/1" />
-			<If Condition="ClassName == ((ClassJobType.Bard))"> 
-				<ChangeClass Job="Bard" />
-			</If>
-			<If Condition="ClassName == ((ClassJobType.BlackMage))"> 
-				<ChangeClass Job="Blackmage" />
-			</If>
-			<If Condition="ClassName == ((ClassJobType.Dragoon))"> 
-					<ChangeClass Job="Dragoon" />
-			</If>	
-			<If Condition="ClassName == ((ClassJobType.Monk))"> 
-					<ChangeClass Job="Monk" />
-			</If>
-			<If Condition="ClassName == ((ClassJobType.Ninja))"> 
-					<ChangeClass Job="Ninja" />
-			</If>
-			<If Condition="ClassName == ((ClassJobType.Paladin))"> 
-				<ChangeClass Job="Paladin" />
-			</If>		
-			<If Condition="ClassName == ((ClassJobType.Scholar))"> 
-					<ChangeClass Job="Scholar" />
-			</If>
-			<If Condition="ClassName == ((ClassJobType.Summoner))"> 
-					<ChangeClass Job="Summoner" />
-			</If>	
-			<If Condition="ClassName == ((ClassJobType.Warrior))"> 
-					<ChangeClass Job="Warrior" />
-			</If>
-			<If Condition="ClassName == ((ClassJobType.WhiteMage))"> 
-					<ChangeClass Job="Whitemage" />
-			</If>
+			<BotSettings AutoEquip="1" />	
 			<MoveTo XYZ="-65.72064,-12,-55.68018" />
 			<Grind GrindRef="SunSphere" while="not GameObjectManager.GetObjectByNPCId(3052).CurrentHealth == 0"/>
 			<UseObject NpcId="2004380" XYZ="-65.7175,-12,-55.66113" Radius="50" condition="not HasAtLeast(2001436,1)"/>

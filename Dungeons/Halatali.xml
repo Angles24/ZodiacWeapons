@@ -20,36 +20,7 @@
 		<!-- Clear the Hall of the Cesti 0/1 -->
 		<If Condition="GetInstanceTodo(0) == 0">
 			<Log Message="Clear the Hall of the Cesti 0/1" />
-			<If Condition="ClassName == ((ClassJobType.Bard))"> 
-				<ChangeClass Job="Bard" />
-			</If>
-			<If Condition="ClassName == ((ClassJobType.BlackMage))"> 
-				<ChangeClass Job="Blackmage" />
-			</If>
-			<If Condition="ClassName == ((ClassJobType.Dragoon))"> 
-					<ChangeClass Job="Dragoon" />
-			</If>	
-			<If Condition="ClassName == ((ClassJobType.Monk))"> 
-					<ChangeClass Job="Monk" />
-			</If>
-			<If Condition="ClassName == ((ClassJobType.Ninja))"> 
-					<ChangeClass Job="Ninja" />
-			</If>
-			<If Condition="ClassName == ((ClassJobType.Paladin))"> 
-				<ChangeClass Job="Paladin" />
-			</If>		
-			<If Condition="ClassName == ((ClassJobType.Scholar))"> 
-					<ChangeClass Job="Scholar" />
-			</If>
-			<If Condition="ClassName == ((ClassJobType.Summoner))"> 
-					<ChangeClass Job="Summoner" />
-			</If>	
-			<If Condition="ClassName == ((ClassJobType.Warrior))"> 
-					<ChangeClass Job="Warrior" />
-			</If>
-			<If Condition="ClassName == ((ClassJobType.WhiteMage))"> 
-					<ChangeClass Job="Whitemage" />
-			</If>
+			<BotSettings AutoEquip="1" />	
 			<MoveTo XYZ="136.3633, -1.641945, -6.24647"/>
 			<MoveTo XYZ="124.9414, -1.557076, 13.21165" usemesh="false"/>
 			<MoveTo XYZ="15.73978, 0.9251912, 102.9684"/>
@@ -115,6 +86,7 @@
 			<Log Message="Clear Tangata 0/1" />
 			<MoveTo XYZ="-172.2497,12.55991,12.74213" />
 			<UseObject NpcId="2001623" XYZ="-172.2497,12.55991,12.74213" Radius="25" condition="GameObjectManager.GetObjectByNPCId(2001623).IsTargetable"/> <!-- Open Ludus Door -->			
+			<BotSettings AutoEquip="0" />	
 			<If Condition="ClassName == ((ClassJobType.Bard))"> 
 				<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 6261">
 					<Log Message="Equipping Artemis Bow Zenith" />

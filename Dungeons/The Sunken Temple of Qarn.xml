@@ -20,36 +20,7 @@
 		<!-- Clear the Oratory of Tatamefu 0/1 -->
 		<If Condition="GetInstanceTodo(0) == 0">
 			<Log Message="Clear the Oratory of Tatamefu 0/1" />
-			<If Condition="ClassName == ((ClassJobType.Bard))"> 
-				<ChangeClass Job="Bard" />
-			</If>
-			<If Condition="ClassName == ((ClassJobType.BlackMage))"> 
-				<ChangeClass Job="Blackmage" />
-			</If>
-			<If Condition="ClassName == ((ClassJobType.Dragoon))"> 
-					<ChangeClass Job="Dragoon" />
-			</If>	
-			<If Condition="ClassName == ((ClassJobType.Monk))"> 
-					<ChangeClass Job="Monk" />
-			</If>
-			<If Condition="ClassName == ((ClassJobType.Ninja))"> 
-					<ChangeClass Job="Ninja" />
-			</If>
-			<If Condition="ClassName == ((ClassJobType.Paladin))"> 
-				<ChangeClass Job="Paladin" />
-			</If>		
-			<If Condition="ClassName == ((ClassJobType.Scholar))"> 
-					<ChangeClass Job="Scholar" />
-			</If>
-			<If Condition="ClassName == ((ClassJobType.Summoner))"> 
-					<ChangeClass Job="Summoner" />
-			</If>	
-			<If Condition="ClassName == ((ClassJobType.Warrior))"> 
-					<ChangeClass Job="Warrior" />
-			</If>
-			<If Condition="ClassName == ((ClassJobType.WhiteMage))"> 
-					<ChangeClass Job="Whitemage" />
-			</If>
+			<BotSettings AutoEquip="1" />	
 			<MoveTo XYZ="-109.0276, -9.000067, -61.41668"/>
 			<MoveTo XYZ="-86.45679, -12.00001, -62.95071" usemesh="false"/>
 			<Grind GrindRef="FirstBoss" While="not GameObjectManager.GetObjectByNPCId(1567).CurrentHealth == 0"/> <!-- Fight First Boss -->
@@ -106,6 +77,7 @@
 		<!-- Tip the Scales of Judgment 0/1 -->
 		<If Condition="GetInstanceTodo(4) == 0">
 			<MoveTo XYZ="212.5167, -4.00001, -0.4450949"/>
+			<BotSettings AutoEquip="0" />	
 			<If Condition="ClassName == ((ClassJobType.Bard))"> 
 				<If Condition="ff14bot.Managers.InventoryManager.GetBagByInventoryBagId(ff14bot.Enums.InventoryBagId.EquippedItems)[ff14bot.Enums.EquipmentSlot.MainHand].RawItemId != 6261">
 					<Log Message="Equipping Artemis Bow Atma" />
